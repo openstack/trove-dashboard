@@ -23,10 +23,10 @@ from horizon import exceptions
 from horizon import forms
 from horizon import messages
 from horizon.utils import memoized
-
 from openstack_dashboard import api
-from openstack_dashboard.contrib.trove import api as trove_api
-from openstack_dashboard.contrib.trove.content.databases import db_capability
+
+from trove_dashboard import api as trove_api
+from trove_dashboard.content.databases import db_capability
 
 LOG = logging.getLogger(__name__)
 

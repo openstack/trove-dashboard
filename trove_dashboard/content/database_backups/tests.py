@@ -17,8 +17,8 @@ from django import http
 from mox3.mox import IsA  # noqa
 import six
 
-from openstack_dashboard.contrib.trove import api
-from openstack_dashboard.test import helpers as test
+from trove_dashboard import api
+from trove_dashboard.test import helpers as test
 
 INDEX_URL = reverse('horizon:project:database_backups:index')
 BACKUP_URL = reverse('horizon:project:database_backups:create')

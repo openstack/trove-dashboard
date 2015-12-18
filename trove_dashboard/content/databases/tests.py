@@ -25,11 +25,10 @@ import six
 
 from horizon import exceptions
 from openstack_dashboard import api as dash_api
-from openstack_dashboard.contrib.trove import api
-from openstack_dashboard.test import helpers as test
-
 from troveclient import common
 
+from trove_dashboard import api
+from trove_dashboard.test import helpers as test
 
 INDEX_URL = reverse('horizon:project:databases:index')
 LAUNCH_URL = reverse('horizon:project:databases:launch')

@@ -19,8 +19,9 @@ from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
 from horizon import tabs
-from openstack_dashboard.contrib.trove import api
-from openstack_dashboard.contrib.trove.content.database_clusters import tables
+
+from trove_dashboard import api
+from trove_dashboard.content.database_clusters import tables
 
 
 class OverviewTab(tabs.Tab):

@@ -20,11 +20,10 @@ from django import http
 from mox3.mox import IsA  # noqa
 
 from openstack_dashboard import api
-from openstack_dashboard.contrib.trove import api as trove_api
-from openstack_dashboard.test import helpers as test
-
 from troveclient import common
 
+from trove_dashboard import api as trove_api
+from trove_dashboard.test import helpers as test
 
 INDEX_URL = reverse('horizon:project:database_clusters:index')
 LAUNCH_URL = reverse('horizon:project:database_clusters:launch')

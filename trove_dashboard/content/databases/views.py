@@ -30,16 +30,14 @@ from horizon import tables as horizon_tables
 from horizon import tabs as horizon_tabs
 from horizon.utils import memoized
 from horizon import workflows as horizon_workflows
-
-from openstack_dashboard.contrib.trove import api
-from openstack_dashboard.contrib.trove.content.databases import forms
-from openstack_dashboard.contrib.trove.content.databases import tables
-from openstack_dashboard.contrib.trove.content.databases import tabs
-from openstack_dashboard.contrib.trove.content.databases import workflows
-
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
 
+from trove_dashboard import api
+from trove_dashboard.content.databases import forms
+from trove_dashboard.content.databases import tables
+from trove_dashboard.content.databases import tabs
+from trove_dashboard.content.databases import workflows
 
 LOG = logging.getLogger(__name__)
 

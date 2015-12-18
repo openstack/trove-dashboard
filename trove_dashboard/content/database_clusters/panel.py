@@ -17,6 +17,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 import horizon
+from openstack_dashboard.dashboards.project import dashboard
 
 
 class Clusters(horizon.Panel):
@@ -24,3 +25,6 @@ class Clusters(horizon.Panel):
     slug = 'database_clusters'
     permissions = ('openstack.services.database',
                    'openstack.services.object-store',)
+
+
+dashboard.Project.register(Clusters)

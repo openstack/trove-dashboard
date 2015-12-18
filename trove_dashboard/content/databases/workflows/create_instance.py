@@ -23,11 +23,10 @@ from horizon import forms
 from horizon.utils import memoized
 from horizon import workflows
 from openstack_dashboard import api as dash_api
-from openstack_dashboard.contrib.trove import api
-
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
 
+from trove_dashboard import api
 
 LOG = logging.getLogger(__name__)
 

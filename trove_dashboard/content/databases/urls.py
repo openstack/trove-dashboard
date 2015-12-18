@@ -15,7 +15,7 @@
 from django.conf.urls import patterns
 from django.conf.urls import url
 
-from openstack_dashboard.contrib.trove.content.databases import views
+from trove_dashboard.content.databases import views
 
 
 INSTANCES = r'^(?P<instance_id>[^/]+)/%s$'

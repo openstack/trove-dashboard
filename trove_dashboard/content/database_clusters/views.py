@@ -32,10 +32,10 @@ from horizon import tables as horizon_tables
 from horizon import tabs as horizon_tabs
 from horizon.utils import memoized
 
-from openstack_dashboard.contrib.trove import api
-from openstack_dashboard.contrib.trove.content.database_clusters import forms
-from openstack_dashboard.contrib.trove.content.database_clusters import tables
-from openstack_dashboard.contrib.trove.content.database_clusters import tabs
+from trove_dashboard import api
+from trove_dashboard.content.database_clusters import forms
+from trove_dashboard.content.database_clusters import tables
+from trove_dashboard.content.database_clusters import tabs
 
 
 LOG = logging.getLogger(__name__)

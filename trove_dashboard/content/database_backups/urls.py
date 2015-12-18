@@ -15,7 +15,7 @@
 from django.conf.urls import patterns
 from django.conf.urls import url
 
-from openstack_dashboard.contrib.trove.content.database_backups import views
+from trove_dashboard.content.database_backups import views
 
 urlpatterns = patterns(
     '',

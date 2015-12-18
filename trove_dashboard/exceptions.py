@@ -1,4 +1,3 @@
-# Copyright 2013 Rackspace Hosting
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
@@ -12,16 +11,19 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.utils.translation import ugettext_lazy as _
-
-import horizon
-from openstack_dashboard.dashboards.project import dashboard
+from troveclient import exceptions as troveclient
 
 
-class Databases(horizon.Panel):
-    name = _("Instances")
-    slug = 'databases'
-    permissions = ('openstack.services.database',)
+UNAUTHORIZED = (
+    troveclient.Unauthorized,
+)
 
 
-dashboard.Project.register(Databases)
+NOT_FOUND = (
+    troveclient.NotFound,
+)
+
+
+RECOVERABLE = (
+    troveclient.ClientException,
+)

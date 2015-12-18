@@ -15,7 +15,26 @@ from troveclient import client as trove_client
 
 from openstack_dashboard.test import helpers
 
-from openstack_dashboard.contrib.trove import api
+from trove_dashboard import api
+from trove_dashboard.test.test_data import utils
+
+
+def create_stubs(stubs_to_create={}):
+    return helpers.create_stubs(stubs_to_create)
+
+
+class TroveTestsMixin(object):
+    def _setup_test_data(self):
+        super(TroveTestsMixin, self)._setup_test_data()
+        utils.load_test_data(self)
+
+
+class TestCase(TroveTestsMixin, helpers.TestCase):
+    pass
+
+
+class BaseAdminViewTests(TroveTestsMixin, helpers.TestCase):
+    pass
 
 
 class TroveAPITestCase(helpers.APITestCase):

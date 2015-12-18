@@ -21,7 +21,7 @@ from django.utils.translation import ungettext_lazy
 from horizon import tables
 from horizon.utils import filters
 
-from openstack_dashboard.contrib.trove import api
+from trove_dashboard import api
 
 
 STATUS_CHOICES = (

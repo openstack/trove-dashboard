@@ -13,6 +13,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from trove_dashboard import exceptions
+
 # The slug of the panel to be added to HORIZON_CONFIG. Required.
 PANEL = 'database_clusters'
 # The slug of the dashboard the PANEL associated with. Required.
@@ -21,5 +23,10 @@ PANEL_DASHBOARD = 'project'
 PANEL_GROUP = 'database'
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = ('openstack_dashboard.contrib.trove.'
-             'content.database_clusters.panel.Clusters')
+ADD_PANEL = ('trove_dashboard.content.database_clusters.panel.Clusters')
+
+ADD_EXCEPTIONS = {
+    'not_found': exceptions.NOT_FOUND,
+    'recoverable': exceptions.RECOVERABLE,
+    'unauthorized': exceptions.UNAUTHORIZED
+}

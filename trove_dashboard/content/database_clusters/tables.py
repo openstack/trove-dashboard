@@ -23,8 +23,9 @@ from horizon import tables
 from horizon.templatetags import sizeformat
 from horizon.utils import filters
 from horizon.utils import memoized
-from openstack_dashboard.contrib.trove import api
-from openstack_dashboard.contrib.trove.content.databases import db_capability
+
+from trove_dashboard import api
+from trove_dashboard.content.databases import db_capability
 
 ACTIVE_STATES = ("ACTIVE",)
 

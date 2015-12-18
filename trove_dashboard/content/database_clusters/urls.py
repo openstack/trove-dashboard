@@ -17,7 +17,7 @@
 from django.conf.urls import patterns  # noqa
 from django.conf.urls import url  # noqa
 
-from openstack_dashboard.contrib.trove.content.database_clusters import views
+from trove_dashboard.content.database_clusters import views
 
 CLUSTERS = r'^(?P<cluster_id>[^/]+)/%s$'
 
