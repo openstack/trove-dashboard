@@ -25,6 +25,8 @@ def load_test_data(load_onto=None):
     from openstack_dashboard.test.test_data import nova_data
     from openstack_dashboard.test.test_data import swift_data
 
+    from trove_dashboard.test.test_data import exceptions \
+        as trove_exceptions
     from trove_dashboard.test.test_data import keystone_data \
         as trove_keystone_data
     from trove_dashboard.test.test_data import trove_data
@@ -32,6 +34,7 @@ def load_test_data(load_onto=None):
     # The order of these loaders matters, some depend on others.
     loaders = (
         exceptions.data,
+        trove_exceptions.data,
         keystone_data.data,
         glance_data.data,
         nova_data.data,
