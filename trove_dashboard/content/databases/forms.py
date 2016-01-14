@@ -19,6 +19,7 @@ from django.utils.translation import ugettext_lazy as _
 from horizon import exceptions
 from horizon import forms
 from horizon import messages
+from horizon.utils import validators
 
 from trove_dashboard import api
 
@@ -92,3 +93,98 @@ class ResizeInstanceForm(forms.SelfHandlingForm):
             exceptions.handle(request, _('Unable to resize instance. %s') %
                               e.message, redirect=redirect)
         return True
+
+
+class CreateUserForm(forms.SelfHandlingForm):
+    instance_id = forms.CharField(widget=forms.HiddenInput())
+    name = forms.CharField(label=_("Name"))
+    password = forms.RegexField(
+        label=_("Password"),
+        widget=forms.PasswordInput(render_value=False),
+        regex=validators.password_validator(),
+        error_messages={'invalid': validators.password_validator_msg()})
+    host = forms.CharField(
+        label=_("Host"), required=False, help_text=_("Optional host of user."))
+    databases = forms.CharField(
+        label=_('Initial Databases'), required=False,
+        help_text=_('Optional comma separated list of databases user has '
+                    'access to.'))
+
+    def handle(self, request, data):
+        instance = data.get('instance_id')
+        try:
+            api.trove.user_create(
+                request,
+                instance,
+                data['name'],
+                data['password'],
+                host=data['host'],
+                databases=self._get_databases(data))
+
+            messages.success(request,
+                             _('Created user "%s".') % data['name'])
+        except Exception as e:
+            redirect = reverse("horizon:project:databases:detail",
+                               args=(instance,))
+            exceptions.handle(request, _('Unable to create user. %s') %
+                              e.message, redirect=redirect)
+        return True
+
+    def _get_databases(self, data):
+        databases = []
+        db_value = data['databases']
+        if db_value and db_value != u'':
+            dbs = data['databases']
+            databases = [{'name': d.strip()} for d in dbs.split(',')]
+        return databases
+
+
+class EditUserForm(forms.SelfHandlingForm):
+    instance_id = forms.CharField(widget=forms.HiddenInput())
+    user_name = forms.CharField(
+        label=_("Name"),
+        widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    host = forms.CharField(
+        label=_("Host"), required=False,
+        widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    new_name = forms.CharField(label=_("New Name"), required=False)
+    new_password = forms.RegexField(
+        label=_("New Password"), required=False,
+        widget=forms.PasswordInput(render_value=False),
+        regex=validators.password_validator(),
+        error_messages={'invalid': validators.password_validator_msg()})
+    new_host = forms.CharField(label=_("New Host"), required=False)
+
+    validation_error_message = _('A new name or new password or '
+                                 'new host must be specified.')
+
+    def handle(self, request, data):
+        instance = data.get('instance_id')
+        try:
+            api.trove.user_update_attributes(
+                request,
+                instance,
+                data['user_name'],
+                host=data['host'],
+                new_name=data['new_name'],
+                new_password=data['new_password'],
+                new_host=data['new_host'])
+
+            messages.success(request,
+                             _('Updated user "%s".') % data['user_name'])
+        except Exception as e:
+            redirect = reverse("horizon:project:databases:detail",
+                               args=(instance,))
+            exceptions.handle(request, _('Unable to update user. %s') %
+                              e.message, redirect=redirect)
+        return True
+
+    def clean(self):
+        cleaned_data = super(EditUserForm, self).clean()
+
+        if (not (cleaned_data['new_name'] or
+                 cleaned_data['new_password'] or
+                 cleaned_data['new_host'])):
+            raise ValidationError(self.validation_error_message)
+
+        return cleaned_data

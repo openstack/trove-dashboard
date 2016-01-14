@@ -12,8 +12,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import six.moves.urllib.parse as urlparse
+
+from django.conf import settings
 from django.core import urlresolvers
 from django.template import defaultfilters as d_filters
+from django.utils import http
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
@@ -117,6 +121,169 @@ class DetachReplica(tables.BatchAction):
         api.trove.instance_detach_replica(request, obj_id)
 
 
+class GrantAccess(tables.BatchAction):
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Grant Access",
+            u"Grant Access",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Granted Access to",
+            u"Granted Access to",
+            count
+        )
+
+    name = "grant_access"
+    classes = ('btn-grant-access')
+
+    def allowed(self, request, instance=None):
+        if instance:
+            return not instance.access
+        return False
+
+    def action(self, request, obj_id):
+        api.trove.user_grant_access(
+            request,
+            self.table.kwargs['instance_id'],
+            self.table.kwargs['user_name'],
+            [obj_id],
+            host=parse_host_param(request))
+
+
+class RevokeAccess(tables.BatchAction):
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Revoke Access",
+            u"Revoke Access",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Access Revoked to",
+            u"Access Revoked to",
+            count
+        )
+
+    name = "revoke_access"
+    classes = ('btn-revoke-access')
+
+    def allowed(self, request, instance=None):
+        if instance:
+            return instance.access
+        return False
+
+    def action(self, request, obj_id):
+        api.trove.user_revoke_access(
+            request,
+            self.table.kwargs['instance_id'],
+            self.table.kwargs['user_name'],
+            obj_id,
+            host=parse_host_param(request))
+
+
+def parse_host_param(request):
+    host = None
+    if request.META.get('QUERY_STRING', ''):
+        param = urlparse.parse_qs(request.META.get('QUERY_STRING'))
+        values = param.get('host')
+        if values:
+            host = next(iter(values), None)
+    return host
+
+
+class AccessTable(tables.DataTable):
+    dbname = tables.Column("name", verbose_name=_("Name"))
+    access = tables.Column(
+        "access",
+        verbose_name=_("Accessible"),
+        filters=(d_filters.yesno, d_filters.capfirst))
+
+    class Meta(object):
+        name = "access"
+        verbose_name = _("Database Access")
+        row_actions = (GrantAccess, RevokeAccess)
+
+    def get_object_id(self, datum):
+        return datum.name
+
+
+class ManageAccess(tables.LinkAction):
+    name = "manage_access"
+    verbose_name = _("Manage Access")
+    url = "horizon:project:databases:access_detail"
+    icon = "pencil"
+
+    def allowed(self, request, instance=None):
+        instance = self.table.kwargs['instance']
+        return (instance.status in ACTIVE_STATES and
+                has_user_add_perm(request))
+
+    def get_link_url(self, datum):
+        user = datum
+        url = urlresolvers.reverse(self.url, args=[user.instance.id,
+                                                   user.name])
+        if user.host:
+            params = http.urlencode({"host": user.host})
+            url = "?".join([url, params])
+
+        return url
+
+
+class CreateUser(tables.LinkAction):
+    name = "create_user"
+    verbose_name = _("Create User")
+    url = "horizon:project:databases:create_user"
+    classes = ("ajax-modal",)
+    icon = "plus"
+
+    def allowed(self, request, instance=None):
+        instance = self.table.kwargs['instance']
+        return (instance.status in ACTIVE_STATES and
+                has_user_add_perm(request))
+
+    def get_link_url(self, datum=None):
+        instance_id = self.table.kwargs['instance_id']
+        return urlresolvers.reverse(self.url, args=[instance_id])
+
+
+class EditUser(tables.LinkAction):
+    name = "edit_user"
+    verbose_name = _("Edit User")
+    url = "horizon:project:databases:edit_user"
+    classes = ("ajax-modal",)
+    icon = "pencil"
+
+    def allowed(self, request, instance=None):
+        instance = self.table.kwargs['instance']
+        return (instance.status in ACTIVE_STATES and
+                has_user_add_perm(request))
+
+    def get_link_url(self, datum):
+        user = datum
+        url = urlresolvers.reverse(self.url, args=[user.instance.id,
+                                                   user.name])
+        if user.host:
+            params = http.urlencode({"host": user.host})
+            url = "?".join([url, params])
+
+        return url
+
+
+def has_user_add_perm(request):
+    perms = getattr(settings, 'TROVE_ADD_USER_PERMS', [])
+    if perms:
+        return request.user.has_perms(perms)
+    return True
+
+
 class DeleteUser(tables.DeleteAction):
     @staticmethod
     def action_present(count):
@@ -136,11 +303,7 @@ class DeleteUser(tables.DeleteAction):
 
     def delete(self, request, obj_id):
         datum = self.table.get_object_by_id(obj_id)
-        try:
-            api.trove.user_delete(request, datum.instance.id, datum.name)
-        except Exception:
-            msg = _('Error deleting database user.')
-            exceptions.handle(request, msg)
+        api.trove.user_delete(request, datum.instance.id, datum.name)
 
 
 class DeleteDatabase(tables.DeleteAction):
@@ -357,8 +520,8 @@ class UsersTable(tables.DataTable):
     class Meta(object):
         name = "users"
         verbose_name = _("Users")
-        table_actions = [DeleteUser]
-        row_actions = [DeleteUser]
+        table_actions = [CreateUser, DeleteUser]
+        row_actions = [EditUser, ManageAccess, DeleteUser]
 
     def get_object_id(self, datum):
         return datum.name

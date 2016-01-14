@@ -1,0 +1,7 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-body-right %}
+  <p>{% trans "Specify the name of the new user and password." %}</p>
+  <p>{% trans "Optionally provide the host of the user and a list of databases the user is granted access to." %}</p>
+{% endblock %}
