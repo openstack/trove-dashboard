@@ -155,6 +155,16 @@ def database_list(request, instance_id):
     return troveclient(request).databases.list(instance_id)
 
 
+def database_create(request, instance_id, db_name, character_set=None,
+                    collation=None):
+    database = {'name': db_name}
+    if collation:
+        database['collate'] = collation
+    if character_set:
+        database['character_set'] = character_set
+    return troveclient(request).databases.create(instance_id, [database])
+
+
 def database_delete(request, instance_id, db_name):
     return troveclient(request).databases.delete(instance_id, db_name)
 

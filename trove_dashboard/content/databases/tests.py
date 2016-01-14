@@ -18,7 +18,7 @@ import logging
 import django
 from django.core.urlresolvers import reverse
 from django import http
-from django.utils import unittest
+import unittest
 
 from mox3.mox import IsA  # noqa
 import six
@@ -332,6 +332,73 @@ class DatabaseTests(test.TestCase):
     def test_details_with_hostname(self):
         database = self.databases.list()[1]
         self._test_details(database, with_designate=True)
+
+    def test_create_database(self):
+        database = self.databases.first()
+
+        url = reverse('horizon:project:databases:create_database',
+                      args=[database.id])
+        res = self.client.get(url)
+        self.assertTemplateUsed(res, 'project/databases/create_database.html')
+
+    @test.create_stubs({api.trove: ('database_create',)})
+    def test_create_new_database(self):
+        new_database = {
+            "status": "ACTIVE",
+            "updated": "2013-08-12T22:00:09",
+            "name": "NewDB",
+            "links": [],
+            "created": "2013-08-12T22:00:03",
+            "ip": [
+                "10.0.0.3",
+            ],
+            "volume": {
+                "used": 0.13,
+                "size": 1,
+            },
+            "flavor": {
+                "id": "1",
+                "links": [],
+            },
+            "datastore": {
+                "type": "mysql",
+                "version": "5.5"
+            },
+            "id": "12345678-73db-4e23-b52e-368937d72719",
+        }
+
+        api.trove.database_create(
+            IsA(http.HttpRequest), u'id', u'NewDB', character_set=u'',
+            collation=u'').AndReturn(new_database)
+        self.mox.ReplayAll()
+
+        url = reverse('horizon:project:databases:create_database',
+                      args=['id'])
+        post = {
+            'method': 'CreateDatabaseForm',
+            'instance_id': 'id',
+            'name': 'NewDB'}
+
+        res = self.client.post(url, post)
+        self.assertNoFormErrors(res)
+        self.assertMessageCount(success=1)
+
+    @test.create_stubs({api.trove: ('database_create',)})
+    def test_create_new_database_exception(self):
+        api.trove.database_create(
+            IsA(http.HttpRequest), u'id', u'NewDB', character_set=u'',
+            collation=u'').AndRaise(self.exceptions.trove)
+        self.mox.ReplayAll()
+
+        url = reverse('horizon:project:databases:create_database',
+                      args=['id'])
+        post = {
+            'method': 'CreateDatabaseForm',
+            'instance_id': 'id',
+            'name': 'NewDB'}
+
+        res = self.client.post(url, post)
+        self.assertEqual(res.status_code, 302)
 
     @test.create_stubs(
         {api.trove: ('instance_get', 'flavor_get', 'users_list',

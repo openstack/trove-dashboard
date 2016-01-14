@@ -12,7 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.conf import settings
 from django import template
 from django.utils.translation import ugettext_lazy as _
 
@@ -96,10 +95,7 @@ class DatabaseTab(tabs.TableTab):
         return data
 
     def allowed(self, request):
-        perms = getattr(settings, 'TROVE_ADD_DATABASE_PERMS', [])
-        if perms:
-            return request.user.has_perms(perms)
-        return True
+        return tables.has_database_add_perm(request)
 
 
 class BackupsTab(tabs.TableTab):
