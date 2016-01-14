@@ -1,0 +1,7 @@
+---
+features:
+  - Support configuration groups in the dashboard. This
+    includes creating and deleting groups; adding,
+    editing and removing parameters; attaching and
+    detaching groups to running instances; and specifying
+    a group during instance creation.

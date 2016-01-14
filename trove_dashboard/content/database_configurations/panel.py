@@ -1,3 +1,4 @@
+# Copyright 2015 Tesora Inc.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
@@ -11,11 +12,16 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from horizon.test.settings import *  # noqa
-from openstack_dashboard.test.settings import *  # noqa
+from django.utils.translation import ugettext_lazy as _
 
-INSTALLED_APPS = list(INSTALLED_APPS)
-INSTALLED_APPS.append('trove_dashboard.content.database_backups')
-INSTALLED_APPS.append('trove_dashboard.content.database_clusters')
-INSTALLED_APPS.append('trove_dashboard.content.database_configurations')
-INSTALLED_APPS.append('trove_dashboard.content.databases')
+import horizon
+from openstack_dashboard.dashboards.project import dashboard
+
+
+class Configurations(horizon.Panel):
+    name = _("Configuration Groups")
+    slug = 'database_configurations'
+    permissions = ('openstack.services.database',)
+
+
+dashboard.Project.register(Configurations)

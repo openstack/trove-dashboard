@@ -12,6 +12,14 @@
     <dd>{{ instance.datastore.version }}</dd>
     <dt>{% trans "Status" %}</dt>
     <dd>{{ instance.status|title }}</dd>
+    {% if instance.configuration %}
+    <dt>{% trans "Configuration Group" %}</dt>
+    <dd>
+        <a href="{% url 'horizon:project:database_configurations:detail' instance.configuration.id %}">
+            {{ instance.configuration.id }}
+        </a>
+    </dd>
+    {% endif %}
     <dt>{% trans "Root Enabled" %}</dt>
     <dd>{{ root_enabled|capfirst }}</dd>
   </dl>

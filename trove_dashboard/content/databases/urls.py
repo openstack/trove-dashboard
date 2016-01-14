@@ -44,6 +44,8 @@ urlpatterns = patterns(
     url(INSTANCES % 'promote_to_replica_source',
         views.PromoteToReplicaSourceView.as_view(),
         name='promote_to_replica_source'),
+    url(INSTANCES % 'attach_config', views.AttachConfigurationView.as_view(),
+        name='attach_config'),
     url(INSTANCES % 'manage_root', views.ManageRootView.as_view(),
         name='manage_root'),
     url(BASEINSTANCES % 'logs/', include(logs_urls, namespace='logs')),

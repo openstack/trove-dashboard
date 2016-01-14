@@ -15,6 +15,7 @@
 
 from troveclient.v1 import backups
 from troveclient.v1 import clusters
+from troveclient.v1 import configurations
 from troveclient.v1 import databases
 from troveclient.v1 import datastores
 from troveclient.v1 import flavors
@@ -225,7 +226,6 @@ BACKUP_ONE = {
     "description": "Long description of backup",
 }
 
-
 BACKUP_TWO = {
     "instance_id": "4d7b3f57-44f5-41d2-8e86-36b88cad572a",
     "status": "COMPLETED",
@@ -237,7 +237,6 @@ BACKUP_TWO = {
     "id": "e4602a3c-2bca-478f-b059-b6c215510fb4",
     "description": "Longer description of backup",
 }
-
 
 BACKUP_TWO_INC = {
     "instance_id": "4d7b3f57-44f5-41d2-8e86-36b88cad572a",
@@ -251,6 +250,75 @@ BACKUP_TWO_INC = {
     "description": "Longer description of backup",
     "parent_id": "e4602a3c-2bca-478f-b059-b6c215510fb4",
 }
+
+CONFIG_ONE = {
+    "updated": "2014-07-11T14:33:35",
+    "name": "config1",
+    "created": "2014-07-11T14:33:35",
+    "instance_count": 1,
+    "values": {
+        "collation_server": "latin1_swedish_ci",
+        "max_connections": 6000
+    },
+    "id": "0ef978d3-7c83-4192-ab86-b7a0a5010fa0",
+    "description": "Long description of configuration one",
+    "datastore_name": "mysql",
+    "datastore_version_name": "5.5"
+}
+
+CONFIG_TWO = {
+    "updated": "2014-08-11T14:33:35",
+    "name": "config2",
+    "created": "2014-08-11T14:33:35",
+    "instance_count": 0,
+    "values": {
+        "collation_server": "latin1_swedish_ci",
+        "max_connections": 5000
+    },
+    "id": "87948232-10e7-4636-a3d3-a5e1593b7d16",
+    "description": "Long description of configuration two",
+    "datastore_name": "mysql",
+    "datastore_version_name": "5.6"
+}
+
+CONFIG_INSTANCE_ONE = {
+    "id": "c3369597-b53a-4bd4-bf54-41957c1291b8",
+    "name": "Test Database with Config",
+}
+
+CONFIG_PARAMS_ONE = [
+    {
+        "name": "autocommit",
+        "restart_required": False,
+        "max": 1,
+        "min": 0,
+        "type": "integer",
+    },
+    {
+        "name": "connect_timeout",
+        "restart_required": False,
+        "max": 65535,
+        "min": 1,
+        "type": "integer",
+    },
+    {
+        "name": "sort_buffer_size",
+        "restart_required": False,
+        "max": 18446744073709547520,
+        "min": 32768,
+        "type": "integer",
+    },
+    {
+        "name": "character_set_client",
+        "restart_required": False,
+        "type": "string",
+    },
+    {
+        "name": "character_set_connection",
+        "restart_required": False,
+        "type": "string",
+    },
+]
 
 USER_ONE = {
     "name": "Test_User",
@@ -418,6 +486,12 @@ def data(TEST):
     bkup1 = backups.Backup(backups.Backups(None), BACKUP_ONE)
     bkup2 = backups.Backup(backups.Backups(None), BACKUP_TWO)
     bkup3 = backups.Backup(backups.Backups(None), BACKUP_TWO_INC)
+
+    cfg1 = configurations.Configuration(configurations.Configurations(None),
+                                        CONFIG_ONE)
+    cfg2 = configurations.Configuration(configurations.Configurations(None),
+                                        CONFIG_TWO)
+
     user1 = users.User(users.Users(None), USER_ONE)
     user_db1 = databases.Database(databases.Databases(None),
                                   USER_DB_ONE)
@@ -429,6 +503,9 @@ def data(TEST):
     version1 = datastores.\
         DatastoreVersion(datastores.DatastoreVersions(None),
                          VERSION_ONE)
+    version2 = datastores.\
+        DatastoreVersion(datastores.DatastoreVersions(None),
+                         VERSION_TWO)
 
     flavor1 = flavors.Flavor(flavors.Flavors(None), FLAVOR_ONE)
     flavor2 = flavors.Flavor(flavors.Flavors(None), FLAVOR_TWO)
@@ -459,6 +536,7 @@ def data(TEST):
     TEST.trove_clusters.add(cluster2)
     TEST.databases = utils.TestDataContainer()
     TEST.database_backups = utils.TestDataContainer()
+    TEST.database_configurations = utils.TestDataContainer()
     TEST.database_users = utils.TestDataContainer()
     TEST.database_user_dbs = utils.TestDataContainer()
     TEST.database_user_roots = utils.TestDataContainer()
@@ -470,20 +548,36 @@ def data(TEST):
     TEST.database_backups.add(bkup1)
     TEST.database_backups.add(bkup2)
     TEST.database_backups.add(bkup3)
+
+    TEST.database_configurations.add(cfg1)
+    TEST.database_configurations.add(cfg2)
+
+    TEST.configuration_parameters = utils.TestDataContainer()
+    for parameter in CONFIG_PARAMS_ONE:
+        TEST.configuration_parameters.add(
+            configurations.ConfigurationParameter(
+                configurations.ConfigurationParameters(None), parameter))
+
+    TEST.configuration_instances = utils.TestDataContainer()
+    TEST.configuration_instances.add(
+        configurations.Configuration(
+            configurations.Configurations(None), CONFIG_INSTANCE_ONE))
+
     TEST.database_users.add(user1)
     TEST.database_user_dbs.add(user_db1)
     TEST.database_user_roots.add(user_root1)
     TEST.datastores = utils.TestDataContainer()
-    TEST.datastores.add(datastore1)
     TEST.datastores.add(datastore_mongodb)
     TEST.datastores.add(datastore_redis)
     TEST.datastores.add(datastore_vertica)
+    TEST.datastores.add(datastore1)
     TEST.database_flavors.add(flavor1, flavor2, flavor3)
     TEST.datastore_versions = utils.TestDataContainer()
     TEST.datastore_versions.add(version_vertica_7_1)
     TEST.datastore_versions.add(version_redis_3_0)
     TEST.datastore_versions.add(version_mongodb_2_6)
     TEST.datastore_versions.add(version1)
+    TEST.datastore_versions.add(version2)
 
     TEST.logs = utils.TestDataContainer()
     TEST.logs.add(log1, log2, log3, log4)

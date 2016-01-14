@@ -252,6 +252,10 @@ class InitializeDatabase(workflows.Step):
 
 
 class AdvancedAction(workflows.Action):
+    config = forms.ChoiceField(
+        label=_("Configuration Group"),
+        required=False,
+        help_text=_('Select a configuration group'))
     initial_state = forms.ChoiceField(
         label=_('Source for Initial State'),
         required=False,
@@ -298,6 +302,24 @@ class AdvancedAction(workflows.Action):
         name = _("Advanced")
         help_text_template = "project/databases/_launch_advanced_help.html"
 
+    def populate_config_choices(self, request, context):
+        try:
+            configs = api.trove.configuration_list(request)
+            config_name = "%(name)s (%(datastore)s - %(version)s)"
+            choices = [(c.id,
+                        config_name % {'name': c.name,
+                                       'datastore': c.datastore_name,
+                                       'version': c.datastore_version_name})
+                       for c in configs]
+        except Exception:
+            choices = []
+
+        if choices:
+            choices.insert(0, ("", _("Select configuration")))
+        else:
+            choices.insert(0, ("", _("No configurations available")))
+        return choices
+
     def populate_backup_choices(self, request, context):
         try:
             backups = api.trove.backup_list(request)
@@ -339,6 +361,19 @@ class AdvancedAction(workflows.Action):
     def clean(self):
         cleaned_data = super(AdvancedAction, self).clean()
 
+        config = self.cleaned_data['config']
+        if config:
+            try:
+                # Make sure the user is not "hacking" the form
+                # and that they have access to this configuration
+                cfg = api.trove.configuration_get(self.request, config)
+                self.cleaned_data['config'] = cfg.id
+            except Exception:
+                raise forms.ValidationError(_("Unable to find configuration "
+                                              "group!"))
+        else:
+            self.cleaned_data['config'] = None
+
         initial_state = cleaned_data.get("initial_state")
 
         if initial_state == 'backup':
@@ -377,7 +412,7 @@ class AdvancedAction(workflows.Action):
 
 class Advanced(workflows.Step):
     action_class = AdvancedAction
-    contributes = ['backup', 'master', 'replica_count']
+    contributes = ['config', 'backup', 'master', 'replica_count']
 
 
 class LaunchInstance(workflows.Workflow):
@@ -452,13 +487,16 @@ class LaunchInstance(workflows.Workflow):
                      "{name=%s, volume=%s, volume_type=%s, flavor=%s, "
                      "datastore=%s, datastore_version=%s, "
                      "dbs=%s, users=%s, "
-                     "backups=%s, nics=%s, replica_of=%s replica_count=%s}",
+                     "backups=%s, nics=%s, "
+                     "replica_of=%s, replica_count=%s, "
+                     "configuration=%s}",
                      context['name'], context['volume'],
                      self._get_volume_type(context), context['flavor'],
                      datastore, datastore_version,
                      self._get_databases(context), self._get_users(context),
                      self._get_backup(context), self._get_nics(context),
-                     context.get('master'), context['replica_count'])
+                     context.get('master'), context['replica_count'],
+                     context.get('config'))
             api.trove.instance_create(request,
                                       context['name'],
                                       context['volume'],
@@ -472,7 +510,8 @@ class LaunchInstance(workflows.Workflow):
                                       replica_of=context.get('master'),
                                       replica_count=context['replica_count'],
                                       volume_type=self._get_volume_type(
-                                          context))
+                                          context),
+                                      configuration=context.get('config'))
             return True
         except Exception:
             exceptions.handle(request)

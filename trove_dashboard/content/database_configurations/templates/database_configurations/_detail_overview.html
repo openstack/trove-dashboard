@@ -1,0 +1,24 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Configuration Group Overview" %}</h3>
+
+<div class="status row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ configuration.name }}</dd>
+    <dt>{% trans "Description" %}</dt>
+    <dd>{{ configuration.description|linebreaksbr }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ configuration.id }}</dd>
+    <dt>{% trans "Datastore" %}</dt>
+    <dd>{{ configuration.datastore_name }}</dd>
+    <dt>{% trans "Datastore Version" %}</dt>
+    <dd>{{ configuration.datastore_version_name }}</dd>
+    <dt>{% trans "Created" %}</dt>
+    <dd>{{ configuration.created|parse_isotime }}</dd>
+    <dt>{% trans "Updated" %}</dt>
+    <dd>{{ configuration.updated|parse_isotime }}</dd>
+  </dl>
+</div>

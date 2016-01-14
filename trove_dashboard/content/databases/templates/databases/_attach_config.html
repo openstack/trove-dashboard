@@ -1,0 +1,7 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-body-right %}
+  <p>{% trans "Select a configuration group to attach to the database instance." %}</p>
+  <p><strong>{% trans "Please note:</strong> It may be necessary to reboot the database instance for this new configuration group to take effect." %}</strong></p>
+{% endblock %}
