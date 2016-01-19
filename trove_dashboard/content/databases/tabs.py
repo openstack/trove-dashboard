@@ -26,7 +26,16 @@ class OverviewTab(tabs.Tab):
     slug = "overview"
 
     def get_context_data(self, request):
-        return {"instance": self.tab_group.kwargs['instance']}
+        instance = self.tab_group.kwargs['instance']
+        context = {"instance": instance}
+        try:
+            root_show = api.trove.root_show(request, instance.id)
+            context["root_enabled"] = template.defaultfilters.yesno(
+                root_show.rootEnabled)
+        except Exception:
+            context["root_enabled"] = _('Unable to obtain information on '
+                                        'root user')
+        return context
 
     def get_template_name(self, request):
         instance = self.tab_group.kwargs['instance']

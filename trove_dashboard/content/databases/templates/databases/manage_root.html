@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block main %}
+<hr>
+<div class="help_text">
+    {% trans "Note: Enable root access on an instance.  If the root user is already enabled then a new password is generated." %}
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    {{ table.render }}
+  </div>
+</div>
+{% endblock %}
