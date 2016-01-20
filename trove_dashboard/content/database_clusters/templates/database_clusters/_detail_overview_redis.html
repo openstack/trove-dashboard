@@ -1,0 +1,19 @@
+{% extends "project/database_clusters/_detail_overview.html" %}
+{% load i18n sizeformat %}
+
+{% block connection_info %}
+    <h4>{% trans "Connection Information" %}</h4>
+    <hr class="header_rule">
+    <dl class="dl-horizontal">
+        {% with cluster.ip.0 as ip %}
+            <dt>{% trans "Host" %}</dt>
+            {% if not ip %}
+                <dd>{% trans "Not Assigned" %}</dd>
+            {% else %}
+                <dd>{{ ip }}</dd>
+                <dt>{% trans "Connection Examples" %}</dt>
+                <dd>redis-cli -h {{ ip }}</dd>
+            {% endif %} <!-- ends else block -->
+        {% endwith %}
+    </dl>
+{% endblock %}

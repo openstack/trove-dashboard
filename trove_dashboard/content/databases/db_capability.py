@@ -14,12 +14,28 @@
 
 
 MONGODB = "mongodb"
+REDIS = "redis"
 VERTICA = "vertica"
+
+_cluster_capable_datastores = (MONGODB, REDIS, VERTICA)
 
 
 def is_mongodb_datastore(datastore):
     return (datastore is not None) and (MONGODB in datastore.lower())
 
 
+def is_redis_datastore(datastore):
+    return (datastore is not None) and (REDIS in datastore.lower())
+
+
 def is_vertica_datastore(datastore):
     return (datastore is not None) and (VERTICA in datastore.lower())
+
+
+def is_cluster_capable_datastore(datastore):
+    if datastore is not None:
+        datastore_lower = datastore.lower()
+        for ds in _cluster_capable_datastores:
+            if ds in datastore_lower:
+                return True
+    return False

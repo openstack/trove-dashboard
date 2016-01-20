@@ -236,6 +236,18 @@ DATASTORE_MONGODB = {
     "name": "mongodb"
 }
 
+DATASTORE_REDIS = {
+    "id": "ccb31517-c472-409d-89b4-1a13db6bdd38",
+    "links": [],
+    "name": "redis"
+}
+
+DATASTORE_VERTICA = {
+    "id": "ccb31517-c472-409d-89b4-1a13db6bdd39",
+    "links": [],
+    "name": "vertica"
+}
+
 VERSION_ONE = {
     "name": "5.5",
     "links": [],
@@ -287,6 +299,26 @@ VERSION_MONGODB_2_6 = {
     "id": "600a6d52-8347-4e00-8e4c-f4fa9cf96ae9"
 }
 
+VERSION_REDIS_3_0 = {
+    "name": "3.0",
+    "links": [],
+    "image": "c7956bb5-920e-4299-b68e-2347d830d938",
+    "active": 1,
+    "datastore": "ccb31517-c472-409d-89b4-1a13db6bdd38",
+    "packages": "3.0",
+    "id": "600a6d52-8347-4e00-8e4c-f4fa9cf96af0"
+}
+
+VERSION_VERTICA_7_1 = {
+    "name": "7.1",
+    "links": [],
+    "image": "c7956bb5-920e-4299-b68e-2347d830d939",
+    "active": 1,
+    "datastore": "ccb31517-c472-409d-89b4-1a13db6bdd39",
+    "packages": "7.1",
+    "id": "600a6d52-8347-4e00-8e4c-f4fa9cf96af1"
+}
+
 
 def data(TEST):
     cluster1 = clusters.Cluster(clusters.Clusters(None),
@@ -318,6 +350,16 @@ def data(TEST):
     version_mongodb_2_6 = datastores.\
         DatastoreVersion(datastores.DatastoreVersions(None),
                          VERSION_MONGODB_2_6)
+    datastore_redis = datastores.Datastore(datastores.Datastores(None),
+                                           DATASTORE_REDIS)
+    version_redis_3_0 = datastores.\
+        DatastoreVersion(datastores.DatastoreVersions(None),
+                         VERSION_REDIS_3_0)
+    datastore_vertica = datastores.Datastore(datastores.Datastores(None),
+                                             DATASTORE_VERTICA)
+    version_vertica_7_1 = datastores.\
+        DatastoreVersion(datastores.DatastoreVersions(None),
+                         VERSION_VERTICA_7_1)
 
     TEST.trove_clusters = utils.TestDataContainer()
     TEST.trove_clusters.add(cluster1)
@@ -338,7 +380,11 @@ def data(TEST):
     TEST.datastores = utils.TestDataContainer()
     TEST.datastores.add(datastore1)
     TEST.datastores.add(datastore_mongodb)
+    TEST.datastores.add(datastore_redis)
+    TEST.datastores.add(datastore_vertica)
     TEST.database_flavors.add(flavor1, flavor2, flavor3)
     TEST.datastore_versions = utils.TestDataContainer()
+    TEST.datastore_versions.add(version_vertica_7_1)
+    TEST.datastore_versions.add(version_redis_3_0)
     TEST.datastore_versions.add(version_mongodb_2_6)
     TEST.datastore_versions.add(version1)

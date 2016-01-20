@@ -110,17 +110,91 @@ class ClustersTests(test.TestCase):
     def test_launch_cluster(self):
         api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
             .AndReturn(False)
+        filtered_datastores = self._get_filtered_datastores('mongodb')
         trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
                                           'mongodb', '2.6')\
             .AndReturn(self.flavors.list())
         trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(self.datastores.list())
+            .AndReturn(filtered_datastores)
         trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
                                                IsA(str))\
-            .AndReturn(self.datastore_versions.list())
+            .AndReturn(
+                self._get_filtered_datastore_versions(filtered_datastores))
         self.mox.ReplayAll()
         res = self.client.get(LAUNCH_URL)
         self.assertTemplateUsed(res, 'project/database_clusters/launch.html')
+
+    def test_launch_cluster_mongo_fields(self):
+        datastore = 'mongodb'
+        fields = self.launch_cluster_fields_setup(datastore, '2.6')
+
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['flavor'], datastore))
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['num_instances'], datastore))
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['num_shards'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['root_password'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['num_instances_vertica'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['vertica_flavor'], datastore))
+
+    def test_launch_cluster_redis_fields(self):
+        datastore = 'redis'
+        fields = self.launch_cluster_fields_setup(datastore, '3.0')
+
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['flavor'], datastore))
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['num_instances'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['num_shards'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['root_password'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['num_instances_vertica'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['vertica_flavor'], datastore))
+
+    def test_launch_cluster_vertica_fields(self):
+        datastore = 'vertica'
+        fields = self.launch_cluster_fields_setup(datastore, '7.1')
+
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['flavor'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['num_instances'], datastore))
+        self.assertFalse(self._contains_datastore_in_attribute(
+            fields['num_shards'], datastore))
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['root_password'], datastore))
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['num_instances_vertica'], datastore))
+        self.assertTrue(self._contains_datastore_in_attribute(
+            fields['vertica_flavor'], datastore))
+
+    @test.create_stubs({trove_api.trove: ('datastore_flavors',
+                                          'datastore_list',
+                                          'datastore_version_list'),
+                        api.base: ['is_service_enabled']})
+    def launch_cluster_fields_setup(self, datastore, datastore_version):
+        api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
+            .AndReturn(False)
+        filtered_datastores = self._get_filtered_datastores(datastore)
+        trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
+                                          datastore, datastore_version)\
+            .AndReturn(self.flavors.list())
+        trove_api.trove.datastore_list(IsA(http.HttpRequest))\
+            .AndReturn(filtered_datastores)
+        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
+                                               IsA(str))\
+            .AndReturn(
+                self._get_filtered_datastore_versions(filtered_datastores))
+        self.mox.ReplayAll()
+        res = self.client.get(LAUNCH_URL)
+        return res.context_data['form'].fields
 
     @test.create_stubs({trove_api.trove: ['datastore_flavors',
                                           'cluster_create',
@@ -130,13 +204,16 @@ class ClustersTests(test.TestCase):
     def test_create_simple_cluster(self):
         api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
             .AndReturn(False)
+        filtered_datastores = self._get_filtered_datastores('mongodb')
         trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
                                           'mongodb', '2.6')\
             .AndReturn(self.flavors.list())
         trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(self.datastores.list())
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str))\
-            .AndReturn(self.datastore_versions.list())
+            .AndReturn(filtered_datastores)
+        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
+                                               IsA(str))\
+            .AndReturn(
+                self._get_filtered_datastore_versions(filtered_datastores))
 
         cluster_name = u'MyCluster'
         cluster_volume = 1
@@ -164,7 +241,7 @@ class ClustersTests(test.TestCase):
             'num_shards': 1,
             'num_instances_per_shards': cluster_instances,
             'datastore': cluster_datastore + u'-' + cluster_datastore_version,
-            'mongodb_flavor': cluster_flavor,
+            'flavor': cluster_flavor,
             'network': cluster_network
         }
 
@@ -183,13 +260,16 @@ class ClustersTests(test.TestCase):
             .AndReturn(True)
         api.neutron.network_list_for_tenant(IsA(http.HttpRequest), '1')\
             .AndReturn(self.networks.list())
+        filtered_datastores = self._get_filtered_datastores('mongodb')
         trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
                                           'mongodb', '2.6')\
             .AndReturn(self.flavors.list())
         trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(self.datastores.list())
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str))\
-            .AndReturn(self.datastore_versions.list())
+            .AndReturn(filtered_datastores)
+        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
+                                               IsA(str))\
+            .AndReturn(
+                self._get_filtered_datastore_versions(filtered_datastores))
 
         cluster_name = u'MyCluster'
         cluster_volume = 1
@@ -217,7 +297,7 @@ class ClustersTests(test.TestCase):
             'num_shards': 1,
             'num_instances_per_shards': cluster_instances,
             'datastore': cluster_datastore + u'-' + cluster_datastore_version,
-            'mongodb_flavor': cluster_flavor,
+            'flavor': cluster_flavor,
             'network': cluster_network
         }
 
@@ -233,13 +313,16 @@ class ClustersTests(test.TestCase):
     def test_create_simple_cluster_exception(self):
         api.neutron.network_list_for_tenant(IsA(http.HttpRequest), '1')\
             .AndReturn(self.networks.list())
+        filtered_datastores = self._get_filtered_datastores('mongodb')
         trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
                                           'mongodb', '2.6')\
             .AndReturn(self.flavors.list())
         trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(self.datastores.list())
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str))\
-            .AndReturn(self.datastore_versions.list())
+            .AndReturn(filtered_datastores)
+        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
+                                               IsA(str))\
+            .AndReturn(
+                self._get_filtered_datastore_versions(filtered_datastores))
 
         cluster_name = u'MyCluster'
         cluster_volume = 1
@@ -267,7 +350,7 @@ class ClustersTests(test.TestCase):
             'num_shards': 1,
             'num_instances_per_shards': cluster_instances,
             'datastore': cluster_datastore + u'-' + cluster_datastore_version,
-            'mongodb_flavor': cluster_flavor,
+            'flavor': cluster_flavor,
             'network': cluster_network
         }
 
@@ -292,3 +375,24 @@ class ClustersTests(test.TestCase):
         res = self.client.get(details_url)
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertContains(res, cluster.ip[0])
+
+    def _get_filtered_datastores(self, datastore):
+        filtered_datastore = []
+        for ds in self.datastores.list():
+            if datastore in ds.name:
+                filtered_datastore.append(ds)
+        return filtered_datastore
+
+    def _get_filtered_datastore_versions(self, datastores):
+        filtered_datastore_versions = []
+        for ds in datastores:
+            for dsv in self.datastore_versions.list():
+                if ds.id == dsv.datastore:
+                    filtered_datastore_versions.append(dsv)
+        return filtered_datastore_versions
+
+    def _contains_datastore_in_attribute(self, field, datastore):
+        for key, value in field.widget.attrs.iteritems():
+            if datastore in key:
+                return True
+        return False

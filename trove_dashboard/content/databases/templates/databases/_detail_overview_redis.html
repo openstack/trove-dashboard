@@ -2,7 +2,7 @@
 {% load i18n sizeformat %}
 
 {% block connection_info %}
-    <h4>{% trans "Connection Info" %}</h4>
+    <h4>{% trans "Connection Information" %}</h4>
     <hr class="header_rule">
     <dl class="dl-horizontal">
       {% with instance.host as host %}
@@ -12,8 +12,8 @@
           {% else %}
               <dd>{{ host }}</dd>
               <dt>{% trans "Connection Examples" %}</dt>
-              <dd>redis-cli -h {{ host }}</dd>
-          {% endif %} <!-- ends else block -->
+              <dd>redis-cli -c -h {{ host }}</dd>
+          {% endif %}
       {% endwith %}
     </dl>
 {% endblock %}

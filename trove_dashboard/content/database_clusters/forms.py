@@ -41,7 +41,7 @@ class LaunchForm(forms.SelfHandlingForm):
             'class': 'switchable',
             'data-slug': 'datastore'
         }))
-    mongodb_flavor = forms.ChoiceField(
+    flavor = forms.ChoiceField(
         label=_("Flavor"),
         help_text=_("Size of instance to launch."),
         required=False,
@@ -96,22 +96,23 @@ class LaunchForm(forms.SelfHandlingForm):
             'class': 'switched',
             'data-switch-on': 'datastore',
         }))
-    num_instances_per_shards = forms.IntegerField(
-        label=_("Instances Per Shard"),
+    num_instances = forms.IntegerField(
+        label=_("Number of Instances"),
         initial=3,
         required=False,
-        help_text=_("Number of instances per shard. (Read only)"),
+        help_text=_("Number of instances in the cluster."),
         widget=forms.TextInput(attrs={
-            'readonly': 'readonly',
             'class': 'switched',
             'data-switch-on': 'datastore',
         }))
 
     # (name of field variable, label)
-    mongodb_fields = [
-        ('mongodb_flavor', _('Flavor')),
+    default_fields = [
+        ('flavor', _('Flavor')),
+        ('num_instances', _('Number of Instances'))
+    ]
+    mongodb_fields = default_fields + [
         ('num_shards', _('Number of Shards')),
-        ('num_instances_per_shards', _('Instances Per Shard'))
     ]
     vertica_fields = [
         ('num_instances_vertica', ('Number of Instances')),
@@ -134,18 +135,25 @@ class LaunchForm(forms.SelfHandlingForm):
         if datastore_field_value:
             datastore = datastore_field_value.split(',')[0]
 
-            if db_capability.is_mongodb_datastore(datastore):
-                if self.data.get("num_shards", 0) < 1:
-                    msg = _("The number of shards must be greater than 1.")
-                    self._errors["num_shards"] = self.error_class([msg])
-
-            elif db_capability.is_vertica_datastore(datastore):
+            if db_capability.is_vertica_datastore(datastore):
                 if not self.data.get("vertica_flavor", None):
                     msg = _("The flavor must be specified.")
                     self._errors["vertica_flavor"] = self.error_class([msg])
                 if not self.data.get("root_password", None):
                     msg = _("Password for root user must be specified.")
                     self._errors["root_password"] = self.error_class([msg])
+            else:
+                if not self.data.get("flavor", None):
+                    msg = _("The flavor must be specified.")
+                    self._errors["flavor"] = self.error_class([msg])
+                if int(self.data.get("num_instances", 0)) < 1:
+                    msg = _("The number of instances must be greater than 1.")
+                    self._errors["num_instances"] = self.error_class([msg])
+
+                if db_capability.is_mongodb_datastore(datastore):
+                    if int(self.data.get("num_shards", 0)) < 1:
+                        msg = _("The number of shards must be greater than 1.")
+                        self._errors["num_shards"] = self.error_class([msg])
 
         return self.cleaned_data
 
@@ -166,7 +174,8 @@ class LaunchForm(forms.SelfHandlingForm):
         valid_flavor = []
         for ds in self.datastores(request):
             # TODO(michayu): until capabilities lands
-            if db_capability.is_mongodb_datastore(ds.name):
+            if (db_capability.is_mongodb_datastore(ds.name) or
+                    db_capability.is_redis_datastore(ds.name)):
                 versions = self.datastore_versions(request, ds.name)
                 for version in versions:
                     if version.name == "inactive":
@@ -174,7 +183,7 @@ class LaunchForm(forms.SelfHandlingForm):
                     valid_flavor = self.datastore_flavors(request, ds.name,
                                                           versions[0].name)
                     if valid_flavor:
-                        self.fields['mongodb_flavor'].choices = sorted(
+                        self.fields['flavor'].choices = sorted(
                             [(f.id, "%s" % f.name) for f in valid_flavor])
 
             if db_capability.is_vertica_datastore(ds.name):
@@ -224,8 +233,7 @@ class LaunchForm(forms.SelfHandlingForm):
         datastores = []
         for ds in self.datastores(request):
             # TODO(michayu): until capabilities lands
-            if (db_capability.is_vertica_datastore(ds.name)
-                    or db_capability.is_mongodb_datastore(ds.name)):
+            if db_capability.is_cluster_capable_datastore(ds.name):
                 datastores.append(ds)
         return datastores
 
@@ -269,6 +277,8 @@ class LaunchForm(forms.SelfHandlingForm):
             fields = self.mongodb_fields
         elif db_capability.is_vertica_datastore(datastore):
             fields = self.vertica_fields
+        else:
+            fields = self.default_fields
 
         for field in fields:
             attr_key = 'data-datastore-' + selection_text
@@ -282,8 +292,8 @@ class LaunchForm(forms.SelfHandlingForm):
             datastore = data['datastore'].split('-')[0]
             datastore_version = data['datastore'].split('-')[1]
 
-            final_flavor = data['mongodb_flavor']
-            num_instances = data['num_instances_per_shards']
+            final_flavor = data['flavor']
+            num_instances = data['num_instances']
             root_password = None
             if db_capability.is_vertica_datastore(datastore):
                 final_flavor = data['vertica_flavor']
