@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block main %}
+<hr>
+<div class="help_text">
+  {% trans "Specify the instances to be added to the cluster.  When all the instances are specified click 'Grow Cluster' to perform the grow operation." %}
+</div>
+<div class="row">
+  <div class="col-sm-12">
+  {{ table.render }}
+  </div>
+</div>
+{% endblock %}

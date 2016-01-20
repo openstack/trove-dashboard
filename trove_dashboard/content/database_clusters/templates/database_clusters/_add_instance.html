@@ -1,0 +1,8 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-body-right %}
+  <p>{% trans "Specify the details of the instance to be added to the cluster." %}</p>
+  <p>{% trans "The name field is optional.   If the field is left blank a name will be generated when the cluster is grown." %}</p>
+  <p>{% trans "The 'Instance Type' and 'Related To' fields are datastore specific and optional.  See the Trove documentation for more information on using these fields." %}</p>
+{% endblock %}

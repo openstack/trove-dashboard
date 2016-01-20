@@ -76,8 +76,25 @@ def cluster_create(request, name, volume, flavor, num_instances,
         instances=instances)
 
 
-def cluster_add_shard(request, cluster_id):
-    return troveclient(request).clusters.add_shard(cluster_id)
+def cluster_grow(request, cluster_id, new_instances):
+    instances = []
+    for new_instance in new_instances:
+        instance = {}
+        instance["flavorRef"] = new_instance.flavor_id
+        if new_instance.volume > 0:
+            instance["volume"] = {'size': new_instance.volume}
+        if new_instance.name:
+            instance["name"] = new_instance.name
+        if new_instance.type:
+            instance["type"] = new_instance.type
+        if new_instance.related_to:
+            instance["related_to"] = new_instance.related_to
+        instances.append(instance)
+    return troveclient(request).clusters.grow(cluster_id, instances)
+
+
+def cluster_shrink(request, cluster_id, instances):
+    return troveclient(request).clusters.shrink(cluster_id, instances)
 
 
 def create_cluster_root(request, cluster_id, password):
