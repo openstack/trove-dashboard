@@ -190,7 +190,7 @@ def datastore_flavors(request, datastore_name=None,
                 list_datastore_version_associated_flavors(datastore_name,
                                                           datastore_version)
         except Exception:
-            LOG.warn("Failed to retrieve datastore specific flavors")
+            LOG.warning("Failed to retrieve datastore specific flavors")
     return flavor_list(request)
 
 
