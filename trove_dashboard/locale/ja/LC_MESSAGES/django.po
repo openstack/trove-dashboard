@@ -1,0 +1,814 @@
+# Akihiro Motoki <amotoki@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-02-02 09:19+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-02-05 05:54+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Zanata 3.7.3\n"
+
+msgid ""
+"\n"
+"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
+"  clicking the button, or dragging and dropping. You can change the\n"
+"  NIC order by dragging and dropping as well.\n"
+"  "
+msgstr ""
+"\n"
+"ボタンを押すかドラッグアンドドロップで、「利用可能なネットワーク」から\n"
+"「選択済みネットワーク」にネットワークを移動します。\n"
+"ドラッグアンドドロップにより\n"
+"NIC の順番を変更できます。"
+
+msgid "\"Clusters\""
+msgstr "クラスター"
+
+msgid "\"Launch Cluster\""
+msgstr "クラスターの起動"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM"
+msgstr "%(name)s | %(RAM)s RAM"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s RAM | %(instances)s インスタンス"
+
+msgid "-"
+msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> The new value must be greater than the "
+"existing volume size."
+msgstr ""
+"<strong>注意</strong>: 新しいボリュームサイズは現在のサイズよりも大きくなけれ"
+"ばいけません。"
+
+msgid ""
+"<strong>Please note:</strong> The value specified in the Volume Size field "
+"should be greater than 0, however, some configurations do not support "
+"specifying volume size. If specifying the volume size results in an error "
+"stating volume support is not enabled, enter 0."
+msgstr ""
+"<strong>注意:</strong> ボリュームサイズ欄では 0 より大きい値を指定すべきです"
+"が、設定によってはボリュームサイズの指定に対応していない場合があります。ボ"
+"リュームサイズを指定した際に、ボリューム側でのサポートが有効になっていないと"
+"のエラーになる場合は、0 を入力してください。"
+
+msgid "A backup must be selected!"
+msgstr "バックアップを選択する必要があります。"
+
+msgid "A master instance must be selected!"
+msgstr "マスターインスタンスを選択する必要があります"
+
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr "稼働中"
+
+msgid "Add Shard"
+msgstr "シャードの追加"
+
+#, python-format
+msgid "Added shard to \"%s\""
+msgstr "シャードを \"%s\" に追加しました"
+
+msgid "Advanced"
+msgstr "高度な設定"
+
+msgid ""
+"Allow the user to connect from this host\n"
+"    only. If not provided this user will be allowed to connect from "
+"anywhere.\n"
+"    "
+msgstr ""
+"このホストからの接続を許可します。\n"
+"指定しない場合、どこからでも接続できます。\n"
+"    "
+
+msgid "Allowed Host"
+msgstr "許可ホスト"
+
+msgid "Allowed Host (optional)"
+msgstr "許可ホスト (省略可)"
+
+msgid "At least one network must be specified."
+msgstr "少なくとも 1 つのネットワークを指定する必要があります。"
+
+msgid "Available networks"
+msgstr "利用可能なネットワーク"
+
+msgid "Backup"
+msgstr "バックアップ"
+
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr "バックアップ"
+
+msgid "Backup Database"
+msgstr "データベースのバックアップ"
+
+msgid "Backup Details"
+msgstr "バックアップの詳細"
+
+msgid "Backup Details: {{ backup.name }}"
+msgstr "バックアップの詳細: {{ backup.name }}"
+
+msgid "Backup Duration"
+msgstr "バックアップ生存期間"
+
+msgid "Backup File"
+msgstr "バックアップファイル"
+
+msgid "Backup File Location"
+msgstr "バックアップファイルの場所"
+
+msgid "Backup Name"
+msgstr "バックアップ名"
+
+msgid "Backup Overview"
+msgstr "バックアップの概要"
+
+msgid "Backups"
+msgstr "バックアップ"
+
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr "実行待ち"
+
+msgctxt "Current status of a Database Instance"
+msgid "Build"
+msgstr "作成中"
+
+msgctxt "Current status of a Database Backup"
+msgid "Building"
+msgstr "作成中"
+
+msgid "Cancel"
+msgstr "取り消し"
+
+msgid "Choose a new instance flavor."
+msgstr "新しいインスタンスフレーバーを選択してください。"
+
+msgid "Choose initial state."
+msgstr "初期状態を選択してください"
+
+msgid "Cluster Name"
+msgstr "クラスター名"
+
+msgid "Cluster Size"
+msgstr "クラスターサイズ"
+
+msgid "Clusters"
+msgstr "クラスター"
+
+msgid "Comma separated list of databases to create"
+msgstr "作成するデータベースのリスト（コンマ区切り）"
+
+msgctxt "Current status of a Database Backup"
+msgid "Completed"
+msgstr "完了"
+
+msgid "Connection Examples"
+msgstr "接続例"
+
+msgid "Connection Information"
+msgstr "接続情報"
+
+msgid "Create Backup"
+msgstr "バックアップの作成"
+
+msgid ""
+"Create an optional initial user.\n"
+"   This user will have access to all databases you create."
+msgstr ""
+"オプションで、初期ユーザーを作成します。\n"
+"このユーザーは作成するすべてのデータベースへアクセスできます。"
+
+msgid "Created"
+msgstr "作成時刻"
+
+msgid "Current Size (GB)"
+msgstr "現在のサイズ (GB)"
+
+msgid "Current Task"
+msgstr "現在のタスク"
+
+msgid "DATABASE"
+msgstr "DATABASE"
+
+msgid "Database"
+msgstr "データベース"
+
+msgid "Database Backups"
+msgstr "データベースのバックアップ"
+
+msgid "Database Info"
+msgstr "データーベースの情報"
+
+msgid "Database Instance"
+msgstr "データベースインスタンス"
+
+msgid "Database Name"
+msgstr "データベース名"
+
+msgid "Database Port"
+msgstr "データベースのポート番号"
+
+msgid "Databases"
+msgstr "データベース"
+
+msgid "Datastore"
+msgstr "データストア"
+
+msgid "Datastore Version"
+msgstr "データストアバージョン"
+
+msgid "Delete Backup"
+msgid_plural "Delete Backups"
+msgstr[0] "バックアップの削除"
+
+msgid "Delete Cluster"
+msgid_plural "Delete Clusters"
+msgstr[0] "クラスターの削除"
+
+msgid "Delete Database"
+msgid_plural "Delete Databases"
+msgstr[0] "データベースの削除"
+
+msgctxt "Current status of a Database Backup"
+msgid "Delete Failed"
+msgstr "削除に失敗しました"
+
+msgid "Delete Instance"
+msgid_plural "Delete Instances"
+msgstr[0] "インスタンスの削除"
+
+msgid "Delete User"
+msgid_plural "Delete Users"
+msgstr[0] "ユーザーの削除"
+
+msgid "Deleted Backup"
+msgid_plural "Deleted Backups"
+msgstr[0] "バックアップを削除しました"
+
+msgid "Deleted Database"
+msgid_plural "Deleted Databases"
+msgstr[0] "データベースを削除しました"
+
+msgid "Deleted User"
+msgid_plural "Deleted Users"
+msgstr[0] "ユーザーを削除しました"
+
+msgid "Deleted cluster is not recoverable."
+msgstr "削除されたクラスターは元に戻すことはできません。"
+
+msgid "Deleted instances are not recoverable."
+msgstr "削除されたインスタンスは元に戻すことはできません。"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Detach Replica"
+msgid_plural "Detach Replicas"
+msgstr[0] "複製の切断"
+
+msgid "Details"
+msgstr "詳細"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Download Backup"
+msgstr "バックアップのダウンロード"
+
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr "エラー"
+
+msgid "Error creating database backup."
+msgstr "データベースのバックアップ作成でエラーが発生しました。"
+
+msgid "Error deleting database on instance."
+msgstr "インスタンスからのデータベースの削除でエラーが発生しました。"
+
+msgid "Error deleting database user."
+msgstr "データベースユーザーの削除でエラーが発生しました。"
+
+msgid "Error getting database backup list."
+msgstr "データベースのバックアップ一覧の取得でエラーが発生しました。"
+
+msgctxt "Current status of a Database Backup"
+msgid "Failed"
+msgstr "失敗"
+
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr "失敗"
+
+msgid "Flavor"
+msgstr "フレーバー"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "Host"
+msgstr "ホスト"
+
+msgid "Host or IP that the user is allowed to connect through."
+msgstr "このユーザーで許可される接続元のホスト名または IP アドレス"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Incremental"
+msgstr "差分"
+
+msgid "Incremental Backup"
+msgstr "差分バックアップ"
+
+msgid "Information"
+msgstr "情報"
+
+msgid "Initial Admin User"
+msgstr "最初の管理ユーザー"
+
+msgid "Initial Databases"
+msgstr "初期データベース"
+
+msgid "Initial Volume Size"
+msgstr "初期ボリュームサイズ"
+
+msgid "Initial admin user to add"
+msgstr "追加する初期管理ユーザー"
+
+msgid "Initialize Databases"
+msgstr "データベースの初期化"
+
+msgid "Instance Name"
+msgstr "インスタンス名"
+
+msgid "Instances"
+msgstr "インスタンス"
+
+msgid "Instances Per Shard"
+msgstr "シャード当たりのインスタンス数"
+
+msgid "Is a Replica Of"
+msgstr "インスタンスの複製元"
+
+msgid "Launch"
+msgstr "起動"
+
+msgid "Launch Cluster"
+msgstr "クラスターの起動"
+
+msgid "Launch Database"
+msgstr "データベースの起動"
+
+msgid "Launch Instance"
+msgstr "インスタンスの起動"
+
+msgid "Launch instance with these networks"
+msgstr "これらのネットワークでインスタンスを起動します。"
+
+#, python-format
+msgid "Launched %(count)s named \"%(name)s\"."
+msgstr "名前が \"%(name)s\" の %(count)s を起動しました。"
+
+#, python-format
+msgid "Launched cluster \"%s\""
+msgstr "クラスター \"%s\" を起動しました。"
+
+msgid "Management Console"
+msgstr "管理コンソール"
+
+msgid "Master Instance Name"
+msgstr "マスターインスタンス名"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Network"
+msgstr "ネットワーク"
+
+msgid "Network attached to instance."
+msgstr "インスタンスに接続するネットワーク。"
+
+msgid "Networking"
+msgstr "ネットワーク"
+
+msgid "Networks"
+msgstr "ネットワーク"
+
+msgctxt "Current status of a Database Backup"
+msgid "New"
+msgstr "新規作成"
+
+msgid "New Flavor"
+msgstr "新しいフレーバー"
+
+msgid "New Password"
+msgstr "新しいパスワード"
+
+msgid "New Size (GB)"
+msgstr "新しいサイズ (GB)"
+
+msgid "New password for cluster access."
+msgstr "クラスターへのアクセスに使用する新しいパスワード。"
+
+msgid "New size for volume must be greater than current size."
+msgstr "新しいボリュームサイズは現在のサイズよりも大きい必要があります。"
+
+msgid "No backups available"
+msgstr "バックアップがありません"
+
+msgid "No flavors available"
+msgstr "利用可能なフレーバーがありません"
+
+msgid "No instances available"
+msgstr "インスタンスがありません"
+
+msgid "None"
+msgstr "なし"
+
+msgid "Not Assigned"
+msgstr "割り当てなし"
+
+msgid "Not Found"
+msgstr "見つかりません"
+
+msgid "Not available"
+msgstr "利用できません"
+
+msgid "Number of Instances"
+msgstr "インスタンス数"
+
+msgid "Number of Shards"
+msgstr "シャード数"
+
+msgid "Number of instances in the cluster. (Read only)"
+msgstr "クラスターのインスタンス数 (読み出し専用)"
+
+msgid "Number of instances per shard. (Read only)"
+msgstr "シャード当たりのインスタンス数 (読み出し専用)"
+
+msgid "Number of shards. (Read only)"
+msgstr "シャード数 (読み出し専用)"
+
+msgid "Old Flavor"
+msgstr "現在のフレーバー"
+
+msgid "Optional Backup Description"
+msgstr "バックアップの説明（省略可）"
+
+msgid "Optional parent backup"
+msgstr "親バックアップ（省略可）"
+
+msgid ""
+"Optionally choose to create this database using a previous backup, or as a "
+"replica of another database instance."
+msgstr ""
+"オプションで、以前のバックアップまたは他のデータベースインスタンスの複製を使"
+"用してこのデータベースを作成するように選択することもできます。"
+
+msgid "Optionally provide a comma separated list of databases to create:"
+msgstr ""
+"オプションで、作成するデータベースをコンマ区切りのリストで指定できます: "
+
+msgid "Overview"
+msgstr "概要"
+
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+msgid "Parent Backup"
+msgstr "親バックアップ"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Password (required)"
+msgstr "パスワード (必須)"
+
+msgid "Password for root user must be specified."
+msgstr "ルートユーザーのパスワードを指定する必要があります。"
+
+msgid "Password for root user."
+msgstr "ルートユーザーのパスワード。"
+
+msgid "RAM"
+msgstr "メモリー"
+
+msgctxt "Current status of a Database Instance"
+msgid "Reboot"
+msgstr "再起動"
+
+msgid "Replica Detached"
+msgid_plural "Replicas Detached"
+msgstr[0] "複製が切断されました"
+
+msgid "Replicas"
+msgstr "複製"
+
+msgid "Replicate from Instance"
+msgstr "インスタンスから複製"
+
+msgid "Replication"
+msgstr "レプリケーション"
+
+msgid "Reset Root Password"
+msgstr "ルートパスワードの再設定"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resize"
+msgstr "リサイズ"
+
+msgid "Resize Database Instance"
+msgstr "データベースインスタンスのリサイズ"
+
+msgid "Resize Database Volume"
+msgstr "データベースボリュームのリサイズ"
+
+msgid "Resize Instance"
+msgstr "インスタンスのリサイズ"
+
+msgid "Resize Volume"
+msgstr "ボリュームのリサイズ"
+
+#, python-format
+msgid "Resizing instance \"%s\""
+msgstr "インスタンス \"%s\" をリサイズ中です"
+
+#, python-format
+msgid "Resizing volume \"%s\""
+msgstr "ボリューム \"%s\" をリサイズ中"
+
+msgid "Restart Instance"
+msgid_plural "Restart Instances"
+msgstr[0] "インスタンスの再起動"
+
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr "再起動が必要です"
+
+msgid "Restarted Instance"
+msgid_plural "Restarted Instances"
+msgstr[0] "インスタンスを再起動しました"
+
+msgid "Restarted instances will lose any data not saved in persistent storage."
+msgstr ""
+"インスタンスが再起動されると、永続ストレージに保存されていないデータはすべて"
+"失われます。 "
+
+msgid "Restore Backup"
+msgstr "バックアップのリストア"
+
+msgid "Restore from Backup"
+msgstr "バックアップからのリストア"
+
+msgid "Root Password"
+msgstr "ルートパスワード"
+
+#, python-format
+msgid "Root password updated for cluster \"%s\""
+msgstr "クラスター \"%s\" のルートパスワードを更新しました。"
+
+msgctxt "Current status of a Database Backup"
+msgid "Saving"
+msgstr "保存中"
+
+#, python-format
+msgid "Scheduled backup \"%(name)s\"."
+msgstr "バックアップ \"%(name)s\" の作成を予約しました。"
+
+msgid "Scheduled deletion of Cluster"
+msgid_plural "Scheduled deletion of Clusters"
+msgstr[0] "クラスターの削除を予約しました"
+
+msgid "Scheduled deletion of Instance"
+msgid_plural "Scheduled deletion of Instances"
+msgstr[0] "インスタンスの削除を予約しました。"
+
+msgid "Select a backup to restore"
+msgstr "リストアするバックアップを選択してください"
+
+msgid "Select a master instance"
+msgstr "マスターインスタンスを選択してください"
+
+msgid "Select a new flavor"
+msgstr "新しいフレーバーを選択してください"
+
+msgid "Select backup"
+msgstr "バックアップを選択してください"
+
+msgid "Select datastore type and version"
+msgstr "データストアの種別とバージョンを選択してください"
+
+msgid "Select instance"
+msgstr "インスタンスを選択してください"
+
+msgid "Select networks for your instance."
+msgstr "インスタンスのネットワークを選択します。"
+
+msgid "Select parent backup"
+msgstr "親バックアップを選択してください"
+
+msgid "Selected networks"
+msgstr "選択済みネットワーク"
+
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr "シャットダウン"
+
+msgid "Size"
+msgstr "サイズ"
+
+msgid "Size of image to launch."
+msgstr "起動するイメージの容量"
+
+msgid "Size of instance to launch."
+msgstr "起動するインスタンスのサイズ。"
+
+msgid "Size of the volume in GB."
+msgstr "GB 単位のボリュームサイズ"
+
+msgid "Source for Initial State"
+msgstr "初期状態の元情報"
+
+msgid "Specify a new flavor for the database instance."
+msgstr "データベースインスタンスの新しいフレーバーを指定します。"
+
+msgid "Specify the details for adding additional shards."
+msgstr "追加するシャードの詳細を指定します。"
+
+msgid "Specify the details for launching an instance."
+msgstr "インスタンスを起動するために詳細を指定します。"
+
+msgid "Specify the details for the database backup."
+msgstr "データベースバックアップの詳細を指定します。"
+
+msgid "Specify the new root password for vertica cluster."
+msgstr "vertica クラスターの新しいルートパスワードを指定します。"
+
+msgid "Specify the new volume size for the database instance."
+msgstr "データベースインスタンスのボリュームの新しいサイズを指定します。"
+
+msgid "Specs"
+msgstr "スペック"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "The flavor must be specified."
+msgstr "フレーバーを指定する必要があります。"
+
+msgid "The number of shards must be greater than 1."
+msgstr "シャード数は 1 より大きくなければいけません。"
+
+msgid "Type"
+msgstr "種別"
+
+msgid "Type and version of datastore."
+msgstr "データストアの種別とバージョン"
+
+msgid "USERNAME"
+msgstr "USERNAME"
+
+#, python-format
+msgid "Unable to add shard. %s"
+msgstr "シャードを追加できません。 %s"
+
+msgid "Unable to find backup!"
+msgstr "バックアップが見つかりません！"
+
+msgid "Unable to find master instance!"
+msgstr "マスターインスタンスが見つかりません。"
+
+msgid "Unable to get database backup data."
+msgstr "データベースバックアップの一覧を取得できません。"
+
+msgid "Unable to get databases data."
+msgstr "データベースの一覧を取得できません。"
+
+msgid "Unable to get instances data."
+msgstr "インスタンスのデータを取得できません。"
+
+msgid "Unable to get user data."
+msgstr "ユーザーの一覧を取得できません。"
+
+#, python-format
+msgid "Unable to launch %(count)s named \"%(name)s\"."
+msgstr "名前が \"%(name)s\" の %(count)s が起動できません。"
+
+#, python-format
+msgid "Unable to launch cluster. %s"
+msgstr "クラスターを起動できません。 %s"
+
+msgid "Unable to list database backups for parent."
+msgstr "親バックアップとなるデータベースバックアップの一覧を取得できません。"
+
+msgid "Unable to list database instances to backup."
+msgstr "バックアップ候補のデータベースインスタンスの一覧を取得できません。"
+
+msgid "Unable to obtain datastore versions."
+msgstr "データストアのバージョン一覧を取得できません。"
+
+msgid "Unable to obtain datastores."
+msgstr "データストアの一覧を取得できません。"
+
+msgid "Unable to obtain flavors."
+msgstr "フレーバー一覧を取得できません。"
+
+#, python-format
+msgid "Unable to reset password. %s"
+msgstr "パスワードを再設定できません。 %s"
+
+#, python-format
+msgid "Unable to resize instance. %s"
+msgstr "インスタンスをリサイズできません。 %s"
+
+#, python-format
+msgid "Unable to resize volume. %s"
+msgstr "ボリュームをリサイズできません。%s"
+
+msgid "Unable to retrieve cluster details."
+msgstr "クラスターの詳細を取得できません。"
+
+msgid "Unable to retrieve database clusters."
+msgstr "データベースクラスターの一覧を取得できません。"
+
+msgid "Unable to retrieve database instances."
+msgstr "データベースインスタンスを取得できません。"
+
+msgid "Unable to retrieve database size information."
+msgstr "データベースのサイズ情報を取得できません。"
+
+#, python-format
+msgid "Unable to retrieve details for backup: %s"
+msgstr "バックアップの詳細を取得できません: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database cluster: %s"
+msgstr "データベースクラスターの詳細を取得できません: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database instance: %s"
+msgstr "データベースインスタンスの詳細を取得できません: %s"
+
+#, python-format
+msgid "Unable to retrieve details for parent backup: %s"
+msgstr "親バックアップ %s の詳細を取得できません。"
+
+msgid "Unable to retrieve flavors."
+msgstr "フレーバーの一覧を取得できません。"
+
+msgid "Unable to retrieve instance details."
+msgstr "インスタンスの詳細を取得できません。"
+
+msgid "Unable to retrieve networks."
+msgstr "ネットワーク一覧を取得できません。"
+
+msgid "Updated"
+msgstr "更新日時"
+
+msgid "User Name"
+msgstr "ユーザー名"
+
+msgid "Username (required)"
+msgstr "ユーザー名 (必須)"
+
+msgid "Users"
+msgstr "ユーザー"
+
+msgid "Volume Size"
+msgstr "ボリュームサイズ"
+
+msgid ""
+"You can perform an incremental backup by specifying a parent backup. "
+"<strong>However,</strong> not all databases support incremental backups in "
+"which case this operation will result in an error."
+msgstr ""
+"親バックアップを指定することで差分バックアップを行うことができます。<strong>"
+"ただし</strong>、すべてのデータベースが差分バックアップに対応しているわけでは"
+"なく、その場合にはこのバックアップ操作はエラーになります。"
+
+msgid "You must select a datastore type and version."
+msgstr "データストアの種別とバージョンを選択する必要があります。"
+
+msgid "You must specify a password if you create a user."
+msgstr "ユーザーを作成する場合は、パスワードを指定する必要があります。"
+
+msgid "You must specify at least one database if you create a user."
+msgstr ""
+"ユーザーを作成する場合は、データベースを少なくとも 1 つ指定する必要がありま"
+"す。"
+
+msgid "instance"
+msgstr "インスタンス"
