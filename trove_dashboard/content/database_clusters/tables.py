@@ -128,6 +128,8 @@ def get_size(cluster):
                 'RAM': sizeformat.mbformat(cluster.full_flavor.ram),
                 'instances': len(cluster.instances)}
         return size_string % vals
+    elif hasattr(cluster, "instances"):
+        return "%s instances" % len(cluster.instances)
     return _("Not available")
 
 

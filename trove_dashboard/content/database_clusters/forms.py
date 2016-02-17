@@ -174,28 +174,19 @@ class LaunchForm(forms.SelfHandlingForm):
         valid_flavor = []
         for ds in self.datastores(request):
             # TODO(michayu): until capabilities lands
-            if (db_capability.is_mongodb_datastore(ds.name) or
-                    db_capability.is_redis_datastore(ds.name)):
-                versions = self.datastore_versions(request, ds.name)
-                for version in versions:
-                    if version.name == "inactive":
-                        continue
-                    valid_flavor = self.datastore_flavors(request, ds.name,
-                                                          versions[0].name)
-                    if valid_flavor:
-                        self.fields['flavor'].choices = sorted(
-                            [(f.id, "%s" % f.name) for f in valid_flavor])
-
+            field_name = 'flavor'
             if db_capability.is_vertica_datastore(ds.name):
-                versions = self.datastore_versions(request, ds.name)
-                for version in versions:
-                    if version.name == "inactive":
-                        continue
-                    valid_flavor = self.datastore_flavors(request, ds.name,
-                                                          versions[0].name)
-                    if valid_flavor:
-                        self.fields['vertica_flavor'].choices = sorted(
-                            [(f.id, "%s" % f.name) for f in valid_flavor])
+                field_name = 'vertica_flavor'
+
+            versions = self.datastore_versions(request, ds.name)
+            for version in versions:
+                if version.name == "inactive":
+                    continue
+                valid_flavor = self.datastore_flavors(request, ds.name,
+                                                      versions[0].name)
+                if valid_flavor:
+                    self.fields[field_name].choices = sorted(
+                        [(f.id, "%s" % f.name) for f in valid_flavor])
 
     @memoized.memoized_method
     def populate_network_choices(self, request):

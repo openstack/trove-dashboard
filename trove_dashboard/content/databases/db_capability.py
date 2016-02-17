@@ -14,14 +14,19 @@
 
 
 MONGODB = "mongodb"
+PERCONA_CLUSTER = "pxc"
 REDIS = "redis"
 VERTICA = "vertica"
 
-_cluster_capable_datastores = (MONGODB, REDIS, VERTICA)
+_cluster_capable_datastores = (MONGODB, PERCONA_CLUSTER, REDIS, VERTICA)
 
 
 def is_mongodb_datastore(datastore):
     return (datastore is not None) and (MONGODB in datastore.lower())
+
+
+def is_percona_cluster_datastore(datastore):
+    return (datastore is not None) and (PERCONA_CLUSTER in datastore.lower())
 
 
 def is_redis_datastore(datastore):
