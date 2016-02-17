@@ -1,0 +1,7 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-body-right %}
+  <p>{% trans "Specify a new name, new password or new host name for the user." %}</p>
+  <p>{% trans "At least one of the new fields must be changed." %}</p>
+{% endblock %}

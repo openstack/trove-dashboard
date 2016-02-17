@@ -19,6 +19,7 @@ from trove_dashboard.content.databases import views
 
 
 INSTANCES = r'^(?P<instance_id>[^/]+)/%s$'
+USERS = r'^(?P<instance_id>[^/]+)/(?P<user_name>[^/]+)/%s$'
 
 
 urlpatterns = patterns(
@@ -29,5 +30,11 @@ urlpatterns = patterns(
     url(INSTANCES % 'resize_volume', views.ResizeVolumeView.as_view(),
         name='resize_volume'),
     url(INSTANCES % 'resize_instance', views.ResizeInstanceView.as_view(),
-        name='resize_instance')
+        name='resize_instance'),
+    url(INSTANCES % 'create_user', views.CreateUserView.as_view(),
+        name='create_user'),
+    url(USERS % 'edit_user', views.EditUserView.as_view(),
+        name='edit_user'),
+    url(USERS % 'access_detail', views.AccessDetailView.as_view(),
+        name='access_detail'),
 )
