@@ -279,8 +279,7 @@ class LaunchForm(forms.SelfHandlingForm):
     @sensitive_variables('data')
     def handle(self, request, data):
         try:
-            datastore = data['datastore'].split('-')[0]
-            datastore_version = data['datastore'].split('-')[1]
+            datastore, datastore_version = data['datastore'].split('-', 1)
 
             final_flavor = data['mongodb_flavor']
             num_instances = data['num_instances_per_shards']
