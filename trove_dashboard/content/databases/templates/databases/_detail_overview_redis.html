@@ -12,8 +12,8 @@
           {% else %}
               <dd>{{ host }}</dd>
               <dt>{% trans "Connection Examples" %}</dt>
-              <dd>redis-cli -h {{ host }}</dd>
-          {% endif %} <!-- ends else block -->
+              <dd>redis-cli -c -h {{ host }}</dd>
+          {% endif %}
       {% endwith %}
     </dl>
 {% endblock %}
