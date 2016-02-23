@@ -1,0 +1,15 @@
+{% extends "horizon/common/_modal.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block modal-header %}{% trans "Log Contents" %}{% endblock %}
+
+{% block modal-body %}
+<pre class="logs">
+  {{ log.data }}
+</pre>
+{% endblock %}
+
+{% block modal-footer %}
+  <a href="{% url 'horizon:project:databases:index' %}" class="btn btn-default secondary cancel close">{% trans "Close" %}</a>
+{% endblock %}

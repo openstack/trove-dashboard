@@ -297,3 +297,31 @@ def datastore_list(request):
 
 def datastore_version_list(request, datastore):
     return troveclient(request).datastore_versions.list(datastore)
+
+
+def log_list(request, instance_id):
+    return troveclient(request).instances.log_list(instance_id)
+
+
+def log_enable(request, instance_id, log_name):
+    return troveclient(request).instances.log_enable(instance_id, log_name)
+
+
+def log_disable(request, instance_id, log_name):
+    return troveclient(request).instances.log_disable(instance_id, log_name)
+
+
+def log_publish(request, instance_id, log_name):
+    return troveclient(request).instances.log_publish(instance_id, log_name)
+
+
+def log_discard(request, instance_id, log_name):
+    return troveclient(request).instances.log_discard(instance_id, log_name)
+
+
+def log_tail(request, instance_id, log_name, publish, lines, swift=None):
+    return troveclient(request).instances.log_generator(instance_id,
+                                                        log_name,
+                                                        publish=publish,
+                                                        lines=lines,
+                                                        swift=swift)

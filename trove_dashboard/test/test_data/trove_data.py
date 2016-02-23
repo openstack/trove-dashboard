@@ -367,6 +367,42 @@ VERSION_VERTICA_7_1 = {
     "id": "600a6d52-8347-4e00-8e4c-f4fa9cf96af1"
 }
 
+LOG_1 = {
+    "name": "guest",
+    "type": "SYS",
+    "status": "Partial",
+    "published": 5000,
+    "pending": 100,
+    "container": "guest_container"
+}
+
+LOG_2 = {
+    "name": "slow_query",
+    "type": "USER",
+    "status": "Disabled",
+    "published": 0,
+    "pending": 0,
+    "container": "None"
+}
+
+LOG_3 = {
+    "name": "error",
+    "type": "SYS",
+    "status": "Unavailable",
+    "published": 0,
+    "pending": 0,
+    "container": "None"
+}
+
+LOG_4 = {
+    "name": "general",
+    "type": "USER",
+    "status": "Ready",
+    "published": 0,
+    "pending": 1000,
+    "container": "None"
+}
+
 
 def data(TEST):
     cluster1 = clusters.Cluster(clusters.Clusters(None),
@@ -413,6 +449,11 @@ def data(TEST):
         DatastoreVersion(datastores.DatastoreVersions(None),
                          VERSION_VERTICA_7_1)
 
+    log1 = instances.DatastoreLog(instances.Instances(None), LOG_1)
+    log2 = instances.DatastoreLog(instances.Instances(None), LOG_2)
+    log3 = instances.DatastoreLog(instances.Instances(None), LOG_3)
+    log4 = instances.DatastoreLog(instances.Instances(None), LOG_4)
+
     TEST.trove_clusters = utils.TestDataContainer()
     TEST.trove_clusters.add(cluster1)
     TEST.trove_clusters.add(cluster2)
@@ -443,3 +484,6 @@ def data(TEST):
     TEST.datastore_versions.add(version_redis_3_0)
     TEST.datastore_versions.add(version_mongodb_2_6)
     TEST.datastore_versions.add(version1)
+
+    TEST.logs = utils.TestDataContainer()
+    TEST.logs.add(log1, log2, log3, log4)
