@@ -10,8 +10,8 @@ function configure_trove_dashboard {
     cp -a ${TROVE_DASHBOARD_DIR}/trove_dashboard/enabled/* ${DEST}/horizon/openstack_dashboard/local/enabled/
     # NOTE: If locale directory does not exist, compilemessages will fail,
     # so check for an existence of locale directory is required.
-    if [ -d trove_dashboard/locale ]; then
-        (cd trove_dashboard; DJANGO_SETTINGS_MODULE=openstack_dashboard.settings ../manage.py compilemessages)
+    if [ -d ${TROVE_DASHBOARD_DIR}/trove_dashboard/locale ]; then
+        (cd ${TROVE_DASHBOARD_DIR}/trove_dashboard; DJANGO_SETTINGS_MODULE=openstack_dashboard.settings ../manage.py compilemessages)
     fi
 }
 
