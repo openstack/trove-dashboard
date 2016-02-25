@@ -23,6 +23,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
 from horizon import exceptions
+from horizon import messages
 from horizon import tables
 from horizon.templatetags import sizeformat
 from horizon.utils import filters
@@ -409,6 +410,64 @@ class ResizeInstance(tables.LinkAction):
         return urlresolvers.reverse(self.url, args=[instance_id])
 
 
+class RootAction(tables.Action):
+    def handle(self, table, request, obj_ids):
+        try:
+            username, password = api.trove.root_enable(request, obj_ids)
+            table.data[0].enabled = True
+            table.data[0].password = password
+        except Exception:
+            messages.error(request, _('There was a problem enabling root.'))
+
+
+class EnableRootAction(RootAction):
+    name = "enable_root_action"
+    verbose_name = _("Enable Root")
+
+    def allowed(self, request, instance):
+        enabled = api.trove.root_show(request, instance.id)
+        return not enabled.rootEnabled
+
+
+class ResetRootAction(RootAction):
+    name = "reset_root_action"
+    verbose_name = _("Reset Password")
+
+    def allowed(self, request, instance):
+        enabled = api.trove.root_show(request, instance.id)
+        return enabled.rootEnabled
+
+
+class ManageRoot(tables.LinkAction):
+    name = "manage_root_action"
+    verbose_name = _("Manage Root Access")
+    url = "horizon:project:databases:manage_root"
+
+    def allowed(self, request, instance):
+        return instance.status in ACTIVE_STATES
+
+    def get_link_url(self, datum=None):
+        instance_id = self.table.get_object_id(datum)
+        return urlresolvers.reverse(self.url, args=[instance_id])
+
+
+class ManageRootTable(tables.DataTable):
+    name = tables.Column('name', verbose_name=_('Instance Name'))
+    enabled = tables.Column('enabled', verbose_name=_('Root Enabled'),
+                            filters=(d_filters.yesno, d_filters.capfirst),
+                            help_text=_("Status if root was ever enabled "
+                                        "for an instance."))
+    password = tables.Column('password', verbose_name=_('Password'),
+                             help_text=_("Password is only visible "
+                                         "immediately after the root is "
+                                         "enabled or reset."))
+
+    class Meta(object):
+        name = "manage_root"
+        verbose_name = _("Manage Root")
+        row_actions = (EnableRootAction, ResetRootAction,)
+
+
 class UpdateRow(tables.Row):
     ajax = True
 
@@ -531,6 +590,7 @@ class InstancesTable(tables.DataTable):
         row_actions = (CreateBackup,
                        ResizeVolume,
                        ResizeInstance,
+                       ManageRoot,
                        RestartInstance,
                        DetachReplica,
                        DeleteInstance)

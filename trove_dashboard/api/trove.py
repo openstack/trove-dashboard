@@ -203,6 +203,15 @@ def flavor_get(request, flavor_id):
     return troveclient(request).flavors.get(flavor_id)
 
 
+def root_enable(request, instance_ids):
+    username, password = troveclient(request).root.create(instance_ids[0])
+    return username, password
+
+
+def root_show(request, instance_id):
+    return troveclient(request).root.is_root_enabled(instance_id)
+
+
 def users_list(request, instance_id):
     return troveclient(request).users.list(instance_id)
 

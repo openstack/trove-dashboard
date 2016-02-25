@@ -39,4 +39,6 @@ urlpatterns = patterns(
         name='access_detail'),
     url(INSTANCES % 'create_database', views.CreateDatabaseView.as_view(),
         name='create_database'),
+    url(INSTANCES % 'manage_root', views.ManageRootView.as_view(),
+        name='manage_root'),
 )
