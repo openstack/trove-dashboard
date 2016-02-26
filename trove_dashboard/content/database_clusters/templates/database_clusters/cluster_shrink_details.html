@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block main %}
+<hr>
+<div class="help_text">
+  {% trans "Select the instance(s) that will be removed from the cluster." %}
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    {{ table.render }}
+  </div>
+</div>
+{% endblock %}

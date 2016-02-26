@@ -23,12 +23,14 @@ from openstack_dashboard import api
 from troveclient import common
 
 from trove_dashboard import api as trove_api
+from trove_dashboard.content.database_clusters \
+    import cluster_manager
+from trove_dashboard.content.database_clusters import tables
 from trove_dashboard.test import helpers as test
 
 INDEX_URL = reverse('horizon:project:database_clusters:index')
 LAUNCH_URL = reverse('horizon:project:database_clusters:launch')
 DETAILS_URL = reverse('horizon:project:database_clusters:detail', args=['id'])
-ADD_SHARD_VIEWNAME = 'horizon:project:database_clusters:add_shard'
 RESET_PASSWORD_VIEWNAME = 'horizon:project:database_clusters:reset_password'
 
 
@@ -375,6 +377,179 @@ class ClustersTests(test.TestCase):
         res = self.client.get(details_url)
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertContains(res, cluster.ip[0])
+
+    @test.create_stubs(
+        {trove_api.trove: ('cluster_get',
+                           'cluster_grow'),
+         cluster_manager: ('get',)})
+    def test_grow_cluster(self):
+        cluster = self.trove_clusters.first()
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
+            .AndReturn(cluster)
+        cluster_volume = 1
+        flavor = self.flavors.first()
+        cluster_flavor = flavor.id
+        cluster_flavor_name = flavor.name
+        instances = [
+            cluster_manager.ClusterInstance("id1", "name1", cluster_flavor,
+                                            cluster_flavor_name,
+                                            cluster_volume, "master", None),
+            cluster_manager.ClusterInstance("id2", "name2", cluster_flavor,
+                                            cluster_flavor_name,
+                                            cluster_volume, "slave", "master"),
+            cluster_manager.ClusterInstance("id3", None, cluster_flavor,
+                                            cluster_flavor_name,
+                                            cluster_volume, None, None),
+        ]
+
+        manager = cluster_manager.ClusterInstanceManager(cluster.id)
+        manager.instances = instances
+        cluster_manager.get(cluster.id).MultipleTimes().AndReturn(manager)
+        trove_api.trove.cluster_grow(IsA(http.HttpRequest),
+                                     cluster.id,
+                                     instances)
+        self.mox.ReplayAll()
+
+        url = reverse('horizon:project:database_clusters:cluster_grow_details',
+                      args=[cluster.id])
+        res = self.client.get(url)
+        self.assertTemplateUsed(
+            res, 'project/database_clusters/cluster_grow_details.html')
+        table = res.context_data[
+            "".join([tables.ClusterGrowInstancesTable.Meta.name, '_table'])]
+        self.assertEqual(len(cluster.instances), len(table.data))
+
+        action = "".join([tables.ClusterGrowInstancesTable.Meta.name, '__',
+                          tables.ClusterGrowRemoveInstance.name, '__',
+                          'id1'])
+        self.client.post(url, {'action': action})
+        self.assertEqual(len(cluster.instances) - 1, len(table.data))
+
+        action = "".join([tables.ClusterGrowInstancesTable.Meta.name, '__',
+                          tables.ClusterGrowAction.name, '__',
+                          cluster.id])
+        res = self.client.post(url, {'action': action})
+        self.assertMessageCount(success=1)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({trove_api.trove: ('cluster_get',)})
+    def test_grow_cluster_no_instances(self):
+        cluster = self.trove_clusters.first()
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
+            .AndReturn(cluster)
+        self.mox.ReplayAll()
+
+        url = reverse('horizon:project:database_clusters:cluster_grow_details',
+                      args=[cluster.id])
+        res = self.client.get(url)
+        self.assertTemplateUsed(
+            res, 'project/database_clusters/cluster_grow_details.html')
+
+        action = "".join([tables.ClusterGrowInstancesTable.Meta.name, '__',
+                          tables.ClusterGrowAction.name, '__',
+                          cluster.id])
+        self.client.post(url, {'action': action})
+        self.assertMessageCount(info=1)
+
+    @test.create_stubs(
+        {trove_api.trove: ('cluster_get',
+                           'cluster_grow',),
+         cluster_manager: ('get',)})
+    def test_grow_cluster_exception(self):
+        cluster = self.trove_clusters.first()
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
+            .AndReturn(cluster)
+        cluster_volume = 1
+        flavor = self.flavors.first()
+        cluster_flavor = flavor.id
+        cluster_flavor_name = flavor.name
+        instances = [
+            cluster_manager.ClusterInstance("id1", "name1", cluster_flavor,
+                                            cluster_flavor_name,
+                                            cluster_volume, "master", None),
+            cluster_manager.ClusterInstance("id2", "name2", cluster_flavor,
+                                            cluster_flavor_name,
+                                            cluster_volume, "slave", "master"),
+            cluster_manager.ClusterInstance("id3", None, cluster_flavor,
+                                            cluster_flavor_name,
+                                            cluster_volume, None, None),
+        ]
+
+        manager = cluster_manager.ClusterInstanceManager(cluster.id)
+        manager.instances = instances
+        cluster_manager.get(cluster.id).MultipleTimes().AndReturn(manager)
+        trove_api.trove.cluster_grow(IsA(http.HttpRequest),
+                                     cluster.id,
+                                     instances).AndRaise(self.exceptions.trove)
+        self.mox.ReplayAll()
+
+        url = reverse('horizon:project:database_clusters:cluster_grow_details',
+                      args=[cluster.id])
+        res = self.client.get(url)
+        self.assertTemplateUsed(
+            res, 'project/database_clusters/cluster_grow_details.html')
+
+        action = "".join([tables.ClusterGrowInstancesTable.Meta.name, '__',
+                          tables.ClusterGrowAction.name, '__',
+                          cluster.id])
+        res = self.client.post(url, {'action': action})
+        self.assertMessageCount(error=1)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({trove_api.trove: ('cluster_get',
+                                          'cluster_shrink')})
+    def test_shrink_cluster(self):
+        cluster = self.trove_clusters.first()
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
+            .MultipleTimes().AndReturn(cluster)
+        instance_id = cluster.instances[0]['id']
+        cluster_instances = [{'id': instance_id}]
+        trove_api.trove.cluster_shrink(IsA(http.HttpRequest),
+                                       cluster.id,
+                                       cluster_instances)
+        self.mox.ReplayAll()
+
+        url = reverse(
+            'horizon:project:database_clusters:cluster_shrink_details',
+            args=[cluster.id])
+        res = self.client.get(url)
+        self.assertTemplateUsed(
+            res, 'project/database_clusters/cluster_shrink_details.html')
+        table = res.context_data[
+            "".join([tables.ClusterShrinkInstancesTable.Meta.name, '_table'])]
+        self.assertEqual(len(cluster.instances), len(table.data))
+
+        action = "".join([tables.ClusterShrinkInstancesTable.Meta.name, '__',
+                          tables.ClusterShrinkAction.name, '__',
+                          instance_id])
+        res = self.client.post(url, {'action': action})
+        self.assertNoFormErrors(res)
+        self.assertMessageCount(info=1)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({trove_api.trove: ('cluster_get',
+                                          'cluster_shrink')})
+    def test_shrink_cluster_exception(self):
+        cluster = self.trove_clusters.first()
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
+            .MultipleTimes().AndReturn(cluster)
+        cluster_id = cluster.instances[0]['id']
+        cluster_instances = [cluster_id]
+        trove_api.trove.cluster_shrink(IsA(http.HttpRequest),
+                                       cluster.id,
+                                       cluster_instances)\
+            .AndRaise(self.exceptions.trove)
+        self.mox.ReplayAll()
+
+        url = reverse(
+            'horizon:project:database_clusters:cluster_shrink_details',
+            args=[cluster.id])
+        action = "".join([tables.ClusterShrinkInstancesTable.Meta.name, '__',
+                          tables.ClusterShrinkAction.name, '__',
+                          cluster_id])
+        res = self.client.post(url, {'action': action})
+        self.assertMessageCount(error=1)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
 
     def _get_filtered_datastores(self, datastore):
         filtered_datastore = []

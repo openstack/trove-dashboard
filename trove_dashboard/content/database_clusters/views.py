@@ -33,6 +33,8 @@ from horizon import tabs as horizon_tabs
 from horizon.utils import memoized
 
 from trove_dashboard import api
+from trove_dashboard.content.database_clusters \
+    import cluster_manager
 from trove_dashboard.content.database_clusters import forms
 from trove_dashboard.content.database_clusters import tables
 from trove_dashboard.content.database_clusters import tabs
@@ -137,57 +139,92 @@ class DetailView(horizon_tabs.TabbedTableView):
         return self.tab_group_class(request, cluster=cluster, **kwargs)
 
 
-class AddShardView(horizon_forms.ModalFormView):
-    form_class = forms.AddShardForm
-    template_name = 'project/database_clusters/add_shard.html'
-    success_url = reverse_lazy('horizon:project:database_clusters:index')
-    page_title = _("Add Shard")
+class ClusterGrowView(horizon_tables.DataTableView):
+    table_class = tables.ClusterGrowInstancesTable
+    template_name = 'project/database_clusters/cluster_grow_details.html'
+    page_title = _("Grow Cluster: {{cluster_name}}")
+
+    def get_data(self):
+        manager = cluster_manager.get(self.kwargs['cluster_id'])
+        return manager.get_instances()
 
     def get_context_data(self, **kwargs):
-        context = super(AddShardView, self).get_context_data(**kwargs)
-        context["cluster_id"] = self.kwargs['cluster_id']
+        context = super(ClusterGrowView, self).get_context_data(**kwargs)
+        context['cluster_id'] = self.kwargs['cluster_id']
+        cluster = self.get_cluster(self.kwargs['cluster_id'])
+        context['cluster_name'] = cluster.name
         return context
 
-    def get_object(self, *args, **kwargs):
-        if not hasattr(self, "_object"):
-            cluster_id = self.kwargs['cluster_id']
-            try:
-                self._object = api.trove.cluster_get(self.request, cluster_id)
-                # TODO(michayu): assumption that cluster is homogeneous
-                flavor_id = self._object.instances[0]['flavor']['id']
-                flavors = self.get_flavors()
-                if flavor_id in flavors:
-                    self._object.flavor_name = flavors[flavor_id].name
-                else:
-                    flavor = api.trove.flavor_get(self.request, flavor_id)
-                    self._object.flavor_name = flavor.name
-            except Exception:
-                redirect = reverse("horizon:project:database_clusters:index")
-                msg = _('Unable to retrieve cluster details.')
-                exceptions.handle(self.request, msg, redirect=redirect)
-        return self._object
+    @memoized.memoized_method
+    def get_cluster(self, cluster_id):
+        try:
+            return api.trove.cluster_get(self.request, cluster_id)
+        except Exception:
+            redirect = reverse("horizon:project:database_clusters:index")
+            msg = _('Unable to retrieve cluster details.')
+            exceptions.handle(self.request, msg, redirect=redirect)
 
-    def get_flavors(self, *args, **kwargs):
-        if not hasattr(self, "_flavors"):
-            try:
-                flavors = api.trove.flavor_list(self.request)
-                self._flavors = OrderedDict([(str(flavor.id), flavor)
-                                            for flavor in flavors])
-            except Exception:
-                redirect = reverse("horizon:project:database_clusters:index")
-                exceptions.handle(
-                    self.request,
-                    _('Unable to retrieve flavors.'), redirect=redirect)
-        return self._flavors
 
-    def get_initial(self):
-        initial = super(AddShardView, self).get_initial()
-        _object = self.get_object()
-        if _object:
-            initial.update(
-                {'cluster_id': self.kwargs['cluster_id'],
-                 'name': getattr(_object, 'name', None)})
-        return initial
+class ClusterAddInstancesView(horizon_forms.ModalFormView):
+    form_class = forms.ClusterAddInstanceForm
+    form_id = "cluster_add_instances_form"
+    modal_header = _("Add Instance")
+    modal_id = "cluster_add_instances_modal"
+    template_name = "project/database_clusters/add_instance.html"
+    submit_label = _("Add")
+    submit_url = "horizon:project:database_clusters:add_instance"
+    success_url = "horizon:project:database_clusters:cluster_grow_details"
+    cancel_url = "horizon:project:database_clusters:cluster_grow_details"
+    page_title = _("Add Instance")
+
+    def get_context_data(self, **kwargs):
+        context = (super(ClusterAddInstancesView, self)
+                   .get_context_data(**kwargs))
+        context['cluster_id'] = self.kwargs['cluster_id']
+        args = (self.kwargs['cluster_id'],)
+        context['submit_url'] = reverse(self.submit_url, args=args)
+        return context
+
+    def get_success_url(self):
+        return reverse(self.success_url, args=[self.kwargs['cluster_id']])
+
+    def get_cancel_url(self):
+        return reverse(self.cancel_url, args=[self.kwargs['cluster_id']])
+
+
+class ClusterInstance(object):
+    def __init__(self, id, name, status):
+        self.id = id
+        self.name = name
+        self.status = status
+
+
+class ClusterShrinkView(horizon_tables.DataTableView):
+    table_class = tables.ClusterShrinkInstancesTable
+    template_name = "project/database_clusters/cluster_shrink_details.html"
+    page_title = _("Shrink Cluster: {{cluster_name}}")
+
+    @memoized.memoized_method
+    def get_cluster(self, cluster_id):
+        try:
+            return api.trove.cluster_get(self.request, cluster_id)
+        except Exception:
+            redirect = reverse("horizon:project:database_clusters:index")
+            msg = _('Unable to retrieve cluster details.')
+            exceptions.handle(self.request, msg, redirect=redirect)
+
+    def get_data(self):
+        cluster = self.get_cluster(self.kwargs['cluster_id'])
+        instances = [ClusterInstance(i['id'], i['name'], i['status'])
+                     for i in cluster.instances]
+        return instances
+
+    def get_context_data(self, **kwargs):
+        context = super(ClusterShrinkView, self).get_context_data(**kwargs)
+        context['cluster_id'] = self.kwargs['cluster_id']
+        cluster = self.get_cluster(self.kwargs['cluster_id'])
+        context['cluster_name'] = cluster.name
+        return context
 
 
 class ResetPasswordView(horizon_forms.ModalFormView):
