@@ -13,11 +13,15 @@
 #    under the License.
 
 
+MARIA = "maria"
 MONGODB = "mongodb"
+MYSQL = "mysql"
+PERCONA = "percona"
 PERCONA_CLUSTER = "pxc"
 REDIS = "redis"
 VERTICA = "vertica"
 
+_mysql_compatible_datastores = (MYSQL, MARIA, PERCONA)
 _cluster_capable_datastores = (MONGODB, PERCONA_CLUSTER, REDIS, VERTICA)
 
 
@@ -39,6 +43,14 @@ def is_redis_datastore(datastore):
 
 def is_vertica_datastore(datastore):
     return (datastore is not None) and (VERTICA in datastore.lower())
+
+
+def is_mysql_compatible(datastore):
+    if (datastore is not None):
+        for ds in _mysql_compatible_datastores:
+            if ds in datastore.lower():
+                return True
+    return False
 
 
 def is_cluster_capable_datastore(datastore):
