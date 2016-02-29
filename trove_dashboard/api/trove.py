@@ -229,6 +229,10 @@ def root_show(request, instance_id):
     return troveclient(request).root.is_root_enabled(instance_id)
 
 
+def root_disable(request, instance_id):
+    return troveclient(request).root.delete(instance_id)
+
+
 def users_list(request, instance_id):
     return troveclient(request).users.list(instance_id)
 
