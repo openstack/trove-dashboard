@@ -1,0 +1,3 @@
+---
+features:
+  - Enable cluster support for MariaDB and Cassandra.
