@@ -180,6 +180,39 @@ DATABASE_DATA_TWO = {
     "id": "4d7b3f57-44f5-41d2-8e86-36b88cad572a",
 }
 
+DATABASE_DATA_THREE = {
+    "status": "ACTIVE",
+    "updated": "2015-01-12T22:00:09",
+    "name": "Test Database with Config",
+    "links": [],
+    "created": "2015-01-12T22:00:03",
+    "ip": [
+        "10.0.0.3",
+    ],
+    "volume": {
+        "used": 0.13,
+        "size": 1,
+    },
+    "flavor": {
+        "id": "1",
+        "links": [],
+    },
+    "datastore": {
+        "type": "mysql",
+        "version": "5.5"
+    },
+    "id": "c3369597-b53a-4bd4-bf54-41957c1291b8",
+    "configuration": {
+        "id": "0ef978d3-7c83-4192-ab86-b7a0a5010fa0",
+        "links": [],
+        "name": "config1"
+    },
+    "replicas": {
+        "id": "0ef978d3-7c83-4192-ab86-b7a0a5010fa0",
+        "links": [],
+    }
+}
+
 BACKUP_ONE = {
     "instance_id": "6ddc36d9-73db-4e23-b52e-368937d72719",
     "status": "COMPLETED",
@@ -345,6 +378,8 @@ def data(TEST):
                                    DATABASE_DATA_ONE)
     database2 = instances.Instance(instances.Instances(None),
                                    DATABASE_DATA_TWO)
+    database3 = instances.Instance(instances.Instances(None),
+                                   DATABASE_DATA_THREE)
     bkup1 = backups.Backup(backups.Backups(None), BACKUP_ONE)
     bkup2 = backups.Backup(backups.Backups(None), BACKUP_TWO)
     bkup3 = backups.Backup(backups.Backups(None), BACKUP_TWO_INC)
@@ -391,6 +426,7 @@ def data(TEST):
 
     TEST.databases.add(database1)
     TEST.databases.add(database2)
+    TEST.databases.add(database3)
     TEST.database_backups.add(bkup1)
     TEST.database_backups.add(bkup2)
     TEST.database_backups.add(bkup3)

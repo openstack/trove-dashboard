@@ -122,6 +122,49 @@ class DetachReplica(tables.BatchAction):
         api.trove.instance_detach_replica(request, obj_id)
 
 
+class PromoteToReplicaSource(tables.LinkAction):
+    name = "promote_to_replica_source"
+    verbose_name = _("Promote to Replica Source")
+    url = "horizon:project:databases:promote_to_replica_source"
+    classes = ("ajax-modal", "btn-promote-to-replica-source")
+
+    def allowed(self, request, instance=None):
+        return (instance.status in ACTIVE_STATES
+                and hasattr(instance, 'replica_of'))
+
+    def get_link_url(self, datum):
+        instance_id = self.table.get_object_id(datum)
+        return urlresolvers.reverse(self.url, args=[instance_id])
+
+
+class EjectReplicaSource(tables.BatchAction):
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Eject Replica Source",
+            u"Eject Replica Sources",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Ejected Replica Source",
+            u"Ejected Replica Sources",
+            count
+        )
+
+    name = "eject_replica_source"
+    classes = ('btn-danger', 'btn-eject-replica-source')
+
+    def _allowed(self, request, instance=None):
+        return (instance.status != 'PROMOTE'
+                and hasattr(instance, 'replicas'))
+
+    def action(self, request, obj_id):
+        api.trove.eject_replica_source(request, obj_id)
+
+
 class GrantAccess(tables.BatchAction):
     @staticmethod
     def action_present(count):
@@ -590,9 +633,11 @@ class InstancesTable(tables.DataTable):
         row_actions = (CreateBackup,
                        ResizeVolume,
                        ResizeInstance,
+                       PromoteToReplicaSource,
                        ManageRoot,
-                       RestartInstance,
+                       EjectReplicaSource,
                        DetachReplica,
+                       RestartInstance,
                        DeleteInstance)
 
 

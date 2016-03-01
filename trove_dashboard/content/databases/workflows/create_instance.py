@@ -270,6 +270,17 @@ class AdvancedAction(workflows.Action):
             'data-switch-on': 'initial_state',
             'data-initial_state-master': _('Master Instance Name')
         }))
+    replica_count = forms.IntegerField(
+        label=_('Replica Count'),
+        required=False,
+        min_value=1,
+        initial=1,
+        help_text=_('Specify the number of replicas to be created'),
+        widget=forms.TextInput(attrs={
+            'class': 'switched',
+            'data-switch-on': 'initial_state',
+            'data-initial_state-master': _('Replica Count')
+        }))
 
     class Meta(object):
         name = _("Advanced")
@@ -309,6 +320,7 @@ class AdvancedAction(workflows.Action):
         initial_state = cleaned_data.get("initial_state")
 
         if initial_state == 'backup':
+            cleaned_data['replica_count'] = None
             backup = self.cleaned_data['backup']
             if backup:
                 try:
@@ -336,13 +348,14 @@ class AdvancedAction(workflows.Action):
         else:
             cleaned_data['master'] = None
             cleaned_data['backup'] = None
+            cleaned_data['replica_count'] = None
 
         return cleaned_data
 
 
 class Advanced(workflows.Step):
     action_class = AdvancedAction
-    contributes = ['backup', 'master']
+    contributes = ['backup', 'master', 'replica_count']
 
 
 class LaunchInstance(workflows.Workflow):
@@ -417,13 +430,13 @@ class LaunchInstance(workflows.Workflow):
                      "{name=%s, volume=%s, volume_type=%s, flavor=%s, "
                      "datastore=%s, datastore_version=%s, "
                      "dbs=%s, users=%s, "
-                     "backups=%s, nics=%s, replica_of=%s}",
+                     "backups=%s, nics=%s, replica_of=%s replica_count=%s}",
                      context['name'], context['volume'],
                      self._get_volume_type(context), context['flavor'],
                      datastore, datastore_version,
                      self._get_databases(context), self._get_users(context),
                      self._get_backup(context), self._get_nics(context),
-                     context.get('master'))
+                     context.get('master'), context['replica_count'])
             api.trove.instance_create(request,
                                       context['name'],
                                       context['volume'],
@@ -435,6 +448,7 @@ class LaunchInstance(workflows.Workflow):
                                       restore_point=self._get_backup(context),
                                       nics=self._get_nics(context),
                                       replica_of=context.get('master'),
+                                      replica_count=context['replica_count'],
                                       volume_type=self._get_volume_type(
                                           context))
             return True

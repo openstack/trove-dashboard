@@ -122,6 +122,26 @@ class ResizeInstanceForm(forms.SelfHandlingForm):
         return True
 
 
+class PromoteToReplicaSourceForm(forms.SelfHandlingForm):
+    instance_id = forms.CharField(widget=forms.HiddenInput())
+
+    def handle(self, request, data):
+        instance_id = data.get('instance_id')
+        name = self.initial['replica'].name
+        try:
+            api.trove.promote_to_replica_source(request, instance_id)
+            messages.success(
+                request,
+                _('Promoted replica "%s" as the new replica source.') % name)
+        except Exception as e:
+            redirect = reverse("horizon:project:databases:index")
+            exceptions.handle(
+                request,
+                _('Unable to promote replica as the new replica source.  "%s"')
+                % e.message, redirect=redirect)
+        return True
+
+
 class CreateUserForm(forms.SelfHandlingForm):
     instance_id = forms.CharField(widget=forms.HiddenInput())
     name = forms.CharField(label=_("Name"))

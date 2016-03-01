@@ -121,7 +121,8 @@ def instance_delete(request, instance_id):
 def instance_create(request, name, volume, flavor, databases=None,
                     users=None, restore_point=None, nics=None,
                     datastore=None, datastore_version=None,
-                    replica_of=None, volume_type=None):
+                    replica_of=None, replica_count=None,
+                    volume_type=None):
     # TODO(dklyle): adding conditional to support trove without volume
     # support for now until API supports checking for volume support
     if volume > 0:
@@ -140,7 +141,8 @@ def instance_create(request, name, volume, flavor, databases=None,
         nics=nics,
         datastore=datastore,
         datastore_version=datastore_version,
-        replica_of=replica_of)
+        replica_of=replica_of,
+        replica_count=replica_count)
 
 
 def instance_resize_volume(request, instance_id, size):
@@ -163,6 +165,15 @@ def instance_restart(request, instance_id):
 def instance_detach_replica(request, instance_id):
     return troveclient(request).instances.edit(instance_id,
                                                detach_replica_source=True)
+
+
+def promote_to_replica_source(request, instance_id):
+    return troveclient(request).instances.promote_to_replica_source(
+        instance_id)
+
+
+def eject_replica_source(request, instance_id):
+    return troveclient(request).instances.eject_replica_source(instance_id)
 
 
 def database_list(request, instance_id):
