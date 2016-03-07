@@ -3,11 +3,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-02-02 09:19+0000\n"
+"POT-Creation-Date: 2016-02-26 08:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-02-05 05:54+0000\n"
+"PO-Revision-Date: 2016-03-07 01:52+0000\n"
 "Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -68,16 +68,27 @@ msgstr "バックアップを選択する必要があります。"
 msgid "A master instance must be selected!"
 msgstr "マスターインスタンスを選択する必要があります"
 
+msgid "A new name or new password or new host must be specified."
+msgstr ""
+"新しい名前、新しいパスワード、新しいホストのいずれかは指定しなければいけませ"
+"ん。"
+
+msgid "Access Revoked to"
+msgid_plural "Access Revoked to"
+msgstr[0] "アクセスを取り消しました"
+
+msgid "Accessible"
+msgstr "アクセス可能"
+
 msgctxt "Current status of a Database Instance"
 msgid "Active"
 msgstr "稼働中"
 
-msgid "Add Shard"
-msgstr "シャードの追加"
+msgid "Add"
+msgstr "追加"
 
-#, python-format
-msgid "Added shard to \"%s\""
-msgstr "シャードを \"%s\" に追加しました"
+msgid "Add Instance"
+msgstr "インスタンスの追加"
 
 msgid "Advanced"
 msgstr "高度な設定"
@@ -100,6 +111,11 @@ msgstr "許可ホスト (省略可)"
 
 msgid "At least one network must be specified."
 msgstr "少なくとも 1 つのネットワークを指定する必要があります。"
+
+msgid "At least one of the new fields must be changed."
+msgstr ""
+"新しい値を指定するフィールドの少なくとも 1 つは、値が変更されていないければい"
+"けません。"
 
 msgid "Available networks"
 msgstr "利用可能なネットワーク"
@@ -153,6 +169,12 @@ msgstr "作成中"
 msgid "Cancel"
 msgstr "取り消し"
 
+msgid "Cannot grow cluster.  No instances specified."
+msgstr "クラスターを拡張できません。インスタンスが指定されていません。"
+
+msgid "Character Set"
+msgstr "文字集合"
+
 msgid "Choose a new instance flavor."
 msgstr "新しいインスタンスフレーバーを選択してください。"
 
@@ -167,6 +189,9 @@ msgstr "クラスターサイズ"
 
 msgid "Clusters"
 msgstr "クラスター"
+
+msgid "Collation"
+msgstr "照合順序"
 
 msgid "Comma separated list of databases to create"
 msgstr "作成するデータベースのリスト（コンマ区切り）"
@@ -184,6 +209,12 @@ msgstr "接続情報"
 msgid "Create Backup"
 msgstr "バックアップの作成"
 
+msgid "Create Database"
+msgstr "データベースの作成"
+
+msgid "Create User"
+msgstr "ユーザーの作成"
+
 msgid ""
 "Create an optional initial user.\n"
 "   This user will have access to all databases you create."
@@ -193,6 +224,14 @@ msgstr ""
 
 msgid "Created"
 msgstr "作成時刻"
+
+#, python-format
+msgid "Created database \"%s\"."
+msgstr "データベース \"%s\" を作成しました。"
+
+#, python-format
+msgid "Created user \"%s\"."
+msgstr "ユーザー \"%s\" を作成しました。"
 
 msgid "Current Size (GB)"
 msgstr "現在のサイズ (GB)"
@@ -205,6 +244,12 @@ msgstr "DATABASE"
 
 msgid "Database"
 msgstr "データベース"
+
+msgid "Database Access"
+msgstr "データベースのアクセス権"
+
+msgid "Database Access for: {{ user_name }}"
+msgstr "{{ user_name }} のデータベースアクセス権"
 
 msgid "Database Backups"
 msgstr "データベースのバックアップ"
@@ -288,6 +333,12 @@ msgstr "ダウンロード"
 msgid "Download Backup"
 msgstr "バックアップのダウンロード"
 
+msgid "Edit User"
+msgstr "ユーザーの編集"
+
+msgid "Enable Root"
+msgstr "ルートの有効化"
+
 msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "エラー"
@@ -297,9 +348,6 @@ msgstr "データベースのバックアップ作成でエラーが発生しま
 
 msgid "Error deleting database on instance."
 msgstr "インスタンスからのデータベースの削除でエラーが発生しました。"
-
-msgid "Error deleting database user."
-msgstr "データベースユーザーの削除でエラーが発生しました。"
 
 msgid "Error getting database backup list."
 msgstr "データベースのバックアップ一覧の取得でエラーが発生しました。"
@@ -317,6 +365,20 @@ msgstr "フレーバー"
 
 msgid "GB"
 msgstr "GB"
+
+msgid "Grant Access"
+msgid_plural "Grant Access"
+msgstr[0] "アクセスの承認"
+
+msgid "Granted Access to"
+msgid_plural "Granted Access to"
+msgstr[0] "アクセスを承認しました"
+
+msgid "Grow Cluster"
+msgstr "クラスターの拡張"
+
+msgid "Grow Cluster: {{cluster_name}}"
+msgstr "クラスターの拡張: {{cluster_name}}"
 
 msgid "Host"
 msgstr "ホスト"
@@ -354,11 +416,11 @@ msgstr "データベースの初期化"
 msgid "Instance Name"
 msgstr "インスタンス名"
 
+msgid "Instance Type"
+msgstr "インスタンスタイプ"
+
 msgid "Instances"
 msgstr "インスタンス"
-
-msgid "Instances Per Shard"
-msgstr "シャード当たりのインスタンス数"
 
 msgid "Is a Replica Of"
 msgstr "インスタンスの複製元"
@@ -385,6 +447,15 @@ msgstr "名前が \"%(name)s\" の %(count)s を起動しました。"
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr "クラスター \"%s\" を起動しました。"
+
+msgid "Manage Access"
+msgstr "アクセス権の管理"
+
+msgid "Manage Root"
+msgstr "ルートの管理"
+
+msgid "Manage Root Access"
+msgstr "ルートアクセスの管理"
 
 msgid "Management Console"
 msgstr "管理コンソール"
@@ -413,6 +484,12 @@ msgstr "新規作成"
 
 msgid "New Flavor"
 msgstr "新しいフレーバー"
+
+msgid "New Host"
+msgstr "新しいホスト"
+
+msgid "New Name"
+msgstr "新しい名前"
 
 msgid "New Password"
 msgstr "新しいパスワード"
@@ -447,17 +524,24 @@ msgstr "見つかりません"
 msgid "Not available"
 msgstr "利用できません"
 
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
+msgstr ""
+"注意: インスタンスでルートアクセスを有効にします。ルートユーザーがすでに有効"
+"になっている場合は、新しいパスワードが生成されます。"
+
 msgid "Number of Instances"
 msgstr "インスタンス数"
 
 msgid "Number of Shards"
 msgstr "シャード数"
 
+msgid "Number of instances in the cluster."
+msgstr "クラスター内のインスタンス数。"
+
 msgid "Number of instances in the cluster. (Read only)"
 msgstr "クラスターのインスタンス数 (読み出し専用)"
-
-msgid "Number of instances per shard. (Read only)"
-msgstr "シャード当たりのインスタンス数 (読み出し専用)"
 
 msgid "Number of shards. (Read only)"
 msgstr "シャード数 (読み出し専用)"
@@ -467,6 +551,32 @@ msgstr "現在のフレーバー"
 
 msgid "Optional Backup Description"
 msgstr "バックアップの説明（省略可）"
+
+msgid "Optional character set for the database."
+msgstr "(オプション) データベースで使用する文字集合。"
+
+msgid "Optional collation type for the database."
+msgstr "(オプション) このデータベースでの照合順序タイプ。"
+
+msgid "Optional comma separated list of databases user has access to."
+msgstr ""
+"(オプション) ユーザーがアクセスできるデータベースのカンマ区切りのリスト。"
+
+msgid "Optional datastore specific type of the instance."
+msgstr "(オプション) このインスタンスのデータストア固有のタイプ。"
+
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr ""
+"(オプション) クラスター内のあるインスタンスから他のインスタンスへの関係性を定"
+"義するデータストア固有の値。"
+
+msgid "Optional host of user."
+msgstr "(オプション) ユーザーのホスト。"
+
+msgid "Optional name of the instance."
+msgstr "インスタンス名 (オプション)。"
 
 msgid "Optional parent backup"
 msgstr "親バックアップ（省略可）"
@@ -478,9 +588,20 @@ msgstr ""
 "オプションで、以前のバックアップまたは他のデータベースインスタンスの複製を使"
 "用してこのデータベースを作成するように選択することもできます。"
 
+msgid "Optionally provide a character set and collation for the database."
+msgstr ""
+"オプションで、このデータベースで使用する文字集合と照合順序を指定できます。"
+
 msgid "Optionally provide a comma separated list of databases to create:"
 msgstr ""
 "オプションで、作成するデータベースをコンマ区切りのリストで指定できます: "
+
+msgid ""
+"Optionally provide the host of the user and a list of databases the user is "
+"granted access to."
+msgstr ""
+"オプションで、このユーザーのホストと、このユーザーにアクセスを承認するデータ"
+"ベースのリストを指定できます。"
 
 msgid "Overview"
 msgstr "概要"
@@ -503,12 +624,31 @@ msgstr "ルートユーザーのパスワードを指定する必要がありま
 msgid "Password for root user."
 msgstr "ルートユーザーのパスワード。"
 
+msgid ""
+"Password is only visible immediately after the root is enabled or reset."
+msgstr ""
+"パスワードが表示されるのは、ルートを有効またはリセットした直後のみです。"
+
 msgid "RAM"
 msgstr "メモリー"
 
 msgctxt "Current status of a Database Instance"
 msgid "Reboot"
 msgstr "再起動"
+
+msgid "Related To"
+msgstr "関連付け先"
+
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] "インスタンスの削除"
+
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] "インスタンスを削除しました"
+
+msgid "Removed instances from cluster."
+msgstr "クラスターからインスタンスを削除しました。"
 
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
@@ -522,6 +662,9 @@ msgstr "インスタンスから複製"
 
 msgid "Replication"
 msgstr "レプリケーション"
+
+msgid "Reset Password"
+msgstr "パスワードのリセット"
 
 msgid "Reset Root Password"
 msgstr "ルートパスワードの再設定"
@@ -573,6 +716,13 @@ msgstr "バックアップのリストア"
 msgid "Restore from Backup"
 msgstr "バックアップからのリストア"
 
+msgid "Revoke Access"
+msgid_plural "Revoke Access"
+msgstr[0] "アクセスの取り消し"
+
+msgid "Root Enabled"
+msgstr "ルートの有効化"
+
 msgid "Root Password"
 msgstr "ルートパスワード"
 
@@ -583,6 +733,10 @@ msgstr "クラスター \"%s\" のルートパスワードを更新しました�
 msgctxt "Current status of a Database Backup"
 msgid "Saving"
 msgstr "保存中"
+
+msgid "Scheduled Shrinking of Cluster"
+msgid_plural "Scheduled Shrinking of Cluster"
+msgstr[0] "クラスターの縮小を予約しました"
 
 #, python-format
 msgid "Scheduled backup \"%(name)s\"."
@@ -595,6 +749,9 @@ msgstr[0] "クラスターの削除を予約しました"
 msgid "Scheduled deletion of Instance"
 msgid_plural "Scheduled deletion of Instances"
 msgstr[0] "インスタンスの削除を予約しました。"
+
+msgid "Scheduled growing of cluster."
+msgstr "クラスターの拡張を予約しました。"
 
 msgid "Select a backup to restore"
 msgstr "リストアするバックアップを選択してください"
@@ -620,8 +777,21 @@ msgstr "インスタンスのネットワークを選択します。"
 msgid "Select parent backup"
 msgstr "親バックアップを選択してください"
 
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr "クラスターから削除するインスタンスを選択してください。"
+
 msgid "Selected networks"
 msgstr "選択済みネットワーク"
+
+msgid "Shrink Cluster"
+msgid_plural "Shrink Cluster"
+msgstr[0] "クラスターの縮小"
+
+msgid "Shrink Cluster: {{cluster_name}}"
+msgstr "クラスターの縮小: {{cluster_name}}"
+
+msgid "Shrinking a cluster is not recoverable."
+msgstr "クラスターの縮小は元に戻すことはできません。"
 
 msgctxt "Current status of a Database Instance"
 msgid "Shutdown"
@@ -645,14 +815,33 @@ msgstr "初期状態の元情報"
 msgid "Specify a new flavor for the database instance."
 msgstr "データベースインスタンスの新しいフレーバーを指定します。"
 
-msgid "Specify the details for adding additional shards."
-msgstr "追加するシャードの詳細を指定します。"
+msgid "Specify a new name, new password or new host name for the user."
+msgstr ""
+"新しい名前、新しいパスワード、そのユーザーの新しいホスト名を指定してくださ"
+"い。"
 
 msgid "Specify the details for launching an instance."
 msgstr "インスタンスを起動するために詳細を指定します。"
 
 msgid "Specify the details for the database backup."
 msgstr "データベースバックアップの詳細を指定します。"
+
+msgid "Specify the details of the instance to be added to the cluster."
+msgstr "クラスターに追加するインスタンスの詳細を指定してください。"
+
+msgid ""
+"Specify the instances to be added to the cluster.  When all the instances "
+"are specified click 'Grow Cluster' to perform the grow operation."
+msgstr ""
+"クラスターに追加するインスタンスを指定してください。追加するインスタンスをす"
+"べて指定したら、「クラスターの拡張」をクリックして拡張操作を実行してくださ"
+"い。"
+
+msgid "Specify the name of the new database."
+msgstr "新しいデータベースの名前を指定してください。"
+
+msgid "Specify the name of the new user and password."
+msgstr "新しいユーザーの名前とパスワードを指定してください。"
 
 msgid "Specify the new root password for vertica cluster."
 msgstr "vertica クラスターの新しいルートパスワードを指定します。"
@@ -666,11 +855,36 @@ msgstr "スペック"
 msgid "Status"
 msgstr "ステータス"
 
+msgid "Status if root was ever enabled for an instance."
+msgstr "インスタンスでこれまでにルートが有効にされたことがあるかのスタータス。"
+
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"フィールド「インスタンスタイプ」と「関連付け先」はデータストア固有で、指定は"
+"任意です。これらのフィールドの使い方に関する詳しい情報は Trove のドキュメント"
+"を参照してください。"
+
 msgid "The flavor must be specified."
 msgstr "フレーバーを指定する必要があります。"
 
+msgid ""
+"The name field is optional.   If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr ""
+"名前のフィールドはオプションです。このフィールドが空の場合、クラスターの拡張"
+"時に名前が生成されます。"
+
+msgid "The number of instances must be greater than 1."
+msgstr "インスタンス数は 1 より大きくなければいけません。"
+
 msgid "The number of shards must be greater than 1."
 msgstr "シャード数は 1 より大きくなければいけません。"
+
+msgid "There was a problem enabling root."
+msgstr "ルートの有効化中に問題がありました。"
 
 msgid "Type"
 msgstr "種別"
@@ -682,8 +896,19 @@ msgid "USERNAME"
 msgstr "USERNAME"
 
 #, python-format
-msgid "Unable to add shard. %s"
-msgstr "シャードを追加できません。 %s"
+msgid "Unable to %(action)s: %(objs)s"
+msgstr "%(action)s を実行できません: %(objs)s"
+
+#, python-format
+msgid "Unable to create database. %s"
+msgstr "データベースを作成できません: %s"
+
+#, python-format
+msgid "Unable to create user. %s"
+msgstr "ユーザーを作成できません。 %s"
+
+msgid "Unable to determine if instance root is enabled."
+msgstr "インスタンスのルートが有効になっているか判定できません。"
 
 msgid "Unable to find backup!"
 msgstr "バックアップが見つかりません！"
@@ -700,8 +925,19 @@ msgstr "データベースの一覧を取得できません。"
 msgid "Unable to get instances data."
 msgstr "インスタンスのデータを取得できません。"
 
+msgid "Unable to get user access data."
+msgstr "ユーザーのアクセスデータを取得できません。"
+
 msgid "Unable to get user data."
 msgstr "ユーザーの一覧を取得できません。"
+
+#, python-format
+msgid "Unable to grow cluster. %s"
+msgstr "クラスターを拡張できません: %s"
+
+#, python-format
+msgid "Unable to grow cluster: %s"
+msgstr "クラスターを拡張できません: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
@@ -726,6 +962,13 @@ msgstr "データストアの一覧を取得できません。"
 msgid "Unable to obtain flavors."
 msgstr "フレーバー一覧を取得できません。"
 
+msgid "Unable to obtain information on root user"
+msgstr "ルートユーザーの情報を取得できません。"
+
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr "クラスターからインスタンスを削除できません: %s"
+
 #, python-format
 msgid "Unable to reset password. %s"
 msgstr "パスワードを再設定できません。 %s"
@@ -738,6 +981,9 @@ msgstr "インスタンスをリサイズできません。 %s"
 msgid "Unable to resize volume. %s"
 msgstr "ボリュームをリサイズできません。%s"
 
+msgid "Unable to retrieve accessible databases."
+msgstr "アクセス可能なデータベースの一覧を取得できません。"
+
 msgid "Unable to retrieve cluster details."
 msgstr "クラスターの詳細を取得できません。"
 
@@ -749,6 +995,9 @@ msgstr "データベースインスタンスを取得できません。"
 
 msgid "Unable to retrieve database size information."
 msgstr "データベースのサイズ情報を取得できません。"
+
+msgid "Unable to retrieve databases."
+msgstr "データベースの一覧を取得できません。"
 
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
@@ -775,8 +1024,16 @@ msgstr "インスタンスの詳細を取得できません。"
 msgid "Unable to retrieve networks."
 msgstr "ネットワーク一覧を取得できません。"
 
+#, python-format
+msgid "Unable to update user. %s"
+msgstr "ユーザーを更新できません。 %s"
+
 msgid "Updated"
 msgstr "更新日時"
+
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr "ユーザー \"%s\" を更新しました。"
 
 msgid "User Name"
 msgstr "ユーザー名"
@@ -787,8 +1044,15 @@ msgstr "ユーザー名 (必須)"
 msgid "Users"
 msgstr "ユーザー"
 
+msgid "Volume"
+msgstr "ボリューム"
+
 msgid "Volume Size"
 msgstr "ボリュームサイズ"
+
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr "%(action)s は許可されていません:  %(objs)s"
 
 msgid ""
 "You can perform an incremental backup by specifying a parent backup. "
@@ -809,6 +1073,14 @@ msgid "You must specify at least one database if you create a user."
 msgstr ""
 "ユーザーを作成する場合は、データベースを少なくとも 1 つ指定する必要がありま"
 "す。"
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+msgstr ""
+"[フレーバー=%(flavor)s, ボリューム=%(volume)s, 名前=%(name)s, タイプ="
+"%(type)s, 関連付け先=%(related_to)s]"
 
 msgid "instance"
 msgstr "インスタンス"

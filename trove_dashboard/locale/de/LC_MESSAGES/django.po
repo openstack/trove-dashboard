@@ -1,0 +1,899 @@
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-02-26 08:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-03-05 04:48+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid ""
+"\n"
+"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
+"  clicking the button, or dragging and dropping. You can change the\n"
+"  NIC order by dragging and dropping as well.\n"
+"  "
+msgstr ""
+"\n"
+" Durch Knopfdruck oder ziehen und fallenlassen Netzwerke von \"Verfügbare "
+"Netzwerke\" zu\n"
+" \"Ausgewählte Netzwerke\" verschieben. Die Reihenfolge der Netzwerkkarten "
+"kann\n"
+" ebenfalls durch ziehen und fallenlassen verändert werden.\n"
+" "
+
+msgid "\"Clusters\""
+msgstr "\"Cluster\""
+
+msgid "\"Launch Cluster\""
+msgstr "\"Cluster aktivieren\""
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM"
+msgstr "%(name)s | %(RAM)s RAM"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s RAM | %(instances)s Instanzen"
+
+msgid "-"
+msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> The new value must be greater than the "
+"existing volume size."
+msgstr ""
+"<strong>Bitte beachten:</strong> Der neue Wert muss größer als die aktuelle "
+"Datenträgergröße sein."
+
+msgid ""
+"<strong>Please note:</strong> The value specified in the Volume Size field "
+"should be greater than 0, however, some configurations do not support "
+"specifying volume size. If specifying the volume size results in an error "
+"stating volume support is not enabled, enter 0."
+msgstr ""
+"<strong>Zur Beachtung:</strong> Der Wert im Feld Datenträgergröße sollte im "
+"Allgemeinen größer als 0 sein. Einige Konfigurationen unterstützen die "
+"Angabe der Datenträgergröße jedoch nicht. Falls bei der Eingabe der "
+"Datenträgergröße ein Fehler ausgegeben wird, wie Datenträgerunterstützung "
+"nicht aktiviert, geben Sie 0 ein."
+
+msgid "A backup must be selected!"
+msgstr "Es muss eine Sicherungskopie ausgewählt werden!"
+
+msgid "A master instance must be selected!"
+msgstr "Es muss eine Master-Instanz ausgewählt werden!"
+
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Add"
+msgstr "Hinzufügen"
+
+msgid "Add Instance"
+msgstr "Füge Instanz hinzu"
+
+msgid "Advanced"
+msgstr "Erweitert"
+
+msgid ""
+"Allow the user to connect from this host\n"
+"    only. If not provided this user will be allowed to connect from "
+"anywhere.\n"
+"    "
+msgstr ""
+"Erlaubt dem Benutzer, sich nur von diesem Host aus zu verbinden. \n"
+" Ohne Angabe darf sich der Benutzer von überall aus verbinden.\n"
+" "
+
+msgid "Allowed Host"
+msgstr "Erlaubter Host"
+
+msgid "Allowed Host (optional)"
+msgstr "Erlaubter Host (optional)"
+
+msgid "At least one network must be specified."
+msgstr "Es muss mindestens ein Netzwerk angegeben werden."
+
+msgid "Available networks"
+msgstr "Verfügbare Netzwerke"
+
+msgid "Backup"
+msgstr "Sicherungskopie"
+
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr "Sicherungskopie"
+
+msgid "Backup Database"
+msgstr "Datenbank sichern"
+
+msgid "Backup Details"
+msgstr "Sicherungskopie Details"
+
+msgid "Backup Details: {{ backup.name }}"
+msgstr "Sicherungskopie Details: {{ backup.name }}"
+
+msgid "Backup Duration"
+msgstr "Dauer der Sicherung"
+
+msgid "Backup File"
+msgstr "Sicherungsdatei"
+
+msgid "Backup File Location"
+msgstr "Speicherort der Sicherungskopie"
+
+msgid "Backup Name"
+msgstr "Name der Sicherung"
+
+msgid "Backup Overview"
+msgstr "Sicherungskopie Übersicht"
+
+msgid "Backups"
+msgstr "Sicherungskopie"
+
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr "Blockiert"
+
+msgctxt "Current status of a Database Instance"
+msgid "Build"
+msgstr "Baue"
+
+msgctxt "Current status of a Database Backup"
+msgid "Building"
+msgstr "Bauend"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Choose a new instance flavor."
+msgstr "Neue Variante für die Instanz auswählen."
+
+msgid "Choose initial state."
+msgstr "Initialen Status auswählen."
+
+msgid "Cluster Name"
+msgstr "Cluster Name"
+
+msgid "Cluster Size"
+msgstr "Clustergröße"
+
+msgid "Clusters"
+msgstr "Cluster"
+
+msgid "Comma separated list of databases to create"
+msgstr "Kommaseparierte Liste von zu erzeugenden Datenbanken"
+
+msgctxt "Current status of a Database Backup"
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+msgid "Connection Examples"
+msgstr "Verbindungsbeispiele"
+
+msgid "Connection Information"
+msgstr "Verbindungsinformationen"
+
+msgid "Create Backup"
+msgstr "Sicherungskopie erstellen"
+
+msgid "Create Database"
+msgstr "Erzeuge Datenbank"
+
+msgid "Create User"
+msgstr "Benutzer erstellen"
+
+msgid ""
+"Create an optional initial user.\n"
+"   This user will have access to all databases you create."
+msgstr ""
+"Erzeugen Sie einen optionalen initialen Benutzer.\n"
+"Dieser Benutzer wird Zugriff auf alle Datenbanken haben, die Sie erzeugen."
+
+msgid "Created"
+msgstr "Erstellt"
+
+#, python-format
+msgid "Created database \"%s\"."
+msgstr "Datenbank \"%s\" erstellt."
+
+#, python-format
+msgid "Created user \"%s\"."
+msgstr "Benutzer \"%s\" angelegt."
+
+msgid "Current Size (GB)"
+msgstr "Aktuelle Größe (GB)"
+
+msgid "Current Task"
+msgstr "Aktuelle Aufgabe"
+
+msgid "DATABASE"
+msgstr "DATENBANK"
+
+msgid "Database"
+msgstr "Datenbank"
+
+msgid "Database Backups"
+msgstr "Datenbanksicherungen"
+
+msgid "Database Info"
+msgstr "Datenbank Info"
+
+msgid "Database Instance"
+msgstr "Datenbankinstanz"
+
+msgid "Database Name"
+msgstr "Datenbank Name"
+
+msgid "Database Port"
+msgstr "Datenbankport"
+
+msgid "Databases"
+msgstr "Datenbanken"
+
+msgid "Datastore"
+msgstr "Datenspeicher"
+
+msgid "Datastore Version"
+msgstr "Version des Datenspeichers"
+
+msgid "Delete Backup"
+msgid_plural "Delete Backups"
+msgstr[0] "Sicherungskopie löschen"
+msgstr[1] "Sicherungskopien löschen"
+
+msgid "Delete Cluster"
+msgid_plural "Delete Clusters"
+msgstr[0] "Cluster löschen"
+msgstr[1] "Cluster löschen"
+
+msgid "Delete Database"
+msgid_plural "Delete Databases"
+msgstr[0] "Datenbank löschen"
+msgstr[1] "Datenbanken löschen"
+
+msgctxt "Current status of a Database Backup"
+msgid "Delete Failed"
+msgstr "Löschvorgang fehlgeschlagen"
+
+msgid "Delete Instance"
+msgid_plural "Delete Instances"
+msgstr[0] "Lösche Instanz"
+msgstr[1] "Lösche Instanzen"
+
+msgid "Delete User"
+msgid_plural "Delete Users"
+msgstr[0] "Benutzer löschen"
+msgstr[1] "Benutzer löschen"
+
+msgid "Deleted Backup"
+msgid_plural "Deleted Backups"
+msgstr[0] "Gelöschte Sicherungskopie"
+msgstr[1] "Gelöschte Sicherungskopien"
+
+msgid "Deleted Database"
+msgid_plural "Deleted Databases"
+msgstr[0] "Gelöschte Datenbank"
+msgstr[1] "Gelöschte Datenbanken"
+
+msgid "Deleted User"
+msgid_plural "Deleted Users"
+msgstr[0] "Gelöschter Benutzer"
+msgstr[1] "Gelöschte Benutzer"
+
+msgid "Deleted cluster is not recoverable."
+msgstr "Ein gelöschter Cluster kann nicht wiederhergestellt werden."
+
+msgid "Deleted instances are not recoverable."
+msgstr "Gelöschte Instanzen können nicht wiederhergestellt werden."
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Detach Replica"
+msgid_plural "Detach Replicas"
+msgstr[0] "Replikation abtrennen"
+msgstr[1] "Replikationen abtrennen"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Download Backup"
+msgstr "Sicherungskopie herunterladen"
+
+msgid "Edit User"
+msgstr "Benutzer bearbeiten"
+
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr "Fehler"
+
+msgid "Error creating database backup."
+msgstr "Fehler beim Erzeugen der Datenbanksicherung."
+
+msgid "Error deleting database on instance."
+msgstr "Fehler beim Löschen der Datenbank auf Instanz."
+
+msgid "Error getting database backup list."
+msgstr "Fehler beim Abruf der Datenbank-Sicherungskopieliste."
+
+msgctxt "Current status of a Database Backup"
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+msgid "Flavor"
+msgstr "Variante"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "Grow Cluster"
+msgstr "Cluster vergrößern"
+
+msgid "Grow Cluster: {{cluster_name}}"
+msgstr "Cluster vergrößern: {{cluster_name}}"
+
+msgid "Host"
+msgstr "Host"
+
+msgid "Host or IP that the user is allowed to connect through."
+msgstr "Host- oder IP-Adresse, zu der sich der Benutzer verbinden darf."
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Incremental"
+msgstr "Inkrementell"
+
+msgid "Incremental Backup"
+msgstr "Inkrementelle Sicherung"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Initial Admin User"
+msgstr "Initialer Administrator"
+
+msgid "Initial Databases"
+msgstr "Initiale Datenbanken"
+
+msgid "Initial Volume Size"
+msgstr "Initiale Datenträgergröße"
+
+msgid "Initial admin user to add"
+msgstr "Initialer Administrator zum Hinzufügen"
+
+msgid "Initialize Databases"
+msgstr "Datenbanken initialisieren"
+
+msgid "Instance Name"
+msgstr "Instanzname"
+
+msgid "Instance Type"
+msgstr "Instanz Typ"
+
+msgid "Instances"
+msgstr "Instanzen"
+
+msgid "Is a Replica Of"
+msgstr "Ist eine Replikation von"
+
+msgid "Launch"
+msgstr "Start"
+
+msgid "Launch Cluster"
+msgstr "Cluster starten"
+
+msgid "Launch Database"
+msgstr "Datenbank starten"
+
+msgid "Launch Instance"
+msgstr "Instanz starten"
+
+msgid "Launch instance with these networks"
+msgstr "Instanz mit diesen Netzwerken starten"
+
+#, python-format
+msgid "Launched %(count)s named \"%(name)s\"."
+msgstr "%(count)s mal \"%(name)s\" gestartet."
+
+#, python-format
+msgid "Launched cluster \"%s\""
+msgstr "Cluster \"%s\" gestartet"
+
+msgid "Management Console"
+msgstr "Management Konsole"
+
+msgid "Master Instance Name"
+msgstr "Master-Instanz Name"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Network"
+msgstr "Netzwerk"
+
+msgid "Network attached to instance."
+msgstr "Der Instanz zugewiesenes Netzwerk."
+
+msgid "Networking"
+msgstr "Netzwerk"
+
+msgid "Networks"
+msgstr "Netzwerke"
+
+msgctxt "Current status of a Database Backup"
+msgid "New"
+msgstr "Neu"
+
+msgid "New Flavor"
+msgstr "Neue Variante"
+
+msgid "New Host"
+msgstr "Neuer Host"
+
+msgid "New Name"
+msgstr "Neuer Name"
+
+msgid "New Password"
+msgstr "Neues Passwort"
+
+msgid "New Size (GB)"
+msgstr "Neue Größe (GB)"
+
+msgid "New password for cluster access."
+msgstr "Neues Passwort für den Clusterzugriff."
+
+msgid "New size for volume must be greater than current size."
+msgstr ""
+"Die neue Größe des Datenträgers muss größer sein als die momentane Größe."
+
+msgid "No backups available"
+msgstr "Keine Sicherungskopien verfügbar"
+
+msgid "No flavors available"
+msgstr "Keine Varianten verfügbar"
+
+msgid "No instances available"
+msgstr "Keine Instanz verfügbar"
+
+msgid "None"
+msgstr "Keine"
+
+msgid "Not Assigned"
+msgstr "Nicht zugewiesen"
+
+msgid "Not Found"
+msgstr "Nicht gefunden"
+
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+msgid "Number of Instances"
+msgstr "Anzahl der Instanzen"
+
+msgid "Number of Shards"
+msgstr "Anzahl der Shards"
+
+msgid "Number of instances in the cluster."
+msgstr "Anzahl der Instanzen in dem Cluster."
+
+msgid "Number of instances in the cluster. (Read only)"
+msgstr "Anzahl der Instanzen im Cluster (nur lesen)"
+
+msgid "Number of shards. (Read only)"
+msgstr "Anzahl der Shards. (nur lesen)"
+
+msgid "Old Flavor"
+msgstr "Alte Variante"
+
+msgid "Optional Backup Description"
+msgstr "Optionale Beschreibung der Sicherungskopie"
+
+msgid "Optional parent backup"
+msgstr "Optionale Eltern-Sicherungskopie"
+
+msgid ""
+"Optionally choose to create this database using a previous backup, or as a "
+"replica of another database instance."
+msgstr ""
+"Optional wählen Sie die Erstellung der Datenbank aus einer vorherigen "
+"Sicherung oder als Replikation einer vorhandenen Datenbankinstanz."
+
+msgid "Optionally provide a comma separated list of databases to create:"
+msgstr ""
+"Geben Sie optional eine kommaseparierte Liste der zu erzeugenden Datenbanken "
+"an:"
+
+msgid "Overview"
+msgstr "Übersicht"
+
+msgid "PASSWORD"
+msgstr "PASSWORT"
+
+msgid "Parent Backup"
+msgstr "Eltern-Sicherungskopie"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Password (required)"
+msgstr "Passwort (erforderlich)"
+
+msgid "Password for root user must be specified."
+msgstr "Das Passwort für den Root-Benutzer muss angegeben werden."
+
+msgid "Password for root user."
+msgstr "Passwort des Root-Benutzers."
+
+msgid "RAM"
+msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Reboot"
+msgstr "Neustart"
+
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] "Entferne Instanz"
+msgstr[1] "Entferne Instanzen"
+
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] "Entfernte Instanze"
+msgstr[1] "Entfernte Instanzen"
+
+msgid "Removed instances from cluster."
+msgstr "Instanzen wurden vom Cluster entfernt."
+
+msgid "Replica Detached"
+msgid_plural "Replicas Detached"
+msgstr[0] "Abgetrennte Replikation"
+msgstr[1] "Abgetrennte Replpikationen"
+
+msgid "Replicas"
+msgstr "Replikationen"
+
+msgid "Replicate from Instance"
+msgstr "Repliziere aus Instanz"
+
+msgid "Replication"
+msgstr "Replikation"
+
+msgid "Reset Password"
+msgstr "Passwort zurücksetzen"
+
+msgid "Reset Root Password"
+msgstr "Root-Passwort zurücksetzen"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resize"
+msgstr "Größe ändern"
+
+msgid "Resize Database Instance"
+msgstr "Datenbankinstanzgröße ändern"
+
+msgid "Resize Database Volume"
+msgstr "Größe des Datenbank-Datenträgers anpassen"
+
+msgid "Resize Instance"
+msgstr "Instanzgröße ändern"
+
+msgid "Resize Volume"
+msgstr "Datenträgergröße ändern"
+
+#, python-format
+msgid "Resizing instance \"%s\""
+msgstr "Skaliere Instanz \"%s\""
+
+#, python-format
+msgid "Resizing volume \"%s\""
+msgstr "Ändere Größe des Datenträgers \"%s\""
+
+msgid "Restart Instance"
+msgid_plural "Restart Instances"
+msgstr[0] "Instanz neu starten"
+msgstr[1] "Instanzen neu starten"
+
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr "Neustart erforderlich"
+
+msgid "Restarted Instance"
+msgid_plural "Restarted Instances"
+msgstr[0] "Neu gestartete Instanz"
+msgstr[1] "Neu gestartete Instanzen"
+
+msgid "Restarted instances will lose any data not saved in persistent storage."
+msgstr ""
+"Neu gestartete Instanzen verlieren alle Daten, die nicht im persistenten "
+"Speicher gespeichert wurden."
+
+msgid "Restore Backup"
+msgstr "Aus Sicherungskopie wiederherstellen"
+
+msgid "Restore from Backup"
+msgstr "Aus Sicherungskopie wiederherstellen"
+
+msgid "Root Password"
+msgstr "Root-Passwort"
+
+#, python-format
+msgid "Root password updated for cluster \"%s\""
+msgstr "Root-Passwort für den Cluster \"%s\" aktualisiert"
+
+msgctxt "Current status of a Database Backup"
+msgid "Saving"
+msgstr "Speichern"
+
+#, python-format
+msgid "Scheduled backup \"%(name)s\"."
+msgstr "Geplante Sicherung \"%(name)s\"."
+
+msgid "Scheduled deletion of Cluster"
+msgid_plural "Scheduled deletion of Clusters"
+msgstr[0] "Geplante Löschung eines Clusters"
+msgstr[1] "Geplante Löschung von Clustern"
+
+msgid "Scheduled deletion of Instance"
+msgid_plural "Scheduled deletion of Instances"
+msgstr[0] "Geplante Löschung einer Instanz"
+msgstr[1] "Geplante Löschung von Instanzen"
+
+msgid "Select a backup to restore"
+msgstr "Wählen Sie eine Sicherungskopie zur Wiederherstellung aus"
+
+msgid "Select a master instance"
+msgstr "Wählen Sie eine Master-Instanz"
+
+msgid "Select a new flavor"
+msgstr "Neue Variante auswählen"
+
+msgid "Select backup"
+msgstr "Sicherungskopie auswählen"
+
+msgid "Select datastore type and version"
+msgstr "Typ und Version des Datenspeichers wählen"
+
+msgid "Select instance"
+msgstr "Instanz auswählen"
+
+msgid "Select networks for your instance."
+msgstr "Wählen Sie die Netzwerke für Ihre Instanz."
+
+msgid "Select parent backup"
+msgstr "Eltern-Sicherungskopie auswählen"
+
+msgid "Selected networks"
+msgstr "Ausgewählte Netzwerke"
+
+msgid "Shrink Cluster"
+msgid_plural "Shrink Cluster"
+msgstr[0] "Cluster verkleinern"
+msgstr[1] "Cluster verkleinern"
+
+msgid "Shrink Cluster: {{cluster_name}}"
+msgstr "Cluster verkleinern: {{cluster_name}}"
+
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr "Herunterfahren"
+
+msgid "Size"
+msgstr "Größe"
+
+msgid "Size of image to launch."
+msgstr "Größe des zu startenden Abbildes."
+
+msgid "Size of instance to launch."
+msgstr "Größe der zu startenden Instanz."
+
+msgid "Size of the volume in GB."
+msgstr "Größe des Datenträgers in GB."
+
+msgid "Source for Initial State"
+msgstr "Quelle für initialen Status"
+
+msgid "Specify a new flavor for the database instance."
+msgstr "Geben Sie eine neue Variante für die Datenbankinstanz an."
+
+msgid "Specify the details for launching an instance."
+msgstr "Geben Sie die Details zum Start einer Instanz an."
+
+msgid "Specify the details for the database backup."
+msgstr "Legen sie die Details für die Datenbanksicherung fest."
+
+msgid "Specify the new root password for vertica cluster."
+msgstr "Geben Sie das neue root Passwort für den Vertica Cluster an."
+
+msgid "Specify the new volume size for the database instance."
+msgstr "Die neue Größe des Datenträgers der Datenbankinstanz festlegen."
+
+msgid "Specs"
+msgstr "Spezifikationen"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "The flavor must be specified."
+msgstr "Die Variante muss angegeben werden."
+
+msgid "The number of instances must be greater than 1."
+msgstr "Die Anzahl der Instanzen muss größer als 1 sein."
+
+msgid "The number of shards must be greater than 1."
+msgstr "Die Anzahl der Shards muss größer als 1 sein."
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Type and version of datastore."
+msgstr "Typ und Version des Datenspeichers."
+
+msgid "USERNAME"
+msgstr "BENUTZERNAME"
+
+#, python-format
+msgid "Unable to %(action)s: %(objs)s"
+msgstr "Nicht möglich: %(action)s: %(objs)s"
+
+#, python-format
+msgid "Unable to create database. %s"
+msgstr "Datenbank konnte nicht erstellt werden. %s"
+
+msgid "Unable to find backup!"
+msgstr "Sicherungskopie kann nicht gefunden werden!"
+
+msgid "Unable to find master instance!"
+msgstr "Master-Instanz kann nicht gefunden werden!"
+
+msgid "Unable to get database backup data."
+msgstr "Datenbank-Sicherungsdaten können nicht abgerufen werden."
+
+msgid "Unable to get databases data."
+msgstr "Datenbank-Daten können nicht abgerufen werden."
+
+msgid "Unable to get instances data."
+msgstr "Instanzdaten können nicht abgerufen werden."
+
+msgid "Unable to get user data."
+msgstr "Benutzerdaten können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to launch %(count)s named \"%(name)s\"."
+msgstr "Außerstande %(count)s mal \"%(name)s\" zu starten."
+
+#, python-format
+msgid "Unable to launch cluster. %s"
+msgstr "Cluster \"%s\" kann nicht gestartet werden."
+
+msgid "Unable to list database backups for parent."
+msgstr "Eltern-Datenbank-Sicherungskopien können nicht aufgelistet werden."
+
+msgid "Unable to list database instances to backup."
+msgstr "Die zu sichernden Datenbankinstanzen können nicht aufgelistet werden."
+
+msgid "Unable to obtain datastore versions."
+msgstr "Beziehen der Datastore Versionen nicht möglich."
+
+msgid "Unable to obtain datastores."
+msgstr "Beziehen des Datastore nicht möglich."
+
+msgid "Unable to obtain flavors."
+msgstr "Die Varianten können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to reset password. %s"
+msgstr "Das Passwort kann nicht zurückgesetzt werden. %s"
+
+#, python-format
+msgid "Unable to resize instance. %s"
+msgstr "Instanz %s kann nicht skaliert werden."
+
+#, python-format
+msgid "Unable to resize volume. %s"
+msgstr "Größenänderung des Datenträgers nicht möglich. %s"
+
+msgid "Unable to retrieve cluster details."
+msgstr "Clusterdetails können nicht abgerufen werden."
+
+msgid "Unable to retrieve database clusters."
+msgstr "Datenbankcluster können nicht abgerufen werden."
+
+msgid "Unable to retrieve database instances."
+msgstr "Liste der Datenbankinstanzen kann nicht abgerufen werden."
+
+msgid "Unable to retrieve database size information."
+msgstr "Größe der Datenbank kann nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to retrieve details for backup: %s"
+msgstr "Details zur Sicherungskopie können nicht abgerufen werden: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database cluster: %s"
+msgstr "Details zum Datenbankcluster können nicht abgerufen werden: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database instance: %s"
+msgstr "Details zur Datenbankinstanz können nicht abgerufen werden: %s"
+
+#, python-format
+msgid "Unable to retrieve details for parent backup: %s"
+msgstr ""
+"Details zur übergeordneten Sicherungskopie können nicht abgerufen werden: %s"
+
+msgid "Unable to retrieve flavors."
+msgstr "Varianten können nicht abgerufen werden."
+
+msgid "Unable to retrieve instance details."
+msgstr "Instanzdetails können nicht aufgerufen werden. "
+
+msgid "Unable to retrieve networks."
+msgstr "Netzwerke können nicht abgerufen werden."
+
+msgid "Updated"
+msgstr "Aktualisiert"
+
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr "Benutzer \"%s\" aktualisiert."
+
+msgid "User Name"
+msgstr "Benutzername"
+
+msgid "Username (required)"
+msgstr "Benutzername (erforderlich)"
+
+msgid "Users"
+msgstr "Benutzer"
+
+msgid "Volume"
+msgstr "Datenträger"
+
+msgid "Volume Size"
+msgstr "Datenträgergröße"
+
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr "Sie haben keine Berechtigung für %(action)s: %(objs)s"
+
+msgid ""
+"You can perform an incremental backup by specifying a parent backup. "
+"<strong>However,</strong> not all databases support incremental backups in "
+"which case this operation will result in an error."
+msgstr ""
+"Sie können eine inkrementelle Sicherung durchführen, indem Sie eine Eltern-"
+"Sicherungskopie angeben. <strong>Achtung!</strong> Nicht alle Datenbanken "
+"unterstützen inkrementelle Sicherungen. In diesem Fall wird die Ausführung "
+"fehlschlagen."
+
+msgid "You must select a datastore type and version."
+msgstr "Sie müssen Typ und Version des Datenspeichers wählen."
+
+msgid "You must specify a password if you create a user."
+msgstr "Sie müssen ein Passwort angeben, wenn Sie einen Benutzer erstellen."
+
+msgid "You must specify at least one database if you create a user."
+msgstr ""
+"Sie müssen mindestens eine Datenbank angeben, wenn Sie einen Benutzer "
+"anlegen."
+
+msgid "instance"
+msgstr "Instanz"

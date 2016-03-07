@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-02-08 06:59+0000\n"
+"POT-Creation-Date: 2016-03-07 06:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,10 @@ msgstr ""
 #: trove_dashboard/content/database_backups/panel.py:22
 #: trove_dashboard/content/database_backups/tables.py:181
 #: trove_dashboard/content/database_backups/views.py:36
-#: trove_dashboard/content/databases/tables.py:406
-#: trove_dashboard/content/databases/tabs.py:104
+#: trove_dashboard/content/databases/tables.py:653
+#: trove_dashboard/content/databases/tabs.py:112
+#: trove_dashboard/content/ng_database_backups/panel.py:21
+#: trove_dashboard/content/ng_database_backups/templates/ng_database_backups/index.html:3
 msgid "Backups"
 msgstr ""
 
@@ -56,7 +58,7 @@ msgid "Saving"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/tables.py:53
-#: trove_dashboard/content/databases/tables.py:182
+#: trove_dashboard/content/databases/tables.py:370
 msgid "Create Backup"
 msgstr ""
 
@@ -82,13 +84,13 @@ msgstr[1] ""
 
 #: trove_dashboard/content/database_backups/tables.py:144
 #: trove_dashboard/content/database_backups/tables.py:150
-#: trove_dashboard/content/database_clusters/tables.py:131
-#: trove_dashboard/content/database_clusters/tables.py:173
-#: trove_dashboard/content/database_clusters/tables.py:179
-#: trove_dashboard/content/databases/tables.py:242
-#: trove_dashboard/content/databases/tables.py:248
-#: trove_dashboard/content/databases/tables.py:265
-#: trove_dashboard/content/databases/tables.py:271
+#: trove_dashboard/content/database_clusters/tables.py:154
+#: trove_dashboard/content/database_clusters/tables.py:197
+#: trove_dashboard/content/database_clusters/tables.py:203
+#: trove_dashboard/content/databases/tables.py:488
+#: trove_dashboard/content/databases/tables.py:494
+#: trove_dashboard/content/databases/tables.py:511
+#: trove_dashboard/content/databases/tables.py:517
 msgid "Not available"
 msgstr ""
 
@@ -96,21 +98,28 @@ msgstr ""
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:14
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:60
 #: trove_dashboard/content/database_backups/workflows/create_backup.py:32
-#: trove_dashboard/content/database_clusters/tables.py:192
+#: trove_dashboard/content/database_clusters/forms.py:333
+#: trove_dashboard/content/database_clusters/tables.py:216
+#: trove_dashboard/content/database_clusters/tables.py:286
+#: trove_dashboard/content/database_clusters/tables.py:423
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview.html:5
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:5
-#: trove_dashboard/content/databases/tables.py:387
+#: trove_dashboard/content/databases/forms.py:29
+#: trove_dashboard/content/databases/forms.py:127
+#: trove_dashboard/content/databases/forms.py:172
+#: trove_dashboard/content/databases/tables.py:204
+#: trove_dashboard/content/databases/tables.py:634
 #: trove_dashboard/content/databases/templates/databases/_detail_overview.html:5
 msgid "Name"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/tables.py:162
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:21
-#: trove_dashboard/content/database_clusters/forms.py:38
-#: trove_dashboard/content/database_clusters/tables.py:146
+#: trove_dashboard/content/database_clusters/forms.py:41
+#: trove_dashboard/content/database_clusters/tables.py:169
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview.html:9
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:9
-#: trove_dashboard/content/databases/tables.py:322
+#: trove_dashboard/content/databases/tables.py:568
 #: trove_dashboard/content/databases/templates/databases/_detail_overview.html:9
 #: trove_dashboard/content/databases/workflows/create_instance.py:42
 msgid "Datastore"
@@ -118,18 +127,18 @@ msgstr ""
 
 #: trove_dashboard/content/database_backups/tables.py:164
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:23
-#: trove_dashboard/content/database_clusters/tables.py:148
+#: trove_dashboard/content/database_clusters/tables.py:171
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview.html:11
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:11
-#: trove_dashboard/content/databases/tables.py:324
+#: trove_dashboard/content/databases/tables.py:570
 #: trove_dashboard/content/databases/templates/databases/_detail_overview.html:11
 msgid "Datastore Version"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/tables.py:165
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:32
-#: trove_dashboard/content/databases/tables.py:388
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:28
+#: trove_dashboard/content/databases/tables.py:635
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:30
 msgid "Created"
 msgstr ""
 
@@ -139,16 +148,17 @@ msgid "Database"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/tables.py:170
-#: trove_dashboard/content/databases/tables.py:394
+#: trove_dashboard/content/databases/tables.py:641
 msgid "Incremental"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/tables.py:174
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:26
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:67
-#: trove_dashboard/content/database_clusters/tables.py:202
-#: trove_dashboard/content/databases/tables.py:333
-#: trove_dashboard/content/databases/tables.py:399
+#: trove_dashboard/content/database_clusters/tables.py:226
+#: trove_dashboard/content/database_clusters/tables.py:289
+#: trove_dashboard/content/databases/tables.py:579
+#: trove_dashboard/content/databases/tables.py:646
 #: trove_dashboard/content/databases/templates/databases/_detail_overview.html:13
 msgid "Status"
 msgstr ""
@@ -230,7 +240,7 @@ msgid "GB"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/templates/database_backups/details.html:34
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:30
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:32
 msgid "Updated"
 msgstr ""
 
@@ -313,226 +323,262 @@ msgstr ""
 msgid "Error creating database backup."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:35
-#: trove_dashboard/content/database_clusters/forms.py:319
-#: trove_dashboard/content/database_clusters/tables.py:144
+#: trove_dashboard/content/database_clusters/forms.py:38
+#: trove_dashboard/content/database_clusters/tables.py:167
 msgid "Cluster Name"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:39
+#: trove_dashboard/content/database_clusters/forms.py:42
 #: trove_dashboard/content/databases/workflows/create_instance.py:43
 msgid "Type and version of datastore."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:45
-#: trove_dashboard/content/database_clusters/forms.py:53
-#: trove_dashboard/content/database_clusters/forms.py:112
-#: trove_dashboard/content/database_clusters/forms.py:118
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:20
+#: trove_dashboard/content/database_clusters/forms.py:48
+#: trove_dashboard/content/database_clusters/forms.py:56
+#: trove_dashboard/content/database_clusters/forms.py:114
+#: trove_dashboard/content/database_clusters/forms.py:122
+#: trove_dashboard/content/database_clusters/forms.py:325
+#: trove_dashboard/content/database_clusters/tables.py:424
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:22
 #: trove_dashboard/content/databases/workflows/create_instance.py:36
 msgid "Flavor"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:46
-#: trove_dashboard/content/database_clusters/forms.py:54
+#: trove_dashboard/content/database_clusters/forms.py:49
+#: trove_dashboard/content/database_clusters/forms.py:57
 msgid "Size of instance to launch."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:61
+#: trove_dashboard/content/database_clusters/forms.py:64
 msgid "Network"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:62
+#: trove_dashboard/content/database_clusters/forms.py:65
 msgid "Network attached to instance."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:65
-#: trove_dashboard/content/databases/tables.py:330
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:25
+#: trove_dashboard/content/database_clusters/forms.py:68
+#: trove_dashboard/content/database_clusters/forms.py:328
+#: trove_dashboard/content/databases/tables.py:576
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:27
 #: trove_dashboard/content/databases/workflows/create_instance.py:38
 msgid "Volume Size"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:68
+#: trove_dashboard/content/database_clusters/forms.py:71
+#: trove_dashboard/content/database_clusters/forms.py:331
 #: trove_dashboard/content/databases/workflows/create_instance.py:41
 msgid "Size of the volume in GB."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:70
-#: trove_dashboard/content/database_clusters/forms.py:119
+#: trove_dashboard/content/database_clusters/forms.py:73
+#: trove_dashboard/content/database_clusters/forms.py:123
 msgid "Root Password"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:72
+#: trove_dashboard/content/database_clusters/forms.py:75
 msgid "Password for root user."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:78
+#: trove_dashboard/content/database_clusters/forms.py:81
+#: trove_dashboard/content/database_clusters/forms.py:103
+#: trove_dashboard/content/database_clusters/forms.py:115
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview.html:17
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:17
 msgid "Number of Instances"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:82
+#: trove_dashboard/content/database_clusters/forms.py:85
 msgid "Number of instances in the cluster. (Read only)"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:89
-#: trove_dashboard/content/database_clusters/forms.py:113
-#: trove_dashboard/content/database_clusters/forms.py:323
+#: trove_dashboard/content/database_clusters/forms.py:92
+#: trove_dashboard/content/database_clusters/forms.py:118
 msgid "Number of Shards"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:93
+#: trove_dashboard/content/database_clusters/forms.py:96
 msgid "Number of shards. (Read only)"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:100
-#: trove_dashboard/content/database_clusters/forms.py:114
-#: trove_dashboard/content/database_clusters/forms.py:326
-msgid "Instances Per Shard"
+#: trove_dashboard/content/database_clusters/forms.py:106
+msgid "Number of instances in the cluster."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:103
-msgid "Number of instances per shard. (Read only)"
-msgstr ""
-
-#: trove_dashboard/content/database_clusters/forms.py:139
-msgid "The number of shards must be greater than 1."
-msgstr ""
-
-#: trove_dashboard/content/database_clusters/forms.py:144
+#: trove_dashboard/content/database_clusters/forms.py:143
+#: trove_dashboard/content/database_clusters/forms.py:150
 msgid "The flavor must be specified."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:147
+#: trove_dashboard/content/database_clusters/forms.py:146
 msgid "Password for root user must be specified."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:162
+#: trove_dashboard/content/database_clusters/forms.py:153
+msgid "The number of instances must be greater than 1."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:158
+msgid "The number of shards must be greater than 1."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:173
+#: trove_dashboard/content/database_clusters/forms.py:370
 #: trove_dashboard/content/databases/workflows/create_instance.py:64
 msgid "Unable to obtain flavors."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:207
+#: trove_dashboard/content/database_clusters/forms.py:210
 #: trove_dashboard/content/databases/workflows/create_instance.py:161
 msgid "Unable to retrieve networks."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:220
+#: trove_dashboard/content/database_clusters/forms.py:223
 msgid "Unable to obtain datastores."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:241
+#: trove_dashboard/content/database_clusters/forms.py:243
 msgid "Unable to obtain datastore versions."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:308
+#: trove_dashboard/content/database_clusters/forms.py:311
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:313
+#: trove_dashboard/content/database_clusters/forms.py:316
 #, python-format
 msgid "Unable to launch cluster. %s"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:345
-#, python-format
-msgid "Added shard to \"%s\""
+#: trove_dashboard/content/database_clusters/forms.py:326
+#: trove_dashboard/content/databases/workflows/create_instance.py:37
+msgid "Size of image to launch."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:349
-#, python-format
-msgid "Unable to add shard. %s"
+#: trove_dashboard/content/database_clusters/forms.py:335
+msgid "Optional name of the instance."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:357
+#: trove_dashboard/content/database_clusters/forms.py:337
+#: trove_dashboard/content/database_clusters/tables.py:427
+msgid "Instance Type"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:339
+msgid "Optional datastore specific type of the instance."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:341
+#: trove_dashboard/content/database_clusters/tables.py:428
+msgid "Related To"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:343
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:391
+#, python-format
+msgid "Unable to grow cluster. %s"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/forms.py:399
+#: trove_dashboard/content/databases/forms.py:179
 msgid "New Password"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:359
+#: trove_dashboard/content/database_clusters/forms.py:401
 msgid "New password for cluster access."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:369
+#: trove_dashboard/content/database_clusters/forms.py:411
 #, python-format
 msgid "Root password updated for cluster \"%s\""
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/forms.py:373
+#: trove_dashboard/content/database_clusters/forms.py:415
 #, python-format
 msgid "Unable to reset password. %s"
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/panel.py:24
-#: trove_dashboard/content/database_clusters/tables.py:160
+#: trove_dashboard/content/database_clusters/tables.py:183
 #: trove_dashboard/content/database_clusters/templates/database_clusters/index.html:3
 msgid "Clusters"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:37
+#: trove_dashboard/content/database_clusters/tables.py:45
 msgid "Deleted cluster is not recoverable."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:41
+#: trove_dashboard/content/database_clusters/tables.py:49
 msgid "Delete Cluster"
 msgid_plural "Delete Clusters"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/database_clusters/tables.py:49
+#: trove_dashboard/content/database_clusters/tables.py:57
 msgid "Scheduled deletion of Cluster"
 msgid_plural "Scheduled deletion of Clusters"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/database_clusters/tables.py:61
+#: trove_dashboard/content/database_clusters/tables.py:69
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:9
 #: trove_dashboard/content/database_clusters/templates/database_clusters/launch.html:3
 msgid "Launch Cluster"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:69
-#: trove_dashboard/content/database_clusters/views.py:144
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_shard.html:9
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_shard.html:23
-#: trove_dashboard/content/database_clusters/templates/database_clusters/add_shard.html:3
-msgid "Add Shard"
+#: trove_dashboard/content/database_clusters/tables.py:77
+#: trove_dashboard/content/database_clusters/tables.py:381
+#: trove_dashboard/content/database_clusters/tables.py:382
+#: trove_dashboard/content/database_clusters/tables.py:405
+msgid "Grow Cluster"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:83
-#: trove_dashboard/content/database_clusters/views.py:197
+#: trove_dashboard/content/database_clusters/tables.py:90
+#: trove_dashboard/content/database_clusters/tables.py:242
+msgid "Shrink Cluster"
+msgid_plural "Shrink Cluster"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/database_clusters/tables.py:104
+#: trove_dashboard/content/database_clusters/views.py:234
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:9
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:23
 #: trove_dashboard/content/database_clusters/templates/database_clusters/reset_password.html:3
 msgid "Reset Root Password"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:126
+#: trove_dashboard/content/database_clusters/tables.py:147
 #, python-format
 msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:150
+#: trove_dashboard/content/database_clusters/tables.py:173
 msgid "Cluster Size"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:154
+#: trove_dashboard/content/database_clusters/tables.py:177
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview.html:13
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:13
 msgid "Current Task"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:169
-#: trove_dashboard/content/databases/tables.py:261
+#: trove_dashboard/content/database_clusters/tables.py:193
+#: trove_dashboard/content/databases/tables.py:507
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:187
+#: trove_dashboard/content/database_clusters/tables.py:211
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_mongodb.html:12
-#: trove_dashboard/content/databases/tables.py:256
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_redis.html:11
+#: trove_dashboard/content/databases/tables.py:502
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_cassandra.html:11
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_couchbase.html:11
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_mongodb.html:16
@@ -541,13 +587,16 @@ msgstr ""
 msgid "Not Assigned"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:194
+#: trove_dashboard/content/database_clusters/tables.py:218
 msgid "Type"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:196
+#: trove_dashboard/content/database_clusters/tables.py:220
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_mongodb.html:9
-#: trove_dashboard/content/databases/tables.py:325
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_redis.html:9
+#: trove_dashboard/content/databases/forms.py:134
+#: trove_dashboard/content/databases/forms.py:175
+#: trove_dashboard/content/databases/tables.py:571
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_cassandra.html:9
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_couchbase.html:9
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_mongodb.html:13
@@ -556,22 +605,95 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:198
-#: trove_dashboard/content/databases/tables.py:327
+#: trove_dashboard/content/database_clusters/tables.py:222
+#: trove_dashboard/content/databases/tables.py:573
 msgid "Size"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/tables.py:206
+#: trove_dashboard/content/database_clusters/tables.py:230
+#: trove_dashboard/content/database_clusters/tables.py:293
+#: trove_dashboard/content/database_clusters/tables.py:432
 #: trove_dashboard/content/database_clusters/tabs.py:49
 #: trove_dashboard/content/databases/panel.py:22
-#: trove_dashboard/content/databases/tables.py:340
+#: trove_dashboard/content/databases/tables.py:586
 #: trove_dashboard/content/databases/views.py:48
 #: trove_dashboard/content/databases/templates/databases/index.html:3
 msgid "Instances"
 msgstr ""
 
+#: trove_dashboard/content/database_clusters/tables.py:238
+msgid "Shrinking a cluster is not recoverable."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:250
+msgid "Scheduled Shrinking of Cluster"
+msgid_plural "Scheduled Shrinking of Cluster"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/database_clusters/tables.py:271
+msgid "Removed instances from cluster."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:278
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:300
+#: trove_dashboard/content/database_clusters/views.py:171
+#: trove_dashboard/content/database_clusters/views.py:178
+msgid "Add Instance"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:314
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/database_clusters/tables.py:322
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/database_clusters/tables.py:365
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:371
+#, python-format
+msgid "Unable to %(action)s: %(objs)s"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:388
+msgid "Cannot grow cluster.  No instances specified."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:394
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:406
+msgid "Scheduled growing of cluster."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:412
+#, python-format
+msgid "Unable to grow cluster: %s"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/tables.py:426
+msgid "Volume"
+msgstr ""
+
 #: trove_dashboard/content/database_clusters/tabs.py:28
-#: trove_dashboard/content/databases/tabs.py:26
+#: trove_dashboard/content/databases/tabs.py:25
 msgid "Overview"
 msgstr ""
 
@@ -579,49 +701,63 @@ msgstr ""
 msgid "Unable to get instances data."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/views.py:57
+#: trove_dashboard/content/database_clusters/views.py:59
 #: trove_dashboard/content/databases/views.py:59
 msgid "Unable to retrieve database size information."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/views.py:84
+#: trove_dashboard/content/database_clusters/views.py:86
 msgid "Unable to retrieve database clusters."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/views.py:116
+#: trove_dashboard/content/database_clusters/views.py:118
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/views.py:166
-#: trove_dashboard/content/database_clusters/views.py:205
+#: trove_dashboard/content/database_clusters/views.py:145
+msgid "Grow Cluster: {{cluster_name}}"
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/views.py:164
+#: trove_dashboard/content/database_clusters/views.py:213
+#: trove_dashboard/content/database_clusters/views.py:242
 msgid "Unable to retrieve cluster details."
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/views.py:180
-#: trove_dashboard/content/databases/views.py:210
-msgid "Unable to retrieve flavors."
+#: trove_dashboard/content/database_clusters/views.py:174
+msgid "Add"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_shard.html:18
-msgid "Specify the details for adding additional shards."
+#: trove_dashboard/content/database_clusters/views.py:205
+msgid "Shrink Cluster: {{cluster_name}}"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_shard.html:24
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:21
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:24
-#: trove_dashboard/content/databases/templates/databases/_resize_instance.html:23
-#: trove_dashboard/content/databases/templates/databases/_resize_volume.html:24
-msgid "Cancel"
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_instance.html:5
+msgid "Specify the details of the instance to be added to the cluster."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_instance.html:6
+msgid ""
+"The name field is optional.   If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_add_instance.html:7
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using "
+"these fields."
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview.html:15
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:15
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:22
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:24
 msgid "RAM"
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_mongodb.html:5
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_redis.html:5
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_cassandra.html:5
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_couchbase.html:5
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_mongodb.html:5
@@ -638,6 +774,7 @@ msgid "Database Port"
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_mongodb.html:19
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_redis.html:14
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_cassandra.html:16
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_couchbase.html:14
 #: trove_dashboard/content/databases/templates/databases/_detail_overview_mongodb.html:23
@@ -674,8 +811,25 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:21
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:24
+#: trove_dashboard/content/databases/templates/databases/_resize_instance.html:23
+#: trove_dashboard/content/databases/templates/databases/_resize_volume.html:24
+msgid "Cancel"
+msgstr ""
+
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:18
 msgid "Specify the new root password for vertica cluster."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/templates/database_clusters/cluster_grow_details.html:7
+msgid ""
+"Specify the instances to be added to the cluster.  When all the instances"
+" are specified click 'Grow Cluster' to perform the grow operation."
+msgstr ""
+
+#: trove_dashboard/content/database_clusters/templates/database_clusters/cluster_shrink_details.html:7
+msgid "Select the instance(s) that will be removed from the cluster."
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/templates/database_clusters/index.html:6
@@ -686,247 +840,416 @@ msgstr ""
 msgid "\"Launch Cluster\""
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:29
+#: trove_dashboard/content/databases/forms.py:31
+msgid "Character Set"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:32
+msgid "Optional character set for the database."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:34
+msgid "Collation"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:35
+msgid "Optional collation type for the database."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:45
+#, python-format
+msgid "Created database \"%s\"."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:49
+#, python-format
+msgid "Unable to create database. %s"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:57
 msgid "Current Size (GB)"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:33
+#: trove_dashboard/content/databases/forms.py:61
 msgid "New Size (GB)"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:40
+#: trove_dashboard/content/databases/forms.py:68
 msgid "New size for volume must be greater than current size."
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:51
+#: trove_dashboard/content/databases/forms.py:79
 #, python-format
 msgid "Resizing volume \"%s\""
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:54
+#: trove_dashboard/content/databases/forms.py:82
 #, python-format
 msgid "Unable to resize volume. %s"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:61
+#: trove_dashboard/content/databases/forms.py:89
 msgid "Old Flavor"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:65
+#: trove_dashboard/content/databases/forms.py:93
 msgid "New Flavor"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:66
+#: trove_dashboard/content/databases/forms.py:94
 msgid "Choose a new instance flavor."
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:78
+#: trove_dashboard/content/databases/forms.py:106
 msgid "Select a new flavor"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:80
+#: trove_dashboard/content/databases/forms.py:108
 msgid "No flavors available"
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:89
+#: trove_dashboard/content/databases/forms.py:117
 #, python-format
 msgid "Resizing instance \"%s\""
 msgstr ""
 
-#: trove_dashboard/content/databases/forms.py:92
+#: trove_dashboard/content/databases/forms.py:120
 #, python-format
 msgid "Unable to resize instance. %s"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:35
+#: trove_dashboard/content/databases/forms.py:129
+#: trove_dashboard/content/databases/tables.py:460
+#: trove_dashboard/content/databases/workflows/create_instance.py:197
+msgid "Password"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:134
+msgid "Optional host of user."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:136
+#: trove_dashboard/content/databases/templates/databases/_launch_initialize_help.html:3
+#: trove_dashboard/content/databases/workflows/create_instance.py:189
+msgid "Initial Databases"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:137
+msgid "Optional comma separated list of databases user has access to."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:152
+#, python-format
+msgid "Created user \"%s\"."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:156
+#, python-format
+msgid "Unable to create user. %s"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:177
+msgid "New Name"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:183
+msgid "New Host"
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:185
+msgid "A new name or new password or new host must be specified."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:201
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr ""
+
+#: trove_dashboard/content/databases/forms.py:205
+#, python-format
+msgid "Unable to update user. %s"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:40
 msgid "Deleted instances are not recoverable."
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:39
+#: trove_dashboard/content/databases/tables.py:44
 msgid "Delete Instance"
 msgid_plural "Delete Instances"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:47
+#: trove_dashboard/content/databases/tables.py:52
 msgid "Scheduled deletion of Instance"
 msgid_plural "Scheduled deletion of Instances"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:62
+#: trove_dashboard/content/databases/tables.py:67
 msgid "Restarted instances will lose any data not saved in persistent storage."
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:67
+#: trove_dashboard/content/databases/tables.py:72
 msgid "Restart Instance"
 msgid_plural "Restart Instances"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:75
+#: trove_dashboard/content/databases/tables.py:80
 msgid "Restarted Instance"
 msgid_plural "Restarted Instances"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:95
+#: trove_dashboard/content/databases/tables.py:100
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:103
+#: trove_dashboard/content/databases/tables.py:108
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:123
+#: trove_dashboard/content/databases/tables.py:128
+msgid "Grant Access"
+msgid_plural "Grant Access"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/databases/tables.py:136
+msgid "Granted Access to"
+msgid_plural "Granted Access to"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/databases/tables.py:162
+msgid "Revoke Access"
+msgid_plural "Revoke Access"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/databases/tables.py:170
+msgid "Access Revoked to"
+msgid_plural "Access Revoked to"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trove_dashboard/content/databases/tables.py:207
+msgid "Accessible"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:212
+msgid "Database Access"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:221
+msgid "Manage Access"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:243
+#: trove_dashboard/content/databases/views.py:108
+msgid "Create User"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:260
+#: trove_dashboard/content/databases/views.py:134
+msgid "Edit User"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:291
 msgid "Delete User"
 msgid_plural "Delete Users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:131
+#: trove_dashboard/content/databases/tables.py:299
 msgid "Deleted User"
 msgid_plural "Deleted Users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:142
-msgid "Error deleting database user."
+#: trove_dashboard/content/databases/tables.py:312
+#: trove_dashboard/content/databases/views.py:254
+#: trove_dashboard/content/databases/views.py:257
+msgid "Create Database"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:149
+#: trove_dashboard/content/databases/tables.py:337
 msgid "Delete Database"
 msgid_plural "Delete Databases"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:157
+#: trove_dashboard/content/databases/tables.py:345
 msgid "Deleted Database"
 msgid_plural "Deleted Databases"
 msgstr[0] ""
 msgstr[1] ""
 
-#: trove_dashboard/content/databases/tables.py:168
+#: trove_dashboard/content/databases/tables.py:356
 msgid "Error deleting database on instance."
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:174
+#: trove_dashboard/content/databases/tables.py:362
 #: trove_dashboard/content/databases/templates/databases/launch.html:3
 #: trove_dashboard/content/databases/workflows/create_instance.py:335
 msgid "Launch Instance"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:198
+#: trove_dashboard/content/databases/tables.py:386
 msgid "Resize Volume"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:212
+#: trove_dashboard/content/databases/tables.py:400
 msgid "Resize Instance"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:279
-msgid "-"
+#: trove_dashboard/content/databases/tables.py:420
+msgid "There was a problem enabling root."
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:296
-msgctxt "Current status of a Database Instance"
-msgid "Active"
+#: trove_dashboard/content/databases/tables.py:425
+msgid "Enable Root"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:298
-msgctxt "Current status of a Database Instance"
-msgid "Blocked"
+#: trove_dashboard/content/databases/tables.py:434
+msgid "Reset Password"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:300
-msgctxt "Current status of a Database Instance"
-msgid "Build"
+#: trove_dashboard/content/databases/tables.py:443
+#: trove_dashboard/content/databases/views.py:371
+msgid "Manage Root Access"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:302
-msgctxt "Current status of a Database Instance"
-msgid "Failed"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:304
-msgctxt "Current status of a Database Instance"
-msgid "Reboot"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:306
-msgctxt "Current status of a Database Instance"
-msgid "Resize"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:308
-msgctxt "Current status of a Database Instance"
-msgid "Backup"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:310
-msgctxt "Current status of a Database Instance"
-msgid "Shutdown"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:312
-msgctxt "Current status of a Database Instance"
-msgid "Error"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:315
-msgctxt "Current status of a Database Instance"
-msgid "Restart Required"
-msgstr ""
-
-#: trove_dashboard/content/databases/tables.py:320
+#: trove_dashboard/content/databases/tables.py:455
+#: trove_dashboard/content/databases/tables.py:566
 #: trove_dashboard/content/databases/workflows/create_instance.py:35
 msgid "Instance Name"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:353
+#: trove_dashboard/content/databases/tables.py:456
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:15
+msgid "Root Enabled"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:458
+msgid "Status if root was ever enabled for an instance."
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:461
+msgid "Password is only visible immediately after the root is enabled or reset."
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:467
+msgid "Manage Root"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:525
+msgid "-"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:542
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:544
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:546
+msgctxt "Current status of a Database Instance"
+msgid "Build"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:548
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:550
+msgctxt "Current status of a Database Instance"
+msgid "Reboot"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:552
+msgctxt "Current status of a Database Instance"
+msgid "Resize"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:554
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:556
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:558
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:561
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr ""
+
+#: trove_dashboard/content/databases/tables.py:600
 msgid "User Name"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:354
+#: trove_dashboard/content/databases/tables.py:601
 msgid "Allowed Host"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:355
-#: trove_dashboard/content/databases/tables.py:372
-#: trove_dashboard/content/databases/tabs.py:77
+#: trove_dashboard/content/databases/tables.py:602
+#: trove_dashboard/content/databases/tables.py:619
+#: trove_dashboard/content/databases/tabs.py:88
 msgid "Databases"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:359
-#: trove_dashboard/content/databases/tabs.py:47
+#: trove_dashboard/content/databases/tables.py:606
+#: trove_dashboard/content/databases/tabs.py:55
 msgid "Users"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:368
+#: trove_dashboard/content/databases/tables.py:615
 msgid "Database Name"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:390
+#: trove_dashboard/content/databases/tables.py:637
 msgid "Download"
 msgstr ""
 
-#: trove_dashboard/content/databases/tables.py:392
+#: trove_dashboard/content/databases/tables.py:639
 msgid "Backup File"
 msgstr ""
 
-#: trove_dashboard/content/databases/tabs.py:63
+#: trove_dashboard/content/databases/tabs.py:36
+msgid "Unable to obtain information on root user"
+msgstr ""
+
+#: trove_dashboard/content/databases/tabs.py:74
+msgid "Unable to get user access data."
+msgstr ""
+
+#: trove_dashboard/content/databases/tabs.py:77
 msgid "Unable to get user data."
 msgstr ""
 
-#: trove_dashboard/content/databases/tabs.py:90
+#: trove_dashboard/content/databases/tabs.py:101
 msgid "Unable to get databases data."
 msgstr ""
 
-#: trove_dashboard/content/databases/tabs.py:115
+#: trove_dashboard/content/databases/tabs.py:123
 msgid "Unable to get database backup data."
 msgstr ""
 
@@ -938,44 +1261,91 @@ msgstr ""
 msgid "Launch Database"
 msgstr ""
 
-#: trove_dashboard/content/databases/views.py:121
+#: trove_dashboard/content/databases/views.py:164
+msgid "Database Access for: {{ user_name }}"
+msgstr ""
+
+#: trove_dashboard/content/databases/views.py:177
+msgid "Unable to retrieve databases."
+msgstr ""
+
+#: trove_dashboard/content/databases/views.py:187
+msgid "Unable to retrieve accessible databases."
+msgstr ""
+
+#: trove_dashboard/content/databases/views.py:230
 #, python-format
 msgid "Unable to retrieve details for database instance: %s"
 msgstr ""
 
-#: trove_dashboard/content/databases/views.py:146
+#: trove_dashboard/content/databases/views.py:281
 #: trove_dashboard/content/databases/templates/databases/_resize_volume.html:8
 #: trove_dashboard/content/databases/templates/databases/_resize_volume.html:23
 #: trove_dashboard/content/databases/templates/databases/resize_volume.html:3
 msgid "Resize Database Volume"
 msgstr ""
 
-#: trove_dashboard/content/databases/views.py:154
-#: trove_dashboard/content/databases/views.py:194
+#: trove_dashboard/content/databases/views.py:289
+#: trove_dashboard/content/databases/views.py:329
+#: trove_dashboard/content/databases/views.py:382
 msgid "Unable to retrieve instance details."
 msgstr ""
 
-#: trove_dashboard/content/databases/views.py:173
+#: trove_dashboard/content/databases/views.py:308
 #: trove_dashboard/content/databases/templates/databases/_resize_instance.html:8
 #: trove_dashboard/content/databases/templates/databases/_resize_instance.html:22
 #: trove_dashboard/content/databases/templates/databases/resize_instance.html:3
 msgid "Resize Database Instance"
 msgstr ""
 
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:17
+#: trove_dashboard/content/databases/views.py:345
+msgid "Unable to retrieve flavors."
+msgstr ""
+
+#: trove_dashboard/content/databases/views.py:390
+msgid "Unable to determine if instance root is enabled."
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_create_database.html:5
+msgid "Specify the name of the new database."
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_create_database.html:6
+msgid "Optionally provide a character set and collation for the database."
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_create_user.html:5
+msgid "Specify the name of the new user and password."
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_create_user.html:6
+msgid ""
+"Optionally provide the host of the user and a list of databases the user "
+"is granted access to."
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:19
 msgid "Specs"
 msgstr ""
 
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:38
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:40
 msgid "Replication"
 msgstr ""
 
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:42
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:44
 msgid "Is a Replica Of"
 msgstr ""
 
-#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:50
+#: trove_dashboard/content/databases/templates/databases/_detail_overview.html:52
 msgid "Replicas"
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_edit_user.html:5
+msgid "Specify a new name, new password or new host name for the user."
+msgstr ""
+
+#: trove_dashboard/content/databases/templates/databases/_edit_user.html:6
+msgid "At least one of the new fields must be changed."
 msgstr ""
 
 #: trove_dashboard/content/databases/templates/databases/_launch_advanced_help.html:3
@@ -994,11 +1364,6 @@ msgid ""
 "field should be greater than 0, however, some configurations do not "
 "support specifying volume size. If specifying the volume size results in "
 "an error stating volume support is not enabled, enter 0."
-msgstr ""
-
-#: trove_dashboard/content/databases/templates/databases/_launch_initialize_help.html:3
-#: trove_dashboard/content/databases/workflows/create_instance.py:189
-msgid "Initial Databases"
 msgstr ""
 
 #: trove_dashboard/content/databases/templates/databases/_launch_initialize_help.html:4
@@ -1068,8 +1433,10 @@ msgid ""
 "existing volume size."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:37
-msgid "Size of image to launch."
+#: trove_dashboard/content/databases/templates/databases/manage_root.html:7
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
 msgstr ""
 
 #: trove_dashboard/content/databases/workflows/create_instance.py:52
@@ -1106,10 +1473,6 @@ msgstr ""
 
 #: trove_dashboard/content/databases/workflows/create_instance.py:195
 msgid "Initial admin user to add"
-msgstr ""
-
-#: trove_dashboard/content/databases/workflows/create_instance.py:197
-msgid "Password"
 msgstr ""
 
 #: trove_dashboard/content/databases/workflows/create_instance.py:201
