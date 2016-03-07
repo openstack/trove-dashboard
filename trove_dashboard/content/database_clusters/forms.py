@@ -13,6 +13,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import binascii
+import collections
 import logging
 import uuid
 
@@ -26,10 +28,14 @@ from horizon import messages
 from horizon.utils import memoized
 from openstack_dashboard import api
 
+from openstack_dashboard.dashboards.project.instances \
+    import utils as instance_utils
 from trove_dashboard import api as trove_api
 from trove_dashboard.content.database_clusters \
     import cluster_manager
 from trove_dashboard.content.databases import db_capability
+from trove_dashboard.content.databases.workflows \
+    import create_instance
 
 LOG = logging.getLogger(__name__)
 
@@ -43,22 +49,6 @@ class LaunchForm(forms.SelfHandlingForm):
         widget=forms.Select(attrs={
             'class': 'switchable',
             'data-slug': 'datastore'
-        }))
-    flavor = forms.ChoiceField(
-        label=_("Flavor"),
-        help_text=_("Size of instance to launch."),
-        required=False,
-        widget=forms.Select(attrs={
-            'class': 'switched',
-            'data-switch-on': 'datastore',
-        }))
-    vertica_flavor = forms.ChoiceField(
-        label=_("Flavor"),
-        help_text=_("Size of instance to launch."),
-        required=False,
-        widget=forms.Select(attrs={
-            'class': 'switched',
-            'data-switch-on': 'datastore',
         }))
     network = forms.ChoiceField(
         label=_("Network"),
@@ -120,7 +110,6 @@ class LaunchForm(forms.SelfHandlingForm):
 
     # (name of field variable, label)
     default_fields = [
-        ('flavor', _('Flavor')),
         ('num_instances', _('Number of Instances'))
     ]
     mongodb_fields = default_fields + [
@@ -128,7 +117,6 @@ class LaunchForm(forms.SelfHandlingForm):
     ]
     vertica_fields = [
         ('num_instances_vertica', ('Number of Instances')),
-        ('vertica_flavor', _('Flavor')),
         ('root_password', _('Root Password')),
     ]
 
@@ -137,27 +125,27 @@ class LaunchForm(forms.SelfHandlingForm):
 
         self.fields['datastore'].choices = self.populate_datastore_choices(
             request)
-        self.populate_flavor_choices(request)
-
         self.fields['network'].choices = self.populate_network_choices(
             request)
 
     def clean(self):
         datastore_field_value = self.data.get("datastore", None)
         if datastore_field_value:
-            datastore = datastore_field_value.split(',')[0]
+            datastore, datastore_version = (
+                create_instance.parse_datastore_and_version_text(
+                    binascii.unhexlify(datastore_field_value)))
+
+            flavor_field_name = self._build_widget_field_name(
+                datastore, datastore_version)
+            if not self.data.get(flavor_field_name, None):
+                msg = _("The flavor must be specified.")
+                self._errors[flavor_field_name] = self.error_class([msg])
 
             if db_capability.is_vertica_datastore(datastore):
-                if not self.data.get("vertica_flavor", None):
-                    msg = _("The flavor must be specified.")
-                    self._errors["vertica_flavor"] = self.error_class([msg])
                 if not self.data.get("root_password", None):
                     msg = _("Password for root user must be specified.")
                     self._errors["root_password"] = self.error_class([msg])
             else:
-                if not self.data.get("flavor", None):
-                    msg = _("The flavor must be specified.")
-                    self._errors["flavor"] = self.error_class([msg])
                 if int(self.data.get("num_instances", 0)) < 1:
                     msg = _("The number of instances must be greater than 1.")
                     self._errors["num_instances"] = self.error_class([msg])
@@ -184,24 +172,6 @@ class LaunchForm(forms.SelfHandlingForm):
             exceptions.handle(request,
                               _('Unable to obtain flavors.'),
                               redirect=redirect)
-
-    def populate_flavor_choices(self, request):
-        valid_flavor = []
-        for ds in self.datastores(request):
-            # TODO(michayu): until capabilities lands
-            field_name = 'flavor'
-            if db_capability.is_vertica_datastore(ds.name):
-                field_name = 'vertica_flavor'
-
-            versions = self.datastore_versions(request, ds.name)
-            for version in versions:
-                if hasattr(version, 'active') and not version.active:
-                    continue
-                valid_flavor = self.datastore_flavors(request, ds.name,
-                                                      versions[0].name)
-                if valid_flavor:
-                    self.fields[field_name].choices = sorted(
-                        [(f.id, "%s" % f.name) for f in valid_flavor])
 
     @memoized.memoized_method
     def populate_network_choices(self, request):
@@ -259,6 +229,7 @@ class LaunchForm(forms.SelfHandlingForm):
         choices = ()
         datastores = self.filter_cluster_datastores(request)
         if datastores is not None:
+            datastore_flavor_fields = {}
             for ds in datastores:
                 versions = self.datastore_versions(request, ds.name)
                 if versions:
@@ -267,18 +238,74 @@ class LaunchForm(forms.SelfHandlingForm):
                     for v in versions:
                         if hasattr(v, 'active') and not v.active:
                             continue
-                        selection_text = ds.name + ' - ' + v.name
-                        widget_text = ds.name + '-' + v.name
+                        selection_text = self._build_datastore_display_text(
+                            ds.name, v.name)
+                        widget_text = self._build_widget_field_name(
+                            ds.name, v.name)
                         version_choices = (version_choices +
                                            ((widget_text, selection_text),))
+                        k, v = self._add_datastore_flavor_field(request,
+                                                                ds.name,
+                                                                v.name)
+                        datastore_flavor_fields[k] = v
                         self._add_attr_to_optional_fields(ds.name,
                                                           widget_text)
 
                     choices = choices + version_choices
+            self._insert_datastore_version_fields(datastore_flavor_fields)
         return choices
 
+    def _add_datastore_flavor_field(self,
+                                    request,
+                                    datastore,
+                                    datastore_version):
+        name = self._build_widget_field_name(datastore, datastore_version)
+        attr_key = 'data-datastore-' + name
+        field = forms.ChoiceField(
+            label=_("Flavor"),
+            help_text=_("Size of image to launch."),
+            required=False,
+            widget=forms.Select(attrs={
+                'class': 'switched',
+                'data-switch-on': 'datastore',
+                attr_key: _("Flavor")
+            }))
+        valid_flavors = self.datastore_flavors(request,
+                                               datastore,
+                                               datastore_version)
+        if valid_flavors:
+            field.choices = instance_utils.sort_flavor_list(
+                request, valid_flavors)
+
+        return name, field
+
+    def _build_datastore_display_text(self, datastore, datastore_version):
+        return datastore + ' - ' + datastore_version
+
+    def _build_widget_field_name(self, datastore, datastore_version):
+        # Since the fieldnames cannot contain an uppercase character
+        # we generate a hex encoded string representation of the
+        # datastore and version as the fieldname
+        return binascii.hexlify(
+            self._build_datastore_display_text(datastore, datastore_version))
+
+    def _insert_datastore_version_fields(self, datastore_flavor_fields):
+        fields_to_restore_at_the_end = collections.OrderedDict()
+        while True:
+            k, v = self.fields.popitem()
+            if k == 'datastore':
+                self.fields[k] = v
+                break
+            else:
+                fields_to_restore_at_the_end[k] = v
+
+        for k, v in datastore_flavor_fields.iteritems():
+            self.fields[k] = v
+
+        for k in reversed(fields_to_restore_at_the_end.keys()):
+            self.fields[k] = fields_to_restore_at_the_end[k]
+
     def _add_attr_to_optional_fields(self, datastore, selection_text):
-        fields = []
         if db_capability.is_mongodb_datastore(datastore):
             fields = self.mongodb_fields
         elif db_capability.is_vertica_datastore(datastore):
@@ -301,26 +328,29 @@ class LaunchForm(forms.SelfHandlingForm):
     @sensitive_variables('data')
     def handle(self, request, data):
         try:
-            datastore, datastore_version = data['datastore'].split('-', 1)
+            datastore, datastore_version = (
+                create_instance.parse_datastore_and_version_text(
+                    binascii.unhexlify(data['datastore'])))
 
-            final_flavor = data['flavor']
+            flavor_field_name = self._build_widget_field_name(
+                datastore, datastore_version)
+            flavor = data[flavor_field_name]
             num_instances = data['num_instances']
             root_password = None
             if db_capability.is_vertica_datastore(datastore):
-                final_flavor = data['vertica_flavor']
                 root_password = data['root_password']
                 num_instances = data['num_instances_vertica']
             LOG.info("Launching cluster with parameters "
                      "{name=%s, volume=%s, flavor=%s, "
                      "datastore=%s, datastore_version=%s",
                      "locality=%s",
-                     data['name'], data['volume'], final_flavor,
+                     data['name'], data['volume'], flavor,
                      datastore, datastore_version, self._get_locality(data))
 
             trove_api.trove.cluster_create(request,
                                            data['name'],
                                            data['volume'],
-                                           final_flavor,
+                                           flavor,
                                            num_instances,
                                            datastore=datastore,
                                            datastore_version=datastore_version,
