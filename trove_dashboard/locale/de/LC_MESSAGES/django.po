@@ -1,4 +1,5 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
@@ -7,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-05 04:48+0000\n"
+"PO-Revision-Date: 2016-03-07 08:12+0000\n"
 "Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -138,7 +139,7 @@ msgid "Backup Overview"
 msgstr "Sicherungskopie Übersicht"
 
 msgid "Backups"
-msgstr "Sicherungskopie"
+msgstr "Sicherungskopien"
 
 msgctxt "Current status of a Database Instance"
 msgid "Blocked"
@@ -418,7 +419,7 @@ msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" gestartet"
 
 msgid "Management Console"
-msgstr "Management Konsole"
+msgstr "Verwaltungskonsole"
 
 msgid "Master Instance Name"
 msgstr "Master-Instanz Name"
@@ -505,6 +506,9 @@ msgstr "Alte Variante"
 
 msgid "Optional Backup Description"
 msgstr "Optionale Beschreibung der Sicherungskopie"
+
+msgid "Optional name of the instance."
+msgstr "Optionaler Name der Instanz"
 
 msgid "Optional parent backup"
 msgstr "Optionale Eltern-Sicherungskopie"
@@ -717,7 +721,7 @@ msgid "Specify the details for launching an instance."
 msgstr "Geben Sie die Details zum Start einer Instanz an."
 
 msgid "Specify the details for the database backup."
-msgstr "Legen sie die Details für die Datenbanksicherung fest."
+msgstr "Legen Sie die Details für die Datenbanksicherung fest."
 
 msgid "Specify the new root password for vertica cluster."
 msgstr "Geben Sie das neue root Passwort für den Vertica Cluster an."
