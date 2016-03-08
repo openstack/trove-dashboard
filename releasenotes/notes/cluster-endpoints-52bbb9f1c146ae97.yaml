@@ -1,0 +1,4 @@
+---
+fixes:
+  - Display all endpoints in the dashboard's cluster
+    details endpoint list.
