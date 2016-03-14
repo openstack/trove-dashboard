@@ -1,0 +1,1057 @@
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Gaoxiao Zhu <zhu.gaoxiao@h3c.com>, 2016. #zanata
+# liujunpeng <liujunpeng@inspur.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-02-26 08:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-03-13 07:43+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
+"Language-Team: Chinese (China)\n"
+"Language: zh-CN\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid ""
+"\n"
+"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
+"  clicking the button, or dragging and dropping. You can change the\n"
+"  NIC order by dragging and dropping as well.\n"
+"  "
+msgstr ""
+"\n"
+"通过点击按钮来把网络从“可用网络”移动到“选中网络”\n"
+"或者你可以通过拖放的方式。当然你也可以\n"
+"通过拖放来改变网卡顺序。\n"
+" "
+
+msgid "\"Clusters\""
+msgstr "\"集群\""
+
+msgid "\"Launch Cluster\""
+msgstr "\"启动集群\""
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM"
+msgstr "%(name)s | %(RAM)s RAM"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s 内存 | %(instances)s 实例"
+
+msgid "-"
+msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> The new value must be greater than the "
+"existing volume size."
+msgstr "<strong>请记住</strong>：新卷容量必须大于现在的卷容量。"
+
+msgid ""
+"<strong>Please note:</strong> The value specified in the Volume Size field "
+"should be greater than 0, however, some configurations do not support "
+"specifying volume size. If specifying the volume size results in an error "
+"stating volume support is not enabled, enter 0."
+msgstr ""
+"<strong>请注意：</strong> 云硬盘大小字段中指定的数字必须大于零，但是，有一些"
+"配置不支持指定云硬盘大小。如果指定云硬盘大小会导致不支持云硬盘的错误，则输入"
+"0。"
+
+msgid "A backup must be selected!"
+msgstr "必须选择一个备份！"
+
+msgid "A master instance must be selected!"
+msgstr "必须选择一个主实例！"
+
+msgid "A new name or new password or new host must be specified."
+msgstr "必须指定新名称、新密码或新主机。"
+
+msgid "Access Revoked to"
+msgid_plural "Access Revoked to"
+msgstr[0] "撤销访问"
+
+msgid "Accessible"
+msgstr "可访问的"
+
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr "激活"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Add Instance"
+msgstr "添加实例"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid ""
+"Allow the user to connect from this host\n"
+"    only. If not provided this user will be allowed to connect from "
+"anywhere.\n"
+"    "
+msgstr ""
+"只允许这一用户从这一主机进行连接。\n"
+"如果不提供这一信息，这一用户将被允许从任何位置进行连接。\n"
+"    "
+
+msgid "Allowed Host"
+msgstr "允许的主机"
+
+msgid "Allowed Host (optional)"
+msgstr "允许主机(可选)"
+
+msgid "At least one network must be specified."
+msgstr "至少要选择一个网络。"
+
+msgid "At least one of the new fields must be changed."
+msgstr "至少修改一个新的字段。"
+
+msgid "Available networks"
+msgstr "可用网络"
+
+msgid "Backup"
+msgstr "备份"
+
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr "备份"
+
+msgid "Backup Database"
+msgstr "备份数据库"
+
+msgid "Backup Details"
+msgstr "备份详情"
+
+msgid "Backup Details: {{ backup.name }}"
+msgstr "备份详情: {{ backup.name }}"
+
+msgid "Backup Duration"
+msgstr "备份周期"
+
+msgid "Backup File"
+msgstr "备份文件"
+
+msgid "Backup File Location"
+msgstr "备份文件位置"
+
+msgid "Backup Name"
+msgstr "备份名称"
+
+msgid "Backup Overview"
+msgstr "备份概览"
+
+msgid "Backups"
+msgstr "备份"
+
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr "阻塞"
+
+msgctxt "Current status of a Database Instance"
+msgid "Build"
+msgstr "构建"
+
+msgctxt "Current status of a Database Backup"
+msgid "Building"
+msgstr "构建中"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Cannot grow cluster.  No instances specified."
+msgstr "无法扩大集群。没有指定实例。"
+
+msgid "Character Set"
+msgstr "字符集"
+
+msgid "Choose a new instance flavor."
+msgstr "选择一新的实例类型。"
+
+msgid "Choose initial state."
+msgstr "选择初始化状态"
+
+msgid "Cluster Name"
+msgstr "集群名称"
+
+msgid "Cluster Size"
+msgstr "集群大小"
+
+msgid "Clusters"
+msgstr "集群"
+
+msgid "Collation"
+msgstr "排序"
+
+msgid "Comma separated list of databases to create"
+msgstr "逗号分隔的将创建数据库的列表"
+
+msgctxt "Current status of a Database Backup"
+msgid "Completed"
+msgstr "完成"
+
+msgid "Connection Examples"
+msgstr "连接举例"
+
+msgid "Connection Information"
+msgstr "连接信息"
+
+msgid "Create Backup"
+msgstr "创建备份"
+
+msgid "Create Database"
+msgstr "创建数据库"
+
+msgid "Create User"
+msgstr "创建用户"
+
+msgid ""
+"Create an optional initial user.\n"
+"   This user will have access to all databases you create."
+msgstr ""
+"创建可选的初始用户。\n"
+"这个用户将可以访问你创建的所有数据库。"
+
+msgid "Created"
+msgstr "已创建"
+
+#, python-format
+msgid "Created database \"%s\"."
+msgstr "创建的数据库 \"%s\"。"
+
+#, python-format
+msgid "Created user \"%s\"."
+msgstr "创建用户\"%s\"。"
+
+msgid "Current Size (GB)"
+msgstr "当前大小(GB)"
+
+msgid "Current Task"
+msgstr "当前任务"
+
+msgid "DATABASE"
+msgstr "数据库"
+
+msgid "Database"
+msgstr "数据库"
+
+msgid "Database Access"
+msgstr "数据库访问"
+
+msgid "Database Access for: {{ user_name }}"
+msgstr "数据库访问：{{ user_name }}"
+
+msgid "Database Backups"
+msgstr "数据库备份"
+
+msgid "Database Info"
+msgstr "数据库信息"
+
+msgid "Database Instance"
+msgstr "数据库实例"
+
+msgid "Database Name"
+msgstr "数据库名称"
+
+msgid "Database Port"
+msgstr "数据库端口"
+
+msgid "Databases"
+msgstr "数据库"
+
+msgid "Datastore"
+msgstr "数据存储"
+
+msgid "Datastore Version"
+msgstr "数据存储版本"
+
+msgid "Delete Backup"
+msgid_plural "Delete Backups"
+msgstr[0] "删除备份"
+
+msgid "Delete Cluster"
+msgid_plural "Delete Clusters"
+msgstr[0] "删除集群"
+
+msgid "Delete Database"
+msgid_plural "Delete Databases"
+msgstr[0] "已删除的数据库"
+
+msgctxt "Current status of a Database Backup"
+msgid "Delete Failed"
+msgstr "删除失败"
+
+msgid "Delete Instance"
+msgid_plural "Delete Instances"
+msgstr[0] "删除实例"
+
+msgid "Delete User"
+msgid_plural "Delete Users"
+msgstr[0] "删除用户"
+
+msgid "Deleted Backup"
+msgid_plural "Deleted Backups"
+msgstr[0] "已删除的备份"
+
+msgid "Deleted Database"
+msgid_plural "Deleted Databases"
+msgstr[0] "已删除的数据库"
+
+msgid "Deleted User"
+msgid_plural "Deleted Users"
+msgstr[0] "已删除的用户"
+
+msgid "Deleted cluster is not recoverable."
+msgstr "删除的集群无法恢复。"
+
+msgid "Deleted instances are not recoverable."
+msgstr "删除实例是不可恢复的。"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Detach Replica"
+msgid_plural "Detach Replicas"
+msgstr[0] "分离镜像"
+
+msgid "Details"
+msgstr "详情"
+
+msgid "Download"
+msgstr "下载"
+
+msgid "Download Backup"
+msgstr "下载备份"
+
+msgid "Edit User"
+msgstr "编辑用户"
+
+msgid "Enable Root"
+msgstr "启动root"
+
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr "错误"
+
+msgid "Error creating database backup."
+msgstr "创建数据库备份错误"
+
+msgid "Error deleting database on instance."
+msgstr "在实例上删除数据库出错。"
+
+msgid "Error getting database backup list."
+msgstr "获取数据库备份列表错误。"
+
+msgctxt "Current status of a Database Backup"
+msgid "Failed"
+msgstr "失败"
+
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr "失败"
+
+msgid "Flavor"
+msgstr "云主机类型"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "Grant Access"
+msgid_plural "Grant Access"
+msgstr[0] "授权"
+
+msgid "Granted Access to"
+msgid_plural "Granted Access to"
+msgstr[0] "授权给"
+
+msgid "Grow Cluster"
+msgstr "扩大集群"
+
+msgid "Grow Cluster: {{cluster_name}}"
+msgstr "扩大集群：{{cluster_name}}"
+
+msgid "Host"
+msgstr "主机"
+
+msgid "Host or IP that the user is allowed to connect through."
+msgstr "允许用户用于连接的主机或者IP。"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Incremental"
+msgstr "增量"
+
+msgid "Incremental Backup"
+msgstr "增量备份"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Initial Admin User"
+msgstr "初始管理员"
+
+msgid "Initial Databases"
+msgstr "初始化数据库"
+
+msgid "Initial Volume Size"
+msgstr "初始云硬盘大小"
+
+msgid "Initial admin user to add"
+msgstr "增加初始管理员"
+
+msgid "Initialize Databases"
+msgstr "初始化数据库"
+
+msgid "Instance Name"
+msgstr "实例名字"
+
+msgid "Instance Type"
+msgstr "实例类型"
+
+msgid "Instances"
+msgstr "实例"
+
+msgid "Is a Replica Of"
+msgstr "副本"
+
+msgid "Launch"
+msgstr "启动"
+
+msgid "Launch Cluster"
+msgstr "启动集群"
+
+msgid "Launch Database"
+msgstr "启动数据库"
+
+msgid "Launch Instance"
+msgstr "启动实例"
+
+msgid "Launch instance with these networks"
+msgstr "使用这些网络启动云主机"
+
+#, python-format
+msgid "Launched %(count)s named \"%(name)s\"."
+msgstr "启动了%(count)s 名称\"%(name)s\"。"
+
+#, python-format
+msgid "Launched cluster \"%s\""
+msgstr "启动集群\"%s\""
+
+msgid "Manage Access"
+msgstr "管理访问"
+
+msgid "Manage Root"
+msgstr "管理Root"
+
+msgid "Manage Root Access"
+msgstr "管理Root访问"
+
+msgid "Management Console"
+msgstr "管理控制台"
+
+msgid "Master Instance Name"
+msgstr "主实例名称"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Network"
+msgstr "网络"
+
+msgid "Network attached to instance."
+msgstr "附加到实例的网络。"
+
+msgid "Networking"
+msgstr "网络"
+
+msgid "Networks"
+msgstr "网络"
+
+msgctxt "Current status of a Database Backup"
+msgid "New"
+msgstr "新建"
+
+msgid "New Flavor"
+msgstr "新的云主机类型"
+
+msgid "New Host"
+msgstr "新主机"
+
+msgid "New Name"
+msgstr "新名称"
+
+msgid "New Password"
+msgstr "新密码"
+
+msgid "New Size (GB)"
+msgstr "新大小(GB)"
+
+msgid "New password for cluster access."
+msgstr "访问集群的新密码。"
+
+msgid "New size for volume must be greater than current size."
+msgstr "卷的新大小必须大于当前的大小。"
+
+msgid "No backups available"
+msgstr "没有可用的备份"
+
+msgid "No flavors available"
+msgstr "没有可用的云主机类型"
+
+msgid "No instances available"
+msgstr "无可用云主机"
+
+msgid "None"
+msgstr "无"
+
+msgid "Not Assigned"
+msgstr "没有分配"
+
+msgid "Not Found"
+msgstr "找不到"
+
+msgid "Not available"
+msgstr "不可用"
+
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
+msgstr "备注：在实例上启用root访问。如果root用户已经启用，那么生成一个新密码。"
+
+msgid "Number of Instances"
+msgstr "云主机数量"
+
+msgid "Number of Shards"
+msgstr "Shard数"
+
+msgid "Number of instances in the cluster."
+msgstr "集群中的云主机数量。"
+
+msgid "Number of instances in the cluster. (Read only)"
+msgstr "集群中的实例数。(只读)"
+
+msgid "Number of shards. (Read only)"
+msgstr "Shard数。（只读）"
+
+msgid "Old Flavor"
+msgstr "旧的云主机类型"
+
+msgid "Optional Backup Description"
+msgstr "数据库备份描述"
+
+msgid "Optional character set for the database."
+msgstr "数据库的可选字符集。"
+
+msgid "Optional collation type for the database."
+msgstr "数据库的可选排序规则。"
+
+msgid "Optional comma separated list of databases user has access to."
+msgstr "可选，逗号分隔的可以访问的数据库用户列表。"
+
+msgid "Optional datastore specific type of the instance."
+msgstr "可选，实例的数据存储类型"
+
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr "可选，数据存储确定值，这个值定义了集群中的实例与另一个实例的关系。"
+
+msgid "Optional host of user."
+msgstr "可选用户的主机"
+
+msgid "Optional name of the instance."
+msgstr "实例的可选名称。"
+
+msgid "Optional parent backup"
+msgstr "可选父备份"
+
+msgid ""
+"Optionally choose to create this database using a previous backup, or as a "
+"replica of another database instance."
+msgstr "可选择使用之前的备份来创建数据库，或使用另一个数据库实例的复制。"
+
+msgid "Optionally provide a character set and collation for the database."
+msgstr "可选，提供数据库字符集设置和字符序collation"
+
+msgid "Optionally provide a comma separated list of databases to create:"
+msgstr "也可以提供用逗号分隔的列表来创建数据库："
+
+msgid ""
+"Optionally provide the host of the user and a list of databases the user is "
+"granted access to."
+msgstr "可选，提供用户主机和授权用户可访问的数据库列表。"
+
+msgid "Overview"
+msgstr "概览"
+
+msgid "PASSWORD"
+msgstr "密码"
+
+msgid "Parent Backup"
+msgstr "父备份"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Password (required)"
+msgstr "密码(必填)"
+
+msgid "Password for root user must be specified."
+msgstr "必须指定root用户密码。"
+
+msgid "Password for root user."
+msgstr "root用户密码"
+
+msgid ""
+"Password is only visible immediately after the root is enabled or reset."
+msgstr "在root启用或重置时，密码只能临时可用。"
+
+msgid "RAM"
+msgstr "内存"
+
+msgctxt "Current status of a Database Instance"
+msgid "Reboot"
+msgstr "重启"
+
+msgid "Related To"
+msgstr "相关"
+
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] "移除实例"
+
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] "移除实例"
+
+msgid "Removed instances from cluster."
+msgstr "从集群中移除实例"
+
+msgid "Replica Detached"
+msgid_plural "Replicas Detached"
+msgstr[0] "镜像已经分离"
+
+msgid "Replicas"
+msgstr "副本"
+
+msgid "Replicate from Instance"
+msgstr "从实例复制"
+
+msgid "Replication"
+msgstr "复制"
+
+msgid "Reset Password"
+msgstr "重置密码"
+
+msgid "Reset Root Password"
+msgstr "重置root密码"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resize"
+msgstr "调整"
+
+msgid "Resize Database Instance"
+msgstr "调整数据库实例大小"
+
+msgid "Resize Database Volume"
+msgstr "调整数据库卷大小"
+
+msgid "Resize Instance"
+msgstr "调整云主机大小"
+
+msgid "Resize Volume"
+msgstr "调整卷大小"
+
+#, python-format
+msgid "Resizing instance \"%s\""
+msgstr "调整实例 \"%s\" 的大小"
+
+#, python-format
+msgid "Resizing volume \"%s\""
+msgstr "正在调整卷 \"%s\" 的大小"
+
+msgid "Restart Instance"
+msgid_plural "Restart Instances"
+msgstr[0] "重启实例"
+
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr "需要重启"
+
+msgid "Restarted Instance"
+msgid_plural "Restarted Instances"
+msgstr[0] "已重启的实例"
+
+msgid "Restarted instances will lose any data not saved in persistent storage."
+msgstr "重启实例会丢失所有尚未保存到永久存储上的数据。"
+
+msgid "Restore Backup"
+msgstr "恢复备份"
+
+msgid "Restore from Backup"
+msgstr "从备份中恢复"
+
+msgid "Revoke Access"
+msgid_plural "Revoke Access"
+msgstr[0] "回收权限"
+
+msgid "Root Enabled"
+msgstr "启用Root"
+
+msgid "Root Password"
+msgstr "Root密码"
+
+#, python-format
+msgid "Root password updated for cluster \"%s\""
+msgstr "集群\"%s\"的root密码已经更新"
+
+msgctxt "Current status of a Database Backup"
+msgid "Saving"
+msgstr "保存"
+
+msgid "Scheduled Shrinking of Cluster"
+msgid_plural "Scheduled Shrinking of Cluster"
+msgstr[0] "已计划缩小集群"
+
+#, python-format
+msgid "Scheduled backup \"%(name)s\"."
+msgstr "已为备份\"%(name)s\"排期."
+
+msgid "Scheduled deletion of Cluster"
+msgid_plural "Scheduled deletion of Clusters"
+msgstr[0] "已计划删除集群"
+
+msgid "Scheduled deletion of Instance"
+msgid_plural "Scheduled deletion of Instances"
+msgstr[0] "已安排删除实例"
+
+msgid "Scheduled growing of cluster."
+msgstr "已安排扩大集群"
+
+msgid "Select a backup to restore"
+msgstr "选择一个备份来恢复"
+
+msgid "Select a master instance"
+msgstr "选择一主实例"
+
+msgid "Select a new flavor"
+msgstr "选择一个新的云主机类型"
+
+msgid "Select backup"
+msgstr "选择备份"
+
+msgid "Select datastore type and version"
+msgstr "选择数据存储类型和版本"
+
+msgid "Select instance"
+msgstr "选择云主机"
+
+msgid "Select networks for your instance."
+msgstr "为你的云主机选择网络。"
+
+msgid "Select parent backup"
+msgstr "选择父备份"
+
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr "选择将从集群中移除的实例。"
+
+msgid "Selected networks"
+msgstr "已选择的网络"
+
+msgid "Shrink Cluster"
+msgid_plural "Shrink Cluster"
+msgstr[0] "缩小集群"
+
+msgid "Shrink Cluster: {{cluster_name}}"
+msgstr "缩小集群：{{cluster_name}}"
+
+msgid "Shrinking a cluster is not recoverable."
+msgstr "缩小集群是无法恢复的"
+
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr "关闭"
+
+msgid "Size"
+msgstr "大小"
+
+msgid "Size of image to launch."
+msgstr "要启动的镜像大小。"
+
+msgid "Size of instance to launch."
+msgstr "启动实例的大小"
+
+msgid "Size of the volume in GB."
+msgstr "以GB为单位的云硬盘大小。"
+
+msgid "Source for Initial State"
+msgstr "初始状态来源"
+
+msgid "Specify a new flavor for the database instance."
+msgstr "指定数据库实例新的类型。"
+
+msgid "Specify a new name, new password or new host name for the user."
+msgstr "指定新名称、新密码或者用户的新主机名。"
+
+msgid "Specify the details for launching an instance."
+msgstr "指定启动实例的详细信息"
+
+msgid "Specify the details for the database backup."
+msgstr "指定数据库备份详情。"
+
+msgid "Specify the details of the instance to be added to the cluster."
+msgstr "指定将要添加到集群的实例详情。"
+
+msgid ""
+"Specify the instances to be added to the cluster.  When all the instances "
+"are specified click 'Grow Cluster' to perform the grow operation."
+msgstr ""
+"指定将要添加到集群的实例。当指定完所有实例后，点击“扩大集群”执行扩大操作。"
+
+msgid "Specify the name of the new database."
+msgstr "指定新数据库实例名称。"
+
+msgid "Specify the name of the new user and password."
+msgstr "指定新用户名称和密码。"
+
+msgid "Specify the new root password for vertica cluster."
+msgstr "为vertica集群指定新的root密码。"
+
+msgid "Specify the new volume size for the database instance."
+msgstr "指定数据库实例新的卷大小。"
+
+msgid "Specs"
+msgstr "规格"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Status if root was ever enabled for an instance."
+msgstr "如果实例的root被启用，状态。"
+
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"‘实例类型’和‘关联’字段是具体的存储和可选。参考Trove手册了解更多使用这些字段的"
+"信息。"
+
+msgid "The flavor must be specified."
+msgstr "必须指定云主机类型。"
+
+msgid ""
+"The name field is optional.   If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr "名称字段是可选的。如果字段不填，当集群扩大时会自动生成名称。"
+
+msgid "The number of instances must be greater than 1."
+msgstr "实例的数量必须大于1。"
+
+msgid "The number of shards must be greater than 1."
+msgstr "shard数必须大于1。"
+
+msgid "There was a problem enabling root."
+msgstr "启用root时，出现问题。"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Type and version of datastore."
+msgstr "数据存储的类型和版本。"
+
+msgid "USERNAME"
+msgstr "用户名"
+
+#, python-format
+msgid "Unable to %(action)s: %(objs)s"
+msgstr "无法执行 %(action)s: %(objs)s"
+
+#, python-format
+msgid "Unable to create database. %s"
+msgstr "无法创建的数据库. %s"
+
+#, python-format
+msgid "Unable to create user. %s"
+msgstr "无法创建用户。%s"
+
+msgid "Unable to determine if instance root is enabled."
+msgstr "无法确定实例root账号是否启用。"
+
+msgid "Unable to find backup!"
+msgstr "无法找到备份！"
+
+msgid "Unable to find master instance!"
+msgstr "无法找到主实例！"
+
+msgid "Unable to get database backup data."
+msgstr "无法获取数据库备份数据。"
+
+msgid "Unable to get databases data."
+msgstr "无法获取数据库数据。"
+
+msgid "Unable to get instances data."
+msgstr "无法获取实例数据。"
+
+msgid "Unable to get user access data."
+msgstr "无法获取用户可用数据。"
+
+msgid "Unable to get user data."
+msgstr "无法获取用户数据。"
+
+#, python-format
+msgid "Unable to grow cluster. %s"
+msgstr "无法扩充集群 %s"
+
+#, python-format
+msgid "Unable to grow cluster: %s"
+msgstr "无法扩大集群：%s"
+
+#, python-format
+msgid "Unable to launch %(count)s named \"%(name)s\"."
+msgstr "无法启动%(count)s 名字 \"%(name)s\"."
+
+#, python-format
+msgid "Unable to launch cluster. %s"
+msgstr "无法启动集群\"%s\""
+
+msgid "Unable to list database backups for parent."
+msgstr "无法获取用来做母版的数据库备份列表"
+
+msgid "Unable to list database instances to backup."
+msgstr "无法获取数据库实例进行备份。"
+
+msgid "Unable to obtain datastore versions."
+msgstr "无法获取数据存储版本。"
+
+msgid "Unable to obtain datastores."
+msgstr "无法获取数据存储。"
+
+msgid "Unable to obtain flavors."
+msgstr "无法获取云主机类型。"
+
+msgid "Unable to obtain information on root user"
+msgstr "不能获取root用户的信息"
+
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr "无法从集群中移除实例 %s"
+
+#, python-format
+msgid "Unable to reset password. %s"
+msgstr "无法重置密码。%s"
+
+#, python-format
+msgid "Unable to resize instance. %s"
+msgstr "无法调整实例 %s 的大小"
+
+#, python-format
+msgid "Unable to resize volume. %s"
+msgstr "无法调整卷  %s 的大小"
+
+msgid "Unable to retrieve accessible databases."
+msgstr "不能获取数据库访问权限"
+
+msgid "Unable to retrieve cluster details."
+msgstr "无法获取集群详细信息。"
+
+msgid "Unable to retrieve database clusters."
+msgstr "无法获取数据库集群。"
+
+msgid "Unable to retrieve database instances."
+msgstr "无法获取数据库实例。"
+
+msgid "Unable to retrieve database size information."
+msgstr "无法获取数据库大小信息。"
+
+msgid "Unable to retrieve databases."
+msgstr "不能获取数据库。"
+
+#, python-format
+msgid "Unable to retrieve details for backup: %s"
+msgstr "无法获取备份: %s的详细信息"
+
+#, python-format
+msgid "Unable to retrieve details for database cluster: %s"
+msgstr "无法获取数据库集群的详细信息: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database instance: %s"
+msgstr "不能获取数据库实例详情：%s"
+
+#, python-format
+msgid "Unable to retrieve details for parent backup: %s"
+msgstr "无法获取父备份 :%s 的详细信息"
+
+msgid "Unable to retrieve flavors."
+msgstr "无法获取云主机类型。"
+
+msgid "Unable to retrieve instance details."
+msgstr "无法获取云主机详情。"
+
+msgid "Unable to retrieve networks."
+msgstr "无法获取网络。"
+
+#, python-format
+msgid "Unable to update user. %s"
+msgstr "无法更新用户%s"
+
+msgid "Updated"
+msgstr "已更新"
+
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr "更新用户\"%s\"。"
+
+msgid "User Name"
+msgstr "用户名"
+
+msgid "Username (required)"
+msgstr "用户名(必填)"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Volume"
+msgstr "卷"
+
+msgid "Volume Size"
+msgstr "云硬盘大小"
+
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr "您被禁止执行 %(action)s: %(objs)s"
+
+msgid ""
+"You can perform an incremental backup by specifying a parent backup. "
+"<strong>However,</strong> not all databases support incremental backups in "
+"which case this operation will result in an error."
+msgstr ""
+"你可以通过指定一个母版来进行增量备份。<strong>然而</strong>，不是所有的数据库"
+"都支持增量备份，有些会导致备份出错。"
+
+msgid "You must select a datastore type and version."
+msgstr "你必须选择数据存储类型和版本。"
+
+msgid "You must specify a password if you create a user."
+msgstr "如果你创建用户，必须指定一个密码。"
+
+msgid "You must specify at least one database if you create a user."
+msgstr "如果你创建用户，你必须选择至少一个数据库。"
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+
+msgid "instance"
+msgstr "实例"

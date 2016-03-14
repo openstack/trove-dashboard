@@ -1,4 +1,5 @@
 # Cedric Savignan <liced@liced.fr>, 2016. #zanata
+# Corinne Verheyde <cverheyd@gmail.com>, 2016. #zanata
 # Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
@@ -8,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-07 07:15+0000\n"
-"Last-Translator: Gérald LONLAS <g.lonlas@gmail.com>\n"
+"PO-Revision-Date: 2016-03-09 03:34+0000\n"
+"Last-Translator: Corinne Verheyde <cverheyd@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -194,6 +195,9 @@ msgstr "Taille du cluster"
 msgid "Clusters"
 msgstr "Clusters"
 
+msgid "Collation"
+msgstr "Collation"
+
 msgid "Comma separated list of databases to create"
 msgstr "Liste des bases de données séparée par des virgules à créer "
 
@@ -293,7 +297,7 @@ msgstr[1] "Supprimer les Bases de données"
 
 msgctxt "Current status of a Database Backup"
 msgid "Delete Failed"
-msgstr "Echec de la suppression"
+msgstr "Échec de la suppression"
 
 msgid "Delete Instance"
 msgid_plural "Delete Instances"
@@ -538,6 +542,13 @@ msgstr "Non trouvé"
 msgid "Not available"
 msgstr "Non disponible"
 
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
+msgstr ""
+"Note: Autorise l'accès root à une instance.  Si l'utilisateur root est déjà "
+"activé, alors un nouveau mot de passe est généré."
+
 msgid "Number of Instances"
 msgstr "Nombre d'instances"
 
@@ -562,9 +573,23 @@ msgstr "Description de la sauvegarde optionnelle"
 msgid "Optional character set for the database."
 msgstr "Codage des caractères optionnel pour la base de données"
 
-#, fuzzy
+msgid "Optional collation type for the database."
+msgstr "Optionnel: Type de collation pour la base de données "
+
+msgid "Optional comma separated list of databases user has access to."
+msgstr ""
+"Optionnel: Liste des bases de données auxquelles l'utilisateur a accès, "
+"séparée par des virgules. "
+
 msgid "Optional datastore specific type of the instance."
-msgstr "Type de datastore optionnel pour l'instance"
+msgstr "Optionnel: Type spécifique au datastore pour l'instance."
+
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr ""
+"Optionnel: Valeur spécifique au datastore qui définie la relation d'une "
+"instance du cluster vers une autre."
 
 msgid "Optional host of user."
 msgstr "Hôte optionnel de l'utilisateur"
@@ -582,10 +607,22 @@ msgstr ""
 "A choisi de créer cette base de données en option à l'aide d'une sauvegarde "
 "antérieure, ou en répliqua d'une autre instance de base de données."
 
+msgid "Optionally provide a character set and collation for the database."
+msgstr ""
+"Éventuellement, fournir un jeu de caractères et une collation pour la base "
+"de données."
+
 msgid "Optionally provide a comma separated list of databases to create:"
 msgstr ""
 "Fournissez, optionnellement, une liste de base de données à créer, séparée "
 "par des virgules."
+
+msgid ""
+"Optionally provide the host of the user and a list of databases the user is "
+"granted access to."
+msgstr ""
+"Éventuellement, fournir l'hôte de l'utilisateur et la liste des bases de "
+"données auxquelles l'utilisateur a accès."
 
 msgid "Overview"
 msgstr "Vue d'ensemble"
@@ -607,6 +644,12 @@ msgstr "Le mot de passe pour l'utilisateur root doit être spécifié."
 
 msgid "Password for root user."
 msgstr "Mot de passe pour l'utilisateur root."
+
+msgid ""
+"Password is only visible immediately after the root is enabled or reset."
+msgstr ""
+"Le mot de passe est visible uniquement juste après l'activation de root ou "
+"sa réinitialisation."
 
 msgid "RAM"
 msgstr "RAM"
@@ -765,6 +808,9 @@ msgstr "Sélectionner les réseaux pour votre instance."
 msgid "Select parent backup"
 msgstr "Sélectionner une sauvegarde totale"
 
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr "Sélectionner  le ou les instances qui seront supprimées du cluster."
+
 msgid "Selected networks"
 msgstr "Réseaux sélectionnés"
 
@@ -815,6 +861,14 @@ msgstr "Spécifiez les détails pour la sauvegarde de la base de données."
 msgid "Specify the details of the instance to be added to the cluster."
 msgstr "Spécifier le détail de l'instance à ajouter au cluster."
 
+msgid ""
+"Specify the instances to be added to the cluster.  When all the instances "
+"are specified click 'Grow Cluster' to perform the grow operation."
+msgstr ""
+"Spécifier les instances à ajouter au cluster.  Quand toutes les instances "
+"sont spécifiées, cliquer sur 'Agrandir le cluster' pour effectuer "
+"l'opération de croissance du cluster."
+
 msgid "Specify the name of the new database."
 msgstr "Spécifier le nom pour la nouvelle base de donnée."
 
@@ -834,8 +888,27 @@ msgstr "Spécifications"
 msgid "Status"
 msgstr "Statut"
 
+msgid "Status if root was ever enabled for an instance."
+msgstr "Statut si l'accès root n'a jamais été activé sur une instance."
+
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"Les champs 'Type d'Instance' et 'Relatif à' sont spécifiques au datastore et "
+"optionnel.  Voir la documentation Trove pour plus d'informations sur "
+"l'utilisation de ces champs."
+
 msgid "The flavor must be specified."
 msgstr "Le gabarit doit être spécifié."
+
+msgid ""
+"The name field is optional.   If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr ""
+"Le champs nom est optionnel.  Si le champs est laissé vide, un nom sera "
+"généré quand le cluster sera agrandi."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Le nombre d'instances doit être supérieur à 1."
@@ -1023,9 +1096,9 @@ msgid ""
 "which case this operation will result in an error."
 msgstr ""
 "Vous pouvez effectuer une sauvegarde incrémentale en spécifiant une "
-"sauvegarde totale.\n"
-"<strong>Cependant,</strong> toutes les bases de données ne supportent pas "
-"les sauvegardes incrémentales, dans ce cas, l'opération se termine en erreur."
+"sauvegarde totale.<strong>Cependant,</strong> toutes les bases de données ne "
+"supportent pas les sauvegardes incrémentales, dans ce cas, l'opération se "
+"termine en erreur."
 
 msgid "You must select a datastore type and version."
 msgstr "Vous devez sélectionner un type et une version de datastore."

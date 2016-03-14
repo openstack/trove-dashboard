@@ -1,4 +1,5 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Eugen Block <eblock@nde.ag>, 2016. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2016. #zanata
 msgid ""
 msgstr ""
@@ -8,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-07 08:12+0000\n"
-"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
+"PO-Revision-Date: 2016-03-10 03:51+0000\n"
+"Last-Translator: Eugen Block <eblock@nde.ag>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -72,6 +73,14 @@ msgstr "Es muss eine Sicherungskopie ausgewählt werden!"
 msgid "A master instance must be selected!"
 msgstr "Es muss eine Master-Instanz ausgewählt werden!"
 
+msgid "A new name or new password or new host must be specified."
+msgstr ""
+"Ein neuer Name oder ein neues Passwort oder ein neuer Host muss angegeben "
+"werden."
+
+msgid "Accessible"
+msgstr "Verfügbar"
+
 msgctxt "Current status of a Database Instance"
 msgid "Active"
 msgstr "Aktiv"
@@ -103,6 +112,9 @@ msgstr "Erlaubter Host (optional)"
 
 msgid "At least one network must be specified."
 msgstr "Es muss mindestens ein Netzwerk angegeben werden."
+
+msgid "At least one of the new fields must be changed."
+msgstr "Mindestens eines der neuen Felder muss geändert werden."
 
 msgid "Available networks"
 msgstr "Verfügbare Netzwerke"
@@ -155,6 +167,12 @@ msgstr "Bauend"
 
 msgid "Cancel"
 msgstr "Abbrechen"
+
+msgid "Cannot grow cluster.  No instances specified."
+msgstr "Cluster kann nicht vergrößert werden. Keine Instanzen angegeben."
+
+msgid "Character Set"
+msgstr "Zeichensatz"
 
 msgid "Choose a new instance flavor."
 msgstr "Neue Variante für die Instanz auswählen."
@@ -222,6 +240,9 @@ msgstr "DATENBANK"
 
 msgid "Database"
 msgstr "Datenbank"
+
+msgid "Database Access"
+msgstr "Datenbankzugriff"
 
 msgid "Database Backups"
 msgstr "Datenbanksicherungen"
@@ -344,6 +365,16 @@ msgstr "Variante"
 msgid "GB"
 msgstr "GB"
 
+msgid "Grant Access"
+msgid_plural "Grant Access"
+msgstr[0] "Zugriff erlauben."
+msgstr[1] "Zugriff erlauben."
+
+msgid "Granted Access to"
+msgid_plural "Granted Access to"
+msgstr[0] "Zugriff erlaubt für"
+msgstr[1] "Zugriff erlaubt für"
+
 msgid "Grow Cluster"
 msgstr "Cluster vergrößern"
 
@@ -417,6 +448,9 @@ msgstr "%(count)s mal \"%(name)s\" gestartet."
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" gestartet"
+
+msgid "Manage Access"
+msgstr "Zugriff verwalten"
 
 msgid "Management Console"
 msgstr "Verwaltungskonsole"
@@ -506,6 +540,12 @@ msgstr "Alte Variante"
 
 msgid "Optional Backup Description"
 msgstr "Optionale Beschreibung der Sicherungskopie"
+
+msgid "Optional character set for the database."
+msgstr "Optionaler Zeichensatz für die Datenbank."
+
+msgid "Optional host of user."
+msgstr "Optionaler Host des Benutzers."
 
 msgid "Optional name of the instance."
 msgstr "Optionaler Name der Instanz"
@@ -635,6 +675,11 @@ msgstr "Aus Sicherungskopie wiederherstellen"
 msgid "Restore from Backup"
 msgstr "Aus Sicherungskopie wiederherstellen"
 
+msgid "Revoke Access"
+msgid_plural "Revoke Access"
+msgstr[0] "Zugriff entziehen"
+msgstr[1] "Zugriff entziehen"
+
 msgid "Root Password"
 msgstr "Root-Passwort"
 
@@ -645,6 +690,11 @@ msgstr "Root-Passwort für den Cluster \"%s\" aktualisiert"
 msgctxt "Current status of a Database Backup"
 msgid "Saving"
 msgstr "Speichern"
+
+msgid "Scheduled Shrinking of Cluster"
+msgid_plural "Scheduled Shrinking of Cluster"
+msgstr[0] "Geplante Verkleinerung des Clusters"
+msgstr[1] "Geplante Verkleinerung des Clusters"
 
 #, python-format
 msgid "Scheduled backup \"%(name)s\"."
@@ -659,6 +709,9 @@ msgid "Scheduled deletion of Instance"
 msgid_plural "Scheduled deletion of Instances"
 msgstr[0] "Geplante Löschung einer Instanz"
 msgstr[1] "Geplante Löschung von Instanzen"
+
+msgid "Scheduled growing of cluster."
+msgstr "Geplante Vergrößerung des Clusters"
 
 msgid "Select a backup to restore"
 msgstr "Wählen Sie eine Sicherungskopie zur Wiederherstellung aus"
@@ -684,6 +737,10 @@ msgstr "Wählen Sie die Netzwerke für Ihre Instanz."
 msgid "Select parent backup"
 msgstr "Eltern-Sicherungskopie auswählen"
 
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr ""
+"Wählen Sie die Instanz(en) aus, die vom Cluster entfernt werden sollen."
+
 msgid "Selected networks"
 msgstr "Ausgewählte Netzwerke"
 
@@ -694,6 +751,9 @@ msgstr[1] "Cluster verkleinern"
 
 msgid "Shrink Cluster: {{cluster_name}}"
 msgstr "Cluster verkleinern: {{cluster_name}}"
+
+msgid "Shrinking a cluster is not recoverable."
+msgstr "Verkleinern eines Clusters kann nicht rückgängig gemacht werden."
 
 msgctxt "Current status of a Database Instance"
 msgid "Shutdown"
@@ -717,11 +777,24 @@ msgstr "Quelle für initialen Status"
 msgid "Specify a new flavor for the database instance."
 msgstr "Geben Sie eine neue Variante für die Datenbankinstanz an."
 
+msgid "Specify a new name, new password or new host name for the user."
+msgstr ""
+"Geben Sie einen neuen Namen, ein neues Passwort oder einen neuen Host für "
+"den Benutzer an."
+
 msgid "Specify the details for launching an instance."
 msgstr "Geben Sie die Details zum Start einer Instanz an."
 
 msgid "Specify the details for the database backup."
 msgstr "Legen Sie die Details für die Datenbanksicherung fest."
+
+msgid "Specify the details of the instance to be added to the cluster."
+msgstr ""
+"Geben Sie die Details der Instanz an, die zum Cluster hinzugefügt werden "
+"soll."
+
+msgid "Specify the name of the new user and password."
+msgstr "Geben Sie den Namen und das Passwort des neuen Benutzers an."
 
 msgid "Specify the new root password for vertica cluster."
 msgstr "Geben Sie das neue root Passwort für den Vertica Cluster an."
@@ -761,6 +834,10 @@ msgstr "Nicht möglich: %(action)s: %(objs)s"
 msgid "Unable to create database. %s"
 msgstr "Datenbank konnte nicht erstellt werden. %s"
 
+#, python-format
+msgid "Unable to create user. %s"
+msgstr "Benutzer %s kann nicht erstellt werden."
+
 msgid "Unable to find backup!"
 msgstr "Sicherungskopie kann nicht gefunden werden!"
 
@@ -778,6 +855,14 @@ msgstr "Instanzdaten können nicht abgerufen werden."
 
 msgid "Unable to get user data."
 msgstr "Benutzerdaten können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to grow cluster. %s"
+msgstr "Cluster %s kann nicht vergrößert werden."
+
+#, python-format
+msgid "Unable to grow cluster: %s"
+msgstr "Cluster %s kann nicht vergrößert werden."
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
@@ -801,6 +886,10 @@ msgstr "Beziehen des Datastore nicht möglich."
 
 msgid "Unable to obtain flavors."
 msgstr "Die Varianten können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr "Instanzen können nicht vom Cluster %s entfernt werden."
 
 #, python-format
 msgid "Unable to reset password. %s"
@@ -851,6 +940,10 @@ msgstr "Instanzdetails können nicht aufgerufen werden. "
 
 msgid "Unable to retrieve networks."
 msgstr "Netzwerke können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to update user. %s"
+msgstr "Benutzer %s kann nicht aktualisiert werden."
 
 msgid "Updated"
 msgstr "Aktualisiert"
