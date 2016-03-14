@@ -129,6 +129,7 @@ class DatabaseTests(test.TestCase):
         api.trove: ('flavor_list', 'backup_list',
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
+        dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',)})
     def test_launch_instance(self):
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
@@ -143,6 +144,8 @@ class DatabaseTests(test.TestCase):
         # Mock datastore versions
         api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str)).\
             MultipleTimes().AndReturn(self.datastore_versions.list())
+
+        dash_api.cinder.volume_type_list(IsA(http.HttpRequest)).AndReturn([])
 
         dash_api.neutron.network_list(IsA(http.HttpRequest),
                                       tenant_id=self.tenant.id,
@@ -192,6 +195,7 @@ class DatabaseTests(test.TestCase):
         api.trove: ('flavor_list', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
+        dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',)})
     def test_create_simple_instance(self):
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
@@ -210,6 +214,8 @@ class DatabaseTests(test.TestCase):
         # Mock datastore versions
         api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str))\
             .MultipleTimes().AndReturn(self.datastore_versions.list())
+
+        dash_api.cinder.volume_type_list(IsA(http.HttpRequest)).AndReturn([])
 
         dash_api.neutron.network_list(IsA(http.HttpRequest),
                                       tenant_id=self.tenant.id,
@@ -234,7 +240,8 @@ class DatabaseTests(test.TestCase):
             restore_point=None,
             replica_of=None,
             users=None,
-            nics=nics).AndReturn(self.databases.first())
+            nics=nics,
+            volume_type=None).AndReturn(self.databases.first())
 
         self.mox.ReplayAll()
         post = {
@@ -243,6 +250,7 @@ class DatabaseTests(test.TestCase):
             'flavor': 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
             'network': self.networks.first().id,
             'datastore': 'mysql,5.5',
+            'volume_type': 'no_type'
         }
 
         res = self.client.post(LAUNCH_URL, post)
@@ -252,6 +260,7 @@ class DatabaseTests(test.TestCase):
         api.trove: ('flavor_list', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
+        dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',)})
     def test_create_simple_instance_exception(self):
         trove_exception = self.exceptions.nova
@@ -272,6 +281,8 @@ class DatabaseTests(test.TestCase):
         api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str))\
             .MultipleTimes().AndReturn(self.datastore_versions.list())
 
+        dash_api.cinder.volume_type_list(IsA(http.HttpRequest)).AndReturn([])
+
         dash_api.neutron.network_list(IsA(http.HttpRequest),
                                       tenant_id=self.tenant.id,
                                       shared=False).AndReturn(
@@ -295,7 +306,8 @@ class DatabaseTests(test.TestCase):
             restore_point=None,
             replica_of=None,
             users=None,
-            nics=nics).AndRaise(trove_exception)
+            nics=nics,
+            volume_type=None).AndRaise(trove_exception)
 
         self.mox.ReplayAll()
         post = {
@@ -304,6 +316,7 @@ class DatabaseTests(test.TestCase):
             'flavor': 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
             'network': self.networks.first().id,
             'datastore': 'mysql,5.5',
+            'volume_type': 'no_type'
         }
 
         res = self.client.post(LAUNCH_URL, post)
@@ -939,6 +952,7 @@ class DatabaseTests(test.TestCase):
         api.trove: ('flavor_list', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
                     'instance_list', 'instance_get'),
+        dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',)})
     def test_create_replica_instance(self):
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
@@ -956,6 +970,8 @@ class DatabaseTests(test.TestCase):
         api.trove.datastore_version_list(IsA(http.HttpRequest),
                                          IsA(str))\
             .MultipleTimes().AndReturn(self.datastore_versions.list())
+
+        dash_api.cinder.volume_type_list(IsA(http.HttpRequest)).AndReturn([])
 
         dash_api.neutron.network_list(IsA(http.HttpRequest),
                                       tenant_id=self.tenant.id,
@@ -983,7 +999,8 @@ class DatabaseTests(test.TestCase):
             restore_point=None,
             replica_of=self.databases.first().id,
             users=None,
-            nics=nics).AndReturn(self.databases.first())
+            nics=nics,
+            volume_type=None).AndReturn(self.databases.first())
 
         self.mox.ReplayAll()
         post = {
@@ -993,7 +1010,8 @@ class DatabaseTests(test.TestCase):
             'network': self.networks.first().id,
             'datastore': 'mysql,5.5',
             'initial_state': 'master',
-            'master': self.databases.first().id
+            'master': self.databases.first().id,
+            'volume_type': 'no_type'
         }
 
         res = self.client.post(LAUNCH_URL, post)
