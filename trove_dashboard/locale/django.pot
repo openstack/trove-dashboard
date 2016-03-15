@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-03-07 06:09+0000\n"
+"POT-Creation-Date: 2016-03-15 06:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgstr ""
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_detail_overview_vertica.html:9
 #: trove_dashboard/content/databases/tables.py:568
 #: trove_dashboard/content/databases/templates/databases/_detail_overview.html:9
-#: trove_dashboard/content/databases/workflows/create_instance.py:42
+#: trove_dashboard/content/databases/workflows/create_instance.py:46
 msgid "Datastore"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgid "Optional parent backup"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/workflows/create_backup.py:43
-#: trove_dashboard/content/databases/workflows/create_instance.py:47
+#: trove_dashboard/content/databases/workflows/create_instance.py:51
 msgid "Details"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgid "Select parent backup"
 msgstr ""
 
 #: trove_dashboard/content/database_backups/workflows/create_backup.py:71
-#: trove_dashboard/content/databases/workflows/create_instance.py:274
+#: trove_dashboard/content/databases/workflows/create_instance.py:289
 msgid "No backups available"
 msgstr ""
 
@@ -309,13 +309,13 @@ msgid "Scheduled backup \"%(name)s\"."
 msgstr ""
 
 #: trove_dashboard/content/database_backups/workflows/create_backup.py:85
-#: trove_dashboard/content/databases/workflows/create_instance.py:338
+#: trove_dashboard/content/databases/workflows/create_instance.py:353
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr ""
 
 #: trove_dashboard/content/database_backups/workflows/create_backup.py:95
-#: trove_dashboard/content/databases/workflows/create_instance.py:354
+#: trove_dashboard/content/databases/workflows/create_instance.py:369
 msgid "instance"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgid "Cluster Name"
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/forms.py:42
-#: trove_dashboard/content/databases/workflows/create_instance.py:43
+#: trove_dashboard/content/databases/workflows/create_instance.py:47
 msgid "Type and version of datastore."
 msgstr ""
 
@@ -424,12 +424,12 @@ msgstr ""
 
 #: trove_dashboard/content/database_clusters/forms.py:173
 #: trove_dashboard/content/database_clusters/forms.py:370
-#: trove_dashboard/content/databases/workflows/create_instance.py:64
+#: trove_dashboard/content/databases/workflows/create_instance.py:68
 msgid "Unable to obtain flavors."
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/forms.py:210
-#: trove_dashboard/content/databases/workflows/create_instance.py:161
+#: trove_dashboard/content/databases/workflows/create_instance.py:176
 msgid "Unable to retrieve networks."
 msgstr ""
 
@@ -807,7 +807,7 @@ msgid "Management Console"
 msgstr ""
 
 #: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:20
-#: trove_dashboard/content/databases/workflows/create_instance.py:336
+#: trove_dashboard/content/databases/workflows/create_instance.py:351
 msgid "Launch"
 msgstr ""
 
@@ -920,7 +920,7 @@ msgstr ""
 
 #: trove_dashboard/content/databases/forms.py:129
 #: trove_dashboard/content/databases/tables.py:460
-#: trove_dashboard/content/databases/workflows/create_instance.py:197
+#: trove_dashboard/content/databases/workflows/create_instance.py:212
 msgid "Password"
 msgstr ""
 
@@ -930,7 +930,7 @@ msgstr ""
 
 #: trove_dashboard/content/databases/forms.py:136
 #: trove_dashboard/content/databases/templates/databases/_launch_initialize_help.html:3
-#: trove_dashboard/content/databases/workflows/create_instance.py:189
+#: trove_dashboard/content/databases/workflows/create_instance.py:204
 msgid "Initial Databases"
 msgstr ""
 
@@ -1096,7 +1096,7 @@ msgstr ""
 
 #: trove_dashboard/content/databases/tables.py:362
 #: trove_dashboard/content/databases/templates/databases/launch.html:3
-#: trove_dashboard/content/databases/workflows/create_instance.py:335
+#: trove_dashboard/content/databases/workflows/create_instance.py:350
 msgid "Launch Instance"
 msgstr ""
 
@@ -1371,7 +1371,7 @@ msgid "Optionally provide a comma separated list of databases to create:"
 msgstr ""
 
 #: trove_dashboard/content/databases/templates/databases/_launch_initialize_help.html:7
-#: trove_dashboard/content/databases/workflows/create_instance.py:193
+#: trove_dashboard/content/databases/workflows/create_instance.py:208
 msgid "Initial Admin User"
 msgstr ""
 
@@ -1390,7 +1390,7 @@ msgid "Password (required)"
 msgstr ""
 
 #: trove_dashboard/content/databases/templates/databases/_launch_initialize_help.html:14
-#: trove_dashboard/content/databases/workflows/create_instance.py:199
+#: trove_dashboard/content/databases/workflows/create_instance.py:214
 msgid "Allowed Host (optional)"
 msgstr ""
 
@@ -1439,129 +1439,141 @@ msgid ""
 "enabled then a new password is generated."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:52
+#: trove_dashboard/content/databases/workflows/create_instance.py:43
+msgid "Volume Type"
+msgstr ""
+
+#: trove_dashboard/content/databases/workflows/create_instance.py:45
+msgid "Applicable only if the volume size is specified."
+msgstr ""
+
+#: trove_dashboard/content/databases/workflows/create_instance.py:56
 msgid "You must select a datastore type and version."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:115
+#: trove_dashboard/content/databases/workflows/create_instance.py:81
+msgid "No volume type"
+msgstr ""
+
+#: trove_dashboard/content/databases/workflows/create_instance.py:130
 msgid "Select datastore type and version"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:131
+#: trove_dashboard/content/databases/workflows/create_instance.py:146
 msgid "Networks"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:134
+#: trove_dashboard/content/databases/workflows/create_instance.py:149
 msgid "At least one network must be specified."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:137
+#: trove_dashboard/content/databases/workflows/create_instance.py:152
 msgid "Launch instance with these networks"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:147
+#: trove_dashboard/content/databases/workflows/create_instance.py:162
 msgid "Networking"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:149
+#: trove_dashboard/content/databases/workflows/create_instance.py:164
 msgid "Select networks for your instance."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:191
+#: trove_dashboard/content/databases/workflows/create_instance.py:206
 msgid "Comma separated list of databases to create"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:195
+#: trove_dashboard/content/databases/workflows/create_instance.py:210
 msgid "Initial admin user to add"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:201
+#: trove_dashboard/content/databases/workflows/create_instance.py:216
 msgid "Host or IP that the user is allowed to connect through."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:205
+#: trove_dashboard/content/databases/workflows/create_instance.py:220
 msgid "Initialize Databases"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:213
+#: trove_dashboard/content/databases/workflows/create_instance.py:228
 msgid "You must specify a password if you create a user."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:216
+#: trove_dashboard/content/databases/workflows/create_instance.py:231
 msgid "You must specify at least one database if you create a user."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:229
+#: trove_dashboard/content/databases/workflows/create_instance.py:244
 msgid "Source for Initial State"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:231
+#: trove_dashboard/content/databases/workflows/create_instance.py:246
 msgid "Choose initial state."
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:233
+#: trove_dashboard/content/databases/workflows/create_instance.py:248
 msgid "None"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:234
+#: trove_dashboard/content/databases/workflows/create_instance.py:249
 msgid "Restore from Backup"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:235
+#: trove_dashboard/content/databases/workflows/create_instance.py:250
 msgid "Replicate from Instance"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:241
-#: trove_dashboard/content/databases/workflows/create_instance.py:247
+#: trove_dashboard/content/databases/workflows/create_instance.py:256
+#: trove_dashboard/content/databases/workflows/create_instance.py:262
 msgid "Backup Name"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:243
+#: trove_dashboard/content/databases/workflows/create_instance.py:258
 msgid "Select a backup to restore"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:250
-#: trove_dashboard/content/databases/workflows/create_instance.py:256
+#: trove_dashboard/content/databases/workflows/create_instance.py:265
+#: trove_dashboard/content/databases/workflows/create_instance.py:271
 msgid "Master Instance Name"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:252
+#: trove_dashboard/content/databases/workflows/create_instance.py:267
 msgid "Select a master instance"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:260
+#: trove_dashboard/content/databases/workflows/create_instance.py:275
 msgid "Advanced"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:272
+#: trove_dashboard/content/databases/workflows/create_instance.py:287
 msgid "Select backup"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:286
+#: trove_dashboard/content/databases/workflows/create_instance.py:301
 msgid "Select instance"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:288
+#: trove_dashboard/content/databases/workflows/create_instance.py:303
 msgid "No instances available"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:303
+#: trove_dashboard/content/databases/workflows/create_instance.py:318
 msgid "Unable to find backup!"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:305
+#: trove_dashboard/content/databases/workflows/create_instance.py:320
 msgid "A backup must be selected!"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:315
+#: trove_dashboard/content/databases/workflows/create_instance.py:330
 msgid "Unable to find master instance!"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:318
+#: trove_dashboard/content/databases/workflows/create_instance.py:333
 msgid "A master instance must be selected!"
 msgstr ""
 
-#: trove_dashboard/content/databases/workflows/create_instance.py:337
+#: trove_dashboard/content/databases/workflows/create_instance.py:352
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr ""

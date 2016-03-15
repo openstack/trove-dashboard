@@ -1,14 +1,15 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2016. #zanata
+# Mie Yamamoto <myamamot@redhat.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-02-26 08:30+0000\n"
+"POT-Creation-Date: 2016-03-14 16:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-07 01:52+0000\n"
-"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"PO-Revision-Date: 2016-03-15 01:51+0000\n"
+"Last-Translator: Mie Yamamoto <myamamot@redhat.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -108,6 +109,9 @@ msgstr "許可ホスト"
 
 msgid "Allowed Host (optional)"
 msgstr "許可ホスト (省略可)"
+
+msgid "Applicable only if the volume size is specified."
+msgstr "ボリュームサイズが指定された場合のみ有効です。"
 
 msgid "At least one network must be specified."
 msgstr "少なくとも 1 つのネットワークを指定する必要があります。"
@@ -512,6 +516,9 @@ msgstr "利用可能なフレーバーがありません"
 msgid "No instances available"
 msgstr "インスタンスがありません"
 
+msgid "No volume type"
+msgstr "ボリューム種別の指定なし"
+
 msgid "None"
 msgstr "なし"
 
@@ -560,7 +567,7 @@ msgstr "(オプション) このデータベースでの照合順序タイプ。
 
 msgid "Optional comma separated list of databases user has access to."
 msgstr ""
-"(オプション) ユーザーがアクセスできるデータベースのカンマ区切りのリスト。"
+"(オプション) ユーザーがアクセスできるデータベースのコンマ区切りのリスト。"
 
 msgid "Optional datastore specific type of the instance."
 msgstr "(オプション) このインスタンスのデータストア固有のタイプ。"
@@ -667,7 +674,7 @@ msgid "Reset Password"
 msgstr "パスワードのリセット"
 
 msgid "Reset Root Password"
-msgstr "ルートパスワードの再設定"
+msgstr "ルートパスワードのリセット"
 
 msgctxt "Current status of a Database Instance"
 msgid "Resize"
@@ -957,7 +964,7 @@ msgid "Unable to obtain datastore versions."
 msgstr "データストアのバージョン一覧を取得できません。"
 
 msgid "Unable to obtain datastores."
-msgstr "データストアの一覧を取得できません。"
+msgstr "データストア一覧を取得できません。"
 
 msgid "Unable to obtain flavors."
 msgstr "フレーバー一覧を取得できません。"
@@ -971,7 +978,7 @@ msgstr "クラスターからインスタンスを削除できません: %s"
 
 #, python-format
 msgid "Unable to reset password. %s"
-msgstr "パスワードを再設定できません。 %s"
+msgstr "パスワードをリセットできません。 %s"
 
 #, python-format
 msgid "Unable to resize instance. %s"
@@ -1049,6 +1056,9 @@ msgstr "ボリューム"
 
 msgid "Volume Size"
 msgstr "ボリュームサイズ"
+
+msgid "Volume Type"
+msgstr "ボリューム種別"
 
 #, python-format
 msgid "You are not allowed to %(action)s: %(objs)s"

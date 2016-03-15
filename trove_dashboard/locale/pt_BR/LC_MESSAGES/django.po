@@ -1,15 +1,16 @@
 # Eric Baum <ecbaum@gmail.com>, 2016. #zanata
 # José Mello <jose.eduardo.jr@gmail.com>, 2016. #zanata
+# Marcelo Dieder <marcelodieder@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-02-26 08:30+0000\n"
+"POT-Creation-Date: 2016-03-14 16:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-14 03:12+0000\n"
-"Last-Translator: Eric Baum <ecbaum@gmail.com>\n"
+"PO-Revision-Date: 2016-03-15 04:05+0000\n"
+"Last-Translator: Marcelo Dieder <marcelodieder@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt-BR\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -109,6 +110,9 @@ msgstr "Host Permitido"
 
 msgid "Allowed Host (optional)"
 msgstr "Host Permitido (opcional)"
+
+msgid "Applicable only if the volume size is specified."
+msgstr "Aplicável apenas se o tamanho do volume é especificado."
 
 msgid "At least one network must be specified."
 msgstr "Ao menos uma rede deve ser especificada."
@@ -461,9 +465,8 @@ msgstr "Cluster iniciado \"%s\""
 msgid "Manage Access"
 msgstr "Gerenciar Acesso"
 
-#, fuzzy
 msgid "Manage Root"
-msgstr "Gerenciar Raiz"
+msgstr "Gerenciar Root"
 
 msgid "Manage Root Access"
 msgstr "Gerenciar Acesso Raiz"
@@ -522,6 +525,9 @@ msgstr "Nenhum flavor disponível."
 
 msgid "No instances available"
 msgstr "Não há instâncias disponíveis"
+
+msgid "No volume type"
+msgstr "Nenhum tipo de volume"
 
 msgid "None"
 msgstr "Nenhum"
@@ -741,9 +747,8 @@ msgid_plural "Revoke Access"
 msgstr[0] "Remover Acesso"
 msgstr[1] "Remover Acessos"
 
-#, fuzzy
 msgid "Root Enabled"
-msgstr "Raiz Habilitado"
+msgstr "Root Habilitado"
 
 msgid "Root Password"
 msgstr "Senha Root"
@@ -880,6 +885,18 @@ msgstr "Especificações"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Status if root was ever enabled for an instance."
+msgstr "Situação se o root sempre foi habilitado para uma instância."
+
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"O 'Tipo de Instância' e 'Relacionados' campos são armazenamento de dados "
+"específico e opcional. Consulte a documentação do Trove para obter mais "
+"informações sobre como usar esses campos."
 
 msgid "The flavor must be specified."
 msgstr "O flavor deve ser especificado."
@@ -1064,6 +1081,9 @@ msgstr "Volume"
 msgid "Volume Size"
 msgstr "Tamanho do Volume"
 
+msgid "Volume Type"
+msgstr "Tipo de Volume"
+
 #, python-format
 msgid "You are not allowed to %(action)s: %(objs)s"
 msgstr "Você não possui permissão para %(action)s: %(objs)s"
@@ -1086,6 +1106,14 @@ msgstr "Você deve especificar uma senha se você criar um usuário."
 msgid "You must specify at least one database if you create a user."
 msgstr ""
 "Você deve especificar ao menos uma base de dados se você criar um usuário."
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
 
 msgid "instance"
 msgstr "instância"
