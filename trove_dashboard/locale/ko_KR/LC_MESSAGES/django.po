@@ -1,0 +1,1081 @@
+# SeYeon Lee <sy_lee@kr.ibm.com>, 2016. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
+# dongbinseo <chuinggun@naver.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-03-14 16:59+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-03-16 05:28+0000\n"
+"Last-Translator: SeYeon Lee <sy_lee@kr.ibm.com>\n"
+"Language-Team: Korean (South Korea)\n"
+"Language: ko-KR\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid ""
+"\n"
+"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
+"  clicking the button, or dragging and dropping. You can change the\n"
+"  NIC order by dragging and dropping as well.\n"
+"  "
+msgstr ""
+"\n"
+"  버튼을 클릭하거나 드래그 앤 드롭하여 '사용 가능한 네트워크'를 '선택한 네트"
+"워크'로\n"
+"  이동합니다. 드래그 앤 드롭을 사용해서 NIC 순서도\n"
+"  변경할 수 있습니다.\n"
+"  "
+
+msgid "\"Clusters\""
+msgstr "\"클러스터\""
+
+msgid "\"Launch Cluster\""
+msgstr "\"클러스터 실행\""
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM"
+msgstr "%(name)s | %(RAM)s RAM"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s RAM | 인스턴스 %(instances)s"
+
+msgid "-"
+msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> The new value must be greater than the "
+"existing volume size."
+msgstr "<strong>노트:</strong> 새로운 값은 기존 볼륨 사이즈보다 더 커야합니다."
+
+msgid ""
+"<strong>Please note:</strong> The value specified in the Volume Size field "
+"should be greater than 0, however, some configurations do not support "
+"specifying volume size. If specifying the volume size results in an error "
+"stating volume support is not enabled, enter 0."
+msgstr ""
+"<strong>주:</strong> 볼륨 크기 필드에 0보다 큰 값을 지정해야 하지만, 일부 구"
+"성에서는 볼륨 크기를 지정할 수 없습니다. 볼륨 크기를 지정했을 때 볼륨 지원이 "
+"사용되지 않음을 표시하는 메시지가 표시되면 0을 입력하십시오."
+
+msgid "A backup must be selected!"
+msgstr "백업이 반드시 선택되어야 합니다!"
+
+msgid "A master instance must be selected!"
+msgstr "마스터 인스턴스는 반드시 선택되어야 합니다!"
+
+msgid "A new name or new password or new host must be specified."
+msgstr "새로운 이름이나 새로운 암호, 새로운 호스트를 지정할 수 있습니다."
+
+msgid "Access Revoked to"
+msgid_plural "Access Revoked to"
+msgstr[0] "접근 불가"
+
+msgid "Accessible"
+msgstr "접근 가능한"
+
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr "Active"
+
+msgid "Add"
+msgstr "추가"
+
+msgid "Add Instance"
+msgstr "인스턴스 추가"
+
+msgid "Advanced"
+msgstr "진보된"
+
+msgid ""
+"Allow the user to connect from this host\n"
+"    only. If not provided this user will be allowed to connect from "
+"anywhere.\n"
+"    "
+msgstr ""
+"사용자가 이 호스트에서만 접근하도록 허용하십시오.\n"
+"    이 옵션을 제공하지 않으면 사용자가 모든 위치에서 접근할 수 있습니다.\n"
+"    "
+
+msgid "Allowed Host"
+msgstr "허용한 호스트"
+
+msgid "Allowed Host (optional)"
+msgstr "허용한 호스트(선택적)"
+
+msgid "Applicable only if the volume size is specified."
+msgstr "볼륨 크기가 지정된 경우에만 적용됩니다."
+
+msgid "At least one network must be specified."
+msgstr "최소 네트워크 하나를 지정해야 합니다."
+
+msgid "At least one of the new fields must be changed."
+msgstr "적어도 새로운 필드 중 하나는 반드시 바뀌어야만한다."
+
+msgid "Available networks"
+msgstr "사용 가능한 네트워크"
+
+msgid "Backup"
+msgstr "백업"
+
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr "Backup"
+
+msgid "Backup Database"
+msgstr "백업 데이터베이스"
+
+msgid "Backup Details"
+msgstr "백업에 대한 세부 정보"
+
+msgid "Backup Details: {{ backup.name }}"
+msgstr "백업 세부 정보: {{ backup.name }}"
+
+msgid "Backup Duration"
+msgstr "백업 사용 시간"
+
+msgid "Backup File"
+msgstr "백업 파일"
+
+msgid "Backup File Location"
+msgstr "백업 파일 위치"
+
+msgid "Backup Name"
+msgstr "백업 이름"
+
+msgid "Backup Overview"
+msgstr "백업 개요"
+
+msgid "Backups"
+msgstr "백업"
+
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr "Blocked"
+
+msgctxt "Current status of a Database Instance"
+msgid "Build"
+msgstr "Build"
+
+msgctxt "Current status of a Database Backup"
+msgid "Building"
+msgstr "Building"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Cannot grow cluster.  No instances specified."
+msgstr "클러스터를 확장할 수 없습니다.  선택된 인스턴스가 없습니다."
+
+msgid "Character Set"
+msgstr "Character Set"
+
+msgid "Choose a new instance flavor."
+msgstr "새로운 인스턴스 flavor를 선택하세요."
+
+msgid "Choose initial state."
+msgstr "초기 상태를 선택하십시오."
+
+msgid "Cluster Name"
+msgstr "클러스터 이름"
+
+msgid "Cluster Size"
+msgstr "클러스터 크기"
+
+msgid "Clusters"
+msgstr "클러스터"
+
+msgid "Collation"
+msgstr "컬렉션"
+
+msgid "Comma separated list of databases to create"
+msgstr "생성할 데이터 베이스를 쉼표로 구분한 목록"
+
+msgctxt "Current status of a Database Backup"
+msgid "Completed"
+msgstr "완료됨"
+
+msgid "Connection Examples"
+msgstr "연결 예제"
+
+msgid "Connection Information"
+msgstr "연결 정보"
+
+msgid "Create Backup"
+msgstr "백업 생성"
+
+msgid "Create Database"
+msgstr "데이터베이스 생성"
+
+msgid "Create User"
+msgstr "사용자 생성"
+
+msgid ""
+"Create an optional initial user.\n"
+"   This user will have access to all databases you create."
+msgstr ""
+"선택적 초기 사용자를 작성하십시오.\n"
+"   이 초기 사용자는 사용자가 만든 모든 데이터베이스에 액세스할 수 있습니다."
+
+msgid "Created"
+msgstr "생성됨"
+
+#, python-format
+msgid "Created database \"%s\"."
+msgstr "데이터베이스 \"%s\"가 생성되었습니다."
+
+#, python-format
+msgid "Created user \"%s\"."
+msgstr "\"%s\" 사용자 생성되었습니다."
+
+msgid "Current Size (GB)"
+msgstr "현재 크기 (GB)"
+
+msgid "Current Task"
+msgstr "현재 작업"
+
+msgid "DATABASE"
+msgstr "DATABASE"
+
+msgid "Database"
+msgstr "Database"
+
+msgid "Database Access"
+msgstr "데이터베이스 접근"
+
+msgid "Database Access for: {{ user_name }}"
+msgstr "사용자에 대한 데이터베이스 접근: {{ user_name }}"
+
+msgid "Database Backups"
+msgstr "데이터베이스 백업"
+
+msgid "Database Info"
+msgstr "데이터베이스 정보"
+
+msgid "Database Instance"
+msgstr "데이터베이스 인스턴스"
+
+msgid "Database Name"
+msgstr " 데이트베이스 이름"
+
+msgid "Database Port"
+msgstr "데이터베이스 포트"
+
+msgid "Databases"
+msgstr "데이터베이스"
+
+msgid "Datastore"
+msgstr "Datastore"
+
+msgid "Datastore Version"
+msgstr "Datastore 버전"
+
+msgid "Delete Backup"
+msgid_plural "Delete Backups"
+msgstr[0] "백업 삭제"
+
+msgid "Delete Cluster"
+msgid_plural "Delete Clusters"
+msgstr[0] "클러스터 삭제"
+
+msgid "Delete Database"
+msgid_plural "Delete Databases"
+msgstr[0] "데이터베이스 삭제"
+
+msgctxt "Current status of a Database Backup"
+msgid "Delete Failed"
+msgstr "삭제 실패함"
+
+msgid "Delete Instance"
+msgid_plural "Delete Instances"
+msgstr[0] "인스턴스 삭제"
+
+msgid "Delete User"
+msgid_plural "Delete Users"
+msgstr[0] "사용자 삭제"
+
+msgid "Deleted Backup"
+msgid_plural "Deleted Backups"
+msgstr[0] "백업 삭제됨"
+
+msgid "Deleted Database"
+msgid_plural "Deleted Databases"
+msgstr[0] "데이터베이스 삭제됨"
+
+msgid "Deleted User"
+msgid_plural "Deleted Users"
+msgstr[0] "사용자 삭제됨"
+
+msgid "Deleted cluster is not recoverable."
+msgstr "삭제된 클러스터는 복구할 수 없습니다."
+
+msgid "Deleted instances are not recoverable."
+msgstr "삭제된 인스턴스는 되살릴 수 없습니다."
+
+msgid "Description"
+msgstr "설명"
+
+msgid "Detach Replica"
+msgid_plural "Detach Replicas"
+msgstr[0] "복제본으로부터 해제"
+
+msgid "Details"
+msgstr "상세 정보"
+
+msgid "Download"
+msgstr "내려받기"
+
+msgid "Download Backup"
+msgstr "백업 다운로드"
+
+msgid "Edit User"
+msgstr "사용자 수정"
+
+msgid "Enable Root"
+msgstr "Root 활성화"
+
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr "Error"
+
+msgid "Error creating database backup."
+msgstr "데이터베이스 백업을 생성하던 중 오류가 발생하였습니다."
+
+msgid "Error deleting database on instance."
+msgstr "인스턴스에서 데이터베이스 삭제중 에러가 발생하였습니다."
+
+msgid "Error getting database backup list."
+msgstr "데이터베이스 백업 목록을 가져오던 중 오류가 발생하였습니다."
+
+msgctxt "Current status of a Database Backup"
+msgid "Failed"
+msgstr "실패함"
+
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr "Failed"
+
+msgid "Flavor"
+msgstr "Flavor"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "Grant Access"
+msgid_plural "Grant Access"
+msgstr[0] "접근 허용"
+
+msgid "Granted Access to"
+msgid_plural "Granted Access to"
+msgstr[0] "접근 허용 "
+
+msgid "Grow Cluster"
+msgstr "클러스터 확장"
+
+msgid "Grow Cluster: {{cluster_name}}"
+msgstr "클러스터 확장: {{cluster_name}}"
+
+msgid "Host"
+msgstr "호스트"
+
+msgid "Host or IP that the user is allowed to connect through."
+msgstr "사용자가 연결하도록 허용된 호스트 또는 IP입니다."
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Incremental"
+msgstr "증분"
+
+msgid "Incremental Backup"
+msgstr "증분 백업"
+
+msgid "Information"
+msgstr "정보"
+
+msgid "Initial Admin User"
+msgstr "초기 관리자"
+
+msgid "Initial Databases"
+msgstr "초기 데이터베이스"
+
+msgid "Initial Volume Size"
+msgstr "초기 볼륨 크기"
+
+msgid "Initial admin user to add"
+msgstr "추가할 초기 관리자"
+
+msgid "Initialize Databases"
+msgstr "데이터베이스 초기화"
+
+msgid "Instance Name"
+msgstr "인스턴스 이름"
+
+msgid "Instance Type"
+msgstr "인스턴스 타입"
+
+msgid "Instances"
+msgstr "인스턴스"
+
+msgid "Is a Replica Of"
+msgstr "복제본에 속함"
+
+msgid "Launch"
+msgstr "실행"
+
+msgid "Launch Cluster"
+msgstr "클러스터 실행"
+
+msgid "Launch Database"
+msgstr "데이터베이스 시작"
+
+msgid "Launch Instance"
+msgstr "인스턴스 시작"
+
+msgid "Launch instance with these networks"
+msgstr "선택한 네트워크로 인스턴스 구동"
+
+#, python-format
+msgid "Launched %(count)s named \"%(name)s\"."
+msgstr "%(count)s개의 \"%(name)s\"이(가) 시작되었습니다."
+
+#, python-format
+msgid "Launched cluster \"%s\""
+msgstr "클러스터 \"%s\" 구동됨"
+
+msgid "Manage Access"
+msgstr "접근 관리"
+
+msgid "Manage Root"
+msgstr "Root 관리"
+
+msgid "Manage Root Access"
+msgstr "Root 접근 관리"
+
+msgid "Management Console"
+msgstr "관리 콘솔"
+
+msgid "Master Instance Name"
+msgstr "마스터 인스턴스 이름"
+
+msgid "Name"
+msgstr "이름"
+
+msgid "Network"
+msgstr "네트워크"
+
+msgid "Network attached to instance."
+msgstr "인스턴스에 네트워크 연결하였습니다."
+
+msgid "Networking"
+msgstr "네트워킹"
+
+msgid "Networks"
+msgstr "네트워크"
+
+msgctxt "Current status of a Database Backup"
+msgid "New"
+msgstr "New"
+
+msgid "New Flavor"
+msgstr "새로운 Flavor"
+
+msgid "New Host"
+msgstr "새 호스트"
+
+msgid "New Name"
+msgstr "새 이름"
+
+msgid "New Password"
+msgstr "새로운 암호"
+
+msgid "New Size (GB)"
+msgstr "새로운 크기 (GB)"
+
+msgid "New password for cluster access."
+msgstr "클러스터에 접근할 수 있는 새로운 암호를 설정합니다."
+
+msgid "New size for volume must be greater than current size."
+msgstr "볼륨의 새로운 크기는 현재 크기보다 커야합니다."
+
+msgid "No backups available"
+msgstr "사용가능한 백업 없음"
+
+msgid "No flavors available"
+msgstr "Flavor가 존재하지 않습니다"
+
+msgid "No instances available"
+msgstr "사용 가능한 인스턴스가 없음"
+
+msgid "No volume type"
+msgstr "볼륨 타입이 없음"
+
+msgid "None"
+msgstr "None"
+
+msgid "Not Assigned"
+msgstr "할당되지 않았습니다."
+
+msgid "Not Found"
+msgstr "찾을 수 없음"
+
+msgid "Not available"
+msgstr "사용할 수 없음"
+
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
+msgstr ""
+"주: 인스턴스에서 root 접근을 사용하십시오. root 사용자가 이미 사용되는 경우 "
+"새 암호가 생성됩니다."
+
+msgid "Number of Instances"
+msgstr "인스턴스 수"
+
+msgid "Number of Shards"
+msgstr "Shard 개수"
+
+msgid "Number of instances in the cluster."
+msgstr "클러스터에 있는 인스턴스 수"
+
+msgid "Number of instances in the cluster. (Read only)"
+msgstr "클러스터에 존재하는 인스턴스 수. (읽기 전용)"
+
+msgid "Number of shards. (Read only)"
+msgstr "Shard 개수 (읽기 전용)"
+
+msgid "Old Flavor"
+msgstr "오래된 Flavor"
+
+msgid "Optional Backup Description"
+msgstr "선택 백업 설명"
+
+msgid "Optional character set for the database."
+msgstr "데이터베이스 character set을 선택합니다."
+
+msgid "Optional collation type for the database."
+msgstr "데이터베이스에대한 컬렉션 타입은 옵션입니다."
+
+msgid "Optional comma separated list of databases user has access to."
+msgstr "접근 가능한 데이터베이스 사용자는 쉼표로 구분하여 지정 가능합니다."
+
+msgid "Optional datastore specific type of the instance."
+msgstr "인스턴스에 대한 datastore 특정 타입을 선택할 수 있습니다."
+
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr ""
+"다른 클러스터에서 하나의 인스턴스와 관계를 정의하는 datastore 고유 값을 선택"
+"합니다."
+
+msgid "Optional host of user."
+msgstr "사용자 호스트는 선택할 수 있습니다."
+
+msgid "Optional name of the instance."
+msgstr "인스턴스 이름을 선택할 수 있습니다."
+
+msgid "Optional parent backup"
+msgstr "선택가능한 부모 백업"
+
+msgid ""
+"Optionally choose to create this database using a previous backup, or as a "
+"replica of another database instance."
+msgstr ""
+"이 데이터베이스를 이전 백업을 사용하여 생성할지 아니면 다른 데이터베이스 인스"
+"턴스의 복제본으로 생성할지 선택하십시오."
+
+msgid "Optionally provide a character set and collation for the database."
+msgstr "선택적으로 데이터베이스의 문자 세트와 데이터 정렬을 제공하십시오."
+
+msgid "Optionally provide a comma separated list of databases to create:"
+msgstr "선택적으로, 생성할 데이터베이스 목록을 쉼표로 구분하여 제공하십시오."
+
+msgid ""
+"Optionally provide the host of the user and a list of databases the user is "
+"granted access to."
+msgstr ""
+"선택적으로 사용자의 호스트와 사용자가 액세스 권한을 부여한 데이터베이스 목록"
+"을 제공하십시오."
+
+msgid "Overview"
+msgstr "개요"
+
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+msgid "Parent Backup"
+msgstr "부모 백업"
+
+msgid "Password"
+msgstr "암호"
+
+msgid "Password (required)"
+msgstr "패스워드(필수)"
+
+msgid "Password for root user must be specified."
+msgstr "Root 사용자 암호가 지정되어야 합니다."
+
+msgid "Password for root user."
+msgstr "Root 사용자 암호"
+
+msgid ""
+"Password is only visible immediately after the root is enabled or reset."
+msgstr "패스워드는 오직 root가 리셋,enabled된 이후에 즉시 보이기 시작한다."
+
+msgid "RAM"
+msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Reboot"
+msgstr "Reboot"
+
+msgid "Related To"
+msgstr "Related To"
+
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] "인스턴스 제거"
+
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] "인스턴스 제거됨"
+
+msgid "Removed instances from cluster."
+msgstr "클러스터에서 인스턴스를 제거하였습니다."
+
+msgid "Replica Detached"
+msgid_plural "Replicas Detached"
+msgstr[0] "복제본으로부터 해제됨"
+
+msgid "Replicas"
+msgstr "복제본"
+
+msgid "Replicate from Instance"
+msgstr "인스턴스에서 복제"
+
+msgid "Replication"
+msgstr "복제(Replication)"
+
+msgid "Reset Password"
+msgstr "암호 재설정"
+
+msgid "Reset Root Password"
+msgstr "Root 암호 재설정"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resize"
+msgstr "Resize"
+
+msgid "Resize Database Instance"
+msgstr "데이터베이스 인스턴스 크기 재조정"
+
+msgid "Resize Database Volume"
+msgstr "데이터베이스 볼륨 크기 조정"
+
+msgid "Resize Instance"
+msgstr "인스턴스 크기 재조정"
+
+msgid "Resize Volume"
+msgstr "볼륨 크기 재조정"
+
+#, python-format
+msgid "Resizing instance \"%s\""
+msgstr "인스턴스 \"%s\" 크기 재조정"
+
+#, python-format
+msgid "Resizing volume \"%s\""
+msgstr "볼륨 \"%s\" 크기 재조정"
+
+msgid "Restart Instance"
+msgid_plural "Restart Instances"
+msgstr[0] "인스턴스 재시작"
+
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr "Restart Required"
+
+msgid "Restarted Instance"
+msgid_plural "Restarted Instances"
+msgstr[0] "인스턴스 재시작함"
+
+msgid "Restarted instances will lose any data not saved in persistent storage."
+msgstr ""
+"재시작된 인스턴스에서 persistent 스토리지에 저장되지 않은 모든 데이터는 손실"
+"됩니다."
+
+msgid "Restore Backup"
+msgstr "백업 복구"
+
+msgid "Restore from Backup"
+msgstr "백업으로부터 복구"
+
+msgid "Revoke Access"
+msgid_plural "Revoke Access"
+msgstr[0] "접근 불가"
+
+msgid "Root Enabled"
+msgstr "Root 활성화됨"
+
+msgid "Root Password"
+msgstr "Root 암호"
+
+#, python-format
+msgid "Root password updated for cluster \"%s\""
+msgstr "\"%s\" 클러스터에 대한 root 암호를 업데이트 하였습니다."
+
+msgctxt "Current status of a Database Backup"
+msgid "Saving"
+msgstr "저장 중"
+
+msgid "Scheduled Shrinking of Cluster"
+msgid_plural "Scheduled Shrinking of Cluster"
+msgstr[0] "클러스터 예약 축소"
+
+#, python-format
+msgid "Scheduled backup \"%(name)s\"."
+msgstr "\"%(name)s\" 백업할 예정입니다."
+
+msgid "Scheduled deletion of Cluster"
+msgid_plural "Scheduled deletion of Clusters"
+msgstr[0] "클러스터 예약 삭제"
+
+msgid "Scheduled deletion of Instance"
+msgid_plural "Scheduled deletion of Instances"
+msgstr[0] "인스턴스 예약 삭제"
+
+msgid "Scheduled growing of cluster."
+msgstr "클러스터 예약 확장"
+
+msgid "Select a backup to restore"
+msgstr "복원할 백업본 선택"
+
+msgid "Select a master instance"
+msgstr "마스터 인스턴스 선택"
+
+msgid "Select a new flavor"
+msgstr "새로운 flavor 선택"
+
+msgid "Select backup"
+msgstr "백업 선택"
+
+msgid "Select datastore type and version"
+msgstr "Datastore 타입과 버전 선택"
+
+msgid "Select instance"
+msgstr "인스턴스 선택"
+
+msgid "Select networks for your instance."
+msgstr "인스턴스 네트워크 선택"
+
+msgid "Select parent backup"
+msgstr "부모 백업 선택"
+
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr "선택한 인스턴스를 클러스터에서 제거합니다."
+
+msgid "Selected networks"
+msgstr "네트워크 선택됨"
+
+msgid "Shrink Cluster"
+msgid_plural "Shrink Cluster"
+msgstr[0] "클러스터 축소"
+
+msgid "Shrink Cluster: {{cluster_name}}"
+msgstr "클러스터 축소: {{cluster_name}}"
+
+msgid "Shrinking a cluster is not recoverable."
+msgstr "축소한 클러스터는 복구할 수 없습니다."
+
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr "Shutdown"
+
+msgid "Size"
+msgstr "크기"
+
+msgid "Size of image to launch."
+msgstr "시작시 이미지 크기"
+
+msgid "Size of instance to launch."
+msgstr "동작중인 인스턴스 크기"
+
+msgid "Size of the volume in GB."
+msgstr "GB 볼륨 크기."
+
+msgid "Source for Initial State"
+msgstr "초기 상태 원본"
+
+msgid "Specify a new flavor for the database instance."
+msgstr "데이터베이스 인스턴스에 대한  새로운 flavor을 지정하라"
+
+msgid "Specify a new name, new password or new host name for the user."
+msgstr "유저에 대한 새로운 이름, 패스워드, 호스트이름을 명시하라"
+
+msgid "Specify the details for launching an instance."
+msgstr "인스턴스 실행에 대한 세부 정보를 지정하십시오."
+
+msgid "Specify the details for the database backup."
+msgstr "데이터베이스 백업에 대한 세부 사항을 지정합니다."
+
+msgid "Specify the details of the instance to be added to the cluster."
+msgstr "클러스터에 추가하는 인스턴스의 세부 사항을 지정합니다."
+
+msgid ""
+"Specify the instances to be added to the cluster.  When all the instances "
+"are specified click 'Grow Cluster' to perform the grow operation."
+msgstr ""
+"지정한 인스턴스를 클러스터에 추가합니다. 'Grow Cluster'를 눌러 모든 인스턴스"
+"에 확장 작업을 진행할 수 있습니다."
+
+msgid "Specify the name of the new database."
+msgstr "새 데이터베이스의 이름을 지정하십시오."
+
+msgid "Specify the name of the new user and password."
+msgstr "새로운 유저의 이름과 패스워드를 명시하라"
+
+msgid "Specify the new root password for vertica cluster."
+msgstr "vertica 클러스터에 대한 새로운 root 암호를 지정합니다."
+
+msgid "Specify the new volume size for the database instance."
+msgstr "데이터베이스 인스터스에 사용할 새로운 볼륨 크기를 지정합니다."
+
+msgid "Specs"
+msgstr "사양"
+
+msgid "Status"
+msgstr "상태"
+
+msgid "Status if root was ever enabled for an instance."
+msgstr "인스턴스에 대해 root가 사용으로 설정된 경우 상태입니다."
+
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"'Instance Type'와 'Related To' 필드는 datastore를 지정하거나 옵션으로 설정할 "
+"수 있습니다. 필드 사용에대한 자세한 내용은 Trove 문서를 참고하십시오."
+
+msgid "The flavor must be specified."
+msgstr "Flabor가 지정되어야 합니다."
+
+msgid ""
+"The name field is optional.   If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr ""
+"이름 필드는 옵션입니다.   필드를 비워두면 클러스터를 키울때 이름을 생성합니"
+"다."
+
+msgid "The number of instances must be greater than 1."
+msgstr "인스턴스는 1개 이상이어야 합니다."
+
+msgid "The number of shards must be greater than 1."
+msgstr "Shard는 1개 이상이어야 합니다."
+
+msgid "There was a problem enabling root."
+msgstr "Root 계정 활성화에 문제가 발생했습니다."
+
+msgid "Type"
+msgstr "타입"
+
+msgid "Type and version of datastore."
+msgstr "Datastore 타입과 버전"
+
+msgid "USERNAME"
+msgstr "USERNAME"
+
+#, python-format
+msgid "Unable to %(action)s: %(objs)s"
+msgstr "%(action)s 할 수 없습니다: %(objs)s"
+
+#, python-format
+msgid "Unable to create database. %s"
+msgstr "데이터베이스 %s를 생성할 수 없음"
+
+#, python-format
+msgid "Unable to create user. %s"
+msgstr "\"%s\" 사용자를 생성할 수 없습니다."
+
+msgid "Unable to determine if instance root is enabled."
+msgstr "만약 인스턴스 루트가 이용 가능하다면 결정이 불가능하다"
+
+msgid "Unable to find backup!"
+msgstr "백업을 찾을 수 없습니다!"
+
+msgid "Unable to find master instance!"
+msgstr "마스터 인스턴스를 찾기가 불가능합니다!"
+
+msgid "Unable to get database backup data."
+msgstr "데이터베이스 백업 데이터를 가져올 수 없습니다."
+
+msgid "Unable to get databases data."
+msgstr "데이터베이스 데이터를 가져올 수 없습니다."
+
+msgid "Unable to get instances data."
+msgstr "인스턴스 데이터를 가져올 수 없습니다."
+
+msgid "Unable to get user access data."
+msgstr "사용자 접속 데이터를 가져올 수 없습니다."
+
+msgid "Unable to get user data."
+msgstr "사용자 데이터를 가져올 수 없습니다."
+
+#, python-format
+msgid "Unable to grow cluster. %s"
+msgstr "클러스터를 늘릴 수 없습니다. %s"
+
+#, python-format
+msgid "Unable to grow cluster: %s"
+msgstr "클러스터를 늘릴 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to launch %(count)s named \"%(name)s\"."
+msgstr "%(count)s 개의 \"%(name)s\"을 구동할 수 없습니다."
+
+#, python-format
+msgid "Unable to launch cluster. %s"
+msgstr "클러스터 \"%s\"를 구동할 수 없습니다."
+
+msgid "Unable to list database backups for parent."
+msgstr "부모 데이터베이스 백업을 나열할 수 없습니다."
+
+msgid "Unable to list database instances to backup."
+msgstr "백업 데이터베이스 인스턴스를 나열할 수 없습니다."
+
+msgid "Unable to obtain datastore versions."
+msgstr "Datastore 버전을 가져올 수 없습니다."
+
+msgid "Unable to obtain datastores."
+msgstr "Datastore를 가져올 수 없습니다."
+
+msgid "Unable to obtain flavors."
+msgstr "Flavor을 가져올 수 없습니다."
+
+msgid "Unable to obtain information on root user"
+msgstr "Root 사용자의 정보를 얻을 수 없습니다"
+
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr "클러스터에서 인스턴스를 제거하지 못 하였습니다: %s"
+
+#, python-format
+msgid "Unable to reset password. %s"
+msgstr "암호를 재설정하지 못하였습니다. %s"
+
+#, python-format
+msgid "Unable to resize instance. %s"
+msgstr "인스턴스 크기 재조정 실패. %s"
+
+#, python-format
+msgid "Unable to resize volume. %s"
+msgstr "볼륨 크기를 변경할 수 없습니다. %s"
+
+msgid "Unable to retrieve accessible databases."
+msgstr "접근 가능한 데이터베이스를 찾지 못 했습니다."
+
+msgid "Unable to retrieve cluster details."
+msgstr "클러스터 세부 정보를 찾지 못했습니다."
+
+msgid "Unable to retrieve database clusters."
+msgstr "클러스터 데이터베이스를 찾지 못했습니다."
+
+msgid "Unable to retrieve database instances."
+msgstr "인스턴스 데이터베이스를 찾지 못 했습니다."
+
+msgid "Unable to retrieve database size information."
+msgstr "데이터베이스 크기 정보를 찾지 못했습니다."
+
+msgid "Unable to retrieve databases."
+msgstr "데이터베이스를 찾지 못 했습니다."
+
+#, python-format
+msgid "Unable to retrieve details for backup: %s"
+msgstr "백업에 대한 세부 정보를 찾지 못했습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database cluster: %s"
+msgstr "클러스터 데이터베이스에 대한 세부 정보를 찾지 못했습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database instance: %s"
+msgstr "인스턴스 데이터베이스에 대한 세부 정보를 찾지 못 했습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve details for parent backup: %s"
+msgstr "원본 백업에 대한 세부 정보를 찾지 못했습니다: %s"
+
+msgid "Unable to retrieve flavors."
+msgstr "Flavor를 찾지 못 했습니다."
+
+msgid "Unable to retrieve instance details."
+msgstr "인스턴스 세부 정보를 찾지 못 했습니다."
+
+msgid "Unable to retrieve networks."
+msgstr "네트워크를 찾지 못 했습니다."
+
+#, python-format
+msgid "Unable to update user. %s"
+msgstr "\"%s\" 사용자를 업데이트할 수 없습니다."
+
+msgid "Updated"
+msgstr "업데이트 완료"
+
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr "\"%s\" 사용자 업데이트 되었습니다."
+
+msgid "User Name"
+msgstr "사용자 이름"
+
+msgid "Username (required)"
+msgstr "사용자이름(필수)"
+
+msgid "Users"
+msgstr "사용자"
+
+msgid "Volume"
+msgstr "볼륨"
+
+msgid "Volume Size"
+msgstr "볼륨 크기"
+
+msgid "Volume Type"
+msgstr "볼륨 타입"
+
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr "%(action)s 이(가) 허용되지 않았습니다: %(objs)s "
+
+msgid ""
+"You can perform an incremental backup by specifying a parent backup. "
+"<strong>However,</strong> not all databases support incremental backups in "
+"which case this operation will result in an error."
+msgstr ""
+"부모 백업을 지정하여 증분 백업으로 작업을 진행할 수 있습니다. <strong>그러나"
+"</strong>, 모든 데이터베이스에서 오류가 발생되는 경우에는 증분 백업을 지원하"
+"지 않습니다."
+
+msgid "You must select a datastore type and version."
+msgstr "Datastore 타입과 버전을 선택해야 합니다."
+
+msgid "You must specify a password if you create a user."
+msgstr "사용자 생성을 하려면 패스워드를 입력하세요"
+
+msgid "You must specify at least one database if you create a user."
+msgstr "사용자 생성을 하려면 적어도 하나의 데이터베이스를 정하세요"
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s]"
+
+msgid "instance"
+msgstr "인스턴스"
