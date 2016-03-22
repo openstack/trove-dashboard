@@ -12,6 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.template import defaultfilters as d_filters
 from django.utils.translation import pgettext_lazy
@@ -86,7 +87,8 @@ class DownloadBackup(tables.LinkAction):
                                'object_path': object_path})
 
     def allowed(self, request, datum):
-        return datum.status == 'COMPLETED'
+        return ((settings.HORIZON_CONFIG['swift_panel'] == 'legacy') and
+                datum.status == 'COMPLETED')
 
 
 class DeleteBackup(tables.DeleteAction):
