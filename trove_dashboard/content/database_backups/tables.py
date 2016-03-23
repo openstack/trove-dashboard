@@ -87,8 +87,11 @@ class DownloadBackup(tables.LinkAction):
                                'object_path': object_path})
 
     def allowed(self, request, datum):
-        return ((settings.HORIZON_CONFIG['swift_panel'] == 'legacy') and
-                datum.status == 'COMPLETED')
+        legacy_swift_panel_enabled = True
+        if ('swift_panel' in settings.HORIZON_CONFIG and
+                settings.HORIZON_CONFIG['swift_panel'] == 'angular'):
+            legacy_swift_panel_enabled = False
+        return legacy_swift_panel_enabled and datum.status == 'COMPLETED'
 
 
 class DeleteBackup(tables.DeleteAction):
