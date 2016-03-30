@@ -410,7 +410,10 @@ class ResizeInstance(tables.LinkAction):
         return urlresolvers.reverse(self.url, args=[instance_id])
 
 
-class RootAction(tables.Action):
+class EnableRootAction(tables.Action):
+    name = "enable_root_action"
+    verbose_name = _("Enable Root")
+
     def handle(self, table, request, obj_ids):
         try:
             username, password = api.trove.root_enable(request, obj_ids)
@@ -420,22 +423,22 @@ class RootAction(tables.Action):
             messages.error(request, _('There was a problem enabling root.'))
 
 
-class EnableRootAction(RootAction):
-    name = "enable_root_action"
-    verbose_name = _("Enable Root")
-
-    def allowed(self, request, instance):
-        enabled = api.trove.root_show(request, instance.id)
-        return not enabled.rootEnabled
-
-
-class ResetRootAction(RootAction):
-    name = "reset_root_action"
-    verbose_name = _("Reset Password")
+class DisableRootAction(tables.Action):
+    name = "disable_root_action"
+    verbose_name = _("Disable Root")
 
     def allowed(self, request, instance):
         enabled = api.trove.root_show(request, instance.id)
         return enabled.rootEnabled
+
+    def single(self, table, request, object_id):
+        try:
+            api.trove.root_disable(request, object_id)
+            table.data[0].password = None
+            messages.success(request, _("Successfully disabled root access."))
+        except Exception as e:
+            messages.warning(request,
+                             _("Cannot disable root access: %s") % e.message)
 
 
 class ManageRoot(tables.LinkAction):
@@ -453,7 +456,8 @@ class ManageRoot(tables.LinkAction):
 
 class ManageRootTable(tables.DataTable):
     name = tables.Column('name', verbose_name=_('Instance Name'))
-    enabled = tables.Column('enabled', verbose_name=_('Root Enabled'),
+    enabled = tables.Column('enabled',
+                            verbose_name=_('Has Root Ever Been Enabled'),
                             filters=(d_filters.yesno, d_filters.capfirst),
                             help_text=_("Status if root was ever enabled "
                                         "for an instance."))
@@ -465,7 +469,7 @@ class ManageRootTable(tables.DataTable):
     class Meta(object):
         name = "manage_root"
         verbose_name = _("Manage Root")
-        row_actions = (EnableRootAction, ResetRootAction,)
+        row_actions = (EnableRootAction, DisableRootAction,)
 
 
 class UpdateRow(tables.Row):

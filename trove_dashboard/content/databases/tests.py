@@ -498,16 +498,15 @@ class DatabaseTests(test.TestCase):
         self.assertNotEqual(table.data[0].enabled, True)
         self.assertNotEqual(table.data[0].password, "password")
 
-    @test.create_stubs({api.trove: ('root_enable',)})
-    def test_reset_root(self):
-        api.trove.root_enable(IsA(http.HttpRequest), [u'id']) \
-            .AndReturn(("root", "newpassword"))
+    @test.create_stubs({api.trove: ('root_disable',)})
+    def test_disable_root(self):
+        api.trove.root_disable(IsA(http.HttpRequest), u'id')
 
         self.mox.ReplayAll()
 
         url = reverse('horizon:project:databases:manage_root',
                       args=['id'])
-        form_data = {"action": "manage_root__reset_root_action__%s" % 'id'}
+        form_data = {"action": "manage_root__disable_root_action__%s" % 'id'}
         req = self.factory.post(url, form_data)
 
         kwargs = {'instance_id': 'id'}
@@ -521,18 +520,18 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.assertEqual(table.data[0].enabled, True)
-        self.assertEqual(table.data[0].password, "newpassword")
+        self.assertEqual(table.data[0].password, None)
 
-    @test.create_stubs({api.trove: ('root_enable',)})
-    def test_reset_root_exception(self):
-        api.trove.root_enable(IsA(http.HttpRequest), [u'id']) \
+    @test.create_stubs({api.trove: ('root_disable',)})
+    def test_disable_root_exception(self):
+        api.trove.root_disable(IsA(http.HttpRequest), u'id') \
             .AndRaise(self.exceptions.trove)
 
         self.mox.ReplayAll()
 
         url = reverse('horizon:project:databases:manage_root',
                       args=['id'])
-        form_data = {"action": "manage_root__reset_root_action__%s" % 'id'}
+        form_data = {"action": "manage_root__disable_root_action__%s" % 'id'}
         req = self.factory.post(url, form_data)
 
         kwargs = {'instance_id': 'id'}
@@ -546,7 +545,7 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.assertEqual(table.data[0].enabled, True)
-        self.assertNotEqual(table.data[0].password, "newpassword")
+        self.assertEqual(table.data[0].password, "password")
 
     @test.create_stubs(
         {api.trove: ('instance_get', 'flavor_get', 'users_list',
