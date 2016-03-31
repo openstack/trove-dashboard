@@ -25,5 +25,18 @@ DISABLED = True
 
 # Python panel class of the PANEL to be added.
 ADD_PANEL = ('trove_dashboard.content.ng_database_backups.panel.NGBackups')
+ADD_ANGULAR_MODULES = ['horizon.dashboard.project.backups']
 
-AUTO_DISCOVER_STATIC_FILES = True
+ADD_SCSS_FILES = ['dashboard/project/ngbackups/backups.scss']
+
+ADD_JS_FILES = [
+    'dashboard/project/ngbackups/backups.module.js',
+    'dashboard/project/ngbackups/table/table.controller.js',
+    'dashboard/project/ngbackups/table/table.config.js',
+    'app/core/openstack-service-api/trove.service.js'
+]
+
+ADD_JS_SPEC_FILES = [
+    'dashboard/project/ngbackups/backups.module.spec.js',
+    'dashboard/project/ngbackups/table/table.controller.spec.js'
+]
