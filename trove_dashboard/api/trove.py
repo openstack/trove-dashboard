@@ -204,6 +204,11 @@ def instance_restart(request, instance_id):
     return troveclient(request).instances.restart(instance_id)
 
 
+def instance_upgrade(request, instance_id, datastore_version):
+    return troveclient(request).instances.upgrade(instance_id,
+                                                  datastore_version)
+
+
 def instance_update(request, instance_id, **kwargs):
     return troveclient(request).instances.update(instance_id, **kwargs)
 

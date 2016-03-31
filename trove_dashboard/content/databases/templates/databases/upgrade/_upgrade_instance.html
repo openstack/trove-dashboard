@@ -1,0 +1,30 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-body %}
+<div class="center">
+  <div class="alert alert-warning ml-3">
+    <strong>{% trans "Important: upgrading an instance can result in data loss." %}</strong>
+    <ol>
+      <li>
+        {% trans "Make sure you have a full backup of the database before starting the upgrade." %}
+      </li>
+      <li>
+        {% trans "Downgrading to an earlier version is possible using this form, but the database system may not support downgrades." %}
+      </li>
+      <li>
+        {% trans "Some upgrades may not complete successfully without a logical backup. Please refer to the upgrade guidelines for the corresponding database version." %}
+      </li>
+      <li>
+        {% trans "We recommend testing the upgrade process on a test instance before upgrading a production database." %}
+      </li>
+      <li>
+        {% trans "Upgrading to the same version may be useful when the version tag points to a newer database image, for example after a security update. Such upgrades are usually safe." %}
+      </li>
+    </ol>
+  </div>
+  <fieldset>
+  {% include "horizon/common/_form_fields.html" %}
+  </fieldset>
+</div>
+{% endblock %}

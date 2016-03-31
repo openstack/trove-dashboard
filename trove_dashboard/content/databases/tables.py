@@ -35,6 +35,8 @@ from horizon.utils import filters
 from trove_dashboard import api
 from trove_dashboard.content.database_backups \
     import tables as backup_tables
+from trove_dashboard.content.databases.upgrade \
+    import tables as upgrade_tables
 
 
 ACTIVE_STATES = ("ACTIVE", "HEALTHY",)
@@ -806,6 +808,7 @@ class InstancesTable(tables.DataTable):
                        ManageRoot,
                        EjectReplicaSource,
                        DetachReplica,
+                       upgrade_tables.UpgradeInstanceAction,
                        RestartInstance,
                        StopDatabase,
                        DeleteInstance)

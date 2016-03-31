@@ -16,6 +16,7 @@ from django.conf.urls import include
 from django.urls import re_path
 
 from trove_dashboard.content.databases.logs import urls as logs_urls
+from trove_dashboard.content.databases.upgrade import urls as upgrade_urls
 from trove_dashboard.content.databases import views
 
 BASEINSTANCES = r'^(?P<instance_id>[^/]+)/%s'
@@ -51,4 +52,6 @@ urlpatterns = [
     re_path(INSTANCES % 'manage_root', views.ManageRootView.as_view(),
             name='manage_root'),
     re_path(BASEINSTANCES % 'logs/', include((logs_urls, 'logs'))),
+    re_path(BASEINSTANCES % 'upgrade/',
+            include(upgrade_urls, namespace='upgrade')),
 ]

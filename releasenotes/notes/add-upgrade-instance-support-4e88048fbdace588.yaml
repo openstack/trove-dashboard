@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Added support for upgrading an instance. A new "Upgrade Instance"
+    row action is available in Horizon.
