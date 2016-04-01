@@ -90,7 +90,7 @@ class DatabaseTests(test.TestCase):
     def test_index_pagination(self):
         # Mock database instances
         databases = self.databases.list()
-        last_record = databases[1]
+        last_record = databases[-1]
         databases = common.Paginated(databases, next_marker="foo")
         api.trove.instance_list(IsA(http.HttpRequest), marker=None)\
             .AndReturn(databases)
@@ -241,6 +241,7 @@ class DatabaseTests(test.TestCase):
             replica_of=None,
             users=None,
             nics=nics,
+            replica_count=None,
             volume_type=None).AndReturn(self.databases.first())
 
         self.mox.ReplayAll()
@@ -307,6 +308,7 @@ class DatabaseTests(test.TestCase):
             replica_of=None,
             users=None,
             nics=nics,
+            replica_count=None,
             volume_type=None).AndRaise(trove_exception)
 
         self.mox.ReplayAll()
@@ -999,6 +1001,7 @@ class DatabaseTests(test.TestCase):
             replica_of=self.databases.first().id,
             users=None,
             nics=nics,
+            replica_count=2,
             volume_type=None).AndReturn(self.databases.first())
 
         self.mox.ReplayAll()
@@ -1010,8 +1013,107 @@ class DatabaseTests(test.TestCase):
             'datastore': 'mysql,5.5',
             'initial_state': 'master',
             'master': self.databases.first().id,
+            'replica_count': 2,
             'volume_type': 'no_type'
         }
 
         res = self.client.post(LAUNCH_URL, post)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({
+        api.trove: ('promote_to_replica_source',),
+        views.PromoteToReplicaSourceView: ('get_initial',)})
+    def test_promote_replica_instance(self):
+        replica_source = self.databases.first()
+        replica = self.databases.list()[1]
+
+        initial = {'instance_id': replica_source.id,
+                   'replica': replica,
+                   'replica_source': replica_source}
+        views.PromoteToReplicaSourceView.get_initial().AndReturn(initial)
+
+        api.trove.promote_to_replica_source(
+            IsA(http.HttpRequest), replica_source.id)
+
+        self.mox.ReplayAll()
+        url = reverse('horizon:project:databases:promote_to_replica_source',
+                      args=[replica_source.id])
+        form = {
+            'instance_id': replica_source.id
+        }
+        res = self.client.post(url, form)
+        self.assertNoFormErrors(res)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({
+        api.trove: ('promote_to_replica_source',),
+        views.PromoteToReplicaSourceView: ('get_initial',)})
+    def test_promote_replica_instance_exception(self):
+        replica_source = self.databases.first()
+        replica = self.databases.list()[1]
+
+        initial = {'instance_id': replica_source.id,
+                   'replica': replica,
+                   'replica_source': replica_source}
+        views.PromoteToReplicaSourceView.get_initial().AndReturn(initial)
+
+        api.trove.promote_to_replica_source(
+            IsA(http.HttpRequest), replica_source.id).\
+            AndRaise(self.exceptions.trove)
+
+        self.mox.ReplayAll()
+        url = reverse('horizon:project:databases:promote_to_replica_source',
+                      args=[replica_source.id])
+        form = {
+            'instance_id': replica_source.id
+        }
+        res = self.client.post(url, form)
+        self.assertEqual(res.status_code, 302)
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({
+        api.trove: ('instance_list',
+                    'eject_replica_source',),
+    })
+    def test_eject_replica_source(self):
+        databases = common.Paginated(self.databases.list())
+        database = databases[2]
+
+        api.trove.eject_replica_source(
+            IsA(http.HttpRequest), database.id)
+
+        databases = common.Paginated(self.databases.list())
+        api.trove.instance_list(IsA(http.HttpRequest), marker=None)\
+            .AndReturn(databases)
+
+        self.mox.ReplayAll()
+
+        res = self.client.post(
+            INDEX_URL,
+            {'action': 'databases__eject_replica_source__%s' % database.id})
+
+        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({
+        api.trove: ('instance_list',
+                    'eject_replica_source',),
+    })
+    def test_eject_replica_source_exception(self):
+        databases = common.Paginated(self.databases.list())
+        database = databases[2]
+
+        api.trove.eject_replica_source(
+            IsA(http.HttpRequest), database.id)\
+            .AndRaise(self.exceptions.trove)
+
+        databases = common.Paginated(self.databases.list())
+        api.trove.instance_list(IsA(http.HttpRequest), marker=None)\
+            .AndReturn(databases)
+
+        self.mox.ReplayAll()
+
+        res = self.client.post(
+            INDEX_URL,
+            {'action': 'databases__eject_replica_source__%s' % database.id})
+
         self.assertRedirectsNoFollow(res, INDEX_URL)

@@ -357,6 +357,52 @@ class ResizeInstanceView(horizon_forms.ModalFormView):
         return initial
 
 
+class PromoteToReplicaSourceView(horizon_forms.ModalFormView):
+    form_class = forms.PromoteToReplicaSourceForm
+    form_id = "promote_to_replica_source_form"
+    modal_header = _("Promote to Replica Source")
+    modal_id = "promote_to_replica_source_modal"
+    template_name = 'project/databases/promote_to_replica_source.html'
+    submit_lable = _("Promote")
+    submit_url = 'horizon:project:databases:promote_to_replica_source'
+    success_url = reverse_lazy('horizon:project:databases:index')
+
+    @memoized.memoized_method
+    def get_object(self, *args, **kwargs):
+        instance_id = self.kwargs['instance_id']
+        try:
+            replica = api.trove.instance_get(self.request, instance_id)
+            replica_source = api.trove.instance_get(self.request,
+                                                    replica.replica_of['id'])
+            instances = {'replica': replica,
+                         'replica_source': replica_source}
+            return instances
+        except Exception:
+            msg = _('Unable to retrieve instance details.')
+            redirect = reverse('horizon:project:databases:index')
+            exceptions.handle(self.request, msg, redirect=redirect)
+
+    def get_context_data(self, **kwargs):
+        context = \
+            super(PromoteToReplicaSourceView, self).get_context_data(**kwargs)
+        context['instance_id'] = self.kwargs['instance_id']
+        context['replica'] = self.get_initial().get('replica')
+        context['replica'].ip = \
+            self.get_initial().get('replica').ip[0]
+        context['replica_source'] = self.get_initial().get('replica_source')
+        context['replica_source'].ip = \
+            self.get_initial().get('replica_source').ip[0]
+        args = (self.kwargs['instance_id'],)
+        context['submit_url'] = reverse(self.submit_url, args=args)
+        return context
+
+    def get_initial(self):
+        instances = self.get_object()
+        return {'instance_id': self.kwargs['instance_id'],
+                'replica': instances['replica'],
+                'replica_source': instances['replica_source']}
+
+
 class EnableRootInfo(object):
     def __init__(self, instance_id, instance_name, enabled, password=None):
         self.id = instance_id
