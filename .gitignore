@@ -37,3 +37,6 @@ trove_dashboard/test/configs/config.conf
 trove_dashboard/test/.secret_key_store
 AUTHORS
 *.lock
+
+# Files created by releasenotes build
+releasenotes/build
