@@ -93,7 +93,12 @@ class IndexView(horizon_tables.DataTableView):
 
 class LaunchClusterView(horizon_forms.ModalFormView):
     form_class = forms.LaunchForm
+    form_id = "launch_form"
+    modal_header = _("Launch Cluster")
+    modal_id = "launch_modal"
     template_name = 'project/database_clusters/launch.html'
+    submit_label = _("Launch")
+    submit_url = reverse_lazy('horizon:project:database_clusters:launch')
     success_url = reverse_lazy('horizon:project:database_clusters:index')
 
 
