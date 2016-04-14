@@ -14,6 +14,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import logging
+
 from django.core.urlresolvers import reverse
 from django import http
 
@@ -489,12 +491,27 @@ class ClustersTests(test.TestCase):
         self.assertTemplateUsed(
             res, 'project/database_clusters/cluster_grow_details.html')
 
-        action = "".join([tables.ClusterGrowInstancesTable.Meta.name, '__',
-                          tables.ClusterGrowAction.name, '__',
-                          cluster.id])
-        res = self.client.post(url, {'action': action})
-        self.assertMessageCount(error=1)
-        self.assertRedirectsNoFollow(res, INDEX_URL)
+        toSuppress = ["trove_dashboard.content.database_clusters.tables"]
+
+        # Suppress expected log messages in the test output
+        loggers = []
+        for cls in toSuppress:
+            logger = logging.getLogger(cls)
+            loggers.append((logger, logger.getEffectiveLevel()))
+            logger.setLevel(logging.CRITICAL)
+
+        try:
+            action = "".join([tables.ClusterGrowInstancesTable.Meta.name, '__',
+                              tables.ClusterGrowAction.name, '__',
+                              cluster.id])
+            res = self.client.post(url, {'action': action})
+
+            self.assertMessageCount(error=1)
+            self.assertRedirectsNoFollow(res, INDEX_URL)
+        finally:
+            # Restore the previous log levels
+            for (log, level) in loggers:
+                log.setLevel(level)
 
     @test.create_stubs({trove_api.trove: ('cluster_get',
                                           'cluster_shrink')})
@@ -547,9 +564,24 @@ class ClustersTests(test.TestCase):
         action = "".join([tables.ClusterShrinkInstancesTable.Meta.name, '__',
                           tables.ClusterShrinkAction.name, '__',
                           cluster_id])
-        res = self.client.post(url, {'action': action})
-        self.assertMessageCount(error=1)
-        self.assertRedirectsNoFollow(res, INDEX_URL)
+
+        toSuppress = ["trove_dashboard.content.database_clusters.tables"]
+
+        # Suppress expected log messages in the test output
+        loggers = []
+        for cls in toSuppress:
+            logger = logging.getLogger(cls)
+            loggers.append((logger, logger.getEffectiveLevel()))
+            logger.setLevel(logging.CRITICAL)
+
+        try:
+            res = self.client.post(url, {'action': action})
+            self.assertMessageCount(error=1)
+            self.assertRedirectsNoFollow(res, INDEX_URL)
+        finally:
+            # Restore the previous log levels
+            for (log, level) in loggers:
+                log.setLevel(level)
 
     def _get_filtered_datastores(self, datastore):
         filtered_datastore = []

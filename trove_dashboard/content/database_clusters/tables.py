@@ -76,7 +76,6 @@ class ClusterGrow(tables.LinkAction):
     name = "cluster_grow"
     verbose_name = _("Grow Cluster")
     url = "horizon:project:database_clusters:cluster_grow_details"
-    icon = "plus"
 
     def allowed(self, request, cluster=None):
         if (cluster and cluster.task["name"] == 'NONE' and
@@ -89,8 +88,6 @@ class ClusterShrink(tables.LinkAction):
     name = "cluster_shrink"
     verbose_name = _("Shrink Cluster")
     url = "horizon:project:database_clusters:cluster_shrink_details"
-    classes = ("btn-danger",)
-    icon = "remove"
 
     def allowed(self, request, cluster=None):
         if (cluster and cluster.task["name"] == 'NONE' and

@@ -276,7 +276,12 @@ class CreateDatabaseView(horizon_forms.ModalFormView):
 
 class ResizeVolumeView(horizon_forms.ModalFormView):
     form_class = forms.ResizeVolumeForm
+    form_id = "resize_volume_form"
+    modal_header = _("Resize Database Volume")
+    modal_id = "resize_volume_modal"
     template_name = 'project/databases/resize_volume.html'
+    submit_label = "Resize Database Volume"
+    submit_url = 'horizon:project:databases:resize_volume'
     success_url = reverse_lazy('horizon:project:databases:index')
     page_title = _("Resize Database Volume")
 
@@ -293,6 +298,8 @@ class ResizeVolumeView(horizon_forms.ModalFormView):
     def get_context_data(self, **kwargs):
         context = super(ResizeVolumeView, self).get_context_data(**kwargs)
         context['instance_id'] = self.kwargs['instance_id']
+        args = (self.kwargs['instance_id'],)
+        context['submit_url'] = reverse(self.submit_url, args=args)
         return context
 
     def get_initial(self):
@@ -303,7 +310,12 @@ class ResizeVolumeView(horizon_forms.ModalFormView):
 
 class ResizeInstanceView(horizon_forms.ModalFormView):
     form_class = forms.ResizeInstanceForm
+    form_id = "resize_instance_form"
+    modal_header = _("Resize Database Instance")
+    modal_id = "resize_instance_modal"
     template_name = 'project/databases/resize_instance.html'
+    submit_label = "Resize Database Instance"
+    submit_url = 'horizon:project:databases:resize_instance'
     success_url = reverse_lazy('horizon:project:databases:index')
     page_title = _("Resize Database Instance")
 
@@ -332,6 +344,8 @@ class ResizeInstanceView(horizon_forms.ModalFormView):
     def get_context_data(self, **kwargs):
         context = super(ResizeInstanceView, self).get_context_data(**kwargs)
         context['instance_id'] = self.kwargs['instance_id']
+        args = (self.kwargs['instance_id'],)
+        context['submit_url'] = reverse(self.submit_url, args=args)
         return context
 
     @memoized.memoized_method

@@ -60,6 +60,14 @@ class ResizeVolumeForm(forms.SelfHandlingForm):
     )
     new_size = forms.IntegerField(label=_("New Size (GB)"))
 
+    def __init__(self, request, *args, **kwargs):
+        super(ResizeVolumeForm, self).__init__(request, *args, **kwargs)
+
+        self.fields['instance_id'].initial = (kwargs.get('initial', {}).
+                                              get('instance_id'))
+        self.fields['orig_size'].initial = (kwargs.get('initial', {}).
+                                            get('orig_size'))
+
     def clean(self):
         cleaned_data = super(ResizeVolumeForm, self).clean()
         new_size = cleaned_data.get('new_size')
