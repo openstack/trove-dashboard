@@ -1,16 +1,14 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
-# Gaoxiao Zhu <zhu.gaoxiao@h3c.com>, 2016. #zanata
-# liujunpeng <liujunpeng@inspur.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-03-14 16:59+0000\n"
+"POT-Creation-Date: 2016-04-12 20:48+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-13 07:43+0000\n"
-"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
+"PO-Revision-Date: 2016-03-21 02:54+0000\n"
+"Last-Translator: Gaoxiao Zhu <zhu.gaoxiao@h3c.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -28,12 +26,6 @@ msgstr ""
 "或者你可以通过拖放的方式。当然你也可以\n"
 "通过拖放来改变网卡顺序。\n"
 " "
-
-msgid "\"Clusters\""
-msgstr "\"集群\""
-
-msgid "\"Launch Cluster\""
-msgstr "\"启动集群\""
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -105,6 +97,9 @@ msgstr "允许的主机"
 
 msgid "Allowed Host (optional)"
 msgstr "允许主机(可选)"
+
+msgid "Applicable only if the volume size is specified."
+msgstr "只有卷大小指定后才可以应用。"
 
 msgid "At least one network must be specified."
 msgstr "至少要选择一个网络。"
@@ -507,6 +502,9 @@ msgstr "没有可用的云主机类型"
 msgid "No instances available"
 msgstr "无可用云主机"
 
+msgid "No volume type"
+msgstr "没有卷类型"
+
 msgid "None"
 msgstr "无"
 
@@ -645,9 +643,6 @@ msgstr "从实例复制"
 
 msgid "Replication"
 msgstr "复制"
-
-msgid "Reset Password"
-msgstr "重置密码"
 
 msgid "Reset Root Password"
 msgstr "重置root密码"
@@ -1023,6 +1018,9 @@ msgstr "卷"
 
 msgid "Volume Size"
 msgstr "云硬盘大小"
+
+msgid "Volume Type"
+msgstr "卷类型"
 
 #, python-format
 msgid "You are not allowed to %(action)s: %(objs)s"
