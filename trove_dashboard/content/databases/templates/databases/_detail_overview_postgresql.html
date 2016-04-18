@@ -1,0 +1,22 @@
+{% extends "project/databases/_detail_overview.html" %}
+{% load i18n sizeformat %}
+
+{% block connection_info %}
+    <h4>{% trans "Connection Information" %}</h4>
+    <hr class="header_rule">
+    <dl class="dl-horizontal">
+      {% with instance.host as host %}
+          <dt>{% trans "Host" %}</dt>
+          {% if not host %}
+              <dd>{% trans "Not Assigned" %}</dd>
+          {% else %}
+              <dd>{{ host }}</dd>
+              <dt>{% trans "Database Port" %}</dt>
+              <dd>5432</dd>
+              <dt>{% trans "Connection Examples" %}</dt>
+              <dd>psql -h {{ host }} -p 5432 -U {% trans "USERNAME" %}</dd>
+              <dd>postgresql://{% trans "USERNAME" %}:{% trans "PASSWORD" %}@{{ host }}:5432/{% trans "DATABASE"%}</dd>
+          {% endif %}
+      {% endwith %}
+    </dl>
+{% endblock %}
