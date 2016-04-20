@@ -1,7 +1,5 @@
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
-# SeYeon Lee <sy_lee@kr.ibm.com>, 2016. #zanata
 # Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
-# dongbinseo <chuinggun@naver.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
@@ -10,8 +8,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-18 03:47+0000\n"
-"Last-Translator: SeYeon Lee <sy_lee@kr.ibm.com>\n"
+"PO-Revision-Date: 2016-04-08 04:27+0000\n"
+"Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -32,10 +30,10 @@ msgstr ""
 "  "
 
 msgid "\"Clusters\""
-msgstr "\"클러스터\""
+msgstr "\"Clusters\""
 
 msgid "\"Launch Cluster\""
-msgstr "\"클러스터 실행\""
+msgstr "\"Launch Cluster\""
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -198,7 +196,7 @@ msgstr "생성할 데이터베이스를 쉼표로 구분한 목록"
 
 msgctxt "Current status of a Database Backup"
 msgid "Completed"
-msgstr "완료됨"
+msgstr "Completed"
 
 msgid "Connection Examples"
 msgstr "연결 예제"
@@ -243,7 +241,7 @@ msgid "DATABASE"
 msgstr "DATABASE"
 
 msgid "Database"
-msgstr "Database"
+msgstr "데이터베이스"
 
 msgid "Database Access"
 msgstr "데이터베이스 접근"
@@ -289,7 +287,7 @@ msgstr[0] "데이터베이스 삭제"
 
 msgctxt "Current status of a Database Backup"
 msgid "Delete Failed"
-msgstr "삭제 실패함"
+msgstr "Delete Failed"
 
 msgid "Delete Instance"
 msgid_plural "Delete Instances"
@@ -354,7 +352,7 @@ msgstr "데이터베이스 백업 목록을 가져오던 중 오류가 발생하
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
-msgstr "실패함"
+msgstr "Failed"
 
 msgctxt "Current status of a Database Instance"
 msgid "Failed"
@@ -384,7 +382,7 @@ msgid "Host"
 msgstr "호스트"
 
 msgid "Host or IP that the user is allowed to connect through."
-msgstr "사용자가 연결하도록 허용된 호스트 또는 IP입니다."
+msgstr "사용자가 연결하도록 허용된 호스트나 IP입니다."
 
 msgid "ID"
 msgstr "ID"
@@ -446,7 +444,7 @@ msgstr "%(count)s개의 \"%(name)s\"이(가) 시작되었습니다."
 
 #, python-format
 msgid "Launched cluster \"%s\""
-msgstr "클러스터 \"%s\" 구동됨"
+msgstr "클러스터 \"%s\" 작동됨"
 
 msgid "Manage Access"
 msgstr "접근 관리"
@@ -581,7 +579,7 @@ msgid "Optional name of the instance."
 msgstr "인스턴스 이름을 선택할 수 있습니다."
 
 msgid "Optional parent backup"
-msgstr "선택가능한 부모 백업"
+msgstr "선택가능한 상위 백업"
 
 msgid ""
 "Optionally choose to create this database using a previous backup, or as a "
@@ -600,8 +598,8 @@ msgid ""
 "Optionally provide the host of the user and a list of databases the user is "
 "granted access to."
 msgstr ""
-"선택적으로 사용자의 호스트와 사용자가 액세스 권한을 부여한 데이터베이스 목록"
-"을 제공하십시오."
+"선택적으로 사용자의 호스트와 사용자가 접근 권한을 부여한 데이터베이스 목록을 "
+"제공하십시오."
 
 msgid "Overview"
 msgstr "개요"
@@ -626,7 +624,7 @@ msgstr "Root 사용자 암호"
 
 msgid ""
 "Password is only visible immediately after the root is enabled or reset."
-msgstr "패스워드는 오직 root가 리셋,enabled된 이후에 즉시 보이기 시작한다."
+msgstr "패스워드는 오직 root가 리셋, enabled된 이후에 즉시 보이기 시작합니다."
 
 msgid "RAM"
 msgstr "RAM"
@@ -731,7 +729,7 @@ msgstr "\"%s\" 클러스터에 대한 root 암호를 업데이트 하였습니�
 
 msgctxt "Current status of a Database Backup"
 msgid "Saving"
-msgstr "저장 중"
+msgstr "Saving"
 
 msgid "Scheduled Shrinking of Cluster"
 msgid_plural "Scheduled Shrinking of Cluster"
@@ -774,7 +772,7 @@ msgid "Select networks for your instance."
 msgstr "인스턴스 네트워크 선택"
 
 msgid "Select parent backup"
-msgstr "부모 백업 선택"
+msgstr "상위 백업 선택"
 
 msgid "Select the instance(s) that will be removed from the cluster."
 msgstr "선택한 인스턴스를 클러스터에서 제거합니다."
@@ -812,10 +810,10 @@ msgid "Source for Initial State"
 msgstr "초기 상태 원본"
 
 msgid "Specify a new flavor for the database instance."
-msgstr "데이터베이스 인스턴스에 대한  새로운 flavor을 지정하라"
+msgstr "데이터베이스 인스턴스에 대한  새로운 flavor을 지정합니다."
 
 msgid "Specify a new name, new password or new host name for the user."
-msgstr "유저에 대한 새로운 이름, 패스워드, 호스트이름을 명시하라"
+msgstr "유저에 대한 새로운 이름, 패스워드, 호스트이름을 지정합니다."
 
 msgid "Specify the details for launching an instance."
 msgstr "인스턴스 실행에 대한 세부 정보를 지정하십시오."
@@ -840,7 +838,7 @@ msgid "Specify the name of the new user and password."
 msgstr "새로운 유저의 이름과 패스워드를 명시하라"
 
 msgid "Specify the new root password for vertica cluster."
-msgstr "vertica 클러스터에 대한 새로운 root 암호를 지정합니다."
+msgstr "Vertica 클러스터에 대한 새로운 root 암호를 지정합니다."
 
 msgid "Specify the new volume size for the database instance."
 msgstr "데이터베이스 인스터스에 사용할 새로운 볼륨 크기를 지정합니다."
@@ -943,7 +941,7 @@ msgid "Unable to launch cluster. %s"
 msgstr "클러스터 \"%s\"를 구동할 수 없습니다."
 
 msgid "Unable to list database backups for parent."
-msgstr "부모 데이터베이스 백업을 나열할 수 없습니다."
+msgstr "상위 데이터베이스 백업을 나열할 수 없습니다."
 
 msgid "Unable to list database instances to backup."
 msgstr "백업 데이터베이스 인스턴스를 나열할 수 없습니다."

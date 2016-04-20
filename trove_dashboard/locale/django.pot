@@ -1,14 +1,15 @@
-# Translations template for PROJECT.
+# Translations template for trove-dashboard.
 # Copyright (C) 2016 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
+# This file is distributed under the same license as the trove-dashboard
+# project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-03-15 06:08+0000\n"
+"Project-Id-Version: trove-dashboard 6.0.0\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2016-04-19 06:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,6 +508,7 @@ msgstr ""
 #: trove_dashboard/content/database_clusters/panel.py:24
 #: trove_dashboard/content/database_clusters/tables.py:183
 #: trove_dashboard/content/database_clusters/templates/database_clusters/index.html:3
+#: trove_dashboard/content/database_clusters/templates/database_clusters/index.html:6
 msgid "Clusters"
 msgstr ""
 
@@ -527,8 +529,9 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: trove_dashboard/content/database_clusters/tables.py:69
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:9
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:8
 #: trove_dashboard/content/database_clusters/templates/database_clusters/launch.html:3
+#: trove_dashboard/content/database_clusters/templates/database_clusters/launch.html:6
 msgid "Launch Cluster"
 msgstr ""
 
@@ -548,8 +551,8 @@ msgstr[1] ""
 
 #: trove_dashboard/content/database_clusters/tables.py:104
 #: trove_dashboard/content/database_clusters/views.py:234
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:9
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:23
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:8
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:22
 #: trove_dashboard/content/database_clusters/templates/database_clusters/reset_password.html:3
 msgid "Reset Root Password"
 msgstr ""
@@ -806,19 +809,19 @@ msgstr ""
 msgid "Management Console"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:20
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:19
 #: trove_dashboard/content/databases/workflows/create_instance.py:351
 msgid "Launch"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:21
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:24
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_launch.html:20
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:23
 #: trove_dashboard/content/databases/templates/databases/_resize_instance.html:23
 #: trove_dashboard/content/databases/templates/databases/_resize_volume.html:24
 msgid "Cancel"
 msgstr ""
 
-#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:18
+#: trove_dashboard/content/database_clusters/templates/database_clusters/_reset_password.html:17
 msgid "Specify the new root password for vertica cluster."
 msgstr ""
 
@@ -830,14 +833,6 @@ msgstr ""
 
 #: trove_dashboard/content/database_clusters/templates/database_clusters/cluster_shrink_details.html:7
 msgid "Select the instance(s) that will be removed from the cluster."
-msgstr ""
-
-#: trove_dashboard/content/database_clusters/templates/database_clusters/index.html:6
-msgid "\"Clusters\""
-msgstr ""
-
-#: trove_dashboard/content/database_clusters/templates/database_clusters/launch.html:6
-msgid "\"Launch Cluster\""
 msgstr ""
 
 #: trove_dashboard/content/databases/forms.py:31
