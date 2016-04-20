@@ -10,7 +10,7 @@
             {% if not ip %}
                 <dd>{% trans "Not Assigned" %}</dd>
             {% else %}
-                <dd>{{ ip }}</dd>
+                <dd>{{ cluster.ip|join:', ' }}</dd>
                 <dt>{% trans "Connection Examples" %}</dt>
                 <dd>redis-cli -h {{ ip }}</dd>
             {% endif %} <!-- ends else block -->
