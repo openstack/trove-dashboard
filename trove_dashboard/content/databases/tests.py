@@ -322,13 +322,16 @@ class DatabaseTests(test.TestCase):
         res = self.client.post(LAUNCH_URL, post)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs(
-        {api.trove: ('instance_get', 'flavor_get',)})
+    @test.create_stubs({
+        api.trove: ('instance_get', 'flavor_get', 'root_show')
+    })
     def _test_details(self, database, with_designate=False):
         api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(database)
         api.trove.flavor_get(IsA(http.HttpRequest), IsA(str))\
             .AndReturn(self.flavors.first())
+        api.trove.root_show(IsA(http.HttpRequest), database.id) \
+            .AndReturn(self.database_user_roots.first())
 
         self.mox.ReplayAll()
         res = self.client.get(DETAILS_URL)
