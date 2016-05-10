@@ -324,13 +324,16 @@ class DatabaseTests(test.TestCase):
         res = self.client.post(LAUNCH_URL, post)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs(
-        {api.trove: ('instance_get', 'flavor_get',)})
+    @test.create_stubs({
+        api.trove: ('instance_get', 'flavor_get', 'root_show')
+    })
     def _test_details(self, database, with_designate=False):
         api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(database)
         api.trove.flavor_get(IsA(http.HttpRequest), IsA(str))\
             .AndReturn(self.flavors.first())
+        api.trove.root_show(IsA(http.HttpRequest), database.id) \
+            .AndReturn(self.database_user_roots.first())
 
         self.mox.ReplayAll()
         res = self.client.get(DETAILS_URL)
@@ -1072,7 +1075,7 @@ class DatabaseTests(test.TestCase):
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_stubs({
-        api.trove: ('instance_list',
+        api.trove: ('flavor_list', 'instance_list',
                     'eject_replica_source',),
     })
     def test_eject_replica_source(self):
@@ -1085,6 +1088,8 @@ class DatabaseTests(test.TestCase):
         databases = common.Paginated(self.databases.list())
         api.trove.instance_list(IsA(http.HttpRequest), marker=None)\
             .AndReturn(databases)
+        api.trove.flavor_list(IsA(http.HttpRequest))\
+            .AndReturn(self.flavors.list())
 
         self.mox.ReplayAll()
 
@@ -1095,7 +1100,7 @@ class DatabaseTests(test.TestCase):
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_stubs({
-        api.trove: ('instance_list',
+        api.trove: ('flavor_list', 'instance_list',
                     'eject_replica_source',),
     })
     def test_eject_replica_source_exception(self):
@@ -1109,6 +1114,8 @@ class DatabaseTests(test.TestCase):
         databases = common.Paginated(self.databases.list())
         api.trove.instance_list(IsA(http.HttpRequest), marker=None)\
             .AndReturn(databases)
+        api.trove.flavor_list(IsA(http.HttpRequest))\
+            .AndReturn(self.flavors.list())
 
         self.mox.ReplayAll()
 
