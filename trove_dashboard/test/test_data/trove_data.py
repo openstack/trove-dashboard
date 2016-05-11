@@ -311,7 +311,6 @@ VERSION_TWO = {
     "name": "5.6",
     "links": [],
     "image": "c7956bb5-920e-4299-b68e-2347d830d938",
-    "active": 1,
     "datastore": "537fb940-b5eb-40d9-bdbd-91a3dcb9c17d",
     "packages": "5.6",
     "id": "500a6d52-8347-4e00-8e4c-f4fa9cf96ae9"

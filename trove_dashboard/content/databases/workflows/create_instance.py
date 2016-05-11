@@ -120,6 +120,8 @@ class SetInstanceDetailsAction(workflows.Action):
                     # only add to choices if datastore has at least one version
                     version_choices = ()
                     for v in versions:
+                        if hasattr(v, 'active') and not v.active:
+                            continue
                         version_choices = (version_choices +
                                            ((ds.name + ',' + v.name, v.name),))
                     datastore_choices = (ds.name, version_choices)

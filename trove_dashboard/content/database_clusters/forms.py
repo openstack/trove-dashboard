@@ -183,7 +183,7 @@ class LaunchForm(forms.SelfHandlingForm):
 
             versions = self.datastore_versions(request, ds.name)
             for version in versions:
-                if version.name == "inactive":
+                if hasattr(version, 'active') and not version.active:
                     continue
                 valid_flavor = self.datastore_flavors(request, ds.name,
                                                       versions[0].name)
