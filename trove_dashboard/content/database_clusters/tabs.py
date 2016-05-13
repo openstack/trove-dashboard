@@ -22,6 +22,7 @@ from horizon import tabs
 
 from trove_dashboard import api
 from trove_dashboard.content.database_clusters import tables
+from trove_dashboard.content.databases import db_capability
 
 
 class OverviewTab(tabs.Tab):
@@ -34,7 +35,7 @@ class OverviewTab(tabs.Tab):
     def get_template_name(self, request):
         cluster = self.tab_group.kwargs['cluster']
         template_file = ('project/database_clusters/_detail_overview_%s.html'
-                         % cluster.datastore['type'])
+                         % self._get_template_type(cluster.datastore['type']))
         try:
             template.loader.get_template(template_file)
             return template_file
@@ -42,6 +43,12 @@ class OverviewTab(tabs.Tab):
             # This datastore type does not have a template file
             # Just use the base template file
             return ('project/database_clusters/_detail_overview.html')
+
+    def _get_template_type(self, datastore):
+        if db_capability.is_mysql_compatible(datastore):
+            return 'mysql'
+
+        return datastore
 
 
 class InstancesTab(tabs.TableTab):

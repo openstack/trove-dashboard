@@ -13,6 +13,7 @@
 #    under the License.
 
 
+CASSANDRA = "cassandra"
 MARIA = "maria"
 MONGODB = "mongodb"
 MYSQL = "mysql"
@@ -21,12 +22,15 @@ PERCONA_CLUSTER = "pxc"
 REDIS = "redis"
 VERTICA = "vertica"
 
-_mysql_compatible_datastores = (MYSQL, MARIA, PERCONA)
-_cluster_capable_datastores = (MONGODB, PERCONA_CLUSTER, REDIS, VERTICA)
+_mysql_compatible_datastores = (MYSQL, MARIA, PERCONA, PERCONA_CLUSTER)
+_cluster_capable_datastores = (CASSANDRA, MARIA, MONGODB, PERCONA_CLUSTER,
+                               REDIS, VERTICA)
+_cluster_grow_shrink_capable_datastores = (CASSANDRA, MARIA, MONGODB, REDIS)
 
 
 def can_modify_cluster(datastore):
-    return (is_mongodb_datastore(datastore) or is_redis_datastore(datastore))
+    return _is_datastore_in_list(datastore,
+                                 _cluster_grow_shrink_capable_datastores)
 
 
 def is_mongodb_datastore(datastore):
@@ -46,17 +50,17 @@ def is_vertica_datastore(datastore):
 
 
 def is_mysql_compatible(datastore):
-    if (datastore is not None):
-        for ds in _mysql_compatible_datastores:
-            if ds in datastore.lower():
-                return True
-    return False
+    return _is_datastore_in_list(datastore, _mysql_compatible_datastores)
 
 
 def is_cluster_capable_datastore(datastore):
+    return _is_datastore_in_list(datastore, _cluster_capable_datastores)
+
+
+def _is_datastore_in_list(datastore, datastores):
     if datastore is not None:
         datastore_lower = datastore.lower()
-        for ds in _cluster_capable_datastores:
+        for ds in datastores:
             if ds in datastore_lower:
                 return True
     return False
