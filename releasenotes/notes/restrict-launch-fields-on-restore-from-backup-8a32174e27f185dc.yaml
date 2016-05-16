@@ -1,0 +1,6 @@
+---
+fixes:
+  - Adds support for restricting the launch instance datastore field 
+    to the datastore and datastore version that the backup is 
+    relevant to.  It also populates the restored backup as the only 
+    option in the advanced step backup field.
