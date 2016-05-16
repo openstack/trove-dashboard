@@ -25,6 +25,9 @@ from horizon import workflows
 from openstack_dashboard import api as dash_api
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
+from openstack_dashboard.dashboards.project.instances.workflows \
+    import create_instance as dash_create_instance
+
 
 from trove_dashboard import api
 
@@ -142,58 +145,6 @@ TROVE_ADD_PERMS = TROVE_ADD_USER_PERMS + TROVE_ADD_DATABASE_PERMS
 class SetInstanceDetails(workflows.Step):
     action_class = SetInstanceDetailsAction
     contributes = ("name", "volume", "volume_type", "flavor", "datastore")
-
-
-class SetNetworkAction(workflows.Action):
-    network = forms.MultipleChoiceField(label=_("Networks"),
-                                        widget=forms.CheckboxSelectMultiple(),
-                                        error_messages={
-                                            'required': _(
-                                                "At least one network must"
-                                                " be specified.")},
-                                        help_text=_("Launch instance with"
-                                                    " these networks"))
-
-    def __init__(self, request, *args, **kwargs):
-        super(SetNetworkAction, self).__init__(request, *args, **kwargs)
-        network_list = self.fields["network"].choices
-        if len(network_list) == 1:
-            self.fields['network'].initial = [network_list[0][0]]
-
-    class Meta(object):
-        name = _("Networking")
-        permissions = ('openstack.services.network',)
-        help_text = _("Select networks for your instance.")
-
-    def populate_network_choices(self, request, context):
-        try:
-            tenant_id = self.request.user.tenant_id
-            networks = dash_api.neutron.network_list_for_tenant(request,
-                                                                tenant_id)
-            network_list = [(network.id, network.name_or_id)
-                            for network in networks]
-        except Exception:
-            network_list = []
-            exceptions.handle(request,
-                              _('Unable to retrieve networks.'))
-        return network_list
-
-
-class SetNetwork(workflows.Step):
-    action_class = SetNetworkAction
-    template_name = "project/databases/_launch_networks.html"
-    contributes = ("network_id",)
-
-    def contribute(self, data, context):
-        if data:
-            networks = self.workflow.request.POST.getlist("network")
-            # If no networks are explicitly specified, network list
-            # contains an empty string, so remove it.
-            networks = [n for n in networks if n != '']
-            if networks:
-                context['network_id'] = networks
-
-        return context
 
 
 class AddDatabasesAction(workflows.Action):
@@ -368,7 +319,7 @@ class LaunchInstance(workflows.Workflow):
     failure_message = _('Unable to launch %(count)s named "%(name)s".')
     success_url = "horizon:project:databases:index"
     default_steps = (SetInstanceDetails,
-                     SetNetwork,
+                     dash_create_instance.SetNetwork,
                      InitializeDatabase,
                      Advanced)
 
