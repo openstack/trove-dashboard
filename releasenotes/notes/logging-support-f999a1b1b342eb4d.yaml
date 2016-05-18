@@ -1,0 +1,5 @@
+---
+features:
+  - Added support for logging features in the dashboard.
+    This includes listing logs that can be retrieved and
+    viewing, publishing and stop collection of log contents.

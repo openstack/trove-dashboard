@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import logging
+
 from django import template
 from django.utils.translation import ugettext_lazy as _
 
@@ -19,7 +21,11 @@ from horizon import exceptions
 from horizon import tabs
 from trove_dashboard import api
 from trove_dashboard.content.databases import db_capability
+from trove_dashboard.content.databases.logs import tables as log_tables
 from trove_dashboard.content.databases import tables
+
+
+LOG = logging.getLogger(__name__)
 
 
 class OverviewTab(tabs.Tab):
@@ -136,7 +142,26 @@ class BackupsTab(tabs.TableTab):
         return request.user.has_perm('openstack.services.object-store')
 
 
+class LogsTab(tabs.TableTab):
+    table_classes = [log_tables.LogsTable]
+    name = _("Logs")
+    slug = "logs_tab"
+    template_name = "horizon/common/_detail_table.html"
+    preload = False
+
+    def get_logs_data(self):
+        instance = self.tab_group.kwargs['instance']
+        try:
+            logs = api.trove.log_list(self.request, instance.id)
+            return logs
+        except Exception as e:
+            LOG.exception(
+                _('Unable to retrieve list of logs.\n%s') % e.message)
+            logs = []
+        return logs
+
+
 class InstanceDetailTabs(tabs.TabGroup):
     slug = "instance_details"
-    tabs = (OverviewTab, UserTab, DatabaseTab, BackupsTab)
+    tabs = (OverviewTab, UserTab, DatabaseTab, BackupsTab, LogsTab)
     sticky = True
