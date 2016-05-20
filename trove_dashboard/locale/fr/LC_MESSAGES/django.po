@@ -1,9 +1,9 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev21\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev33\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-04-22 13:45+0000\n"
+"POT-Creation-Date: 2016-05-18 19:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -104,9 +104,6 @@ msgstr "Hôte autorisé (optionnel)"
 msgid "Applicable only if the volume size is specified."
 msgstr "Applicable seulement si la taille du volume est specifiée."
 
-msgid "At least one network must be specified."
-msgstr "Au moins un réseau doit être spécifié."
-
 msgid "At least one of the new fields must be changed."
 msgstr "Au moins l'un des nouveaux champs doit être modifié."
 
@@ -150,10 +147,6 @@ msgstr "Sauvegardes"
 msgctxt "Current status of a Database Instance"
 msgid "Blocked"
 msgstr "Bloquée"
-
-msgctxt "Current status of a Database Instance"
-msgid "Build"
-msgstr "Construction"
 
 msgctxt "Current status of a Database Backup"
 msgid "Building"
@@ -443,9 +436,6 @@ msgstr "Lancer la base de données"
 msgid "Launch Instance"
 msgstr "Lancer Instance"
 
-msgid "Launch instance with these networks"
-msgstr "Démarrer l'instance avec ces réseaux"
-
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "%(count)s instance(s) nommée(s) \"%(name)s\" ont été lancée(s)."
@@ -477,12 +467,6 @@ msgstr "Réseau"
 
 msgid "Network attached to instance."
 msgstr "Réseau attaché à l'instance."
-
-msgid "Networking"
-msgstr "Réseaux"
-
-msgid "Networks"
-msgstr "Réseaux"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -645,10 +629,6 @@ msgstr ""
 msgid "RAM"
 msgstr "RAM"
 
-msgctxt "Current status of a Database Instance"
-msgid "Reboot"
-msgstr "Redémarrage"
-
 msgid "Related To"
 msgstr "Relatif à"
 
@@ -681,10 +661,6 @@ msgstr "Réplication"
 
 msgid "Reset Root Password"
 msgstr "Réinitialiser le mot de passe root"
-
-msgctxt "Current status of a Database Instance"
-msgid "Resize"
-msgstr "Redimensionner"
 
 msgid "Resize Database Instance"
 msgstr "Redimensionnement de l'instance de la base de données"
@@ -789,9 +765,6 @@ msgstr "Sélectionner le type et la version de datastore"
 
 msgid "Select instance"
 msgstr "Sélectionner une instance"
-
-msgid "Select networks for your instance."
-msgstr "Sélectionner les réseaux pour votre instance."
 
 msgid "Select parent backup"
 msgstr "Sélectionner une sauvegarde totale"

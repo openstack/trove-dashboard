@@ -1,9 +1,9 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev21\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev33\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-04-22 13:45+0000\n"
+"POT-Creation-Date: 2016-05-18 19:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -99,9 +99,6 @@ msgstr "Host Permitido (opcional)"
 msgid "Applicable only if the volume size is specified."
 msgstr "Aplicável apenas se o tamanho do volume é especificado."
 
-msgid "At least one network must be specified."
-msgstr "Ao menos uma rede deve ser especificada."
-
 msgid "At least one of the new fields must be changed."
 msgstr "Pelo menos um dos novos campos deve ser alterado."
 
@@ -145,10 +142,6 @@ msgstr "Backups"
 msgctxt "Current status of a Database Instance"
 msgid "Blocked"
 msgstr "Bloqueado"
-
-msgctxt "Current status of a Database Instance"
-msgid "Build"
-msgstr "Construir"
 
 msgctxt "Current status of a Database Backup"
 msgid "Building"
@@ -436,9 +429,6 @@ msgstr "Disparar Base de Dados"
 msgid "Launch Instance"
 msgstr "Disparar Instância"
 
-msgid "Launch instance with these networks"
-msgstr "Disparar instância com estas redes"
-
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "Disparadas %(count)s chamadas \"%(name)s\"."
@@ -470,12 +460,6 @@ msgstr "Rede"
 
 msgid "Network attached to instance."
 msgstr "Rede anexada para a instância."
-
-msgid "Networking"
-msgstr "Rede"
-
-msgid "Networks"
-msgstr "Redes"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -638,10 +622,6 @@ msgstr ""
 msgid "RAM"
 msgstr "RAM"
 
-msgctxt "Current status of a Database Instance"
-msgid "Reboot"
-msgstr "Reiniciar"
-
 msgid "Related To"
 msgstr "Relacionado a"
 
@@ -674,10 +654,6 @@ msgstr "Replicação"
 
 msgid "Reset Root Password"
 msgstr "Redefinição da Senha Root"
-
-msgctxt "Current status of a Database Instance"
-msgid "Resize"
-msgstr "Redimensionar"
 
 msgid "Resize Database Instance"
 msgstr "Redimensionar Instância de Banco de Dados"
@@ -782,9 +758,6 @@ msgstr "Selecione o tipo de armazenamento de dados e versão"
 
 msgid "Select instance"
 msgstr "Selecione uma instância"
-
-msgid "Select networks for your instance."
-msgstr "Selecione as redes para sua instância."
 
 msgid "Select parent backup"
 msgstr "Selecione o backup pai"
