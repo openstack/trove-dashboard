@@ -1,15 +1,16 @@
+# Akihiro Motoki <amotoki@gmail.com>, 2016. #zanata
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Shu Muto <shu-mutou@rf.jp.nec.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev33\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev34\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-05-18 19:26+0000\n"
+"POT-Creation-Date: 2016-05-20 07:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-05-20 03:32+0000\n"
-"Last-Translator: Shu Muto <shu-mutou@rf.jp.nec.com>\n"
+"PO-Revision-Date: 2016-05-21 02:16+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -478,8 +479,17 @@ msgstr "名前が \"%(name)s\" の %(count)s を起動しました。"
 msgid "Launched cluster \"%s\""
 msgstr "クラスター \"%s\" を起動しました。"
 
+msgid "Log"
+msgstr "ログ"
+
+msgid "Log Length"
+msgstr "ログの表示行数"
+
 msgid "Log length must be a nonnegative integer."
 msgstr "ログの表示行数は 0 以上の整数でなければいけません。"
+
+msgid "Log: "
+msgstr "ログ:"
 
 msgid "Logs"
 msgstr "ログ"
@@ -707,6 +717,9 @@ msgstr[0] "インスタンスを削除しました"
 msgid "Removed instances from cluster."
 msgstr "クラスターからインスタンスを削除しました。"
 
+msgid "Replica Count"
+msgstr "レプリカ数"
+
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
 msgstr[0] "複製が切断されました"
@@ -899,6 +912,9 @@ msgstr "vertica クラスターの新しいルートパスワードを指定し�
 
 msgid "Specify the new volume size for the database instance."
 msgstr "データベースインスタンスのボリュームの新しいサイズを指定します。"
+
+msgid "Specify the number of replicas to be created"
+msgstr "作成するレプリカ数を指定します。"
 
 msgid "Specs"
 msgstr "スペック"
@@ -1104,6 +1120,9 @@ msgstr "ネットワーク一覧を取得できません。"
 msgid "Unable to update user. %s"
 msgstr "ユーザーを更新できません。 %s"
 
+msgid "Unknown"
+msgstr "不明"
+
 msgid "Updated"
 msgstr "更新日時"
 
@@ -1119,6 +1138,9 @@ msgstr "ユーザー名 (必須)"
 
 msgid "Users"
 msgstr "ユーザー"
+
+msgid "View Full Log"
+msgstr "すべてのログの表示"
 
 msgid "View Log"
 msgstr "ログの参照"
