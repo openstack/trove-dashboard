@@ -3,14 +3,14 @@
 # Shu Muto <shu-mutou@rf.jp.nec.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev34\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev35\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-05-20 07:37+0000\n"
+"POT-Creation-Date: 2016-05-22 17:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-05-21 02:16+0000\n"
-"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"PO-Revision-Date: 2016-05-23 12:42+0000\n"
+"Last-Translator: Shu Muto <shu-mutou@rf.jp.nec.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -174,6 +174,9 @@ msgstr "新しいインスタンスフレーバーを選択してください。
 msgid "Choose initial state."
 msgstr "初期状態を選択してください"
 
+msgid "Close"
+msgstr "閉じる"
+
 msgid "Cluster Name"
 msgstr "クラスター名"
 
@@ -192,6 +195,10 @@ msgstr "作成するデータベースのリスト（コンマ区切り）"
 msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "完了"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr "現在のレプリカを新しいレプリカ元に昇格することを確認してください。"
 
 msgid "Connection Examples"
 msgstr "接続例"
@@ -228,6 +235,12 @@ msgstr "データベース \"%s\" を作成しました。"
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "ユーザー \"%s\" を作成しました。"
+
+msgid "Current Replica"
+msgstr "現在のレプリカ"
+
+msgid "Current Replica Source"
+msgstr "現在のレプリカ元"
 
 msgid "Current Size (GB)"
 msgstr "現在のサイズ (GB)"
@@ -318,7 +331,7 @@ msgstr "説明"
 
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
-msgstr[0] "複製の切断"
+msgstr[0] "レプリカの切断"
 
 msgid "Details"
 msgstr "詳細"
@@ -353,11 +366,11 @@ msgstr "ユーザーの編集"
 
 msgid "Eject Replica Source"
 msgid_plural "Eject Replica Sources"
-msgstr[0] "複製元のイジェクト"
+msgstr[0] "レプリカ元のイジェクト"
 
 msgid "Ejected Replica Source"
 msgid_plural "Ejected Replica Sources"
-msgstr[0] "複製元をイジェクトしました"
+msgstr[0] "レプリカ元をイジェクトしました"
 
 msgid "Enable Log"
 msgid_plural "Enable Logs"
@@ -380,6 +393,10 @@ msgstr "データベースのバックアップ作成でエラーが発生しま
 msgid "Error deleting database on instance."
 msgstr "インスタンスからのデータベースの削除でエラーが発生しました。"
 
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "ログファイルのダウンロードに失敗しました:  %s"
+
 msgid "Error getting database backup list."
 msgstr "データベースのバックアップ一覧の取得でエラーが発生しました。"
 
@@ -396,6 +413,9 @@ msgstr "フレーバー"
 
 msgid "GB"
 msgstr "GB"
+
+msgid "Go"
+msgstr "表示"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
@@ -457,7 +477,7 @@ msgid "Instances"
 msgstr "インスタンス"
 
 msgid "Is a Replica Of"
-msgstr "インスタンスの複製元"
+msgstr "インスタンスのレプリカ元"
 
 msgid "Launch"
 msgstr "起動"
@@ -481,6 +501,9 @@ msgstr "クラスター \"%s\" を起動しました。"
 
 msgid "Log"
 msgstr "ログ"
+
+msgid "Log Contents"
+msgstr "ログの内容"
 
 msgid "Log Length"
 msgstr "ログの表示行数"
@@ -628,8 +651,8 @@ msgid ""
 "Optionally choose to create this database using a previous backup, or as a "
 "replica of another database instance."
 msgstr ""
-"オプションで、以前のバックアップまたは他のデータベースインスタンスの複製を使"
-"用してこのデータベースを作成するように選択することもできます。"
+"オプションで、以前のバックアップまたは他のデータベースインスタンスのレプリカ"
+"を使用してこのデータベースを作成するように選択することもできます。"
 
 msgid "Optionally provide a character set and collation for the database."
 msgstr ""
@@ -672,15 +695,25 @@ msgid ""
 msgstr ""
 "パスワードが表示されるのは、ルートを有効またはリセットした直後のみです。"
 
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"注意</strong>: 新しいボリュームサイズは現在のサイズよりも大きくなければいけま"
+"せん。"
+
 msgid "Promote"
 msgstr "昇格"
 
 msgid "Promote to Replica Source"
-msgstr "複製元へ昇格"
+msgstr "レプリカ元へ昇格"
 
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
-msgstr "複製 \"%s\" を新しい複製元に昇格しました。"
+msgstr "レプリカ \"%s\" を新しいレプリカ元に昇格しました。"
+
+msgid "Publish"
+msgstr "公開"
 
 msgid "Publish Log"
 msgid_plural "Publish Logs"
@@ -722,10 +755,10 @@ msgstr "レプリカ数"
 
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
-msgstr[0] "複製が切断されました"
+msgstr[0] "レプリカが切断されました"
 
 msgid "Replicas"
-msgstr "複製"
+msgstr "レプリカ"
 
 msgid "Replicate from Instance"
 msgstr "インスタンスから複製"
@@ -782,6 +815,9 @@ msgstr "バックアップのリストア"
 
 msgid "Restore from Backup"
 msgstr "バックアップからのリストア"
+
+msgid "Return to Log List"
+msgstr "ログの一覧に戻る"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
@@ -956,6 +992,9 @@ msgstr "シャード数は 1 より大きくなければいけません。"
 msgid "There was a problem enabling root."
 msgstr "ルートの有効化中に問題がありました。"
 
+msgid "This action cannot be undone."
+msgstr "この操作は取り消せません。"
+
 msgid "Type"
 msgstr "種別"
 
@@ -1047,7 +1086,7 @@ msgstr "ルートユーザーの情報を取得できません。"
 
 #, python-format
 msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "新しい複製元として複製を昇格できません。 \"%s\""
+msgstr "新しいレプリカ元としてレプリカを昇格できません。 \"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
