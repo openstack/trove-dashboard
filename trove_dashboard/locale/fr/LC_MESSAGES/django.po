@@ -1,3 +1,4 @@
+# Benjamin ACH <benjamin_ach@hotmail.com>, 2016. #zanata
 # Cedric Savignan <liced@liced.fr>, 2016. #zanata
 # Corinne Verheyde <cverheyd@gmail.com>, 2016. #zanata
 # Gael Rehault <gael_rehault@dell.com>, 2016. #zanata
@@ -5,14 +6,14 @@
 # JF Taltavull <jftalta@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.1.dev3\n"
+"Project-Id-Version: trove-dashboard 6.0.1.dev4\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-04-20 15:28+0000\n"
+"POT-Creation-Date: 2016-04-21 15:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-28 07:00+0000\n"
-"Last-Translator: JF Taltavull <jftalta@gmail.com>\n"
+"PO-Revision-Date: 2016-05-19 09:04+0000\n"
+"Last-Translator: Benjamin ACH <benjamin_ach@hotmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -645,6 +646,14 @@ msgid ""
 msgstr ""
 "Le mot de passe est visible uniquement juste après l'activation de root ou "
 "sa réinitialisation."
+
+#, fuzzy
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Veuillez noter :</ strong> La nouvelle valeur doit être supérieure à la "
+"taille originale du volume."
 
 msgid "RAM"
 msgstr "RAM"
