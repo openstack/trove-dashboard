@@ -1,0 +1,861 @@
+# Lenka Husáková <lenka.husakova@ultimum.io>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: trove-dashboard 6.0.1.dev4\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2016-04-21 15:08+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-06-01 11:56+0000\n"
+"Last-Translator: Lenka Husáková <lenka.husakova@ultimum.io>\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM"
+msgstr "%(name)s | %(RAM)s RAM"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s RAM | %(instances)s instancí"
+
+msgid "-"
+msgstr "-"
+
+msgid "A backup must be selected!"
+msgstr "Musíte zvolit zálohu!"
+
+msgid "A master instance must be selected!"
+msgstr "Musíte zvolit hlavní instanci!"
+
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr "Aktivní"
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "Add Instance"
+msgstr "Přidat instanci"
+
+msgid "Advanced"
+msgstr "Pokročilé"
+
+msgid "Allowed Host"
+msgstr "Povolený hostitel"
+
+msgid "Allowed Host (optional)"
+msgstr "Povolený hostitel (nepovinné)"
+
+msgid "At least one network must be specified."
+msgstr "Musí být zadána alespoň jedna síť."
+
+msgid "Available networks"
+msgstr "Dostupné sítě"
+
+msgid "Backup"
+msgstr "Záloha"
+
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr "Záloha"
+
+msgid "Backup Database"
+msgstr "Zálohovat databázi"
+
+msgid "Backup Details"
+msgstr "Podrobnosti zálohy"
+
+msgid "Backup Details: {{ backup.name }}"
+msgstr "Podrobnosti zálohy: {{ backup.name }}"
+
+msgid "Backup Duration"
+msgstr "Životnost zálohy"
+
+msgid "Backup File"
+msgstr "Zálohovat soubor"
+
+msgid "Backup File Location"
+msgstr "Umístění souboru zálohy"
+
+msgid "Backup Name"
+msgstr "Název zálohy"
+
+msgid "Backup Overview"
+msgstr "Přehled záloh"
+
+msgid "Backups"
+msgstr "Zálohy"
+
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr "Blokováno"
+
+msgctxt "Current status of a Database Instance"
+msgid "Build"
+msgstr "Sestavit"
+
+msgctxt "Current status of a Database Backup"
+msgid "Building"
+msgstr "Sestavování"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Choose a new instance flavor."
+msgstr "Zvolte novou konfiguraci instance."
+
+msgid "Choose initial state."
+msgstr "Zvolte počáteční stav"
+
+msgid "Cluster Name"
+msgstr "Název clusteru"
+
+msgid "Cluster Size"
+msgstr "Velikost clusteru"
+
+msgid "Clusters"
+msgstr "Clustery"
+
+msgid "Comma separated list of databases to create"
+msgstr "Čárkami oddělený seznam databází pro vytvoření"
+
+msgctxt "Current status of a Database Backup"
+msgid "Completed"
+msgstr "Dokončené"
+
+msgid "Connection Examples"
+msgstr "Příklady připojení"
+
+msgid "Connection Information"
+msgstr "Informace o připojení"
+
+msgid "Create Backup"
+msgstr "Vytvořit zálohu"
+
+msgid "Create Database"
+msgstr "Vytvořit databázy"
+
+msgid "Create User"
+msgstr "Vytvořit uživatele"
+
+msgid ""
+"Create an optional initial user.\n"
+"   This user will have access to all databases you create."
+msgstr ""
+"Vytvořit nepovinného počátečního uživatele.\n"
+"Ten bude mít přístup ke všem vytvořeným databázím."
+
+msgid "Created"
+msgstr "Vytvořeno"
+
+#, python-format
+msgid "Created database \"%s\"."
+msgstr "Vytvořena databáze \"%s\"."
+
+#, python-format
+msgid "Created user \"%s\"."
+msgstr "Vytvořen uživatel \"%s\"."
+
+msgid "Current Size (GB)"
+msgstr "Současná velikost (GB)"
+
+msgid "Current Task"
+msgstr "Současný úkol"
+
+msgid "DATABASE"
+msgstr "DATABÁZE"
+
+msgid "Database"
+msgstr "Databáze"
+
+msgid "Database Backups"
+msgstr "Zálohy databáze"
+
+msgid "Database Info"
+msgstr "Informace o databázi"
+
+msgid "Database Instance"
+msgstr "Instance databáze"
+
+msgid "Database Name"
+msgstr "Název databáze"
+
+msgid "Database Port"
+msgstr "Port databáze"
+
+msgid "Databases"
+msgstr "Databáze"
+
+msgid "Datastore"
+msgstr "Datové úložiště"
+
+msgid "Datastore Version"
+msgstr "Verze datového úložiště"
+
+msgid "Delete Backup"
+msgid_plural "Delete Backups"
+msgstr[0] "Smazat zálohu"
+msgstr[1] "Smazat zálohy"
+msgstr[2] "Smazat zálohy"
+
+msgid "Delete Cluster"
+msgid_plural "Delete Clusters"
+msgstr[0] "Smazat cluster"
+msgstr[1] "Smazat clustery"
+msgstr[2] "Smazat clustery"
+
+msgid "Delete Database"
+msgid_plural "Delete Databases"
+msgstr[0] "Smazat databázi"
+msgstr[1] "Smazat databáze"
+msgstr[2] "Smazat databáze"
+
+msgctxt "Current status of a Database Backup"
+msgid "Delete Failed"
+msgstr "Smazání selhalo"
+
+msgid "Delete Instance"
+msgid_plural "Delete Instances"
+msgstr[0] "Smazat instanci"
+msgstr[1] "Smazat instance"
+msgstr[2] "Smazat instance"
+
+msgid "Delete User"
+msgid_plural "Delete Users"
+msgstr[0] "Smazat uživatele"
+msgstr[1] "Smazat uživatele"
+msgstr[2] "Smazat uživatele"
+
+msgid "Deleted Backup"
+msgid_plural "Deleted Backups"
+msgstr[0] "Záloha smazána"
+msgstr[1] "Zálohy smazány"
+msgstr[2] "Zálohy smazány"
+
+msgid "Deleted Database"
+msgid_plural "Deleted Databases"
+msgstr[0] "Databáze smazána"
+msgstr[1] "Databáze smazány"
+msgstr[2] "Databáze smazány"
+
+msgid "Deleted User"
+msgid_plural "Deleted Users"
+msgstr[0] "Uživatel smazán"
+msgstr[1] "Uživatelé smazáni"
+msgstr[2] "Uživatelé smazáni"
+
+msgid "Deleted cluster is not recoverable."
+msgstr "Smazaný cluster nelze obnovit"
+
+msgid "Deleted instances are not recoverable."
+msgstr "Smazané instance nelze obnovit."
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Detach Replica"
+msgid_plural "Detach Replicas"
+msgstr[0] "Odpojit repliku"
+msgstr[1] "Odpojit repliky"
+msgstr[2] "Odpojit repliky"
+
+msgid "Details"
+msgstr "Podrobnosti"
+
+msgid "Download"
+msgstr "Stáhnout"
+
+msgid "Download Backup"
+msgstr "Stáhnout zálohu"
+
+msgid "Edit User"
+msgstr "Upravit uživatele"
+
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr "Chyba"
+
+msgid "Error creating database backup."
+msgstr "Chyba při vytváření zálohy databáze."
+
+msgid "Error deleting database on instance."
+msgstr "Chyba při mazání databáze v instanci."
+
+msgid "Error getting database backup list."
+msgstr "Chyba při získávání seznamu záloh databáze."
+
+msgctxt "Current status of a Database Backup"
+msgid "Failed"
+msgstr "Selhalo"
+
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr "Selhalo"
+
+msgid "Flavor"
+msgstr "Konfigurace"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "Host"
+msgstr "Hostitel"
+
+msgid "Host or IP that the user is allowed to connect through."
+msgstr "Hostitel nebo IP přes které se uživatel může připojit."
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Incremental"
+msgstr "Přírůstková"
+
+msgid "Incremental Backup"
+msgstr "Přírůstková záloha"
+
+msgid "Information"
+msgstr "Informace"
+
+msgid "Initial Admin User"
+msgstr "Počáteční účet správce"
+
+msgid "Initial Databases"
+msgstr "Počáteční databáze"
+
+msgid "Initial Volume Size"
+msgstr "Počáteční velikost svazku"
+
+msgid "Initial admin user to add"
+msgstr "Počáteční účet správce pro přidání"
+
+msgid "Instance Name"
+msgstr "Název instance"
+
+msgid "Instance Type"
+msgstr "Typ instance"
+
+msgid "Instances"
+msgstr "Instance"
+
+msgid "Is a Replica Of"
+msgstr "Je replikou "
+
+msgid "Launch"
+msgstr "Spustit"
+
+msgid "Launch Cluster"
+msgstr "Spustit cluster"
+
+msgid "Launch Database"
+msgstr "Spustit databázi"
+
+msgid "Launch Instance"
+msgstr "Spustit instanci"
+
+msgid "Launch instance with these networks"
+msgstr "Spustit instanci s těmito sítěmi"
+
+#, python-format
+msgid "Launched %(count)s named \"%(name)s\"."
+msgstr "Spuštěno %(count)s pojmenovaných \"%(name)s\"."
+
+#, python-format
+msgid "Launched cluster \"%s\""
+msgstr "Cluster \"%s\" spuštěn"
+
+msgid "Management Console"
+msgstr "Správcovská konzole"
+
+msgid "Master Instance Name"
+msgstr "Název hlavní instance"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Network"
+msgstr "Síť"
+
+msgid "Network attached to instance."
+msgstr "Síť připojená k instanci."
+
+msgid "Networking"
+msgstr "Síťování"
+
+msgid "Networks"
+msgstr "Sítě"
+
+msgctxt "Current status of a Database Backup"
+msgid "New"
+msgstr "Nové"
+
+msgid "New Flavor"
+msgstr "Nová konfigurace"
+
+msgid "New Host"
+msgstr "Nový hostitel"
+
+msgid "New Name"
+msgstr "Nový název"
+
+msgid "New Password"
+msgstr "Nové heslo"
+
+msgid "New Size (GB)"
+msgstr "Nová velkost (GB)"
+
+msgid "New password for cluster access."
+msgstr "Nové heslo pro přístup ke clusteru"
+
+msgid "New size for volume must be greater than current size."
+msgstr "Nová velikost svazku musí být větší než současná."
+
+msgid "No backups available"
+msgstr "Žádné zálohy nejsou dostupné"
+
+msgid "No flavors available"
+msgstr "Konfigurace nejsou dostupné"
+
+msgid "No instances available"
+msgstr "Žádné dostupné instance"
+
+msgid "No volume type"
+msgstr "Žádný typ svazku"
+
+msgid "None"
+msgstr "Žádný"
+
+msgid "Not Assigned"
+msgstr "Nepřiděleno"
+
+msgid "Not Found"
+msgstr "Nenalezeno"
+
+msgid "Not available"
+msgstr "Není dostupné"
+
+msgid "Number of Instances"
+msgstr "Počet instancí"
+
+msgid "Number of Shards"
+msgstr "Počet částí"
+
+msgid "Number of instances in the cluster."
+msgstr "Počet instancí v clusteru."
+
+msgid "Number of instances in the cluster. (Read only)"
+msgstr "Počet instanci v clusteru. (Pouze pro čtení)"
+
+msgid "Number of shards. (Read only)"
+msgstr "Počet částí. (Pouze pro čtení)"
+
+msgid "Old Flavor"
+msgstr "Stará konfigurace"
+
+msgid "Optional Backup Description"
+msgstr "Nepovinný popis zálohy"
+
+msgid "Optional parent backup"
+msgstr "Nepovinná nadřazená záloha"
+
+msgid ""
+"Optionally choose to create this database using a previous backup, or as a "
+"replica of another database instance."
+msgstr ""
+"Můžete vytvořit databázi pomocí předchozí zálohy, nebo jako repliku jiné "
+"instance databáze."
+
+msgid "Optionally provide a comma separated list of databases to create:"
+msgstr "Lze zadat nepovinný, čárkami oddělený seznam databází pro vytvoření:"
+
+msgid "Overview"
+msgstr "Přehled"
+
+msgid "PASSWORD"
+msgstr "HESLO"
+
+msgid "Parent Backup"
+msgstr "Nadřazená záloha"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Password (required)"
+msgstr "Heslo (povinné)"
+
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Nezapomeňte prosím:</strong> Nová hodnota musí být větší nebo rovna "
+"velikosti původního svazku."
+
+msgid "RAM"
+msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Reboot"
+msgstr "Restartovat"
+
+msgid "Related To"
+msgstr "Vztahující se k"
+
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] "Odstranit instanci"
+msgstr[1] "Odstranit instance"
+msgstr[2] ""
+
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] "Instance smazána"
+msgstr[1] "Instance smazány"
+msgstr[2] ""
+
+msgid "Replica Detached"
+msgid_plural "Replicas Detached"
+msgstr[0] "Replika odpojena"
+msgstr[1] "Repliky odpojeny"
+msgstr[2] "Repliky odpojeny"
+
+msgid "Replicas"
+msgstr "Repliky"
+
+msgid "Replicate from Instance"
+msgstr "Replikovat z instance"
+
+msgid "Replication"
+msgstr "Replikace"
+
+msgid "Reset Password"
+msgstr "Resetovat heslo"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resize"
+msgstr "Změnit velikost"
+
+msgid "Resize Database Instance"
+msgstr "Změnit velikost instance databáze"
+
+msgid "Resize Database Volume"
+msgstr "Změnit velikost svazku databáze"
+
+msgid "Resize Instance"
+msgstr "Změnit velikost instance"
+
+msgid "Resize Volume"
+msgstr "Změnit velikost svazku"
+
+#, python-format
+msgid "Resizing instance \"%s\""
+msgstr "Měnění velikosti instance \"%s\""
+
+#, python-format
+msgid "Resizing volume \"%s\""
+msgstr "Měnění velikosti svazku \"%s\""
+
+msgid "Restart Instance"
+msgid_plural "Restart Instances"
+msgstr[0] "Restartovat instanci"
+msgstr[1] "Restartovat instance"
+msgstr[2] "Restartovat instance"
+
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr "Vyžadován restart"
+
+msgid "Restarted Instance"
+msgid_plural "Restarted Instances"
+msgstr[0] "Instance restartována"
+msgstr[1] "Instance restartovány"
+msgstr[2] "Instance restartovány"
+
+msgid "Restarted instances will lose any data not saved in persistent storage."
+msgstr ""
+"Restartované instance ztratí veškerá data, jenž nejsou uložená v trvalém "
+"úložišti."
+
+msgid "Restore Backup"
+msgstr "Obnovit zálohu"
+
+msgid "Restore from Backup"
+msgstr "Obnovit ze zálohy"
+
+msgctxt "Current status of a Database Backup"
+msgid "Saving"
+msgstr "Ukládání"
+
+#, python-format
+msgid "Scheduled backup \"%(name)s\"."
+msgstr "Naplánována záloha \"%(name)s\"."
+
+msgid "Scheduled deletion of Cluster"
+msgid_plural "Scheduled deletion of Clusters"
+msgstr[0] "Smazání clusteru naplánováno"
+msgstr[1] "Smazání clusterů naplánováno"
+msgstr[2] "Smazání clusterů naplánováno"
+
+msgid "Scheduled deletion of Instance"
+msgid_plural "Scheduled deletion of Instances"
+msgstr[0] "Smazání instance naplánováno"
+msgstr[1] "Smazání instancí naplánováno"
+msgstr[2] "Smazání instancí naplánováno"
+
+msgid "Select a backup to restore"
+msgstr "Vyberte zálohu pro obnovení"
+
+msgid "Select a master instance"
+msgstr "Vyberte hlavní instanci"
+
+msgid "Select a new flavor"
+msgstr "Zvolte novou konfiguraci"
+
+msgid "Select backup"
+msgstr "Vyberte zálohu"
+
+msgid "Select datastore type and version"
+msgstr "Vyberte typ datového úložiště a verzi"
+
+msgid "Select instance"
+msgstr "Vyberte instanci"
+
+msgid "Select networks for your instance."
+msgstr "Vyberte sítě pro vaší instanci."
+
+msgid "Select parent backup"
+msgstr "Vyberte nadřazenou zálohu"
+
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr "Vyberte instance, které budou odebrány z clusteru."
+
+msgid "Selected networks"
+msgstr "Vybrané sítě"
+
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr "Vypnout"
+
+msgid "Size"
+msgstr "Velikost"
+
+msgid "Size of image to launch."
+msgstr "Velikost obrazu pro spuštění."
+
+msgid "Size of instance to launch."
+msgstr "Velikost instance pro spuštění."
+
+msgid "Size of the volume in GB."
+msgstr "Velikost svazku v GB."
+
+msgid "Source for Initial State"
+msgstr "Zdroj počátečního stavu"
+
+msgid "Specify a new flavor for the database instance."
+msgstr "Zadejte novou konfiguraci instance databáze."
+
+msgid "Specify the details for launching an instance."
+msgstr "Zadejte podrobnosti spuštění instance."
+
+msgid "Specify the details for the database backup."
+msgstr "Zadejte podrobnosti zálohy databáze."
+
+msgid "Specify the name of the new database."
+msgstr "Zadejte název nové databáze."
+
+msgid "Specify the name of the new user and password."
+msgstr "Zadejte jméno a heslo pro nového uživatele."
+
+msgid "Specify the new root password for vertica cluster."
+msgstr "Zadejte nové heslo superuživatele pro vertikální cluster."
+
+msgid "Specify the new volume size for the database instance."
+msgstr "Zadejte novou velikost svazku instance databáze."
+
+msgid "Specs"
+msgstr "Specifikace"
+
+msgid "Status"
+msgstr "Stav"
+
+msgid "The flavor must be specified."
+msgstr "Konfigurace musí být zadána."
+
+msgid "The number of instances must be greater than 1."
+msgstr "Počet instancí musí být větší než 1."
+
+msgid "The number of shards must be greater than 1."
+msgstr "Počet částí musí být větší než 1."
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Type and version of datastore."
+msgstr "Typ a verze datového úložiště"
+
+msgid "USERNAME"
+msgstr "UŽIVATELSKÉ JMÉNO"
+
+#, python-format
+msgid "Unable to %(action)s: %(objs)s"
+msgstr "Nelze %(action)s: %(objs)s"
+
+#, python-format
+msgid "Unable to create database. %s"
+msgstr "Nelze vytvořit databázi. %s"
+
+#, python-format
+msgid "Unable to create user. %s"
+msgstr "Nelze vytvořit uživatel. %s"
+
+msgid "Unable to find backup!"
+msgstr "Nelze najít zálohu!"
+
+msgid "Unable to find master instance!"
+msgstr "Nelze najít hlavní instanci!"
+
+msgid "Unable to get database backup data."
+msgstr "Nelze získat data zálohy databáze."
+
+msgid "Unable to get databases data."
+msgstr "Nelze získat data databáze."
+
+msgid "Unable to get instances data."
+msgstr "Nelze získat data instance."
+
+msgid "Unable to get user access data."
+msgstr "Nelze získat přístupová data uživatele."
+
+msgid "Unable to get user data."
+msgstr "Nelze získat data uživatele."
+
+#, python-format
+msgid "Unable to launch %(count)s named \"%(name)s\"."
+msgstr "Nelze spustit %(count)s pojmenovaných \"%(name)s\"."
+
+#, python-format
+msgid "Unable to launch cluster. %s"
+msgstr "Nelze spustit cluster. %s"
+
+msgid "Unable to list database backups for parent."
+msgstr "Nelze vypsat zálohy databáze pro nadřazenou."
+
+msgid "Unable to list database instances to backup."
+msgstr "Nelze vypsat instance databáze k zálohování."
+
+msgid "Unable to obtain datastore versions."
+msgstr "Nelze získat verze datových úložišť."
+
+msgid "Unable to obtain datastores."
+msgstr "Nelze získat datová úložiště."
+
+msgid "Unable to obtain flavors."
+msgstr "Nelze získat konfigurace."
+
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr "Nelze odebrat instance z clusteru: %s."
+
+#, python-format
+msgid "Unable to reset password. %s"
+msgstr "Nelze resetovat heslo. %s"
+
+#, python-format
+msgid "Unable to resize instance. %s"
+msgstr "Nelze změnit velikost instance. %s"
+
+#, python-format
+msgid "Unable to resize volume. %s"
+msgstr "Nelze změnit velikost svazku. %s"
+
+msgid "Unable to retrieve cluster details."
+msgstr "Nelze získat podrobnosti clusteru."
+
+msgid "Unable to retrieve database clusters."
+msgstr "Nelze získat clustery databáze."
+
+msgid "Unable to retrieve database instances."
+msgstr "Nelze získat instance databáze."
+
+msgid "Unable to retrieve database size information."
+msgstr "Nelze získat informace o velikosti databáze."
+
+msgid "Unable to retrieve databases."
+msgstr "Nelze získat databáze. "
+
+#, python-format
+msgid "Unable to retrieve details for backup: %s"
+msgstr "Nelze získat podrobnosti zálohy: %s."
+
+#, python-format
+msgid "Unable to retrieve details for database cluster: %s"
+msgstr "Nelze získat podrobnosti clusteru databáze: %s"
+
+#, python-format
+msgid "Unable to retrieve details for parent backup: %s"
+msgstr "Nelze získat podrobnosti rodičovské zálohy: %s"
+
+msgid "Unable to retrieve flavors."
+msgstr "Nelze získat konfigurace."
+
+msgid "Unable to retrieve instance details."
+msgstr "Nelze získat podrobnosti instance."
+
+msgid "Unable to retrieve networks."
+msgstr "Nelze získat sítě."
+
+#, python-format
+msgid "Unable to update user. %s"
+msgstr "Nelze aktualizovat uživatele. %s"
+
+msgid "Updated"
+msgstr "Aktualizováno"
+
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr "Uživatel aktualizován \"%s\"."
+
+msgid "User Name"
+msgstr "Uživatelské jméno"
+
+msgid "Username (required)"
+msgstr "Jméno uživatele (povinné)"
+
+msgid "Users"
+msgstr "Uživatelé"
+
+msgid "Volume"
+msgstr "Svazek"
+
+msgid "Volume Size"
+msgstr "Velikost svazku"
+
+msgid "Volume Type"
+msgstr "Typ svazku"
+
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr "Nemáte oprávnění pro %(action)s: %(objs)s"
+
+msgid ""
+"You can perform an incremental backup by specifying a parent backup. "
+"<strong>However,</strong> not all databases support incremental backups in "
+"which case this operation will result in an error."
+msgstr ""
+"Přírůstkovou zálohu můžete provést zadáním nadřazené zálohy. "
+"<strong>Nezapomeňte ale,</strong> že ne všechny databáze podporují "
+"přírůstkové zálohy a v takových případech operace selže s chybou."
+
+msgid "You must select a datastore type and version."
+msgstr "Musíte zvolit typ datového úložiště a verzi."
+
+msgid "You must specify a password if you create a user."
+msgstr "Při vytváření uživatele musíte zadat heslo."
+
+msgid "You must specify at least one database if you create a user."
+msgstr "Při vytváření uživatele musíte zadat alespoň jednu databázi."
+
+msgid "instance"
+msgstr "instance"
