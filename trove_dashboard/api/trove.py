@@ -110,6 +110,18 @@ def instance_list(request, marker=None):
     return troveclient(request).instances.list(limit=page_size, marker=marker)
 
 
+def instance_list_all(request):
+    instances = instance_list(request)
+    marker = instances.next
+    while marker:
+        temp_instances = instance_list(request, marker=marker)
+        marker = temp_instances.next
+        instances.items += temp_instances.items
+        instances.links = temp_instances.links
+    instances.next = None
+    return instances
+
+
 def instance_get(request, instance_id):
     return troveclient(request).instances.get(instance_id)
 

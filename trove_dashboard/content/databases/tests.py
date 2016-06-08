@@ -31,6 +31,7 @@ from trove_dashboard import api
 from trove_dashboard.content.databases import forms
 from trove_dashboard.content.databases import tables
 from trove_dashboard.content.databases import views
+from trove_dashboard.content.databases.workflows import create_instance
 from trove_dashboard.test import helpers as test
 
 INDEX_URL = reverse('horizon:project:databases:index')
@@ -955,7 +956,7 @@ class DatabaseTests(test.TestCase):
     @test.create_stubs({
         api.trove: ('flavor_list', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
-                    'instance_list', 'instance_get'),
+                    'instance_list_all', 'instance_get'),
         dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',)})
     def test_create_replica_instance(self):
@@ -965,7 +966,7 @@ class DatabaseTests(test.TestCase):
         api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
             self.database_backups.list())
 
-        api.trove.instance_list(IsA(http.HttpRequest)).AndReturn(
+        api.trove.instance_list_all(IsA(http.HttpRequest)).AndReturn(
             self.databases.list())
 
         api.trove.datastore_list(IsA(http.HttpRequest))\
@@ -1124,3 +1125,24 @@ class DatabaseTests(test.TestCase):
             {'action': 'databases__eject_replica_source__%s' % database.id})
 
         self.assertRedirectsNoFollow(res, INDEX_URL)
+
+    @test.create_stubs({
+        api.trove: ('instance_list',)
+    })
+    def test_master_list_pagination(self):
+        request = http.HttpRequest()
+
+        first_part = common.Paginated(self.databases.list()[:1],
+                                      next_marker='marker')
+        second_part = common.Paginated(self.databases.list()[1:])
+
+        api.trove.instance_list(request).AndReturn(first_part)
+        (api.trove.instance_list(request, marker='marker')
+         .AndReturn(second_part))
+        api.trove.instance_list(request).AndReturn(first_part)
+
+        self.mox.ReplayAll()
+
+        advanced_page = create_instance.AdvancedAction(request, None)
+        choices = advanced_page.populate_master_choices(request, None)
+        self.assertTrue(len(choices) == len(self.databases.list()) + 1)
