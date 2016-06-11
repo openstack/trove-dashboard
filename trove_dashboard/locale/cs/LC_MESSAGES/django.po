@@ -1,13 +1,14 @@
 # Lenka Husáková <lenka.husakova@ultimum.io>, 2016. #zanata
+# Stanislav Ulrych <stanislav.ulrych@ultimum.io>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev36\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev40\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-05-23 20:31+0000\n"
+"POT-Creation-Date: 2016-06-09 02:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-06-07 08:15+0000\n"
+"PO-Revision-Date: 2016-06-10 07:56+0000\n"
 "Last-Translator: Lenka Husáková <lenka.husakova@ultimum.io>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
@@ -47,22 +48,22 @@ msgstr ""
 "<strong>Nezapomeňte prosím:</strong> Hodnota zadaná v poli Velikost svazku "
 "by měla být větší než 0. Některé konfigurace ale neodporují zadání velikosti "
 "svazku. Pokud zadání velikosti má za následek chybu uvádějící, že podpora "
-"velikosti svazku není zapnuta, pak zadejte 0."
+"velikosti svazku není povolena, pak zadejte 0."
 
 msgid "A backup must be selected!"
-msgstr "Musíte zvolit zálohu!"
+msgstr "Musíte vybrat zálohu."
 
 msgid "A master instance must be selected!"
-msgstr "Musíte zvolit hlavní instanci!"
+msgstr "Musíte vybrat hlavní instanci."
 
 msgid "A new name or new password or new host must be specified."
-msgstr "Musí být zvolen nový název nebo nové heslo nebo nový hostitel."
+msgstr "Musí být zvolen nový název, nové heslo nebo nový hostitel."
 
 msgid "Access Revoked to"
 msgid_plural "Access Revoked to"
 msgstr[0] "Přístup zrušen do"
 msgstr[1] "Přístupy zrušeny do"
-msgstr[2] "Přístupů zrušeno do"
+msgstr[2] "Přístupy zrušeno do"
 
 msgid "Accessible"
 msgstr "Přístupné"
@@ -101,7 +102,7 @@ msgid "Applicable only if the volume size is specified."
 msgstr "Aplikovatelný pouze pokud velikost svazku je zadána."
 
 msgid "At least one of the new fields must be changed."
-msgstr "Alespoň jedno z  nových polí musí být změněno."
+msgstr "Alespoň jedno z nových polí musí být změněno."
 
 msgid "Available networks"
 msgstr "Dostupné sítě"
@@ -157,7 +158,7 @@ msgstr "Zrušit"
 
 #, python-format
 msgid "Cannot disable root access: %s"
-msgstr "Nelze zakázat root přístup : %s"
+msgstr "Nelze zakázat root přístup: %s"
 
 msgid "Cannot grow cluster.  No instances specified."
 msgstr "Nelze zvětšit cluster. Instance nebyly zadány."
@@ -169,7 +170,7 @@ msgid "Choose a new instance flavor."
 msgstr "Zvolte novou konfiguraci instance."
 
 msgid "Choose initial state."
-msgstr "Zvolte počáteční stav."
+msgstr "Zvolte výchozí stav."
 
 msgid "Close"
 msgstr "Zavřít"
@@ -203,7 +204,7 @@ msgid "Create Backup"
 msgstr "Vytvořit zálohu"
 
 msgid "Create Database"
-msgstr "Vytvořit databázy"
+msgstr "Vytvořit databázi"
 
 msgid "Create User"
 msgstr "Vytvořit uživatele"
@@ -212,7 +213,7 @@ msgid ""
 "Create an optional initial user.\n"
 "   This user will have access to all databases you create."
 msgstr ""
-"Vytvořit nepovinného počátečního uživatele.\n"
+"Vytvořit nepovinného výchozího uživatele.\n"
 "Ten bude mít přístup ke všem vytvořeným databázím."
 
 msgid "Created"
@@ -225,6 +226,12 @@ msgstr "Vytvořena databáze \"%s\"."
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "Vytvořen uživatel \"%s\"."
+
+msgid "Current Replica"
+msgstr "Současná replika"
+
+msgid "Current Replica Source"
+msgstr "Současný zdroj repliky"
 
 msgid "Current Size (GB)"
 msgstr "Současná velikost (GB)"
@@ -338,8 +345,32 @@ msgstr[2] "Odpojit repliky"
 msgid "Details"
 msgstr "Podrobnosti"
 
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "Zakázat log"
+msgstr[1] "Zakázat logy"
+msgstr[2] "Zakázat logy"
+
 msgid "Disable Root"
 msgstr "Zakázat root."
+
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "Log zakázán"
+msgstr[1] "Logy zakázány"
+msgstr[2] "Logy zakázány"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "Vyřadit log"
+msgstr[1] "Vyřadit logy"
+msgstr[2] "Vyřadit logy"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "Log vyřezen"
+msgstr[1] "Logy vyřazeny"
+msgstr[2] "Logy vyřazeny"
 
 msgid "Download"
 msgstr "Stáhnout"
@@ -362,8 +393,20 @@ msgstr[0] "Zdroj repliky vysunut"
 msgstr[1] "Zdroje repliky vysunuty"
 msgstr[2] "Zdroje repliky vysunuty"
 
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "Povolit log"
+msgstr[1] "Povolit logy"
+msgstr[2] "Povolit logy"
+
 msgid "Enable Root"
 msgstr "Povolit root"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "Log povolen"
+msgstr[1] "Logy povoleny"
+msgstr[2] "Logy povoleny"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
@@ -374,6 +417,10 @@ msgstr "Chyba při vytváření zálohy databáze."
 
 msgid "Error deleting database on instance."
 msgstr "Chyba při mazání databáze v instanci."
+
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "Chyba při stahování log souboru: %s"
 
 msgid "Error getting database backup list."
 msgstr "Chyba při získávání seznamu záloh databáze."
@@ -399,13 +446,13 @@ msgid "Grant Access"
 msgid_plural "Grant Access"
 msgstr[0] "Povolit přístup"
 msgstr[1] "Povolit přístupy"
-msgstr[2] "Povolit přístupů"
+msgstr[2] "Povolit přístupy"
 
 msgid "Granted Access to"
 msgid_plural "Granted Access to"
 msgstr[0] "Přístup povolen do"
 msgstr[1] "Přístupy povoleny do"
-msgstr[2] "Přístupů povoleno do"
+msgstr[2] "Přístupy povoleny do"
 
 msgid "Grow Cluster"
 msgstr "Zvětšit cluster"
@@ -413,11 +460,14 @@ msgstr "Zvětšit cluster"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Zvětšit cluster: {{cluster_name}}"
 
+msgid "Has Root Ever Been Enabled"
+msgstr "Byl někdy root povolen"
+
 msgid "Host"
 msgstr "Hostitel"
 
 msgid "Host or IP that the user is allowed to connect through."
-msgstr "Hostitel nebo IP přes které se uživatel může připojit."
+msgstr "Hostitel nebo IP, ze které se uživatel může připojit."
 
 msgid "ID"
 msgstr "ID"
@@ -432,19 +482,19 @@ msgid "Information"
 msgstr "Informace"
 
 msgid "Initial Admin User"
-msgstr "Počáteční účet správce"
+msgstr "Výchozí účet správce"
 
 msgid "Initial Databases"
-msgstr "Počáteční databáze"
+msgstr "Výchozí databáze"
 
 msgid "Initial Volume Size"
 msgstr "Počáteční velikost svazku"
 
 msgid "Initial admin user to add"
-msgstr "Počáteční účet správce pro přidání"
+msgstr "Výchozí účet správce pro přidání"
 
 msgid "Initialize Databases"
-msgstr "Zavést databáze"
+msgstr "Inicializovat databáze"
 
 msgid "Instance Name"
 msgstr "Název instance"
@@ -477,6 +527,24 @@ msgstr "Spuštěno %(count)s pojmenovaných \"%(name)s\"."
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" spuštěn"
+
+msgid "Log"
+msgstr "Log"
+
+msgid "Log Contents"
+msgstr "Obsah logu"
+
+msgid "Log Length"
+msgstr "Délka logu"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "Délka logu musí být nezáporné celé číslo."
+
+msgid "Log: "
+msgstr "Log: "
+
+msgid "Logs"
+msgstr "Logy"
 
 msgid "Manage Access"
 msgstr "Spravovat přístup"
@@ -556,7 +624,7 @@ msgid ""
 "enabled then a new password is generated."
 msgstr ""
 "Poznámka: Povolí root přístup do instance. Pokud root uživatel je již "
-"povolen, nové heslo bude vygenerováno."
+"povolen, bude vygenerováno nové heslo."
 
 msgid "Number of Instances"
 msgstr "Počet instancí"
@@ -568,7 +636,7 @@ msgid "Number of instances in the cluster."
 msgstr "Počet instancí v clusteru."
 
 msgid "Number of instances in the cluster. (Read only)"
-msgstr "Počet instanci v clusteru. (Pouze pro čtení)"
+msgstr "Počet instanci v clusteru (pouze pro čtení)."
 
 msgid "Number of shards. (Read only)"
 msgstr "Počet částí. (Pouze pro čtení)"
@@ -579,9 +647,12 @@ msgstr "Stará konfigurace"
 msgid "Optional Backup Description"
 msgstr "Nepovinný popis zálohy"
 
+msgid "Optional character set for the database."
+msgstr "Volitelná znaková sada pro databázi."
+
 msgid "Optional comma separated list of databases user has access to."
 msgstr ""
-"Volitelný čárkami oddělený seznam databází, do kterého má uživatel přístup."
+"Volitelný, čárkami oddělený seznam databází, do kterého má uživatel přístup."
 
 msgid "Optional host of user."
 msgstr "Volitelný hostitel pro uživatele."
@@ -625,7 +696,7 @@ msgid "Password (required)"
 msgstr "Heslo (povinné)"
 
 msgid "Password for root user must be specified."
-msgstr "Heslo pro root uživatele musí být zadáno."
+msgstr "Heslo pro uživatele root musí být zadáno."
 
 msgid "Password for root user."
 msgstr "Heslo pro root uživatele."
@@ -637,11 +708,33 @@ msgstr ""
 "Nezapomeňte prosím:</strong> Nová hodnota musí být větší nebo rovna "
 "velikosti původního svazku."
 
+msgid "Promote"
+msgstr "Povýšení"
+
 msgid "Promote to Replica Source"
 msgstr "Povýšení zdroje repliky"
 
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "Povýšení repliky \"%s\" na nový zdroj repliky."
+
 msgid "Publish"
 msgstr "Zveřejnit"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "Zveřejnit log"
+msgstr[1] "Zveřejnit logy"
+msgstr[2] "Zveřejnit logy"
+
+msgid "Published (bytes)"
+msgstr "Zvěřejněno (bajty)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "Log zveřejněn"
+msgstr[1] "Logy zveřejněny"
+msgstr[2] "Logy zveřejněny"
 
 msgid "RAM"
 msgstr "RAM"
@@ -657,7 +750,7 @@ msgid "Remove Instance"
 msgid_plural "Remove Instances"
 msgstr[0] "Odstranit instanci"
 msgstr[1] "Odstranit instance"
-msgstr[2] "Odstranit instancí"
+msgstr[2] "Odstranit instance"
 
 msgid "Removed Instance"
 msgid_plural "Removed Instances"
@@ -667,6 +760,9 @@ msgstr[2] "Instancí smazáno"
 
 msgid "Removed instances from cluster."
 msgstr "Instance z clusteru odstraněny."
+
+msgid "Replica Count"
+msgstr "Počet replik"
 
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
@@ -700,11 +796,11 @@ msgstr "Změnit velikost svazku"
 
 msgctxt "Current status of a Database Instance"
 msgid "Resizing"
-msgstr "Měnění velikostu"
+msgstr "Změna velikosti"
 
 #, python-format
 msgid "Resizing instance \"%s\""
-msgstr "Měnění velikosti instance \"%s\""
+msgstr "Změna velikosti instance \"%s\""
 
 #, python-format
 msgid "Resizing volume \"%s\""
@@ -737,17 +833,20 @@ msgstr "Obnovit zálohu"
 msgid "Restore from Backup"
 msgstr "Obnovit ze zálohy"
 
+msgid "Return to Log List"
+msgstr "Návrat do seznamu logů"
+
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "Zrušit přístup"
 msgstr[1] "Zrušit přístupy"
-msgstr[2] "Zrušit přístupů"
+msgstr[2] "Zrušit přístupy"
 
 msgid "Root Enabled"
 msgstr "Root povolen"
 
 msgid "Root Password"
-msgstr "Heslo pro root"
+msgstr "Heslo pro root uživatele"
 
 #, python-format
 msgid "Root password updated for cluster \"%s\""
@@ -789,7 +888,7 @@ msgid "Select a master instance"
 msgstr "Vyberte hlavní instanci"
 
 msgid "Select a new flavor"
-msgstr "Zvolte novou konfiguraci"
+msgstr "Vyberte novou konfiguraci"
 
 msgid "Select backup"
 msgstr "Vyberte zálohu"
@@ -813,7 +912,7 @@ msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
 msgstr[0] "Zmenšit cluster"
 msgstr[1] "Zmenšit clustery"
-msgstr[2] "Zmenšit clusterů"
+msgstr[2] "Zmenšit clustery"
 
 msgid "Shrink Cluster: {{cluster_name}}"
 msgstr "Zmenšit cluster: {{cluster_name}}"
@@ -838,13 +937,14 @@ msgid "Size of the volume in GB."
 msgstr "Velikost svazku v GB."
 
 msgid "Source for Initial State"
-msgstr "Zdroj počátečního stavu"
+msgstr "Zdroj výchozího stavu"
 
 msgid "Specify a new flavor for the database instance."
 msgstr "Zadejte novou konfiguraci instance databáze."
 
 msgid "Specify a new name, new password or new host name for the user."
-msgstr "Zadejte nové jméno, nové heslo nebo nové jméno hosta pro uživatele."
+msgstr ""
+"Zadejte nové jméno, nové heslo nebo nové jméno hostitele pro uživatele."
 
 msgid "Specify the details for launching an instance."
 msgstr "Zadejte podrobnosti spuštění instance."
@@ -874,11 +974,17 @@ msgstr "Zadejte nové root heslo pro vertikální cluster."
 msgid "Specify the new volume size for the database instance."
 msgstr "Zadejte novou velikost svazku instance databáze."
 
+msgid "Specify the number of replicas to be created"
+msgstr "Zadejte počet replik pro vytvoření"
+
 msgid "Specs"
 msgstr "Specifikace"
 
 msgid "Status"
 msgstr "Stav"
+
+msgid "Successfully disabled root access."
+msgstr "Úspěšně zakázán přístup root."
 
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
@@ -896,8 +1002,8 @@ msgid ""
 "The name field is optional.   If the field is left blank a name will be "
 "generated when the cluster is grown."
 msgstr ""
-"Pole jméno je volitelné. Pokud je pole prázdné, jméno bude generováno při "
-"vytvoření clusteru."
+"Pole jméno je volitelné. Pokud je prázdné, bude generováno při vytvoření "
+"clusteru."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Počet instancí musí být větší než 1."
@@ -906,7 +1012,7 @@ msgid "The number of shards must be greater than 1."
 msgstr "Počet částí musí být větší než 1."
 
 msgid "There was a problem enabling root."
-msgstr "Při povolování root se vyskytl problém."
+msgstr "Při povolování uživatele root se vyskytl problém."
 
 msgid "This action cannot be undone."
 msgstr "Toto nelze vrátit."
@@ -936,10 +1042,10 @@ msgid "Unable to determine if instance root is enabled."
 msgstr "Nelze zjistit, zda je root přístup do instance povolen."
 
 msgid "Unable to find backup!"
-msgstr "Nelze najít zálohu!"
+msgstr "Nelze najít zálohu."
 
 msgid "Unable to find master instance!"
-msgstr "Nelze najít hlavní instanci!"
+msgstr "Nelze najít hlavní instanci."
 
 msgid "Unable to get database backup data."
 msgstr "Nelze získat data zálohy databáze."
@@ -973,10 +1079,20 @@ msgid "Unable to launch cluster. %s"
 msgstr "Nelze spustit cluster. %s"
 
 msgid "Unable to list database backups for parent."
-msgstr "Nelze vypsat zálohy databáze pro nadřazenou."
+msgstr "Nelze vypsat zálohy databáze pro nadřazenou zálohu."
 
 msgid "Unable to list database instances to backup."
 msgstr "Nelze vypsat instance databáze k zálohování."
+
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"Nelze načíst  {0} log.\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "Nelze načíst  {0} log pro instanci \"{1}\"."
 
 msgid "Unable to obtain datastore versions."
 msgstr "Nelze získat verze datových úložišť."
@@ -989,6 +1105,10 @@ msgstr "Nelze získat konfigurace."
 
 msgid "Unable to obtain information on root user"
 msgstr "Nelze získat informace o root uživateli"
+
+#, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr "Repliku nelze povýšit na novou zdroj repliky. \"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
@@ -1013,7 +1133,7 @@ msgid "Unable to retrieve cluster details."
 msgstr "Nelze získat podrobnosti clusteru."
 
 msgid "Unable to retrieve database clusters."
-msgstr "Nelze získat clustery databáze."
+msgstr "Nelze získat databázové clustery."
 
 msgid "Unable to retrieve database instances."
 msgstr "Nelze získat instance databáze."
@@ -1030,7 +1150,7 @@ msgstr "Nelze získat podrobnosti zálohy: %s."
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
-msgstr "Nelze získat podrobnosti clusteru databáze: %s"
+msgstr "Nelze získat podrobnosti databázového clusteru: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database instance: %s"
@@ -1038,13 +1158,21 @@ msgstr "Nelze získat detaily pro instance databáze: %s"
 
 #, python-format
 msgid "Unable to retrieve details for parent backup: %s"
-msgstr "Nelze získat podrobnosti rodičovské zálohy: %s"
+msgstr "Nelze získat podrobnosti nadřazené zálohy: %s"
 
 msgid "Unable to retrieve flavors."
 msgstr "Nelze získat konfigurace."
 
 msgid "Unable to retrieve instance details."
 msgstr "Nelze získat podrobnosti instance."
+
+#, python-format
+msgid ""
+"Unable to retrieve list of logs.\n"
+"%s"
+msgstr ""
+"Nelze získat seznam logů.\n"
+"%s"
 
 msgid "Unable to retrieve networks."
 msgstr "Nelze získat sítě."
@@ -1072,8 +1200,11 @@ msgstr "Uživatelské jméno (povinné)"
 msgid "Users"
 msgstr "Uživatelé"
 
+msgid "View Full Log"
+msgstr "Zobrazit celý log"
+
 msgid "View Log"
-msgstr "Zobrazit protokol"
+msgstr "Zobrazit log"
 
 msgid "Volume"
 msgstr "Svazek"
@@ -1098,7 +1229,7 @@ msgstr ""
 "přírůstkové zálohy a v takových případech operace selže s chybou."
 
 msgid "You must select a datastore type and version."
-msgstr "Musíte zvolit typ datového úložiště a verzi."
+msgstr "Musíte vybrat typ datového úložiště a verzi."
 
 msgid "You must specify a password if you create a user."
 msgstr "Při vytváření uživatele musíte zadat heslo."
