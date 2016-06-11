@@ -3,9 +3,9 @@
 # liujunpeng <liujunpeng@inspur.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.1.dev3\n"
+"Project-Id-Version: trove-dashboard 6.0.2.dev3\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-04-20 15:28+0000\n"
+"POT-Creation-Date: 2016-06-08 09:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,6 +28,9 @@ msgstr ""
 "或者你可以通过拖放的方式。当然你也可以\n"
 "通过拖放来改变网卡顺序。\n"
 " "
+
+msgid "\"Clusters\""
+msgstr "\"集群\""
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
