@@ -2,13 +2,13 @@
 # Stanislav Ulrych <stanislav.ulrych@ultimum.io>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev40\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev41\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-06-09 02:21+0000\n"
+"POT-Creation-Date: 2016-06-11 12:47+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-06-10 07:56+0000\n"
+"PO-Revision-Date: 2016-06-14 06:40+0000\n"
 "Last-Translator: Lenka Husáková <lenka.husakova@ultimum.io>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
@@ -167,7 +167,7 @@ msgid "Character Set"
 msgstr "Znaková sada"
 
 msgid "Choose a new instance flavor."
-msgstr "Zvolte novou konfiguraci instance."
+msgstr "Zvolte nový typ instance."
 
 msgid "Choose initial state."
 msgstr "Zvolte výchozí stav."
@@ -434,7 +434,7 @@ msgid "Failed"
 msgstr "Selhalo"
 
 msgid "Flavor"
-msgstr "Konfigurace"
+msgstr "Typ"
 
 msgid "GB"
 msgstr "GB"
@@ -575,7 +575,7 @@ msgid "New"
 msgstr "Nový"
 
 msgid "New Flavor"
-msgstr "Nová konfigurace"
+msgstr "Nový typ"
 
 msgid "New Host"
 msgstr "Nový hostitel"
@@ -599,7 +599,7 @@ msgid "No backups available"
 msgstr "Žádné zálohy nejsou dostupné"
 
 msgid "No flavors available"
-msgstr "Konfigurace nejsou dostupné"
+msgstr "Typy nejsou dostupné"
 
 msgid "No instances available"
 msgstr "Žádné dostupné instance"
@@ -642,7 +642,7 @@ msgid "Number of shards. (Read only)"
 msgstr "Počet částí. (Pouze pro čtení)"
 
 msgid "Old Flavor"
-msgstr "Stará konfigurace"
+msgstr "Starý typ"
 
 msgid "Optional Backup Description"
 msgstr "Nepovinný popis zálohy"
@@ -653,6 +653,13 @@ msgstr "Volitelná znaková sada pro databázi."
 msgid "Optional comma separated list of databases user has access to."
 msgstr ""
 "Volitelný, čárkami oddělený seznam databází, do kterého má uživatel přístup."
+
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr ""
+"Specifická hodnota volitelného datového uložiště, která definuje vztah z "
+"jedné instance v clusteru do jiné instance."
 
 msgid "Optional host of user."
 msgstr "Volitelný hostitel pro uživatele."
@@ -700,6 +707,11 @@ msgstr "Heslo pro uživatele root musí být zadáno."
 
 msgid "Password for root user."
 msgstr "Heslo pro root uživatele."
+
+msgid ""
+"Password is only visible immediately after the root is enabled or reset."
+msgstr ""
+"Heslo je viditelné pouze bezprostředně po povolení nebo resetování root."
 
 msgid ""
 "Please note:</strong> The new value must be greater than the existing volume "
@@ -888,7 +900,7 @@ msgid "Select a master instance"
 msgstr "Vyberte hlavní instanci"
 
 msgid "Select a new flavor"
-msgstr "Vyberte novou konfiguraci"
+msgstr "Vyberte nový typ"
 
 msgid "Select backup"
 msgstr "Vyberte zálohu"
@@ -940,7 +952,7 @@ msgid "Source for Initial State"
 msgstr "Zdroj výchozího stavu"
 
 msgid "Specify a new flavor for the database instance."
-msgstr "Zadejte novou konfiguraci instance databáze."
+msgstr "Zadejte nový typ instance databáze."
 
 msgid "Specify a new name, new password or new host name for the user."
 msgstr ""
@@ -996,7 +1008,7 @@ msgstr ""
 "polí."
 
 msgid "The flavor must be specified."
-msgstr "Konfigurace musí být zadána."
+msgstr "Typ musí být zadáný."
 
 msgid ""
 "The name field is optional.   If the field is left blank a name will be "
@@ -1101,7 +1113,7 @@ msgid "Unable to obtain datastores."
 msgstr "Nelze získat datová úložiště."
 
 msgid "Unable to obtain flavors."
-msgstr "Nelze získat konfigurace."
+msgstr "Nelze získat typ."
 
 msgid "Unable to obtain information on root user"
 msgstr "Nelze získat informace o root uživateli"
@@ -1161,7 +1173,7 @@ msgid "Unable to retrieve details for parent backup: %s"
 msgstr "Nelze získat podrobnosti nadřazené zálohy: %s"
 
 msgid "Unable to retrieve flavors."
-msgstr "Nelze získat konfigurace."
+msgstr "Nelze získat typy."
 
 msgid "Unable to retrieve instance details."
 msgstr "Nelze získat podrobnosti instance."
