@@ -2,14 +2,14 @@
 # Stanislav Ulrych <stanislav.ulrych@ultimum.io>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev41\n"
+"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev42\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-06-11 12:47+0000\n"
+"POT-Creation-Date: 2016-06-14 14:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-06-14 06:40+0000\n"
-"Last-Translator: Lenka Husáková <lenka.husakova@ultimum.io>\n"
+"PO-Revision-Date: 2016-06-14 12:02+0000\n"
+"Last-Translator: Stanislav Ulrych <stanislav.ulrych@ultimum.io>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -184,12 +184,19 @@ msgstr "Velikost clusteru"
 msgid "Clusters"
 msgstr "Clustery"
 
+msgid "Collation"
+msgstr "Collation"
+
 msgid "Comma separated list of databases to create"
 msgstr "Čárkami oddělený seznam databází pro vytvoření"
 
 msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "Dokončené"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr "Potvrdit, že současná replika bude povýšena na nový zdroj repliky."
 
 msgid "Connection Examples"
 msgstr "Příklady připojení"
@@ -389,9 +396,9 @@ msgstr[2] "Vysunout zdroje repliky"
 
 msgid "Ejected Replica Source"
 msgid_plural "Ejected Replica Sources"
-msgstr[0] "Zdroj repliky vysunut"
-msgstr[1] "Zdroje repliky vysunuty"
-msgstr[2] "Zdroje repliky vysunuty"
+msgstr[0] "Zdroj repliky odpojen"
+msgstr[1] "Zdroje repliky odpojen"
+msgstr[2] "Zdroje repliky odpojit"
 
 msgid "Enable Log"
 msgid_plural "Enable Logs"
@@ -461,7 +468,7 @@ msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Zvětšit cluster: {{cluster_name}}"
 
 msgid "Has Root Ever Been Enabled"
-msgstr "Byl někdy root povolen"
+msgstr "Byl někdy povolen root"
 
 msgid "Host"
 msgstr "Hostitel"
@@ -642,7 +649,7 @@ msgid "Number of shards. (Read only)"
 msgstr "Počet částí. (Pouze pro čtení)"
 
 msgid "Old Flavor"
-msgstr "Starý typ"
+msgstr "Původní typ"
 
 msgid "Optional Backup Description"
 msgstr "Nepovinný popis zálohy"
@@ -650,9 +657,15 @@ msgstr "Nepovinný popis zálohy"
 msgid "Optional character set for the database."
 msgstr "Volitelná znaková sada pro databázi."
 
+msgid "Optional collation type for the database."
+msgstr "Collation databáze (volitelné)."
+
 msgid "Optional comma separated list of databases user has access to."
 msgstr ""
 "Volitelný, čárkami oddělený seznam databází, do kterého má uživatel přístup."
+
+msgid "Optional datastore specific type of the instance."
+msgstr "Typ instance specifický pro uložiště (volitelné)."
 
 msgid ""
 "Optional datastore specific value that defines the relationship from one "
@@ -676,6 +689,9 @@ msgid ""
 msgstr ""
 "Můžete vytvořit databázi pomocí předchozí zálohy, nebo jako repliku jiné "
 "instance databáze."
+
+msgid "Optionally provide a character set and collation for the database."
+msgstr "Zvolit znakovou sadu a collation databáze (volitelné)."
 
 msgid "Optionally provide a comma separated list of databases to create:"
 msgstr "Lze zadat nepovinný, čárkami oddělený seznam databází pro vytvoření:"
@@ -738,6 +754,9 @@ msgid_plural "Publish Logs"
 msgstr[0] "Zveřejnit log"
 msgstr[1] "Zveřejnit logy"
 msgstr[2] "Zveřejnit logy"
+
+msgid "Publishable (bytes)"
+msgstr "Publikovatelný (bytů)"
 
 msgid "Published (bytes)"
 msgstr "Zvěřejněno (bajty)"
@@ -981,7 +1000,7 @@ msgid "Specify the name of the new user and password."
 msgstr "Zadejte jméno a heslo pro nového uživatele."
 
 msgid "Specify the new root password for vertica cluster."
-msgstr "Zadejte nové root heslo pro vertikální cluster."
+msgstr "Zadejte nové root heslo pro vertica cluster."
 
 msgid "Specify the new volume size for the database instance."
 msgstr "Zadejte novou velikost svazku instance databáze."
@@ -994,6 +1013,9 @@ msgstr "Specifikace"
 
 msgid "Status"
 msgstr "Stav"
+
+msgid "Status if root was ever enabled for an instance."
+msgstr "Stav, zda byl root povolen pro instanci"
 
 msgid "Successfully disabled root access."
 msgstr "Úspěšně zakázán přístup root."
@@ -1008,7 +1030,7 @@ msgstr ""
 "polí."
 
 msgid "The flavor must be specified."
-msgstr "Typ musí být zadáný."
+msgstr "Typ musí být zadaný."
 
 msgid ""
 "The name field is optional.   If the field is left blank a name will be "
@@ -1113,7 +1135,7 @@ msgid "Unable to obtain datastores."
 msgstr "Nelze získat datová úložiště."
 
 msgid "Unable to obtain flavors."
-msgstr "Nelze získat typ."
+msgstr "Nelze získat typy."
 
 msgid "Unable to obtain information on root user"
 msgstr "Nelze získat informace o root uživateli"
