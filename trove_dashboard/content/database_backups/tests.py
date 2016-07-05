@@ -18,6 +18,8 @@ from mox3.mox import IsA  # noqa
 import six
 import unittest
 
+from openstack_auth import policy
+
 from trove_dashboard import api
 from trove_dashboard.test import helpers as test
 
@@ -58,10 +60,12 @@ class DatabasesBackupsTests(test.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertMessageCount(res, error=1)
 
-    @test.create_stubs({api.trove: ('instance_list',
-                                    'backup_list',
-                                    'backup_create')})
+    @test.create_stubs({
+        api.trove: ('instance_list', 'backup_list', 'backup_create'),
+        policy: ('check',),
+    })
     def test_launch_backup(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         api.trove.instance_list(IsA(http.HttpRequest))\
             .AndReturn(self.databases.list())
         api.trove.backup_list(IsA(http.HttpRequest)) \
@@ -91,8 +95,12 @@ class DatabasesBackupsTests(test.TestCase):
         self.assertNoFormErrors(res)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({api.trove: ('instance_list', 'backup_list')})
+    @test.create_stubs({
+        api.trove: ('instance_list', 'backup_list'),
+        policy: ('check',),
+    })
     def test_launch_backup_exception(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         api.trove.instance_list(IsA(http.HttpRequest))\
             .AndRaise(self.exceptions.trove)
         api.trove.backup_list(IsA(http.HttpRequest)) \
@@ -105,10 +113,12 @@ class DatabasesBackupsTests(test.TestCase):
         self.assertTemplateUsed(res,
                                 'project/database_backups/backup.html')
 
-    @test.create_stubs({api.trove: ('instance_list',
-                                    'backup_list',
-                                    'backup_create')})
+    @test.create_stubs({
+        api.trove: ('instance_list', 'backup_list', 'backup_create'),
+        policy: ('check',),
+    })
     def test_launch_backup_incr(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         api.trove.instance_list(IsA(http.HttpRequest)) \
             .AndReturn(self.databases.list())
         api.trove.backup_list(IsA(http.HttpRequest)) \
