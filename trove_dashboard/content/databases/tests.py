@@ -24,6 +24,7 @@ from mox3.mox import IsA  # noqa
 import six
 
 from horizon import exceptions
+from openstack_auth import policy
 from openstack_dashboard import api as dash_api
 from troveclient import common
 
@@ -131,8 +132,11 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',)})
+        dash_api.neutron: ('network_list',),
+        policy: ('check',),
+    })
     def test_launch_instance(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
             self.flavors.list())
         api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
@@ -197,8 +201,11 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',)})
+        dash_api.neutron: ('network_list',),
+        policy: ('check',),
+    })
     def test_create_simple_instance(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
             self.flavors.list())
 
@@ -263,8 +270,11 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',)})
+        dash_api.neutron: ('network_list',),
+        policy: ('check',),
+    })
     def test_create_simple_instance_exception(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         trove_exception = self.exceptions.nova
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
             self.flavors.list())
@@ -958,8 +968,11 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list',
                     'instance_list_all', 'instance_get'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',)})
+        dash_api.neutron: ('network_list',),
+        policy: ('check',),
+    })
     def test_create_replica_instance(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
             self.flavors.list())
 
