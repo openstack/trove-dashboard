@@ -12,6 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Register the REST API URLs so they can be called from the JavaScript files
-
-import trove_dashboard.api.rest  # noqa
+# import REST API modules here
+from trove_dashboard.api.rest import trove  # noqa
