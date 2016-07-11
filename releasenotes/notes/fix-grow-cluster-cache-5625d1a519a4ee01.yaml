@@ -1,0 +1,5 @@
+---
+fixes:
+  - The current caching initializes the instance list for the grow
+    cluster manager each time a new process would instantiate the
+    manager.  Changed to manager to only initialize on creation.
