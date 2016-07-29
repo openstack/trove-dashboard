@@ -1145,9 +1145,9 @@ class DatabaseTests(test.TestCase):
     def test_master_list_pagination(self):
         request = http.HttpRequest()
 
-        first_part = common.Paginated(self.databases.list()[:1],
+        first_part = common.Paginated(items=self.databases.list()[:1],
                                       next_marker='marker')
-        second_part = common.Paginated(self.databases.list()[1:])
+        second_part = common.Paginated(items=self.databases.list()[1:])
 
         api.trove.instance_list(request).AndReturn(first_part)
         (api.trove.instance_list(request, marker='marker')

@@ -116,7 +116,8 @@ def instance_list_all(request):
     while marker:
         temp_instances = instance_list(request, marker=marker)
         marker = temp_instances.next
-        instances.items += temp_instances.items
+        for instance in temp_instances:
+            instances.append(instance)
         instances.links = temp_instances.links
     instances.next = None
     return instances
