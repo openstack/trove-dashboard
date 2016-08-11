@@ -134,6 +134,7 @@ class DatabaseTests(test.TestCase):
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',),
+        dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
     def test_launch_instance(self):
@@ -164,6 +165,9 @@ class DatabaseTests(test.TestCase):
         dash_api.neutron.network_list(IsA(http.HttpRequest),
                                       shared=True).AndReturn(
                                           self.networks.list()[1:])
+
+        dash_api.nova.availability_zone_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.availability_zones.list())
 
         self.mox.ReplayAll()
         res = self.client.get(LAUNCH_URL)
@@ -206,6 +210,7 @@ class DatabaseTests(test.TestCase):
                     'instance_create', 'instance_list'),
         dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',),
+        dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
     def test_create_simple_instance(self):
@@ -246,6 +251,9 @@ class DatabaseTests(test.TestCase):
         datastore_version = '5.5'
         field_name = self._build_flavor_widget_name(datastore,
                                                     datastore_version)
+        dash_api.nova.availability_zone_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.availability_zones.list())
+
         # Actual create database call
         api.trove.instance_create(
             IsA(http.HttpRequest),
@@ -262,7 +270,9 @@ class DatabaseTests(test.TestCase):
             nics=nics,
             replica_count=None,
             volume_type=None,
-            locality=None).AndReturn(self.databases.first())
+            locality=None,
+            availability_zone=IsA(six.text_type)
+        ).AndReturn(self.databases.first())
 
         self.mox.ReplayAll()
         post = {
@@ -284,6 +294,7 @@ class DatabaseTests(test.TestCase):
                     'instance_create', 'instance_list'),
         dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',),
+        dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
     def test_create_simple_instance_exception(self):
@@ -325,6 +336,9 @@ class DatabaseTests(test.TestCase):
         datastore_version = '5.5'
         field_name = self._build_flavor_widget_name(datastore,
                                                     datastore_version)
+        dash_api.nova.availability_zone_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.availability_zones.list())
+
         # Actual create database call
         api.trove.instance_create(
             IsA(http.HttpRequest),
@@ -341,7 +355,9 @@ class DatabaseTests(test.TestCase):
             nics=nics,
             replica_count=None,
             volume_type=None,
-            locality=None).AndRaise(trove_exception)
+            locality=None,
+            availability_zone=IsA(six.text_type)
+        ).AndRaise(trove_exception)
 
         self.mox.ReplayAll()
         post = {
@@ -1014,6 +1030,7 @@ class DatabaseTests(test.TestCase):
                     'instance_create', 'instance_get', 'instance_list_all'),
         dash_api.cinder: ('volume_type_list',),
         dash_api.neutron: ('network_list',),
+        dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
     def test_create_replica_instance(self):
@@ -1049,6 +1066,9 @@ class DatabaseTests(test.TestCase):
 
         nics = [{"net-id": self.networks.first().id, "v4-fixed-ip": ''}]
 
+        dash_api.nova.availability_zone_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.availability_zones.list())
+
         api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(self.databases.first())
 
@@ -1072,7 +1092,9 @@ class DatabaseTests(test.TestCase):
             nics=nics,
             replica_count=2,
             volume_type=None,
-            locality=None).AndReturn(self.databases.first())
+            locality=None,
+            availability_zone=IsA(six.text_type)
+        ).AndReturn(self.databases.first())
 
         self.mox.ReplayAll()
         post = {
