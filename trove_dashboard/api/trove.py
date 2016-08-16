@@ -89,6 +89,8 @@ def cluster_grow(request, cluster_id, new_instances):
             instance["type"] = new_instance.type
         if new_instance.related_to:
             instance["related_to"] = new_instance.related_to
+        if new_instance.nics:
+            instance["nics"] = [{'net-id': new_instance.nics}]
         instances.append(instance)
     return troveclient(request).clusters.grow(cluster_id, instances)
 

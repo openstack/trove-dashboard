@@ -395,13 +395,15 @@ class ClustersTests(test.TestCase):
         instances = [
             cluster_manager.ClusterInstance("id1", "name1", cluster_flavor,
                                             cluster_flavor_name,
-                                            cluster_volume, "master", None),
+                                            cluster_volume, "master", None,
+                                            None),
             cluster_manager.ClusterInstance("id2", "name2", cluster_flavor,
                                             cluster_flavor_name,
-                                            cluster_volume, "slave", "master"),
+                                            cluster_volume, "slave",
+                                            "master", None),
             cluster_manager.ClusterInstance("id3", None, cluster_flavor,
                                             cluster_flavor_name,
-                                            cluster_volume, None, None),
+                                            cluster_volume, None, None, None),
         ]
 
         manager = cluster_manager.ClusterInstanceManager(cluster.id)
@@ -468,13 +470,15 @@ class ClustersTests(test.TestCase):
         instances = [
             cluster_manager.ClusterInstance("id1", "name1", cluster_flavor,
                                             cluster_flavor_name,
-                                            cluster_volume, "master", None),
+                                            cluster_volume, "master", None,
+                                            None),
             cluster_manager.ClusterInstance("id2", "name2", cluster_flavor,
                                             cluster_flavor_name,
-                                            cluster_volume, "slave", "master"),
+                                            cluster_volume, "slave",
+                                            "master", None),
             cluster_manager.ClusterInstance("id3", None, cluster_flavor,
                                             cluster_flavor_name,
-                                            cluster_volume, None, None),
+                                            cluster_volume, None, None, None),
         ]
 
         manager = cluster_manager.ClusterInstanceManager(cluster.id)
