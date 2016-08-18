@@ -253,7 +253,7 @@ class LaunchForm(forms.SelfHandlingForm):
                     # only add to choices if datastore has at least one version
                     version_choices = ()
                     for v in versions:
-                        if "inactive" in v.name:
+                        if hasattr(v, 'active') and not v.active:
                             continue
                         selection_text = ds.name + ' - ' + v.name
                         widget_text = ds.name + '-' + v.name
