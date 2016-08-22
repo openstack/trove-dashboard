@@ -17,7 +17,7 @@ import six.moves.urllib.parse as urlparse
 from django.conf import settings
 from django.core import urlresolvers
 from django.template import defaultfilters as d_filters
-from django.utils import http
+
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
@@ -197,7 +197,7 @@ class GrantAccess(tables.BatchAction):
             self.table.kwargs['instance_id'],
             self.table.kwargs['user_name'],
             [obj_id],
-            host=parse_host_param(request))
+            host=self.table.kwargs['user_host'])
 
 
 class RevokeAccess(tables.BatchAction):
@@ -231,7 +231,7 @@ class RevokeAccess(tables.BatchAction):
             self.table.kwargs['instance_id'],
             self.table.kwargs['user_name'],
             obj_id,
-            host=parse_host_param(request))
+            host=self.table.kwargs['user_host'])
 
 
 def parse_host_param(request):
@@ -273,13 +273,9 @@ class ManageAccess(tables.LinkAction):
 
     def get_link_url(self, datum):
         user = datum
-        url = urlresolvers.reverse(self.url, args=[user.instance.id,
-                                                   user.name])
-        if user.host:
-            params = http.urlencode({"host": user.host})
-            url = "?".join([url, params])
-
-        return url
+        return urlresolvers.reverse(self.url, args=[user.instance.id,
+                                                    user.name,
+                                                    user.host])
 
 
 class CreateUser(tables.LinkAction):
@@ -313,13 +309,9 @@ class EditUser(tables.LinkAction):
 
     def get_link_url(self, datum):
         user = datum
-        url = urlresolvers.reverse(self.url, args=[user.instance.id,
-                                                   user.name])
-        if user.host:
-            params = http.urlencode({"host": user.host})
-            url = "?".join([url, params])
-
-        return url
+        return urlresolvers.reverse(self.url, args=[user.instance.id,
+                                                    user.name,
+                                                    user.host])
 
 
 def has_user_add_perm(request):
@@ -347,8 +339,9 @@ class DeleteUser(tables.DeleteAction):
         )
 
     def delete(self, request, obj_id):
-        datum = self.table.get_object_by_id(obj_id)
-        api.trove.user_delete(request, datum.instance.id, datum.name)
+        user = self.table.get_object_by_id(obj_id)
+        api.trove.user_delete(request, user.instance.id, user.name,
+                              host=user.host)
 
 
 class CreateDatabase(tables.LinkAction):

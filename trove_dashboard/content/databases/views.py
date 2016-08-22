@@ -146,16 +146,18 @@ class EditUserView(horizon_forms.ModalFormView):
         context = super(EditUserView, self).get_context_data(**kwargs)
         context['instance_id'] = self.kwargs['instance_id']
         context['user_name'] = self.kwargs['user_name']
-        args = (self.kwargs['instance_id'], self.kwargs['user_name'])
+        context['user_host'] = self.kwargs['user_host']
+        args = (self.kwargs['instance_id'], self.kwargs['user_name'],
+                self.kwargs['user_host'])
         context['submit_url'] = reverse(self.submit_url, args=args)
         return context
 
     def get_initial(self):
         instance_id = self.kwargs['instance_id']
         user_name = self.kwargs['user_name']
-        host = tables.parse_host_param(self.request)
+        user_host = self.kwargs['user_host']
         return {'instance_id': instance_id, 'user_name': user_name,
-                'host': host}
+                'user_host': user_host}
 
 
 class AccessDetailView(horizon_tables.DataTableView):
@@ -167,6 +169,7 @@ class AccessDetailView(horizon_tables.DataTableView):
     def get_data(self):
         instance_id = self.kwargs['instance_id']
         user_name = self.kwargs['user_name']
+        user_host = self.kwargs['user_host']
         try:
             databases = api.trove.database_list(self.request, instance_id)
         except Exception:
@@ -177,8 +180,8 @@ class AccessDetailView(horizon_tables.DataTableView):
                               _('Unable to retrieve databases.'),
                               redirect=redirect)
         try:
-            granted = api.trove.user_list_access(
-                self.request, instance_id, user_name)
+            granted = api.trove.user_show_access(
+                self.request, instance_id, user_name, host=user_host)
         except Exception:
             granted = []
             redirect = reverse('horizon:project:databases:detail',
