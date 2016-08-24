@@ -36,7 +36,7 @@ from trove_dashboard.content.database_backups \
 ACTIVE_STATES = ("ACTIVE",)
 
 
-class DeleteInstance(tables.BatchAction):
+class DeleteInstance(tables.DeleteAction):
     help_text = _("Deleted instances are not recoverable.")
 
     @staticmethod
@@ -59,7 +59,7 @@ class DeleteInstance(tables.BatchAction):
     classes = ("btn-danger", )
     icon = "remove"
 
-    def action(self, request, obj_id):
+    def delete(self, request, obj_id):
         api.trove.instance_delete(request, obj_id)
 
 
