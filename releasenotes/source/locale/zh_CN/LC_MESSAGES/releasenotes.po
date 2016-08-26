@@ -1,0 +1,48 @@
+# zzxwill <zzxwill@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Trove Dashboard Release Notes 7.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-24 16:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-08-25 10:48+0000\n"
+"Last-Translator: zzxwill <zzxwill@gmail.com>\n"
+"Language-Team: Chinese (China)\n"
+"Language: zh-CN\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "7.0.0.0b2"
+msgstr "7.0.0.0b2"
+
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+msgid ":ref:`modindex`"
+msgstr ":ref:`modindex`"
+
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+
+msgid "Bug Fixes"
+msgstr "Bug修复"
+
+msgid "Contents:"
+msgstr "内容"
+
+msgid "Current Series Release Notes"
+msgstr "当前版本发布说明"
+
+msgid "Enable cluster support for MariaDB and Cassandra."
+msgstr "启动MariaDB和Cassandra的集群支持。"
+
+msgid "Mitaka Series Release Notes"
+msgstr "Mitaka 版本发布说明"
+
+msgid "New Features"
+msgstr "新特性"
+
+msgid "Trove Dashboard Release Notes"
+msgstr "Trove Dashboard发布说明"
