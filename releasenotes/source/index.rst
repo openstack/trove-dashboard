@@ -7,8 +7,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   mitaka
    unreleased
+   mitaka
 
 
 Indices and tables
