@@ -1,16 +1,17 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Shengjing Zhu <zsj950618@gmail.com>, 2016. #zanata
 # Yu Long <yulongxn@163.com>, 2016. #zanata
+# sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b3.dev5\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev1\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-08-01 17:45+0000\n"
+"POT-Creation-Date: 2016-09-04 17:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-08-10 09:27+0000\n"
-"Last-Translator: Shengjing Zhu <zsj950618@gmail.com>\n"
+"PO-Revision-Date: 2016-09-08 06:44+0000\n"
+"Last-Translator: sunanchen <KF.sunanchen@h3c.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -169,6 +170,9 @@ msgstr "选择一新的实例类型。"
 msgid "Choose initial state."
 msgstr "选择初始化状态"
 
+msgid "Close"
+msgstr "关闭"
+
 msgid "Cluster Name"
 msgstr "集群名称"
 
@@ -188,11 +192,18 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "完成"
 
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr "确认设置当前副本为新副本源"
+
 msgid "Connection Examples"
 msgstr "连接举例"
 
 msgid "Connection Information"
 msgstr "连接信息"
+
+msgid "Container"
+msgstr "容器"
 
 msgid "Create Backup"
 msgstr "创建备份"
@@ -220,6 +231,12 @@ msgstr "创建的数据库 \"%s\"。"
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "创建用户\"%s\"。"
+
+msgid "Current Replica"
+msgstr "当前副本"
+
+msgid "Current Replica Source"
+msgstr "当前副本源"
 
 msgid "Current Size (GB)"
 msgstr "当前大小(GB)"
@@ -315,8 +332,24 @@ msgstr[0] "分离镜像"
 msgid "Details"
 msgstr "详情"
 
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "禁用日志"
+
 msgid "Disable Root"
 msgstr "禁用root"
+
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "已禁用日志"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "废弃日志"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "已废弃日志"
 
 msgid "Download"
 msgstr "下载"
@@ -327,8 +360,24 @@ msgstr "下载备份"
 msgid "Edit User"
 msgstr "编辑用户"
 
+msgid "Eject Replica Source"
+msgid_plural "Eject Replica Sources"
+msgstr[0] "删除副本源"
+
+msgid "Ejected Replica Source"
+msgid_plural "Ejected Replica Sources"
+msgstr[0] "已删除的副本源"
+
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "启用日志"
+
 msgid "Enable Root"
 msgstr "启动root"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "已启用日志"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
@@ -339,6 +388,10 @@ msgstr "创建数据库备份错误"
 
 msgid "Error deleting database on instance."
 msgstr "在实例上删除数据库出错。"
+
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "下载日志文件: %s错误"
 
 msgid "Error getting database backup list."
 msgstr "获取数据库备份列表错误。"
@@ -351,11 +404,17 @@ msgctxt "Current status of a Database Instance"
 msgid "Failed"
 msgstr "失败"
 
+msgid "Fault"
+msgstr "故障"
+
 msgid "Flavor"
 msgstr "云主机类型"
 
 msgid "GB"
 msgstr "GB"
+
+msgid "Go"
+msgstr "执行"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
@@ -370,6 +429,9 @@ msgstr "扩大集群"
 
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "扩大集群：{{cluster_name}}"
+
+msgid "Has Root Ever Been Enabled"
+msgstr "启用Root"
 
 msgid "Host"
 msgstr "主机"
@@ -436,6 +498,21 @@ msgstr "启动了%(count)s 名称\"%(name)s\"。"
 msgid "Launched cluster \"%s\""
 msgstr "启动集群\"%s\""
 
+msgid "Log"
+msgstr "日志"
+
+msgid "Log Contents"
+msgstr "日志内容"
+
+msgid "Log Length"
+msgstr "日志长度"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "日志长度必须为非负整数值。"
+
+msgid "Log: "
+msgstr "日志："
+
 msgid "Logs"
 msgstr "日志"
 
@@ -453,6 +530,9 @@ msgstr "管理控制台"
 
 msgid "Master Instance Name"
 msgstr "主实例名称"
+
+msgid "Message"
+msgstr "消息"
 
 msgid "Name"
 msgstr "名称"
@@ -605,6 +685,38 @@ msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "在root启用或重置时，密码只能临时可用。"
 
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr "请注意：</strong>新卷容量大小必须大于当前卷容量大小"
+
+msgid "Promote"
+msgstr "设置"
+
+msgid "Promote to Replica Source"
+msgstr "设置副本源"
+
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "设置副本\"%s\" 为新副本源。"
+
+msgid "Publish"
+msgstr "发布"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "发行日志"
+
+msgid "Publishable (bytes)"
+msgstr "可发布的(字节)"
+
+msgid "Published (bytes)"
+msgstr "发布(字节)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "已发行日志"
+
 msgid "RAM"
 msgstr "内存"
 
@@ -625,6 +737,9 @@ msgstr[0] "移除实例"
 
 msgid "Removed instances from cluster."
 msgstr "从集群中移除实例"
+
+msgid "Replica Count"
+msgstr "副本数量"
 
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
@@ -686,6 +801,9 @@ msgstr "恢复备份"
 
 msgid "Restore from Backup"
 msgstr "从备份中恢复"
+
+msgid "Return to Log List"
+msgstr "返回日志列表"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
@@ -813,6 +931,9 @@ msgstr "为vertica集群指定新的root密码。"
 msgid "Specify the new volume size for the database instance."
 msgstr "指定数据库实例新的卷大小。"
 
+msgid "Specify the number of replicas to be created"
+msgstr "指定创建副本的数量"
+
 msgid "Specs"
 msgstr "规格"
 
@@ -849,6 +970,9 @@ msgstr "shard数必须大于1。"
 
 msgid "There was a problem enabling root."
 msgstr "启用root时，出现问题。"
+
+msgid "This action cannot be undone."
+msgstr "此操作无法撤销。"
 
 msgid "Type"
 msgstr "类型"
@@ -917,6 +1041,16 @@ msgstr "无法获取用来做母版的数据库备份列表"
 msgid "Unable to list database instances to backup."
 msgstr "无法获取数据库实例进行备份。"
 
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"无法加载{0} 日志\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "无法加载实例\"{1}\"的日志{0}"
+
 msgid "Unable to obtain datastore versions."
 msgstr "无法获取数据存储版本。"
 
@@ -928,6 +1062,10 @@ msgstr "无法获取云主机类型。"
 
 msgid "Unable to obtain information on root user"
 msgstr "不能获取root用户的信息"
+
+#, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr "无法设置副本为新副本源。\"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
@@ -1000,6 +1138,9 @@ msgstr "无法获取网络。"
 msgid "Unable to update user. %s"
 msgstr "无法更新用户%s"
 
+msgid "Unknown"
+msgstr "未知"
+
 msgid "Updated"
 msgstr "已更新"
 
@@ -1015,6 +1156,12 @@ msgstr "用户名(必填)"
 
 msgid "Users"
 msgstr "用户"
+
+msgid "View Full Log"
+msgstr "查看完整日志"
+
+msgid "View Log"
+msgstr "查看日志"
 
 msgid "Volume"
 msgstr "卷"
