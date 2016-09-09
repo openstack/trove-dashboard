@@ -13,6 +13,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import binascii
 import logging
 
 import django
@@ -128,7 +129,7 @@ class DatabaseTests(test.TestCase):
         self.assertMessageCount(res, error=1)
 
     @test.create_stubs({
-        api.trove: ('flavor_list', 'backup_list',
+        api.trove: ('datastore_flavors', 'backup_list',
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
@@ -137,8 +138,10 @@ class DatabaseTests(test.TestCase):
     })
     def test_launch_instance(self):
         policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
-        api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
-            self.flavors.list())
+        api.trove.datastore_flavors(IsA(http.HttpRequest),
+                                    IsA(six.string_types),
+                                    IsA(six.string_types)).\
+            MultipleTimes().AndReturn(self.flavors.list())
         api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
             self.database_backups.list())
         api.trove.instance_list(IsA(http.HttpRequest)).AndReturn(
@@ -197,7 +200,7 @@ class DatabaseTests(test.TestCase):
                 log.setLevel(level)
 
     @test.create_stubs({
-        api.trove: ('flavor_list', 'backup_list', 'instance_create',
+        api.trove: ('datastore_flavors', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
@@ -206,8 +209,10 @@ class DatabaseTests(test.TestCase):
     })
     def test_create_simple_instance(self):
         policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
-        api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
-            self.flavors.list())
+        api.trove.datastore_flavors(IsA(http.HttpRequest),
+                                    IsA(six.string_types),
+                                    IsA(six.string_types)).\
+            MultipleTimes().AndReturn(self.flavors.list())
 
         api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
             self.database_backups.list())
@@ -236,6 +241,10 @@ class DatabaseTests(test.TestCase):
 
         nics = [{"net-id": self.networks.first().id, "v4-fixed-ip": ''}]
 
+        datastore = 'mysql'
+        datastore_version = '5.5'
+        field_name = self._build_flavor_widget_name(datastore,
+                                                    datastore_version)
         # Actual create database call
         api.trove.instance_create(
             IsA(http.HttpRequest),
@@ -243,8 +252,8 @@ class DatabaseTests(test.TestCase):
             IsA(int),
             IsA(six.text_type),
             databases=None,
-            datastore=IsA(six.text_type),
-            datastore_version=IsA(six.text_type),
+            datastore=datastore,
+            datastore_version=datastore_version,
             restore_point=None,
             replica_of=None,
             users=None,
@@ -257,8 +266,9 @@ class DatabaseTests(test.TestCase):
             'name': "MyDB",
             'volume': '1',
             'flavor': 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
+            'datastore': field_name,
+            field_name: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
             'network': self.networks.first().id,
-            'datastore': 'mysql,5.5',
             'volume_type': 'no_type'
         }
 
@@ -266,7 +276,7 @@ class DatabaseTests(test.TestCase):
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_stubs({
-        api.trove: ('flavor_list', 'backup_list', 'instance_create',
+        api.trove: ('datastore_flavors', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
@@ -276,8 +286,10 @@ class DatabaseTests(test.TestCase):
     def test_create_simple_instance_exception(self):
         policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         trove_exception = self.exceptions.nova
-        api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
-            self.flavors.list())
+        api.trove.datastore_flavors(IsA(http.HttpRequest),
+                                    IsA(six.string_types),
+                                    IsA(six.string_types)).\
+            MultipleTimes().AndReturn(self.flavors.list())
 
         api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
             self.database_backups.list())
@@ -306,6 +318,10 @@ class DatabaseTests(test.TestCase):
 
         nics = [{"net-id": self.networks.first().id, "v4-fixed-ip": ''}]
 
+        datastore = 'mysql'
+        datastore_version = '5.5'
+        field_name = self._build_flavor_widget_name(datastore,
+                                                    datastore_version)
         # Actual create database call
         api.trove.instance_create(
             IsA(http.HttpRequest),
@@ -313,8 +329,8 @@ class DatabaseTests(test.TestCase):
             IsA(int),
             IsA(six.text_type),
             databases=None,
-            datastore=IsA(six.text_type),
-            datastore_version=IsA(six.text_type),
+            datastore=datastore,
+            datastore_version=datastore_version,
             restore_point=None,
             replica_of=None,
             users=None,
@@ -327,8 +343,9 @@ class DatabaseTests(test.TestCase):
             'name': "MyDB",
             'volume': '1',
             'flavor': 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
+            'datastore': field_name,
+            field_name: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
             'network': self.networks.first().id,
-            'datastore': 'mysql,5.5',
             'volume_type': 'no_type'
         }
 
@@ -964,7 +981,7 @@ class DatabaseTests(test.TestCase):
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_stubs({
-        api.trove: ('flavor_list', 'backup_list', 'instance_create',
+        api.trove: ('datastore_flavors', 'backup_list', 'instance_create',
                     'datastore_list', 'datastore_version_list',
                     'instance_list_all', 'instance_get'),
         dash_api.cinder: ('volume_type_list',),
@@ -973,8 +990,10 @@ class DatabaseTests(test.TestCase):
     })
     def test_create_replica_instance(self):
         policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
-        api.trove.flavor_list(IsA(http.HttpRequest)).AndReturn(
-            self.flavors.list())
+        api.trove.datastore_flavors(IsA(http.HttpRequest),
+                                    IsA(six.string_types),
+                                    IsA(six.string_types)).\
+            MultipleTimes().AndReturn(self.flavors.list())
 
         api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
             self.database_backups.list())
@@ -1005,6 +1024,10 @@ class DatabaseTests(test.TestCase):
         api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(self.databases.first())
 
+        datastore = 'mysql'
+        datastore_version = '5.5'
+        field_name = self._build_flavor_widget_name(datastore,
+                                                    datastore_version)
         # Actual create database call
         api.trove.instance_create(
             IsA(http.HttpRequest),
@@ -1012,8 +1035,8 @@ class DatabaseTests(test.TestCase):
             IsA(int),
             IsA(six.text_type),
             databases=None,
-            datastore=IsA(six.text_type),
-            datastore_version=IsA(six.text_type),
+            datastore=datastore,
+            datastore_version=datastore_version,
             restore_point=None,
             replica_of=self.databases.first().id,
             users=None,
@@ -1026,8 +1049,9 @@ class DatabaseTests(test.TestCase):
             'name': "MyDB",
             'volume': '1',
             'flavor': 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
+            'datastore': field_name,
+            field_name: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
             'network': self.networks.first().id,
-            'datastore': 'mysql,5.5',
             'initial_state': 'master',
             'master': self.databases.first().id,
             'replica_count': 2,
@@ -1159,3 +1183,10 @@ class DatabaseTests(test.TestCase):
         advanced_page = create_instance.AdvancedAction(request, None)
         choices = advanced_page.populate_master_choices(request, None)
         self.assertTrue(len(choices) == len(self.databases.list()) + 1)
+
+    def _build_datastore_display_text(self, datastore, datastore_version):
+        return datastore + ' - ' + datastore_version
+
+    def _build_flavor_widget_name(self, datastore, datastore_version):
+        return binascii.hexlify(self._build_datastore_display_text(
+            datastore, datastore_version))

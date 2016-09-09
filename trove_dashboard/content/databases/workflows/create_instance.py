@@ -12,6 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import binascii
 import logging
 
 from django.conf import settings
@@ -34,10 +35,15 @@ from trove_dashboard import api
 LOG = logging.getLogger(__name__)
 
 
+def parse_datastore_and_version_text(datastore_and_version):
+    if datastore_and_version:
+        datastore, datastore_version = datastore_and_version.split('-', 1)
+        return datastore.strip(), datastore_version.strip()
+    return None, None
+
+
 class SetInstanceDetailsAction(workflows.Action):
     name = forms.CharField(max_length=80, label=_("Instance Name"))
-    flavor = forms.ChoiceField(label=_("Flavor"),
-                               help_text=_("Size of image to launch."))
     volume = forms.IntegerField(label=_("Volume Size"),
                                 min_value=0,
                                 initial=1,
@@ -46,36 +52,59 @@ class SetInstanceDetailsAction(workflows.Action):
         label=_("Volume Type"),
         required=False,
         help_text=_("Applicable only if the volume size is specified."))
-    datastore = forms.ChoiceField(label=_("Datastore"),
-                                  help_text=_(
-                                      "Type and version of datastore."))
+    datastore = forms.ChoiceField(
+        label=_("Datastore"),
+        help_text=_("Type and version of datastore."),
+        widget=forms.Select(attrs={
+            'class': 'switchable',
+            'data-slug': 'datastore'
+        }))
 
     class Meta(object):
         name = _("Details")
         help_text_template = "project/databases/_launch_details_help.html"
 
     def clean(self):
-        if self.data.get("datastore", None) == "select_datastore_type_version":
+        datastore_and_version = self.data.get("datastore", None)
+        if not datastore_and_version:
             msg = _("You must select a datastore type and version.")
             self._errors["datastore"] = self.error_class([msg])
+        else:
+            datastore, datastore_version = parse_datastore_and_version_text(
+                binascii.unhexlify(datastore_and_version))
+            field_name = self._build_flavor_field_name(datastore,
+                                                       datastore_version)
+            flavor = self.data.get(field_name, None)
+            if not flavor:
+                msg = _("You must select a flavor.")
+                self._errors[field_name] = self.error_class([msg])
+
         return self.cleaned_data
 
+    def handle(self, request, context):
+        datastore_and_version = context["datastore"]
+        if datastore_and_version:
+            datastore, datastore_version = parse_datastore_and_version_text(
+                binascii.unhexlify(context["datastore"]))
+            field_name = self._build_flavor_field_name(datastore,
+                                                       datastore_version)
+            flavor = self.data[field_name]
+            if flavor:
+                context["flavor"] = flavor
+                return context
+        return None
+
     @memoized.memoized_method
-    def flavors(self, request):
+    def datastore_flavors(self, request, datastore_name, datastore_version):
         try:
-            return api.trove.flavor_list(request)
+            return api.trove.datastore_flavors(
+                request, datastore_name, datastore_version)
         except Exception:
             LOG.exception("Exception while obtaining flavors list")
             redirect = reverse("horizon:project:databases:index")
             exceptions.handle(request,
                               _('Unable to obtain flavors.'),
                               redirect=redirect)
-
-    def populate_flavor_choices(self, request, context):
-        flavors = self.flavors(request)
-        if flavors:
-            return instance_utils.sort_flavor_list(request, flavors)
-        return []
 
     @memoized.memoized_method
     def populate_volume_type_choices(self, request, context):
@@ -106,35 +135,65 @@ class SetInstanceDetailsAction(workflows.Action):
 
     def populate_datastore_choices(self, request, context):
         choices = ()
-        set_initial = False
         datastores = self.datastores(request)
         if datastores is not None:
-            num_datastores_with_one_version = 0
             for ds in datastores:
                 versions = self.datastore_versions(request, ds.name)
-                if not set_initial:
-                    if len(versions) >= 2:
-                        set_initial = True
-                    elif len(versions) == 1:
-                        num_datastores_with_one_version += 1
-                        if num_datastores_with_one_version > 1:
-                            set_initial = True
                 if versions:
                     # only add to choices if datastore has at least one version
                     version_choices = ()
                     for v in versions:
                         if hasattr(v, 'active') and not v.active:
                             continue
+                        selection_text = self._build_datastore_display_text(
+                            ds.name, v.name)
+                        widget_text = self._build_widget_field_name(
+                            ds.name, v.name)
                         version_choices = (version_choices +
-                                           ((ds.name + ',' + v.name, v.name),))
-                    datastore_choices = (ds.name, version_choices)
-                    choices = choices + (datastore_choices,)
-            if set_initial:
-                # prepend choice to force user to choose
-                initial = (('select_datastore_type_version',
-                            _('Select datastore type and version')))
-                choices = (initial,) + choices
+                                           ((widget_text, selection_text),))
+                        self._add_datastore_flavor_field(request,
+                                                         ds.name,
+                                                         v.name)
+                    choices = choices + version_choices
         return choices
+
+    def _add_datastore_flavor_field(self,
+                                    request,
+                                    datastore,
+                                    datastore_version):
+        name = self._build_widget_field_name(datastore, datastore_version)
+        attr_key = 'data-datastore-' + name
+        field_name = self._build_flavor_field_name(datastore,
+                                                   datastore_version)
+        self.fields[field_name] = forms.ChoiceField(
+            label=_("Flavor"),
+            help_text=_("Size of image to launch."),
+            required=False,
+            widget=forms.Select(attrs={
+                'class': 'switched',
+                'data-switch-on': 'datastore',
+                attr_key: _("Flavor")
+            }))
+        valid_flavors = self.datastore_flavors(request,
+                                               datastore,
+                                               datastore_version)
+        if valid_flavors:
+            self.fields[field_name].choices = instance_utils.sort_flavor_list(
+                request, valid_flavors)
+
+    def _build_datastore_display_text(self, datastore, datastore_version):
+        return datastore + ' - ' + datastore_version
+
+    def _build_widget_field_name(self, datastore, datastore_version):
+        # Since the fieldnames cannot contain an uppercase character
+        # we generate a hex encoded string representation of the
+        # datastore and version as the fieldname
+        return binascii.hexlify(
+            self._build_datastore_display_text(datastore, datastore_version))
+
+    def _build_flavor_field_name(self, datastore, datastore_version):
+        return self._build_widget_field_name(datastore,
+                                             datastore_version)
 
 
 TROVE_ADD_USER_PERMS = getattr(settings, 'TROVE_ADD_USER_PERMS', [])
@@ -387,8 +446,8 @@ class LaunchInstance(workflows.Workflow):
 
     def handle(self, request, context):
         try:
-            datastore = self.context['datastore'].split(',')[0]
-            datastore_version = self.context['datastore'].split(',')[1]
+            datastore, datastore_version = parse_datastore_and_version_text(
+                binascii.unhexlify(self.context['datastore']))
             LOG.info("Launching database instance with parameters "
                      "{name=%s, volume=%s, volume_type=%s, flavor=%s, "
                      "datastore=%s, datastore_version=%s, "
