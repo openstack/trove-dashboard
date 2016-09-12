@@ -346,7 +346,7 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
 
     def __init__(self, request, *args, **kwargs):
         super(ClusterAddInstanceForm, self).__init__(request, *args, **kwargs)
-
+        self.fields['cluster_id'].initial = kwargs['initial']['cluster_id']
         self.fields['flavor'].choices = self.populate_flavor_choices(request)
 
     @memoized.memoized_method

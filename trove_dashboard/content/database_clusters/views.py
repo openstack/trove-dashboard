@@ -190,6 +190,11 @@ class ClusterAddInstancesView(horizon_forms.ModalFormView):
         context['submit_url'] = reverse(self.submit_url, args=args)
         return context
 
+    def get_initial(self):
+        initial = super(ClusterAddInstancesView, self).get_initial()
+        initial['cluster_id'] = self.kwargs['cluster_id']
+        return initial
+
     def get_success_url(self):
         return reverse(self.success_url, args=[self.kwargs['cluster_id']])
 
