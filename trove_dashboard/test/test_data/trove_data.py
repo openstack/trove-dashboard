@@ -157,6 +157,7 @@ DATABASE_DATA_ONE = {
         "version": "5.5"
     },
     "id": "6ddc36d9-73db-4e23-b52e-368937d72719",
+    "locality": "anti-affinity"
 }
 
 DATABASE_DATA_TWO = {
