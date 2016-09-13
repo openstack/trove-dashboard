@@ -4,13 +4,13 @@
 # sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev1\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev11\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-04 17:26+0000\n"
+"POT-Creation-Date: 2016-09-12 23:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-08 06:44+0000\n"
+"PO-Revision-Date: 2016-09-12 12:09+0000\n"
 "Last-Translator: sunanchen <KF.sunanchen@h3c.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
@@ -77,6 +77,15 @@ msgstr "添加"
 msgid "Add Instance"
 msgstr "添加实例"
 
+msgid "Add Parameter"
+msgstr "增加参数"
+
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"给配置组增加参数。当所有参数都增加之后点击'Apply Changes'来应用这些改变"
+
 msgid "Advanced"
 msgstr "高级"
 
@@ -99,8 +108,21 @@ msgstr "允许主机(可选)"
 msgid "Applicable only if the volume size is specified."
 msgstr "只有卷大小指定后才可以应用。"
 
+msgid "Applied changes to server"
+msgstr "对主机应用这些改变"
+
+msgid "Apply Changes"
+msgstr "应用改变"
+
 msgid "At least one of the new fields must be changed."
 msgstr "至少修改一个新的字段。"
+
+msgid "Attach Configuration Group"
+msgstr "连接配置组"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "正在连接配置组\"%s\""
 
 msgid "Available networks"
 msgstr "可用网络"
@@ -192,6 +214,30 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "完成"
 
+msgid "Configuration Defaults"
+msgstr "默认配置"
+
+msgid "Configuration Group"
+msgstr "配置组"
+
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "配置组详情:{{configuration.name}}"
+
+msgid "Configuration Group Instances"
+msgstr "配置组实例"
+
+msgid "Configuration Group Name"
+msgstr "配置组名称"
+
+msgid "Configuration Group Overview"
+msgstr "配置组概览"
+
+msgid "Configuration Group Values"
+msgstr "配置组值"
+
+msgid "Configuration Groups"
+msgstr "配置组"
+
 msgid ""
 "Confirm the current replica is to be promoted as the new replica source."
 msgstr "确认设置当前副本为新副本源"
@@ -208,6 +254,9 @@ msgstr "容器"
 msgid "Create Backup"
 msgstr "创建备份"
 
+msgid "Create Configuration Group"
+msgstr "创建配置组"
+
 msgid "Create Database"
 msgstr "创建数据库"
 
@@ -223,6 +272,9 @@ msgstr ""
 
 msgid "Created"
 msgstr "已创建"
+
+msgid "Created configuration group"
+msgstr "创建配置组"
 
 #, python-format
 msgid "Created database \"%s\"."
@@ -280,6 +332,9 @@ msgstr "数据存储"
 msgid "Datastore Version"
 msgstr "数据存储版本"
 
+msgid "Defaults"
+msgstr "默认值"
+
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
 msgstr[0] "删除备份"
@@ -325,9 +380,17 @@ msgstr "删除实例是不可恢复的。"
 msgid "Description"
 msgstr "描述"
 
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "分离配置组"
+
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] "分离镜像"
+
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "已分离的配置组"
 
 msgid "Details"
 msgstr "详情"
@@ -342,6 +405,9 @@ msgstr "禁用root"
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "已禁用日志"
+
+msgid "Discard Changes"
+msgstr "放弃改变"
 
 msgid "Discard Log"
 msgid_plural "Discard Logs"
@@ -383,6 +449,9 @@ msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "错误"
 
+msgid "Error applying changes"
+msgstr "应用改变错误"
+
 msgid "Error creating database backup."
 msgstr "创建数据库备份错误"
 
@@ -393,8 +462,15 @@ msgstr "在实例上删除数据库出错。"
 msgid "Error downloading log file: %s"
 msgstr "下载日志文件: %s错误"
 
+msgid "Error getting configuration group list."
+msgstr "获取配置组列表错误"
+
 msgid "Error getting database backup list."
 msgstr "获取数据库备份列表错误。"
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "重置参数:%s错误"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
@@ -447,6 +523,9 @@ msgstr "增量"
 
 msgid "Incremental Backup"
 msgstr "增量备份"
+
+msgid "Info"
+msgstr "信息"
 
 msgid "Information"
 msgstr "信息"
@@ -571,6 +650,12 @@ msgstr "卷的新大小必须大于当前的大小。"
 msgid "No backups available"
 msgstr "没有可用的备份"
 
+msgid "No configuration groups available"
+msgstr "没有可用的配置组"
+
+msgid "No configurations available"
+msgstr "没有可用的配置"
+
 msgid "No flavors available"
 msgstr "没有可用的云主机类型"
 
@@ -666,6 +751,12 @@ msgstr "概览"
 msgid "PASSWORD"
 msgstr "密码"
 
+msgid "Parameter"
+msgstr "参数"
+
+msgid "Parameters"
+msgstr "参数"
+
 msgid "Parent Backup"
 msgstr "父备份"
 
@@ -686,6 +777,11 @@ msgid ""
 msgstr "在root启用或重置时，密码只能临时可用。"
 
 msgid ""
+"Please note:</strong> It may be necessary to reboot the database instance "
+"for this new configuration group to take effect."
+msgstr "请注意:</strong>重启数据库实例来使新配置组生效"
+
+msgid ""
 "Please note:</strong> The new value must be greater than the existing volume "
 "size."
 msgstr "请注意：</strong>新卷容量大小必须大于当前卷容量大小"
@@ -699,6 +795,9 @@ msgstr "设置副本源"
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
 msgstr "设置副本\"%s\" 为新副本源。"
+
+msgid "Property"
+msgstr "属性"
 
 msgid "Publish"
 msgstr "发布"
@@ -753,6 +852,9 @@ msgstr "从实例复制"
 
 msgid "Replication"
 msgstr "复制"
+
+msgid "Reset Parameters"
+msgstr "重置参数"
 
 msgid "Reset Root Password"
 msgstr "重置root密码"
@@ -845,14 +947,29 @@ msgstr "已安排扩大集群"
 msgid "Select a backup to restore"
 msgstr "选择一个备份来恢复"
 
+msgid "Select a configuration group"
+msgstr "选择一个配置组"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr "选择一个连接到数据库实例的配置组"
+
 msgid "Select a master instance"
 msgstr "选择一主实例"
 
 msgid "Select a new flavor"
 msgstr "选择一个新的云主机类型"
 
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr "选择一个参数并且为这个参数的配置提供一个值"
+
 msgid "Select backup"
 msgstr "选择备份"
+
+msgid "Select configuration"
+msgstr "选择配置"
+
+msgid "Select configuration group"
+msgstr "选择配置组"
 
 msgid "Select datastore type and version"
 msgstr "选择数据存储类型和版本"
@@ -943,6 +1060,9 @@ msgstr "状态"
 msgid "Status if root was ever enabled for an instance."
 msgstr "如果实例的root被启用，状态。"
 
+msgid "Successfully added parameter"
+msgstr "成功增加参数"
+
 msgid "Successfully disabled root access."
 msgstr "成功禁用root用户访问。"
 
@@ -988,8 +1108,23 @@ msgid "Unable to %(action)s: %(objs)s"
 msgstr "无法执行 %(action)s: %(objs)s"
 
 #, python-format
+msgid "Unable to add new parameter: %s"
+msgstr "无法增加新参数:%s"
+
+#, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "无法连接配置组%s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "无法创建配置组%s"
+
+#, python-format
 msgid "Unable to create database. %s"
 msgstr "无法创建的数据库. %s"
+
+msgid "Unable to create list of parameters."
+msgstr "无法创建参数列表"
 
 #, python-format
 msgid "Unable to create user. %s"
@@ -1001,8 +1136,14 @@ msgstr "无法确定实例root账号是否启用。"
 msgid "Unable to find backup!"
 msgstr "无法找到备份！"
 
+msgid "Unable to find configuration group!"
+msgstr "无法找到配置组"
+
 msgid "Unable to find master instance!"
 msgstr "无法找到主实例！"
+
+msgid "Unable to get configuration data."
+msgstr "无法获得配置数据"
 
 msgid "Unable to get database backup data."
 msgstr "无法获取数据库备份数据。"
@@ -1063,6 +1204,9 @@ msgstr "无法获取云主机类型。"
 msgid "Unable to obtain information on root user"
 msgstr "不能获取root用户的信息"
 
+msgid "Unable to obtain list of parameters."
+msgstr "无法获得参数列表"
+
 #, python-format
 msgid "Unable to promote replica as the new replica source.  \"%s\""
 msgstr "无法设置副本为新副本源。\"%s\""
@@ -1104,6 +1248,10 @@ msgstr "不能获取数据库。"
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
 msgstr "无法获取备份: %s的详细信息"
+
+#, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr "无法检索配置组:%s详情"
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
@@ -1157,6 +1305,34 @@ msgstr "用户名(必填)"
 msgid "Users"
 msgstr "用户"
 
+msgid "Value"
+msgstr "值"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "值必须是\"true\"或者\"false\"。"
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "值必须是一个在%(min)s和%(max)s之间的数值"
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "值必须是一个大于等于%s的数值"
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "值必须是一个小于等于%s的数值"
+
+msgid "Value must be a number."
+msgstr "值必须是一个整数"
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "值必须是%s类型"
+
+msgid "Values"
+msgstr "值"
+
 msgid "View Full Log"
 msgstr "查看完整日志"
 
@@ -1186,6 +1362,9 @@ msgstr ""
 
 msgid "You must select a datastore type and version."
 msgstr "你必须选择数据存储类型和版本。"
+
+msgid "You must select a flavor."
+msgstr "你必须选择一种规格"
 
 msgid "You must specify a password if you create a user."
 msgstr "如果你创建用户，必须指定一个密码。"
