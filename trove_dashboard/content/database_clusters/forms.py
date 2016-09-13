@@ -343,11 +343,17 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
         help_text=_("Optional datastore specific value that defines the "
                     "relationship from one instance in the cluster to "
                     "another."))
+    network = forms.ChoiceField(
+        label=_("Network"),
+        help_text=_("Network attached to instance."),
+        required=False)
 
     def __init__(self, request, *args, **kwargs):
         super(ClusterAddInstanceForm, self).__init__(request, *args, **kwargs)
         self.fields['cluster_id'].initial = kwargs['initial']['cluster_id']
         self.fields['flavor'].choices = self.populate_flavor_choices(request)
+        self.fields['network'].choices = self.populate_network_choices(
+            request)
 
     @memoized.memoized_method
     def flavors(self, request):
@@ -374,6 +380,26 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
         flavor_list = [(f.id, "%s" % f.name) for f in self.flavors(request)]
         return sorted(flavor_list)
 
+    @memoized.memoized_method
+    def populate_network_choices(self, request):
+        network_list = []
+        try:
+            if api.base.is_service_enabled(request, 'network'):
+                tenant_id = self.request.user.tenant_id
+                networks = api.neutron.network_list_for_tenant(request,
+                                                               tenant_id)
+                network_list = [(network.id, network.name_or_id)
+                                for network in networks]
+            else:
+                self.fields['network'].widget = forms.HiddenInput()
+        except exceptions.ServiceCatalogException:
+            network_list = []
+            redirect = reverse('horizon:project:database_clusters:index')
+            exceptions.handle(request,
+                              _('Unable to retrieve networks.'),
+                              redirect=redirect)
+        return network_list
+
     def handle(self, request, data):
         try:
             flavor = trove_api.trove.flavor_get(request, data['flavor'])
@@ -384,7 +410,8 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
                                  flavor.name,
                                  data['volume'],
                                  data.get('type', None),
-                                 data.get('related_to', None))
+                                 data.get('related_to', None),
+                                 data.get('network', None))
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
