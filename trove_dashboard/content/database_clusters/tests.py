@@ -78,7 +78,7 @@ class ClustersTests(test.TestCase):
                                           'flavor_list')})
     def test_index_pagination(self):
         clusters = self.trove_clusters.list()
-        last_record = clusters[0]
+        last_record = clusters[1]
         clusters = common.Paginated(clusters, next_marker="foo")
         trove_api.trove.cluster_list(IsA(http.HttpRequest), marker=None)\
             .AndReturn(clusters)
@@ -235,7 +235,8 @@ class ClustersTests(test.TestCase):
             datastore=cluster_datastore,
             datastore_version=cluster_datastore_version,
             nics=cluster_network,
-            root_password=None).AndReturn(self.trove_clusters.first())
+            root_password=None,
+            locality=None).AndReturn(self.trove_clusters.first())
 
         self.mox.ReplayAll()
         post = {
@@ -291,7 +292,8 @@ class ClustersTests(test.TestCase):
             datastore=cluster_datastore,
             datastore_version=cluster_datastore_version,
             nics=cluster_network,
-            root_password=None).AndReturn(self.trove_clusters.first())
+            root_password=None,
+            locality=None).AndReturn(self.trove_clusters.first())
 
         self.mox.ReplayAll()
         post = {
@@ -344,7 +346,8 @@ class ClustersTests(test.TestCase):
             datastore=cluster_datastore,
             datastore_version=cluster_datastore_version,
             nics=cluster_network,
-            root_password=None).AndReturn(self.trove_clusters.first())
+            root_password=None,
+            locality=None).AndReturn(self.trove_clusters.first())
 
         self.mox.ReplayAll()
         post = {
@@ -379,6 +382,45 @@ class ClustersTests(test.TestCase):
         res = self.client.get(details_url)
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertContains(res, cluster.ip[0])
+
+    @test.create_stubs({trove_api.trove: ('cluster_get',
+                                          'instance_get',
+                                          'flavor_get',)})
+    def test_details_without_locality(self):
+        cluster = self.trove_clusters.list()[1]
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id) \
+            .MultipleTimes().AndReturn(cluster)
+        trove_api.trove.instance_get(IsA(http.HttpRequest), IsA(str)) \
+            .MultipleTimes().AndReturn(self.databases.first())
+        trove_api.trove.flavor_get(IsA(http.HttpRequest), IsA(str)) \
+            .MultipleTimes().AndReturn(self.flavors.first())
+        self.mox.ReplayAll()
+
+        details_url = reverse('horizon:project:database_clusters:detail',
+                              args=[cluster.id])
+        res = self.client.get(details_url)
+        self.assertTemplateUsed(res, 'horizon/common/_detail.html')
+        self.assertNotContains(res, "Locality")
+
+    @test.create_stubs({trove_api.trove: ('cluster_get',
+                                          'instance_get',
+                                          'flavor_get',)})
+    def test_details_with_locality(self):
+        cluster = self.trove_clusters.first()
+        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id) \
+            .MultipleTimes().AndReturn(cluster)
+        trove_api.trove.instance_get(IsA(http.HttpRequest), IsA(str)) \
+            .MultipleTimes().AndReturn(self.databases.first())
+        trove_api.trove.flavor_get(IsA(http.HttpRequest), IsA(str)) \
+            .MultipleTimes().AndReturn(self.flavors.first())
+        self.mox.ReplayAll()
+
+        details_url = reverse('horizon:project:database_clusters:detail',
+                              args=[cluster.id])
+        res = self.client.get(details_url)
+        self.assertTemplateUsed(res, 'project/database_clusters/'
+                                     '_detail_overview.html')
+        self.assertContains(res, "Locality")
 
     @test.create_stubs(
         {trove_api.trove: ('cluster_get',

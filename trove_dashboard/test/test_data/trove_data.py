@@ -80,13 +80,14 @@ CLUSTER_DATA_ONE = {
     ],
     "task": {
         "name": "test_task"
-    }
+    },
+    "locality": "anti-affinity"
 }
 
 CLUSTER_DATA_TWO = {
     "status": "ACTIVE",
-    "id": "dfbbd9ca-b5e1-4028-adb7-f78643e17998",
-    "name": "Test Cluster",
+    "id": "dfbbd9ca-b5e1-4028-adb7-f78199182122232",
+    "name": "Test Cluster2",
     "created": "2014-04-25T20:19:23",
     "updated": "2014-04-25T20:19:23",
     "links": [],
@@ -97,7 +98,7 @@ CLUSTER_DATA_TWO = {
     "ip": ["10.0.0.1"],
     "instances": [
         {
-            "id": "416b0b16-ba55-4302-bbd3-ff566032e1c1",
+            "id": "416b0b16-ba55-4302-bbd3-ff8199182122232",
             "name": "inst1",
             "status": "ACTIVE",
             "flavor": {
@@ -109,7 +110,7 @@ CLUSTER_DATA_TWO = {
             }
         },
         {
-            "id": "965ef811-7c1d-47fc-89f2-a89dfdd23ef2",
+            "id": "965ef811-7c1d-47fc-89f2-a88199182122232",
             "name": "inst2",
             "status": "ACTIVE",
             "flavor": {
@@ -121,7 +122,7 @@ CLUSTER_DATA_TWO = {
             }
         },
         {
-            "id": "3642f41c-e8ad-4164-a089-3891bf7f2d2b",
+            "id": "3642f41c-e8ad-4164-a089-388199182122232",
             "name": "inst3",
             "status": "ACTIVE",
             "flavor": {
@@ -132,7 +133,10 @@ CLUSTER_DATA_TWO = {
                 "size": 100
             }
         }
-    ]
+    ],
+    "task": {
+        "name": "building"
+    },
 }
 
 DATABASE_DATA_ONE = {

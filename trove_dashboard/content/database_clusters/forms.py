@@ -69,6 +69,15 @@ class LaunchForm(forms.SelfHandlingForm):
         min_value=0,
         initial=1,
         help_text=_("Size of the volume in GB."))
+    locality = forms.ChoiceField(
+        label=_("Locality"),
+        choices=[("", "None"),
+                 ("affinity", "affinity"),
+                 ("anti-affinity", "anti-affinity")],
+        required=False,
+        help_text=_("Specify whether instances in the cluster will "
+                    "be created on the same hypervisor (affinity) or on "
+                    "different hypervisors (anti-affinity)."))
     root_password = forms.CharField(
         label=_("Root Password"),
         required=False,
@@ -157,6 +166,9 @@ class LaunchForm(forms.SelfHandlingForm):
                     if int(self.data.get("num_shards", 0)) < 1:
                         msg = _("The number of shards must be greater than 1.")
                         self._errors["num_shards"] = self.error_class([msg])
+
+        if not self.data.get("locality", None):
+            self.cleaned_data["locality"] = None
 
         return self.cleaned_data
 
@@ -280,6 +292,12 @@ class LaunchForm(forms.SelfHandlingForm):
             if attr_key not in widget.attrs:
                 widget.attrs[attr_key] = field[1]
 
+    def _get_locality(self, data):
+        locality = None
+        if data.get('locality'):
+            locality = data['locality']
+        return locality
+
     @sensitive_variables('data')
     def handle(self, request, data):
         try:
@@ -295,8 +313,9 @@ class LaunchForm(forms.SelfHandlingForm):
             LOG.info("Launching cluster with parameters "
                      "{name=%s, volume=%s, flavor=%s, "
                      "datastore=%s, datastore_version=%s",
+                     "locality=%s",
                      data['name'], data['volume'], final_flavor,
-                     datastore, datastore_version)
+                     datastore, datastore_version, self._get_locality(data))
 
             trove_api.trove.cluster_create(request,
                                            data['name'],
@@ -306,7 +325,8 @@ class LaunchForm(forms.SelfHandlingForm):
                                            datastore=datastore,
                                            datastore_version=datastore_version,
                                            nics=data['network'],
-                                           root_password=root_password)
+                                           root_password=root_password,
+                                           locality=self._get_locality(data))
             messages.success(request,
                              _('Launched cluster "%s"') % data['name'])
             return True

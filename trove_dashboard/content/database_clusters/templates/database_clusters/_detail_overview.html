@@ -16,6 +16,10 @@
         <dd>{{ cluster.full_flavor.ram|mbformat }}</dd>
         <dt>{% trans "Number of Instances" %}</dt>
         <dd>{{ cluster.num_instances }}</dd>
+        {% if cluster.locality %}
+            <dt>{% trans "Locality" %}</dt>
+            <dd>{{ cluster.locality }}</dd>
+        {% endif %}
     </dl>
 
 {% block connection_info %}
