@@ -4,9 +4,9 @@
 # Yoshiki Eguchi <yoshiki.eguchi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b3.dev14\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-08-26 11:48+0000\n"
+"POT-Creation-Date: 2016-09-13 18:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1223,14 +1223,6 @@ msgid "You must specify at least one database if you create a user."
 msgstr ""
 "ユーザーを作成する場合は、データベースを少なくとも 1 つ指定する必要がありま"
 "す。"
-
-#, python-format
-msgid ""
-"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s]"
-msgstr ""
-"[フレーバー=%(flavor)s, ボリューム=%(volume)s, 名前=%(name)s, タイプ="
-"%(type)s, 関連付け先=%(related_to)s]"
 
 msgid "instance"
 msgstr "インスタンス"

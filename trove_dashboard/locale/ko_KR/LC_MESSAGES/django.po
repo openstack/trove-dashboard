@@ -1,14 +1,15 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev33\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-05-18 19:26+0000\n"
+"POT-Creation-Date: 2016-09-13 18:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-18 03:47+0000\n"
-"Last-Translator: SeYeon Lee <sy_lee@kr.ibm.com>\n"
+"PO-Revision-Date: 2016-09-14 05:47+0000\n"
+"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -75,6 +76,16 @@ msgstr "추가"
 msgid "Add Instance"
 msgstr "인스턴스 추가"
 
+msgid "Add Parameter"
+msgstr "매개 변수 추가"
+
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"매개 변수를 구성 그룹에 추가하였습니다. 모든 매개 변수를 추가한 뒤에 변경 사"
+"항을 유지하기 위해 '변경 사항 적용' 을 클릭합니다."
+
 msgid "Advanced"
 msgstr "진보된"
 
@@ -94,11 +105,30 @@ msgstr "허용한 호스트"
 msgid "Allowed Host (optional)"
 msgstr "허용한 호스트(선택적)"
 
+msgid "Any Availability Zone"
+msgstr "임의 가용 구역"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "볼륨 크기가 지정된 경우에만 적용됩니다."
 
+msgid "Applied changes to server"
+msgstr "서버에 적용된 변경 사항"
+
+msgid "Apply Changes"
+msgstr "변경 사항 적용"
+
 msgid "At least one of the new fields must be changed."
 msgstr "적어도 새로운 필드 중 하나는 반드시 바뀌어야만한다."
+
+msgid "Attach Configuration Group"
+msgstr "구성 그룹 연결"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "구성 그룹 \"%s\" 연결"
+
+msgid "Availability Zone"
+msgstr "가용 구역"
 
 msgid "Available networks"
 msgstr "사용 가능한 네트워크"
@@ -145,8 +175,16 @@ msgctxt "Current status of a Database Backup"
 msgid "Building"
 msgstr "Building"
 
+msgctxt "Current status of a Database Instance"
+msgid "Building"
+msgstr "Building"
+
 msgid "Cancel"
 msgstr "취소"
+
+#, python-format
+msgid "Cannot disable root access: %s"
+msgstr "루트 액세스를 비활성화할 수 없습니다: %s"
 
 msgid "Cannot grow cluster.  No instances specified."
 msgstr "클러스터를 확장할 수 없습니다.  선택된 인스턴스가 없습니다."
@@ -159,6 +197,9 @@ msgstr "새로운 인스턴스 flavor를 선택하세요."
 
 msgid "Choose initial state."
 msgstr "초기 상태를 선택하십시오."
+
+msgid "Close"
+msgstr "닫기"
 
 msgid "Cluster Name"
 msgstr "클러스터 이름"
@@ -179,14 +220,48 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "완료됨"
 
+msgid "Configuration Defaults"
+msgstr "구성 디폴트"
+
+msgid "Configuration Group"
+msgstr "구성 그룹"
+
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "구성 그룹 세부 사항: {{configuration.name}}"
+
+msgid "Configuration Group Instances"
+msgstr "구성 그룹 인스턴스"
+
+msgid "Configuration Group Name"
+msgstr "구성 그룹 이름"
+
+msgid "Configuration Group Overview"
+msgstr "구성 그룹 개요"
+
+msgid "Configuration Group Values"
+msgstr "구성 그룹 값"
+
+msgid "Configuration Groups"
+msgstr "구성 그룹"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr "현재 복제가 새로운 복제 원본으로 승격되었는지를 확인합니다."
+
 msgid "Connection Examples"
 msgstr "연결 예제"
 
 msgid "Connection Information"
 msgstr "연결 정보"
 
+msgid "Container"
+msgstr "컨테이너"
+
 msgid "Create Backup"
 msgstr "백업 생성"
+
+msgid "Create Configuration Group"
+msgstr "구성 그룹 생성"
 
 msgid "Create Database"
 msgstr "데이터베이스 생성"
@@ -204,6 +279,9 @@ msgstr ""
 msgid "Created"
 msgstr "생성됨"
 
+msgid "Created configuration group"
+msgstr "생성한 구성 그룹"
+
 #, python-format
 msgid "Created database \"%s\"."
 msgstr "데이터베이스 \"%s\"가 생성되었습니다."
@@ -211,6 +289,12 @@ msgstr "데이터베이스 \"%s\"가 생성되었습니다."
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "\"%s\" 사용자 생성되었습니다."
+
+msgid "Current Replica"
+msgstr "현재 복제"
+
+msgid "Current Replica Source"
+msgstr "현재 복제 원본"
 
 msgid "Current Size (GB)"
 msgstr "현재 크기 (GB)"
@@ -253,6 +337,9 @@ msgstr "Datastore"
 
 msgid "Datastore Version"
 msgstr "Datastore 버전"
+
+msgid "Defaults"
+msgstr "디폴트"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -299,12 +386,42 @@ msgstr "삭제된 인스턴스는 되살릴 수 없습니다."
 msgid "Description"
 msgstr "설명"
 
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "구성 그룹 연결 해제"
+
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] "복제본으로부터 해제"
 
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "연결 해제된 구성 그룹"
+
 msgid "Details"
 msgstr "상세 정보"
+
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "로그 비활성화"
+
+msgid "Disable Root"
+msgstr "루트 비활성화"
+
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "비활성화된 로그"
+
+msgid "Discard Changes"
+msgstr "변경 사항 폐기"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "로그 폐기"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "폐기된 로그"
 
 msgid "Download"
 msgstr "내려받기"
@@ -315,12 +432,31 @@ msgstr "백업 다운로드"
 msgid "Edit User"
 msgstr "사용자 수정"
 
+msgid "Eject Replica Source"
+msgid_plural "Eject Replica Sources"
+msgstr[0] "복제 원본 이젝트"
+
+msgid "Ejected Replica Source"
+msgid_plural "Ejected Replica Sources"
+msgstr[0] "이젝트된 복제 원본"
+
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "로그 활성화"
+
 msgid "Enable Root"
 msgstr "Root 활성화"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "활성화된 로그"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "Error"
+
+msgid "Error applying changes"
+msgstr "변경 사항 적용 오류"
 
 msgid "Error creating database backup."
 msgstr "데이터베이스 백업을 생성하던 중 오류가 발생하였습니다."
@@ -328,8 +464,19 @@ msgstr "데이터베이스 백업을 생성하던 중 오류가 발생하였습�
 msgid "Error deleting database on instance."
 msgstr "인스턴스에서 데이터베이스 삭제중 에러가 발생하였습니다."
 
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "로그 파일 다운로드 오류: %s"
+
+msgid "Error getting configuration group list."
+msgstr "구성 그룹 목록을 가져올 수 없습니다."
+
 msgid "Error getting database backup list."
 msgstr "데이터베이스 백업 목록을 가져오던 중 오류가 발생하였습니다."
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "매개 변수 리셋 중 오류 발생: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
@@ -339,11 +486,17 @@ msgctxt "Current status of a Database Instance"
 msgid "Failed"
 msgstr "Failed"
 
+msgid "Fault"
+msgstr "Fault"
+
 msgid "Flavor"
 msgstr "Flavor"
 
 msgid "GB"
 msgstr "GB"
+
+msgid "Go"
+msgstr "시작"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
@@ -359,6 +512,9 @@ msgstr "클러스터 확장"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "클러스터 확장: {{cluster_name}}"
 
+msgid "Has Root Ever Been Enabled"
+msgstr "루트가 활성화되어 있음"
+
 msgid "Host"
 msgstr "호스트"
 
@@ -373,6 +529,9 @@ msgstr "증분"
 
 msgid "Incremental Backup"
 msgstr "증분 백업"
+
+msgid "Info"
+msgstr "정보"
 
 msgid "Information"
 msgstr "정보"
@@ -424,6 +583,27 @@ msgstr "%(count)s개의 \"%(name)s\"이(가) 시작되었습니다."
 msgid "Launched cluster \"%s\""
 msgstr "클러스터 \"%s\" 구동됨"
 
+msgid "Locality"
+msgstr "지역성"
+
+msgid "Log"
+msgstr "로그"
+
+msgid "Log Contents"
+msgstr "로그 내용"
+
+msgid "Log Length"
+msgstr "로그 길이"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "로그 길이는 음수가 아닌 정수값이어야 합니다."
+
+msgid "Log: "
+msgstr "로그:"
+
+msgid "Logs"
+msgstr "로그"
+
 msgid "Manage Access"
 msgstr "접근 관리"
 
@@ -438,6 +618,9 @@ msgstr "관리 콘솔"
 
 msgid "Master Instance Name"
 msgstr "마스터 인스턴스 이름"
+
+msgid "Message"
+msgstr "메시지"
 
 msgid "Name"
 msgstr "이름"
@@ -473,8 +656,17 @@ msgstr "클러스터에 접근할 수 있는 새로운 암호를 설정합니다
 msgid "New size for volume must be greater than current size."
 msgstr "볼륨의 새로운 크기는 현재 크기보다 커야합니다."
 
+msgid "No availability zones found"
+msgstr "가용 구역을 찾을 수 없습니다."
+
 msgid "No backups available"
 msgstr "사용가능한 백업 없음"
+
+msgid "No configuration groups available"
+msgstr "사용 가능한 구성 그룹이 없습니다"
+
+msgid "No configurations available"
+msgstr "사용 가능한 구성이 없습니다"
 
 msgid "No flavors available"
 msgstr "Flavor가 존재하지 않습니다"
@@ -579,6 +771,12 @@ msgstr "개요"
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
+msgid "Parameter"
+msgstr "매개 변수"
+
+msgid "Parameters"
+msgstr "매개 변수"
+
 msgid "Parent Backup"
 msgstr "부모 백업"
 
@@ -598,8 +796,54 @@ msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "패스워드는 오직 root가 리셋,enabled된 이후에 즉시 보이기 시작한다."
 
+msgid ""
+"Please note:</strong> It may be necessary to reboot the database instance "
+"for this new configuration group to take effect."
+msgstr ""
+"참고:</strong> 새로운 구성 그룹을 적용하기 위해 데이터베이스 인스턴스를 재부"
+"팅할 필요가 있을 수 있습니다."
+
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr "참고:</strong> 새로운 값은 기존 볼륨 크기보다 커야 합니다."
+
+msgid "Promote"
+msgstr "승격"
+
+msgid "Promote to Replica Source"
+msgstr "복제 원본 승격"
+
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "복제 \"%s\" 를 새로운 복제 원본으로 승격합니다."
+
+msgid "Property"
+msgstr "속성"
+
+msgid "Publish"
+msgstr "퍼블리시"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "로그 퍼블리시"
+
+msgid "Publishable (bytes)"
+msgstr "퍼블리시 가능 (바이트)"
+
+msgid "Published (bytes)"
+msgstr "퍼블리시됨 (바이트)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "퍼블리시된 로그"
+
 msgid "RAM"
 msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Rebooting"
+msgstr "Rebooting"
 
 msgid "Related To"
 msgstr "Related To"
@@ -615,6 +859,9 @@ msgstr[0] "인스턴스 제거됨"
 msgid "Removed instances from cluster."
 msgstr "클러스터에서 인스턴스를 제거하였습니다."
 
+msgid "Replica Count"
+msgstr "복제 개수"
+
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
 msgstr[0] "복제본으로부터 해제됨"
@@ -627,6 +874,9 @@ msgstr "인스턴스에서 복제"
 
 msgid "Replication"
 msgstr "복제(Replication)"
+
+msgid "Reset Parameters"
+msgstr "매개 변수 리셋"
 
 msgid "Reset Root Password"
 msgstr "Root 암호 재설정"
@@ -642,6 +892,10 @@ msgstr "인스턴스 크기 재조정"
 
 msgid "Resize Volume"
 msgstr "볼륨 크기 재조정"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resizing"
+msgstr "Resizing"
 
 #, python-format
 msgid "Resizing instance \"%s\""
@@ -673,6 +927,9 @@ msgstr "백업 복구"
 
 msgid "Restore from Backup"
 msgstr "백업으로부터 복구"
+
+msgid "Return to Log List"
+msgstr "로그 목록으로 돌아가기"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
@@ -714,14 +971,29 @@ msgstr "클러스터 예약 확장"
 msgid "Select a backup to restore"
 msgstr "복원할 백업본 선택"
 
+msgid "Select a configuration group"
+msgstr "구성 그룹 선택"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr "데이터베이스 인스턴스에 연결할 구성 그룹을 선택합니다."
+
 msgid "Select a master instance"
 msgstr "마스터 인스턴스 선택"
 
 msgid "Select a new flavor"
 msgstr "새로운 flavor 선택"
 
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr "매개 변수를 선택하고 구성 매개 변수에 대한 값을 제공합니다."
+
 msgid "Select backup"
 msgstr "백업 선택"
+
+msgid "Select configuration"
+msgstr "구성 선택"
+
+msgid "Select configuration group"
+msgstr "구성 그룹 선택"
 
 msgid "Select datastore type and version"
 msgstr "Datastore 타입과 버전 선택"
@@ -801,6 +1073,18 @@ msgstr "vertica 클러스터에 대한 새로운 root 암호를 지정합니다.
 msgid "Specify the new volume size for the database instance."
 msgstr "데이터베이스 인스터스에 사용할 새로운 볼륨 크기를 지정합니다."
 
+msgid "Specify the number of replicas to be created"
+msgstr "생성할 복제 개수를 지정합니다"
+
+msgid ""
+"Specify whether future replicated instances will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity). This "
+"value is ignored if the instance to be launched is a replica."
+msgstr ""
+"향후 복제된 인스턴스를 동일한 하이퍼바이저 (affinity) 또는 다른 하이퍼바이저 "
+"(anti-affinity)에 생성할 것인지를 지정합니다. 해당 값은 구동되는 인스턴스가 "
+"복제일 경우 무시되어질 수 있습니다."
+
 msgid "Specs"
 msgstr "사양"
 
@@ -809,6 +1093,12 @@ msgstr "상태"
 
 msgid "Status if root was ever enabled for an instance."
 msgstr "인스턴스에 대해 root가 사용으로 설정된 경우 상태입니다."
+
+msgid "Successfully added parameter"
+msgstr "매개 변수 추가를 완료하였습니다"
+
+msgid "Successfully disabled root access."
+msgstr "루트 액세스 비활성화 성공"
 
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
@@ -837,6 +1127,9 @@ msgstr "Shard는 1개 이상이어야 합니다."
 msgid "There was a problem enabling root."
 msgstr "Root 계정 활성화에 문제가 발생했습니다."
 
+msgid "This action cannot be undone."
+msgstr "이 작업은 취소할 수 없습니다."
+
 msgid "Type"
 msgstr "타입"
 
@@ -851,8 +1144,23 @@ msgid "Unable to %(action)s: %(objs)s"
 msgstr "%(action)s 할 수 없습니다: %(objs)s"
 
 #, python-format
+msgid "Unable to add new parameter: %s"
+msgstr "새로운 매개 변수: %s 를 추가할 수 없습니다"
+
+#, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "구성 그룹을 연결할 수 없습니다. %s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "구성 그룹을 생성할 수 없습니다. %s"
+
+#, python-format
 msgid "Unable to create database. %s"
 msgstr "데이터베이스 %s를 생성할 수 없음"
+
+msgid "Unable to create list of parameters."
+msgstr "매개 변수 목록을 생성할 수 없습니다."
 
 #, python-format
 msgid "Unable to create user. %s"
@@ -864,8 +1172,14 @@ msgstr "만약 인스턴스 루트가 이용 가능하다면 결정이 불가능
 msgid "Unable to find backup!"
 msgstr "백업을 찾을 수 없습니다!"
 
+msgid "Unable to find configuration group!"
+msgstr "구성 그룹을 찾을 수 없습니다!"
+
 msgid "Unable to find master instance!"
 msgstr "마스터 인스턴스를 찾기가 불가능합니다!"
+
+msgid "Unable to get configuration data."
+msgstr "구성 데이터를 가져올 수 없습니다."
 
 msgid "Unable to get database backup data."
 msgstr "데이터베이스 백업 데이터를 가져올 수 없습니다."
@@ -904,6 +1218,16 @@ msgstr "부모 데이터베이스 백업을 나열할 수 없습니다."
 msgid "Unable to list database instances to backup."
 msgstr "백업 데이터베이스 인스턴스를 나열할 수 없습니다."
 
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"{0} 로그를 불러올 수 없습니다\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "인스턴스 \"{1}\" 에 대한 {0} 로그를 불러올 수 없습니다."
+
 msgid "Unable to obtain datastore versions."
 msgstr "Datastore 버전을 가져올 수 없습니다."
 
@@ -915,6 +1239,13 @@ msgstr "Flavor을 가져올 수 없습니다."
 
 msgid "Unable to obtain information on root user"
 msgstr "Root 사용자의 정보를 얻을 수 없습니다"
+
+msgid "Unable to obtain list of parameters."
+msgstr "매개 변수 목록을 가져올 수 없습니다."
+
+#, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr "복제를 새로운 복제 원본으로 승격할 수 없습니다. \"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
@@ -934,6 +1265,9 @@ msgstr "볼륨 크기를 변경할 수 없습니다. %s"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "접근 가능한 데이터베이스를 찾지 못 했습니다."
+
+msgid "Unable to retrieve availability zones."
+msgstr "가용 구역을 가져올 수 없습니다."
 
 msgid "Unable to retrieve cluster details."
 msgstr "클러스터 세부 정보를 찾지 못했습니다."
@@ -955,6 +1289,10 @@ msgid "Unable to retrieve details for backup: %s"
 msgstr "백업에 대한 세부 정보를 찾지 못했습니다: %s"
 
 #, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr "구성 그룹: %s 에 대한 세부 사항을 가져올 수 없습니다"
+
+#, python-format
 msgid "Unable to retrieve details for database cluster: %s"
 msgstr "클러스터 데이터베이스에 대한 세부 정보를 찾지 못했습니다: %s"
 
@@ -972,12 +1310,23 @@ msgstr "Flavor를 찾지 못 했습니다."
 msgid "Unable to retrieve instance details."
 msgstr "인스턴스 세부 정보를 찾지 못 했습니다."
 
+#, python-format
+msgid ""
+"Unable to retrieve list of logs.\n"
+"%s"
+msgstr ""
+"로그 목록을 가져올 수 없습니다.\n"
+"%s"
+
 msgid "Unable to retrieve networks."
 msgstr "네트워크를 찾지 못 했습니다."
 
 #, python-format
 msgid "Unable to update user. %s"
 msgstr "\"%s\" 사용자를 업데이트할 수 없습니다."
+
+msgid "Unknown"
+msgstr "알 수 없음"
 
 msgid "Updated"
 msgstr "업데이트 완료"
@@ -994,6 +1343,40 @@ msgstr "사용자이름(필수)"
 
 msgid "Users"
 msgstr "사용자"
+
+msgid "Value"
+msgstr "값"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "값은 \"true\" 또는 \"false\" 여야 합니다."
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "값은 %(min)s 에서 %(max)s 사이 숫자여야 합니다."
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "값은 %s 보다 크거나 같은 숫자여야 합니다."
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "값은 %s 보다 작거나 같은 숫자여야 합니다."
+
+msgid "Value must be a number."
+msgstr "값은 숫자여야 합니다."
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "값은 %s 유형이어야 합니다."
+
+msgid "Values"
+msgstr "값"
+
+msgid "View Full Log"
+msgstr "전체 로그 보기"
+
+msgid "View Log"
+msgstr "로그 보기"
 
 msgid "Volume"
 msgstr "볼륨"
@@ -1020,6 +1403,9 @@ msgstr ""
 msgid "You must select a datastore type and version."
 msgstr "Datastore 타입과 버전을 선택해야 합니다."
 
+msgid "You must select a flavor."
+msgstr "Flavor를 선택해야 합니다."
+
 msgid "You must specify a password if you create a user."
 msgstr "사용자 생성을 하려면 패스워드를 입력하세요"
 
@@ -1029,10 +1415,10 @@ msgstr "사용자 생성을 하려면 적어도 하나의 데이터베이스를 
 #, python-format
 msgid ""
 "[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s]"
+"related_to=%(related_to)s, nics=%(nics)s]"
 msgstr ""
 "[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s]"
+"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "인스턴스"

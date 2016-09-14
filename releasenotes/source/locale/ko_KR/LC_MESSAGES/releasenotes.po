@@ -1,0 +1,76 @@
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Trove Dashboard Release Notes 7.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-13 18:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-14 05:54+0000\n"
+"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"Language-Team: Korean (South Korea)\n"
+"Language: ko-KR\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "7.0.0.0b2"
+msgstr "7.0.0.0b2"
+
+msgid "7.0.0.0b3-18"
+msgstr "7.0.0.0b3-18"
+
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+msgid ":ref:`modindex`"
+msgstr ":ref:`modindex`"
+
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+
+msgid ""
+"Added support for logging features in the dashboard. This includes listing "
+"logs that can be retrieved and viewing, publishing and stop collection of "
+"log contents."
+msgstr ""
+"대시보드 내 로깅 기능에 대한 지원을 추가하였습니다. 가져올 수 있는 로그 목록 "
+"나열 및 로그 내용 집합을 퍼블리싱 및 중지를 포함합니다."
+
+msgid "Bug Fixes"
+msgstr "버그 수정"
+
+msgid "Contents:"
+msgstr "내용:"
+
+msgid "Current Series Release Notes"
+msgstr "현재 시리즈에 대한 릴리즈 노트"
+
+msgid "Display all endpoints in the dashboard's cluster details endpoint list."
+msgstr ""
+"대시보드의 클러스터 세부 엔드 포인트 목록 내에 모든 엔드 포인트를 보여줍니다."
+
+msgid "Enable cluster support for MariaDB and Cassandra."
+msgstr "MariaDB 및 Cassandra에 대한 클러스터 지원을 활성화합니다."
+
+msgid "Indices and tables"
+msgstr "인텍스 및 테이블"
+
+msgid "Mitaka Series Release Notes"
+msgstr "Mitaka 시리즈에 대한 릴리즈 노트"
+
+msgid "New Features"
+msgstr "새로운 기능"
+
+msgid ""
+"Support configuration groups in the dashboard. This includes creating and "
+"deleting groups; adding, editing and removing parameters; attaching and "
+"detaching groups to running instances; and specifying a group during "
+"instance creation."
+msgstr ""
+"구성 그룹을 대시보드에서 지원합니다. 그룹 생성 및 삭제; 매개 변수 추가, 편집 "
+"및 제거; 그룹을 실행 중인 인스턴스에 연결 및 연결 해제; 그리고 인스턴스 생성 "
+"중 그룹 지정을 포함합니다."
+
+msgid "Trove Dashboard Release Notes"
+msgstr "Trove 대시보드 릴리즈 노트"
