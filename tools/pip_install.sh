@@ -21,11 +21,7 @@ horizon_installed=$(echo "import horizon" | python 2>/dev/null ; echo $?)
 
 set -e
 
-install_cmd="pip install"
-if [ "$1" = "constrained" ]; then
-    install_cmd="$install_cmd $2"
-    shift
-fi
+install_cmd="pip install $1"
 shift
 
 if [ $horizon_installed -eq 0 ]; then
