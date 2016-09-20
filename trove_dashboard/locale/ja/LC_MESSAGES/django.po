@@ -4,14 +4,14 @@
 # Yoshiki Eguchi <yoshiki.eguchi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev2\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-13 18:48+0000\n"
+"POT-Creation-Date: 2016-09-19 18:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-02 02:17+0000\n"
-"Last-Translator: Yoshiki Eguchi <yoshiki.eguchi@gmail.com>\n"
+"PO-Revision-Date: 2016-09-19 05:50+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -80,6 +80,9 @@ msgstr "追加"
 msgid "Add Instance"
 msgstr "インスタンスの追加"
 
+msgid "Add Parameter"
+msgstr "パラメーターの追加"
+
 msgid "Advanced"
 msgstr "高度な設定"
 
@@ -99,13 +102,25 @@ msgstr "許可ホスト"
 msgid "Allowed Host (optional)"
 msgstr "許可ホスト (省略可)"
 
+msgid "Any Availability Zone"
+msgstr "すべてのアベイラビリティーゾーン"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "ボリュームサイズが指定された場合のみ有効です。"
+
+msgid "Applied changes to server"
+msgstr "変更をサーバーに適用しました"
+
+msgid "Apply Changes"
+msgstr "変更の適用"
 
 msgid "At least one of the new fields must be changed."
 msgstr ""
 "新しい値を指定するフィールドの少なくとも 1 つは、値が変更されていないければい"
 "けません。"
+
+msgid "Availability Zone"
+msgstr "アベイラビリティーゾーン"
 
 msgid "Available networks"
 msgstr "利用可能なネットワーク"
@@ -197,6 +212,18 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "完了"
 
+msgid "Configuration Group"
+msgstr "設定グループ"
+
+msgid "Configuration Group Name"
+msgstr "設定グループ名"
+
+msgid "Configuration Group Values"
+msgstr "設定グループ値"
+
+msgid "Configuration Groups"
+msgstr "設定グループ"
+
 msgid ""
 "Confirm the current replica is to be promoted as the new replica source."
 msgstr "現在のレプリカを新しいレプリカ元に昇格することを確認してください。"
@@ -212,6 +239,9 @@ msgstr "コンテナー"
 
 msgid "Create Backup"
 msgstr "バックアップの作成"
+
+msgid "Create Configuration Group"
+msgstr "設定グループの作成"
 
 msgid "Create Database"
 msgstr "データベースの作成"
@@ -348,6 +378,9 @@ msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "ログを無効にしました"
 
+msgid "Discard Changes"
+msgstr "変更の破棄"
+
 msgid "Discard Log"
 msgid_plural "Discard Logs"
 msgstr[0] "ログの破棄"
@@ -387,6 +420,9 @@ msgstr[0] "ログを有効にしました"
 msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "エラー"
+
+msgid "Error applying changes"
+msgstr "変更の適用中にエラーが発生しました"
 
 msgid "Error creating database backup."
 msgstr "データベースのバックアップ作成でエラーが発生しました。"
@@ -452,6 +488,9 @@ msgstr "差分"
 
 msgid "Incremental Backup"
 msgstr "差分バックアップ"
+
+msgid "Info"
+msgstr "情報"
 
 msgid "Information"
 msgstr "情報"
@@ -573,6 +612,9 @@ msgstr "クラスターへのアクセスに使用する新しいパスワード
 msgid "New size for volume must be greater than current size."
 msgstr "新しいボリュームサイズは現在のサイズよりも大きい必要があります。"
 
+msgid "No availability zones found"
+msgstr "アベイラビリティーゾーンがありません"
+
 msgid "No backups available"
 msgstr "バックアップがありません"
 
@@ -682,6 +724,12 @@ msgstr "概要"
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
+msgid "Parameter"
+msgstr "パラメーター"
+
+msgid "Parameters"
+msgstr "パラメーター"
+
 msgid "Parent Backup"
 msgstr "親バックアップ"
 
@@ -718,6 +766,9 @@ msgstr "レプリカ元へ昇格"
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
 msgstr "レプリカ \"%s\" を新しいレプリカ元に昇格しました。"
+
+msgid "Property"
+msgstr "プロパティー"
 
 msgid "Publish"
 msgstr "公開"
@@ -772,6 +823,9 @@ msgstr "インスタンスから複製"
 
 msgid "Replication"
 msgstr "レプリケーション"
+
+msgid "Reset Parameters"
+msgstr "パラメーターのリセット"
 
 msgid "Reset Root Password"
 msgstr "ルートパスワードのリセット"
@@ -968,6 +1022,9 @@ msgstr "ステータス"
 msgid "Status if root was ever enabled for an instance."
 msgstr "インスタンスでこれまでにルートが有効にされたことがあるかのスタータス。"
 
+msgid "Successfully added parameter"
+msgstr "パラメーターを正常に追加しました"
+
 msgid "Successfully disabled root access."
 msgstr "ルートアクセスを無効化しました。"
 
@@ -1114,6 +1171,9 @@ msgstr "ボリュームをリサイズできません。%s"
 msgid "Unable to retrieve accessible databases."
 msgstr "アクセス可能なデータベースの一覧を取得できません。"
 
+msgid "Unable to retrieve availability zones."
+msgstr "アベイラビリティーゾーンを取得できません。"
+
 msgid "Unable to retrieve cluster details."
 msgstr "クラスターの詳細を取得できません。"
 
@@ -1185,6 +1245,12 @@ msgstr "ユーザー名 (必須)"
 msgid "Users"
 msgstr "ユーザー"
 
+msgid "Value"
+msgstr "値"
+
+msgid "Values"
+msgstr "値"
+
 msgid "View Full Log"
 msgstr "すべてのログの表示"
 
@@ -1215,6 +1281,9 @@ msgstr ""
 
 msgid "You must select a datastore type and version."
 msgstr "データストアの種別とバージョンを選択する必要があります。"
+
+msgid "You must select a flavor."
+msgstr "フレーバーを選択しなければいけません。"
 
 msgid "You must specify a password if you create a user."
 msgstr "ユーザーを作成する場合は、パスワードを指定する必要があります。"
