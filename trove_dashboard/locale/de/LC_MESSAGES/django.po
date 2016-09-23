@@ -1,13 +1,13 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 6.0.0.0rc2.dev33\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev4\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-05-18 19:26+0000\n"
+"POT-Creation-Date: 2016-09-21 12:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-20 09:55+0000\n"
+"PO-Revision-Date: 2016-09-22 07:07+0000\n"
 "Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -76,6 +76,9 @@ msgstr "Hinzufügen"
 msgid "Add Instance"
 msgstr "Füge Instanz hinzu"
 
+msgid "Add Parameter"
+msgstr "Parameter hinzufügen"
+
 msgid "Advanced"
 msgstr "Erweitert"
 
@@ -95,8 +98,17 @@ msgstr "Erlaubter Host"
 msgid "Allowed Host (optional)"
 msgstr "Erlaubter Host (optional)"
 
+msgid "Any Availability Zone"
+msgstr "Irgendeine Verfügbarkeitszone"
+
+msgid "Apply Changes"
+msgstr "Änderungen anwenden"
+
 msgid "At least one of the new fields must be changed."
 msgstr "Mindestens eines der neuen Felder muss geändert werden."
+
+msgid "Availability Zone"
+msgstr "Verfügbarkeitszone"
 
 msgid "Available networks"
 msgstr "Verfügbare Netzwerke"
@@ -143,6 +155,10 @@ msgctxt "Current status of a Database Backup"
 msgid "Building"
 msgstr "Bauend"
 
+msgctxt "Current status of a Database Instance"
+msgid "Building"
+msgstr "Bauend"
+
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -157,6 +173,9 @@ msgstr "Neue Variante für die Instanz auswählen."
 
 msgid "Choose initial state."
 msgstr "Initialen Status auswählen."
+
+msgid "Close"
+msgstr "Schließen"
 
 msgid "Cluster Name"
 msgstr "Cluster Name"
@@ -174,14 +193,29 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "Abgeschlossen"
 
+msgid "Configuration Group"
+msgstr "Konfigurationsgruppe"
+
+msgid "Configuration Group Name"
+msgstr "Name der Konfigurationsgruppe"
+
+msgid "Configuration Groups"
+msgstr "Konfigurationsgruppe"
+
 msgid "Connection Examples"
 msgstr "Verbindungsbeispiele"
 
 msgid "Connection Information"
 msgstr "Verbindungsinformationen"
 
+msgid "Container"
+msgstr "Container"
+
 msgid "Create Backup"
 msgstr "Sicherungskopie erstellen"
+
+msgid "Create Configuration Group"
+msgstr "Erzeuge Konfigurationsgruppe"
 
 msgid "Create Database"
 msgstr "Erzeuge Datenbank"
@@ -198,6 +232,9 @@ msgstr ""
 
 msgid "Created"
 msgstr "Erstellt"
+
+msgid "Created configuration group"
+msgstr "Neue Konfigurationsgruppe wurde erstellt"
 
 #, python-format
 msgid "Created database \"%s\"."
@@ -248,6 +285,9 @@ msgstr "Datenspeicher"
 
 msgid "Datastore Version"
 msgstr "Version des Datenspeichers"
+
+msgid "Defaults"
+msgstr "Voreinstellungen"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -340,6 +380,9 @@ msgctxt "Current status of a Database Instance"
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
+msgid "Fault"
+msgstr "Fehler"
+
 msgid "Flavor"
 msgstr "Variante"
 
@@ -376,6 +419,9 @@ msgstr "Inkrementell"
 
 msgid "Incremental Backup"
 msgstr "Inkrementelle Sicherung"
+
+msgid "Info"
+msgstr "Info"
 
 msgid "Information"
 msgstr "Information"
@@ -427,6 +473,15 @@ msgstr "%(count)s mal \"%(name)s\" gestartet."
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" gestartet"
 
+msgid "Log"
+msgstr "Log"
+
+msgid "Log: "
+msgstr "Log:"
+
+msgid "Logs"
+msgstr "Logs"
+
 msgid "Manage Access"
 msgstr "Zugriff verwalten"
 
@@ -435,6 +490,9 @@ msgstr "Verwaltungskonsole"
 
 msgid "Master Instance Name"
 msgstr "Master-Instanz Name"
+
+msgid "Message"
+msgstr "Nachricht"
 
 msgid "Name"
 msgstr "Name"
@@ -471,8 +529,14 @@ msgid "New size for volume must be greater than current size."
 msgstr ""
 "Die neue Größe des Datenträgers muss größer sein als die momentane Größe."
 
+msgid "No availability zones found"
+msgstr "Keine Verfügbarkeitszone gefunden"
+
 msgid "No backups available"
 msgstr "Keine Sicherungskopien verfügbar"
+
+msgid "No configurations available"
+msgstr "Keine Konfigurationen verfügbar"
 
 msgid "No flavors available"
 msgstr "Keine Varianten verfügbar"
@@ -546,6 +610,12 @@ msgstr "Übersicht"
 msgid "PASSWORD"
 msgstr "PASSWORT"
 
+msgid "Parameter"
+msgstr "Parameter"
+
+msgid "Parameters"
+msgstr "Parameter"
+
 msgid "Parent Backup"
 msgstr "Eltern-Sicherungskopie"
 
@@ -561,8 +631,15 @@ msgstr "Das Passwort für den Root-Benutzer muss angegeben werden."
 msgid "Password for root user."
 msgstr "Passwort des Root-Benutzers."
 
+msgid "Property"
+msgstr "Eigenschaft"
+
 msgid "RAM"
 msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Rebooting"
+msgstr "Neustartend"
 
 msgid "Remove Instance"
 msgid_plural "Remove Instances"
@@ -591,6 +668,9 @@ msgstr "Repliziere aus Instanz"
 msgid "Replication"
 msgstr "Replikation"
 
+msgid "Reset Parameters"
+msgstr "Parameter zurücksetzen"
+
 msgid "Reset Root Password"
 msgstr "Root-Passwort zurücksetzen"
 
@@ -605,6 +685,10 @@ msgstr "Instanzgröße ändern"
 
 msgid "Resize Volume"
 msgstr "Datenträgergröße ändern"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resizing"
+msgstr "Größenänderung wird ausgeführt"
 
 #, python-format
 msgid "Resizing instance \"%s\""
@@ -688,6 +772,9 @@ msgstr "Neue Variante auswählen"
 
 msgid "Select backup"
 msgstr "Sicherungskopie auswählen"
+
+msgid "Select configuration"
+msgstr "Wähle Konfiguration"
 
 msgid "Select datastore type and version"
 msgstr "Typ und Version des Datenspeichers wählen"
@@ -778,6 +865,9 @@ msgstr "Die Anzahl der Instanzen muss größer als 1 sein."
 msgid "The number of shards must be greater than 1."
 msgstr "Die Anzahl der Shards muss größer als 1 sein."
 
+msgid "This action cannot be undone."
+msgstr "Diese Aktion kann nicht rückgängig gemacht werden."
+
 msgid "Type"
 msgstr "Typ"
 
@@ -790,6 +880,10 @@ msgstr "BENUTZERNAME"
 #, python-format
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Nicht möglich: %(action)s: %(objs)s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "Konfigurationsgruppe %s konnte nicht erstellt werden."
 
 #, python-format
 msgid "Unable to create database. %s"
@@ -848,6 +942,9 @@ msgstr "Beziehen des Datastore nicht möglich."
 msgid "Unable to obtain flavors."
 msgstr "Die Varianten können nicht abgerufen werden."
 
+msgid "Unable to obtain list of parameters."
+msgstr "Die Liste der Parameter können nicht abgerufen werden."
+
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Instanzen können nicht vom Cluster %s entfernt werden."
@@ -863,6 +960,9 @@ msgstr "Instanz %s kann nicht skaliert werden."
 #, python-format
 msgid "Unable to resize volume. %s"
 msgstr "Größenänderung des Datenträgers nicht möglich. %s"
+
+msgid "Unable to retrieve availability zones."
+msgstr "Verfügbarkeitszonen können nicht abgerufen werden."
 
 msgid "Unable to retrieve cluster details."
 msgstr "Clusterdetails können nicht abgerufen werden."
@@ -909,6 +1009,9 @@ msgstr "Netzwerke können nicht abgerufen werden."
 msgid "Unable to update user. %s"
 msgstr "Benutzer %s kann nicht aktualisiert werden."
 
+msgid "Unknown"
+msgstr "Unbekannt"
+
 msgid "Updated"
 msgstr "Aktualisiert"
 
@@ -924,6 +1027,37 @@ msgstr "Benutzername (erforderlich)"
 
 msgid "Users"
 msgstr "Benutzer"
+
+msgid "Value"
+msgstr "Wert"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "Wert muß \"true\" oder \"false\" sein."
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "Der Wert muss im Bereich von %(min)s bis %(max)s sein."
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "Wert muß größer-gleich %s sein."
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "Wert muß kleiner-gleich %s sein."
+
+msgid "Value must be a number."
+msgstr "Wert muß eine Zahl sein."
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "Wert muss vom Typ %s sein."
+
+msgid "Values"
+msgstr "Werte"
+
+msgid "View Log"
+msgstr "Log anzeigen"
 
 msgid "Volume"
 msgstr "Datenträger"
@@ -950,6 +1084,9 @@ msgstr ""
 
 msgid "You must select a datastore type and version."
 msgstr "Sie müssen Typ und Version des Datenspeichers wählen."
+
+msgid "You must select a flavor."
+msgstr "Sie müssen eine Variante auswählen."
 
 msgid "You must specify a password if you create a user."
 msgstr "Sie müssen ein Passwort angeben, wenn Sie einen Benutzer erstellen."
