@@ -2,13 +2,13 @@
 # Frank Kloeker <eumel@arcor.de>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc3.dev1\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc3.dev2\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-27 21:56+0000\n"
+"POT-Creation-Date: 2016-09-28 14:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-27 03:05+0000\n"
+"PO-Revision-Date: 2016-09-28 05:40+0000\n"
 "Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -113,6 +113,9 @@ msgstr "Erlaubter Host (optional)"
 
 msgid "Any Availability Zone"
 msgstr "Irgendeine Verfügbarkeitszone"
+
+msgid "Applicable only if the volume size is specified."
+msgstr "Nur anwendbar wenn die Datenträgergrösse angegeben ist."
 
 msgid "Applied changes to server"
 msgstr "Angewandte Änderungen zum Server"
@@ -247,6 +250,11 @@ msgstr "Werte der Konfigurationsgruppe"
 msgid "Configuration Groups"
 msgstr "Konfigurationsgruppe"
 
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr ""
+"Bestätige das derzeitige Replika zur Beförderung als neue Replika-Quelle."
+
 msgid "Connection Examples"
 msgstr "Verbindungsbeispiele"
 
@@ -288,6 +296,12 @@ msgstr "Datenbank \"%s\" erstellt."
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "Benutzer \"%s\" angelegt."
+
+msgid "Current Replica"
+msgstr "Derzeitiges Replika"
+
+msgid "Current Replica Source"
+msgstr "Derzeitige Replika-Quelle"
 
 msgid "Current Size (GB)"
 msgstr "Aktuelle Größe (GB)"
@@ -405,11 +419,31 @@ msgstr[1] "Abgetrennte Konfigurationsgruppen"
 msgid "Details"
 msgstr "Details"
 
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "Deaktiviere Log"
+msgstr[1] "Deaktiviere Logs"
+
 msgid "Disable Root"
 msgstr "Deaktiviere Root"
 
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "Deaktiviertes Log"
+msgstr[1] "Deaktivierte Logs"
+
 msgid "Discard Changes"
 msgstr "Verwerfe Änderungen"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "Log verwerfen"
+msgstr[1] "Logs verwerfen"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "Verworfenes Log"
+msgstr[1] "Verworfene Logs"
 
 msgid "Download"
 msgstr "Herunterladen"
@@ -430,8 +464,18 @@ msgid_plural "Ejected Replica Sources"
 msgstr[0] "Ausgeworfene Replicaquelle"
 msgstr[1] "Ausgeworfene Replicaquellen"
 
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "Aktiviere Log"
+msgstr[1] "Aktiviere Logs"
+
 msgid "Enable Root"
 msgstr "Aktiviere Root"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "Aktiviertes Log"
+msgstr[1] "Aktivierte Logs"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
@@ -445,6 +489,10 @@ msgstr "Fehler beim Erzeugen der Datenbanksicherung."
 
 msgid "Error deleting database on instance."
 msgstr "Fehler beim Löschen der Datenbank auf Instanz."
+
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "Fehler beim Herunterladen von Logfiles: %s"
 
 msgid "Error getting configuration group list."
 msgstr "Fehler beim Bezug der Gruppenkonfigurationsliste."
@@ -572,6 +620,12 @@ msgstr "Log"
 msgid "Log Contents"
 msgstr "Log Inhalte"
 
+msgid "Log Length"
+msgstr "Loglänge"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "Loglänge muß eine nichtnegative Zahl sein."
+
 msgid "Log: "
 msgstr "Log:"
 
@@ -664,6 +718,13 @@ msgstr "Nicht gefunden"
 msgid "Not available"
 msgstr "Nicht verfügbar"
 
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
+msgstr ""
+"Anmerkung: Aktiviere root Zugriff auf der Instanz. Wenn root schon aktiviert "
+"war, wurde ein neues Passwort generiert."
+
 msgid "Number of Instances"
 msgstr "Anzahl der Instanzen"
 
@@ -722,10 +783,22 @@ msgstr ""
 "Optional wählen Sie die Erstellung der Datenbank aus einer vorherigen "
 "Sicherung oder als Replikation einer vorhandenen Datenbankinstanz."
 
+msgid "Optionally provide a character set and collation for the database."
+msgstr ""
+"Stelle optional ein Zeichensatgz und eine Kollation für die Datenbank zur "
+"Verfügung."
+
 msgid "Optionally provide a comma separated list of databases to create:"
 msgstr ""
 "Geben Sie optional eine kommaseparierte Liste der zu erzeugenden Datenbanken "
 "an:"
+
+msgid ""
+"Optionally provide the host of the user and a list of databases the user is "
+"granted access to."
+msgstr ""
+"Stelle optional den Host des Benutzers und eine Liste von Datenbanken zur "
+"Verfügung, auf die der Benutzer Zugriff haben soll."
 
 msgid "Overview"
 msgstr "Übersicht"
@@ -759,6 +832,20 @@ msgid ""
 msgstr ""
 "Passwort ist nur sichtbar, nachdem root aktiviert oder zurückgesetzt ist."
 
+msgid ""
+"Please note:</strong> It may be necessary to reboot the database instance "
+"for this new configuration group to take effect."
+msgstr ""
+"Bitte beachten: </strong> Möglicherweise muß die Datenbankinstanz neu "
+"gestartet werden, um die neue Konfiguration zu laden."
+
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Bitte beachten:</strong> Der neue Wert muss grösser sein als die "
+"existierende Datenträgergrösse."
+
 msgid "Promote"
 msgstr "Befördern"
 
@@ -774,6 +861,22 @@ msgstr "Eigenschaft"
 
 msgid "Publish"
 msgstr "Veröffentliche"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "Log publizieren"
+msgstr[1] "Logs publizieren"
+
+msgid "Publishable (bytes)"
+msgstr "Publizierbar (bytes)"
+
+msgid "Published (bytes)"
+msgstr "Publiziert (bytes)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "Publiziertes Log"
+msgstr[1] "Publizierte Logs"
 
 msgid "RAM"
 msgstr "RAM"
@@ -870,10 +973,16 @@ msgstr "Aus Sicherungskopie wiederherstellen"
 msgid "Restore from Backup"
 msgstr "Aus Sicherungskopie wiederherstellen"
 
+msgid "Return to Log List"
+msgstr "Zurück zur Logliste"
+
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "Zugriff entziehen"
 msgstr[1] "Zugriff entziehen"
+
+msgid "Root Enabled"
+msgstr "Root aktiviert"
 
 msgid "Root Password"
 msgstr "Root-Passwort"
@@ -910,6 +1019,12 @@ msgstr "Geplante Vergrößerung des Clusters"
 
 msgid "Select a backup to restore"
 msgstr "Wählen Sie eine Sicherungskopie zur Wiederherstellung aus"
+
+msgid "Select a configuration group"
+msgstr "Wähle eine Konfigurationsgruppe"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr "Wähle eine Konfigurationsgruppe zum Anhängen an die Datenbankinstanz."
 
 msgid "Select a master instance"
 msgstr "Wählen Sie eine Master-Instanz"
@@ -1004,6 +1119,9 @@ msgstr ""
 "Instanzen spezifiziert sind, klicken Sie \"Baue Cluster\", um den Cluster "
 "entstehen zu lassen."
 
+msgid "Specify the name of the new database."
+msgstr "Spezifiziere den Namen der neuen Datenbank."
+
 msgid "Specify the name of the new user and password."
 msgstr "Geben Sie den Namen und das Passwort des neuen Benutzers an."
 
@@ -1012,6 +1130,18 @@ msgstr "Geben Sie das neue root Passwort für den Vertica Cluster an."
 
 msgid "Specify the new volume size for the database instance."
 msgstr "Die neue Größe des Datenträgers der Datenbankinstanz festlegen."
+
+msgid "Specify the number of replicas to be created"
+msgstr "Spezifiziere die Nummer der zu erstellenden Replikas"
+
+msgid ""
+"Specify whether future replicated instances will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity). This "
+"value is ignored if the instance to be launched is a replica."
+msgstr ""
+"Spezifiere ob zukünftig replizierte Instanzen auf demselben Hypervisor "
+"erstellt werden (Affinität) oder auf verschiedenen (Anti-Affinität). Wert "
+"wird ignoriert, wenn die erstellte Instanz eine Replika ist."
 
 msgid ""
 "Specify whether instances in the cluster will be created on the same "
@@ -1102,6 +1232,9 @@ msgstr "Die Liste der Parameter kann nicht erzeugt werden."
 msgid "Unable to create user. %s"
 msgstr "Benutzer %s kann nicht erstellt werden."
 
+msgid "Unable to determine if instance root is enabled."
+msgstr "Es kann nicht ermittelt werden, ob auf der Instanz root aktiviert ist."
+
 msgid "Unable to find backup!"
 msgstr "Sicherungskopie kann nicht gefunden werden!"
 
@@ -1150,6 +1283,16 @@ msgstr "Eltern-Datenbank-Sicherungskopien können nicht aufgelistet werden."
 
 msgid "Unable to list database instances to backup."
 msgstr "Die zu sichernden Datenbankinstanzen können nicht aufgelistet werden."
+
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"Konnte log {0} nicht laden\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "Konnte log {0} für Instanz \"{1}\" nicht laden."
 
 msgid "Unable to obtain datastore versions."
 msgstr "Beziehen der Datastore Versionen nicht möglich."

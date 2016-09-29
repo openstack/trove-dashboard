@@ -1,14 +1,15 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc3.dev2\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-13 18:48+0000\n"
+"POT-Creation-Date: 2016-09-28 14:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-27 09:17+0000\n"
-"Last-Translator: Ilya Alekseyev <ilyaalekseyev@acm.org>\n"
+"PO-Revision-Date: 2016-09-28 02:58+0000\n"
+"Last-Translator: Maxim Bozhenko <mbozhenko@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -78,6 +79,9 @@ msgstr "Добавить"
 msgid "Add Instance"
 msgstr "Добавить инстанс"
 
+msgid "Add Parameter"
+msgstr "Добавить параметр"
+
 msgid "Advanced"
 msgstr "Дополнительно"
 
@@ -99,6 +103,12 @@ msgstr "Разрешенный узел (необязательно)"
 
 msgid "Applicable only if the volume size is specified."
 msgstr "Поддерживается только если указан размер диска."
+
+msgid "Applied changes to server"
+msgstr "Изменения применены"
+
+msgid "Apply Changes"
+msgstr "Применить изменения"
 
 msgid "At least one of the new fields must be changed."
 msgstr "Хотя бы одно из новых полей должно быть изменено."
@@ -148,8 +158,16 @@ msgctxt "Current status of a Database Backup"
 msgid "Building"
 msgstr "Создание"
 
+msgctxt "Current status of a Database Instance"
+msgid "Building"
+msgstr "Создание"
+
 msgid "Cancel"
 msgstr "Отмена"
+
+#, python-format
+msgid "Cannot disable root access: %s"
+msgstr "Невозможно отключить доступ к root: %s"
 
 msgid "Cannot grow cluster.  No instances specified."
 msgstr "Не могу увеличить кластер. Инстансы не заданы."
@@ -182,14 +200,35 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "Завершено"
 
+msgid "Configuration Defaults"
+msgstr "Установки по умолчанию"
+
+msgid "Configuration Group"
+msgstr "Группа конфигурации"
+
+msgid "Configuration Group Name"
+msgstr "Имя группы конфигурации"
+
+msgid "Configuration Group Values"
+msgstr "Значения группы конфигурации"
+
+msgid "Configuration Groups"
+msgstr "Группы конфигураций"
+
 msgid "Connection Examples"
 msgstr "Примеры соединений"
 
 msgid "Connection Information"
 msgstr "Параметры соединения"
 
+msgid "Container"
+msgstr "Контейнер"
+
 msgid "Create Backup"
 msgstr "Создать резервную копию"
+
+msgid "Create Configuration Group"
+msgstr "Создать группу конфигурации"
 
 msgid "Create Database"
 msgstr "Создать базу данных"
@@ -207,6 +246,9 @@ msgstr ""
 
 msgid "Created"
 msgstr "Создано"
+
+msgid "Created configuration group"
+msgstr "Группа конфигурации создана"
 
 #, python-format
 msgid "Created database \"%s\"."
@@ -257,6 +299,9 @@ msgstr "Хранилище данных"
 
 msgid "Datastore Version"
 msgstr "Версия хранилища данных"
+
+msgid "Defaults"
+msgstr "Установки по умолчанию"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -328,6 +373,12 @@ msgstr[2] "Отключить реплики"
 msgid "Details"
 msgstr "Подробности"
 
+msgid "Disable Root"
+msgstr "Отключить root"
+
+msgid "Discard Changes"
+msgstr "Отменить изменения"
+
 msgid "Download"
 msgstr "Скачать"
 
@@ -344,6 +395,9 @@ msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "Ошибка"
 
+msgid "Error applying changes"
+msgstr "Ошибка при применении изменений"
+
 msgid "Error creating database backup."
 msgstr "Ошибка создания резервной копии БД."
 
@@ -352,6 +406,10 @@ msgstr "Ошибка удаления БД на  инстансе."
 
 msgid "Error getting database backup list."
 msgstr "Ошибка получения списка резервных копий БД."
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "Ошибка при очистке параметров: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
@@ -384,6 +442,9 @@ msgstr "Увеличить кластер"
 
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Увеличить кластер: {{cluster_name}}"
+
+msgid "Has Root Ever Been Enabled"
+msgstr "Был ли когда-то включен root"
 
 msgid "Host"
 msgstr "Хост"
@@ -450,6 +511,9 @@ msgstr "Запущено %(count)s названных \"%(name)s\"."
 msgid "Launched cluster \"%s\""
 msgstr "Запущен кластер %s"
 
+msgid "Logs"
+msgstr "Логи"
+
 msgid "Manage Access"
 msgstr "Управление доступом"
 
@@ -464,6 +528,9 @@ msgstr "Консоль управления"
 
 msgid "Master Instance Name"
 msgstr "Имя основного инстанса"
+
+msgid "Message"
+msgstr "Сообщение"
 
 msgid "Name"
 msgstr "Имя"
@@ -608,6 +675,12 @@ msgstr "Обзор"
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
+msgid "Parameter"
+msgstr "Параметр"
+
+msgid "Parameters"
+msgstr "Параметры"
+
 msgid "Parent Backup"
 msgstr "Материнская резервная копия"
 
@@ -627,8 +700,27 @@ msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "Пароль видим сразу только  после разрешения или сброса root."
 
+msgid "Promote"
+msgstr "Повысить"
+
+msgid "Property"
+msgstr "Свойство"
+
+msgid "Publish"
+msgstr "Опубликовать"
+
+msgid "Publishable (bytes)"
+msgstr "Может быть опубликовано (байт)"
+
+msgid "Published (bytes)"
+msgstr "Опубликовано (байт)"
+
 msgid "RAM"
 msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Rebooting"
+msgstr "Перезагрузка"
 
 msgid "Related To"
 msgstr "Относится к"
@@ -663,6 +755,9 @@ msgstr "Реплицировать с инстанса"
 msgid "Replication"
 msgstr "Репликация"
 
+msgid "Reset Parameters"
+msgstr "Очистить параметры"
+
 msgid "Reset Root Password"
 msgstr "Сбросить пароль для root"
 
@@ -677,6 +772,10 @@ msgstr "Изменить размер инстанса"
 
 msgid "Resize Volume"
 msgstr "Изменить размер диска"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resizing"
+msgstr "Изменение размера"
 
 #, python-format
 msgid "Resizing instance \"%s\""
@@ -859,6 +958,12 @@ msgstr "Статус"
 msgid "Status if root was ever enabled for an instance."
 msgstr "Статус если root когда либо был разрешен для инстанса."
 
+msgid "Successfully added parameter"
+msgstr "Параметр успешно добавлен"
+
+msgid "Successfully disabled root access."
+msgstr "Доступ к root отключен."
+
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
 "optional.  See the Trove documentation for more information on using these "
@@ -886,6 +991,9 @@ msgstr "Количество шардов должно быть больше 1."
 msgid "There was a problem enabling root."
 msgstr "Возникла проблема с разрешением пользователя root."
 
+msgid "This action cannot be undone."
+msgstr "Это действие не может быть отменено."
+
 msgid "Type"
 msgstr "Тип"
 
@@ -900,8 +1008,19 @@ msgid "Unable to %(action)s: %(objs)s"
 msgstr "Невозможно выполнить %(action)s: %(objs)s"
 
 #, python-format
+msgid "Unable to add new parameter: %s"
+msgstr "Невозможно добавить новый параметр: %s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "Невозможно создать группу конфигурации. %s"
+
+#, python-format
 msgid "Unable to create database. %s"
 msgstr "Невозможно создать базу данных. %s"
+
+msgid "Unable to create list of parameters."
+msgstr "Невозможно создать список параметров."
 
 #, python-format
 msgid "Unable to create user. %s"
@@ -966,6 +1085,9 @@ msgstr "Не удалось получить типы инстансов."
 msgid "Unable to obtain information on root user"
 msgstr "Невозможно получить информацию о пользователе root"
 
+msgid "Unable to obtain list of parameters."
+msgstr "Невозможно получить список параметров."
+
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Невозможно удалить инстансы их кластера: %s"
@@ -1022,12 +1144,23 @@ msgstr "Не удалось получить типы инстанса."
 msgid "Unable to retrieve instance details."
 msgstr "Не удалось получить подробную информацию об инстансе."
 
+#, python-format
+msgid ""
+"Unable to retrieve list of logs.\n"
+"%s"
+msgstr ""
+"Невозможно получить список логов.\n"
+"%s"
+
 msgid "Unable to retrieve networks."
 msgstr "Не удалось получить сети."
 
 #, python-format
 msgid "Unable to update user. %s"
 msgstr "Невозможно обновить пользователя. %s"
+
+msgid "Unknown"
+msgstr "Неизвестно"
 
 msgid "Updated"
 msgstr "Обновлено"
@@ -1044,6 +1177,34 @@ msgstr "Имя пользователя (обязательно)"
 
 msgid "Users"
 msgstr "Пользователи"
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "Значение должно быть \"true\" или \"false\"."
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "Значение должно быть числом между %(min)s и %(max)s."
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "Значение должно быть больше или равно %s."
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "Значение должно быть меньше или равно %s."
+
+msgid "Value must be a number."
+msgstr "Значение должно быть числом."
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "Значение должно быть типа %s."
+
+msgid "View Log"
+msgstr "Просмотреть лог"
 
 msgid "Volume"
 msgstr "Диск"
