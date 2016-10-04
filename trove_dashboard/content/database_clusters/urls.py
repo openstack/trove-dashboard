@@ -14,15 +14,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.conf.urls import patterns  # noqa
 from django.conf.urls import url  # noqa
 
 from trove_dashboard.content.database_clusters import views
 
 CLUSTERS = r'^(?P<cluster_id>[^/]+)/%s$'
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^launch$', views.LaunchClusterView.as_view(), name='launch'),
     url(r'^(?P<cluster_id>[^/]+)/$', views.DetailView.as_view(),
@@ -39,4 +37,4 @@ urlpatterns = patterns(
     url(CLUSTERS % 'reset_password',
         views.ResetPasswordView.as_view(),
         name='reset_password'),
-)
+]

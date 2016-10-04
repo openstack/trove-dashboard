@@ -13,7 +13,6 @@
 #    under the License.
 
 from django.conf.urls import include
-from django.conf.urls import patterns
 from django.conf.urls import url
 
 from trove_dashboard.content.databases.logs import urls as logs_urls
@@ -24,8 +23,7 @@ INSTANCES = BASEINSTANCES + '$'
 USERS = r'^(?P<instance_id>[^/]+)/(?P<user_name>[^/]+)/%s$'
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^launch$', views.LaunchInstanceView.as_view(), name='launch'),
     url(INSTANCES % '', views.DetailView.as_view(), name='detail'),
@@ -49,4 +47,4 @@ urlpatterns = patterns(
     url(INSTANCES % 'manage_root', views.ManageRootView.as_view(),
         name='manage_root'),
     url(BASEINSTANCES % 'logs/', include(logs_urls, namespace='logs')),
-)
+]

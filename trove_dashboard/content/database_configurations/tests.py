@@ -14,7 +14,10 @@
 
 import copy
 import logging
+import six
 
+import django
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django import http
 from mox3.mox import IsA  # noqa
@@ -313,16 +316,15 @@ class DatabaseConfigurationsTests(test.TestCase):
             config_param_mgr.original_configuration_values = \
                 dict.copy(config.values)
 
-            config_param_manager.get(IsA(http.HttpRequest), config.id) \
-                .MultipleTimes().AndReturn(config_param_mgr)
-
-            ds = self._get_test_datastore('mysql')
-            dsv = self._get_test_datastore_version(ds.id, '5.5')
-            api.trove.configuration_parameters_list(
-                IsA(http.HttpRequest),
-                ds.name,
-                dsv.name) \
-                .AndReturn(self.configuration_parameters.list())
+            (config_param_manager.get(IsA(http.HttpRequest),
+                                      IsA(six.string_types))
+                .MultipleTimes()
+                .AndReturn(config_param_mgr))
+            (api.trove.configuration_parameters_list(IsA(http.HttpRequest),
+                                                     IsA(six.string_types),
+                                                     IsA(six.string_types))
+                .MultipleTimes()
+                .AndReturn(self.configuration_parameters.list()))
 
             name = self.configuration_parameters.first().name
             value = "non-numeric"
@@ -360,6 +362,8 @@ class DatabaseConfigurationsTests(test.TestCase):
                       .get_configuration().values)
 
         res = self.client.post(url, {'action': u"values__discard_changes"})
+        if django.VERSION >= (1, 9):
+            url = settings.TESTSERVER + url
         self.assertRedirectsNoFollow(res, url)
 
         # get the state of the configuration after discard action
@@ -400,6 +404,8 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         # apply changes
         res = self.client.post(url, {'action': u"values__apply_changes"})
+        if django.VERSION >= (1, 9):
+            url = settings.TESTSERVER + url
         self.assertRedirectsNoFollow(res, url)
 
     @test.create_stubs({api.trove: ('configuration_instances',
@@ -432,6 +438,8 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         # apply changes
         res = self.client.post(url, {'action': u"values__apply_changes"})
+        if django.VERSION >= (1, 9):
+            url = settings.TESTSERVER + url
         self.assertRedirectsNoFollow(res, url)
         self.assertEqual(res.status_code, 302)
 
