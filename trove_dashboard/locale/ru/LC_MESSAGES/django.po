@@ -1,15 +1,18 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Artem <amikhalev90@gmail.com>, 2016. #zanata
 # Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
+# Vladimir Sokolov <vsvastey@gmail.com>, 2016. #zanata
+# Yulia Ryndenkova <yryndenkova@hystax.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc3.dev2\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc4.dev1\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-28 14:52+0000\n"
+"POT-Creation-Date: 2016-10-04 12:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-28 02:58+0000\n"
-"Last-Translator: Maxim Bozhenko <mbozhenko@gmail.com>\n"
+"PO-Revision-Date: 2016-10-09 01:15+0000\n"
+"Last-Translator: Artem <amikhalev90@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -82,6 +85,13 @@ msgstr "Добавить инстанс"
 msgid "Add Parameter"
 msgstr "Добавить параметр"
 
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"Добавьте параметры в группу конфигурации. Когда все параметры добавлены "
+"нажмите 'Применить изменения' чтобы сохранить изменения."
+
 msgid "Advanced"
 msgstr "Дополнительно"
 
@@ -101,6 +111,9 @@ msgstr "Разрешенный хост"
 msgid "Allowed Host (optional)"
 msgstr "Разрешенный узел (необязательно)"
 
+msgid "Any Availability Zone"
+msgstr "Любая зона доступности"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "Поддерживается только если указан размер диска."
 
@@ -112,6 +125,9 @@ msgstr "Применить изменения"
 
 msgid "At least one of the new fields must be changed."
 msgstr "Хотя бы одно из новых полей должно быть изменено."
+
+msgid "Availability Zone"
+msgstr "Зона доступности"
 
 msgid "Available networks"
 msgstr "Доступные сети"
@@ -181,6 +197,9 @@ msgstr "Выберите новый тип для инстанса."
 msgid "Choose initial state."
 msgstr "Выберите первоначальное наполнение"
 
+msgid "Close"
+msgstr "Закрыть"
+
 msgid "Cluster Name"
 msgstr "Имя кластера"
 
@@ -206,8 +225,14 @@ msgstr "Установки по умолчанию"
 msgid "Configuration Group"
 msgstr "Группа конфигурации"
 
+msgid "Configuration Group Instances"
+msgstr "Инстансы группы конфигурации"
+
 msgid "Configuration Group Name"
 msgstr "Имя группы конфигурации"
+
+msgid "Configuration Group Overview"
+msgstr "Обзор группы конфигурации"
 
 msgid "Configuration Group Values"
 msgstr "Значения группы конфигурации"
@@ -404,6 +429,9 @@ msgstr "Ошибка создания резервной копии БД."
 msgid "Error deleting database on instance."
 msgstr "Ошибка удаления БД на  инстансе."
 
+msgid "Error getting configuration group list."
+msgstr "Ошибка получения списка групп конфигурации."
+
 msgid "Error getting database backup list."
 msgstr "Ошибка получения списка резервных копий БД."
 
@@ -419,11 +447,17 @@ msgctxt "Current status of a Database Instance"
 msgid "Failed"
 msgstr "Произошла ошибка"
 
+msgid "Fault"
+msgstr "Ошибка"
+
 msgid "Flavor"
 msgstr "Тип инстанса"
 
 msgid "GB"
 msgstr "ГБ"
+
+msgid "Go"
+msgstr "Выполнить"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
@@ -460,6 +494,9 @@ msgstr "Инкрементное"
 
 msgid "Incremental Backup"
 msgstr "Инкрементное резервное копирование"
+
+msgid "Info"
+msgstr "Информация"
 
 msgid "Information"
 msgstr "Информация"
@@ -510,6 +547,12 @@ msgstr "Запущено %(count)s названных \"%(name)s\"."
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Запущен кластер %s"
+
+msgid "Locality"
+msgstr "Окрестность"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "Длина журнала должна быть неотрицательным целым числом. "
 
 msgid "Logs"
 msgstr "Логи"
@@ -566,8 +609,17 @@ msgstr "Новый пароль для доступа к кластеру."
 msgid "New size for volume must be greater than current size."
 msgstr "Новый размер диска должен быть больше текущего размера."
 
+msgid "No availability zones found"
+msgstr "Не найдены зоны доступности."
+
 msgid "No backups available"
 msgstr "Нет доступных резервных копий"
+
+msgid "No configuration groups available"
+msgstr "Нет доступных групп конфигураций"
+
+msgid "No configurations available"
+msgstr "Нет доступных конфигураций"
 
 msgid "No flavors available"
 msgstr "Нет доступных типов инстанса"
@@ -740,6 +792,9 @@ msgstr[2] "Удаленные инстансы"
 msgid "Removed instances from cluster."
 msgstr "Удаленные инстансы из кластера"
 
+msgid "Replica Count"
+msgstr "Количество реплик"
+
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
 msgstr[0] "Реплика отключена"
@@ -860,14 +915,29 @@ msgstr "Запланировано увеличение кластера"
 msgid "Select a backup to restore"
 msgstr "Выбрать резервную копию для восстановления"
 
+msgid "Select a configuration group"
+msgstr "Выберите группу конфигурации"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr "Выберите группу конфигурации для подключения к инстансу базы данных."
+
 msgid "Select a master instance"
 msgstr "Выберите основной инстанс"
 
 msgid "Select a new flavor"
 msgstr "Выберите новый тип инстанса"
 
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr "Выберите параметр и предоставьте значение для параметра конфигурации."
+
 msgid "Select backup"
 msgstr "Выбрать резервную копию"
+
+msgid "Select configuration"
+msgstr "Выбрать конфигурацию"
+
+msgid "Select configuration group"
+msgstr "Выберите группу конфигурации"
 
 msgid "Select datastore type and version"
 msgstr "Выбрать тип и версию хранилища данных."
@@ -948,6 +1018,9 @@ msgstr "Укажите новый root пароль для кластера vert
 
 msgid "Specify the new volume size for the database instance."
 msgstr "Указать новый размер диска для инстанса БД."
+
+msgid "Specify the number of replicas to be created"
+msgstr "Укажите количество создаваемых реплик"
 
 msgid "Specs"
 msgstr "Спеки"
@@ -1032,8 +1105,14 @@ msgstr "Не удалось определить разрешен ли root дл
 msgid "Unable to find backup!"
 msgstr "Не удалось найти резервную копию!"
 
+msgid "Unable to find configuration group!"
+msgstr "Невозможно найти группу конфигурации!"
+
 msgid "Unable to find master instance!"
 msgstr "Не удалось найти основной инстанс!"
+
+msgid "Unable to get configuration data."
+msgstr "Невозможно получить данные конфигурации."
 
 msgid "Unable to get database backup data."
 msgstr "Не удалось получить данные резервной копии базы данных"
@@ -1107,6 +1186,9 @@ msgstr "Не удалось изменить размер диска. %s"
 msgid "Unable to retrieve accessible databases."
 msgstr "Не удалось получить доступные базы данных."
 
+msgid "Unable to retrieve availability zones."
+msgstr "Не удалось получить список зон доступности."
+
 msgid "Unable to retrieve cluster details."
 msgstr "Невозможно получить сведения для кластера."
 
@@ -1125,6 +1207,10 @@ msgstr "Не удалось получить базы данных."
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
 msgstr "Не удалось получить подробную информацию о резервной копии: %s"
+
+#, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr "Не удалось получить подробную информацию о группе конфигурации: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
@@ -1203,6 +1289,9 @@ msgstr "Значение должно быть числом."
 msgid "Value must be of type %s."
 msgstr "Значение должно быть типа %s."
 
+msgid "Values"
+msgstr "Значения"
+
 msgid "View Log"
 msgstr "Просмотреть лог"
 
@@ -1230,6 +1319,9 @@ msgstr ""
 
 msgid "You must select a datastore type and version."
 msgstr "Вы должны выбрать тип и версию хранилища данных."
+
+msgid "You must select a flavor."
+msgstr "Необходимо выбрать тип инстанса."
 
 msgid "You must specify a password if you create a user."
 msgstr "Вы должны задать пароль если хотите создать пользователя."
