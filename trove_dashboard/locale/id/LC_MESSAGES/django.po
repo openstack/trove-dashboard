@@ -1,0 +1,1435 @@
+# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2016-10-07 13:57+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-10-04 10:53+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid ""
+"\n"
+"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
+"  clicking the button, or dragging and dropping. You can change the\n"
+"  NIC order by dragging and dropping as well.\n"
+"  "
+msgstr ""
+"\n"
+"Pindah jaringan dari 'Available Networks' ke 'Selected Networks' dengan\n"
+"   mengklik tombol, atau menyeret dan menjatuhkan (dragging and dropping). "
+"Anda dapat mengubah\n"
+"   urutan NIC dengan menyeret dan menjatuhkan juga.\n"
+"  "
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM"
+msgstr "%(name)s | %(RAM)s RAM"
+
+#, python-format
+msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s RAM | %(instances)s instances"
+
+msgid "-"
+msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> The value specified in the Volume Size field "
+"should be greater than 0, however, some configurations do not support "
+"specifying volume size. If specifying the volume size results in an error "
+"stating volume support is not enabled, enter 0."
+msgstr ""
+"<strong>Harap dicatat:</strong> Nilai yang ditentukan dalam kolom Volume "
+"Size harus lebih besar dari 0, namun, beberapa konfigurasi tidak mendukung "
+"menentukan ukuran volume. Jika penentuan hasil ukuran volume dalam kesalahan "
+"yang menyatakan dukungan volume tidak diaktifkan, masukkan 0."
+
+msgid "A backup must be selected!"
+msgstr "Sebuah cadangan harus dipilih!"
+
+msgid "A master instance must be selected!"
+msgstr "Sebuah instance utama harus dipilih!"
+
+msgid "A new name or new password or new host must be specified."
+msgstr "Sebuah nama baru atau password baru atau host baru harus ditentukan."
+
+msgid "Access Revoked to"
+msgid_plural "Access Revoked to"
+msgstr[0] "Access Revoked to"
+
+msgid "Accessible"
+msgstr "Accessible (dapat diakses)"
+
+msgctxt "Current status of a Database Instance"
+msgid "Active"
+msgstr "Active (aktif)"
+
+msgid "Add"
+msgstr "Add (pemambahan)"
+
+msgid "Add Instance"
+msgstr "Add Instance (tambah instance)"
+
+msgid "Add Parameter"
+msgstr "Add Parameter (penambahan parameter)"
+
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"Menambahkan parameter ke kelompok konfigurasi. Ketika semua parameter "
+"ditambahkan klik 'Apply Changes' untuk menyimpan perubahan."
+
+msgid "Advanced"
+msgstr "Advanced (lanjutan)"
+
+msgid ""
+"Allow the user to connect from this host\n"
+"    only. If not provided this user will be allowed to connect from "
+"anywhere.\n"
+"    "
+msgstr ""
+"Izinkan pengguna untuk menghubungkan hanya dari host ini\n"
+"     . Jika tidak tersedia pengguna ini akan diizinkan untuk terhubung dari "
+"mana saja.\n"
+"    "
+
+msgid "Allowed Host"
+msgstr "Allowed Host (diizinkan host)"
+
+msgid "Allowed Host (optional)"
+msgstr "Allowed Host (optional)"
+
+msgid "Any Availability Zone"
+msgstr "Any Availability Zone"
+
+msgid "Applicable only if the volume size is specified."
+msgstr "Berlaku hanya jika ukuran volume ditentukan."
+
+msgid "Applied changes to server"
+msgstr "Perubahan yang diterapkan ke server"
+
+msgid "Apply Changes"
+msgstr "Apply Changes (penerapan perubahan)"
+
+msgid "At least one of the new fields must be changed."
+msgstr "Setidaknya satu kolom baru harus diubah."
+
+msgid "Attach Configuration Group"
+msgstr "Attach Configuration Group (pelekatan grup konfigurasi)"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "Melekatkan grup Konfigurasi \"%s\""
+
+msgid "Availability Zone"
+msgstr "Availability Zone (ketersediaan zona)"
+
+msgid "Available networks"
+msgstr "Jaringan yang tersedia"
+
+msgid "Backup"
+msgstr "Backup (cadangan)"
+
+msgctxt "Current status of a Database Instance"
+msgid "Backup"
+msgstr "Backup (pencadangan)"
+
+msgid "Backup Database"
+msgstr "Backup Database (cadangan database)"
+
+msgid "Backup Details"
+msgstr "Backup Details (rincian cadangan)"
+
+msgid "Backup Details: {{ backup.name }}"
+msgstr "Backup Details: {{ backup.name }}"
+
+msgid "Backup Duration"
+msgstr "Backup Duration (jangka cadangan)"
+
+msgid "Backup File"
+msgstr "Backup File (file cadangan)"
+
+msgid "Backup File Location"
+msgstr "Backup File Location (lokasi file cadangan)"
+
+msgid "Backup Name"
+msgstr "Backup Name (nama cadangan)"
+
+msgid "Backup Overview"
+msgstr "Backup Overview (ikhtisar cadangan)"
+
+msgid "Backups"
+msgstr "Backups (cadangan)"
+
+msgctxt "Current status of a Database Instance"
+msgid "Blocked"
+msgstr "Blocked (diblokir)"
+
+msgctxt "Current status of a Database Backup"
+msgid "Building"
+msgstr "Building (pembangunan)"
+
+msgctxt "Current status of a Database Instance"
+msgid "Building"
+msgstr "Building (pembangunan)"
+
+msgid "Cancel"
+msgstr "Cancel (pembatalan)"
+
+#, python-format
+msgid "Cannot disable root access: %s"
+msgstr "Tidak dapat menonaktifkan akses root: %s"
+
+msgid "Cannot grow cluster.  No instances specified."
+msgstr "Tidak bisa tumbuh cluster. Tidak ada instance yang ditentukan."
+
+msgid "Character Set"
+msgstr "Character Set (set karakter)"
+
+msgid "Choose a new instance flavor."
+msgstr "Pilih flavor instance baru."
+
+msgid "Choose initial state."
+msgstr "Pilih keadaan awal."
+
+msgid "Close"
+msgstr "Close (tutup)"
+
+msgid "Cluster Name"
+msgstr "Cluster Name (nama kluster)"
+
+msgid "Cluster Size"
+msgstr "Cluster Size (ukuran kluster)"
+
+msgid "Clusters"
+msgstr "Clusters (kluster)"
+
+msgid "Collation"
+msgstr "Collation (pemeriksaan)"
+
+msgid "Comma separated list of databases to create"
+msgstr "Daftar dipisahkan koma dari database untuk membuat"
+
+msgctxt "Current status of a Database Backup"
+msgid "Completed"
+msgstr "Completed (lengkap)"
+
+msgid "Configuration Defaults"
+msgstr "Configuration Defaults (default konfigurasi)"
+
+msgid "Configuration Group"
+msgstr "Configuration Group (grup konfigurasi)"
+
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "Configuration Group Details: {{configuration.name}}"
+
+msgid "Configuration Group Instances"
+msgstr "Configuration Group Instances (instance grup konfigurasi)"
+
+msgid "Configuration Group Name"
+msgstr "Configuration Group Name (nama grup konfigurasi)"
+
+msgid "Configuration Group Overview"
+msgstr "Configuration Group Overview"
+
+msgid "Configuration Group Values"
+msgstr "Configuration Group Values (nilai grup konfigurasi)"
+
+msgid "Configuration Groups"
+msgstr "Configuration Groups (grup konfigurasi)"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr ""
+"Konfirmasi replika saat ini adalah untuk dipromosikan sebagai sumber replika "
+"baru."
+
+msgid "Connection Examples"
+msgstr "Connection Examples (contoh koneksi)"
+
+msgid "Connection Information"
+msgstr "Connection Information (informasi koneksi)"
+
+msgid "Container"
+msgstr "Container (kontainer)"
+
+msgid "Create Backup"
+msgstr "Create Backup (buat cadangan)"
+
+msgid "Create Configuration Group"
+msgstr "Create Configuration Group (buat grup konfigurasi)"
+
+msgid "Create Database"
+msgstr "Create Database (buat database)"
+
+msgid "Create User"
+msgstr "Create User (buat user)"
+
+msgid ""
+"Create an optional initial user.\n"
+"   This user will have access to all databases you create."
+msgstr ""
+"Buat awal pengguna opsional.\n"
+"Pengguna ini akan memiliki akses ke semua database yang Anda buat."
+
+msgid "Created"
+msgstr "Created (dibuat))"
+
+msgid "Created configuration group"
+msgstr "Dibuat grup konfigurasi"
+
+#, python-format
+msgid "Created database \"%s\"."
+msgstr "Database yang dibuat \"%s\"."
+
+#, python-format
+msgid "Created user \"%s\"."
+msgstr "Dibuat pengguna \"%s\"."
+
+msgid "Current Replica"
+msgstr "Current Replica (salinan saat ini)"
+
+msgid "Current Replica Source"
+msgstr "Current Replica Source (sumber salinan saat ini)"
+
+msgid "Current Size (GB)"
+msgstr "Current Size (GB) (ukuran saat ini)"
+
+msgid "Current Task"
+msgstr "Current Task (tugas saat ini)"
+
+msgid "DATABASE"
+msgstr "DATABASE (database)"
+
+msgid "Database"
+msgstr "Database (database)"
+
+msgid "Database Access"
+msgstr "Database Access (akses database)"
+
+msgid "Database Access for: {{ user_name }}"
+msgstr "Akses database untuk: {{ user_name }}"
+
+msgid "Database Backups"
+msgstr "Database Backups (cadangan database) "
+
+msgid "Database Info"
+msgstr "Database Info (info database)"
+
+msgid "Database Instance"
+msgstr "Database Instance (instance database)"
+
+msgid "Database Name"
+msgstr "Database Name (nama pengguna)"
+
+msgid "Database Port"
+msgstr "Database Port (port database)"
+
+msgid "Databases"
+msgstr "Databases (database)"
+
+msgid "Datastore"
+msgstr "Datastore (penyimpanan data)"
+
+msgid "Datastore Version"
+msgstr "Datastore Version (versi penyimpanan data)"
+
+msgid "Defaults"
+msgstr "Defaults (default)"
+
+msgid "Delete Backup"
+msgid_plural "Delete Backups"
+msgstr[0] "Delete Backup"
+
+msgid "Delete Cluster"
+msgid_plural "Delete Clusters"
+msgstr[0] "Delete Cluster"
+
+msgid "Delete Database"
+msgid_plural "Delete Databases"
+msgstr[0] "Delete Database"
+
+msgctxt "Current status of a Database Backup"
+msgid "Delete Failed"
+msgstr "Delete Failed (penghapusan kegagalan)"
+
+msgid "Delete Instance"
+msgid_plural "Delete Instances"
+msgstr[0] "Delete Instance"
+
+msgid "Delete User"
+msgid_plural "Delete Users"
+msgstr[0] "Delete User"
+
+msgid "Deleted Backup"
+msgid_plural "Deleted Backups"
+msgstr[0] "Deleted Backup"
+
+msgid "Deleted Database"
+msgid_plural "Deleted Databases"
+msgstr[0] "Deleted Database"
+
+msgid "Deleted User"
+msgid_plural "Deleted Users"
+msgstr[0] "Deleted User"
+
+msgid "Deleted cluster is not recoverable."
+msgstr "Cluster dihapus tidak dapat dipulihkan."
+
+msgid "Deleted instances are not recoverable."
+msgstr "Instance yang dihapus tidak dapat dipulihkan."
+
+msgid "Description"
+msgstr "Description (deskripsi)"
+
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "Detach Configuration Group"
+
+msgid "Detach Replica"
+msgid_plural "Detach Replicas"
+msgstr[0] "Detach Replica"
+
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "Detached Configuration Group"
+
+msgid "Details"
+msgstr "Details (rincian)"
+
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "Disable Log"
+
+msgid "Disable Root"
+msgstr "Disable Root (menonaktifkan root)"
+
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "Disabled Log"
+
+msgid "Discard Changes"
+msgstr "Discard Changes (pembuangan perubahan)"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "Discard Log"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "Discarded Log"
+
+msgid "Download"
+msgstr "Download (pengunduhan)"
+
+msgid "Download Backup"
+msgstr "Download Backup (mengunduh cadangan)"
+
+msgid "Edit User"
+msgstr "Edit User (edit user)"
+
+msgid "Eject Replica Source"
+msgid_plural "Eject Replica Sources"
+msgstr[0] "Eject Replica Source"
+
+msgid "Ejected Replica Source"
+msgid_plural "Ejected Replica Sources"
+msgstr[0] "Ejected Replica Source"
+
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "Enable Log"
+
+msgid "Enable Root"
+msgstr "Enable Root (mengaktifkan root)"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "Enabled Log"
+
+msgctxt "Current status of a Database Instance"
+msgid "Error"
+msgstr "Error"
+
+msgid "Error applying changes"
+msgstr "Kesalahan menerapkan perubahan"
+
+msgid "Error creating database backup."
+msgstr "Kesalahan menciptakan backup database."
+
+msgid "Error deleting database on instance."
+msgstr "Kesalahan menghapus database pada instance."
+
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "Kesalahan men-download file log: %s"
+
+msgid "Error getting configuration group list."
+msgstr "Kesalahan mendapatkan daftar grup konfigurasi."
+
+msgid "Error getting database backup list."
+msgstr "Kesalahan mendapatkan daftar backup database."
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "Kesalahan ulang (resetting) parameter: %s"
+
+msgctxt "Current status of a Database Backup"
+msgid "Failed"
+msgstr "Failed"
+
+msgctxt "Current status of a Database Instance"
+msgid "Failed"
+msgstr "Failed (kegagalan)"
+
+msgid "Fault"
+msgstr "Fault (kesalahan)"
+
+msgid "Flavor"
+msgstr "Flavor"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "Go"
+msgstr "Go (jalan)"
+
+msgid "Grant Access"
+msgid_plural "Grant Access"
+msgstr[0] "Grant Access"
+
+msgid "Granted Access to"
+msgid_plural "Granted Access to"
+msgstr[0] "Granted Access to"
+
+msgid "Grow Cluster"
+msgstr "Grow Cluster (pertumbuhan kluster)"
+
+msgid "Grow Cluster: {{cluster_name}}"
+msgstr "Grow Cluster: {{cluster_name}}"
+
+msgid "Has Root Ever Been Enabled"
+msgstr "Has Root Ever Been Enabled (apakah root pernah diaktifkan)"
+
+msgid "Host"
+msgstr "Host (host)"
+
+msgid "Host or IP that the user is allowed to connect through."
+msgstr "Host atau IP dimana pengguna diperbolehkan untuk terhubung melalui."
+
+msgid "ID"
+msgstr "ID (id)"
+
+msgid "Incremental"
+msgstr "Incremental (penambahan)"
+
+msgid "Incremental Backup"
+msgstr "Incremental Backup (cadangan inkremental)"
+
+msgid "Info"
+msgstr "Info (informasi)"
+
+msgid "Information"
+msgstr "Information (informasi)"
+
+msgid "Initial Admin User"
+msgstr "Initial Admin User (user admin awal)"
+
+msgid "Initial Databases"
+msgstr "Initial Databases (database awal)"
+
+msgid "Initial Volume Size"
+msgstr "Initial Volume Size (ukuran volume awal)"
+
+msgid "Initial admin user to add"
+msgstr "Awal user admin untuk menambahkan"
+
+msgid "Initialize Databases"
+msgstr "Initialize Databases"
+
+msgid "Instance Name"
+msgstr "Instance Name (nama instance)"
+
+msgid "Instance Type"
+msgstr "Instance Type (tipe instance)"
+
+msgid "Instances"
+msgstr "Instances (instance)"
+
+msgid "Is a Replica Of"
+msgstr "Is a Replica Of"
+
+msgid "Launch"
+msgstr "Launch (meluncurkan)"
+
+msgid "Launch Cluster"
+msgstr "Launch Cluster (peluncuran kluster)"
+
+msgid "Launch Database"
+msgstr "Launch Database (peluncuran database)"
+
+msgid "Launch Instance"
+msgstr " Launch Instance (peluncuran instance)"
+
+#, python-format
+msgid "Launched %(count)s named \"%(name)s\"."
+msgstr "Diluncurkan %(count)s named \"%(name)s\"."
+
+#, python-format
+msgid "Launched cluster \"%s\""
+msgstr "Diluncurkan klaster \"%s\""
+
+msgid "Locality"
+msgstr "Locality (lokalitas)"
+
+msgid "Log"
+msgstr "Log (catatan)"
+
+msgid "Log Contents"
+msgstr "Log Contents (konten catatan)"
+
+msgid "Log Length"
+msgstr "Log Length (panjang catatan)"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "Panjang log harus berupa bilangan integer positif."
+
+msgid "Log: "
+msgstr "Log (catatan): "
+
+msgid "Logs"
+msgstr "Logs (catatan)"
+
+msgid "Manage Access"
+msgstr "Manage Access (mengelola akses)"
+
+msgid "Manage Root"
+msgstr "Manage Root (mengelola root)"
+
+msgid "Manage Root Access"
+msgstr "Manage Root Access (mengelolaan akses root)"
+
+msgid "Management Console"
+msgstr "Management Console (konsol pengelolaan)"
+
+msgid "Master Instance Name"
+msgstr "Master Instance Name (nama instance induk)"
+
+msgid "Message"
+msgstr "Message (pesan)"
+
+msgid "Name"
+msgstr "Name (nama)"
+
+msgid "Network"
+msgstr "Network (jaringan)"
+
+msgid "Network attached to instance."
+msgstr "Jaringan terpasang untuk instance."
+
+msgctxt "Current status of a Database Backup"
+msgid "New"
+msgstr "New (baru)"
+
+msgid "New Flavor"
+msgstr "New Flavor (flavor baru)"
+
+msgid "New Host"
+msgstr "New Host (host baru)"
+
+msgid "New Name"
+msgstr "New Name (nama baru)"
+
+msgid "New Password"
+msgstr "New Password (password baru)"
+
+msgid "New Size (GB)"
+msgstr "New Size (GB) (ukuran baru)"
+
+msgid "New password for cluster access."
+msgstr "Password baru untuk akses cluster."
+
+msgid "New size for volume must be greater than current size."
+msgstr "Ukuran baru untuk volume harus lebih besar dari ukuran saat ini."
+
+msgid "No availability zones found"
+msgstr "Tidak ada zona ketersediaan ditemukan"
+
+msgid "No backups available"
+msgstr "Tidak ada backup yang tersedia"
+
+msgid "No configuration groups available"
+msgstr "Tidak ada grup konfigurasi yang tersedia"
+
+msgid "No configurations available"
+msgstr "Tidak ada konfigurasi yang tersedia"
+
+msgid "No flavors available"
+msgstr "Tidak ada flavor tersedia"
+
+msgid "No instances available"
+msgstr "Tidak ada instance yang tersedia"
+
+msgid "No volume type"
+msgstr "Tidak ada jenis volume"
+
+msgid "None"
+msgstr "None (tak satupun)"
+
+msgid "Not Assigned"
+msgstr "Not Assigned (tidak ditugaskan)"
+
+msgid "Not Found"
+msgstr "Not Found (tidak ditemukan)"
+
+msgid "Not available"
+msgstr "Not available (tidak tersedia)"
+
+msgid ""
+"Note: Enable root access on an instance.  If the root user is already "
+"enabled then a new password is generated."
+msgstr ""
+"Catatan: Aktifkan akses root pada sebuah instance. Jika user root sudah "
+"diaktifkan maka password baru yang dihasilkan."
+
+msgid "Number of Instances"
+msgstr "Number of Instances (jumlah instance)"
+
+msgid "Number of Shards"
+msgstr "Number of Shards (jumlah serpihan)"
+
+msgid "Number of instances in the cluster."
+msgstr "Jumlah instance dalam cluster."
+
+msgid "Number of instances in the cluster. (Read only)"
+msgstr "Jumlah instance dalam cluster. (read only)"
+
+msgid "Number of shards. (Read only)"
+msgstr "Jumlah serpihan. (Read only)"
+
+msgid "Old Flavor"
+msgstr "Old Flavor (flavor lama)"
+
+msgid "Optional Backup Description"
+msgstr "Optional Backup Description (deskripsi cadangan opsional)"
+
+msgid "Optional character set for the database."
+msgstr "Set karakter opsional untuk database."
+
+msgid "Optional collation type for the database."
+msgstr "Tipe pemeriksaan opsional untuk database."
+
+msgid "Optional comma separated list of databases user has access to."
+msgstr ""
+"Daftar dipisahkan koma opsional di database pengguna memiliki akses ke."
+
+msgid "Optional datastore specific type of the instance."
+msgstr "Tipe tertentu datastore opsional untuk instance."
+
+msgid ""
+"Optional datastore specific value that defines the relationship from one "
+"instance in the cluster to another."
+msgstr ""
+"Nilai tertentu datastore opsional yang mendefinisikan hubungan dari satu "
+"instance dalam cluster ke instance yang lain."
+
+msgid "Optional host of user."
+msgstr "Host opsional pengguna."
+
+msgid "Optional name of the instance."
+msgstr "Nama opsional instance."
+
+msgid "Optional parent backup"
+msgstr "Backup indukn opsional"
+
+msgid ""
+"Optionally choose to create this database using a previous backup, or as a "
+"replica of another database instance."
+msgstr ""
+"Secara opsional memilih untuk membuat database ini menggunakan cadangan "
+"sebelumnya, atau sebagai replika contoh database lain."
+
+msgid "Optionally provide a character set and collation for the database."
+msgstr ""
+"Secara opsional menyediakan set karakter dan pemeriksaan untuk database."
+
+msgid "Optionally provide a comma separated list of databases to create:"
+msgstr ""
+"Secara opsional memberikan daftar dipisahkan koma dari database untuk "
+"membuat:"
+
+msgid ""
+"Optionally provide the host of the user and a list of databases the user is "
+"granted access to."
+msgstr ""
+"Secara opsional menyediakan host  pengguna dan daftar database dimana "
+"pengguna diberikan akses ke database itu."
+
+msgid "Overview"
+msgstr "Overview (ikhtisar)"
+
+msgid "PASSWORD"
+msgstr "PASSWORD (password)"
+
+msgid "Parameter"
+msgstr "Parameter (parameter)"
+
+msgid "Parameters"
+msgstr "Parameters (parameter)"
+
+msgid "Parent Backup"
+msgstr "Parent Backup (cadangan induk)"
+
+msgid "Password"
+msgstr "Password (password)"
+
+msgid "Password (required)"
+msgstr "Password (wajib)"
+
+msgid "Password for root user must be specified."
+msgstr "Password untuk user root harus ditentukan."
+
+msgid "Password for root user."
+msgstr "Password untuk user root."
+
+msgid ""
+"Password is only visible immediately after the root is enabled or reset."
+msgstr "Password hanya terlihat segera setelah akar diaktifkan atau reset."
+
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Harap dicatat:</strong> Nilai baru harus lebih besar dari ukuran volume yang "
+"ada."
+
+msgid "Promote"
+msgstr "Promote (promosi)"
+
+msgid "Promote to Replica Source"
+msgstr "Promote to Replica Source (promosi sumber replika)"
+
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "Replika dipromosikan \"%s\" sebagai sumber replika baru."
+
+msgid "Property"
+msgstr "Property (properti)"
+
+msgid "Publish"
+msgstr "Publish (penerbitan)"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "Publish Log"
+
+msgid "Publishable (bytes)"
+msgstr "Publishable (yang patut diterbitkan) (bytes)"
+
+msgid "Published (bytes)"
+msgstr "Published  (diterbitkan) (bytes)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "Published Log"
+
+msgid "RAM"
+msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Rebooting"
+msgstr "Rebooting (melakukan reboot)"
+
+msgid "Related To"
+msgstr "Related To"
+
+msgid "Remove Instance"
+msgid_plural "Remove Instances"
+msgstr[0] "Remove Instance"
+
+msgid "Removed Instance"
+msgid_plural "Removed Instances"
+msgstr[0] "Removed Instance"
+
+msgid "Removed instances from cluster."
+msgstr "Instance dihapus dari cluster."
+
+msgid "Replica Count"
+msgstr "Replica Count (jumlah salinan)"
+
+msgid "Replica Detached"
+msgid_plural "Replicas Detached"
+msgstr[0] "Replica Detached"
+
+msgid "Replicas"
+msgstr "Replicas (salinan)"
+
+msgid "Replicate from Instance"
+msgstr "Mereplikasi dari Instance"
+
+msgid "Replication"
+msgstr "Replication (tiruan)"
+
+msgid "Reset Parameters"
+msgstr "Reset Parameters (pengaturan ulang parameter)"
+
+msgid "Reset Root Password"
+msgstr "Reset Root Password (mengatur ulang password root) "
+
+msgid "Resize Database Instance"
+msgstr "Resize Database Instance (perubahan ukuran instance database)"
+
+msgid "Resize Database Volume"
+msgstr "Resize Database Volume (perubahan ukuran volume database)"
+
+msgid "Resize Instance"
+msgstr "Resize Instance (perubahan ukuran instance)"
+
+msgid "Resize Volume"
+msgstr "Resize Volume (perubahan ukuran volume)"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resizing"
+msgstr "Resizing (perubahan ukurang)"
+
+#, python-format
+msgid "Resizing instance \"%s\""
+msgstr "Mengubah ukuran instance \"%s\""
+
+#, python-format
+msgid "Resizing volume \"%s\""
+msgstr "Perubahan ukuran volume \"%s\""
+
+msgid "Restart Instance"
+msgid_plural "Restart Instances"
+msgstr[0] "Restart Instance"
+
+msgctxt "Current status of a Database Instance"
+msgid "Restart Required"
+msgstr "Restart Required (restart diperlukan)"
+
+msgid "Restarted Instance"
+msgid_plural "Restarted Instances"
+msgstr[0] "Restarted Instance"
+
+msgid "Restarted instances will lose any data not saved in persistent storage."
+msgstr ""
+"Instance yang direstart akan kehilangan data tidak disimpan dalam "
+"penyimpanan persisten."
+
+msgid "Restore Backup"
+msgstr "Restore Backup (pengembalian cadangan)"
+
+msgid "Restore from Backup"
+msgstr "Restore dari Backup"
+
+msgid "Return to Log List"
+msgstr "Return to Log List (kembali ke daftar catatan)"
+
+msgid "Revoke Access"
+msgid_plural "Revoke Access"
+msgstr[0] "Revoke Access"
+
+msgid "Root Enabled"
+msgstr "Root Enabled (root diaktifkan)"
+
+msgid "Root Password"
+msgstr "Root Password (password root)"
+
+#, python-format
+msgid "Root password updated for cluster \"%s\""
+msgstr "Password root diperbarui untuk cluster \"%s\""
+
+msgctxt "Current status of a Database Backup"
+msgid "Saving"
+msgstr "Saving (penyimpanan)"
+
+msgid "Scheduled Shrinking of Cluster"
+msgid_plural "Scheduled Shrinking of Cluster"
+msgstr[0] "Scheduled Shrinking of Cluster"
+
+#, python-format
+msgid "Scheduled backup \"%(name)s\"."
+msgstr "Backup dijadwalkan\"%(name)s\"."
+
+msgid "Scheduled deletion of Cluster"
+msgid_plural "Scheduled deletion of Clusters"
+msgstr[0] "Scheduled deletion of Cluster"
+
+msgid "Scheduled deletion of Instance"
+msgid_plural "Scheduled deletion of Instances"
+msgstr[0] "Scheduled deletion of Instance"
+
+msgid "Scheduled growing of cluster."
+msgstr "Dijadwalkan pertumbuhan cluster."
+
+msgid "Select a backup to restore"
+msgstr "Pilih cadangan untuk mengembalikan"
+
+msgid "Select a configuration group"
+msgstr "Pilih grup konfigurasi"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr "Pilih grup konfigurasi untuk melekat pada instance database."
+
+msgid "Select a master instance"
+msgstr "Pilih instance induk"
+
+msgid "Select a new flavor"
+msgstr "Pilih flavor baru"
+
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr "Pilih parameter dan memberikan nilai untuk parameter konfigurasi."
+
+msgid "Select backup"
+msgstr "Pilih backup"
+
+msgid "Select configuration"
+msgstr "Pilih konfigurasi"
+
+msgid "Select configuration group"
+msgstr "Pilih grup konfigurasi"
+
+msgid "Select datastore type and version"
+msgstr "Pilih tipe datastore dan versi"
+
+msgid "Select instance"
+msgstr "Pilih instance"
+
+msgid "Select parent backup"
+msgstr "Pilih cadangan induknya"
+
+msgid "Select the instance(s) that will be removed from the cluster."
+msgstr "Pilih instance yang akan dihapus dari cluster."
+
+msgid "Selected networks"
+msgstr "Jaringan yang dipilih"
+
+msgid "Shrink Cluster"
+msgid_plural "Shrink Cluster"
+msgstr[0] "Shrink Cluster"
+
+msgid "Shrink Cluster: {{cluster_name}}"
+msgstr "Shrink Cluster: {{cluster_name}}"
+
+msgid "Shrinking a cluster is not recoverable."
+msgstr "Menyusut cluster tidak dapat dipulihkan."
+
+msgctxt "Current status of a Database Instance"
+msgid "Shutdown"
+msgstr "Shutdown (mematikan)"
+
+msgid "Size"
+msgstr "Size (size)"
+
+msgid "Size of image to launch."
+msgstr "Ukuran image untuk memulai."
+
+msgid "Size of instance to launch."
+msgstr "Ukuran instance untuk memulai."
+
+msgid "Size of the volume in GB."
+msgstr "Ukuran volume dalam GB."
+
+msgid "Source for Initial State"
+msgstr "Source untuk Initial State"
+
+msgid "Specify a new flavor for the database instance."
+msgstr "Tentukan flavor baru untuk instance database."
+
+msgid "Specify a new name, new password or new host name for the user."
+msgstr "Tentukan nama baru, password baru atau nama host baru bagi pengguna."
+
+msgid "Specify the details for launching an instance."
+msgstr "Tentukan rincian untuk meluncurkan sebuah instance."
+
+msgid "Specify the details for the database backup."
+msgstr "Tentukan rincian untuk backup database."
+
+msgid "Specify the details of the instance to be added to the cluster."
+msgstr "Menentukan rincian instance yang akan ditambahkan ke cluster."
+
+msgid ""
+"Specify the instances to be added to the cluster.  When all the instances "
+"are specified click 'Grow Cluster' to perform the grow operation."
+msgstr ""
+"Tentukan instance yang akan ditambahkan ke cluster. Ketika semua instance "
+"yang klik ditentukan 'Grow Cluster'  untuk melakukan operasi tumbuh."
+
+msgid "Specify the name of the new database."
+msgstr "Tentukan nama database baru."
+
+msgid "Specify the name of the new user and password."
+msgstr "Tentukan nama pengguna dan password baru."
+
+msgid "Specify the new root password for vertica cluster."
+msgstr "Tentukan password root baru untuk cluster vertica."
+
+msgid "Specify the new volume size for the database instance."
+msgstr "Tentukan ukuran volume baru untuk instance database."
+
+msgid "Specify the number of replicas to be created"
+msgstr "Tentukan jumlah replika yang akan dibuat"
+
+msgid ""
+"Specify whether future replicated instances will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity). This "
+"value is ignored if the instance to be launched is a replica."
+msgstr ""
+"Menentukan apakah instance yang direplikasi masa depan akan dibuat pada "
+"hypervisor yang sama (afinitas) atau pada hypervisors berbeda (anti-"
+"afinitas). Nilai ini diabaikan jika instance yang akan diluncurkan adalah "
+"replika."
+
+msgid ""
+"Specify whether instances in the cluster will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity)."
+msgstr ""
+"Menentukan apakah instance di cluster akan dibuat pada hypervisor yang sama "
+"(afinitas) atau pada hypervisors berbeda (anti-afinitas)."
+
+msgid "Specs"
+msgstr "Specs (spesifikasi)"
+
+msgid "Status"
+msgstr "Status (keadaan)"
+
+msgid "Status if root was ever enabled for an instance."
+msgstr "Keadaan jika root pernah diaktifkan untuk sebuah instance."
+
+msgid "Successfully added parameter"
+msgstr "Berhasil ditambahkan parameter"
+
+msgid "Successfully disabled root access."
+msgstr "Berhasil menonaktifkan akses root."
+
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional.  See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"Kolom 'Instance Type' dan 'Related To'  adalah datastore spesifik dan "
+"opsional. Lihat dokumentasi Trove untuk informasi lebih lanjut tentang "
+"menggunakan kolom ini."
+
+msgid "The flavor must be specified."
+msgstr "Flavor harus ditentukan."
+
+msgid ""
+"The name field is optional.   If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr ""
+"Kolom nama adalah opsional. Jika Kolom ini dibiarkan kosong maka nama akan "
+"dihasilkan ketika cluster tumbuh."
+
+msgid "The number of instances must be greater than 1."
+msgstr "Jumlah instance harus lebih besar dari 1."
+
+msgid "The number of shards must be greater than 1."
+msgstr "Jumlah serpihan harus lebih besar dari 1."
+
+msgid "There was a problem enabling root."
+msgstr "Ada masalah mengaktifkan root."
+
+msgid "This action cannot be undone."
+msgstr "Tindakan ini tidak bisa dibatalkan."
+
+msgid "Type"
+msgstr "Type (tipe)"
+
+msgid "Type and version of datastore."
+msgstr "Tipe dan versi datastore."
+
+msgid "USERNAME"
+msgstr "USERNAME (username)"
+
+#, python-format
+msgid "Unable to %(action)s: %(objs)s"
+msgstr "Tidak bisa %(action)s: %(objs)s"
+
+#, python-format
+msgid "Unable to add new parameter: %s"
+msgstr "Tidak dapat menambahkan parameter baru: %s"
+
+#, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "Tidak dapat melekatkan grup konfigurasi. %s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "Tidak dapat membuat grup konfigurasi %s"
+
+#, python-format
+msgid "Unable to create database. %s"
+msgstr "Tidak dapat membuat database. %s"
+
+msgid "Unable to create list of parameters."
+msgstr "Tidak dapat membuat daftar parameter."
+
+#, python-format
+msgid "Unable to create user. %s"
+msgstr "Tidak dapat membuat pengguna. %s"
+
+msgid "Unable to determine if instance root is enabled."
+msgstr "Tidak dapat menentukan apakah instance akar diaktifkan."
+
+msgid "Unable to find backup!"
+msgstr "Tidak dapat menemukan cadangan (backup) !"
+
+msgid "Unable to find configuration group!"
+msgstr "Tidak dapat menemukan grup konfigurasi!"
+
+msgid "Unable to find master instance!"
+msgstr "Tidak dapat menemukan instance utama!"
+
+msgid "Unable to get configuration data."
+msgstr "Tidak dapat mendapatkan data konfigurasi."
+
+msgid "Unable to get database backup data."
+msgstr "Tidak dapat mendapatkan data backup database."
+
+msgid "Unable to get databases data."
+msgstr "Tidak dapat mendapatkan data database."
+
+msgid "Unable to get instances data."
+msgstr "Tidak dapat mendapatkan data instance."
+
+msgid "Unable to get user access data."
+msgstr "Tidak dapat mendapatkan akses data pengguna."
+
+msgid "Unable to get user data."
+msgstr "Tidak dapat mendapatkan data pengguna."
+
+#, python-format
+msgid "Unable to grow cluster. %s"
+msgstr "Tidak dapat mengembangkan cluster. %s"
+
+#, python-format
+msgid "Unable to grow cluster: %s"
+msgstr "Tidak dapat tumbuh klaster: %s"
+
+#, python-format
+msgid "Unable to launch %(count)s named \"%(name)s\"."
+msgstr "Tidak dapat meluncurkan %(count)s named \"%(name)s\"."
+
+#, python-format
+msgid "Unable to launch cluster. %s"
+msgstr "Tidak dapat meluncurkan klaster. %s"
+
+msgid "Unable to list database backups for parent."
+msgstr "Tidak dapat mendaftar backup database untuk induknya."
+
+msgid "Unable to list database instances to backup."
+msgstr "Tidak dapat mendaftar instance database untuk backup."
+
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"Tidak bisa memuat {0} log\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "Tidak bisa memuat {0} log untuk instance \"{1}\"."
+
+msgid "Unable to obtain datastore versions."
+msgstr "Tidak dapat memperoleh versi datastore."
+
+msgid "Unable to obtain datastores."
+msgstr "Tidak dapat memperoleh datastores."
+
+msgid "Unable to obtain flavors."
+msgstr "Tidak dapat memperoleh flavor."
+
+msgid "Unable to obtain information on root user"
+msgstr "Tidak dapat memperoleh informasi tentang root user"
+
+msgid "Unable to obtain list of parameters."
+msgstr "Tidak dapat memperoleh daftar parameter."
+
+#, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr "Tidak dapat mempromosikan replika sebagai sumber replika baru.  \"%s\""
+
+#, python-format
+msgid "Unable to remove instances from cluster: %s"
+msgstr "Tidak dapat menghapus instance dari gugus: %s"
+
+#, python-format
+msgid "Unable to reset password. %s"
+msgstr "Tidak dapat me-reset password. %s"
+
+#, python-format
+msgid "Unable to resize instance. %s"
+msgstr "Tidak dapat mengubah ukuran instance. %s"
+
+#, python-format
+msgid "Unable to resize volume. %s"
+msgstr "Tidak dapat mengubah ukuran volume. %s"
+
+msgid "Unable to retrieve accessible databases."
+msgstr "Tidak dapat mengambil database yang dapat diakses."
+
+msgid "Unable to retrieve availability zones."
+msgstr "Tidak dapat mengambil zona ketersediaan."
+
+msgid "Unable to retrieve cluster details."
+msgstr "Tidak dapat mengambil rincian cluster."
+
+msgid "Unable to retrieve database clusters."
+msgstr "Tidak dapat mengambil cluster database."
+
+msgid "Unable to retrieve database instances."
+msgstr "Tidak dapat mengambil instance database."
+
+msgid "Unable to retrieve database size information."
+msgstr "Tidak dapat mengambil informasi ukuran database."
+
+msgid "Unable to retrieve databases."
+msgstr "Tidak dapat mengambil database."
+
+#, python-format
+msgid "Unable to retrieve details for backup: %s"
+msgstr "Tidak dapat mengambil rincian untuk backup: %s"
+
+#, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr "Tidak dapat mengambil rincian untuk kelompok konfigurasi: % s"
+
+#, python-format
+msgid "Unable to retrieve details for database cluster: %s"
+msgstr "Tidak dapat mengambil rincian untuk cluster database: %s"
+
+#, python-format
+msgid "Unable to retrieve details for database instance: %s"
+msgstr "Tidak dapat mengambil rincian untuk instance database: %s"
+
+#, python-format
+msgid "Unable to retrieve details for parent backup: %s"
+msgstr "Tidak dapat mengambil rincian untuk backup induknya: %s"
+
+msgid "Unable to retrieve flavors."
+msgstr "Tidak dapat mengambil flavor."
+
+msgid "Unable to retrieve instance details."
+msgstr "Tidak dapat mengambil rincian instance."
+
+#, python-format
+msgid ""
+"Unable to retrieve list of logs.\n"
+"%s"
+msgstr ""
+"Tidak dapat mengambil daftar log.\n"
+"%s"
+
+msgid "Unable to retrieve networks."
+msgstr "Tidak dapat mengambil jaringan."
+
+#, python-format
+msgid "Unable to update user. %s"
+msgstr "Tidak dapat memperbarui pengguna. %s"
+
+msgid "Unknown"
+msgstr "Unknown (tidak diketahui)"
+
+msgid "Updated"
+msgstr "Updated (diperbarui)"
+
+#, python-format
+msgid "Updated user \"%s\"."
+msgstr "Diperbarui pengguna \"%s\"."
+
+msgid "User Name"
+msgstr "User Name (nama user)"
+
+msgid "Username (required)"
+msgstr "Username (wajib)"
+
+msgid "Users"
+msgstr "Users (pengguna)"
+
+msgid "Value"
+msgstr "Value (nilai)"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "Nilai harus \"true\" atau \"false\"."
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "Nilai harus berupa angka antara %(min)s dan %(max)s."
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "Nilai harus berupa angka lebih besar dari atau sama dengan %s."
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "Nilai harus berupa angka kurang dari atau sama dengan %s."
+
+msgid "Value must be a number."
+msgstr "Nilai harus berupa angka"
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "Nilai harus dari tipe %s."
+
+msgid "Values"
+msgstr "Values (nilai)"
+
+msgid "View Full Log"
+msgstr "View Full Log (melihat catalan seluruhnya)"
+
+msgid "View Log"
+msgstr "View Log (melihat catatan)"
+
+msgid "Volume"
+msgstr "Volume (volume)"
+
+msgid "Volume Size"
+msgstr "Volume Size (ukuran volume)"
+
+msgid "Volume Type"
+msgstr "Volume Type (tipe volume)"
+
+#, python-format
+msgid "You are not allowed to %(action)s: %(objs)s"
+msgstr "Anda tidak diizinkan untuk %(action)s: %(objs)s"
+
+msgid ""
+"You can perform an incremental backup by specifying a parent backup. "
+"<strong>However,</strong> not all databases support incremental backups in "
+"which case this operation will result in an error."
+msgstr ""
+"Anda dapat melakukan incremental backup dengan menetapkan cadangan induknya. "
+"<Strong> However,</ strong> tidak semua database mendukung incremental "
+"backup dalam hal operasi ini akan mengakibatkan kesalahan."
+
+msgid "You must select a datastore type and version."
+msgstr "Anda harus memilih jenis datastore dan versi."
+
+msgid "You must select a flavor."
+msgstr "Anda harus memilih sebuah flavor."
+
+msgid "You must specify a password if you create a user."
+msgstr "Anda harus menentukan password jika Anda membuat user."
+
+msgid "You must specify at least one database if you create a user."
+msgstr "Anda harus menentukan setidaknya satu database jika Anda membuat user."
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+
+msgid "instance"
+msgstr "instance"

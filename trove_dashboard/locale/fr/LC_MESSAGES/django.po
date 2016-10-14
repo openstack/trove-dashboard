@@ -1,14 +1,15 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Corinne Verheyde <cverheyd@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-13 18:48+0000\n"
+"POT-Creation-Date: 2016-10-07 13:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-03-28 07:00+0000\n"
-"Last-Translator: JF Taltavull <jftalta@gmail.com>\n"
+"PO-Revision-Date: 2016-10-13 04:48+0000\n"
+"Last-Translator: Corinne Verheyde <cverheyd@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -442,7 +443,10 @@ msgstr "%(count)s instance(s) nommée(s) \"%(name)s\" ont été lancée(s)."
 
 #, python-format
 msgid "Launched cluster \"%s\""
-msgstr "Cluster démarré \"%s\""
+msgstr "Cluster \"%s\" démarré"
+
+msgid "Locality"
+msgstr "Localisation"
 
 msgid "Manage Access"
 msgstr "Gérer les accès"
@@ -543,7 +547,7 @@ msgid "Old Flavor"
 msgstr "Ancien gabarit"
 
 msgid "Optional Backup Description"
-msgstr "Description de la sauvegarde optionnelle"
+msgstr "Description de sauvegarde optionnelle"
 
 msgid "Optional character set for the database."
 msgstr "Codage des caractères optionnel pour la base de données"
@@ -643,7 +647,7 @@ msgstr[0] "Instance supprimée"
 msgstr[1] "Instances supprimées"
 
 msgid "Removed instances from cluster."
-msgstr "Instances depuis le cluster supprimées"
+msgstr "Instances supprimées du cluster"
 
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
@@ -843,6 +847,13 @@ msgid "Specify the new volume size for the database instance."
 msgstr ""
 "Spécifier la nouvelle taille du volume pour l'instance de base de données."
 
+msgid ""
+"Specify whether instances in the cluster will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity)."
+msgstr ""
+"Spécifie si des instances dans le cluster seront crées sur le même "
+"hyperviseur (affinité) ou sur des hyperviseurs différents (anti-affinité)."
+
 msgid "Specs"
 msgstr "Spécifications"
 
@@ -869,7 +880,7 @@ msgid ""
 "generated when the cluster is grown."
 msgstr ""
 "Le champs nom est optionnel.  Si le champs est laissé vide, un nom sera "
-"généré quand le cluster sera agrandi."
+"généré lors de l’agrandissement du cluster."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Le nombre d'instances doit être supérieur à 1."
@@ -948,10 +959,10 @@ msgid "Unable to list database instances to backup."
 msgstr "Impossible de lister les instances de base de données à sauvegarder."
 
 msgid "Unable to obtain datastore versions."
-msgstr "Impossible d'obtenir la version du datastore."
+msgstr "Impossible d'obtenir les versions de datastores."
 
 msgid "Unable to obtain datastores."
-msgstr "Impossible d'obtenir les banques de données."
+msgstr "Impossible d'obtenir les datastores."
 
 msgid "Unable to obtain flavors."
 msgstr "Impossible d'obtenir les gabarits."
@@ -961,7 +972,7 @@ msgstr "Impossible d'obtenir les informations de l'utilisateur Root"
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
-msgstr "Impossible de supprimer les instances depuis le cluster : %s"
+msgstr "Impossible de supprimer les instances du cluster : %s"
 
 #, python-format
 msgid "Unable to reset password. %s"
@@ -979,7 +990,7 @@ msgid "Unable to retrieve accessible databases."
 msgstr "Impossible de récupérer les bases de données accessibles."
 
 msgid "Unable to retrieve cluster details."
-msgstr "Impossible de trouver les détails du cluster."
+msgstr "Impossible de récupérer les détails du cluster."
 
 msgid "Unable to retrieve database clusters."
 msgstr "Impossible de trouver les clusters de base de donnée."
@@ -1010,7 +1021,7 @@ msgstr ""
 
 #, python-format
 msgid "Unable to retrieve details for parent backup: %s"
-msgstr "Impossible de recupérer les détails de la sauvegarde totale: %s"
+msgstr "Impossible de récupérer les détails de la sauvegarde totale: %s"
 
 msgid "Unable to retrieve flavors."
 msgstr "Impossible de récupérer les gabarits."
@@ -1074,6 +1085,14 @@ msgid "You must specify at least one database if you create a user."
 msgstr ""
 "Vous devez spécifier au moins une base de données si vous créez un "
 "utilisateur."
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "instance"

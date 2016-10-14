@@ -1,0 +1,40 @@
+# Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2016-10-07 13:57+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-28 02:47+0000\n"
+"Last-Translator: Maxim Bozhenko <mbozhenko@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+msgid "Created"
+msgstr "Создано"
+
+msgid "Database"
+msgstr "База данных"
+
+msgid "Datastore"
+msgstr "Хранилище"
+
+msgid "Datastore Version"
+msgstr "Версия хранилища"
+
+msgid "Incremental"
+msgstr "Инкрементальный"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Unable to retrieve the Backups."
+msgstr "Невозможно получить резервные копии."
+
+msgid "status"
+msgstr "Статус"

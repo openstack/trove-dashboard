@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Trove Dashboard Release Notes 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-04 17:26+0000\n"
+"POT-Creation-Date: 2016-10-07 13:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,12 +17,6 @@ msgstr ""
 
 msgid "7.0.0.0b2"
 msgstr "7.0.0.0b2"
-
-msgid ":ref:`genindex`"
-msgstr ":ref:`genindex`"
-
-msgid ":ref:`modindex`"
-msgstr ":ref:`modindex`"
 
 msgid ":ref:`search`"
 msgstr ":ref:`search`"
@@ -49,12 +43,6 @@ msgstr "在dashboard的集群详情endpoint列表中展示所有的endpoints"
 
 msgid "Enable cluster support for MariaDB and Cassandra."
 msgstr "启动MariaDB和Cassandra的集群支持。"
-
-msgid "Indices and tables"
-msgstr "索引和表格"
-
-msgid "Mitaka Series Release Notes"
-msgstr "Mitaka 版本发布说明"
 
 msgid "New Features"
 msgstr "新特性"

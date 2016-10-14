@@ -4,14 +4,14 @@
 # Yoshiki Eguchi <yoshiki.eguchi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-13 18:48+0000\n"
+"POT-Creation-Date: 2016-10-07 13:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-02 02:17+0000\n"
-"Last-Translator: Yoshiki Eguchi <yoshiki.eguchi@gmail.com>\n"
+"PO-Revision-Date: 2016-09-30 03:49+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -80,6 +80,16 @@ msgstr "追加"
 msgid "Add Instance"
 msgstr "インスタンスの追加"
 
+msgid "Add Parameter"
+msgstr "パラメーターの追加"
+
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"設定グループのパラメーターを追加してください。全てのパラメーターが追加した"
+"ら、変更を保存するために「変更の適用」をクリックしてください。"
+
 msgid "Advanced"
 msgstr "高度な設定"
 
@@ -99,13 +109,32 @@ msgstr "許可ホスト"
 msgid "Allowed Host (optional)"
 msgstr "許可ホスト (省略可)"
 
+msgid "Any Availability Zone"
+msgstr "すべてのアベイラビリティーゾーン"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "ボリュームサイズが指定された場合のみ有効です。"
+
+msgid "Applied changes to server"
+msgstr "変更をサーバーに適用しました"
+
+msgid "Apply Changes"
+msgstr "変更の適用"
 
 msgid "At least one of the new fields must be changed."
 msgstr ""
 "新しい値を指定するフィールドの少なくとも 1 つは、値が変更されていないければい"
 "けません。"
+
+msgid "Attach Configuration Group"
+msgstr "設定グループの適用"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "設定グループ \"%s\" を適用中"
+
+msgid "Availability Zone"
+msgstr "アベイラビリティーゾーン"
 
 msgid "Available networks"
 msgstr "利用可能なネットワーク"
@@ -197,6 +226,30 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "完了"
 
+msgid "Configuration Defaults"
+msgstr "設定のデフォルト値"
+
+msgid "Configuration Group"
+msgstr "設定グループ"
+
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "設定グループの詳細: {{configuration.name}}"
+
+msgid "Configuration Group Instances"
+msgstr "設定グループのインスタンス"
+
+msgid "Configuration Group Name"
+msgstr "設定グループ名"
+
+msgid "Configuration Group Overview"
+msgstr "設定グループの概要"
+
+msgid "Configuration Group Values"
+msgstr "設定グループ値"
+
+msgid "Configuration Groups"
+msgstr "設定グループ"
+
 msgid ""
 "Confirm the current replica is to be promoted as the new replica source."
 msgstr "現在のレプリカを新しいレプリカ元に昇格することを確認してください。"
@@ -213,6 +266,9 @@ msgstr "コンテナー"
 msgid "Create Backup"
 msgstr "バックアップの作成"
 
+msgid "Create Configuration Group"
+msgstr "設定グループの作成"
+
 msgid "Create Database"
 msgstr "データベースの作成"
 
@@ -228,6 +284,9 @@ msgstr ""
 
 msgid "Created"
 msgstr "作成時刻"
+
+msgid "Created configuration group"
+msgstr "設定グループを作成しました"
 
 #, python-format
 msgid "Created database \"%s\"."
@@ -285,6 +344,9 @@ msgstr "データストア"
 msgid "Datastore Version"
 msgstr "データストアバージョン"
 
+msgid "Defaults"
+msgstr "デフォルト値"
+
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
 msgstr[0] "バックアップの削除"
@@ -330,9 +392,17 @@ msgstr "削除されたインスタンスは元に戻すことはできません
 msgid "Description"
 msgstr "説明"
 
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "設定グループの解除"
+
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] "レプリカの切断"
+
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "設定グループを解除しました"
 
 msgid "Details"
 msgstr "詳細"
@@ -347,6 +417,9 @@ msgstr "ルートの無効化"
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "ログを無効にしました"
+
+msgid "Discard Changes"
+msgstr "変更の破棄"
 
 msgid "Discard Log"
 msgid_plural "Discard Logs"
@@ -388,6 +461,9 @@ msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "エラー"
 
+msgid "Error applying changes"
+msgstr "変更の適用中にエラーが発生しました"
+
 msgid "Error creating database backup."
 msgstr "データベースのバックアップ作成でエラーが発生しました。"
 
@@ -398,8 +474,15 @@ msgstr "インスタンスからのデータベースの削除でエラーが発
 msgid "Error downloading log file: %s"
 msgstr "ログファイルのダウンロードに失敗しました:  %s"
 
+msgid "Error getting configuration group list."
+msgstr "設定グループ一覧の取得でエラーが発生しました。"
+
 msgid "Error getting database backup list."
 msgstr "データベースのバックアップ一覧の取得でエラーが発生しました。"
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "パラメーターのリセット中にエラーが発生しました: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
@@ -453,6 +536,9 @@ msgstr "差分"
 msgid "Incremental Backup"
 msgstr "差分バックアップ"
 
+msgid "Info"
+msgstr "情報"
+
 msgid "Information"
 msgstr "情報"
 
@@ -502,6 +588,9 @@ msgstr "名前が \"%(name)s\" の %(count)s を起動しました。"
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr "クラスター \"%s\" を起動しました。"
+
+msgid "Locality"
+msgstr "局所性"
 
 msgid "Log"
 msgstr "ログ"
@@ -573,8 +662,17 @@ msgstr "クラスターへのアクセスに使用する新しいパスワード
 msgid "New size for volume must be greater than current size."
 msgstr "新しいボリュームサイズは現在のサイズよりも大きい必要があります。"
 
+msgid "No availability zones found"
+msgstr "アベイラビリティーゾーンがありません"
+
 msgid "No backups available"
 msgstr "バックアップがありません"
+
+msgid "No configuration groups available"
+msgstr "設定グループがありません"
+
+msgid "No configurations available"
+msgstr "設定がありません"
 
 msgid "No flavors available"
 msgstr "利用可能なフレーバーがありません"
@@ -682,6 +780,12 @@ msgstr "概要"
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
+msgid "Parameter"
+msgstr "パラメーター"
+
+msgid "Parameters"
+msgstr "パラメーター"
+
 msgid "Parent Backup"
 msgstr "親バックアップ"
 
@@ -718,6 +822,9 @@ msgstr "レプリカ元へ昇格"
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
 msgstr "レプリカ \"%s\" を新しいレプリカ元に昇格しました。"
+
+msgid "Property"
+msgstr "プロパティー"
 
 msgid "Publish"
 msgstr "公開"
@@ -772,6 +879,9 @@ msgstr "インスタンスから複製"
 
 msgid "Replication"
 msgstr "レプリケーション"
+
+msgid "Reset Parameters"
+msgstr "パラメーターのリセット"
 
 msgid "Reset Root Password"
 msgstr "ルートパスワードのリセット"
@@ -866,14 +976,29 @@ msgstr "クラスターの拡張を予約しました。"
 msgid "Select a backup to restore"
 msgstr "リストアするバックアップを選択してください"
 
+msgid "Select a configuration group"
+msgstr "設定グループを選択してください"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr "このデータベースインスタンスに適用する設定グループを選択してください。"
+
 msgid "Select a master instance"
 msgstr "マスターインスタンスを選択してください"
 
 msgid "Select a new flavor"
 msgstr "新しいフレーバーを選択してください"
 
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr "パラメーターを選択して、設定パラメーターの値を指定してください。"
+
 msgid "Select backup"
 msgstr "バックアップを選択してください"
+
+msgid "Select configuration"
+msgstr "設定を選択してください"
+
+msgid "Select configuration group"
+msgstr "設定グループを選択してください"
 
 msgid "Select datastore type and version"
 msgstr "データストアの種別とバージョンを選択してください"
@@ -959,6 +1084,13 @@ msgstr "データベースインスタンスのボリュームの新しいサイ
 msgid "Specify the number of replicas to be created"
 msgstr "作成するレプリカ数を指定します。"
 
+msgid ""
+"Specify whether instances in the cluster will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity)."
+msgstr ""
+"クラスター内のインスタンスが同じハイパーバイザーに作成されるか (affinity)、別"
+"のハイパーバイザーに作成されるか (anti-affinity) を指定します。"
+
 msgid "Specs"
 msgstr "スペック"
 
@@ -967,6 +1099,9 @@ msgstr "ステータス"
 
 msgid "Status if root was ever enabled for an instance."
 msgstr "インスタンスでこれまでにルートが有効にされたことがあるかのスタータス。"
+
+msgid "Successfully added parameter"
+msgstr "パラメーターを正常に追加しました"
 
 msgid "Successfully disabled root access."
 msgstr "ルートアクセスを無効化しました。"
@@ -1016,8 +1151,23 @@ msgid "Unable to %(action)s: %(objs)s"
 msgstr "%(action)s を実行できません: %(objs)s"
 
 #, python-format
+msgid "Unable to add new parameter: %s"
+msgstr "新しいパラメーターを追加できません: %s"
+
+#, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "設定グループを適用できません。 %s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "設定グループを作成できません。 %s"
+
+#, python-format
 msgid "Unable to create database. %s"
 msgstr "データベースを作成できません: %s"
+
+msgid "Unable to create list of parameters."
+msgstr "パラメーターの一覧を作成できません。"
 
 #, python-format
 msgid "Unable to create user. %s"
@@ -1029,8 +1179,14 @@ msgstr "インスタンスのルートが有効になっているか判定でき
 msgid "Unable to find backup!"
 msgstr "バックアップが見つかりません！"
 
+msgid "Unable to find configuration group!"
+msgstr "設定が見つかりません！"
+
 msgid "Unable to find master instance!"
 msgstr "マスターインスタンスが見つかりません。"
+
+msgid "Unable to get configuration data."
+msgstr "設定データを取得できません。"
 
 msgid "Unable to get database backup data."
 msgstr "データベースバックアップの一覧を取得できません。"
@@ -1091,6 +1247,9 @@ msgstr "フレーバー一覧を取得できません。"
 msgid "Unable to obtain information on root user"
 msgstr "ルートユーザーの情報を取得できません。"
 
+msgid "Unable to obtain list of parameters."
+msgstr "パラメーターの一覧を取得できません。"
+
 #, python-format
 msgid "Unable to promote replica as the new replica source.  \"%s\""
 msgstr "新しいレプリカ元としてレプリカを昇格できません。 \"%s\""
@@ -1114,6 +1273,9 @@ msgstr "ボリュームをリサイズできません。%s"
 msgid "Unable to retrieve accessible databases."
 msgstr "アクセス可能なデータベースの一覧を取得できません。"
 
+msgid "Unable to retrieve availability zones."
+msgstr "アベイラビリティーゾーンを取得できません。"
+
 msgid "Unable to retrieve cluster details."
 msgstr "クラスターの詳細を取得できません。"
 
@@ -1132,6 +1294,10 @@ msgstr "データベースの一覧を取得できません。"
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
 msgstr "バックアップの詳細を取得できません: %s"
+
+#, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr "設定グループの詳細を取得できません: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
@@ -1185,6 +1351,34 @@ msgstr "ユーザー名 (必須)"
 msgid "Users"
 msgstr "ユーザー"
 
+msgid "Value"
+msgstr "値"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "値は True または False でなければなりません。"
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "値は %(min)s から %(max)s までの数字でなければなりません。"
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "値は %s 以上でなければなりません。"
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "値は %s 以下でなければなりません。"
+
+msgid "Value must be a number."
+msgstr "値は数字でなければなりません。"
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "値のタイプは %s でなければなりません。"
+
+msgid "Values"
+msgstr "値"
+
 msgid "View Full Log"
 msgstr "すべてのログの表示"
 
@@ -1216,6 +1410,9 @@ msgstr ""
 msgid "You must select a datastore type and version."
 msgstr "データストアの種別とバージョンを選択する必要があります。"
 
+msgid "You must select a flavor."
+msgstr "フレーバーを選択しなければいけません。"
+
 msgid "You must specify a password if you create a user."
 msgstr "ユーザーを作成する場合は、パスワードを指定する必要があります。"
 
@@ -1223,6 +1420,14 @@ msgid "You must specify at least one database if you create a user."
 msgstr ""
 "ユーザーを作成する場合は、データベースを少なくとも 1 つ指定する必要がありま"
 "す。"
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+msgstr ""
+"[フレーバー=%(flavor)s, ボリューム=%(volume)s, 名前=%(name)s, タイプ="
+"%(type)s, 関連付け先=%(related_to)s, NIC(s)=%(nics)s]"
 
 msgid "instance"
 msgstr "インスタンス"

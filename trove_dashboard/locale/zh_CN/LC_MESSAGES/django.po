@@ -1,16 +1,17 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# BillXiang <1138647106@qq.com>, 2016. #zanata
 # Yu Long <yulongxn@163.com>, 2016. #zanata
 # sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0b4.dev15\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-09-13 18:48+0000\n"
+"POT-Creation-Date: 2016-10-07 13:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-12 12:09+0000\n"
-"Last-Translator: sunanchen <KF.sunanchen@h3c.com>\n"
+"PO-Revision-Date: 2016-10-01 02:21+0000\n"
+"Last-Translator: BillXiang <1138647106@qq.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -104,6 +105,9 @@ msgstr "允许的主机"
 msgid "Allowed Host (optional)"
 msgstr "允许主机(可选)"
 
+msgid "Any Availability Zone"
+msgstr "所有可用区"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "只有卷大小指定后才可以应用。"
 
@@ -122,6 +126,9 @@ msgstr "连接配置组"
 #, python-format
 msgid "Attaching Configuration group \"%s\""
 msgstr "正在连接配置组\"%s\""
+
+msgid "Availability Zone"
+msgstr "可用区"
 
 msgid "Available networks"
 msgstr "可用网络"
@@ -576,6 +583,9 @@ msgstr "启动了%(count)s 名称\"%(name)s\"。"
 msgid "Launched cluster \"%s\""
 msgstr "启动集群\"%s\""
 
+msgid "Locality"
+msgstr "地域"
+
 msgid "Log"
 msgstr "日志"
 
@@ -645,6 +655,9 @@ msgstr "访问集群的新密码。"
 
 msgid "New size for volume must be greater than current size."
 msgstr "卷的新大小必须大于当前的大小。"
+
+msgid "No availability zones found"
+msgstr "未找到可用区"
 
 msgid "No backups available"
 msgstr "没有可用的备份"
@@ -774,11 +787,6 @@ msgstr "root用户密码"
 msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "在root启用或重置时，密码只能临时可用。"
-
-msgid ""
-"Please note:</strong> It may be necessary to reboot the database instance "
-"for this new configuration group to take effect."
-msgstr "请注意:</strong>重启数据库实例来使新配置组生效"
 
 msgid ""
 "Please note:</strong> The new value must be greater than the existing volume "
@@ -1050,6 +1058,20 @@ msgstr "指定数据库实例新的卷大小。"
 msgid "Specify the number of replicas to be created"
 msgstr "指定创建副本的数量"
 
+msgid ""
+"Specify whether future replicated instances will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity). This "
+"value is ignored if the instance to be launched is a replica."
+msgstr ""
+"验证同一hypervisor（关联）或不同hypervisor（非关联）中是否创建了实例副本。如"
+"果实例创建了一个副本，该值可忽略"
+
+msgid ""
+"Specify whether instances in the cluster will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity)."
+msgstr ""
+"验证同一hypervisor（关联）或不同hypervisor（非关联）中是否创建了集群的实例"
+
 msgid "Specs"
 msgstr "规格"
 
@@ -1229,6 +1251,9 @@ msgstr "无法调整卷  %s 的大小"
 msgid "Unable to retrieve accessible databases."
 msgstr "不能获取数据库访问权限"
 
+msgid "Unable to retrieve availability zones."
+msgstr "无法获取可用区"
+
 msgid "Unable to retrieve cluster details."
 msgstr "无法获取集群详细信息。"
 
@@ -1370,6 +1395,14 @@ msgstr "如果你创建用户，必须指定一个密码。"
 
 msgid "You must specify at least one database if you create a user."
 msgstr "如果你创建用户，你必须选择至少一个数据库。"
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "实例"
