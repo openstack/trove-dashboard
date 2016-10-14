@@ -5,14 +5,14 @@
 # Yulia Ryndenkova <yryndenkova@hystax.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc4.dev1\n"
+"Project-Id-Version: trove-dashboard 7.0.1.dev3\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-10-04 12:11+0000\n"
+"POT-Creation-Date: 2016-10-12 19:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-10-09 01:15+0000\n"
-"Last-Translator: Artem <amikhalev90@gmail.com>\n"
+"PO-Revision-Date: 2016-10-12 02:47+0000\n"
+"Last-Translator: Maxim Bozhenko <mbozhenko@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -126,6 +126,13 @@ msgstr "Применить изменения"
 msgid "At least one of the new fields must be changed."
 msgstr "Хотя бы одно из новых полей должно быть изменено."
 
+msgid "Attach Configuration Group"
+msgstr "Подключить группу конфигурации"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "Подключение группы конфигурации \"%s\""
+
 msgid "Availability Zone"
 msgstr "Зона доступности"
 
@@ -225,6 +232,9 @@ msgstr "Установки по умолчанию"
 msgid "Configuration Group"
 msgstr "Группа конфигурации"
 
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "Детали группы конфигурации: {{configuration.name}}"
+
 msgid "Configuration Group Instances"
 msgstr "Инстансы группы конфигурации"
 
@@ -239,6 +249,10 @@ msgstr "Значения группы конфигурации"
 
 msgid "Configuration Groups"
 msgstr "Группы конфигураций"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr "Подтвердите назначение текущей реплики источником реплик."
 
 msgid "Connection Examples"
 msgstr "Примеры соединений"
@@ -282,6 +296,12 @@ msgstr "Создана БД \"%s\"."
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "Создан пользователь \"%s\"."
+
+msgid "Current Replica"
+msgstr "Текущая реплика"
+
+msgid "Current Replica Source"
+msgstr "Текущий источник реплик"
 
 msgid "Current Size (GB)"
 msgstr "Текущий размер (ГБ)"
@@ -389,20 +409,56 @@ msgstr "Удаленные инстансы нельзя восстановит�
 msgid "Description"
 msgstr "Описание"
 
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "Отключить группу конфигурации"
+msgstr[1] "Отключить группы конфигураций"
+msgstr[2] "Отключить группы конфигураций"
+
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] "Отключить реплику"
 msgstr[1] "Отключить реплики"
 msgstr[2] "Отключить реплики"
 
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "Отключенная группа конфигурации"
+msgstr[1] "Отключенные группы конфигураций"
+msgstr[2] "Отключенные группы конфигураций"
+
 msgid "Details"
 msgstr "Подробности"
+
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "Выключить лог"
+msgstr[1] "Выключить логи"
+msgstr[2] "Выключить логи"
 
 msgid "Disable Root"
 msgstr "Отключить root"
 
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "Выключенный лог"
+msgstr[1] "Выключенные логи"
+msgstr[2] "Выключенные логи"
+
 msgid "Discard Changes"
 msgstr "Отменить изменения"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "Удалить лог"
+msgstr[1] "Удалить логи"
+msgstr[2] "Удалить логи"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "Удаленный лог"
+msgstr[1] "Удаленные логи"
+msgstr[2] "Удаленные логи"
 
 msgid "Download"
 msgstr "Скачать"
@@ -413,8 +469,32 @@ msgstr "Скачать резервную копию"
 msgid "Edit User"
 msgstr "Редактировать пользователя"
 
+msgid "Eject Replica Source"
+msgid_plural "Eject Replica Sources"
+msgstr[0] "Отключить источник реплик"
+msgstr[1] "Отключить источники реплик"
+msgstr[2] "Отключить источники реплик"
+
+msgid "Ejected Replica Source"
+msgid_plural "Ejected Replica Sources"
+msgstr[0] "Отключенный источник реплик"
+msgstr[1] "Отключенные источники реплик"
+msgstr[2] "Отключенные источники реплик"
+
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "Включить лог"
+msgstr[1] "Включить логи"
+msgstr[2] "Включить логи"
+
 msgid "Enable Root"
 msgstr "Разрешить пользователя root"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "Включенный лог"
+msgstr[1] "Включенные логи"
+msgstr[2] "Включенные логи"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
@@ -428,6 +508,10 @@ msgstr "Ошибка создания резервной копии БД."
 
 msgid "Error deleting database on instance."
 msgstr "Ошибка удаления БД на  инстансе."
+
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "Ошибка загрузки файла лога: %s"
 
 msgid "Error getting configuration group list."
 msgstr "Ошибка получения списка групп конфигурации."
@@ -551,8 +635,20 @@ msgstr "Запущен кластер %s"
 msgid "Locality"
 msgstr "Окрестность"
 
+msgid "Log"
+msgstr "Лог"
+
+msgid "Log Contents"
+msgstr "Содержимое лога"
+
+msgid "Log Length"
+msgstr "Длина лога"
+
 msgid "Log length must be a nonnegative integer."
 msgstr "Длина журнала должна быть неотрицательным целым числом. "
+
+msgid "Log: "
+msgstr "Лог:"
 
 msgid "Logs"
 msgstr "Логи"
@@ -752,8 +848,29 @@ msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "Пароль видим сразу только  после разрешения или сброса root."
 
+msgid ""
+"Please note:</strong> It may be necessary to reboot the database instance "
+"for this new configuration group to take effect."
+msgstr ""
+"Внимание: </strong> Для активации этой новой группы конфигурации может "
+"потребоваться перезагрузка инстанса."
+
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Пожалуйста, обратите внимание: </strong> Новое значение должно быть больше "
+"чем текущего размер диска."
+
 msgid "Promote"
 msgstr "Повысить"
+
+msgid "Promote to Replica Source"
+msgstr "Сделать источником реплик"
+
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "Реплика \"%s\" теперь источник реплик."
 
 msgid "Property"
 msgstr "Свойство"
@@ -761,11 +878,23 @@ msgstr "Свойство"
 msgid "Publish"
 msgstr "Опубликовать"
 
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "Опубликовать лог"
+msgstr[1] "Опубликовать логи"
+msgstr[2] "Опубликовать логи"
+
 msgid "Publishable (bytes)"
 msgstr "Может быть опубликовано (байт)"
 
 msgid "Published (bytes)"
 msgstr "Опубликовано (байт)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "Опубликованный лог"
+msgstr[1] "Опубликованные логи"
+msgstr[2] "Опубликованные логи"
 
 msgid "RAM"
 msgstr "RAM"
@@ -866,6 +995,9 @@ msgstr "Восстановить из резервной копии"
 
 msgid "Restore from Backup"
 msgstr "Восстановить из резервной копии"
+
+msgid "Return to Log List"
+msgstr "Вернуться к списку логов"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
@@ -1022,6 +1154,23 @@ msgstr "Указать новый размер диска для инстанс�
 msgid "Specify the number of replicas to be created"
 msgstr "Укажите количество создаваемых реплик"
 
+msgid ""
+"Specify whether future replicated instances will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity). This "
+"value is ignored if the instance to be launched is a replica."
+msgstr ""
+"Укажите будут ли реплицированные инстансы создаваться на одном и том же "
+"гипервизоре (аффинированность) или на разных гипервизорах (анти-"
+"аффинитивность). Это значение будет проигнорировано если запускаемый инстанс "
+"является репликой."
+
+msgid ""
+"Specify whether instances in the cluster will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity)."
+msgstr ""
+"Укажите будут ли инстансы кластера создаваться на одном и том же гипервизоре "
+"(аффинированность) или на разных (анти-аффинированность)"
+
 msgid "Specs"
 msgstr "Спеки"
 
@@ -1083,6 +1232,10 @@ msgstr "Невозможно выполнить %(action)s: %(objs)s"
 #, python-format
 msgid "Unable to add new parameter: %s"
 msgstr "Невозможно добавить новый параметр: %s"
+
+#, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "Невозможно подключить группу конфигурации. %s"
 
 #, python-format
 msgid "Unable to create configuration group. %s"
@@ -1152,6 +1305,16 @@ msgid "Unable to list database instances to backup."
 msgstr ""
 "Не удалось получить список инстансов баз данных для резервного копирования."
 
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"Невозможно загрузить лог {0}\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "Невозможно загрузить лог {0} для инстанса \"{1}\"."
+
 msgid "Unable to obtain datastore versions."
 msgstr "Невозможно получить версии хранилищ данных."
 
@@ -1166,6 +1329,10 @@ msgstr "Невозможно получить информацию о польз
 
 msgid "Unable to obtain list of parameters."
 msgstr "Невозможно получить список параметров."
+
+#, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr "Невозможно сделать реплику новым источником реплик. \"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
@@ -1292,6 +1459,9 @@ msgstr "Значение должно быть типа %s."
 msgid "Values"
 msgstr "Значения"
 
+msgid "View Full Log"
+msgstr "Просмотр полного лога"
+
 msgid "View Log"
 msgstr "Просмотреть лог"
 
@@ -1328,6 +1498,14 @@ msgstr "Вы должны задать пароль если хотите соз
 
 msgid "You must specify at least one database if you create a user."
 msgstr "Вы должны создать по крайней мере одну БД если создаете пользователя."
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "инстанс"
