@@ -1,0 +1,3 @@
+---
+fixes:
+  - Enable cluster grow and shrink panels for pxc.
