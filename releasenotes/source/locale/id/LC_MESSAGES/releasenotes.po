@@ -1,0 +1,75 @@
+# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Trove Dashboard Release Notes 7.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-14 19:46+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-10-19 03:50+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "7.0.0"
+msgstr "7.0.0"
+
+msgid "7.0.0.0b2"
+msgstr "7.0.0.0b2"
+
+msgid "7.0.0.0rc1"
+msgstr "7.0.0.0rc1"
+
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+
+msgid ""
+"Added support for logging features in the dashboard. This includes listing "
+"logs that can be retrieved and viewing, publishing and stop collection of "
+"log contents."
+msgstr ""
+"Dukungan diitambahkan untuk fitur login di dashboard. Ini termasuk log "
+"daftar yang dapat diambil dan dilihat, penerbitan dan menghentikan koleksi "
+"isi log."
+
+msgid "Bug Fixes"
+msgstr "Bug Fixes (perbaikan kesalahan)"
+
+msgid "Contents:"
+msgstr "Contents:"
+
+msgid "Current Series Release Notes"
+msgstr "Current Series Release Notes (catatan rilis Current Series)"
+
+msgid "Display all endpoints in the dashboard's cluster details endpoint list."
+msgstr ""
+"Menampilkan semua endpoint dalam daftar rincian endpoint klaster dashboard."
+
+msgid "Enable cluster support for MariaDB and Cassandra."
+msgstr "Aktifkan dukungan klaster MariaDB dan Cassandra."
+
+msgid "New Features"
+msgstr "New Features (fitur baru)"
+
+msgid "Newton Series Release Notes"
+msgstr "Newton Series Release Notes (catatan rilis Newton Series)"
+
+msgid "Search"
+msgstr "Search (mencari)"
+
+msgid ""
+"Support configuration groups in the dashboard. This includes creating and "
+"deleting groups; adding, editing and removing parameters; attaching and "
+"detaching groups to running instances; and specifying a group during "
+"instance creation."
+msgstr ""
+"Mendukung kelompok konfigurasi di dashboard. Ini termasuk membuat dan "
+"menghapus kelompok; menambahkan, mengedit dan menghapus parameter; "
+"menghbungkan dan memisahkan kelompok untuk menjalankan instance; dan "
+"menentukan kelompok selama pembuatan instance."
+
+msgid "Trove Dashboard Release Notes"
+msgstr "Trove Dashboard Release Notes (catatan rilis Trove Dashboard)"
