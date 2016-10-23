@@ -1,0 +1,62 @@
+# Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Trove Dashboard Release Notes 7.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-19 14:24+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-10-22 04:24+0000\n"
+"Last-Translator: Gérald LONLAS <g.lonlas@gmail.com>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+msgid "7.0.0"
+msgstr "7.0.0"
+
+msgid "7.0.0.0b2"
+msgstr "7.0.0.0b2"
+
+msgid "7.0.0.0rc1"
+msgstr "7.0.0.0rc1"
+
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+
+#, fuzzy
+msgid ""
+"Added support for logging features in the dashboard. This includes listing "
+"logs that can be retrieved and viewing, publishing and stop collection of "
+"log contents."
+msgstr ""
+"Ajout du support pour logger les fonctionnalités dans le tableau de bord. "
+"Added support for logging features in the dashboard. Cela inclut la liste de "
+"logs qui sont récupérés affichés et publiés ainsi  que l'arrêt de la "
+"collecte de logs."
+
+msgid "Bug Fixes"
+msgstr "Corrections de bugs"
+
+msgid "Contents:"
+msgstr "Contenu :"
+
+msgid "Current Series Release Notes"
+msgstr "Note de la release actuelle"
+
+msgid "Enable cluster support for MariaDB and Cassandra."
+msgstr "Activer le support de Cluster pour MariaDB et Cassandra."
+
+msgid "New Features"
+msgstr "Nouvelles fonctionnalités"
+
+msgid "Newton Series Release Notes"
+msgstr "Note de release pour Newton"
+
+msgid "Search"
+msgstr "Recherche"
+
+msgid "Trove Dashboard Release Notes"
+msgstr "Note de release pour le Tableau de bord Trove"
