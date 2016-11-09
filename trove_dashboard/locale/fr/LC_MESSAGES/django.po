@@ -3,13 +3,13 @@
 # Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev9\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev12\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-10-19 14:24+0000\n"
+"POT-Creation-Date: 2016-11-04 14:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-10-22 04:15+0000\n"
+"PO-Revision-Date: 2016-11-08 10:41+0000\n"
 "Last-Translator: Gérald LONLAS <g.lonlas@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -103,11 +103,17 @@ msgstr "Hôte autorisé"
 msgid "Allowed Host (optional)"
 msgstr "Hôte autorisé (optionnel)"
 
+msgid "Any Availability Zone"
+msgstr "Toute zone de disponibilité"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "Applicable seulement si la taille du volume est specifiée."
 
 msgid "At least one of the new fields must be changed."
 msgstr "Au moins l'un des nouveaux champs doit être modifié."
+
+msgid "Availability Zone"
+msgstr "Zone de disponibilité"
 
 msgid "Available networks"
 msgstr "Les réseaux disponibles"
@@ -154,6 +160,10 @@ msgctxt "Current status of a Database Backup"
 msgid "Building"
 msgstr "Construction"
 
+msgctxt "Current status of a Database Instance"
+msgid "Building"
+msgstr "Construction"
+
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -168,6 +178,9 @@ msgstr "Sélectionner un nouveau gabarit d'instance."
 
 msgid "Choose initial state."
 msgstr "Sélectionner un état initial."
+
+msgid "Close"
+msgstr "Fermer"
 
 msgid "Cluster Name"
 msgstr "Nom du cluster"
@@ -203,6 +216,9 @@ msgstr "Exemples de connexion"
 msgid "Connection Information"
 msgstr "Information de connexion"
 
+msgid "Container"
+msgstr "Conteneur"
+
 msgid "Create Backup"
 msgstr "Créer une sauvegarde"
 
@@ -232,6 +248,9 @@ msgstr "Base de données \"%s\" créée."
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "Utilisateur \"%s\" créé."
+
+msgid "Current Replica"
+msgstr "Replica courant"
 
 msgid "Current Size (GB)"
 msgstr "Taille courante (Go)"
@@ -274,6 +293,9 @@ msgstr "Datastore"
 
 msgid "Datastore Version"
 msgstr "Version du datastore"
+
+msgid "Defaults"
+msgstr "Valeurs par défaut"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -358,6 +380,10 @@ msgstr "Erreur pendant la sauvegarde de la base de données."
 msgid "Error deleting database on instance."
 msgstr "Erreur lors de la suppression de la base de données sur l'instance."
 
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "Erreur lors du téléchargement du journal : %s"
+
 msgid "Error getting database backup list."
 msgstr ""
 "Erreur lors de la récupération de la liste des sauvegardes de la base de "
@@ -371,10 +397,16 @@ msgctxt "Current status of a Database Instance"
 msgid "Failed"
 msgstr "Échec"
 
+msgid "Fault"
+msgstr "Panne"
+
 msgid "Flavor"
 msgstr "Gabarit"
 
 msgid "GB"
+msgstr "Go"
+
+msgid "Go"
 msgstr "Go"
 
 msgid "Grant Access"
@@ -407,6 +439,9 @@ msgstr "Incrémentale"
 
 msgid "Incremental Backup"
 msgstr "Sauvegarde incrémentale"
+
+msgid "Info"
+msgstr "Info"
 
 msgid "Information"
 msgstr "Information"
@@ -461,6 +496,18 @@ msgstr "Cluster \"%s\" démarré"
 msgid "Locality"
 msgstr "Localisation"
 
+msgid "Log"
+msgstr "Journal"
+
+msgid "Log Length"
+msgstr "Longueur du journal"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "La longueur du journal doit correspondre à un nombre non négatif."
+
+msgid "Logs"
+msgstr "Journaux"
+
 msgid "Manage Access"
 msgstr "Gérer les accès"
 
@@ -475,6 +522,9 @@ msgstr "Console de management"
 
 msgid "Master Instance Name"
 msgstr "Nom de l'instance Master"
+
+msgid "Message"
+msgstr "Message"
 
 msgid "Name"
 msgstr "Nom"
@@ -509,6 +559,9 @@ msgstr "Nouveau mot de passe pour accès au cluster"
 
 msgid "New size for volume must be greater than current size."
 msgstr "La nouvelle taille du volume doit être supérieur à sa taille actuelle."
+
+msgid "No availability zones found"
+msgstr "Pas de zones de disponibilité trouvées"
 
 msgid "No backups available"
 msgstr "Aucune sauvegarde disponible"
@@ -622,6 +675,12 @@ msgstr "Vue d'ensemble"
 msgid "PASSWORD"
 msgstr "MOT DE PASSE"
 
+msgid "Parameter"
+msgstr "Paramètre"
+
+msgid "Parameters"
+msgstr "Paramètres"
+
 msgid "Parent Backup"
 msgstr "Sauvegarde totale"
 
@@ -643,8 +702,18 @@ msgstr ""
 "Le mot de passe est visible uniquement juste après l'activation de root ou "
 "sa réinitialisation."
 
+msgid "Property"
+msgstr "Propriété"
+
+msgid "Publish"
+msgstr "Publier"
+
 msgid "RAM"
 msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Rebooting"
+msgstr "Redémarrage en cours"
 
 msgid "Related To"
 msgstr "Relatif à"
@@ -690,6 +759,10 @@ msgstr "Redimensionner une instance"
 
 msgid "Resize Volume"
 msgstr "Redimensionner un volume"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resizing"
+msgstr "Redimensionnement"
 
 #, python-format
 msgid "Resizing instance \"%s\""
@@ -904,6 +977,9 @@ msgstr "Le nombre de fragment doit être supérieur à 1."
 msgid "There was a problem enabling root."
 msgstr "Il y a eu un problème durant l'activation du root."
 
+msgid "This action cannot be undone."
+msgstr "Cette action ne peut pas être annulée."
+
 msgid "Type"
 msgstr "Type"
 
@@ -1002,6 +1078,9 @@ msgstr "Impossible de redimensionner le volume %s"
 msgid "Unable to retrieve accessible databases."
 msgstr "Impossible de récupérer les bases de données accessibles."
 
+msgid "Unable to retrieve availability zones."
+msgstr "Impossible de récupérer les zones de disponibilité."
+
 msgid "Unable to retrieve cluster details."
 msgstr "Impossible de récupérer les détails du cluster."
 
@@ -1049,6 +1128,9 @@ msgstr "Impossible de récupérer les réseaux."
 msgid "Unable to update user. %s"
 msgstr "Impossible de mettre à jour l'utilisateur %s."
 
+msgid "Unknown"
+msgstr "Inconnu"
+
 msgid "Updated"
 msgstr "Mis à jour"
 
@@ -1081,6 +1163,9 @@ msgstr "La valeur doit être numérique."
 #, python-format
 msgid "Value must be of type %s."
 msgstr "La valeur doit être de type %s."
+
+msgid "View Full Log"
+msgstr "Afficher le journal complet"
 
 msgid "Volume"
 msgstr "Volume"
