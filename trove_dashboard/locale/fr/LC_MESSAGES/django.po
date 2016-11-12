@@ -3,13 +3,13 @@
 # Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev12\n"
+"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev13\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-11-04 14:40+0000\n"
+"POT-Creation-Date: 2016-11-09 11:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-11-08 10:41+0000\n"
+"PO-Revision-Date: 2016-11-11 06:49+0000\n"
 "Last-Translator: Gérald LONLAS <g.lonlas@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -83,6 +83,9 @@ msgstr "Ajouter"
 msgid "Add Instance"
 msgstr "Ajouter une instance"
 
+msgid "Add Parameter"
+msgstr "Ajouter un paramètre"
+
 msgid "Advanced"
 msgstr "Avancées"
 
@@ -109,8 +112,18 @@ msgstr "Toute zone de disponibilité"
 msgid "Applicable only if the volume size is specified."
 msgstr "Applicable seulement si la taille du volume est specifiée."
 
+msgid "Apply Changes"
+msgstr "Appliquer les changements"
+
 msgid "At least one of the new fields must be changed."
 msgstr "Au moins l'un des nouveaux champs doit être modifié."
+
+msgid "Attach Configuration Group"
+msgstr "Attacher le groupe de configuration"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "Attachement du groupe de configuration. %s"
 
 msgid "Availability Zone"
 msgstr "Zone de disponibilité"
@@ -201,8 +214,14 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "Terminé"
 
+msgid "Configuration Defaults"
+msgstr "Configurations par défaut"
+
 msgid "Configuration Group"
 msgstr "Groupe de configuration"
+
+msgid "Configuration Group Instances"
+msgstr "Instances du groupe de configuration"
 
 msgid "Configuration Group Name"
 msgstr "Nom du groupe de configuration"
@@ -241,6 +260,9 @@ msgstr ""
 msgid "Created"
 msgstr "Créé"
 
+msgid "Created configuration group"
+msgstr "Groupe de configuration créé"
+
 #, python-format
 msgid "Created database \"%s\"."
 msgstr "Base de données \"%s\" créée."
@@ -251,6 +273,9 @@ msgstr "Utilisateur \"%s\" créé."
 
 msgid "Current Replica"
 msgstr "Replica courant"
+
+msgid "Current Replica Source"
+msgstr "Source courante du Replica"
 
 msgid "Current Size (GB)"
 msgstr "Taille courante (Go)"
@@ -358,6 +383,32 @@ msgstr[1] "Détacher Réplicas"
 msgid "Details"
 msgstr "Détails"
 
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "Désactiver le journal"
+msgstr[1] "Désactiver les journaux"
+
+msgid "Disable Root"
+msgstr "Désactiver Root"
+
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "Journal désactivé"
+msgstr[1] "Journaux désactivés"
+
+msgid "Discard Changes"
+msgstr "Annuler les changements"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "Jeter le journal"
+msgstr[1] "Jeter les journaux"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "Journal jeté"
+msgstr[1] "Journaux jetés"
+
 msgid "Download"
 msgstr "Télécharger"
 
@@ -367,8 +418,18 @@ msgstr "Télécharger la sauvegarde"
 msgid "Edit User"
 msgstr "Éditer l'utilisateur"
 
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "Activer le journal"
+msgstr[1] "Activer les journaux"
+
 msgid "Enable Root"
 msgstr "Activer le Root"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "Journal activé"
+msgstr[1] "Journaux activés"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
@@ -499,11 +560,17 @@ msgstr "Localisation"
 msgid "Log"
 msgstr "Journal"
 
+msgid "Log Contents"
+msgstr "Contenu du journal"
+
 msgid "Log Length"
 msgstr "Longueur du journal"
 
 msgid "Log length must be a nonnegative integer."
 msgstr "La longueur du journal doit correspondre à un nombre non négatif."
+
+msgid "Log: "
+msgstr "Journal :"
 
 msgid "Logs"
 msgstr "Journaux"
@@ -565,6 +632,12 @@ msgstr "Pas de zones de disponibilité trouvées"
 
 msgid "No backups available"
 msgstr "Aucune sauvegarde disponible"
+
+msgid "No configuration groups available"
+msgstr "Aucun groupe de configuration disponible"
+
+msgid "No configurations available"
+msgstr "Aucun configuration disponible"
 
 msgid "No flavors available"
 msgstr "Pas de gabarits disponibles"
@@ -702,11 +775,40 @@ msgstr ""
 "Le mot de passe est visible uniquement juste après l'activation de root ou "
 "sa réinitialisation."
 
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Veuillez noter que :</strong> La nouvelle valeur doit être plus grande que "
+"la taille du volume existant."
+
+msgid "Promote"
+msgstr "Promouvoir"
+
+msgid "Promote to Replica Source"
+msgstr "Promouvoir la source du Replica"
+
 msgid "Property"
 msgstr "Propriété"
 
 msgid "Publish"
 msgstr "Publier"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "Publier le journal"
+msgstr[1] "Publier les journaux"
+
+msgid "Publishable (bytes)"
+msgstr "Publiable (Octets)"
+
+msgid "Published (bytes)"
+msgstr "Publié (Octets)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "Journal publié"
+msgstr[1] "Journaux publiés"
 
 msgid "RAM"
 msgstr "RAM"
@@ -731,6 +833,9 @@ msgstr[1] "Instances supprimées"
 msgid "Removed instances from cluster."
 msgstr "Instances supprimées du cluster"
 
+msgid "Replica Count"
+msgstr "Nombre de replicata"
+
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
 msgstr[0] "Réplica détachée"
@@ -744,6 +849,9 @@ msgstr "Réplication depuis l'instance"
 
 msgid "Replication"
 msgstr "Réplication"
+
+msgid "Reset Parameters"
+msgstr "Réinitialiser les paramètres"
 
 msgid "Reset Root Password"
 msgstr "Réinitialiser le mot de passe root"
@@ -797,6 +905,9 @@ msgstr "Restaurer une Sauvegarde"
 msgid "Restore from Backup"
 msgstr "Restaurer depuis la sauvegarde"
 
+msgid "Return to Log List"
+msgstr "Revenir à la liste des journaux"
+
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "Enlever l'accès"
@@ -841,6 +952,9 @@ msgstr "Agrandissement du cluster programmé."
 msgid "Select a backup to restore"
 msgstr "Sélectionnez une sauvegarde à restaurer"
 
+msgid "Select a configuration group"
+msgstr "Sélectionner un groupe de configuration"
+
 msgid "Select a master instance"
 msgstr "Sélectionner une instance Master"
 
@@ -849,6 +963,12 @@ msgstr "Sélectionner un nouveau gabarit"
 
 msgid "Select backup"
 msgstr "Sélectionner une sauvegarde"
+
+msgid "Select configuration"
+msgstr "Sélectionner la configuration"
+
+msgid "Select configuration group"
+msgstr "Sélectionner le groupe de configuration"
 
 msgid "Select datastore type and version"
 msgstr "Sélectionner le type et la version de datastore"
@@ -994,8 +1114,19 @@ msgid "Unable to %(action)s: %(objs)s"
 msgstr "Impossible de %(action)s : %(objs)s"
 
 #, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "Impossible d'attacher le groupe de configuration. %s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "Impossible de créer le groupe de configuration %s"
+
+#, python-format
 msgid "Unable to create database. %s"
 msgstr "Impossible de créer la base de données %s"
+
+msgid "Unable to create list of parameters."
+msgstr "Impossible de créer la liste des paramètres."
 
 #, python-format
 msgid "Unable to create user. %s"
@@ -1007,8 +1138,14 @@ msgstr "Impossible de déterminer si l'instance Root est active."
 msgid "Unable to find backup!"
 msgstr "Impossible de trouver la sauvegarde !"
 
+msgid "Unable to find configuration group!"
+msgstr "Impossible de trouver le groupe de configuration !"
+
 msgid "Unable to find master instance!"
 msgstr "Impossible de trouver une instance Master !"
+
+msgid "Unable to get configuration data."
+msgstr "Impossible d'obtenir les données de configuration."
 
 msgid "Unable to get database backup data."
 msgstr "Impossible d'obtenir les données de sauvegarde de la base de données."
@@ -1047,6 +1184,16 @@ msgstr "Impossible de lister les sauvegardes totale des base de données."
 msgid "Unable to list database instances to backup."
 msgstr "Impossible de lister les instances de base de données à sauvegarder."
 
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"Impossible de charger le journal {0}\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "Impossible de charger le journal {0} pour l\\'instance \"{1}\"."
+
 msgid "Unable to obtain datastore versions."
 msgstr "Impossible d'obtenir les versions de datastores."
 
@@ -1058,6 +1205,9 @@ msgstr "Impossible d'obtenir les gabarits."
 
 msgid "Unable to obtain information on root user"
 msgstr "Impossible d'obtenir les informations de l'utilisateur Root"
+
+msgid "Unable to obtain list of parameters."
+msgstr "Impossible d'obtenir la liste des paramètres."
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
@@ -1121,6 +1271,14 @@ msgstr "Impossible de récupérer les gabarits."
 msgid "Unable to retrieve instance details."
 msgstr "Impossible de récupérer les détails de l'instance."
 
+#, python-format
+msgid ""
+"Unable to retrieve list of logs.\n"
+"%s"
+msgstr ""
+"Impossible de récupérer la liste des journaux.\n"
+"%s"
+
 msgid "Unable to retrieve networks."
 msgstr "Impossible de récupérer les réseaux."
 
@@ -1164,8 +1322,14 @@ msgstr "La valeur doit être numérique."
 msgid "Value must be of type %s."
 msgstr "La valeur doit être de type %s."
 
+msgid "Values"
+msgstr "Valeurs"
+
 msgid "View Full Log"
 msgstr "Afficher le journal complet"
+
+msgid "View Log"
+msgstr "Afficher le journal"
 
 msgid "Volume"
 msgstr "Volume"
@@ -1192,6 +1356,9 @@ msgstr ""
 
 msgid "You must select a datastore type and version."
 msgstr "Vous devez sélectionner un type et une version de datastore."
+
+msgid "You must select a flavor."
+msgstr "Vous devez choisir un gabarit."
 
 msgid "You must specify a password if you create a user."
 msgstr "Vous devez spécifier un mot de passe si vous créez un utilisateur."
