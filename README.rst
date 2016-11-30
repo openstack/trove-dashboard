@@ -1,6 +1,10 @@
 OpenStack Dashboard plugin for Trove project
 ============================================
 
+.. image:: http://governance.openstack.org/badges/trove-dashboard.svg
+    :target: http://governance.openstack.org/reference/tags/index.html
+
+
 How to use with Horizon on server:
 ----------------------------------
 
