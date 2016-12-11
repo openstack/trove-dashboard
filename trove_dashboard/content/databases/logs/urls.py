@@ -12,21 +12,16 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.conf.urls import patterns
 from django.conf.urls import url
 
 from trove_dashboard.content.databases.logs import views
 
-
-VIEWS_MOD = ('trove_dashboard.content.databases.logs.views')
-
 LOGS = r'^(?P<filename>[^/]+)/%s$'
 
-urlpatterns = patterns(
-    VIEWS_MOD,
-    url(LOGS % 'console', 'console', name='console'),
-    url(LOGS % 'download_log', 'download_log', name='download_log'),
-    url(LOGS % 'full_log', 'full_log', name='full_log'),
+urlpatterns = [
+    url(LOGS % 'console', views.console, name='console'),
+    url(LOGS % 'download_log', views.download_log, name='download_log'),
+    url(LOGS % 'full_log', views.full_log, name='full_log'),
     url(LOGS % 'log_contents',
         views.LogContentsView.as_view(), name='log_contents'),
-)
+]
