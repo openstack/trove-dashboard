@@ -55,10 +55,6 @@ class DeleteInstance(tables.DeleteAction):
             count
         )
 
-    name = "delete"
-    classes = ("btn-danger", )
-    icon = "remove"
-
     def delete(self, request, obj_id):
         api.trove.instance_delete(request, obj_id)
 
