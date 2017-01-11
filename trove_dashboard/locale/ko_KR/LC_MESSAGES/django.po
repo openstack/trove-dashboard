@@ -1,33 +1,20 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
+"Project-Id-Version: trove-dashboard 8.0.0.0b3.dev9\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-10-07 13:57+0000\n"
+"POT-Creation-Date: 2017-01-10 19:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-09-20 02:55+0000\n"
-"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"PO-Revision-Date: 2017-01-10 11:54+0000\n"
+"Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.7.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-
-msgid ""
-"\n"
-"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
-"  clicking the button, or dragging and dropping. You can change the\n"
-"  NIC order by dragging and dropping as well.\n"
-"  "
-msgstr ""
-"\n"
-"  버튼을 클릭하거나 드래그 앤 드롭하여 '사용 가능한 네트워크'를 '선택한 네트"
-"워크'로\n"
-"  이동합니다. 드래그 앤 드롭을 사용해서 NIC 순서도\n"
-"  변경할 수 있습니다.\n"
-"  "
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -39,6 +26,13 @@ msgstr "%(name)s | %(RAM)s RAM | 인스턴스 %(instances)s"
 
 msgid "-"
 msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> It may be necessary to reboot the database "
+"instance for this new configuration group to take effect."
+msgstr ""
+"<strong>참고:</strong> 새로운 구성 그룹을 적용하기 위해 데이터베이스 인스턴스"
+"를 재부팅할 필요가 있을 수 있습니다."
 
 msgid ""
 "<strong>Please note:</strong> The value specified in the Volume Size field "
@@ -88,16 +82,6 @@ msgstr ""
 
 msgid "Advanced"
 msgstr "진보된"
-
-msgid ""
-"Allow the user to connect from this host\n"
-"    only. If not provided this user will be allowed to connect from "
-"anywhere.\n"
-"    "
-msgstr ""
-"사용자가 이 호스트에서만 접근하도록 허용하십시오.\n"
-"    이 옵션을 제공하지 않으면 사용자가 모든 위치에서 접근할 수 있습니다.\n"
-"    "
 
 msgid "Allowed Host"
 msgstr "허용한 호스트"
@@ -268,13 +252,6 @@ msgstr "데이터베이스 생성"
 
 msgid "Create User"
 msgstr "사용자 생성"
-
-msgid ""
-"Create an optional initial user.\n"
-"   This user will have access to all databases you create."
-msgstr ""
-"선택적 초기 사용자를 작성하십시오.\n"
-"   이 초기 사용자는 사용자가 만든 모든 데이터베이스에 액세스할 수 있습니다."
 
 msgid "Created"
 msgstr "생성됨"

@@ -1,13 +1,13 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Artem <amikhalev90@gmail.com>, 2016. #zanata
 # Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
-# Vladimir Sokolov <vsvastey@gmail.com>, 2016. #zanata
+# Vladimir Sokolov <vsokolov@hystax.com>, 2016. #zanata
 # Yulia Ryndenkova <yryndenkova@hystax.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 7.0.0.0rc2.dev7\n"
+"Project-Id-Version: trove-dashboard 8.0.0.0b3.dev9\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-10-07 13:57+0000\n"
+"POT-Creation-Date: 2017-01-10 19:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,19 +18,6 @@ msgstr ""
 "X-Generator: Zanata 3.7.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-msgid ""
-"\n"
-"  Move networks from 'Available Networks' to 'Selected Networks' by\n"
-"  clicking the button, or dragging and dropping. You can change the\n"
-"  NIC order by dragging and dropping as well.\n"
-"  "
-msgstr ""
-"\n"
-"Перемещайте сети из \"Доступных сетей\" в \"Выбранные сети\",\n"
-"нажав клавишу или перетащив мышью. Вы также можете изменить\n"
-"порядок NIC с помощью мыши.\n"
-" "
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -94,16 +81,6 @@ msgstr ""
 
 msgid "Advanced"
 msgstr "Дополнительно"
-
-msgid ""
-"Allow the user to connect from this host\n"
-"    only. If not provided this user will be allowed to connect from "
-"anywhere.\n"
-"    "
-msgstr ""
-"Разрешить доступ пользователя только с данного хоста.\n"
-"    Пустое поле разрешает пользователю доступ с любого хоста.\n"
-"    "
 
 msgid "Allowed Host"
 msgstr "Разрешенный хост"
@@ -274,14 +251,6 @@ msgstr "Создать базу данных"
 
 msgid "Create User"
 msgstr "Создать пользователя"
-
-msgid ""
-"Create an optional initial user.\n"
-"   This user will have access to all databases you create."
-msgstr ""
-"Создание опционального начального пользователя.\n"
-"Это пользователь будет иметь доступ ко всем базам данных которые вы "
-"создадите."
 
 msgid "Created"
 msgstr "Создано"
