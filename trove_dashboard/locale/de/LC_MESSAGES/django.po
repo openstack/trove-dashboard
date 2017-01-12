@@ -1,15 +1,16 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2016. #zanata
 # Robert Simai <robert.simai@suse.com>, 2016. #zanata
+# Robert Simai <robert.simai@suse.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 8.0.0.0b3.dev9\n"
+"Project-Id-Version: trove-dashboard 8.0.0.0b3.dev10\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-01-10 19:59+0000\n"
+"POT-Creation-Date: 2017-01-11 12:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-10-18 09:43+0000\n"
+"PO-Revision-Date: 2017-01-11 10:08+0000\n"
 "Last-Translator: Robert Simai <robert.simai@suse.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -87,6 +88,13 @@ msgstr ""
 
 msgid "Advanced"
 msgstr "Erweitert"
+
+msgid ""
+"Allow the user to connect from this host only. If not provided this user "
+"will be allowed to connect from anywhere."
+msgstr ""
+"Erlauben Sie dem Benutzer sich nur von diesem Host zu verbinden. Ohne Angabe "
+"darf der Benutzer sich von überall verbinden."
 
 msgid "Allowed Host"
 msgstr "Erlaubter Host"
@@ -258,6 +266,13 @@ msgstr "Erzeuge Datenbank"
 
 msgid "Create User"
 msgstr "Benutzer erstellen"
+
+msgid ""
+"Create an optional initial user. This user will have access to all databases "
+"you create."
+msgstr ""
+"Erzeugen Sie einen optionalen initialen Benutzer. Dieser Benutzer hat "
+"Zugriff auf die Datenbank, die Sie erstellen."
 
 msgid "Created"
 msgstr "Erstellt"
@@ -625,6 +640,15 @@ msgstr "Master-Instanz Name"
 
 msgid "Message"
 msgstr "Nachricht"
+
+msgid ""
+"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
+"the button, or dragging and dropping. You can change the NIC order by "
+"dragging and dropping as well."
+msgstr ""
+"Bewegen Sie Netzwerke von 'Verfügbare Netzwerke' nach 'Ausgewählte "
+"Netzwerke' durch klicken des Knopfes oder durch ziehen und fallen lassen. "
+"Sie können die NIC Reihenfolge ebenso durch ziehen und fallen lassen ändern."
 
 msgid "Name"
 msgstr "Name"
