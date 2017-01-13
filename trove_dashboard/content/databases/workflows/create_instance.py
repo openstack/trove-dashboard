@@ -13,7 +13,6 @@
 #    under the License.
 
 import binascii
-import logging
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -28,6 +27,7 @@ from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
 from openstack_dashboard.dashboards.project.instances.workflows \
     import create_instance as dash_create_instance
+from oslo_log import log as logging
 
 
 from trove_dashboard import api

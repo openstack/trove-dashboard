@@ -15,7 +15,6 @@
 
 import binascii
 import collections
-import logging
 import uuid
 
 from django.core.urlresolvers import reverse
@@ -27,6 +26,7 @@ from horizon import forms
 from horizon import messages
 from horizon.utils import memoized
 from openstack_dashboard import api
+from oslo_log import log as logging
 
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils

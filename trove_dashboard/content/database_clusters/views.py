@@ -18,7 +18,6 @@
 Views for managing database clusters.
 """
 from collections import OrderedDict
-import logging
 
 from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
@@ -31,6 +30,7 @@ from horizon import forms as horizon_forms
 from horizon import tables as horizon_tables
 from horizon import tabs as horizon_tabs
 from horizon.utils import memoized
+from oslo_log import log as logging
 
 from trove_dashboard import api
 from trove_dashboard.content.database_clusters \

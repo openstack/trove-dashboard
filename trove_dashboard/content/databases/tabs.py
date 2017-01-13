@@ -12,13 +12,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import logging
-
 from django import template
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
 from horizon import tabs
+from oslo_log import log as logging
+
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations import (
     config_param_manager)
