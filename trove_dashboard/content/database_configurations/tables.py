@@ -12,7 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import logging
 import types
 
 from django.core import exceptions as core_exceptions
@@ -29,8 +28,6 @@ from horizon.utils import memoized
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations \
     import config_param_manager
-
-LOG = logging.getLogger(__name__)
 
 
 class CreateConfiguration(tables.LinkAction):
