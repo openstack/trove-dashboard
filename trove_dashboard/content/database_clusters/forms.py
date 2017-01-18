@@ -444,7 +444,6 @@ class ResetPasswordForm(forms.SelfHandlingForm):
     cluster_id = forms.CharField(widget=forms.HiddenInput())
     password = forms.CharField(widget=forms.PasswordInput(),
                                label=_("New Password"),
-                               required=True,
                                help_text=_("New password for cluster access."))
 
     @sensitive_variables('data')
