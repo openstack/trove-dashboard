@@ -96,4 +96,4 @@ Trove project: https://git.openstack.org/openstack/trove
 
 Trove at wiki.openstack.org: https://wiki.openstack.org/wiki/Trove
 
-Launchpad project: https://launchpad.net/trove
+Launchpad project: https://launchpad.net/trove-dashboard
