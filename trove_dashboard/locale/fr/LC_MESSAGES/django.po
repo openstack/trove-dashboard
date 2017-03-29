@@ -1,19 +1,20 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Corinne Verheyde <cverheyd@gmail.com>, 2016. #zanata
 # Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
+# Corinne Verheyde <cverheyd@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 8.0.0.0b3.dev9\n"
+"Project-Id-Version: trove-dashboard 8.0.0.0rc2.dev4\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-01-10 19:59+0000\n"
+"POT-Creation-Date: 2017-02-09 07:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-11-23 06:19+0000\n"
-"Last-Translator: Gérald LONLAS <g.lonlas@gmail.com>\n"
+"PO-Revision-Date: 2017-02-15 08:47+0000\n"
+"Last-Translator: Corinne Verheyde <cverheyd@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
-"X-Generator: Zanata 3.7.3\n"
+"X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #, python-format
@@ -26,6 +27,13 @@ msgstr "%(name)s | %(RAM)s RAM | %(instances)s instances"
 
 msgid "-"
 msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> It may be necessary to reboot the database "
+"instance for this new configuration group to take effect."
+msgstr ""
+"<strong>Note:</strong> Il peut être nécessaire de redémarrer l'instance de "
+"base de données pour prendre en compte le nouveau groupe de configuration."
 
 msgid ""
 "<strong>Please note:</strong> The value specified in the Volume Size field "
@@ -71,8 +79,22 @@ msgstr "Ajouter une instance"
 msgid "Add Parameter"
 msgstr "Ajouter un paramètre"
 
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"Ajout de paramètres au groupe de configuration. Une fois tous les paramètres "
+"ajoutés, cliquer sur 'Appliquer les changements' pour les rendre persistents."
+
 msgid "Advanced"
 msgstr "Avancées"
+
+msgid ""
+"Allow the user to connect from this host only. If not provided this user "
+"will be allowed to connect from anywhere."
+msgstr ""
+"Autorise l'utilisateur à se connecter uniquement à partir de cet hôte. Si "
+"non spécifié, l'utilisateur pourra se connecter de n'importe où."
 
 msgid "Allowed Host"
 msgstr "Hôte autorisé"
@@ -201,17 +223,28 @@ msgstr "Configurations par défaut"
 msgid "Configuration Group"
 msgstr "Groupe de configuration"
 
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "Détails du Group de Configuration: {{configuration.name}}"
+
 msgid "Configuration Group Instances"
 msgstr "Instances du groupe de configuration"
 
 msgid "Configuration Group Name"
 msgstr "Nom du groupe de configuration"
 
+msgid "Configuration Group Overview"
+msgstr "Aperçu du Groupe de Configuration"
+
 msgid "Configuration Group Values"
 msgstr "Valueur du groupe de configuration"
 
 msgid "Configuration Groups"
 msgstr "Groupes de configuration"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr ""
+"Confirmer la promotion du replica en cours en tant que source de replica."
 
 msgid "Connection Examples"
 msgstr "Exemples de connexion"
@@ -233,6 +266,13 @@ msgstr "Créer la base de données"
 
 msgid "Create User"
 msgstr "Créer un utilisateur"
+
+msgid ""
+"Create an optional initial user. This user will have access to all databases "
+"you create."
+msgstr ""
+"Créer un utilisateur initial optionnel. Cet utilisateur aura accès à toutes "
+"les bases de données que vous créerez."
 
 msgid "Created"
 msgstr "Créé"
@@ -352,10 +392,20 @@ msgstr "Les instances supprimées ne sont pas récupérables."
 msgid "Description"
 msgstr "Description"
 
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "Détacher un groupe de configuration"
+msgstr[1] "Détacher des groupes de configuration"
+
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] "Détacher Réplica"
 msgstr[1] "Détacher Réplicas"
+
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "Groupe de configuration détaché"
+msgstr[1] "Groupes de configuration détachés"
 
 msgid "Details"
 msgstr "Détails"
@@ -395,6 +445,11 @@ msgstr "Télécharger la sauvegarde"
 msgid "Edit User"
 msgstr "Éditer l'utilisateur"
 
+msgid "Eject Replica Source"
+msgid_plural "Eject Replica Sources"
+msgstr[0] "Éjecter la source du Replica"
+msgstr[1] "Éjecter les sources du Replica"
+
 msgid "Ejected Replica Source"
 msgid_plural "Ejected Replica Sources"
 msgstr[0] "Éjecter la source du Replica"
@@ -417,6 +472,9 @@ msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "Erreur"
 
+msgid "Error applying changes"
+msgstr "Erreur à l'application de la modification"
+
 msgid "Error creating database backup."
 msgstr "Erreur pendant la sauvegarde de la base de données."
 
@@ -427,10 +485,18 @@ msgstr "Erreur lors de la suppression de la base de données sur l'instance."
 msgid "Error downloading log file: %s"
 msgstr "Erreur lors du téléchargement du journal : %s"
 
+msgid "Error getting configuration group list."
+msgstr ""
+"Erreur lors de la récupération de la liste des groupes de configuration."
+
 msgid "Error getting database backup list."
 msgstr ""
 "Erreur lors de la récupération de la liste des sauvegardes de la base de "
 "données."
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "Erreur lors de la réinitialisation des paramètres: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
@@ -467,6 +533,9 @@ msgstr "Agrandir le cluster"
 
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Agrandir le cluster : {{cluster_name}}"
+
+msgid "Has Root Ever Been Enabled"
+msgstr "Si l'accès root a déjà été activé"
 
 msgid "Host"
 msgstr "Host"
@@ -574,6 +643,16 @@ msgstr "Nom de l'instance Master"
 
 msgid "Message"
 msgstr "Message"
+
+msgid ""
+"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
+"the button, or dragging and dropping. You can change the NIC order by "
+"dragging and dropping as well."
+msgstr ""
+"Déplacer les réseaux depuis \"Réseaux disponibles\" vers \"Réseaux "
+"Sélectionnés\" en cliquant sur le bouton, ou en faisant un glisser-déposer. "
+"Vous pouvez changer l'ordre des interfaces réseaux en faisant également un "
+"glisser-déposer."
 
 msgid "Name"
 msgstr "Nom"
@@ -770,6 +849,10 @@ msgstr "Promouvoir"
 msgid "Promote to Replica Source"
 msgstr "Promouvoir la source du Replica"
 
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "Promouvoir le replica \"%s\" comme nouvelle source de replica."
+
 msgid "Property"
 msgstr "Propriété"
 
@@ -948,6 +1031,11 @@ msgstr "Sélectionner une instance Master"
 msgid "Select a new flavor"
 msgstr "Sélectionner un nouveau gabarit"
 
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr ""
+"Sélectionner un paramètre et fournir une valeur pour ce paramètre de "
+"configuration."
+
 msgid "Select backup"
 msgstr "Sélectionner une sauvegarde"
 
@@ -1039,6 +1127,19 @@ msgstr "Spécifier le nouveau mot de passe root pour le cluster vertica."
 msgid "Specify the new volume size for the database instance."
 msgstr ""
 "Spécifier la nouvelle taille du volume pour l'instance de base de données."
+
+msgid "Specify the number of replicas to be created"
+msgstr "Spécifier le nombre de répliques à créer."
+
+msgid ""
+"Specify whether future replicated instances will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity). This "
+"value is ignored if the instance to be launched is a replica."
+msgstr ""
+"Spécifie si les prochaines instances répliquées seront créées sur le même "
+"hyperviseur (affinité) ou sur des hyperviseurs différents (anti-affinité). "
+"Cette valeur n'est pas prise en compte si l'instance à lancer est une "
+"réplique."
 
 msgid ""
 "Specify whether instances in the cluster will be created on the same "
@@ -1207,6 +1308,11 @@ msgid "Unable to obtain list of parameters."
 msgstr "Impossible d'obtenir la liste des paramètres."
 
 #, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr ""
+"Impossible de promouvoir le replica comme nouvelle source de replica.  \"%s\""
+
+#, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Impossible de supprimer les instances du cluster : %s"
 
@@ -1247,6 +1353,11 @@ msgstr "Impossible de récupérer la base de données."
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
 msgstr "Impossible de récupérer les détails pour la sauvegarde : %s"
+
+#, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr ""
+"Impossible de récupérer les détails pour le groupe de configuration: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
