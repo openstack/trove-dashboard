@@ -42,6 +42,22 @@ class DeleteConfiguration(tables.DeleteAction):
     data_type_singular = _("Configuration Group")
     data_type_plural = _("Configuration Groups")
 
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Delete Configuration Group",
+            u"Delete Configuration Groups",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Deleted Configuration Group",
+            u"Deleted Configuration Groups",
+            count
+        )
+
     def delete(self, request, obj_id):
         api.trove.configuration_delete(request, obj_id)
 
@@ -133,6 +149,22 @@ class DiscardChanges(tables.Action):
 class DeleteParameter(tables.DeleteAction):
     data_type_singular = _("Parameter")
     data_type_plural = _("Parameters")
+
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Delete Parameter",
+            u"Delete Parameters",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Deleted Parameter",
+            u"Deleted Parameters",
+            count
+        )
 
     def delete(self, request, obj_ids):
         configuration_id = self.table.kwargs['configuration_id']
