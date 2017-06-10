@@ -288,8 +288,8 @@ def user_create(request, instance_id, username, password,
     return troveclient(request).users.create(instance_id, [user])
 
 
-def user_delete(request, instance_id, user):
-    return troveclient(request).users.delete(instance_id, user)
+def user_delete(request, instance_id, user, host=None):
+    return troveclient(request).users.delete(instance_id, user, hostname=host)
 
 
 def user_update_attributes(request, instance_id, name, host=None,
@@ -318,6 +318,11 @@ def user_grant_access(request, instance_id, username, databases, host=None):
 def user_revoke_access(request, instance_id, username, database, host=None):
     return troveclient(request).users.revoke(
         instance_id, username, database, hostname=host)
+
+
+def user_show_access(request, instance_id, username, host=None):
+    return troveclient(request).users.list_access(
+        instance_id, username, hostname=host)
 
 
 def datastore_list(request):

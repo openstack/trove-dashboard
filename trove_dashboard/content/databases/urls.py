@@ -20,7 +20,8 @@ from trove_dashboard.content.databases import views
 
 BASEINSTANCES = r'^(?P<instance_id>[^/]+)/%s'
 INSTANCES = BASEINSTANCES + '$'
-USERS = r'^(?P<instance_id>[^/]+)/(?P<user_name>[^/]+)/%s$'
+USERS = r'^(?P<instance_id>[^/]+)/(?P<user_name>[^/]+)/' \
+        r'(?P<user_host>[^/]+)/%s$'
 
 
 urlpatterns = [

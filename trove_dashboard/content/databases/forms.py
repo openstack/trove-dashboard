@@ -199,7 +199,7 @@ class EditUserForm(forms.SelfHandlingForm):
     user_name = forms.CharField(
         label=_("Name"),
         widget=forms.TextInput(attrs={'readonly': 'readonly'}))
-    host = forms.CharField(
+    user_host = forms.CharField(
         label=_("Host"), required=False,
         widget=forms.TextInput(attrs={'readonly': 'readonly'}))
     new_name = forms.CharField(label=_("New Name"), required=False)
@@ -220,7 +220,7 @@ class EditUserForm(forms.SelfHandlingForm):
                 request,
                 instance,
                 data['user_name'],
-                host=data['host'],
+                host=data['user_host'],
                 new_name=data['new_name'],
                 new_password=data['new_password'],
                 new_host=data['new_host'])
