@@ -1,5 +1,4 @@
-# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
-# suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# işbaran akçayır <isbaran@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard 9.0.0.0b2.dev2\n"
@@ -8,12 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-06-09 04:01+0000\n"
-"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
-"Language-Team: Indonesian\n"
-"Language: id\n"
+"PO-Revision-Date: 2017-05-25 09:22+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Turkish (Turkey)\n"
+"Language: tr-TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Zanata 3.9.6\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"X-POOTLE-MTIME: 1495704069.000000\n"
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -21,7 +21,7 @@ msgstr "%(name)s | %(RAM)s RAM"
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
-msgstr "%(name)s | %(RAM)s RAM | %(instances)s instances"
+msgstr "%(name)s | %(RAM)s RAM | %(instances)s sunucu"
 
 msgid "-"
 msgstr "-"
@@ -30,8 +30,8 @@ msgid ""
 "<strong>Please note:</strong> It may be necessary to reboot the database "
 "instance for this new configuration group to take effect."
 msgstr ""
-"<strong>Please note:</strong> Mungkin perlu untuk reboot instance database "
-"bagi kelompok konfigurasi baru untuk memulai berpengaruh."
+"<strong>Lütfen dikkat:</strong>Bu yeni yapılandırma grubunun uygulanabilmsei "
+"için veritabanını yeniden başlatmanız gerekecek olabilir."
 
 msgid ""
 "<strong>Please note:</strong> The value specified in the Volume Size field "
@@ -39,1404 +39,1441 @@ msgid ""
 "specifying volume size. If specifying the volume size results in an error "
 "stating volume support is not enabled, enter 0."
 msgstr ""
-"<strong>Harap dicatat:</strong> Nilai yang ditentukan dalam kolom Volume "
-"Size harus lebih besar dari 0, namun, beberapa konfigurasi tidak mendukung "
-"menentukan ukuran volume. Jika penentuan hasil ukuran volume dalam kesalahan "
-"yang menyatakan dukungan volume tidak diaktifkan, masukkan 0."
+"<strong>Lütfen dikkat:</strong>Birim Boyutu alanındaki değer 0'dan büyük "
+"olmalı, ama bazı yapılandırmalar birim boyutu belirtmeyi desteklemezler. "
+"Eğer birim boyutunu belirtmek birim desteğinin etkin olmadığını söyleyen bir "
+"hata verirse, 0 girin."
 
 msgid "A backup must be selected!"
-msgstr "Sebuah cadangan harus dipilih!"
+msgstr "Bir yedek seçilmeli!"
 
 msgid "A master instance must be selected!"
-msgstr "Sebuah instance utama harus dipilih!"
+msgstr "Bir ana sunucu seçilmeli!"
 
 msgid "A new name or new password or new host must be specified."
-msgstr "Sebuah nama baru atau password baru atau host baru harus ditentukan."
+msgstr "Yeni isim veya yeni parola veya yeni sunucu belirtilmeli."
 
 msgid "Access Revoked to"
 msgid_plural "Access Revoked to"
-msgstr[0] "Access Revoked to"
+msgstr[0] "Erişim Kaldırıldı"
+msgstr[1] "Erişim Kaldırıldı"
 
 msgid "Accessible"
-msgstr "Accessible (dapat diakses)"
+msgstr "Erişilebilir"
 
 msgctxt "Current status of a Database Instance"
 msgid "Active"
-msgstr "Active (aktif)"
+msgstr "Etkin"
 
 msgid "Add"
-msgstr "Add (pemambahan)"
+msgstr "Ekle"
 
 msgid "Add Instance"
-msgstr "Add Instance (tambah instance)"
+msgstr "Sunucu Ekle"
 
 msgid "Add Parameter"
-msgstr "Add Parameter (penambahan parameter)"
+msgstr "Parametre Ekle"
 
 msgid ""
 "Add parameters to the configuration group.  When all the parameters are "
 "added click 'Apply Changes' to persist changes."
 msgstr ""
-"Menambahkan parameter ke kelompok konfigurasi. Ketika semua parameter "
-"ditambahkan klik 'Apply Changes' untuk menyimpan perubahan."
+"Yapılandırma grubuna parametreler ekle. Tüm parametreler eklendiğinde "
+"değişiklikleri kalıcı yapmak için 'Değişiklikleri Uygula'ya tıklayın."
 
 msgid "Advanced"
-msgstr "Advanced (lanjutan)"
+msgstr "Gelişmiş"
 
 msgid ""
 "Allow the user to connect from this host only. If not provided this user "
 "will be allowed to connect from anywhere."
 msgstr ""
-"Izinkan pengguna untuk menghubungkan dari host ini saja. Jika tidak izin "
-"ini,  pengguna ini akan diizinkan untuk terhubung dari mana saja."
+"Kullanıcının yalnızca bu istemciden bağlanmasına izin ver. Verilmezse "
+"kullanıcı her yerden bağlanabilecek."
 
 msgid "Allowed Host"
-msgstr "Allowed Host (diizinkan host)"
+msgstr "İzinli Makine"
 
 msgid "Allowed Host (optional)"
-msgstr "Allowed Host (optional)"
+msgstr "İzinli İstemci (isteğe bağlı)"
 
 msgid "Any Availability Zone"
-msgstr "Any Availability Zone"
+msgstr "Herhangi Bir Kullanılırlık Bölgesi"
 
 msgid "Applicable only if the volume size is specified."
-msgstr "Berlaku hanya jika ukuran volume ditentukan."
+msgstr "Yalnızca birim boyutu belirtilmişse uygulanabilir."
 
 msgid "Applied changes to server"
-msgstr "Perubahan yang diterapkan ke server"
+msgstr "Değişiklikler sunucuya uygulandı"
 
 msgid "Apply Changes"
-msgstr "Apply Changes (penerapan perubahan)"
+msgstr "Değişiklikleri Uygula"
 
 msgid "At least one of the new fields must be changed."
-msgstr "Setidaknya satu kolom baru harus diubah."
+msgstr "Yeni alanların en az biri değişmeli."
 
 msgid "Attach Configuration Group"
-msgstr "Attach Configuration Group (pelekatan grup konfigurasi)"
+msgstr "Yapılandırma Grubu Ekle"
 
 #, python-format
 msgid "Attaching Configuration group \"%s\""
-msgstr "Melekatkan grup Konfigurasi \"%s\""
+msgstr "Yapılandırma grubu \"%s\" ekleniyor"
 
 msgid "Availability Zone"
-msgstr "Availability Zone (ketersediaan zona)"
+msgstr "Kullanılırlık Bölgesi"
 
 msgid "Available networks"
-msgstr "Jaringan yang tersedia"
+msgstr "Kullanılabilir ağlar"
 
 msgid "Backup"
-msgstr "Backup (cadangan)"
+msgstr "Yedek"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
-msgstr "Backup (pencadangan)"
+msgstr "Yedekleme"
 
 msgid "Backup Database"
-msgstr "Backup Database (cadangan database)"
+msgstr "Veritabanını Yedekle"
 
 msgid "Backup Details"
-msgstr "Backup Details (rincian cadangan)"
+msgstr "Yedek Ayrıntıları"
 
 msgid "Backup Details: {{ backup.name }}"
-msgstr "Backup Details: {{ backup.name }}"
+msgstr "Yedek Ayrıntıları: {{ backup.name }}"
 
 msgid "Backup Duration"
-msgstr "Backup Duration (jangka cadangan)"
+msgstr "Yedek Süresi"
 
 msgid "Backup File"
-msgstr "Backup File (file cadangan)"
+msgstr "Yedek Dosyası"
 
 msgid "Backup File Location"
-msgstr "Backup File Location (lokasi file cadangan)"
+msgstr "Yedek Dosyası Konumu"
 
 msgid "Backup Name"
-msgstr "Backup Name (nama cadangan)"
+msgstr "Yedek İsmi"
 
 msgid "Backup Overview"
-msgstr "Backup Overview (ikhtisar cadangan)"
+msgstr "Yedek Genel Görünümü"
 
 msgid "Backups"
-msgstr "Backups (cadangan)"
+msgstr "Yedekler"
 
 msgctxt "Current status of a Database Instance"
 msgid "Blocked"
-msgstr "Blocked (diblokir)"
+msgstr "Engellendi"
 
 msgctxt "Current status of a Database Backup"
 msgid "Building"
-msgstr "Building (pembangunan)"
+msgstr "İnşa Ediliyor"
 
 msgctxt "Current status of a Database Instance"
 msgid "Building"
-msgstr "Building (pembangunan)"
+msgstr "İnşa Ediliyor"
 
 msgid "Cancel"
-msgstr "Cancel (pembatalan)"
+msgstr "İptal"
 
 #, python-format
 msgid "Cannot disable root access: %s"
-msgstr "Tidak dapat menonaktifkan akses root: %s"
+msgstr "Kök erişimi kapatılamıyor: %s"
 
 msgid "Cannot grow cluster.  No instances specified."
-msgstr "Tidak bisa tumbuh cluster. Tidak ada instance yang ditentukan."
+msgstr "Küme büyütülemiyor. Sunucu belirtilmemiş."
 
 msgid "Character Set"
-msgstr "Character Set (set karakter)"
+msgstr "Karakter Kümesi"
 
 msgid "Choose a new instance flavor."
-msgstr "Pilih flavor instance baru."
+msgstr "Yeni bir sunucu niteliği seçin."
 
 msgid "Choose initial state."
-msgstr "Pilih keadaan awal."
+msgstr "İlk durumu seçin."
 
 msgid "Close"
-msgstr "Close (tutup)"
+msgstr "Kapat"
 
 msgid "Cluster Name"
-msgstr "Cluster Name (nama kluster)"
+msgstr "Küme İsmi"
 
 msgid "Cluster Size"
-msgstr "Cluster Size (ukuran kluster)"
+msgstr "Küme Boyutu"
 
 msgid "Clusters"
-msgstr "Clusters (kluster)"
+msgstr "Kümeler"
 
 msgid "Collation"
-msgstr "Collation (pemeriksaan)"
+msgstr "Harmanlama"
 
 msgid "Comma separated list of databases to create"
-msgstr "Daftar dipisahkan koma dari database untuk membuat"
+msgstr "Oluşturulacak veritabanlarının virgülle ayrılmış listesi"
 
 msgctxt "Current status of a Database Backup"
 msgid "Completed"
-msgstr "Completed (lengkap)"
+msgstr "Tamamlandı"
 
 msgid "Configuration Defaults"
-msgstr "Configuration Defaults (default konfigurasi)"
+msgstr "Yapılandırma Öntanımları"
 
 msgid "Configuration Group"
-msgstr "Configuration Group (grup konfigurasi)"
+msgstr "Yapılandırma Grubu"
 
 msgid "Configuration Group Details: {{configuration.name}}"
-msgstr "Configuration Group Details: {{configuration.name}}"
+msgstr "Yapılandırma Grubu Ayrıntıları: {{configuration.name}}"
 
 msgid "Configuration Group Instances"
-msgstr "Configuration Group Instances (instance grup konfigurasi)"
+msgstr "Yapılandırma Grubu Sunucuları"
 
 msgid "Configuration Group Name"
-msgstr "Configuration Group Name (nama grup konfigurasi)"
+msgstr "Yapılandırma Grup İsmi"
 
 msgid "Configuration Group Overview"
-msgstr "Configuration Group Overview"
+msgstr "Yapılandırma Grubu Genel Görünümü"
 
 msgid "Configuration Group Values"
-msgstr "Configuration Group Values (nilai grup konfigurasi)"
+msgstr "Yapılandırma Grup Değerleri"
 
 msgid "Configuration Groups"
-msgstr "Configuration Groups (grup konfigurasi)"
+msgstr "Yapılandırma Grupları"
 
 msgid ""
 "Confirm the current replica is to be promoted as the new replica source."
-msgstr ""
-"Konfirmasi replika saat ini adalah untuk dipromosikan sebagai sumber replika "
-"baru."
+msgstr "Mevcut kopyanın yeni kopya kaynağı olarak terfisini onayla."
 
 msgid "Connection Examples"
-msgstr "Connection Examples (contoh koneksi)"
+msgstr "Bağlantı Örnekleri"
 
 msgid "Connection Information"
-msgstr "Connection Information (informasi koneksi)"
+msgstr "Bağlantı Bilgisi"
 
 msgid "Container"
-msgstr "Container (kontainer)"
+msgstr "Kapsayıcı"
 
 msgid "Create Backup"
-msgstr "Create Backup (buat cadangan)"
+msgstr "Yedek Oluştur"
 
 msgid "Create Configuration Group"
-msgstr "Create Configuration Group (buat grup konfigurasi)"
+msgstr "Yapılandırma Grubu Oluştur"
 
 msgid "Create Database"
-msgstr "Create Database (buat database)"
+msgstr "Veritabanı Oluştur"
 
 msgid "Create User"
-msgstr "Create User (buat user)"
+msgstr "Kullanıcı Oluştur"
 
 msgid ""
 "Create an optional initial user. This user will have access to all databases "
 "you create."
 msgstr ""
-"Buat pengguna awal opsional. Pengguna ini akan memiliki akses ke semua "
-"database yang Anda buat."
+"İsteğe bağlı bir ilk kullanıcı oluşturun. Bu kullanıcının oluşturduğunuz tüm "
+"veritabanlarına erişimi olacak."
 
 msgid "Created"
-msgstr "Created (dibuat))"
+msgstr "Oluşturuldu"
 
 msgid "Created configuration group"
-msgstr "Dibuat grup konfigurasi"
+msgstr "Yapılandırma grubu oluşturuldu"
 
 #, python-format
 msgid "Created database \"%s\"."
-msgstr "Database yang dibuat \"%s\"."
+msgstr "\"%s\" veritabanı oluşturuldu."
 
 #, python-format
 msgid "Created user \"%s\"."
-msgstr "Dibuat pengguna \"%s\"."
+msgstr "\"%s\" kullanıcısı oluşturuldu."
 
 msgid "Current Replica"
-msgstr "Current Replica (salinan saat ini)"
+msgstr "Mevcut Kopya"
 
 msgid "Current Replica Source"
-msgstr "Current Replica Source (sumber salinan saat ini)"
+msgstr "Mevcut Kopya Kaynağı"
 
 msgid "Current Size (GB)"
-msgstr "Current Size (GB) (ukuran saat ini)"
+msgstr "Mevcut Boyut (GB)"
 
 msgid "Current Task"
-msgstr "Current Task (tugas saat ini)"
+msgstr "Mevcut Görev"
 
 msgid "DATABASE"
-msgstr "DATABASE (database)"
+msgstr "VERİTABANI"
 
 msgid "Database"
-msgstr "Database (database)"
+msgstr "Veritabanı"
 
 msgid "Database Access"
-msgstr "Database Access (akses database)"
+msgstr "Veritabanı Erişimi"
 
 msgid "Database Access for: {{ user_name }}"
-msgstr "Akses database untuk: {{ user_name }}"
+msgstr "Veritabanı Erişimi: {{ user_name }}"
 
 msgid "Database Backups"
-msgstr "Database Backups (cadangan database) "
+msgstr "Veritabanı Yedekleri"
 
 msgid "Database Info"
-msgstr "Database Info (info database)"
+msgstr "Veritabanı Bilgisi"
 
 msgid "Database Instance"
-msgstr "Database Instance (instance database)"
+msgstr "Veritabanı Sunucusu"
 
 msgid "Database Name"
-msgstr "Database Name (nama pengguna)"
+msgstr "Veritabanı Adı"
 
 msgid "Database Port"
-msgstr "Database Port (port database)"
+msgstr "Veritabanı Bağlantı Noktası"
 
 msgid "Databases"
-msgstr "Databases (database)"
+msgstr "Veritabanları"
 
 msgid "Datastore"
-msgstr "Datastore (penyimpanan data)"
+msgstr "Verideposu"
 
 msgid "Datastore Version"
-msgstr "Datastore Version (versi penyimpanan data)"
+msgstr "Verideposu Sürümü"
 
 msgid "Defaults"
-msgstr "Defaults (default)"
+msgstr "Öntanımlılar"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
-msgstr[0] "Delete Backup"
+msgstr[0] "Yedeği Sil"
+msgstr[1] "Yedekleri Sil"
 
 msgid "Delete Cluster"
 msgid_plural "Delete Clusters"
-msgstr[0] "Delete Cluster"
+msgstr[0] "Kümeyi Sil"
+msgstr[1] "Kümeleri Sil"
 
 msgid "Delete Configuration Group"
 msgid_plural "Delete Configuration Groups"
-msgstr[0] "Delete Configuration Group"
+msgstr[0] "Yapılandırma Grubunu Sil"
+msgstr[1] "Yapılandırma Gruplarını Sil"
 
 msgid "Delete Database"
 msgid_plural "Delete Databases"
-msgstr[0] "Delete Database"
+msgstr[0] "Veritabanını Sil"
+msgstr[1] "Veritabanlarını Sil"
 
 msgctxt "Current status of a Database Backup"
 msgid "Delete Failed"
-msgstr "Delete Failed (penghapusan kegagalan)"
+msgstr "Silme Başarısız"
 
 msgid "Delete Instance"
 msgid_plural "Delete Instances"
-msgstr[0] "Delete Instance"
+msgstr[0] "Sunucuyu Sil"
+msgstr[1] "Sunucuları Sil"
 
 msgid "Delete Parameter"
 msgid_plural "Delete Parameters"
-msgstr[0] "Delete Parameter"
+msgstr[0] "Parametreyi Sil"
+msgstr[1] "Parametreleri Sil"
 
 msgid "Delete User"
 msgid_plural "Delete Users"
-msgstr[0] "Delete User"
+msgstr[0] "Kullanıcıyı Sil"
+msgstr[1] "Kullanıcıları Sil"
 
 msgid "Deleted Backup"
 msgid_plural "Deleted Backups"
-msgstr[0] "Deleted Backup"
+msgstr[0] "Yedek Silindi"
+msgstr[1] "Yedekler Silindi"
 
 msgid "Deleted Configuration Group"
 msgid_plural "Deleted Configuration Groups"
-msgstr[0] "Deleted Configuration Group"
+msgstr[0] "Yapılandırma Grubu Silindi"
+msgstr[1] "Yapılandırma Grupları Silindi"
 
 msgid "Deleted Database"
 msgid_plural "Deleted Databases"
-msgstr[0] "Deleted Database"
+msgstr[0] "Veritabanı Silindi"
+msgstr[1] "Veritabanları Silindi"
 
 msgid "Deleted Parameter"
 msgid_plural "Deleted Parameters"
-msgstr[0] "Deleted Parameter"
+msgstr[0] "Parametre Silindi"
+msgstr[1] "Parametreler Silindi"
 
 msgid "Deleted User"
 msgid_plural "Deleted Users"
-msgstr[0] "Deleted User"
+msgstr[0] "Kullanıcı Silindi"
+msgstr[1] "Kullanıcılar Silindi"
 
 msgid "Deleted cluster is not recoverable."
-msgstr "Cluster dihapus tidak dapat dipulihkan."
+msgstr "Silinen küme geri getirilebilir değil."
 
 msgid "Deleted instances are not recoverable."
-msgstr "Instance yang dihapus tidak dapat dipulihkan."
+msgstr "Silinen sunucular geri getirilemez."
 
 msgid "Description"
-msgstr "Description (deskripsi)"
+msgstr "Açıklama"
 
 msgid "Detach Configuration Group"
 msgid_plural "Detach Configuration Groups"
-msgstr[0] "Detach Configuration Group"
+msgstr[0] "Yapılandırma Grubunu Ayır"
+msgstr[1] "Yapılandırma Gruplarını Ayır"
 
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
-msgstr[0] "Detach Replica"
+msgstr[0] "Kopyayı Ayır"
+msgstr[1] "Kopyaları Ayır"
 
 msgid "Detached Configuration Group"
 msgid_plural "Detached Configuration Groups"
-msgstr[0] "Detached Configuration Group"
+msgstr[0] "Yapılandırma Grubu Ayrıldı"
+msgstr[1] "Yapılandırma Grupları Ayrıldı"
 
 msgid "Details"
-msgstr "Details (rincian)"
+msgstr "Ayrıntılar"
 
 msgid "Disable Log"
 msgid_plural "Disable Logs"
-msgstr[0] "Disable Log"
+msgstr[0] "Günlüğü Kapat"
+msgstr[1] "Günlükleri Kapat"
 
 msgid "Disable Root"
-msgstr "Disable Root (menonaktifkan root)"
+msgstr "Root'u Kapat"
 
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
-msgstr[0] "Disabled Log"
+msgstr[0] "Günlük Kapatıldı"
+msgstr[1] "Günlükler Kapatıldı"
 
 msgid "Discard Changes"
-msgstr "Discard Changes (pembuangan perubahan)"
+msgstr "Değişikliklerden Vazgeç"
 
 msgid "Discard Log"
 msgid_plural "Discard Logs"
-msgstr[0] "Discard Log"
+msgstr[0] "Günlüğü Sil"
+msgstr[1] "Günlükleri Sil"
 
 msgid "Discarded Log"
 msgid_plural "Discarded Logs"
-msgstr[0] "Discarded Log"
+msgstr[0] "Günlük Silindi"
+msgstr[1] "Günlükler Silindi"
 
 msgid "Download"
-msgstr "Download (pengunduhan)"
+msgstr "İndir"
 
 msgid "Download Backup"
-msgstr "Download Backup (mengunduh cadangan)"
+msgstr "Yedeği İndir"
 
 msgid "Edit User"
-msgstr "Edit User (edit user)"
+msgstr "Kullanıcı Düzenle"
 
 msgid "Eject Replica Source"
 msgid_plural "Eject Replica Sources"
-msgstr[0] "Eject Replica Source"
+msgstr[0] "Kopya Kaynağını Çıkar"
+msgstr[1] "Kopya Kaynaklarını Çıkar"
 
 msgid "Ejected Replica Source"
 msgid_plural "Ejected Replica Sources"
-msgstr[0] "Ejected Replica Source"
+msgstr[0] "Kopya Kaynağı Çıkarıldı"
+msgstr[1] "Kopya Kaynakları Çıkarıldı"
 
 msgid "Enable Log"
 msgid_plural "Enable Logs"
-msgstr[0] "Enable Log"
+msgstr[0] "Günlüğü Etkinleştir"
+msgstr[1] "Günlükleri Etkinleştir"
 
 msgid "Enable Root"
-msgstr "Enable Root (mengaktifkan root)"
+msgstr "Root'u Etkinleştir"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
-msgstr[0] "Enabled Log"
+msgstr[0] "Günlük Etkinleştirildi"
+msgstr[1] "Günlükler Etkinleştirildi"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
-msgstr "Error"
+msgstr "Hata"
 
 msgid "Error applying changes"
-msgstr "Kesalahan menerapkan perubahan"
+msgstr "Değişiklikleri uygulamada hata"
 
 msgid "Error creating database backup."
-msgstr "Kesalahan menciptakan backup database."
+msgstr "Veritabanı yedeği oluşturmada hata."
 
 msgid "Error deleting database on instance."
-msgstr "Kesalahan menghapus database pada instance."
+msgstr "Sunucudaki veritabanının silinmesinde hata."
 
 #, python-format
 msgid "Error downloading log file: %s"
-msgstr "Kesalahan men-download file log: %s"
+msgstr "Günlük dosyası indirilirken hata: %s"
 
 msgid "Error getting configuration group list."
-msgstr "Kesalahan mendapatkan daftar grup konfigurasi."
+msgstr "Yapılandırma grubu listesi alınamıyor."
 
 msgid "Error getting database backup list."
-msgstr "Kesalahan mendapatkan daftar backup database."
+msgstr "Veritabanı yedek listesi alınırken hata."
 
 #, python-format
 msgid "Error resetting parameters: %s"
-msgstr "Kesalahan ulang (resetting) parameter: %s"
+msgstr "Parametreler yeniden ayarlanırken hata: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
-msgstr "Failed"
+msgstr "Başarısız"
 
 msgctxt "Current status of a Database Instance"
 msgid "Failed"
-msgstr "Failed (kegagalan)"
+msgstr "Başarısız"
 
 msgid "Fault"
-msgstr "Fault (kesalahan)"
+msgstr "Arıza"
 
 msgid "Flavor"
-msgstr "Flavor"
+msgstr "Nitelik"
 
 msgid "GB"
 msgstr "GB"
 
 msgid "Go"
-msgstr "Go (jalan)"
+msgstr "Git"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
-msgstr[0] "Grant Access"
+msgstr[0] "Erişim İzni Ver"
+msgstr[1] "Erişim İzni Ver"
 
 msgid "Granted Access to"
 msgid_plural "Granted Access to"
-msgstr[0] "Granted Access to"
+msgstr[0] "Erişim Verildi"
+msgstr[1] "Erişim Verildi"
 
 msgid "Grow Cluster"
-msgstr "Grow Cluster (pertumbuhan kluster)"
+msgstr "Kümeyi Büyüt"
 
 msgid "Grow Cluster: {{cluster_name}}"
-msgstr "Grow Cluster: {{cluster_name}}"
+msgstr "Kümeyi Büyüt: {{cluster_name}}"
 
 msgid "Has Root Ever Been Enabled"
-msgstr "Has Root Ever Been Enabled (apakah root pernah diaktifkan)"
+msgstr "Root Hiç Etkinleştirilmiş mi"
 
 msgid "Host"
-msgstr "Host (host)"
+msgstr "Sunucu"
 
 msgid "Host or IP that the user is allowed to connect through."
-msgstr "Host atau IP dimana pengguna diperbolehkan untuk terhubung melalui."
+msgstr "Kullanıcının bağlanmasına izni olan İstemci veya IP."
 
 msgid "ID"
-msgstr "ID (id)"
+msgstr "Kimlik"
 
 msgid "Incremental"
-msgstr "Incremental (penambahan)"
+msgstr "Artan"
 
 msgid "Incremental Backup"
-msgstr "Incremental Backup (cadangan inkremental)"
+msgstr "Artırma Yedeklemesi"
 
 msgid "Info"
-msgstr "Info (informasi)"
+msgstr "Bilgi"
 
 msgid "Information"
-msgstr "Information (informasi)"
+msgstr "Bilgi"
 
 msgid "Initial Admin User"
-msgstr "Initial Admin User (user admin awal)"
+msgstr "İlk Yönetici Kullanıcı"
 
 msgid "Initial Databases"
-msgstr "Initial Databases (database awal)"
+msgstr "İlk Veritabanları"
 
 msgid "Initial Volume Size"
-msgstr "Initial Volume Size (ukuran volume awal)"
+msgstr "Birim Başlangıç Boyutu"
 
 msgid "Initial admin user to add"
-msgstr "Awal user admin untuk menambahkan"
+msgstr "Eklenecek ilk yönetici kullanıcı"
 
 msgid "Initialize Databases"
-msgstr "Initialize Databases"
+msgstr "Veritabanlarını İlklendir"
 
 msgid "Instance Name"
-msgstr "Instance Name (nama instance)"
+msgstr "Sunucu Adı"
 
 msgid "Instance Type"
-msgstr "Instance Type (tipe instance)"
+msgstr "Sunucu Türü"
 
 msgid "Instances"
-msgstr "Instances (instance)"
+msgstr "Sunucular"
 
 msgid "Is a Replica Of"
-msgstr "Is a Replica Of"
+msgstr "Şunun Kopyası"
 
 msgid "Launch"
-msgstr "Launch (meluncurkan)"
+msgstr "Başlat"
 
 msgid "Launch Cluster"
-msgstr "Launch Cluster (peluncuran kluster)"
+msgstr "Kümeyi Başlat"
 
 msgid "Launch Database"
-msgstr "Launch Database (peluncuran database)"
+msgstr "Veritabanını Başlat"
 
 msgid "Launch Instance"
-msgstr " Launch Instance (peluncuran instance)"
+msgstr "Sunucu Başlat"
 
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "Diluncurkan %(count)s named \"%(name)s\"."
+msgstr "%(count)s \"%(name)s\" isimli başlatıldı."
 
 #, python-format
 msgid "Launched cluster \"%s\""
-msgstr "Diluncurkan klaster \"%s\""
+msgstr "\"%s\" kümesi başlatıldı"
 
 msgid "Locality"
-msgstr "Locality (lokalitas)"
+msgstr "Çevre"
 
 msgid "Log"
-msgstr "Log (catatan)"
+msgstr "Günlük"
 
 msgid "Log Contents"
-msgstr "Log Contents (konten catatan)"
+msgstr "Günlük İçeriği"
 
 msgid "Log Length"
-msgstr "Log Length (panjang catatan)"
+msgstr "Günlük Uzunluğu"
 
 msgid "Log length must be a nonnegative integer."
-msgstr "Panjang log harus berupa bilangan integer positif."
+msgstr "Günlük uzunluğu negatif olmayan tam sayı olmalı."
 
 msgid "Log: "
-msgstr "Log (catatan): "
+msgstr "Günlük: "
 
 msgid "Logs"
-msgstr "Logs (catatan)"
+msgstr "Günlükler"
 
 msgid "Manage Access"
-msgstr "Manage Access (mengelola akses)"
+msgstr "Erişimi Yönet"
 
 msgid "Manage Root"
-msgstr "Manage Root (mengelola root)"
+msgstr "Root'u Yönet"
 
 msgid "Manage Root Access"
-msgstr "Manage Root Access (mengelolaan akses root)"
+msgstr "Kök Erişimini Yönet"
 
 msgid "Management Console"
-msgstr "Management Console (konsol pengelolaan)"
+msgstr "Yönetim Konsolu"
 
 msgid "Master Instance Name"
-msgstr "Master Instance Name (nama instance induk)"
+msgstr "Ana Sunucu İsmi"
 
 msgid "Message"
-msgstr "Message (pesan)"
+msgstr "İleti"
 
 msgid ""
 "Move networks from 'Available Networks' to 'Selected Networks' by clicking "
 "the button, or dragging and dropping. You can change the NIC order by "
 "dragging and dropping as well."
 msgstr ""
-"Pindah jaringan dari 'Available Networks' ke 'Selected Networks' dengan "
-"mengklik tombol, atau menyeret dan menjatuhkan (drag and drop). Anda dapat "
-"mengubah urutan NIC dengan menyeret dan menjatuhkan juga."
+"Ağlar 'Kullanılabilri Ağlar'dan 'Seçili Ağlar'a düğmeye tıklayarak, ya da "
+"sürükleyip bırakarak taşıyın. NIC sırasını da sürükleyip bırakarak "
+"değiştirebilirsiniz."
 
 msgid "Name"
-msgstr "Name (nama)"
+msgstr "İsim"
 
 msgid "Network"
-msgstr "Network (jaringan)"
+msgstr "Ağ"
 
 msgid "Network attached to instance."
-msgstr "Jaringan terpasang untuk instance."
+msgstr "Ağ sunucuya eklendi."
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
-msgstr "New (baru)"
+msgstr "Yeni"
 
 msgid "New Flavor"
-msgstr "New Flavor (flavor baru)"
+msgstr "Yeni Nitelik"
 
 msgid "New Host"
-msgstr "New Host (host baru)"
+msgstr "Yeni Sunucu"
 
 msgid "New Name"
-msgstr "New Name (nama baru)"
+msgstr "Yeni İsim"
 
 msgid "New Password"
-msgstr "New Password (password baru)"
+msgstr "Yeni Parola"
 
 msgid "New Size (GB)"
-msgstr "New Size (GB) (ukuran baru)"
+msgstr "Yeni Boyut (GB)"
 
 msgid "New password for cluster access."
-msgstr "Password baru untuk akses cluster."
+msgstr "Küme erişimi için yeni parola."
 
 msgid "New size for volume must be greater than current size."
-msgstr "Ukuran baru untuk volume harus lebih besar dari ukuran saat ini."
+msgstr "Birimin yeni boyutu mevcut boyutundan büyük olmalıdır."
 
 msgid "No availability zones found"
-msgstr "Tidak ada zona ketersediaan ditemukan"
+msgstr "Kullanılırlık bölgesi bulunamadı"
 
 msgid "No backups available"
-msgstr "Tidak ada backup yang tersedia"
+msgstr "Kullanılabilir yedek yok"
 
 msgid "No configuration groups available"
-msgstr "Tidak ada grup konfigurasi yang tersedia"
+msgstr "Kullanılabilir yapılandırma grubu yok"
 
 msgid "No configurations available"
-msgstr "Tidak ada konfigurasi yang tersedia"
+msgstr "Kullanılabilir yapılandırma yok"
 
 msgid "No flavors available"
-msgstr "Tidak ada flavor tersedia"
+msgstr "Kullanılabilir nitelik yok"
 
 msgid "No instances available"
-msgstr "Tidak ada instance yang tersedia"
+msgstr "Kullanılabilir sunucu yok"
 
 msgid "No volume type"
-msgstr "Tidak ada jenis volume"
+msgstr "Birim türü yok"
 
 msgid "None"
-msgstr "None (tak satupun)"
+msgstr "Hiçbiri"
 
 msgid "Not Assigned"
-msgstr "Not Assigned (tidak ditugaskan)"
+msgstr "Atanmamış"
 
 msgid "Not Found"
-msgstr "Not Found (tidak ditemukan)"
+msgstr "Bulunamadı"
 
 msgid "Not available"
-msgstr "Not available (tidak tersedia)"
+msgstr "Kullanılabilir değil"
 
 msgid ""
 "Note: Enable root access on an instance.  If the root user is already "
 "enabled then a new password is generated."
 msgstr ""
-"Catatan: Aktifkan akses root pada sebuah instance. Jika user root sudah "
-"diaktifkan maka password baru yang dihasilkan."
+"Not: Bir sunucuya kök erişimini etkinleştir. Root kullanıcı zaten etkinse "
+"yeni parola üretilir."
 
 msgid "Number of Instances"
-msgstr "Number of Instances (jumlah instance)"
+msgstr "Sunucu Sayısı"
 
 msgid "Number of Shards"
-msgstr "Number of Shards (jumlah serpihan)"
+msgstr "Parça Sayısı"
 
 msgid "Number of instances in the cluster."
-msgstr "Jumlah instance dalam cluster."
+msgstr "Kümedeki sunucu sayısı."
 
 msgid "Number of instances in the cluster. (Read only)"
-msgstr "Jumlah instance dalam cluster. (read only)"
+msgstr "Kümedeki sunucu sayısı. (Salt okunur)"
 
 msgid "Number of shards. (Read only)"
-msgstr "Jumlah serpihan. (Read only)"
+msgstr "Parça sayısı. (Salt okunur)"
 
 msgid "Old Flavor"
-msgstr "Old Flavor (flavor lama)"
+msgstr "Eski Nitelik"
 
 msgid "Optional Backup Description"
-msgstr "Optional Backup Description (deskripsi cadangan opsional)"
+msgstr "İsteğe Bağlı Yedek Tanımı"
 
 msgid "Optional character set for the database."
-msgstr "Set karakter opsional untuk database."
+msgstr "Veritabanı için isteğe bağlı karakter kümesi."
 
 msgid "Optional collation type for the database."
-msgstr "Tipe pemeriksaan opsional untuk database."
+msgstr "Veritabanı için isteğe bağlı harmanlama türü."
 
 msgid "Optional comma separated list of databases user has access to."
 msgstr ""
-"Daftar dipisahkan koma opsional di database pengguna memiliki akses ke."
+"İsteğe bağlı, kullanıcının erişimi olan veritabanlarının virgülle ayrılmış "
+"listesi."
 
 msgid "Optional datastore specific type of the instance."
-msgstr "Tipe tertentu datastore opsional untuk instance."
+msgstr "İsteğe bağlı, sunucunun verideposuna özel türü."
 
 msgid ""
 "Optional datastore specific value that defines the relationship from one "
 "instance in the cluster to another."
 msgstr ""
-"Nilai tertentu datastore opsional yang mendefinisikan hubungan dari satu "
-"instance dalam cluster ke instance yang lain."
+"Kümedeki bir sunucudan diğerine ilişkiyi tanımlayan isteğe bağlı "
+"verideposuna özel değer."
 
 msgid "Optional host of user."
-msgstr "Host opsional pengguna."
+msgstr "İsteğe bağlı, kullanıcı istemcisi."
 
 msgid "Optional name of the instance."
-msgstr "Nama opsional instance."
+msgstr "Sunucunun isteğe bağlı ismi."
 
 msgid "Optional parent backup"
-msgstr "Backup indukn opsional"
+msgstr "İsteğe bağlı üst yedek"
 
 msgid ""
 "Optionally choose to create this database using a previous backup, or as a "
 "replica of another database instance."
 msgstr ""
-"Secara opsional memilih untuk membuat database ini menggunakan cadangan "
-"sebelumnya, atau sebagai replika contoh database lain."
+"İsteğe bağlı olarak bu veritebanını önceki bir yedekten, ya da başka bir "
+"veritabanı sunucusunun kopyası olarak başlat."
 
 msgid "Optionally provide a character set and collation for the database."
 msgstr ""
-"Secara opsional menyediakan set karakter dan pemeriksaan untuk database."
+"İsteğe bağlı olarak veritabanı için bir karakter kümesi ve harman sağlayın."
 
 msgid "Optionally provide a comma separated list of databases to create:"
 msgstr ""
-"Secara opsional memberikan daftar dipisahkan koma dari database untuk "
-"membuat:"
+"İsteğe bağlı olarak oluşturulacak veritabanlarının virgülle ayrılmış "
+"listesini sağlayın:"
 
 msgid ""
 "Optionally provide the host of the user and a list of databases the user is "
 "granted access to."
 msgstr ""
-"Secara opsional menyediakan host  pengguna dan daftar database dimana "
-"pengguna diberikan akses ke database itu."
+"İsteğe bağlı olarak kullanıcı sunucusunu ve erişim olan veritabanlarının "
+"listesini sağlayın."
 
 msgid "Overview"
-msgstr "Overview (ikhtisar)"
+msgstr "Genel Görünüm"
 
 msgid "PASSWORD"
-msgstr "PASSWORD (password)"
+msgstr "PAROLA"
 
 msgid "Parameter"
-msgstr "Parameter (parameter)"
+msgstr "Parametre"
 
 msgid "Parameters"
-msgstr "Parameters (parameter)"
+msgstr "Parametreler"
 
 msgid "Parent Backup"
-msgstr "Parent Backup (cadangan induk)"
+msgstr "Üst Yedek"
 
 msgid "Password"
-msgstr "Password (password)"
+msgstr "Parola"
 
 msgid "Password (required)"
-msgstr "Password (wajib)"
+msgstr "Parola (gerekli)"
 
 msgid "Password for root user must be specified."
-msgstr "Password untuk user root harus ditentukan."
+msgstr "Root kullanıcı için parola belirtilmeli."
 
 msgid "Password for root user."
-msgstr "Password untuk user root."
+msgstr "Root kullanıcısı için parola."
 
 msgid ""
 "Password is only visible immediately after the root is enabled or reset."
-msgstr "Password hanya terlihat segera setelah akar diaktifkan atau reset."
+msgstr ""
+"Parola yalnızca root etkinleştirildiğinde ya da sıfırlandığında görünür."
 
 msgid ""
 "Please note:</strong> The new value must be greater than the existing volume "
 "size."
 msgstr ""
-"Harap dicatat:</strong> Nilai baru harus lebih besar dari ukuran volume yang "
-"ada."
+"Lütfen dikkat.</strong>Yeni değer mevcut birim boyutundan büyük olmalı."
 
 msgid "Promote"
-msgstr "Promote (promosi)"
+msgstr "Terfi et"
 
 msgid "Promote to Replica Source"
-msgstr "Promote to Replica Source (promosi sumber replika)"
+msgstr "Kopya Kaynağı olarak yükselt"
 
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
-msgstr "Replika dipromosikan \"%s\" sebagai sumber replika baru."
+msgstr "Kopya \"%s\" yeni kopya kaynağı olarak yükseltildi."
 
 msgid "Property"
-msgstr "Property (properti)"
+msgstr "Özellike"
 
 msgid "Publish"
-msgstr "Publish (penerbitan)"
+msgstr "Yayımla"
 
 msgid "Publish Log"
 msgid_plural "Publish Logs"
-msgstr[0] "Publish Log"
+msgstr[0] "Günlüğü Yayımla"
+msgstr[1] "Günlükleri Yayımla"
 
 msgid "Publishable (bytes)"
-msgstr "Publishable (yang patut diterbitkan) (bytes)"
+msgstr "Yayımlanabilir (bayt)"
 
 msgid "Published (bytes)"
-msgstr "Published  (diterbitkan) (bytes)"
+msgstr "Yayımlandı (bayt)"
 
 msgid "Published Log"
 msgid_plural "Published Logs"
-msgstr[0] "Published Log"
+msgstr[0] "Günlük Yayımlandı"
+msgstr[1] "Günlükler Yayımlandı"
 
 msgid "RAM"
 msgstr "RAM"
 
 msgctxt "Current status of a Database Instance"
 msgid "Rebooting"
-msgstr "Rebooting (melakukan reboot)"
+msgstr "Yeniden başlatılıyor"
 
 msgid "Related To"
-msgstr "Related To"
+msgstr "Bununla İlişkili"
 
 msgid "Remove Instance"
 msgid_plural "Remove Instances"
-msgstr[0] "Remove Instance"
+msgstr[0] "Sunucuyu Kaldır"
+msgstr[1] "Sunucuları Kaldır"
 
 msgid "Removed Instance"
 msgid_plural "Removed Instances"
-msgstr[0] "Removed Instance"
+msgstr[0] "Sunucu Kaldırıldı"
+msgstr[1] "Sunucular Kaldırıldı"
 
 msgid "Removed instances from cluster."
-msgstr "Instance dihapus dari cluster."
+msgstr "Sunucular kümeden kaldırıldı."
 
 msgid "Replica Count"
-msgstr "Replica Count (jumlah salinan)"
+msgstr "Kopya Sayısı"
 
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
-msgstr[0] "Replica Detached"
+msgstr[0] "Kopya Ayrıldı"
+msgstr[1] "Kopyalar Ayrıldı"
 
 msgid "Replicas"
-msgstr "Replicas (salinan)"
+msgstr "Koypalar"
 
 msgid "Replicate from Instance"
-msgstr "Mereplikasi dari Instance"
+msgstr "Sunucudan Geri Yükle"
 
 msgid "Replication"
-msgstr "Replication (tiruan)"
+msgstr "Çoğaltma"
 
 msgid "Reset Parameters"
-msgstr "Reset Parameters (pengaturan ulang parameter)"
+msgstr "Parametreleri Sıfırla"
 
 msgid "Reset Root Password"
-msgstr "Reset Root Password (mengatur ulang password root) "
+msgstr "Kök Parolayı Sıfırla"
 
 msgid "Resize Database Instance"
-msgstr "Resize Database Instance (perubahan ukuran instance database)"
+msgstr "Veritabanı Sunucusunu Yeniden Boyutlandır"
 
 msgid "Resize Database Volume"
-msgstr "Resize Database Volume (perubahan ukuran volume database)"
+msgstr "Veritabanı Birimini Yeniden Boyutlandır"
 
 msgid "Resize Instance"
-msgstr "Resize Instance (perubahan ukuran instance)"
+msgstr "Sunucuyu Yeniden Boyutlandır"
 
 msgid "Resize Volume"
-msgstr "Resize Volume (perubahan ukuran volume)"
+msgstr "Birimi Yeniden Boyutlandır"
 
 msgctxt "Current status of a Database Instance"
 msgid "Resizing"
-msgstr "Resizing (perubahan ukurang)"
+msgstr "Yeniden boyutlandırılıyor"
 
 #, python-format
 msgid "Resizing instance \"%s\""
-msgstr "Mengubah ukuran instance \"%s\""
+msgstr "\"%s\" sunucusu yeniden boyutlandırılıyor"
 
 #, python-format
 msgid "Resizing volume \"%s\""
-msgstr "Perubahan ukuran volume \"%s\""
+msgstr "\"%s\" birimi yeniden boyutlandırılıyor"
 
 msgid "Restart Instance"
 msgid_plural "Restart Instances"
-msgstr[0] "Restart Instance"
+msgstr[0] "Sunucuyu Yeniden Başlat"
+msgstr[1] "Sunucuları Yeniden Başlat"
 
 msgctxt "Current status of a Database Instance"
 msgid "Restart Required"
-msgstr "Restart Required (restart diperlukan)"
+msgstr "Yeniden Başlatma Gerekiyor"
 
 msgid "Restarted Instance"
 msgid_plural "Restarted Instances"
-msgstr[0] "Restarted Instance"
+msgstr[0] "Sunucu Yeniden Başlatıldı"
+msgstr[1] "Sunucular Yeniden Başlatıldı"
 
 msgid "Restarted instances will lose any data not saved in persistent storage."
 msgstr ""
-"Instance yang direstart akan kehilangan data tidak disimpan dalam "
-"penyimpanan persisten."
+"Yeniden başlatılan sunucular kalıcı depolamaya kaydedilmemiş tüm veriyi "
+"kaybeder."
 
 msgid "Restore Backup"
-msgstr "Restore Backup (pengembalian cadangan)"
+msgstr "Yedeği Geri Yükle"
 
 msgid "Restore from Backup"
-msgstr "Restore dari Backup"
+msgstr "Yedekten Geri Yükle"
 
 msgid "Return to Log List"
-msgstr "Return to Log List (kembali ke daftar catatan)"
+msgstr "Günlük Listesine Dön"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
-msgstr[0] "Revoke Access"
+msgstr[0] "Erişimi Kaldır"
+msgstr[1] "Erişimi Kaldır"
 
 msgid "Root Enabled"
-msgstr "Root Enabled (root diaktifkan)"
+msgstr "Root Etkin"
 
 msgid "Root Password"
-msgstr "Root Password (password root)"
+msgstr "Kök Parolası"
 
 #, python-format
 msgid "Root password updated for cluster \"%s\""
-msgstr "Password root diperbarui untuk cluster \"%s\""
+msgstr "\"%s\" kümesi için kök parolası güncellendi"
 
 msgctxt "Current status of a Database Backup"
 msgid "Saving"
-msgstr "Saving (penyimpanan)"
+msgstr "Kaydediliyor"
 
 msgid "Scheduled Shrinking of Cluster"
 msgid_plural "Scheduled Shrinking of Cluster"
-msgstr[0] "Scheduled Shrinking of Cluster"
+msgstr[0] "Kümenin Daraltılması Zamanlandı"
+msgstr[1] "Kümenin Daraltılması Zamanlandı"
 
 #, python-format
 msgid "Scheduled backup \"%(name)s\"."
-msgstr "Backup dijadwalkan\"%(name)s\"."
+msgstr "Yedek \"%(name)s\" zamanlandı."
 
 msgid "Scheduled deletion of Cluster"
 msgid_plural "Scheduled deletion of Clusters"
-msgstr[0] "Scheduled deletion of Cluster"
+msgstr[0] "Kümenin silinmesi zamanlandı"
+msgstr[1] "Kümelerin silinmesi zamanlandı"
 
 msgid "Scheduled deletion of Instance"
 msgid_plural "Scheduled deletion of Instances"
-msgstr[0] "Scheduled deletion of Instance"
+msgstr[0] "Sunucunun silinmesi zamanlandı"
+msgstr[1] "Sunucuların silinmesi zamanlandı"
 
 msgid "Scheduled growing of cluster."
-msgstr "Dijadwalkan pertumbuhan cluster."
+msgstr "Kümenin genişletilmesi zamanlandı."
 
 msgid "Select a backup to restore"
-msgstr "Pilih cadangan untuk mengembalikan"
+msgstr "Geri yüklenecek bir yedek seçin"
 
 msgid "Select a configuration group"
-msgstr "Pilih grup konfigurasi"
+msgstr "Bir yapılandırma grubu seçin"
 
 msgid "Select a configuration group to attach to the database instance."
-msgstr "Pilih grup konfigurasi untuk melekat pada instance database."
+msgstr "Veritabanı sunucusuna eklemek için bir yapılandırma grubu seçin."
 
 msgid "Select a master instance"
-msgstr "Pilih instance induk"
+msgstr "Bir ana sunucu seçin"
 
 msgid "Select a new flavor"
-msgstr "Pilih flavor baru"
+msgstr "Yeni bir nitelik seçin"
 
 msgid "Select a parameter and provide a value for the configuration parameter."
-msgstr "Pilih parameter dan memberikan nilai untuk parameter konfigurasi."
+msgstr ""
+"Bir parametre seçin ve yapılandırma parametresi için bir değer sağlayın."
 
 msgid "Select backup"
-msgstr "Pilih backup"
+msgstr "Yedek seç"
 
 msgid "Select configuration"
-msgstr "Pilih konfigurasi"
+msgstr "Yapılandırma seçin"
 
 msgid "Select configuration group"
-msgstr "Pilih grup konfigurasi"
+msgstr "Yapılandırma grubunu seçin"
 
 msgid "Select datastore type and version"
-msgstr "Pilih tipe datastore dan versi"
+msgstr "Verideposu türü ve sürümü seçin"
 
 msgid "Select instance"
-msgstr "Pilih instance"
+msgstr "Sunucu seçin"
 
 msgid "Select parent backup"
-msgstr "Pilih cadangan induknya"
+msgstr "Üst yedeği seçin"
 
 msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "Pilih instance yang akan dihapus dari cluster."
+msgstr "Kümeden kaldırılacak sunucu(lar)ı seçin."
 
 msgid "Selected networks"
-msgstr "Jaringan yang dipilih"
+msgstr "Seçili ağlar"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
-msgstr[0] "Shrink Cluster"
+msgstr[0] "Kümeyi Daralt"
+msgstr[1] "Kümeyi Daralt"
 
 msgid "Shrink Cluster: {{cluster_name}}"
-msgstr "Shrink Cluster: {{cluster_name}}"
+msgstr "Kümeyi Daralt: {{cluster_name}}"
 
 msgid "Shrinking a cluster is not recoverable."
-msgstr "Menyusut cluster tidak dapat dipulihkan."
+msgstr "Kümeyi daraltmak geri dönülebilir değildir."
 
 msgctxt "Current status of a Database Instance"
 msgid "Shutdown"
-msgstr "Shutdown (mematikan)"
+msgstr "Kapalı"
 
 msgid "Size"
-msgstr "Size (size)"
+msgstr "Boyut"
 
 msgid "Size of image to launch."
-msgstr "Ukuran image untuk memulai."
+msgstr "Başlatılacak imajın boyutu."
 
 msgid "Size of instance to launch."
-msgstr "Ukuran instance untuk memulai."
+msgstr "Başlatılacak sunucunun boyutu."
 
 msgid "Size of the volume in GB."
-msgstr "Ukuran volume dalam GB."
+msgstr "Birimin GB olarak boyutu."
 
 msgid "Source for Initial State"
-msgstr "Source untuk Initial State"
+msgstr "İlk Durum için Kaynak"
 
 msgid "Specify a new flavor for the database instance."
-msgstr "Tentukan flavor baru untuk instance database."
+msgstr "Veritabanı sunucusu için yeni nitelik belirt."
 
 msgid "Specify a new name, new password or new host name for the user."
-msgstr "Tentukan nama baru, password baru atau nama host baru bagi pengguna."
+msgstr "Kullanıcı için yeni bir isim, yeni parola veya yeni istemci belirtin."
 
 msgid "Specify the details for launching an instance."
-msgstr "Tentukan rincian untuk meluncurkan sebuah instance."
+msgstr "Sunucu başlatmak için ayrıntıları belirtin."
 
 msgid "Specify the details for the database backup."
-msgstr "Tentukan rincian untuk backup database."
+msgstr "Veritabanı yedeği için ayrıntıları belirtin."
 
 msgid "Specify the details of the instance to be added to the cluster."
-msgstr "Menentukan rincian instance yang akan ditambahkan ke cluster."
+msgstr "Kümeye eklenecek sunucu ayrıntılarını belirtin."
 
 msgid ""
 "Specify the instances to be added to the cluster.  When all the instances "
 "are specified click 'Grow Cluster' to perform the grow operation."
 msgstr ""
-"Tentukan instance yang akan ditambahkan ke cluster. Ketika semua instance "
-"yang klik ditentukan 'Grow Cluster'  untuk melakukan operasi tumbuh."
+"Kümeye eklenecek sunucuları belirtin.  Tüm sunucular belirtildiğinde büyütme "
+"işlemini başlatmak için 'Kümeyi Büyüt'e tıklayın."
 
 msgid "Specify the name of the new database."
-msgstr "Tentukan nama database baru."
+msgstr "Yeni veritabanı ismini belirtin."
 
 msgid "Specify the name of the new user and password."
-msgstr "Tentukan nama pengguna dan password baru."
+msgstr "Yeni kullanıcının ismini ve parolasını belirtin."
 
 msgid "Specify the new root password for vertica cluster."
-msgstr "Tentukan password root baru untuk cluster vertica."
+msgstr "Vertica kümesi için yeni root parolasını belirtin."
 
 msgid "Specify the new volume size for the database instance."
-msgstr "Tentukan ukuran volume baru untuk instance database."
+msgstr "Veritabanı sunucusu için yeni birim belirt."
 
 msgid "Specify the number of replicas to be created"
-msgstr "Tentukan jumlah replika yang akan dibuat"
+msgstr "Oluşturulacak kopya sayısını belirtin"
 
 msgid ""
 "Specify whether future replicated instances will be created on the same "
 "hypervisor (affinity) or on different hypervisors (anti-affinity). This "
 "value is ignored if the instance to be launched is a replica."
 msgstr ""
-"Menentukan apakah instance yang direplikasi masa depan akan dibuat pada "
-"hypervisor yang sama (afinitas) atau pada hypervisors berbeda (anti-"
-"afinitas). Nilai ini diabaikan jika instance yang akan diluncurkan adalah "
-"replika."
+"İlerde kopyalanan sunucuların aynı hipervizörde mi (benzeşim) farklı "
+"hipervizörlerde mi (anti-benzeşim) oluşturulacağını belirt. Bu değer "
+"başlatılacak sunucu bir kopya ise göz ardı edilir."
 
 msgid ""
 "Specify whether instances in the cluster will be created on the same "
 "hypervisor (affinity) or on different hypervisors (anti-affinity)."
 msgstr ""
-"Menentukan apakah instance di cluster akan dibuat pada hypervisor yang sama "
-"(afinitas) atau pada hypervisors berbeda (anti-afinitas)."
+"Kümedeki sunucuların aynı hipervizör (benzeşim) üzerinde mi farklı "
+"hipervizörler üzerinde mi (anti-benzeşim) oluşturulacağını belirtin."
 
 msgid "Specs"
-msgstr "Specs (spesifikasi)"
+msgstr "Özellikler"
 
 msgid "Status"
-msgstr "Status (keadaan)"
+msgstr "Durum"
 
 msgid "Status if root was ever enabled for an instance."
-msgstr "Keadaan jika root pernah diaktifkan untuk sebuah instance."
+msgstr "Root daha önce sunucu için etkinleştirilmiş mi durumu."
 
 msgid "Successfully added parameter"
-msgstr "Berhasil ditambahkan parameter"
+msgstr "Parametre başarıyla eklendi"
 
 msgid "Successfully disabled root access."
-msgstr "Berhasil menonaktifkan akses root."
+msgstr "Root erişimi başarıyla kapatıldı."
 
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
 "optional.  See the Trove documentation for more information on using these "
 "fields."
 msgstr ""
-"Kolom 'Instance Type' dan 'Related To'  adalah datastore spesifik dan "
-"opsional. Lihat dokumentasi Trove untuk informasi lebih lanjut tentang "
-"menggunakan kolom ini."
+"'Sunucu Türü' ve 'İlişkili' alanları verideposuna özeldir ve isteğe "
+"bağlıdır. Bu alanların kullanımıyla ilgili ek bilgi için Trove "
+"belgelendirmesine göz atın."
 
 msgid "The flavor must be specified."
-msgstr "Flavor harus ditentukan."
+msgstr "Nitelik belirtilmeli."
 
 msgid ""
 "The name field is optional.   If the field is left blank a name will be "
 "generated when the cluster is grown."
 msgstr ""
-"Kolom nama adalah opsional. Jika Kolom ini dibiarkan kosong maka nama akan "
-"dihasilkan ketika cluster tumbuh."
+"İsim alanı isteğe bağlıdır. Alan boş bırakılırsa küme büyütüldüğünde bir "
+"isim üretilir."
 
 msgid "The number of instances must be greater than 1."
-msgstr "Jumlah instance harus lebih besar dari 1."
+msgstr "Sunucu sayısı 1'den büyük olmalı."
 
 msgid "The number of shards must be greater than 1."
-msgstr "Jumlah serpihan harus lebih besar dari 1."
+msgstr "Parça sayısı 1'den büyük olmalı."
 
 msgid "There was a problem enabling root."
-msgstr "Ada masalah mengaktifkan root."
+msgstr "Root etkinleştirilirken bir sorun oldu."
 
 msgid "This action cannot be undone."
-msgstr "Tindakan ini tidak bisa dibatalkan."
+msgstr "Bu eylem geri alınamaz."
 
 msgid "Type"
-msgstr "Type (tipe)"
+msgstr "Tür"
 
 msgid "Type and version of datastore."
-msgstr "Tipe dan versi datastore."
+msgstr "Verideposunun türü ve sürümü."
 
 msgid "USERNAME"
-msgstr "USERNAME (username)"
+msgstr "KULLANICIADI"
 
 #, python-format
 msgid "Unable to %(action)s: %(objs)s"
-msgstr "Tidak bisa %(action)s: %(objs)s"
+msgstr "%(action)s yapılamadı: %(objs)s"
 
 #, python-format
 msgid "Unable to add new parameter: %s"
-msgstr "Tidak dapat menambahkan parameter baru: %s"
+msgstr "Yeni parametre eklenemiyor: %s"
 
 #, python-format
 msgid "Unable to attach configuration group. %s"
-msgstr "Tidak dapat melekatkan grup konfigurasi. %s"
+msgstr "Yapılandırma grubu eklenemiyor. %s"
 
 #, python-format
 msgid "Unable to create configuration group. %s"
-msgstr "Tidak dapat membuat grup konfigurasi %s"
+msgstr "Yapılandırma grubu oluşturulamadı. %s"
 
 #, python-format
 msgid "Unable to create database. %s"
-msgstr "Tidak dapat membuat database. %s"
+msgstr "Veritabanı oluşturulamadı. %s"
 
 msgid "Unable to create list of parameters."
-msgstr "Tidak dapat membuat daftar parameter."
+msgstr "Parametre listesi oluşturulamadı."
 
 #, python-format
 msgid "Unable to create user. %s"
-msgstr "Tidak dapat membuat pengguna. %s"
+msgstr "Kullanıcı oluşturulamıyor. %s"
 
 msgid "Unable to determine if instance root is enabled."
-msgstr "Tidak dapat menentukan apakah instance akar diaktifkan."
+msgstr "Sunucu root'unun etkin olup olmadığı belirlenemiyor."
 
 msgid "Unable to find backup!"
-msgstr "Tidak dapat menemukan cadangan (backup) !"
+msgstr "Yedek bulunamadı!"
 
 msgid "Unable to find configuration group!"
-msgstr "Tidak dapat menemukan grup konfigurasi!"
+msgstr "Yapılandırma grubu bulunamadı!"
 
 msgid "Unable to find master instance!"
-msgstr "Tidak dapat menemukan instance utama!"
+msgstr "Ana sunucu bulunamadı!"
 
 msgid "Unable to get configuration data."
-msgstr "Tidak dapat mendapatkan data konfigurasi."
+msgstr "Yapılandırma verisi alınamıyor."
 
 msgid "Unable to get database backup data."
-msgstr "Tidak dapat mendapatkan data backup database."
+msgstr "Veritabanı yedek verisi alınamadı."
 
 msgid "Unable to get databases data."
-msgstr "Tidak dapat mendapatkan data database."
+msgstr "Veritabanı verisi alınamadı."
 
 msgid "Unable to get instances data."
-msgstr "Tidak dapat mendapatkan data instance."
+msgstr "Sunucunun verisi alınamıyor."
 
 msgid "Unable to get user access data."
-msgstr "Tidak dapat mendapatkan akses data pengguna."
+msgstr "Kullanıcı erişim verisi alınamadı."
 
 msgid "Unable to get user data."
-msgstr "Tidak dapat mendapatkan data pengguna."
+msgstr "Kullanıcı verisi alınamadı."
 
 #, python-format
 msgid "Unable to grow cluster. %s"
-msgstr "Tidak dapat mengembangkan cluster. %s"
+msgstr "Küme büyütülemiyor. %s"
 
 #, python-format
 msgid "Unable to grow cluster: %s"
-msgstr "Tidak dapat tumbuh klaster: %s"
+msgstr "Küme büyütülemiyor: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
-msgstr "Tidak dapat meluncurkan %(count)s named \"%(name)s\"."
+msgstr "%(count)s \"%(name)s\" isimli başlatılamadı."
 
 #, python-format
 msgid "Unable to launch cluster. %s"
-msgstr "Tidak dapat meluncurkan klaster. %s"
+msgstr "Küme başlatılamadı. %s"
 
 msgid "Unable to list database backups for parent."
-msgstr "Tidak dapat mendaftar backup database untuk induknya."
+msgstr "Üst için veritabanı yedekleri listelenemedi."
 
 msgid "Unable to list database instances to backup."
-msgstr "Tidak dapat mendaftar instance database untuk backup."
+msgstr "Yedek alınacak veritabanı sunucuları listelenemedi."
 
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
 msgstr ""
-"Tidak bisa memuat {0} log\n"
+"{0} günlüğü yüklenemedi\n"
 "{1}"
 
 msgid "Unable to load {0} log for instance \"{1}\"."
-msgstr "Tidak bisa memuat {0} log untuk instance \"{1}\"."
+msgstr "\"{1}\" sunucusu için {0} günlüğü yüklenemedi."
 
 msgid "Unable to obtain datastore versions."
-msgstr "Tidak dapat memperoleh versi datastore."
+msgstr "Verideposu sürümleri edinilemedi."
 
 msgid "Unable to obtain datastores."
-msgstr "Tidak dapat memperoleh datastores."
+msgstr "Veridepoları edinilemedi."
 
 msgid "Unable to obtain flavors."
-msgstr "Tidak dapat memperoleh flavor."
+msgstr "Nitelikler edinilemedi."
 
 msgid "Unable to obtain information on root user"
-msgstr "Tidak dapat memperoleh informasi tentang root user"
+msgstr "Kök kullanıcı hakkında bilgi edinilemedi"
 
 msgid "Unable to obtain list of parameters."
-msgstr "Tidak dapat memperoleh daftar parameter."
+msgstr "Parametre listesi edinilemedi."
 
 #, python-format
 msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "Tidak dapat mempromosikan replika sebagai sumber replika baru.  \"%s\""
+msgstr "Kopya yeni kopya kaynağı olarak yükseltilemedi.  \"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
-msgstr "Tidak dapat menghapus instance dari gugus: %s"
+msgstr "Sunucular kümeden kaldırılamadı: %s"
 
 #, python-format
 msgid "Unable to reset password. %s"
-msgstr "Tidak dapat me-reset password. %s"
+msgstr "Parola sıfırlanamadı. %s"
 
 #, python-format
 msgid "Unable to resize instance. %s"
-msgstr "Tidak dapat mengubah ukuran instance. %s"
+msgstr "Sunucu yeniden boyutlandırılamıyor. %s"
 
 #, python-format
 msgid "Unable to resize volume. %s"
-msgstr "Tidak dapat mengubah ukuran volume. %s"
+msgstr "Birim yeniden boyutlandırılamıyor. %s"
 
 msgid "Unable to retrieve accessible databases."
-msgstr "Tidak dapat mengambil database yang dapat diakses."
+msgstr "Erişilebilir veritabanları alınamıyor."
 
 msgid "Unable to retrieve availability zones."
-msgstr "Tidak dapat mengambil zona ketersediaan."
+msgstr "Kullanılırlık bölgesi alınamadı."
 
 msgid "Unable to retrieve cluster details."
-msgstr "Tidak dapat mengambil rincian cluster."
+msgstr "Küme ayrıntıları alınamıyor."
 
 msgid "Unable to retrieve database clusters."
-msgstr "Tidak dapat mengambil cluster database."
+msgstr "Veritabanı kümeleri alınamıyor."
 
 msgid "Unable to retrieve database instances."
-msgstr "Tidak dapat mengambil instance database."
+msgstr "Veritabanı sunucuları alınamadı."
 
 msgid "Unable to retrieve database size information."
-msgstr "Tidak dapat mengambil informasi ukuran database."
+msgstr "Veritabanı boyut bilgisi alınamıyor."
 
 msgid "Unable to retrieve databases."
-msgstr "Tidak dapat mengambil database."
+msgstr "Veritabanları alınamadı."
 
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
-msgstr "Tidak dapat mengambil rincian untuk backup: %s"
+msgstr "Yedek için ayrıntılar alınamadı: %s"
 
 #, python-format
 msgid "Unable to retrieve details for configuration group: %s"
-msgstr "Tidak dapat mengambil rincian untuk kelompok konfigurasi: % s"
+msgstr "Yapılandırma grubu için ayrıntılar alınamadı: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
-msgstr "Tidak dapat mengambil rincian untuk cluster database: %s"
+msgstr "Veritabanı kümesi için ayrıntılar alınamıyor: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database instance: %s"
-msgstr "Tidak dapat mengambil rincian untuk instance database: %s"
+msgstr "Veritabanı sunucusu için ayrıntılar alınamadı: %s"
 
 #, python-format
 msgid "Unable to retrieve details for parent backup: %s"
-msgstr "Tidak dapat mengambil rincian untuk backup induknya: %s"
+msgstr "Üst yedek için ayrıntılar alınamadı: %s"
 
 msgid "Unable to retrieve flavors."
-msgstr "Tidak dapat mengambil flavor."
+msgstr "Nitelikler alınamadı."
 
 msgid "Unable to retrieve instance details."
-msgstr "Tidak dapat mengambil rincian instance."
+msgstr "Sunucu ayrıntıları alınamadı."
 
 #, python-format
 msgid ""
 "Unable to retrieve list of logs.\n"
 "%s"
 msgstr ""
-"Tidak dapat mengambil daftar log.\n"
+"Günlüklerin listesi alınamadı.\n"
 "%s"
 
 msgid "Unable to retrieve networks."
-msgstr "Tidak dapat mengambil jaringan."
+msgstr "Ağlar alınamadı."
 
 #, python-format
 msgid "Unable to update user. %s"
-msgstr "Tidak dapat memperbarui pengguna. %s"
+msgstr "Kullanıcı güncellenemedi. %s"
 
 msgid "Unknown"
-msgstr "Unknown (tidak diketahui)"
+msgstr "Bilinmiyor"
 
 msgid "Updated"
-msgstr "Updated (diperbarui)"
+msgstr "Güncellendi"
 
 #, python-format
 msgid "Updated user \"%s\"."
-msgstr "Diperbarui pengguna \"%s\"."
+msgstr "\"%s\" kullanıcısı güncellendi."
 
 msgid "User Name"
-msgstr "User Name (nama user)"
+msgstr "Kullanıcı Adı"
 
 msgid "Username (required)"
-msgstr "Username (wajib)"
+msgstr "Kullanıcı adı (gerekli)"
 
 msgid "Users"
-msgstr "Users (pengguna)"
+msgstr "Kullanıcılar"
 
 msgid "Value"
-msgstr "Value (nilai)"
+msgstr "Değer"
 
 msgid "Value must be \"true\" or \"false\"."
-msgstr "Nilai harus \"true\" atau \"false\"."
+msgstr "Değer \"doğru\" ya da \"yanlış\" olmalı."
 
 #, python-format
 msgid "Value must be a number between %(min)s and %(max)s."
-msgstr "Nilai harus berupa angka antara %(min)s dan %(max)s."
+msgstr "Değer %(min)s ve %(max)s arasında bir sayı olmalı."
 
 #, python-format
 msgid "Value must be a number greater than or equal to %s."
-msgstr "Nilai harus berupa angka lebih besar dari atau sama dengan %s."
+msgstr "Değer %s'e eşit ya da daha büyük bir sayı olmalı."
 
 #, python-format
 msgid "Value must be a number less than or equal to %s."
-msgstr "Nilai harus berupa angka kurang dari atau sama dengan %s."
+msgstr "Değer %s'e eşit ya da daha küçük bir sayı olmalı."
 
 msgid "Value must be a number."
-msgstr "Nilai harus berupa angka"
+msgstr "Değer bir sayı olmalı."
 
 #, python-format
 msgid "Value must be of type %s."
-msgstr "Nilai harus dari tipe %s."
+msgstr "Değer %s türünde olmalı."
 
 msgid "Values"
-msgstr "Values (nilai)"
+msgstr "Değerler"
 
 msgid "View Full Log"
-msgstr "View Full Log (melihat catalan seluruhnya)"
+msgstr "Tam Günlüğü Göster"
 
 msgid "View Log"
-msgstr "View Log (melihat catatan)"
+msgstr "Günlüğü Görüntüle"
 
 msgid "Volume"
-msgstr "Volume (volume)"
+msgstr "Birim"
 
 msgid "Volume Size"
-msgstr "Volume Size (ukuran volume)"
+msgstr "Birim Boyutu"
 
 msgid "Volume Type"
-msgstr "Volume Type (tipe volume)"
+msgstr "Birim Türü"
 
 #, python-format
 msgid "You are not allowed to %(action)s: %(objs)s"
-msgstr "Anda tidak diizinkan untuk %(action)s: %(objs)s"
+msgstr "%(action)s için yetkili değilsiniz: %(objs)s"
 
 msgid ""
 "You can perform an incremental backup by specifying a parent backup. "
 "<strong>However,</strong> not all databases support incremental backups in "
 "which case this operation will result in an error."
 msgstr ""
-"Anda dapat melakukan incremental backup dengan menetapkan cadangan induknya. "
-"<Strong> However,</ strong> tidak semua database mendukung incremental "
-"backup dalam hal operasi ini akan mengakibatkan kesalahan."
+"Bir üst yedek seçerek artımlı yedek alabilirsiniz. <strong>Ancak,</strong> "
+"tüm veritabanları artarak yedek alımını desteklemiyor, bu durumda bu işlem "
+"hatayla sonlanır."
 
 msgid "You must select a datastore type and version."
-msgstr "Anda harus memilih jenis datastore dan versi."
+msgstr "Bir verideposu türü ve sürümü seçmelisiniz."
 
 msgid "You must select a flavor."
-msgstr "Anda harus memilih sebuah flavor."
+msgstr "Bir nitelik seçmelisiniz."
 
 msgid "You must specify a password if you create a user."
-msgstr "Anda harus menentukan password jika Anda membuat user."
+msgstr "Kullanıcı oluşturursanız bir parola belirtmelisiniz."
 
 msgid "You must specify at least one database if you create a user."
-msgstr "Anda harus menentukan setidaknya satu database jika Anda membuat user."
+msgstr "Kullanıcı oluşturursanız en az bir veritabanı belirtmelisiniz."
 
 #, python-format
 msgid ""
@@ -1447,4 +1484,4 @@ msgstr ""
 "related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
-msgstr "instance"
+msgstr "sunucu"
