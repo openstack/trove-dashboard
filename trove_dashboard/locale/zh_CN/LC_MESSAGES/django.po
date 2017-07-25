@@ -2,17 +2,18 @@
 # BillXiang <1138647106@qq.com>, 2016. #zanata
 # Yu Long <yulongxn@163.com>, 2016. #zanata
 # sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
+# Bin <liubin@glab.cn>, 2017. #zanata
 # Gaoxiao Zhu <zhu.gaoxiao@h3c.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 8.0.0.0rc2.dev4\n"
+"Project-Id-Version: trove-dashboard 9.0.0.0b3.dev4\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-02-09 07:58+0000\n"
+"POT-Creation-Date: 2017-06-19 12:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-02-09 02:24+0000\n"
-"Last-Translator: Gaoxiao Zhu <zhu.gaoxiao@h3c.com>\n"
+"PO-Revision-Date: 2017-07-24 03:51+0000\n"
+"Last-Translator: Bin <liubin@glab.cn>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
 "X-Generator: Zanata 3.9.6\n"
@@ -337,6 +338,10 @@ msgid "Delete Cluster"
 msgid_plural "Delete Clusters"
 msgstr[0] "删除集群"
 
+msgid "Delete Configuration Group"
+msgid_plural "Delete Configuration Groups"
+msgstr[0] "删除配置组"
+
 msgid "Delete Database"
 msgid_plural "Delete Databases"
 msgstr[0] "已删除的数据库"
@@ -349,6 +354,10 @@ msgid "Delete Instance"
 msgid_plural "Delete Instances"
 msgstr[0] "删除实例"
 
+msgid "Delete Parameter"
+msgid_plural "Delete Parameters"
+msgstr[0] "删除参数"
+
 msgid "Delete User"
 msgid_plural "Delete Users"
 msgstr[0] "删除用户"
@@ -357,9 +366,17 @@ msgid "Deleted Backup"
 msgid_plural "Deleted Backups"
 msgstr[0] "已删除的备份"
 
+msgid "Deleted Configuration Group"
+msgid_plural "Deleted Configuration Groups"
+msgstr[0] "已删除的配置组"
+
 msgid "Deleted Database"
 msgid_plural "Deleted Databases"
 msgstr[0] "已删除的数据库"
+
+msgid "Deleted Parameter"
+msgid_plural "Deleted Parameters"
+msgstr[0] "已删除的参数 "
 
 msgid "Deleted User"
 msgid_plural "Deleted Users"
@@ -1008,9 +1025,6 @@ msgstr "大小"
 
 msgid "Size of image to launch."
 msgstr "要启动的镜像大小。"
-
-msgid "Size of instance to launch."
-msgstr "启动实例的大小"
 
 msgid "Size of the volume in GB."
 msgstr "以GB为单位的云硬盘大小。"
