@@ -1,15 +1,16 @@
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Trove Dashboard Release Notes 8.0.0\n"
+"Project-Id-Version: Trove Dashboard Release Notes 9.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-09 20:48+0000\n"
+"POT-Creation-Date: 2017-07-28 02:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-02-03 06:08+0000\n"
-"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"PO-Revision-Date: 2017-08-03 05:01+0000\n"
+"Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
 "X-Generator: Zanata 3.9.6\n"
@@ -17,6 +18,9 @@ msgstr ""
 
 msgid "7.0.0"
 msgstr "7.0.0"
+
+msgid "8.0.0"
+msgstr "8.0.0"
 
 msgid ":ref:`search`"
 msgstr ":ref:`search`"
@@ -53,6 +57,9 @@ msgstr "새로운 기능"
 
 msgid "Newton Series Release Notes"
 msgstr "Newton 시리즈에 대한 릴리즈 노트"
+
+msgid "Ocata Series Release Notes"
+msgstr "Ocata 시리즈에 대한 릴리즈 노트"
 
 msgid "Search"
 msgstr "검색"
