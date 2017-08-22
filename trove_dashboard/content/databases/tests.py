@@ -597,7 +597,7 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.assertEqual(table.data[0].enabled, True)
-        self.assertEqual(table.data[0].password, None)
+        self.assertIsNone(table.data[0].password)
 
     @test.create_stubs({api.trove: ('root_disable',)})
     def test_disable_root_exception(self):
