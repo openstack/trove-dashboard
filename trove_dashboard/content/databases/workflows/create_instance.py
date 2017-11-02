@@ -64,6 +64,11 @@ class SetInstanceDetailsAction(workflows.Action):
         }))
 
     def __init__(self, request, *args, **kwargs):
+        if args:
+            self.backup_id = args[0].get('backup', None)
+        else:
+            self.backup_id = None
+
         super(SetInstanceDetailsAction, self).__init__(request,
                                                        *args,
                                                        **kwargs)
@@ -184,11 +189,24 @@ class SetInstanceDetailsAction(workflows.Action):
             LOG.exception("Exception while obtaining datastore version list")
             self._datastore_versions = []
 
+    @memoized.memoized_method
+    def get_backup(self, request, backup_id):
+        try:
+            return api.trove.backup_get(request, backup_id)
+        except Exception:
+            LOG.exception("Exception while obtaining backup information")
+            return None
+
     def populate_datastore_choices(self, request, context):
         choices = ()
         datastores = self.datastores(request)
         if datastores is not None:
+            if self.backup_id:
+                backup = self.get_backup(request, self.backup_id)
             for ds in datastores:
+                if self.backup_id:
+                    if ds.name != backup.datastore['type']:
+                        continue
                 versions = self.datastore_versions(request, ds.name)
                 if versions:
                     # only add to choices if datastore has at least one version
@@ -196,6 +214,9 @@ class SetInstanceDetailsAction(workflows.Action):
                     for v in versions:
                         if hasattr(v, 'active') and not v.active:
                             continue
+                        if self.backup_id:
+                            if v.id != backup.datastore['version_id']:
+                                continue
                         selection_text = self._build_datastore_display_text(
                             ds.name, v.name)
                         widget_text = self._build_widget_field_name(
@@ -350,6 +371,18 @@ class AdvancedAction(workflows.Action):
             'data-initial_state-master': _('Replica Count')
         }))
 
+    def __init__(self, request, *args, **kwargs):
+        if args[0]:
+            self.backup_id = args[0].get('backup', None)
+        else:
+            self.backup_id = None
+
+        super(AdvancedAction, self).__init__(request, *args, **kwargs)
+
+        if self.backup_id:
+            self.fields['initial_state'].choices = [('backup',
+                                                    _('Restore from Backup'))]
+
     class Meta(object):
         name = _("Advanced")
         help_text_template = "project/databases/_launch_advanced_help.html"
@@ -374,9 +407,13 @@ class AdvancedAction(workflows.Action):
 
     def populate_backup_choices(self, request, context):
         try:
+            choices = []
             backups = api.trove.backup_list(request)
-            choices = [(b.id, b.name) for b in backups
-                       if b.status == 'COMPLETED']
+            for b in backups:
+                if self.backup_id and b.id != self.backup_id:
+                    continue
+                if b.status == 'COMPLETED':
+                    choices.append((b.id, b.name))
         except Exception:
             choices = []
 

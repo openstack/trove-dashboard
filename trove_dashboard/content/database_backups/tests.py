@@ -12,19 +12,27 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import binascii
+
 from django.core.urlresolvers import reverse
 from django import http
+from django.utils.translation import ugettext_lazy as _
 from mox3.mox import IsA  # noqa
 import six
 
 from openstack_auth import policy
+from openstack_dashboard import api as dash_api
+
+from troveclient import common
 
 from trove_dashboard import api
+from trove_dashboard.content.databases.workflows import create_instance
 from trove_dashboard.test import helpers as test
 
 INDEX_URL = reverse('horizon:project:database_backups:index')
 BACKUP_URL = reverse('horizon:project:database_backups:create')
 DETAILS_URL = reverse('horizon:project:database_backups:detail', args=['id'])
+RESTORE_URL = reverse('horizon:project:databases:launch')
 
 
 class DatabasesBackupsTests(test.TestCase):
@@ -191,3 +199,63 @@ class DatabasesBackupsTests(test.TestCase):
                       args=[incr_backup.id])
         res = self.client.get(url)
         self.assertTemplateUsed(res, 'project/database_backups/details.html')
+
+    @test.create_stubs({
+        api.trove: ('backup_get', 'backup_list', 'configuration_list',
+                    'datastore_flavors', 'datastore_list',
+                    'datastore_version_list', 'instance_list'),
+        dash_api.cinder: ('volume_type_list',),
+        dash_api.neutron: ('network_list',),
+        dash_api.nova: ('availability_zone_list',),
+        policy: ('check',),
+    })
+    def test_restore_backup(self):
+        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
+        backup = self.database_backups.first()
+        api.trove.backup_get(IsA(http.HttpRequest), IsA(six.text_type)) \
+            .AndReturn(self.database_backups.first())
+        api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
+            self.database_backups.list())
+        api.trove.configuration_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.database_configurations.list())
+        api.trove.datastore_flavors(IsA(http.HttpRequest),
+                                    IsA(six.string_types),
+                                    IsA(six.string_types)) \
+            .AndReturn(self.flavors.list())
+        api.trove.datastore_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.datastores.list())
+        api.trove.datastore_version_list(IsA(http.HttpRequest),
+                                         backup.datastore['type']) \
+            .AndReturn(self.datastore_versions.list())
+        api.trove.instance_list(IsA(http.HttpRequest), marker=None) \
+            .AndReturn(common.Paginated(self.databases.list()))
+        dash_api.cinder.volume_type_list(IsA(http.HttpRequest)).AndReturn([])
+        dash_api.neutron.network_list(IsA(http.HttpRequest),
+                                      tenant_id=self.tenant.id,
+                                      shared=False).\
+            AndReturn(self.networks.list()[:1])
+        dash_api.nova.availability_zone_list(IsA(http.HttpRequest)) \
+            .AndReturn(self.availability_zones.list())
+        self.mox.ReplayAll()
+
+        url = RESTORE_URL + '?backup=%s' % self.database_backups.first().id
+        res = self.client.get(url)
+        self.assertTemplateUsed(res, 'project/databases/launch.html')
+
+        set_instance_detail_step = \
+            [step for step in res.context_data['workflow'].steps
+             if isinstance(step, create_instance.SetInstanceDetails)][0]
+        fields = set_instance_detail_step.action.fields
+        self.assertTrue(len(fields['datastore'].choices), 1)
+        text = 'mysql - 5.6'
+        choice = fields['datastore'].choices[0]
+        self.assertTrue(choice[0], binascii.hexlify(text))
+        self.assertTrue(choice[1], text)
+
+        advanced_step = [step for step in res.context_data['workflow'].steps
+                         if isinstance(step, create_instance.Advanced)][0]
+        fields = advanced_step.action.fields
+        self.assertTrue(len(fields['initial_state'].choices), 1)
+        choice = fields['initial_state'].choices[0]
+        self.assertTrue(choice[0], 'backup')
+        self.assertTrue(choice[1], _('Restore from Backup'))
