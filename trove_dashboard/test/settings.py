@@ -19,3 +19,13 @@ INSTALLED_APPS.append('trove_dashboard.content.database_backups')
 INSTALLED_APPS.append('trove_dashboard.content.database_clusters')
 INSTALLED_APPS.append('trove_dashboard.content.database_configurations')
 INSTALLED_APPS.append('trove_dashboard.content.databases')
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'OPTIONS': {
+            'MAX_ENTRIES': 1200,
+            'CULL_FREQUENCY': 20
+        }
+    }
+}
