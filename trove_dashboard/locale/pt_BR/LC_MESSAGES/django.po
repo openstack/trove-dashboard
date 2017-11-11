@@ -1,14 +1,15 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Fernando Pimenta <fernando.c.pimenta@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 9.0.0.0b3.dev4\n"
+"Project-Id-Version: trove-dashboard 9.0.0.0b4.dev1\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-06-19 12:58+0000\n"
+"POT-Creation-Date: 2017-08-07 12:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-04-12 06:49+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"PO-Revision-Date: 2017-09-04 07:24+0000\n"
+"Last-Translator: Fernando Pimenta <fernando.c.pimenta@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt-BR\n"
 "X-Generator: Zanata 3.9.6\n"
@@ -24,6 +25,14 @@ msgstr "%(name)s | %(RAM)s RAM | %(instances)s instâncias"
 
 msgid "-"
 msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> It may be necessary to reboot the database "
+"instance for this new configuration group to take effect."
+msgstr ""
+"<strong>Por favor, observe:</strong> Pode ser necessário reinicializar a "
+"instância de banco de dados para que esse novo grupo de configuração tenha "
+"efeito."
 
 msgid ""
 "<strong>Please note:</strong> The value specified in the Volume Size field "
@@ -63,8 +72,26 @@ msgstr "Adicionar"
 msgid "Add Instance"
 msgstr "Adicionar Instância"
 
+msgid "Add Parameter"
+msgstr "Adicionar Parâmetro"
+
+msgid ""
+"Add parameters to the configuration group.  When all the parameters are "
+"added click 'Apply Changes' to persist changes."
+msgstr ""
+"Adicionar parâmetros ao grupo de configuração. Quando todos os parâmetros "
+"forem adicionados clique em 'Aplicar Mudanças' para que as alterações "
+"persistam."
+
 msgid "Advanced"
 msgstr "Avançado"
+
+msgid ""
+"Allow the user to connect from this host only. If not provided this user "
+"will be allowed to connect from anywhere."
+msgstr ""
+"Permite o usuário conectar somente a partir desse host. Se não for fornecido "
+"esse usuário terá permissão de conectar de qualquer lugar."
 
 msgid "Allowed Host"
 msgstr "Host Permitido"
@@ -72,11 +99,30 @@ msgstr "Host Permitido"
 msgid "Allowed Host (optional)"
 msgstr "Host Permitido (opcional)"
 
+msgid "Any Availability Zone"
+msgstr "Qualquer Zona de Disponibilidade"
+
 msgid "Applicable only if the volume size is specified."
 msgstr "Aplicável apenas se o tamanho do volume é especificado."
 
+msgid "Applied changes to server"
+msgstr "Alterações aplicadas no servidor"
+
+msgid "Apply Changes"
+msgstr "Aplicar Alterações"
+
 msgid "At least one of the new fields must be changed."
 msgstr "Pelo menos um dos novos campos deve ser alterado."
+
+msgid "Attach Configuration Group"
+msgstr "Anexar Grupo de Configuração"
+
+#, python-format
+msgid "Attaching Configuration group \"%s\""
+msgstr "Anexando Grupo de Configuração \"%s\""
+
+msgid "Availability Zone"
+msgstr "Zona de Disponibilidade"
 
 msgid "Available networks"
 msgstr "Redes disponíveis"
@@ -123,8 +169,16 @@ msgctxt "Current status of a Database Backup"
 msgid "Building"
 msgstr "Construindo"
 
+msgctxt "Current status of a Database Instance"
+msgid "Building"
+msgstr "Construindo"
+
 msgid "Cancel"
 msgstr "Cancelar"
+
+#, python-format
+msgid "Cannot disable root access: %s"
+msgstr "Não é possível desabilitar acesso de root: %s"
 
 msgid "Cannot grow cluster.  No instances specified."
 msgstr "Não é possível aumentar Cluster. Nenhuma instância especificada."
@@ -137,6 +191,9 @@ msgstr "Escolha um novo Flavor para a instância."
 
 msgid "Choose initial state."
 msgstr "Escolha o estado inicial"
+
+msgid "Close"
+msgstr "Fechar"
 
 msgid "Cluster Name"
 msgstr "Nome do Cluster"
@@ -157,14 +214,50 @@ msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "Completo"
 
+msgid "Configuration Defaults"
+msgstr "Padrões de Configuração"
+
+msgid "Configuration Group"
+msgstr "Grupo de Configuração"
+
+msgid "Configuration Group Details: {{configuration.name}}"
+msgstr "Detalhes do Grupo de Configuração: {{configuration.name}}"
+
+msgid "Configuration Group Instances"
+msgstr "Instâncias do Grupo de Configuração"
+
+msgid "Configuration Group Name"
+msgstr "Nome do Grupo de Configuração"
+
+msgid "Configuration Group Overview"
+msgstr "Visão Geral do Grupo de Configuração"
+
+msgid "Configuration Group Values"
+msgstr "Valores do Grupo de Configuração"
+
+msgid "Configuration Groups"
+msgstr "Grupos de Configuração"
+
+msgid ""
+"Confirm the current replica is to be promoted as the new replica source."
+msgstr ""
+"Confirmar que a réplica atual é para ser promovida como nova fonte de "
+"réplica."
+
 msgid "Connection Examples"
 msgstr "Exemplos de Conexão"
 
 msgid "Connection Information"
 msgstr "Informação de Conexão"
 
+msgid "Container"
+msgstr "Contêiner"
+
 msgid "Create Backup"
 msgstr "Criar Backup"
+
+msgid "Create Configuration Group"
+msgstr "Criar Grupo de Configuração"
 
 msgid "Create Database"
 msgstr "Criar Banco de Dados"
@@ -172,8 +265,18 @@ msgstr "Criar Banco de Dados"
 msgid "Create User"
 msgstr "Criar Usuário"
 
+msgid ""
+"Create an optional initial user. This user will have access to all databases "
+"you create."
+msgstr ""
+"Criar um usuário inicial opcional. Esse usuário terá acesso a todos os "
+"bancos de dados que você criar."
+
 msgid "Created"
 msgstr "Criado"
+
+msgid "Created configuration group"
+msgstr "Criado grupo de configuração"
 
 #, python-format
 msgid "Created database \"%s\"."
@@ -182,6 +285,12 @@ msgstr "Criada base de dados \"%s\"."
 #, python-format
 msgid "Created user \"%s\"."
 msgstr "Criado usuário \"%s\"."
+
+msgid "Current Replica"
+msgstr "Réplica atual."
+
+msgid "Current Replica Source"
+msgstr "Fonte de Réplica Atual"
 
 msgid "Current Size (GB)"
 msgstr "Tamanho Atual (GB)"
@@ -225,6 +334,9 @@ msgstr "Datastore"
 msgid "Datastore Version"
 msgstr "Versão Datastore"
 
+msgid "Defaults"
+msgstr "Padrões"
+
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
 msgstr[0] "Excluir Backup"
@@ -234,6 +346,11 @@ msgid "Delete Cluster"
 msgid_plural "Delete Clusters"
 msgstr[0] "Excluir Cluster"
 msgstr[1] "Excluir Clusters"
+
+msgid "Delete Configuration Group"
+msgid_plural "Delete Configuration Groups"
+msgstr[0] "Excluir Grupo de Configuração"
+msgstr[1] "Excluir Grupos de Configuração"
 
 msgid "Delete Database"
 msgid_plural "Delete Databases"
@@ -249,6 +366,11 @@ msgid_plural "Delete Instances"
 msgstr[0] "Excluir Instância"
 msgstr[1] "Excluir Instâncias"
 
+msgid "Delete Parameter"
+msgid_plural "Delete Parameters"
+msgstr[0] "Excluir Parâmetro"
+msgstr[1] "Excluir Parâmetros"
+
 msgid "Delete User"
 msgid_plural "Delete Users"
 msgstr[0] "Excluir Usuário"
@@ -259,10 +381,20 @@ msgid_plural "Deleted Backups"
 msgstr[0] "Backup Excluído"
 msgstr[1] "Backups Excluídos"
 
+msgid "Deleted Configuration Group"
+msgid_plural "Deleted Configuration Groups"
+msgstr[0] "Excluir Grupo de Configuração"
+msgstr[1] "Excluir Grupos de Configuração"
+
 msgid "Deleted Database"
 msgid_plural "Deleted Databases"
 msgstr[0] "Banco de Dados Excluídos"
 msgstr[1] "Bancos de Dados Excluídos"
+
+msgid "Deleted Parameter"
+msgid_plural "Deleted Parameters"
+msgstr[0] "Parâmetros Excluídos"
+msgstr[1] "Parâmetros Excluídos"
 
 msgid "Deleted User"
 msgid_plural "Deleted Users"
@@ -278,13 +410,49 @@ msgstr "Instâncias excluídas não são recuperáveis."
 msgid "Description"
 msgstr "Descrição"
 
+msgid "Detach Configuration Group"
+msgid_plural "Detach Configuration Groups"
+msgstr[0] "Desconectar Grupo de Configuração"
+msgstr[1] "Desconetar Grupos de Configuração"
+
 msgid "Detach Replica"
 msgid_plural "Detach Replicas"
 msgstr[0] "Desanexar Réplica"
 msgstr[1] "Desanexar Réplicas"
 
+msgid "Detached Configuration Group"
+msgid_plural "Detached Configuration Groups"
+msgstr[0] "Grupo de Configuração Desconectado"
+msgstr[1] "Grupos de Configuração Desconectados"
+
 msgid "Details"
 msgstr "Detalhes"
+
+msgid "Disable Log"
+msgid_plural "Disable Logs"
+msgstr[0] "Desabilitar Log"
+msgstr[1] "Desabilitar Logs"
+
+msgid "Disable Root"
+msgstr "Desabilitar Root"
+
+msgid "Disabled Log"
+msgid_plural "Disabled Logs"
+msgstr[0] "Log Desabilitado"
+msgstr[1] "Logs Desabilitados"
+
+msgid "Discard Changes"
+msgstr "Descartar Alterações"
+
+msgid "Discard Log"
+msgid_plural "Discard Logs"
+msgstr[0] "Descartar Log"
+msgstr[1] "Descartar Logs"
+
+msgid "Discarded Log"
+msgid_plural "Discarded Logs"
+msgstr[0] "Log Descartado"
+msgstr[1] "Logs Descartados"
 
 msgid "Download"
 msgstr "Baixar"
@@ -295,12 +463,35 @@ msgstr "Download do Backup"
 msgid "Edit User"
 msgstr "Editar Usuário"
 
+msgid "Eject Replica Source"
+msgid_plural "Eject Replica Sources"
+msgstr[0] "Ejetar Origem de Réplica"
+msgstr[1] "Ejetar Origens de Réplicas"
+
+msgid "Ejected Replica Source"
+msgid_plural "Ejected Replica Sources"
+msgstr[0] "Origem de Réplica Ejetada"
+msgstr[1] "Origens de Réplicas Ejetadas"
+
+msgid "Enable Log"
+msgid_plural "Enable Logs"
+msgstr[0] "Habilitar Log"
+msgstr[1] "Habilitar Logs"
+
 msgid "Enable Root"
 msgstr "Habilitar Raiz"
+
+msgid "Enabled Log"
+msgid_plural "Enabled Logs"
+msgstr[0] "Log Habilitado"
+msgstr[1] "Logs Habilitados"
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
 msgstr "Erro"
+
+msgid "Error applying changes"
+msgstr "Erro ao aplicar as alterações"
 
 msgid "Error creating database backup."
 msgstr "Erro criando backup da base de dados."
@@ -308,8 +499,19 @@ msgstr "Erro criando backup da base de dados."
 msgid "Error deleting database on instance."
 msgstr "Erro excluindo base de dados na instância."
 
+#, python-format
+msgid "Error downloading log file: %s"
+msgstr "Erro ao baixar o arquivo de log: %s"
+
+msgid "Error getting configuration group list."
+msgstr "Erro ao obter a lista do grupo de configuração."
+
 msgid "Error getting database backup list."
 msgstr "Erro buscando lista de backup da base de dados."
+
+#, python-format
+msgid "Error resetting parameters: %s"
+msgstr "Erro ao redefinir parâmetros: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
@@ -319,11 +521,17 @@ msgctxt "Current status of a Database Instance"
 msgid "Failed"
 msgstr "Falhou"
 
+msgid "Fault"
+msgstr "Falha"
+
 msgid "Flavor"
 msgstr "Flavor"
 
 msgid "GB"
 msgstr "GB"
+
+msgid "Go"
+msgstr "Ir"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
@@ -341,6 +549,9 @@ msgstr "Aumentar Cluster"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Aumentar Cluster: {{cluster_name}}"
 
+msgid "Has Root Ever Been Enabled"
+msgstr "Root já foi ativado"
+
 msgid "Host"
 msgstr "Host"
 
@@ -355,6 +566,9 @@ msgstr "Incremental"
 
 msgid "Incremental Backup"
 msgstr "Incremental Backup"
+
+msgid "Info"
+msgstr "Informações"
 
 msgid "Information"
 msgstr "Informação"
@@ -406,6 +620,27 @@ msgstr "Disparadas %(count)s chamadas \"%(name)s\"."
 msgid "Launched cluster \"%s\""
 msgstr "Cluster iniciado \"%s\""
 
+msgid "Locality"
+msgstr "Localidade"
+
+msgid "Log"
+msgstr "Log"
+
+msgid "Log Contents"
+msgstr "Conteúdo do Log"
+
+msgid "Log Length"
+msgstr "Tamanho do Log"
+
+msgid "Log length must be a nonnegative integer."
+msgstr "Tamanho do log deve ser um número inteiro não negativo."
+
+msgid "Log: "
+msgstr "Log:"
+
+msgid "Logs"
+msgstr "Logs"
+
 msgid "Manage Access"
 msgstr "Gerenciar Acesso"
 
@@ -420,6 +655,17 @@ msgstr "Console de Gerenciamento"
 
 msgid "Master Instance Name"
 msgstr "Nome da Instância Mestre"
+
+msgid "Message"
+msgstr "Mensagem"
+
+msgid ""
+"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
+"the button, or dragging and dropping. You can change the NIC order by "
+"dragging and dropping as well."
+msgstr ""
+"Mover redes de 'Redes Disponíveis' para 'Redes Selecionadas' ao clicar no "
+"botão, ou arrastar e soltar."
 
 msgid "Name"
 msgstr "Nome"
@@ -455,8 +701,14 @@ msgstr "Nova senha para o acesso ao cluster."
 msgid "New size for volume must be greater than current size."
 msgstr "Novo tamanho para o volume tem de ser maior do que o tamanho atual."
 
+msgid "No availability zones found"
+msgstr "Não foram encontradas zonas de disponibilidade"
+
 msgid "No backups available"
 msgstr "Não há backups disponíveis"
+
+msgid "No configuration groups available"
+msgstr "Nenhum grupo de configuração disponível"
 
 msgid "No flavors available"
 msgstr "Nenhum flavor disponível."
@@ -567,6 +819,12 @@ msgstr "Visão Geral"
 msgid "PASSWORD"
 msgstr "SENHA"
 
+msgid "Parameter"
+msgstr "Parâmetro"
+
+msgid "Parameters"
+msgstr "Parâmetros"
+
 msgid "Parent Backup"
 msgstr "Backup pai"
 
@@ -588,8 +846,51 @@ msgstr ""
 "A senha é apenas visível imediatamente após o root ser habilitado ou "
 "redefinido."
 
+msgid ""
+"Please note:</strong> The new value must be greater than the existing volume "
+"size."
+msgstr ""
+"Por favor, observe:</strong> O novo valor deve ser maior do que o tamanho do "
+"volume existente."
+
+msgid "Promote"
+msgstr "Promover"
+
+msgid "Promote to Replica Source"
+msgstr "Promover para Origem de Réplica"
+
+#, python-format
+msgid "Promoted replica \"%s\" as the new replica source."
+msgstr "Promovido réplica \"%s\" como nova origem de réplica."
+
+msgid "Property"
+msgstr "Propriedade"
+
+msgid "Publish"
+msgstr "Publicar"
+
+msgid "Publish Log"
+msgid_plural "Publish Logs"
+msgstr[0] "Publicar Log"
+msgstr[1] "Publicar Logs"
+
+msgid "Publishable (bytes)"
+msgstr "Publicável (bytes)"
+
+msgid "Published (bytes)"
+msgstr "Publicado (bytes)"
+
+msgid "Published Log"
+msgid_plural "Published Logs"
+msgstr[0] "Log Publicado"
+msgstr[1] "Logs Publicados"
+
 msgid "RAM"
 msgstr "RAM"
+
+msgctxt "Current status of a Database Instance"
+msgid "Rebooting"
+msgstr "Reinicializando"
 
 msgid "Related To"
 msgstr "Relacionado a"
@@ -607,6 +908,9 @@ msgstr[1] "Instâncias Removidas"
 msgid "Removed instances from cluster."
 msgstr "Removido instâncias do Cluster"
 
+msgid "Replica Count"
+msgstr "Contagem de Réplicas"
+
 msgid "Replica Detached"
 msgid_plural "Replicas Detached"
 msgstr[0] "Réplica Desanexada"
@@ -620,6 +924,9 @@ msgstr "Replicar da Instância"
 
 msgid "Replication"
 msgstr "Replicação"
+
+msgid "Reset Parameters"
+msgstr "Redefinir Parâmetros"
 
 msgid "Reset Root Password"
 msgstr "Redefinição da Senha Root"
@@ -635,6 +942,10 @@ msgstr "Redimensionar Instância"
 
 msgid "Resize Volume"
 msgstr "Redimensionar volume"
+
+msgctxt "Current status of a Database Instance"
+msgid "Resizing"
+msgstr "Redimensionando"
 
 #, python-format
 msgid "Resizing instance \"%s\""
@@ -668,6 +979,9 @@ msgstr "Restaurar Backup"
 
 msgid "Restore from Backup"
 msgstr "Recuperar do Backup"
+
+msgid "Return to Log List"
+msgstr "Retornar à Lista de Log"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
@@ -713,14 +1027,28 @@ msgstr "Agendado o aumento do cluster."
 msgid "Select a backup to restore"
 msgstr "Selecione um Backup para Restaurar"
 
+msgid "Select a configuration group"
+msgstr "Selecionar um grupo de configuração"
+
+msgid "Select a configuration group to attach to the database instance."
+msgstr ""
+"Selecione um grupo de configuração para anexar à instância de banco de dados."
+
 msgid "Select a master instance"
 msgstr "Selecione a instância mestre"
 
 msgid "Select a new flavor"
 msgstr "Selecione um novo flavor"
 
+msgid "Select a parameter and provide a value for the configuration parameter."
+msgstr ""
+"Selecione um parâmetro e forneça um valor para o parâmetro de configuração."
+
 msgid "Select backup"
 msgstr "Selecionar Backup"
+
+msgid "Select configuration group"
+msgstr "Selecionar grupo de configuração"
 
 msgid "Select datastore type and version"
 msgstr "Selecione o tipo de armazenamento de dados e versão"
@@ -801,6 +1129,13 @@ msgid "Specify the new volume size for the database instance."
 msgstr ""
 "Especifique o novo tamanho do volume para a instância de banco de dados."
 
+msgid ""
+"Specify whether instances in the cluster will be created on the same "
+"hypervisor (affinity) or on different hypervisors (anti-affinity)."
+msgstr ""
+"Especifique se as instâncias no cluster serão criadas no mesmo hypervisor "
+"(afinidade) ou em um hypervisor diferente (anti-afinidade)."
+
 msgid "Specs"
 msgstr "Especificações"
 
@@ -809,6 +1144,12 @@ msgstr "Status"
 
 msgid "Status if root was ever enabled for an instance."
 msgstr "Situação se o root sempre foi habilitado para uma instância."
+
+msgid "Successfully added parameter"
+msgstr "Parâmetro adicionado com sucesso."
+
+msgid "Successfully disabled root access."
+msgstr "Acesso de root desabilitado com sucesso."
 
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
@@ -838,6 +1179,9 @@ msgstr "O número de shards precisar ser maior que 1."
 msgid "There was a problem enabling root."
 msgstr "Houve um problema ao habilitar raiz."
 
+msgid "This action cannot be undone."
+msgstr "Essa ação não poderá ser desfeita."
+
 msgid "Type"
 msgstr "Tipo"
 
@@ -852,8 +1196,23 @@ msgid "Unable to %(action)s: %(objs)s"
 msgstr "Não foi possível %(action)s: %(objs)s"
 
 #, python-format
+msgid "Unable to add new parameter: %s"
+msgstr "Não é possível adicionar novo parâmetro: %s"
+
+#, python-format
+msgid "Unable to attach configuration group. %s"
+msgstr "Não é possível anexar grupo de configuração. %s"
+
+#, python-format
+msgid "Unable to create configuration group. %s"
+msgstr "Não é possível criar grupo de configuração. %s"
+
+#, python-format
 msgid "Unable to create database. %s"
 msgstr "Não foi possível criar base de dados: %s"
+
+msgid "Unable to create list of parameters."
+msgstr "Não é possível criar lista de parâmetros."
 
 #, python-format
 msgid "Unable to create user. %s"
@@ -867,6 +1226,9 @@ msgstr "Não foi possível encontrar o backup!"
 
 msgid "Unable to find master instance!"
 msgstr "Incapaz de encontrar instância mestre!"
+
+msgid "Unable to get configuration data."
+msgstr "Não é possível obter dados de configuração"
 
 msgid "Unable to get database backup data."
 msgstr "Não é possível obter dados de backup de banco de dados."
@@ -905,6 +1267,16 @@ msgstr "Não foi possível listar os backups de banco de dados para o pai."
 msgid "Unable to list database instances to backup."
 msgstr "Não foi possível listar as instâncias de banco de dados para backup."
 
+msgid ""
+"Unable to load {0} log\n"
+"{1}"
+msgstr ""
+"Não é possível carregar {0} log\n"
+"{1}"
+
+msgid "Unable to load {0} log for instance \"{1}\"."
+msgstr "Não é possível carregar {0} log para a instância \"{1}\"."
+
 msgid "Unable to obtain datastore versions."
 msgstr "Não é possível obter versões de datastores."
 
@@ -916,6 +1288,13 @@ msgstr "Não é possível obter flavors."
 
 msgid "Unable to obtain information on root user"
 msgstr "Não é possível obter informação do usuário root"
+
+msgid "Unable to obtain list of parameters."
+msgstr "Não é possível obter lista de parâmetros."
+
+#, python-format
+msgid "Unable to promote replica as the new replica source.  \"%s\""
+msgstr "Não é possível promover a réplica como nova origem de réplica. \"%s\""
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
@@ -935,6 +1314,9 @@ msgstr "Não é possível redimensionar volume. %s"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Não foi possível obter as bases de dados acessíveis."
+
+msgid "Unable to retrieve availability zones."
+msgstr "Não é possível recuperar zonas de disponibilidade"
 
 msgid "Unable to retrieve cluster details."
 msgstr "Não foi possível recuperar os detalhes do cluster."
@@ -956,6 +1338,10 @@ msgid "Unable to retrieve details for backup: %s"
 msgstr "Não foi possível obter detalhes do backup: %s"
 
 #, python-format
+msgid "Unable to retrieve details for configuration group: %s"
+msgstr "Não é possível obter detalhes para o grupo de configuração: %s"
+
+#, python-format
 msgid "Unable to retrieve details for database cluster: %s"
 msgstr "Não foi possível obter detalhes para a base de dados do Cluster: %s"
 
@@ -973,12 +1359,23 @@ msgstr "Não foi possível recuperar flavors."
 msgid "Unable to retrieve instance details."
 msgstr "Não foi possível recuperar os detalhes da instância."
 
+#, python-format
+msgid ""
+"Unable to retrieve list of logs.\n"
+"%s"
+msgstr ""
+"Não é possível recuperar lista de logs.\n"
+"%s"
+
 msgid "Unable to retrieve networks."
 msgstr "Não é possível recuperar redes."
 
 #, python-format
 msgid "Unable to update user. %s"
 msgstr "Não é possível atualizar usuário. %s"
+
+msgid "Unknown"
+msgstr "Desconhecido"
 
 msgid "Updated"
 msgstr "Atualizado"
@@ -995,6 +1392,40 @@ msgstr "Nome de usuário (requerido)"
 
 msgid "Users"
 msgstr "Usuários"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Value must be \"true\" or \"false\"."
+msgstr "Valor deve ser \"true\" ou\"false\"."
+
+#, python-format
+msgid "Value must be a number between %(min)s and %(max)s."
+msgstr "Valor deve ser um número entre %(min)s e %(max)s."
+
+#, python-format
+msgid "Value must be a number greater than or equal to %s."
+msgstr "Valor deve ser um número maior que ou igual a %s."
+
+#, python-format
+msgid "Value must be a number less than or equal to %s."
+msgstr "Valor deve seu um número menor que ou igual a %s."
+
+msgid "Value must be a number."
+msgstr "Valor deve ser um número."
+
+#, python-format
+msgid "Value must be of type %s."
+msgstr "Valor deve ser do tipo %s."
+
+msgid "Values"
+msgstr "Valores"
+
+msgid "View Full Log"
+msgstr "Ver Log Completo"
+
+msgid "View Log"
+msgstr "Visualizar Log"
 
 msgid "Volume"
 msgstr "Volume"
@@ -1021,12 +1452,23 @@ msgstr ""
 msgid "You must select a datastore type and version."
 msgstr "Você deve selecionar um tipo de armazenamento de dados e versão."
 
+msgid "You must select a flavor."
+msgstr "Você deve selecionar um flavor."
+
 msgid "You must specify a password if you create a user."
 msgstr "Você deve especificar uma senha se você criar um usuário."
 
 msgid "You must specify at least one database if you create a user."
 msgstr ""
 "Você deve especificar ao menos uma base de dados se você criar um usuário."
+
+#, python-format
+msgid ""
+"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
+"related_to=%(related_to)s, nics=%(nics)s]"
+msgstr ""
+"[flavor=%(flavor)s, volume=%(volume)s, nome=%(name)s, tipo=%(type)s, "
+"relacionado_a=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "instância"
