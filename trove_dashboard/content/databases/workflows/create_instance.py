@@ -586,14 +586,14 @@ class LaunchInstance(workflows.Workflow):
             LOG.info("Launching database instance with parameters "
                      "{name=%s, volume=%s, volume_type=%s, flavor=%s, "
                      "datastore=%s, datastore_version=%s, "
-                     "dbs=%s, users=%s, "
+                     "dbs=%s, "
                      "backups=%s, nics=%s, replica_of=%s replica_count=%s, "
                      "configuration=%s, locality=%s, "
                      "availability_zone=%s}",
                      context['name'], context['volume'],
                      self._get_volume_type(context), context['flavor'],
                      datastore, datastore_version,
-                     self._get_databases(context), self._get_users(context),
+                     self._get_databases(context),
                      self._get_backup(context), self._get_nics(context),
                      context.get('master'), context['replica_count'],
                      context.get('config'), self._get_locality(context),
