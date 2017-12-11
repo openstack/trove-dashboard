@@ -12,7 +12,8 @@
             {% else %}
                 <dd>{{ ip }}</dd>
                 <dt>{% trans "Connection Examples" %}</dt>
-                <dd>mysql {{ ip }} 3306</dd>
+                <dd>mysql -h {{ ip }} -u {% trans "USERNAME" %} -p</dd>
+                <dd>mysql://{% trans "USERNAME" %}:{% trans "PASSWORD" %}@{{ ip }}:3306/{% trans "DATABASE"%}</dd>
             {% endif %}
         {% endwith %}
     </dl>
