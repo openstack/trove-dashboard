@@ -163,7 +163,7 @@ class EditUserView(horizon_forms.ModalFormView):
 class AccessDetailView(horizon_tables.DataTableView):
     table_class = tables.AccessTable
     template_name = 'project/databases/access_detail.html'
-    page_title = _("Database Access for: {{ user_name }}")
+    page_title = _("Database Access for: {{ user_name }}@{{user_host}}")
 
     @memoized.memoized_method
     def get_data(self):
