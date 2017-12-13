@@ -635,7 +635,7 @@ class DatabaseTests(test.TestCase):
 
         database_id = database.id
         # Instead of using the user's ID, the api uses the user's name. BOOO!
-        user_id = user.name
+        user_id = user.name + "@" + user.host
 
         # views.py: DetailView.get_data
         api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\

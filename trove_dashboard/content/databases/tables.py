@@ -692,7 +692,8 @@ class UsersTable(tables.DataTable):
         row_actions = [EditUser, ManageAccess, DeleteUser]
 
     def get_object_id(self, datum):
-        return datum.name
+        obj_id = datum.name + "@" + datum.host
+        return obj_id
 
 
 class DatabaseTable(tables.DataTable):
