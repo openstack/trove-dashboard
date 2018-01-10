@@ -37,6 +37,7 @@ trove_dashboard/test/configs/config.conf
 trove_dashboard/test/.secret_key_store
 AUTHORS
 *.lock
+*.swp
 
 # Files created by releasenotes build
 releasenotes/build
