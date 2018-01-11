@@ -12,12 +12,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import logging
-
 from django.conf import settings
 from troveclient.v1 import client
 
 from openstack_dashboard.api import base
+from oslo_log import log as logging
 
 from horizon.utils import functions as utils
 from horizon.utils.memoized import memoized  # noqa

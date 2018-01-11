@@ -16,7 +16,6 @@
 Views for managing database instances.
 """
 from collections import OrderedDict
-import logging
 
 from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
@@ -32,6 +31,7 @@ from horizon.utils import memoized
 from horizon import workflows as horizon_workflows
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
+from oslo_log import log as logging
 
 from trove_dashboard import api
 from trove_dashboard.content.databases import forms
