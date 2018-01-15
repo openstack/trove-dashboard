@@ -92,7 +92,7 @@ the Horizon codebase, in this repository.
 Links:
 ------
 
-Trove project: https://git.openstack.org/openstack/trove
+Trove project: https://git.openstack.org/cgit/openstack/trove/
 
 Trove at wiki.openstack.org: https://wiki.openstack.org/wiki/Trove
 
