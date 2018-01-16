@@ -5,9 +5,9 @@
 # Yulia Ryndenkova <yryndenkova@hystax.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: trove-dashboard 9.0.0.0b3.dev4\n"
+"Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-06-19 12:58+0000\n"
+"POT-Creation-Date: 2018-01-15 11:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -286,9 +286,6 @@ msgstr "База данных"
 
 msgid "Database Access"
 msgstr "Доступ к БД"
-
-msgid "Database Access for: {{ user_name }}"
-msgstr "Доступ к БД для: {{ user_name }}"
 
 msgid "Database Backups"
 msgstr "Резервные копии БД"

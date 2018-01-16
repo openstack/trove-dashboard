@@ -3,13 +3,13 @@
 # Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Trove Dashboard Release Notes 9.0.0\n"
+"Project-Id-Version: Trove Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-28 02:11+0000\n"
+"POT-Creation-Date: 2018-01-15 11:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-08-03 05:01+0000\n"
+"PO-Revision-Date: 2017-12-14 11:28+0000\n"
 "Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko-KR\n"
@@ -60,6 +60,9 @@ msgstr "Newton 시리즈에 대한 릴리즈 노트"
 
 msgid "Ocata Series Release Notes"
 msgstr "Ocata 시리즈에 대한 릴리즈 노트"
+
+msgid "Pike Series Release Notes"
+msgstr "Pike 시리즈 릴리즈 노트"
 
 msgid "Search"
 msgstr "검색"

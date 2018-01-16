@@ -1,16 +1,17 @@
 # sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
 # zzxwill <zzxwill@gmail.com>, 2016. #zanata
 # Bin <liubin@glab.cn>, 2017. #zanata
+# TigerFang <tigerfun@126.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Trove Dashboard Release Notes 9.0.0\n"
+"Project-Id-Version: Trove Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-19 12:58+0000\n"
+"POT-Creation-Date: 2018-01-15 11:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-07-24 04:02+0000\n"
-"Last-Translator: Bin <liubin@glab.cn>\n"
+"PO-Revision-Date: 2017-12-28 02:43+0000\n"
+"Last-Translator: TigerFang <tigerfun@126.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh-CN\n"
 "X-Generator: Zanata 3.9.6\n"
@@ -59,6 +60,9 @@ msgstr "Newton版本发布说明"
 
 msgid "Ocata Series Release Notes"
 msgstr "Ocata版本发布说明"
+
+msgid "Pike Series Release Notes"
+msgstr "Pike版本发布声明"
 
 msgid "Search"
 msgstr "搜索"
