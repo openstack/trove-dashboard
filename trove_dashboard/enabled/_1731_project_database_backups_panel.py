@@ -27,8 +27,6 @@ DISABLED = True
 ADD_PANEL = ('trove_dashboard.content.ng_database_backups.panel.NGBackups')
 ADD_ANGULAR_MODULES = ['horizon.dashboard.project.backups']
 
-ADD_SCSS_FILES = ['dashboard/project/ngbackups/backups.scss']
-
 ADD_JS_FILES = [
     'dashboard/project/ngbackups/backups.module.js',
     'dashboard/project/ngbackups/table/table.controller.js',
@@ -37,6 +35,5 @@ ADD_JS_FILES = [
 ]
 
 ADD_JS_SPEC_FILES = [
-    'dashboard/project/ngbackups/backups.module.spec.js',
-    'dashboard/project/ngbackups/table/table.controller.spec.js'
+    'dashboard/project/ngbackups/backups.module.spec.js'
 ]
