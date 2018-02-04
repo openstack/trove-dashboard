@@ -41,7 +41,7 @@
 
   function getBackups() {
     return apiService.get('/api/trove/backups/')
-      .error(function() {
+      .catch(function() {
         toastService.add('error', gettext('Unable to retrieve the Backups.'));
       });
     }
