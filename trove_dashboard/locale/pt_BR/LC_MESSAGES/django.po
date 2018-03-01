@@ -11,8 +11,8 @@ msgstr ""
 "PO-Revision-Date: 2017-09-04 07:24+0000\n"
 "Last-Translator: Fernando Pimenta <fernando.c.pimenta@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
-"Language: pt-BR\n"
-"X-Generator: Zanata 3.9.6\n"
+"Language: pt_BR\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #, python-format
