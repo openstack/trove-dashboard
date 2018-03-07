@@ -3,19 +3,20 @@
 # Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
 # Corinne Verheyde <cverheyd@gmail.com>, 2017. #zanata
 # Mateusz Kowalski <mateusz.kowalski@cern.ch>, 2017. #zanata
+# JF Taltavull <jftalta@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-15 11:49+0000\n"
+"POT-Creation-Date: 2018-02-28 09:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-08-01 09:09+0000\n"
-"Last-Translator: Mateusz Kowalski <mateusz.kowalski@cern.ch>\n"
+"PO-Revision-Date: 2018-03-06 07:55+0000\n"
+"Last-Translator: JF Taltavull <jftalta@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #, python-format
@@ -309,6 +310,9 @@ msgstr "Base de données"
 
 msgid "Database Access"
 msgstr "Accès à la base de données"
+
+msgid "Database Access for: {{ user_name }}@{{user_host}}"
+msgstr "Accès à la base de données pour: {{ user_name }}@{{user_host}}"
 
 msgid "Database Backups"
 msgstr "Sauvegardes de Base de Données "
@@ -1008,7 +1012,7 @@ msgstr "Mot de passe root mis à jour pour le cluster \"%s\""
 
 msgctxt "Current status of a Database Backup"
 msgid "Saving"
-msgstr "Enregistrement"
+msgstr "Sauvegarde en cours"
 
 msgid "Scheduled Shrinking of Cluster"
 msgid_plural "Scheduled Shrinking of Cluster"
@@ -1160,8 +1164,8 @@ msgid ""
 "Specify whether instances in the cluster will be created on the same "
 "hypervisor (affinity) or on different hypervisors (anti-affinity)."
 msgstr ""
-"Spécifie si des instances dans le cluster seront crées sur le même "
-"hyperviseur (affinité) ou sur des hyperviseurs différents (anti-affinité)."
+"Spécifier si les instances du cluster seront créées sur le même hyperviseur "
+"(affinité) ou sur des hyperviseurs différents (anti-affinité)."
 
 msgid "Specs"
 msgstr "Spécifications"
