@@ -13,7 +13,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import binascii
 import logging
 
 import django
@@ -35,6 +34,7 @@ from trove_dashboard.content.databases import tables
 from trove_dashboard.content.databases import views
 from trove_dashboard.content.databases.workflows import create_instance
 from trove_dashboard.test import helpers as test
+from trove_dashboard.utils import common as common_utils
 
 INDEX_URL = reverse('horizon:project:databases:index')
 LAUNCH_URL = reverse('horizon:project:databases:launch')
@@ -1254,7 +1254,7 @@ class DatabaseTests(test.TestCase):
         return datastore + ' - ' + datastore_version
 
     def _build_flavor_widget_name(self, datastore, datastore_version):
-        return binascii.hexlify(self._build_datastore_display_text(
+        return common_utils.hexlify(self._build_datastore_display_text(
             datastore, datastore_version))
 
     @test.create_stubs({
