@@ -13,7 +13,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import binascii
 import collections
 import uuid
 
@@ -36,6 +35,7 @@ from trove_dashboard.content.database_clusters \
 from trove_dashboard.content.databases import db_capability
 from trove_dashboard.content.databases.workflows \
     import create_instance
+from trove_dashboard.utils import common as common_utils
 
 LOG = logging.getLogger(__name__)
 
@@ -133,7 +133,7 @@ class LaunchForm(forms.SelfHandlingForm):
         if datastore_field_value:
             datastore, datastore_version = (
                 create_instance.parse_datastore_and_version_text(
-                    binascii.unhexlify(datastore_field_value)))
+                    common_utils.unhexlify(datastore_field_value)))
 
             flavor_field_name = self._build_widget_field_name(
                 datastore, datastore_version)
@@ -286,7 +286,7 @@ class LaunchForm(forms.SelfHandlingForm):
         # Since the fieldnames cannot contain an uppercase character
         # we generate a hex encoded string representation of the
         # datastore and version as the fieldname
-        return binascii.hexlify(
+        return common_utils.hexlify(
             self._build_datastore_display_text(datastore, datastore_version))
 
     def _insert_datastore_version_fields(self, datastore_flavor_fields):
@@ -330,7 +330,7 @@ class LaunchForm(forms.SelfHandlingForm):
         try:
             datastore, datastore_version = (
                 create_instance.parse_datastore_and_version_text(
-                    binascii.unhexlify(data['datastore'])))
+                    common_utils.unhexlify(data['datastore'])))
 
             flavor_field_name = self._build_widget_field_name(
                 datastore, datastore_version)

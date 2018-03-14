@@ -14,7 +14,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import binascii
 import logging
 
 from django.core.urlresolvers import reverse
@@ -30,6 +29,7 @@ from trove_dashboard.content.database_clusters \
     import cluster_manager
 from trove_dashboard.content.database_clusters import tables
 from trove_dashboard.test import helpers as test
+from trove_dashboard.utils import common as common_utils
 
 INDEX_URL = reverse('horizon:project:database_clusters:index')
 LAUNCH_URL = reverse('horizon:project:database_clusters:launch')
@@ -662,5 +662,5 @@ class ClustersTests(test.TestCase):
         return datastore + ' - ' + datastore_version
 
     def _build_flavor_widget_name(self, datastore, datastore_version):
-        return binascii.hexlify(self._build_datastore_display_text(
+        return common_utils.hexlify(self._build_datastore_display_text(
             datastore, datastore_version))
