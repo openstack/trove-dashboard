@@ -86,7 +86,8 @@ class IndexView(horizon_tables.DataTableView):
             msg = _('Unable to retrieve database clusters.')
             exceptions.handle(self.request, msg)
 
-        map(self._extra_data, clusters)
+        for cluster in clusters:
+            self._extra_data(cluster)
 
         return clusters
 
