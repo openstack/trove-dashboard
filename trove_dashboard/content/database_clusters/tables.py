@@ -20,6 +20,8 @@ from django.template.defaultfilters import title  # noqa
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
+import six
+
 from horizon import messages
 from horizon import tables
 from horizon.templatetags import sizeformat
@@ -269,10 +271,10 @@ class ClusterShrinkAction(tables.BatchAction):
         except Exception as ex:
             LOG.error('Action %(action)s failed with %(ex)s for %(data)s' %
                       {'action': self._get_action_name(past=True).lower(),
-                       'ex': ex.message,
+                       'ex': six.text_type(ex),
                        'data': display_str})
             msg = _('Unable to remove instances from cluster: %s')
-            messages.error(request, msg % ex.message)
+            messages.error(request, msg % six.text_type(ex))
 
         return shortcuts.redirect(self.get_success_url(request))
 
@@ -404,10 +406,10 @@ class ClusterGrowAction(tables.Action):
             messages.success(request, msg)
         except Exception as ex:
             LOG.error('Action grow cluster failed with %(ex)s for %(data)s' %
-                      {'ex': ex.message,
+                      {'ex': six.text_type(ex),
                        'data': display_str})
             msg = _('Unable to grow cluster: %s')
-            messages.error(request, msg % ex.message)
+            messages.error(request, msg % six.text_type(ex))
         finally:
             cluster_manager.delete(cluster_id)
 
