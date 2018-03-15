@@ -211,7 +211,12 @@ class SetInstanceDetailsAction(workflows.Action):
                     # only add to choices if datastore has at least one version
                     version_choices = ()
                     for v in versions:
-                        if hasattr(v, 'active') and not v.active:
+                        # NOTE(zhaochao): please refer to the comment about
+                        # the same change for 'populate_datastore_choices'
+                        # of 'LaunchForm' in
+                        # trove_dashboard/content/database_clusters/forms.py
+                        # for details.
+                        if not v.to_dict().get('active', True):
                             continue
                         if self.backup_id:
                             if v.id != backup.datastore['version_id']:
