@@ -80,7 +80,8 @@ class IndexView(horizon_tables.DataTableView):
             instances = []
             msg = _('Unable to retrieve database instances.')
             exceptions.handle(self.request, msg)
-        map(self._extra_data, instances)
+        for instance in instances:
+            self._extra_data(instance)
         return instances
 
 
