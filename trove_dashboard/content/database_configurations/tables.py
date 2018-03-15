@@ -20,6 +20,8 @@ from django import shortcuts
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
+import six
+
 from horizon import forms
 from horizon import messages
 from horizon import tables
@@ -141,7 +143,7 @@ class DiscardChanges(tables.Action):
             except Exception as ex:
                 messages.error(
                     request,
-                    _('Error resetting parameters: %s') % ex.message)
+                    _('Error resetting parameters: %s') % six.text_type(ex))
 
         return shortcuts.redirect(request.build_absolute_uri())
 

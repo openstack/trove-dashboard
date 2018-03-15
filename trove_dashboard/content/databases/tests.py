@@ -496,7 +496,7 @@ class DatabaseTests(test.TestCase):
         database.id = u'id'
         user = self.database_user_roots.first()
 
-        api.trove.instance_get(IsA(http.HttpRequest), IsA(unicode))\
+        api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(database)
 
         api.trove.root_show(IsA(http.HttpRequest), database.id) \
@@ -514,7 +514,7 @@ class DatabaseTests(test.TestCase):
     def test_show_root_exception(self):
         database = self.databases.first()
 
-        api.trove.instance_get(IsA(http.HttpRequest), IsA(unicode))\
+        api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(database)
 
         api.trove.root_show(IsA(http.HttpRequest), u'id') \
@@ -1266,7 +1266,7 @@ class DatabaseTests(test.TestCase):
         database = self.databases.first()
         configuration = self.database_configurations.first()
 
-        api.trove.instance_get(IsA(http.HttpRequest), IsA(unicode))\
+        api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(database)
 
         api.trove.configuration_list(IsA(http.HttpRequest))\
@@ -1296,7 +1296,7 @@ class DatabaseTests(test.TestCase):
         database = self.databases.first()
         configuration = self.database_configurations.first()
 
-        api.trove.instance_get(IsA(http.HttpRequest), IsA(unicode))\
+        api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))\
             .AndReturn(database)
 
         api.trove.configuration_list(IsA(http.HttpRequest))\

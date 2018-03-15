@@ -653,7 +653,7 @@ class ClustersTests(test.TestCase):
         return filtered_datastore_versions
 
     def _contains_datastore_in_attribute(self, field, datastore):
-        for key, value in field.widget.attrs.iteritems():
+        for key, value in field.widget.attrs.items():
             if datastore in key:
                 return True
         return False

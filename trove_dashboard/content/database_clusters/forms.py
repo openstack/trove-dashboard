@@ -20,6 +20,8 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.debug import sensitive_variables  # noqa
 
+import six
+
 from horizon import exceptions
 from horizon import forms
 from horizon import messages
@@ -299,10 +301,10 @@ class LaunchForm(forms.SelfHandlingForm):
             else:
                 fields_to_restore_at_the_end[k] = v
 
-        for k, v in datastore_flavor_fields.iteritems():
+        for k, v in datastore_flavor_fields.items():
             self.fields[k] = v
 
-        for k in reversed(fields_to_restore_at_the_end.keys()):
+        for k in reversed(list(fields_to_restore_at_the_end.keys())):
             self.fields[k] = fields_to_restore_at_the_end[k]
 
     def _add_attr_to_optional_fields(self, datastore, selection_text):
@@ -363,7 +365,8 @@ class LaunchForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
-                              _('Unable to launch cluster. %s') % e.message,
+                              _('Unable to launch cluster. %s') %
+                              six.text_type(e),
                               redirect=redirect)
 
 
@@ -465,7 +468,8 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
-                              _('Unable to grow cluster. %s') % e.message,
+                              _('Unable to grow cluster. %s') %
+                              six.text_type(e),
                               redirect=redirect)
         return True
 
@@ -489,5 +493,5 @@ class ResetPasswordForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request, _('Unable to reset password. %s') %
-                              e.message, redirect=redirect)
+                              six.text_type(e), redirect=redirect)
         return True
