@@ -12,8 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import binascii
-
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -31,6 +29,7 @@ from oslo_log import log as logging
 
 
 from trove_dashboard import api
+from trove_dashboard.utils import common as common_utils
 
 LOG = logging.getLogger(__name__)
 
@@ -97,7 +96,7 @@ class SetInstanceDetailsAction(workflows.Action):
             self._errors["datastore"] = self.error_class([msg])
         else:
             datastore, datastore_version = parse_datastore_and_version_text(
-                binascii.unhexlify(datastore_and_version))
+                common_utils.unhexlify(datastore_and_version))
             field_name = self._build_flavor_field_name(datastore,
                                                        datastore_version)
             flavor = self.data.get(field_name, None)
@@ -114,7 +113,7 @@ class SetInstanceDetailsAction(workflows.Action):
         datastore_and_version = context["datastore"]
         if datastore_and_version:
             datastore, datastore_version = parse_datastore_and_version_text(
-                binascii.unhexlify(context["datastore"]))
+                common_utils.unhexlify(context["datastore"]))
             field_name = self._build_flavor_field_name(datastore,
                                                        datastore_version)
             flavor = self.data[field_name]
@@ -260,7 +259,7 @@ class SetInstanceDetailsAction(workflows.Action):
         # Since the fieldnames cannot contain an uppercase character
         # we generate a hex encoded string representation of the
         # datastore and version as the fieldname
-        return binascii.hexlify(
+        return common_utils.hexlify(
             self._build_datastore_display_text(datastore, datastore_version))
 
     def _build_flavor_field_name(self, datastore, datastore_version):
@@ -581,7 +580,7 @@ class LaunchInstance(workflows.Workflow):
     def handle(self, request, context):
         try:
             datastore, datastore_version = parse_datastore_and_version_text(
-                binascii.unhexlify(self.context['datastore']))
+                common_utils.unhexlify(self.context['datastore']))
             avail_zone = context.get('availability_zone', None)
             LOG.info("Launching database instance with parameters "
                      "{name=%s, volume=%s, volume_type=%s, flavor=%s, "

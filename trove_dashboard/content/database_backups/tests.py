@@ -12,8 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import binascii
-
 from django.core.urlresolvers import reverse
 from django import http
 from django.utils.translation import ugettext_lazy as _
@@ -28,6 +26,7 @@ from troveclient import common
 from trove_dashboard import api
 from trove_dashboard.content.databases.workflows import create_instance
 from trove_dashboard.test import helpers as test
+from trove_dashboard.utils import common as common_utils
 
 INDEX_URL = reverse('horizon:project:database_backups:index')
 BACKUP_URL = reverse('horizon:project:database_backups:create')
@@ -249,7 +248,7 @@ class DatabasesBackupsTests(test.TestCase):
         self.assertTrue(len(fields['datastore'].choices), 1)
         text = 'mysql - 5.6'
         choice = fields['datastore'].choices[0]
-        self.assertTrue(choice[0], binascii.hexlify(text))
+        self.assertTrue(choice[0], common_utils.hexlify(text))
         self.assertTrue(choice[1], text)
 
         advanced_step = [step for step in res.context_data['workflow'].steps
