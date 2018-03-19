@@ -113,8 +113,8 @@ class DatabaseTab(tabs.TableTab):
         instance = self.tab_group.kwargs['instance']
         try:
             data = api.trove.database_list(self.request, instance.id)
-            add_instance = lambda d: setattr(d, 'instance', instance)
-            map(add_instance, data)
+            for database in data:
+                setattr(database, 'instance', instance)
         except Exception:
             msg = _('Unable to get databases data.')
             exceptions.handle(self.request, msg)
