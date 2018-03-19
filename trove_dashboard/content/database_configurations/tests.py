@@ -12,7 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import copy
 import logging
 import six
 
@@ -378,7 +377,26 @@ class DatabaseConfigurationsTests(test.TestCase):
                                     'configuration_update',),
                         config_param_manager: ('get',)})
     def test_values_tab_apply_action(self):
-        config = copy.deepcopy(self.database_configurations.first())
+        # NOTE(zhaochao): we cannot use copy.deepcopy() under Python 3,
+        # because of the lazy-loading feature of the troveclient Resource
+        # objects. copy.deepcopy will use hasattr to search for the
+        # '__setstate__' attribute of the resource object. As the resource
+        # object is lazy loading, searching attributes relys on the 'is_load'
+        # property, unfortunately this property is also not loaded at the
+        # moment, then we're getting in an infinite loop there. Python will
+        # raise RuntimeError saying "maximum recursion depth exceeded", this is
+        # ignored under Python 2.x, but reraised under Python 3 by hasattr().
+        #
+        # Temporarily importing troveclient and reconstructing a configuration
+        # object from the original config object's dict info will make this
+        # case (and the next) working under Python 3.
+        original_config = self.database_configurations.first()
+        from troveclient.v1 import configurations
+        config = configurations.Configuration(
+            configurations.Configurations(None), original_config.to_dict())
+        # Making sure the newly constructed config object is the same as
+        # the original one.
+        self.assertEqual(config, original_config)
 
         # setup the configuration parameter manager
         config_param_mgr = config_param_manager.ConfigParamManager(
@@ -412,7 +430,16 @@ class DatabaseConfigurationsTests(test.TestCase):
                                     'configuration_update',),
                         config_param_manager: ('get',)})
     def test_values_tab_apply_action_exception(self):
-        config = copy.deepcopy(self.database_configurations.first())
+        # NOTE(zhaochao) Please refer to the comment at the beginning of the
+        # 'test_values_tab_apply_action' about not using copy.deepcopy() for
+        # details.
+        original_config = self.database_configurations.first()
+        from troveclient.v1 import configurations
+        config = configurations.Configuration(
+            configurations.Configurations(None), original_config.to_dict())
+        # Making sure the newly constructed config object is the same as
+        # the original one.
+        self.assertEqual(config, original_config)
 
         # setup the configuration parameter manager
         config_param_mgr = config_param_manager.ConfigParamManager(

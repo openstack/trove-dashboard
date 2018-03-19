@@ -238,7 +238,18 @@ class LaunchForm(forms.SelfHandlingForm):
                     # only add to choices if datastore has at least one version
                     version_choices = ()
                     for v in versions:
-                        if hasattr(v, 'active') and not v.active:
+                        # NOTE(zhaochao): troveclient API resources are lazy
+                        # loading objects. When an attribute is not found, the
+                        # get() method of the Manager object will be called
+                        # with the ID of the resource. However for
+                        # datastore_versions, the get() method is expecting two
+                        # arguments: datastore and datastore_version(name), so
+                        # TypeError will be raised as not enough arguments are
+                        # passed. In Python 2.x, hasattr() won't reraise the
+                        # exception(which is not correct), but reraise under
+                        # Python 3(which should be correct).
+                        # Use v.to_dict() to verify the 'active' info instead.
+                        if not v.to_dict().get('active', True):
                             continue
                         selection_text = self._build_datastore_display_text(
                             ds.name, v.name)
