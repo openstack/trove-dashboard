@@ -16,6 +16,8 @@ from django.core.urlresolvers import reverse
 from django.forms import ValidationError  # noqa
 from django.utils.translation import ugettext_lazy as _
 
+import six
+
 from horizon import exceptions
 from horizon import forms
 from horizon import messages
@@ -47,7 +49,7 @@ class CreateDatabaseForm(forms.SelfHandlingForm):
             redirect = reverse("horizon:project:databases:detail",
                                args=(instance,))
             exceptions.handle(request, _('Unable to create database. %s') %
-                              e.message, redirect=redirect)
+                              six.text_type(e), redirect=redirect)
         return True
 
 
@@ -88,7 +90,7 @@ class ResizeVolumeForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:databases:index")
             exceptions.handle(request, _('Unable to resize volume. %s') %
-                              e.message, redirect=redirect)
+                              six.text_type(e), redirect=redirect)
         return True
 
 
@@ -126,7 +128,7 @@ class ResizeInstanceForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:databases:index")
             exceptions.handle(request, _('Unable to resize instance. %s') %
-                              e.message, redirect=redirect)
+                              six.text_type(e), redirect=redirect)
         return True
 
 
@@ -146,7 +148,7 @@ class PromoteToReplicaSourceForm(forms.SelfHandlingForm):
             exceptions.handle(
                 request,
                 _('Unable to promote replica as the new replica source.  "%s"')
-                % e.message, redirect=redirect)
+                % six.text_type(e), redirect=redirect)
         return True
 
 
@@ -182,7 +184,7 @@ class CreateUserForm(forms.SelfHandlingForm):
             redirect = reverse("horizon:project:databases:detail",
                                args=(instance,))
             exceptions.handle(request, _('Unable to create user. %s') %
-                              e.message, redirect=redirect)
+                              six.text_type(e), redirect=redirect)
         return True
 
     def _get_databases(self, data):
@@ -231,7 +233,7 @@ class EditUserForm(forms.SelfHandlingForm):
             redirect = reverse("horizon:project:databases:detail",
                                args=(instance,))
             exceptions.handle(request, _('Unable to update user. %s') %
-                              e.message, redirect=redirect)
+                              six.text_type(e), redirect=redirect)
         return True
 
     def clean(self):
@@ -279,5 +281,5 @@ class AttachConfigurationForm(forms.SelfHandlingForm):
             redirect = reverse("horizon:project:databases:index")
             exceptions.handle(request, _('Unable to attach configuration '
                                          'group. %s')
-                              % e.message, redirect=redirect)
+                              % six.text_type(e), redirect=redirect)
         return True

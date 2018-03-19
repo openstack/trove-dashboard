@@ -17,6 +17,8 @@ from django import shortcuts
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
+import six
+
 from horizon import exceptions
 from horizon import messages
 
@@ -63,7 +65,8 @@ def get_contents(request, instance_id, filename, publish, lines):
         for log_part in log_generator():
             data += log_part
     except Exception as e:
-        data = _('Unable to load {0} log\n{1}').format(filename, e.message)
+        data = _('Unable to load {0} log\n{1}').format(filename,
+                                                       six.text_type(e))
     return data
 
 
