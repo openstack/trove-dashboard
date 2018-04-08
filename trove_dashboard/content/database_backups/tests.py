@@ -12,10 +12,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django import http
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-from mox3.mox import IsA  # noqa
+import mock
 import six
 
 from openstack_auth import policy
@@ -35,59 +34,43 @@ RESTORE_URL = reverse('horizon:project:databases:launch')
 
 
 class DatabasesBackupsTests(test.TestCase):
-    @test.create_stubs({api.trove: ('backup_list', 'instance_get')})
+    @test.create_mocks({api.trove: ('backup_list', 'instance_get')})
     def test_index(self):
-        api.trove.backup_list(IsA(http.HttpRequest))\
-            .AndReturn(self.database_backups.list())
-
-        api.trove.instance_get(IsA(http.HttpRequest),
-                               IsA(str))\
-            .MultipleTimes()\
-            .AndReturn(self.databases.first())
-
-        self.mox.ReplayAll()
+        self.mock_backup_list.return_value = self.database_backups.list()
+        self.mock_instance_get.return_value = self.databases.first()
 
         res = self.client.get(INDEX_URL)
 
+        self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_instance_get, 3,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.assertTemplateUsed(res, 'project/database_backups/index.html')
 
-    @test.create_stubs({api.trove: ('backup_list',)})
+    @test.create_mocks({api.trove: ('backup_list',)})
     def test_index_exception(self):
-        api.trove.backup_list(IsA(http.HttpRequest))\
-            .AndRaise(self.exceptions.trove)
-
-        self.mox.ReplayAll()
+        self.mock_backup_list.side_effect = self.exceptions.trove
 
         res = self.client.get(INDEX_URL)
 
+        self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(
             res, 'project/database_backups/index.html')
         self.assertEqual(res.status_code, 200)
         self.assertMessageCount(res, error=1)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('instance_list', 'backup_list', 'backup_create'),
         policy: ('check',),
     })
     def test_launch_backup(self):
-        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
-        api.trove.instance_list(IsA(http.HttpRequest))\
-            .AndReturn(self.databases.list())
-        api.trove.backup_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.database_backups.list())
+        self.mock_check.return_value = True
+        self.mock_instance_list.return_value = self.databases.list()
+        self.mock_backup_list.return_value = self.database_backups.list()
 
         database = self.databases.first()
         backupName = "NewBackup"
         backupDesc = "Backup Description"
-
-        api.trove.backup_create(
-            IsA(http.HttpRequest),
-            backupName,
-            database.id,
-            backupDesc,
-            "")
-
-        self.mox.ReplayAll()
 
         post = {
             'name': backupName,
@@ -97,51 +80,48 @@ class DatabasesBackupsTests(test.TestCase):
         }
         res = self.client.post(BACKUP_URL, post)
 
+        self.mock_check.assert_called_once_with((), test.IsHttpRequest())
+        self.mock_instance_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_backup_create.assert_called_once_with(
+            test.IsHttpRequest(),
+            backupName,
+            database.id,
+            backupDesc,
+            "")
         self.assertNoFormErrors(res)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('instance_list', 'backup_list'),
         policy: ('check',),
     })
     def test_launch_backup_exception(self):
-        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
-        api.trove.instance_list(IsA(http.HttpRequest))\
-            .AndRaise(self.exceptions.trove)
-        api.trove.backup_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.database_backups.list())
-
-        self.mox.ReplayAll()
+        self.mock_check.return_value = True
+        self.mock_instance_list.side_effect = self.exceptions.trove
+        self.mock_backup_list.return_value = self.database_backups.list()
 
         res = self.client.get(BACKUP_URL)
+        self.mock_check.assert_called_once_with((), test.IsHttpRequest())
+        self.mock_instance_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.assertMessageCount(res, error=1)
         self.assertTemplateUsed(res,
                                 'project/database_backups/backup.html')
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('instance_list', 'backup_list', 'backup_create'),
         policy: ('check',),
     })
     def test_launch_backup_incr(self):
-        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
-        api.trove.instance_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.databases.list())
-        api.trove.backup_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.database_backups.list())
+        self.mock_check.return_value = True
+        self.mock_instance_list.return_value = self.databases.list()
+        self.mock_backup_list.return_value = self.database_backups.list()
 
         database = self.databases.first()
         backupName = "NewBackup"
         backupDesc = "Backup Description"
         backupParent = self.database_backups.first()
-
-        api.trove.backup_create(
-            IsA(http.HttpRequest),
-            backupName,
-            database.id,
-            backupDesc,
-            backupParent.id)
-
-        self.mox.ReplayAll()
 
         post = {
             'name': backupName,
@@ -151,55 +131,60 @@ class DatabasesBackupsTests(test.TestCase):
         }
         res = self.client.post(BACKUP_URL, post)
 
+        self.mock_check.assert_called_once_with((), test.IsHttpRequest())
+        self.mock_instance_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_backup_create.assert_called_once_with(
+            test.IsHttpRequest(),
+            backupName,
+            database.id,
+            backupDesc,
+            backupParent.id)
         self.assertNoFormErrors(res)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({api.trove: ('backup_get', 'instance_get')})
+    @test.create_mocks({api.trove: ('backup_get', 'instance_get')})
     def test_detail_backup(self):
-        api.trove.backup_get(IsA(http.HttpRequest),
-                             IsA(six.text_type))\
-            .AndReturn(self.database_backups.first())
-
-        api.trove.instance_get(IsA(http.HttpRequest),
-                               IsA(str))\
-            .AndReturn(self.databases.first())
-
-        self.mox.ReplayAll()
+        self.mock_backup_get.return_value = self.database_backups.first()
+        self.mock_instance_get.return_value = self.databases.first()
         res = self.client.get(DETAILS_URL)
 
+        self.mock_backup_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
         self.assertTemplateUsed(res,
                                 'project/database_backups/details.html')
 
-    @test.create_stubs({api.trove: ('backup_get',)})
+    @test.create_mocks({api.trove: ('backup_get',)})
     def test_detail_backup_notfound(self):
-        api.trove.backup_get(IsA(http.HttpRequest),
-                             IsA(six.text_type))\
-            .AndRaise(self.exceptions.trove)
-
-        self.mox.ReplayAll()
+        self.mock_backup_get.side_effect = self.exceptions.trove
         res = self.client.get(DETAILS_URL)
 
+        self.mock_backup_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({api.trove: ('backup_get', 'instance_get')})
+    @test.create_mocks({api.trove: ('backup_get', 'instance_get')})
     def test_detail_backup_incr(self):
         incr_backup = self.database_backups.list()[2]
         parent_backup = self.database_backups.list()[1]
 
-        api.trove.backup_get(IsA(http.HttpRequest), IsA(six.text_type))\
-            .AndReturn(incr_backup)
-        api.trove.backup_get(IsA(http.HttpRequest), incr_backup.parent_id) \
-            .AndReturn(parent_backup)
-        api.trove.instance_get(IsA(http.HttpRequest), IsA(str))\
-            .AndReturn(self.databases.list()[1])
+        self.mock_backup_get.side_effect = [incr_backup, parent_backup]
+        self.mock_instance_get.return_value = self.databases.list()[1]
 
-        self.mox.ReplayAll()
         url = reverse('horizon:project:database_backups:detail',
                       args=[incr_backup.id])
         res = self.client.get(url)
+        self.assertEqual(
+            [mock.call(test.IsHttpRequest(), test.IsA(six.text_type)),
+             mock.call(test.IsHttpRequest(), incr_backup.parent_id)],
+            self.mock_backup_get.call_args_list)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
         self.assertTemplateUsed(res, 'project/database_backups/details.html')
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('backup_get', 'backup_list', 'configuration_list',
                     'datastore_flavors', 'datastore_list',
                     'datastore_version_list', 'instance_list'),
@@ -209,36 +194,45 @@ class DatabasesBackupsTests(test.TestCase):
         policy: ('check',),
     })
     def test_restore_backup(self):
-        policy.check((), IsA(http.HttpRequest)).MultipleTimes().AndReturn(True)
         backup = self.database_backups.first()
-        api.trove.backup_get(IsA(http.HttpRequest), IsA(six.text_type)) \
-            .AndReturn(self.database_backups.first())
-        api.trove.backup_list(IsA(http.HttpRequest)).AndReturn(
-            self.database_backups.list())
-        api.trove.configuration_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.database_configurations.list())
-        api.trove.datastore_flavors(IsA(http.HttpRequest),
-                                    IsA(six.string_types),
-                                    IsA(six.string_types)) \
-            .AndReturn(self.flavors.list())
-        api.trove.datastore_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.datastores.list())
-        api.trove.datastore_version_list(IsA(http.HttpRequest),
-                                         backup.datastore['type']) \
-            .AndReturn(self.datastore_versions.list())
-        api.trove.instance_list(IsA(http.HttpRequest), marker=None) \
-            .AndReturn(common.Paginated(self.databases.list()))
-        dash_api.cinder.volume_type_list(IsA(http.HttpRequest)).AndReturn([])
-        dash_api.neutron.network_list(IsA(http.HttpRequest),
-                                      tenant_id=self.tenant.id,
-                                      shared=False).\
-            AndReturn(self.networks.list()[:1])
-        dash_api.nova.availability_zone_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.availability_zones.list())
-        self.mox.ReplayAll()
+        self.mock_check.return_value = True
+        self.mock_backup_get.return_value = self.database_backups.first()
+        self.mock_backup_list.return_value = self.database_backups.list()
+        self.mock_configuration_list.return_value = (
+            self.database_configurations.list())
+        self.mock_datastore_flavors.return_value = self.flavors.list()
+        self.mock_datastore_list.return_value = self.datastores.list()
+        self.mock_datastore_version_list.return_value = (
+            self.datastore_versions.list())
+        self.mock_instance_list.return_value = (
+            common.Paginated(self.databases.list()))
+        self.mock_volume_type_list.return_vlue = []
+        self.mock_network_list.return_value = self.networks.list()[:1]
+        self.mock_availability_zone_list.return_value = (
+            self.availability_zones.list())
 
         url = RESTORE_URL + '?backup=%s' % self.database_backups.first().id
         res = self.client.get(url)
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_check, 4, mock.call((), test.IsHttpRequest()))
+        self.mock_backup_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_configuration_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_datastore_flavors.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.string_types),
+            test.IsA(six.string_types))
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_datastore_version_list.assert_called_once_with(
+            test.IsHttpRequest(), backup.datastore['type'])
+        self.mock_instance_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_volume_type_list.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_network_list.assert_any_call(
+            test.IsHttpRequest(), tenant_id=self.tenant.id, shared=False)
+        self.mock_availability_zone_list.assert_called_once_with(
+            test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/databases/launch.html')
 
         set_instance_detail_step = \
