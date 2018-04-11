@@ -16,10 +16,9 @@
 
 import logging
 
-from django import http
 from django.urls import reverse
 
-from mox3.mox import IsA  # noqa
+import mock
 
 from openstack_dashboard import api
 from troveclient import common
@@ -38,95 +37,81 @@ RESET_PASSWORD_VIEWNAME = 'horizon:project:database_clusters:reset_password'
 
 
 class ClustersTests(test.TestCase):
-    @test.create_stubs({trove_api.trove: ('cluster_list',
+    @test.create_mocks({trove_api.trove: ('cluster_list',
                                           'flavor_list')})
     def test_index(self):
         clusters = common.Paginated(self.trove_clusters.list())
-        trove_api.trove.cluster_list(IsA(http.HttpRequest), marker=None)\
-            .AndReturn(clusters)
-        trove_api.trove.flavor_list(IsA(http.HttpRequest))\
-            .AndReturn(self.flavors.list())
+        self.mock_cluster_list.return_value = clusters
+        self.mock_flavor_list.return_value = self.flavors.list()
 
-        self.mox.ReplayAll()
         res = self.client.get(INDEX_URL)
+        self.mock_cluster_list.assert_called_once_with(
+            test.IsHttpRequest(), marker=None)
+        self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/database_clusters/index.html')
 
-    @test.create_stubs({trove_api.trove: ('cluster_list',
+    @test.create_mocks({trove_api.trove: ('cluster_list',
                                           'flavor_list')})
     def test_index_flavor_exception(self):
         clusters = common.Paginated(self.trove_clusters.list())
-        trove_api.trove.cluster_list(IsA(http.HttpRequest), marker=None)\
-            .AndReturn(clusters)
-        trove_api.trove.flavor_list(IsA(http.HttpRequest))\
-            .AndRaise(self.exceptions.trove)
+        self.mock_cluster_list.return_value = clusters
+        self.mock_flavor_list.side_effect = self.exceptions.trove
 
-        self.mox.ReplayAll()
         res = self.client.get(INDEX_URL)
+        self.mock_cluster_list.assert_called_once_with(
+            test.IsHttpRequest(), marker=None)
+        self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/database_clusters/index.html')
         self.assertMessageCount(res, error=1)
 
-    @test.create_stubs({trove_api.trove: ('cluster_list',)})
+    @test.create_mocks({trove_api.trove: ('cluster_list',)})
     def test_index_list_exception(self):
-        trove_api.trove.cluster_list(IsA(http.HttpRequest), marker=None)\
-            .AndRaise(self.exceptions.trove)
+        self.mock_cluster_list.side_effect = self.exceptions.trove
 
-        self.mox.ReplayAll()
         res = self.client.get(INDEX_URL)
+        self.mock_cluster_list.assert_called_once_with(
+            test.IsHttpRequest(), marker=None)
         self.assertTemplateUsed(res, 'project/database_clusters/index.html')
         self.assertMessageCount(res, error=1)
 
-    @test.create_stubs({trove_api.trove: ('cluster_list',
+    @test.create_mocks({trove_api.trove: ('cluster_list',
                                           'flavor_list')})
     def test_index_pagination(self):
         clusters = self.trove_clusters.list()
         last_record = clusters[1]
         clusters = common.Paginated(clusters, next_marker="foo")
-        trove_api.trove.cluster_list(IsA(http.HttpRequest), marker=None)\
-            .AndReturn(clusters)
-        trove_api.trove.flavor_list(IsA(http.HttpRequest))\
-            .AndReturn(self.flavors.list())
+        self.mock_cluster_list.return_value = clusters
+        self.mock_flavor_list.return_value = self.flavors.list()
 
-        self.mox.ReplayAll()
         res = self.client.get(INDEX_URL)
+        self.mock_cluster_list.assert_called_once_with(
+            test.IsHttpRequest(), marker=None)
+        self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/database_clusters/index.html')
         self.assertContains(
             res, 'marker=' + last_record.id)
 
-    @test.create_stubs({trove_api.trove: ('cluster_list',
-                                          'flavor_list')})
-    def test_index_flavor_list_exception(self):
-        clusters = common.Paginated(self.trove_clusters.list())
-        trove_api.trove.cluster_list(IsA(http.HttpRequest), marker=None)\
-            .AndReturn(clusters)
-        trove_api.trove.flavor_list(IsA(http.HttpRequest))\
-            .AndRaise(self.exceptions.trove)
-
-        self.mox.ReplayAll()
-
-        res = self.client.get(INDEX_URL)
-
-        self.assertTemplateUsed(res, 'project/database_clusters/index.html')
-        self.assertMessageCount(res, error=1)
-
-    @test.create_stubs({trove_api.trove: ('datastore_flavors',
+    @test.create_mocks({trove_api.trove: ('datastore_flavors',
                                           'datastore_list',
                                           'datastore_version_list'),
                         api.base: ['is_service_enabled']})
     def test_launch_cluster(self):
-        api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
-            .AndReturn(False)
+        self.mock_is_service_enabled.return_value = False
+        self.mock_datastore_flavors.return_value = self.flavors.list()
+
         filtered_datastores = self._get_filtered_datastores('mongodb')
-        trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
-                                          'mongodb', '2.6')\
-            .AndReturn(self.flavors.list())
-        trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(filtered_datastores)
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
-                                               IsA(str))\
-            .AndReturn(
-                self._get_filtered_datastore_versions(filtered_datastores))
-        self.mox.ReplayAll()
+        self.mock_datastore_list.return_value = filtered_datastores
+        self.mock_datastore_version_list.return_value = (
+            self._get_filtered_datastore_versions(filtered_datastores))
+
         res = self.client.get(LAUNCH_URL)
+        self.mock_is_service_enabled.assert_called_once_with(
+            test.IsHttpRequest(), 'network')
+        self.mock_datastore_flavors.assert_called_once_with(
+            test.IsHttpRequest(), 'mongodb', '2.6')
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_datastore_version_list.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
         self.assertTemplateUsed(res, 'project/database_clusters/launch.html')
 
     def test_launch_cluster_mongo_fields(self):
@@ -186,45 +171,44 @@ class ClustersTests(test.TestCase):
         self.assertTrue(self._contains_datastore_in_attribute(
             fields['num_instances_vertica'], field_name))
 
-    @test.create_stubs({trove_api.trove: ('datastore_flavors',
+    @test.create_mocks({trove_api.trove: ('datastore_flavors',
                                           'datastore_list',
                                           'datastore_version_list'),
                         api.base: ['is_service_enabled']})
     def launch_cluster_fields_setup(self, datastore, datastore_version):
-        api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
-            .AndReturn(False)
+        self.mock_is_service_enabled.return_value = False
+        self.mock_datastore_flavors.return_value = self.flavors.list()
+
         filtered_datastores = self._get_filtered_datastores(datastore)
-        trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
-                                          datastore, datastore_version)\
-            .AndReturn(self.flavors.list())
-        trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(filtered_datastores)
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
-                                               IsA(str))\
-            .AndReturn(
-                self._get_filtered_datastore_versions(filtered_datastores))
-        self.mox.ReplayAll()
+        self.mock_datastore_list.return_value = filtered_datastores
+        self.mock_datastore_version_list.return_value = (
+            self._get_filtered_datastore_versions(filtered_datastores))
+
         res = self.client.get(LAUNCH_URL)
+        self.mock_is_service_enabled.assert_called_once_with(
+            test.IsHttpRequest(), 'network')
+        self.mock_datastore_flavors.assert_called_once_with(
+            test.IsHttpRequest(), datastore, datastore_version)
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_datastore_version_list.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
         return res.context_data['form'].fields
 
-    @test.create_stubs({trove_api.trove: ['datastore_flavors',
+    @test.create_mocks({trove_api.trove: ['datastore_flavors',
                                           'cluster_create',
                                           'datastore_list',
                                           'datastore_version_list'],
                         api.base: ['is_service_enabled']})
     def test_create_simple_cluster(self):
-        api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
-            .AndReturn(False)
+        self.mock_is_service_enabled.return_value = False
+        self.mock_datastore_flavors.return_value = self.flavors.list()
+
         filtered_datastores = self._get_filtered_datastores('mongodb')
-        trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
-                                          'mongodb', '2.6')\
-            .AndReturn(self.flavors.list())
-        trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(filtered_datastores)
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
-                                               IsA(str))\
-            .AndReturn(
-                self._get_filtered_datastore_versions(filtered_datastores))
+        self.mock_datastore_list.return_value = filtered_datastores
+        self.mock_datastore_version_list.return_value = (
+            self._get_filtered_datastore_versions(filtered_datastores))
+
+        self.mock_cluster_create.return_value = self.trove_clusters.first()
 
         cluster_name = u'MyCluster'
         cluster_volume = 1
@@ -233,21 +217,9 @@ class ClustersTests(test.TestCase):
         cluster_datastore = u'mongodb'
         cluster_datastore_version = u'2.6'
         cluster_network = u''
-        trove_api.trove.cluster_create(
-            IsA(http.HttpRequest),
-            cluster_name,
-            cluster_volume,
-            cluster_flavor,
-            cluster_instances,
-            datastore=cluster_datastore,
-            datastore_version=cluster_datastore_version,
-            nics=cluster_network,
-            root_password=None,
-            locality=None).AndReturn(self.trove_clusters.first())
 
         field_name = self._build_flavor_widget_name(cluster_datastore,
                                                     cluster_datastore_version)
-        self.mox.ReplayAll()
         post = {
             'name': cluster_name,
             'volume': cluster_volume,
@@ -258,40 +230,15 @@ class ClustersTests(test.TestCase):
         }
 
         res = self.client.post(LAUNCH_URL, post)
-        self.assertNoFormErrors(res)
-        self.assertMessageCount(success=1)
-
-    @test.create_stubs({trove_api.trove: ['datastore_flavors',
-                                          'cluster_create',
-                                          'datastore_list',
-                                          'datastore_version_list'],
-                        api.neutron: ['network_list_for_tenant'],
-                        api.base: ['is_service_enabled']})
-    def test_create_simple_cluster_neutron(self):
-        api.base.is_service_enabled(IsA(http.HttpRequest), 'network')\
-            .AndReturn(True)
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest), '1')\
-            .AndReturn(self.networks.list())
-        filtered_datastores = self._get_filtered_datastores('mongodb')
-        trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
-                                          'mongodb', '2.6')\
-            .AndReturn(self.flavors.list())
-        trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(filtered_datastores)
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
-                                               IsA(str))\
-            .AndReturn(
-                self._get_filtered_datastore_versions(filtered_datastores))
-
-        cluster_name = u'MyCluster'
-        cluster_volume = 1
-        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
-        cluster_instances = 3
-        cluster_datastore = u'mongodb'
-        cluster_datastore_version = u'2.6'
-        cluster_network = u'82288d84-e0a5-42ac-95be-e6af08727e42'
-        trove_api.trove.cluster_create(
-            IsA(http.HttpRequest),
+        self.mock_is_service_enabled.assert_called_once_with(
+            test.IsHttpRequest(), 'network')
+        self.mock_datastore_flavors.assert_called_once_with(
+            test.IsHttpRequest(), 'mongodb', '2.6')
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_datastore_version_list.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
+        self.mock_cluster_create.assert_called_once_with(
+            test.IsHttpRequest(),
             cluster_name,
             cluster_volume,
             cluster_flavor,
@@ -300,11 +247,38 @@ class ClustersTests(test.TestCase):
             datastore_version=cluster_datastore_version,
             nics=cluster_network,
             root_password=None,
-            locality=None).AndReturn(self.trove_clusters.first())
+            locality=None)
+        self.assertNoFormErrors(res)
+        self.assertMessageCount(success=1)
+
+    @test.create_mocks({trove_api.trove: ['datastore_flavors',
+                                          'cluster_create',
+                                          'datastore_list',
+                                          'datastore_version_list'],
+                        api.neutron: ['network_list_for_tenant'],
+                        api.base: ['is_service_enabled']})
+    def test_create_simple_cluster_neutron(self):
+        self.mock_is_service_enabled.return_value = True
+        self.mock_network_list_for_tenant.return_value = self.networks.list()
+        self.mock_datastore_flavors.return_value = self.flavors.list()
+
+        filtered_datastores = self._get_filtered_datastores('mongodb')
+        self.mock_datastore_list.return_value = filtered_datastores
+        self.mock_datastore_version_list.return_value = (
+            self._get_filtered_datastore_versions(filtered_datastores))
+
+        self.mock_cluster_create.return_value = self.trove_clusters.first()
+
+        cluster_name = u'MyCluster'
+        cluster_volume = 1
+        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+        cluster_instances = 3
+        cluster_datastore = u'mongodb'
+        cluster_datastore_version = u'2.6'
+        cluster_network = u'82288d84-e0a5-42ac-95be-e6af08727e42'
 
         field_name = self._build_flavor_widget_name(cluster_datastore,
                                                     cluster_datastore_version)
-        self.mox.ReplayAll()
         post = {
             'name': cluster_name,
             'volume': cluster_volume,
@@ -316,37 +290,17 @@ class ClustersTests(test.TestCase):
         }
 
         res = self.client.post(LAUNCH_URL, post)
-        self.assertNoFormErrors(res)
-        self.assertMessageCount(success=1)
-
-    @test.create_stubs({trove_api.trove: ['datastore_flavors',
-                                          'cluster_create',
-                                          'datastore_list',
-                                          'datastore_version_list'],
-                        api.neutron: ['network_list_for_tenant']})
-    def test_create_simple_cluster_exception(self):
-        api.neutron.network_list_for_tenant(IsA(http.HttpRequest), '1')\
-            .AndReturn(self.networks.list())
-        filtered_datastores = self._get_filtered_datastores('mongodb')
-        trove_api.trove.datastore_flavors(IsA(http.HttpRequest),
-                                          'mongodb', '2.6')\
-            .AndReturn(self.flavors.list())
-        trove_api.trove.datastore_list(IsA(http.HttpRequest))\
-            .AndReturn(filtered_datastores)
-        trove_api.trove.datastore_version_list(IsA(http.HttpRequest),
-                                               IsA(str))\
-            .AndReturn(
-                self._get_filtered_datastore_versions(filtered_datastores))
-
-        cluster_name = u'MyCluster'
-        cluster_volume = 1
-        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
-        cluster_instances = 3
-        cluster_datastore = u'mongodb'
-        cluster_datastore_version = u'2.6'
-        cluster_network = u'82288d84-e0a5-42ac-95be-e6af08727e42'
-        trove_api.trove.cluster_create(
-            IsA(http.HttpRequest),
+        self.mock_is_service_enabled.assert_called_once_with(
+            test.IsHttpRequest(), 'network')
+        self.mock_network_list_for_tenant.assert_called_once_with(
+            test.IsHttpRequest(), '1')
+        self.mock_datastore_flavors.assert_called_once_with(
+            test.IsHttpRequest(), 'mongodb', '2.6')
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_datastore_version_list.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
+        self.mock_cluster_create.assert_called_once_with(
+            test.IsHttpRequest(),
             cluster_name,
             cluster_volume,
             cluster_flavor,
@@ -355,11 +309,36 @@ class ClustersTests(test.TestCase):
             datastore_version=cluster_datastore_version,
             nics=cluster_network,
             root_password=None,
-            locality=None).AndReturn(self.trove_clusters.first())
+            locality=None)
+        self.assertNoFormErrors(res)
+        self.assertMessageCount(success=1)
+
+    @test.create_mocks({trove_api.trove: ['datastore_flavors',
+                                          'cluster_create',
+                                          'datastore_list',
+                                          'datastore_version_list'],
+                        api.neutron: ['network_list_for_tenant']})
+    def test_create_simple_cluster_exception(self):
+        self.mock_network_list_for_tenant.return_value = self.networks.list()
+        self.mock_datastore_flavors.return_value = self.flavors.list()
+
+        filtered_datastores = self._get_filtered_datastores('mongodb')
+        self.mock_datastore_list.return_value = filtered_datastores
+        self.mock_datastore_version_list.return_value = (
+            self._get_filtered_datastore_versions(filtered_datastores))
+
+        self.mock_cluster_create.side_effect = self.exceptions.trove
+
+        cluster_name = u'MyCluster'
+        cluster_volume = 1
+        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+        cluster_instances = 3
+        cluster_datastore = u'mongodb'
+        cluster_datastore_version = u'2.6'
+        cluster_network = u''
 
         field_name = self._build_flavor_widget_name(cluster_datastore,
                                                     cluster_datastore_version)
-        self.mox.ReplayAll()
         post = {
             'name': cluster_name,
             'volume': cluster_volume,
@@ -370,74 +349,107 @@ class ClustersTests(test.TestCase):
         }
 
         res = self.client.post(LAUNCH_URL, post)
+        self.mock_network_list_for_tenant.assert_called_once_with(
+            test.IsHttpRequest(), '1')
+        self.mock_datastore_flavors.assert_called_once_with(
+            test.IsHttpRequest(), 'mongodb', '2.6')
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.mock_datastore_version_list.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(str))
+        self.mock_cluster_create.assert_called_once_with(
+            test.IsHttpRequest(),
+            cluster_name,
+            cluster_volume,
+            cluster_flavor,
+            cluster_instances,
+            datastore=cluster_datastore,
+            datastore_version=cluster_datastore_version,
+            nics=cluster_network,
+            root_password=None,
+            locality=None)
         self.assertRedirectsNoFollow(res, INDEX_URL)
+        self.assertMessageCount(error=1)
 
-    @test.create_stubs({trove_api.trove: ('cluster_get',
+    @test.create_mocks({trove_api.trove: ('cluster_get',
                                           'instance_get',
                                           'flavor_get',)})
     def test_details(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
-            .MultipleTimes().AndReturn(cluster)
-        trove_api.trove.instance_get(IsA(http.HttpRequest), IsA(str))\
-            .MultipleTimes().AndReturn(self.databases.first())
-        trove_api.trove.flavor_get(IsA(http.HttpRequest), IsA(str))\
-            .MultipleTimes().AndReturn(self.flavors.first())
-        self.mox.ReplayAll()
+        self.mock_cluster_get.return_value = cluster
+        self.mock_instance_get.return_value = self.databases.first()
+        self.mock_flavor_get.return_value = self.flavors.first()
 
         details_url = reverse('horizon:project:database_clusters:detail',
                               args=[cluster.id])
         res = self.client.get(details_url)
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_cluster_get, 2,
+            mock.call(test.IsHttpRequest(), cluster.id))
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_instance_get, 3,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_flavor_get, 4,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertContains(res, cluster.ip[0])
 
-    @test.create_stubs({trove_api.trove: ('cluster_get',
+    @test.create_mocks({trove_api.trove: ('cluster_get',
                                           'instance_get',
                                           'flavor_get',)})
     def test_details_without_locality(self):
         cluster = self.trove_clusters.list()[1]
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id) \
-            .MultipleTimes().AndReturn(cluster)
-        trove_api.trove.instance_get(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.databases.first())
-        trove_api.trove.flavor_get(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.flavors.first())
-        self.mox.ReplayAll()
+        self.mock_cluster_get.return_value = cluster
+        self.mock_instance_get.return_value = self.databases.first()
+        self.mock_flavor_get.return_value = self.flavors.first()
 
         details_url = reverse('horizon:project:database_clusters:detail',
                               args=[cluster.id])
         res = self.client.get(details_url)
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_cluster_get, 2,
+            mock.call(test.IsHttpRequest(), cluster.id))
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_instance_get, 3,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_flavor_get, 4,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.assertTemplateUsed(res, 'horizon/common/_detail.html')
         self.assertNotContains(res, "Locality")
 
-    @test.create_stubs({trove_api.trove: ('cluster_get',
+    @test.create_mocks({trove_api.trove: ('cluster_get',
                                           'instance_get',
                                           'flavor_get',)})
     def test_details_with_locality(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id) \
-            .MultipleTimes().AndReturn(cluster)
-        trove_api.trove.instance_get(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.databases.first())
-        trove_api.trove.flavor_get(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.flavors.first())
-        self.mox.ReplayAll()
+        self.mock_cluster_get.return_value = cluster
+        self.mock_instance_get.return_value = self.databases.first()
+        self.mock_flavor_get.return_value = self.flavors.first()
 
         details_url = reverse('horizon:project:database_clusters:detail',
                               args=[cluster.id])
         res = self.client.get(details_url)
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_cluster_get, 2,
+            mock.call(test.IsHttpRequest(), cluster.id))
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_instance_get, 3,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_flavor_get, 4,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.assertTemplateUsed(res, 'project/database_clusters/'
                                      '_detail_overview.html')
         self.assertContains(res, "Locality")
 
-    @test.create_stubs(
+    @test.create_mocks(
         {trove_api.trove: ('cluster_get',
                            'cluster_grow'),
          cluster_manager: ('get',)})
     def test_grow_cluster(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
-            .AndReturn(cluster)
+        self.mock_cluster_get.return_value = cluster
         cluster_volume = 1
         flavor = self.flavors.first()
         cluster_flavor = flavor.id
@@ -458,11 +470,7 @@ class ClustersTests(test.TestCase):
 
         manager = cluster_manager.ClusterInstanceManager(cluster.id)
         manager.instances = instances
-        cluster_manager.get(cluster.id).MultipleTimes().AndReturn(manager)
-        trove_api.trove.cluster_grow(IsA(http.HttpRequest),
-                                     cluster.id,
-                                     instances)
-        self.mox.ReplayAll()
+        self.mock_get.return_value = manager
 
         url = reverse('horizon:project:database_clusters:cluster_grow_details',
                       args=[cluster.id])
@@ -483,15 +491,19 @@ class ClustersTests(test.TestCase):
                           tables.ClusterGrowAction.name, '__',
                           cluster.id])
         res = self.client.post(url, {'action': action})
+        self.mock_cluster_get.assert_called_once_with(
+            test.IsHttpRequest(), cluster.id)
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_get, 5, mock.call(cluster.id))
+        self.mock_cluster_grow.assert_called_once_with(
+            test.IsHttpRequest(), cluster.id, instances)
         self.assertMessageCount(success=1)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({trove_api.trove: ('cluster_get',)})
+    @test.create_mocks({trove_api.trove: ('cluster_get',)})
     def test_grow_cluster_no_instances(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
-            .AndReturn(cluster)
-        self.mox.ReplayAll()
+        self.mock_cluster_get.return_value = cluster
 
         url = reverse('horizon:project:database_clusters:cluster_grow_details',
                       args=[cluster.id])
@@ -503,16 +515,17 @@ class ClustersTests(test.TestCase):
                           tables.ClusterGrowAction.name, '__',
                           cluster.id])
         self.client.post(url, {'action': action})
+        self.mock_cluster_get.assert_called_once_with(
+            test.IsHttpRequest(), cluster.id)
         self.assertMessageCount(info=1)
 
-    @test.create_stubs(
+    @test.create_mocks(
         {trove_api.trove: ('cluster_get',
                            'cluster_grow',),
          cluster_manager: ('get',)})
     def test_grow_cluster_exception(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
-            .AndReturn(cluster)
+        self.mock_cluster_get.return_value = cluster
         cluster_volume = 1
         flavor = self.flavors.first()
         cluster_flavor = flavor.id
@@ -533,11 +546,8 @@ class ClustersTests(test.TestCase):
 
         manager = cluster_manager.ClusterInstanceManager(cluster.id)
         manager.instances = instances
-        cluster_manager.get(cluster.id).MultipleTimes().AndReturn(manager)
-        trove_api.trove.cluster_grow(IsA(http.HttpRequest),
-                                     cluster.id,
-                                     instances).AndRaise(self.exceptions.trove)
-        self.mox.ReplayAll()
+        self.mock_get.return_value = manager
+        self.mock_cluster_grow.side_effect = self.exceptions.trove
 
         url = reverse('horizon:project:database_clusters:cluster_grow_details',
                       args=[cluster.id])
@@ -560,6 +570,12 @@ class ClustersTests(test.TestCase):
                               cluster.id])
             res = self.client.post(url, {'action': action})
 
+            self.mock_cluster_get.assert_called_once_with(
+                test.IsHttpRequest(), cluster.id)
+            self.assert_mock_multiple_calls_with_same_arguments(
+                self.mock_get, 3, mock.call(cluster.id))
+            self.mock_cluster_grow.assert_called_once_with(
+                test.IsHttpRequest(), cluster.id, instances)
             self.assertMessageCount(error=1)
             self.assertRedirectsNoFollow(res, INDEX_URL)
         finally:
@@ -567,18 +583,13 @@ class ClustersTests(test.TestCase):
             for (log, level) in loggers:
                 log.setLevel(level)
 
-    @test.create_stubs({trove_api.trove: ('cluster_get',
+    @test.create_mocks({trove_api.trove: ('cluster_get',
                                           'cluster_shrink')})
     def test_shrink_cluster(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
-            .MultipleTimes().AndReturn(cluster)
+        self.mock_cluster_get.return_value = cluster
         instance_id = cluster.instances[0]['id']
         cluster_instances = [{'id': instance_id}]
-        trove_api.trove.cluster_shrink(IsA(http.HttpRequest),
-                                       cluster.id,
-                                       cluster_instances)
-        self.mox.ReplayAll()
 
         url = reverse(
             'horizon:project:database_clusters:cluster_shrink_details',
@@ -594,30 +605,30 @@ class ClustersTests(test.TestCase):
                           tables.ClusterShrinkAction.name, '__',
                           instance_id])
         res = self.client.post(url, {'action': action})
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_cluster_get, 2,
+            mock.call(test.IsHttpRequest(), cluster.id))
+        self.mock_cluster_shrink.assert_called_once_with(
+            test.IsHttpRequest(), cluster.id, cluster_instances)
         self.assertNoFormErrors(res)
         self.assertMessageCount(info=1)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({trove_api.trove: ('cluster_get',
+    @test.create_mocks({trove_api.trove: ('cluster_get',
                                           'cluster_shrink')})
     def test_shrink_cluster_exception(self):
         cluster = self.trove_clusters.first()
-        trove_api.trove.cluster_get(IsA(http.HttpRequest), cluster.id)\
-            .MultipleTimes().AndReturn(cluster)
-        cluster_id = cluster.instances[0]['id']
-        cluster_instances = [cluster_id]
-        trove_api.trove.cluster_shrink(IsA(http.HttpRequest),
-                                       cluster.id,
-                                       cluster_instances)\
-            .AndRaise(self.exceptions.trove)
-        self.mox.ReplayAll()
+        self.mock_cluster_get.return_value = cluster
+        instance_id = cluster.instances[0]['id']
+        cluster_instances = [{'id': instance_id}]
+        self.mock_cluster_shrink.side_effect = self.exceptions.trove
 
         url = reverse(
             'horizon:project:database_clusters:cluster_shrink_details',
             args=[cluster.id])
         action = "".join([tables.ClusterShrinkInstancesTable.Meta.name, '__',
                           tables.ClusterShrinkAction.name, '__',
-                          cluster_id])
+                          instance_id])
 
         toSuppress = ["trove_dashboard.content.database_clusters.tables"]
 
@@ -630,6 +641,10 @@ class ClustersTests(test.TestCase):
 
         try:
             res = self.client.post(url, {'action': action})
+            self.mock_cluster_get.assert_called_once_with(
+                test.IsHttpRequest(), cluster.id)
+            self.mock_cluster_shrink.assert_called_once_with(
+                test.IsHttpRequest(), cluster.id, cluster_instances)
             self.assertMessageCount(error=1)
             self.assertRedirectsNoFollow(res, INDEX_URL)
         finally:
