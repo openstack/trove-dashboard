@@ -30,7 +30,9 @@ class TroveTestsMixin(object):
 
 
 class TestCase(TroveTestsMixin, helpers.TestCase):
-    pass
+    # We should declare mox dependency before we finish mock migration
+    # for all test cases.
+    use_mox = True
 
 
 class BaseAdminViewTests(TroveTestsMixin, helpers.TestCase):

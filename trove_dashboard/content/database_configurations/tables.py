@@ -12,9 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import types
-
-from django.core import exceptions as core_exceptions
 from django.core import urlresolvers
 from django import shortcuts
 from django.utils.translation import ugettext_lazy as _
@@ -25,7 +22,6 @@ import six
 from horizon import forms
 from horizon import messages
 from horizon import tables
-from horizon.utils import memoized
 
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations \
@@ -181,63 +177,10 @@ class UpdateRow(tables.Row):
             request, self.table.kwargs["configuration_id"]).get_param(name)
 
 
-class UpdateCell(tables.UpdateAction):
-    def update_cell(self, request, datum, name,
-                    cell_name, new_cell_value):
-        config_param = datum
-
-        config = config_param_manager.get(request,
-                                          config_param.configuration_id)
-        validation_param = config_param_manager.find_parameter(
-            name,
-            self.parameters(request,
-                            config.configuration.datastore_name,
-                            config.configuration.datastore_version_name))
-        if validation_param:
-            error_msg = config_param_manager.validate_config_param_value(
-                validation_param, new_cell_value)
-            if error_msg:
-                raise core_exceptions.ValidationError(error_msg)
-
-        if isinstance(config_param.value, types.IntType):
-            value = int(new_cell_value)
-        elif isinstance(config_param.value, types.LongType):
-            value = long(new_cell_value)
-        else:
-            value = new_cell_value
-
-        setattr(datum, cell_name, value)
-
-        (config_param_manager
-            .get(request, config_param.configuration_id)
-            .update_param(name, value))
-
-        return True
-
-    @memoized.memoized_method
-    def parameters(self, request, datastore, datastore_version):
-        return api.trove.configuration_parameters_list(
-            request, datastore, datastore_version)
-
-    def _adjust_type(self, data_type, value):
-        if not value:
-            return value
-        if data_type == "float":
-            new_value = float(value)
-        elif data_type == "long":
-            new_value = long(value)
-        elif data_type == "integer":
-            new_value = int(value)
-        else:
-            new_value = value
-        return new_value
-
-
 class ValuesTable(tables.DataTable):
     name = tables.Column("name", verbose_name=_("Name"))
     value = tables.Column("value", verbose_name=_("Value"),
-                          form_field=forms.CharField(required=False),
-                          update_action=UpdateCell)
+                          form_field=forms.CharField(required=False))
 
     class Meta(object):
         name = "values"
