@@ -17,8 +17,8 @@ import six
 
 import django
 from django.conf import settings
-from django.core.urlresolvers import reverse
 from django import http
+from django.urls import reverse
 from mox3.mox import IsA  # noqa
 
 from trove_dashboard import api

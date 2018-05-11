@@ -12,8 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.core import urlresolvers
 from django import shortcuts
+from django import urls
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
@@ -91,7 +91,7 @@ class AddParameter(tables.LinkAction):
 
     def get_link_url(self, datum=None):
         configuration_id = self.table.kwargs['configuration_id']
-        return urlresolvers.reverse(self.url, args=[configuration_id])
+        return urls.reverse(self.url, args=[configuration_id])
 
 
 class ApplyChanges(tables.Action):

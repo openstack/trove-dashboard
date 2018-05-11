@@ -16,8 +16,8 @@
 import logging
 
 import django
-from django.core.urlresolvers import reverse
 from django import http
+from django.urls import reverse
 import unittest
 
 from mox3.mox import IsA  # noqa

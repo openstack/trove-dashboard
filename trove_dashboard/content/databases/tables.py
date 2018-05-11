@@ -13,8 +13,8 @@
 #    under the License.
 
 from django.conf import settings
-from django.core import urlresolvers
 from django.template import defaultfilters as d_filters
+from django import urls
 
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -132,7 +132,7 @@ class PromoteToReplicaSource(tables.LinkAction):
 
     def get_link_url(self, datum):
         instance_id = self.table.get_object_id(datum)
-        return urlresolvers.reverse(self.url, args=[instance_id])
+        return urls.reverse(self.url, args=[instance_id])
 
 
 class EjectReplicaSource(tables.BatchAction):
@@ -270,9 +270,9 @@ class ManageAccess(tables.LinkAction):
 
     def get_link_url(self, datum):
         user = datum
-        return urlresolvers.reverse(self.url, args=[user.instance.id,
-                                                    user.name,
-                                                    user.host])
+        return urls.reverse(self.url, args=[user.instance.id,
+                                            user.name,
+                                            user.host])
 
 
 class CreateUser(tables.LinkAction):
@@ -289,7 +289,7 @@ class CreateUser(tables.LinkAction):
 
     def get_link_url(self, datum=None):
         instance_id = self.table.kwargs['instance_id']
-        return urlresolvers.reverse(self.url, args=[instance_id])
+        return urls.reverse(self.url, args=[instance_id])
 
 
 class EditUser(tables.LinkAction):
@@ -306,9 +306,9 @@ class EditUser(tables.LinkAction):
 
     def get_link_url(self, datum):
         user = datum
-        return urlresolvers.reverse(self.url, args=[user.instance.id,
-                                                    user.name,
-                                                    user.host])
+        return urls.reverse(self.url, args=[user.instance.id,
+                                            user.name,
+                                            user.host])
 
 
 def has_user_add_perm(request):
@@ -355,7 +355,7 @@ class CreateDatabase(tables.LinkAction):
 
     def get_link_url(self, datum=None):
         instance_id = self.table.kwargs['instance_id']
-        return urlresolvers.reverse(self.url, args=[instance_id])
+        return urls.reverse(self.url, args=[instance_id])
 
 
 def has_database_add_perm(request):
@@ -411,7 +411,7 @@ class CreateBackup(tables.LinkAction):
                 request.user.has_perm('openstack.services.object-store'))
 
     def get_link_url(self, datam):
-        url = urlresolvers.reverse(self.url)
+        url = urls.reverse(self.url)
         return url + "?instance=%s" % datam.id
 
 
@@ -426,7 +426,7 @@ class ResizeVolume(tables.LinkAction):
 
     def get_link_url(self, datum):
         instance_id = self.table.get_object_id(datum)
-        return urlresolvers.reverse(self.url, args=[instance_id])
+        return urls.reverse(self.url, args=[instance_id])
 
 
 class ResizeInstance(tables.LinkAction):
@@ -441,7 +441,7 @@ class ResizeInstance(tables.LinkAction):
 
     def get_link_url(self, datum):
         instance_id = self.table.get_object_id(datum)
-        return urlresolvers.reverse(self.url, args=[instance_id])
+        return urls.reverse(self.url, args=[instance_id])
 
 
 class AttachConfiguration(tables.LinkAction):
@@ -525,7 +525,7 @@ class ManageRoot(tables.LinkAction):
 
     def get_link_url(self, datum=None):
         instance_id = self.table.get_object_id(datum)
-        return urlresolvers.reverse(self.url, args=[instance_id])
+        return urls.reverse(self.url, args=[instance_id])
 
 
 class ManageRootTable(tables.DataTable):

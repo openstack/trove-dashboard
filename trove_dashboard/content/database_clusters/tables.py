@@ -14,9 +14,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.core import urlresolvers
 from django import shortcuts
 from django.template.defaultfilters import title  # noqa
+from django import urls
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
@@ -111,7 +111,7 @@ class ResetPassword(tables.LinkAction):
 
     def get_link_url(self, datum):
         cluster_id = self.table.get_object_id(datum)
-        return urlresolvers.reverse(self.url, args=[cluster_id])
+        return urls.reverse(self.url, args=[cluster_id])
 
 
 class UpdateRow(tables.Row):
@@ -300,7 +300,7 @@ class ClusterGrowAddInstance(tables.LinkAction):
     classes = ("ajax-modal",)
 
     def get_link_url(self):
-        return urlresolvers.reverse(
+        return urls.reverse(
             self.url, args=[self.table.kwargs['cluster_id']])
 
 
@@ -413,7 +413,7 @@ class ClusterGrowAction(tables.Action):
         finally:
             cluster_manager.delete(cluster_id)
 
-        return shortcuts.redirect(urlresolvers.reverse(
+        return shortcuts.redirect(urls.reverse(
             "horizon:project:database_clusters:index"))
 
 

@@ -12,7 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.core import urlresolvers
+from django import urls
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
@@ -129,9 +129,7 @@ class ViewLog(tables.LinkAction):
 
     def get_link_url(self, datum):
         instance_id = self.table.kwargs['instance_id']
-        return urlresolvers.reverse(self.url,
-                                    args=(instance_id,
-                                          datum.name))
+        return urls.reverse(self.url, args=(instance_id, datum.name))
 
     def allowed(self, request, datum=None):
         if datum:

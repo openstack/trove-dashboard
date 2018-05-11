@@ -12,8 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.core.urlresolvers import reverse
 from django.forms import ValidationError  # noqa
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 import six

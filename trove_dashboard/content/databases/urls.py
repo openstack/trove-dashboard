@@ -47,5 +47,5 @@ urlpatterns = [
         name='attach_config'),
     url(INSTANCES % 'manage_root', views.ManageRootView.as_view(),
         name='manage_root'),
-    url(BASEINSTANCES % 'logs/', include(logs_urls, namespace='logs')),
+    url(BASEINSTANCES % 'logs/', include((logs_urls, 'logs'))),
 ]
