@@ -11,11 +11,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from troveclient import client as trove_client
-
 from openstack_dashboard.test import helpers
 
-from trove_dashboard import api
 from trove_dashboard.test.test_data import utils
 
 
@@ -42,30 +39,8 @@ class TroveTestsMixin(object):
 
 
 class TestCase(TroveTestsMixin, helpers.TestCase):
-    # We should declare mox dependency before we finish mock migration
-    # for all test cases.
-    use_mox = True
+    pass
 
 
 class BaseAdminViewTests(TroveTestsMixin, helpers.TestCase):
     pass
-
-
-class TroveAPITestCase(helpers.APITestCase):
-
-    def setUp(self):
-        super(TroveAPITestCase, self).setUp()
-
-        self._original_troveclient = api.trove.client
-        api.trove.client = lambda request: self.stub_troveclient()
-
-    def tearDown(self):
-        super(TroveAPITestCase, self).tearDown()
-
-        api.trove.client = self._original_troveclient
-
-    def stub_troveclient(self):
-        if not hasattr(self, "troveclient"):
-            self.mox.StubOutWithMock(trove_client, 'Client')
-            self.troveclient = self.mox.CreateMock(trove_client.Client)
-        return self.troveclient
