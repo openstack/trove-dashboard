@@ -13,13 +13,12 @@
 #    under the License.
 
 import logging
+import mock
 import six
 
 import django
 from django.conf import settings
-from django import http
 from django.urls import reverse
-from mox3.mox import IsA  # noqa
 
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations \
@@ -34,43 +33,44 @@ ADD_URL = 'horizon:project:database_configurations:add'
 
 
 class DatabaseConfigurationsTests(test.TestCase):
-    @test.create_stubs({api.trove: ('configuration_list',)})
+    @test.create_mocks({api.trove: ('configuration_list',)})
     def test_index(self):
-        api.trove.configuration_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.database_configurations.list())
-        self.mox.ReplayAll()
+        self.mock_configuration_list.return_value = (
+            self.database_configurations.list())
         res = self.client.get(INDEX_URL)
+        self.mock_configuration_list.assert_called_once_with(
+            test.IsHttpRequest())
         self.assertTemplateUsed(res,
                                 'project/database_configurations/index.html')
 
-    @test.create_stubs({api.trove: ('configuration_list',)})
+    @test.create_mocks({api.trove: ('configuration_list',)})
     def test_index_exception(self):
-        api.trove.configuration_list(IsA(http.HttpRequest)) \
-            .AndRaise(self.exceptions.trove)
-        self.mox.ReplayAll()
+        self.mock_configuration_list.side_effect = self.exceptions.trove
         res = self.client.get(INDEX_URL)
+        self.mock_configuration_list.assert_called_once_with(
+            test.IsHttpRequest())
         self.assertTemplateUsed(
             res, 'project/database_configurations/index.html')
         self.assertEqual(res.status_code, 200)
         self.assertMessageCount(res, error=1)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('datastore_list', 'datastore_version_list')})
     def test_create_configuration(self):
-        api.trove.datastore_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.datastores.list())
-        api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.datastore_versions.list())
-        self.mox.ReplayAll()
+        self.mock_datastore_list.return_value = self.datastores.list()
+        self.mock_datastore_version_list.return_value = (
+            self.datastore_versions.list())
         res = self.client.get(CREATE_URL)
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_datastore_version_list, 4,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.assertTemplateUsed(res,
                                 'project/database_configurations/create.html')
 
-    @test.create_stubs({api.trove: ('datastore_list',)})
+    @test.create_mocks({api.trove: ('datastore_list',)})
     def test_create_configuration_exception_on_datastore(self):
-        api.trove.datastore_list(IsA(http.HttpRequest)) \
-            .AndRaise(self.exceptions.trove)
-        self.mox.ReplayAll()
+        self.mock_datastore_list.side_effect = self.exceptions.trove
         toSuppress = ["trove_dashboard.content."
                       "database_configurations.forms", ]
 
@@ -83,6 +83,8 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         try:
             res = self.client.get(CREATE_URL)
+            self.mock_datastore_list.assert_called_once_with(
+                test.IsHttpRequest())
             self.assertEqual(res.status_code, 302)
 
         finally:
@@ -90,15 +92,17 @@ class DatabaseConfigurationsTests(test.TestCase):
             for (log, level) in loggers:
                 log.setLevel(level)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('datastore_list', 'datastore_version_list',
                     'configuration_create')})
     def _test_create_test_configuration(
             self, config_description=u''):
-        api.trove.datastore_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.datastores.list())
-        api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.datastore_versions.list())
+        self.mock_datastore_list.return_value = self.datastores.list()
+        self.mock_datastore_version_list.return_value = (
+            self.datastore_versions.list())
+
+        self.mock_configuration_create.return_value = (
+            self.database_configurations.first())
 
         name = u'config1'
         values = "{}"
@@ -107,16 +111,6 @@ class DatabaseConfigurationsTests(test.TestCase):
         config_datastore = ds.name
         config_datastore_version = dsv.name
 
-        api.trove.configuration_create(
-            IsA(http.HttpRequest),
-            name,
-            values,
-            description=config_description,
-            datastore=config_datastore,
-            datastore_version=config_datastore_version) \
-            .AndReturn(self.database_configurations.first())
-
-        self.mox.ReplayAll()
         post = {
             'method': 'CreateConfigurationForm',
             'name': name,
@@ -124,6 +118,17 @@ class DatabaseConfigurationsTests(test.TestCase):
             'datastore': (config_datastore + ',' + config_datastore_version)}
 
         res = self.client.post(CREATE_URL, post)
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_datastore_version_list, 4,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
+        self.mock_configuration_create.assert_called_once_with(
+            test.IsHttpRequest(),
+            name,
+            values,
+            description=config_description,
+            datastore=config_datastore,
+            datastore_version=config_datastore_version)
         self.assertNoFormErrors(res)
         self.assertMessageCount(success=1)
 
@@ -133,14 +138,15 @@ class DatabaseConfigurationsTests(test.TestCase):
     def test_create_test_configuration_with_no_description(self):
         self._test_create_test_configuration()
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('datastore_list', 'datastore_version_list',
                     'configuration_create')})
     def test_create_test_configuration_exception(self):
-        api.trove.datastore_list(IsA(http.HttpRequest)) \
-            .AndReturn(self.datastores.list())
-        api.trove.datastore_version_list(IsA(http.HttpRequest), IsA(str)) \
-            .MultipleTimes().AndReturn(self.datastore_versions.list())
+        self.mock_datastore_list.return_value = self.datastores.list()
+        self.mock_datastore_version_list.return_value = (
+            self.datastore_versions.list())
+
+        self.mock_configuration_create.side_effect = self.exceptions.trove
 
         name = u'config1'
         values = "{}"
@@ -150,95 +156,88 @@ class DatabaseConfigurationsTests(test.TestCase):
         config_datastore = ds.name
         config_datastore_version = dsv.name
 
-        api.trove.configuration_create(
-            IsA(http.HttpRequest),
-            name,
-            values,
-            description=config_description,
-            datastore=config_datastore,
-            datastore_version=config_datastore_version) \
-            .AndRaise(self.exceptions.trove)
-
-        self.mox.ReplayAll()
         post = {'method': 'CreateConfigurationForm',
                 'name': name,
                 'description': config_description,
                 'datastore': config_datastore + ',' + config_datastore_version}
 
         res = self.client.post(CREATE_URL, post)
+        self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_datastore_version_list, 4,
+            mock.call(test.IsHttpRequest(), test.IsA(str)))
+        self.mock_configuration_create.assert_called_once_with(
+            test.IsHttpRequest(),
+            name,
+            values,
+            description=config_description,
+            datastore=config_datastore,
+            datastore_version=config_datastore_version)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({api.trove: ('configuration_get',
+    @test.create_mocks({api.trove: ('configuration_get',
                                     'configuration_instances',)})
     def test_details_tab(self):
         config = self.database_configurations.first()
-        api.trove.configuration_get(IsA(http.HttpRequest),
-                                    config.id) \
-            .AndReturn(config)
-        self.mox.ReplayAll()
+        self.mock_configuration_get.return_value = config
         details_url = self._get_url_with_arg(DETAIL_URL, config.id)
         url = details_url + '?tab=configuration_details__details'
         res = self.client.get(url)
+        self.mock_configuration_get.assert_called_once_with(
+            test.IsHttpRequest(), config.id)
         self.assertTemplateUsed(res,
                                 'project/database_configurations/details.html')
 
-    @test.create_stubs({api.trove: ('configuration_get',)})
+    @test.create_mocks({api.trove: ('configuration_get',)})
     def test_overview_tab_exception(self):
         config = self.database_configurations.first()
-        api.trove.configuration_get(IsA(http.HttpRequest),
-                                    config.id) \
-            .AndRaise(self.exceptions.trove)
-        self.mox.ReplayAll()
+        self.mock_configuration_get.side_effect = self.exceptions.trove
         details_url = self._get_url_with_arg(DETAIL_URL, config.id)
         url = details_url + '?tab=configuration_details__overview'
         res = self.client.get(url)
+        self.mock_configuration_get.assert_called_once_with(
+            test.IsHttpRequest(), config.id)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
-    @test.create_stubs({
-        api.trove: ('configuration_get', 'configuration_parameters_list',),
+    @test.create_mocks({
+        api.trove: ('configuration_parameters_list',),
         config_param_manager.ConfigParamManager:
             ('get_configuration', 'configuration_get',)})
     def test_add_parameter(self):
-        config = config_param_manager.ConfigParamManager.get_configuration() \
-            .AndReturn(self.database_configurations.first())
+        config = self.database_configurations.first()
+        self.mock_get_configuration.return_value = config
 
-        config_param_manager.ConfigParamManager \
-            .configuration_get(IsA(http.HttpRequest)) \
-            .AndReturn(config)
+        self.mock_configuration_get.return_value = config
         ds = self._get_test_datastore('mysql')
         dsv = self._get_test_datastore_version(ds.id, '5.5')
-        api.trove.configuration_parameters_list(
-            IsA(http.HttpRequest),
-            ds.name,
-            dsv.name) \
-            .AndReturn(self.configuration_parameters.list())
-        self.mox.ReplayAll()
+        self.mock_configuration_parameters_list.return_value = (
+            self.configuration_parameters.list())
         res = self.client.get(self._get_url_with_arg(ADD_URL, 'id'))
+        self.mock_get_configuration.assert_called_once()
+        self.mock_configuration_get.assert_called_once_with(
+            test.IsHttpRequest())
+        self.mock_configuration_parameters_list.assert_called_once_with(
+            test.IsHttpRequest(),
+            ds.name,
+            dsv.name)
         self.assertTemplateUsed(
             res, 'project/database_configurations/add_parameter.html')
 
-    @test.create_stubs({
-        api.trove: ('configuration_get', 'configuration_parameters_list',),
+    @test.create_mocks({
+        api.trove: ('configuration_parameters_list',),
         config_param_manager.ConfigParamManager:
             ('get_configuration', 'configuration_get',)})
     def test_add_parameter_exception_on_parameters(self):
         try:
-            config = (config_param_manager.ConfigParamManager
-                      .get_configuration()
-                      .AndReturn(self.database_configurations.first()))
+            config = self.database_configurations.first()
+            self.mock_get_configuration.return_value = config
 
-            config_param_manager.ConfigParamManager \
-                .configuration_get(IsA(http.HttpRequest)) \
-                .AndReturn(config)
+            self.mock_configuration_get.return_value = config
 
             ds = self._get_test_datastore('mysql')
             dsv = self._get_test_datastore_version(ds.id, '5.5')
-            api.trove.configuration_parameters_list(
-                IsA(http.HttpRequest),
-                ds.name,
-                dsv.name) \
-                .AndRaise(self.exceptions.trove)
-            self.mox.ReplayAll()
+            self.mock_configuration_parameters_list.side_effect = (
+                self.exceptions.trove)
             toSuppress = ["trove_dashboard.content."
                           "database_configurations.forms", ]
 
@@ -252,6 +251,14 @@ class DatabaseConfigurationsTests(test.TestCase):
             try:
                 res = self.client.get(
                     self._get_url_with_arg(ADD_URL, config.id))
+                self.mock_get_configuration.assert_called_once()
+                self.mock_configuration_get.assert_called_once_with(
+                    test.IsHttpRequest())
+                (self.mock_configuration_parameters_list
+                     .assert_called_once_with(
+                         test.IsHttpRequest(),
+                         ds.name,
+                         dsv.name))
                 self.assertEqual(res.status_code, 302)
 
             finally:
@@ -261,34 +268,26 @@ class DatabaseConfigurationsTests(test.TestCase):
         finally:
             config_param_manager.delete(config.id)
 
-    @test.create_stubs({
-        api.trove: ('configuration_get', 'configuration_parameters_list',),
+    @test.create_mocks({
+        api.trove: ('configuration_parameters_list',),
         config_param_manager.ConfigParamManager:
             ('get_configuration', 'add_param', 'configuration_get',)})
     def test_add_new_parameter(self):
-        config = (config_param_manager.ConfigParamManager
-                  .get_configuration()
-                  .AndReturn(self.database_configurations.first()))
+        config = self.database_configurations.first()
+        self.mock_get_configuration.return_value = config
         try:
-            config_param_manager.ConfigParamManager \
-                .configuration_get(IsA(http.HttpRequest)) \
-                .AndReturn(config)
+            self.mock_configuration_get.return_value = config
 
             ds = self._get_test_datastore('mysql')
             dsv = self._get_test_datastore_version(ds.id, '5.5')
-            api.trove.configuration_parameters_list(
-                IsA(http.HttpRequest),
-                ds.name,
-                dsv.name) \
-                .AndReturn(self.configuration_parameters.list())
+            self.mock_configuration_parameters_list.return_value = (
+                self.configuration_parameters.list())
 
             name = self.configuration_parameters.first().name
             value = 1
 
-            config_param_manager.ConfigParamManager.add_param(name, value) \
-                .AndReturn(value)
+            self.mock_add_param.return_value = value
 
-            self.mox.ReplayAll()
             post = {
                 'method': 'AddParameterForm',
                 'name': name,
@@ -296,12 +295,20 @@ class DatabaseConfigurationsTests(test.TestCase):
 
             res = self.client.post(self._get_url_with_arg(ADD_URL, config.id),
                                    post)
+            self.mock_get_configuration.assert_called_once()
+            self.mock_configuration_get.assert_called_once_with(
+                test.IsHttpRequest())
+            self.mock_configuration_parameters_list.assert_called_once_with(
+                test.IsHttpRequest(),
+                ds.name,
+                dsv.name)
+            self.mock_add_param.assert_called_once_with(name, value)
             self.assertNoFormErrors(res)
             self.assertMessageCount(success=1)
         finally:
             config_param_manager.delete(config.id)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('configuration_get', 'configuration_parameters_list',),
         config_param_manager: ('get',)})
     def test_add_parameter_invalid_value(self):
@@ -315,20 +322,13 @@ class DatabaseConfigurationsTests(test.TestCase):
             config_param_mgr.original_configuration_values = \
                 dict.copy(config.values)
 
-            (config_param_manager.get(IsA(http.HttpRequest),
-                                      IsA(six.string_types))
-                .MultipleTimes()
-                .AndReturn(config_param_mgr))
-            (api.trove.configuration_parameters_list(IsA(http.HttpRequest),
-                                                     IsA(six.string_types),
-                                                     IsA(six.string_types))
-                .MultipleTimes()
-                .AndReturn(self.configuration_parameters.list()))
+            self.mock_get.return_value = config_param_mgr
+            self.mock_configuration_parameters_list.return_value = (
+                self.configuration_parameters.list())
 
             name = self.configuration_parameters.first().name
             value = "non-numeric"
 
-            self.mox.ReplayAll()
             post = {
                 'method': 'AddParameterForm',
                 'name': name,
@@ -336,19 +336,25 @@ class DatabaseConfigurationsTests(test.TestCase):
 
             res = self.client.post(self._get_url_with_arg(ADD_URL, config.id),
                                    post)
+            self.assert_mock_multiple_calls_with_same_arguments(
+                self.mock_get, 2,
+                mock.call(test.IsHttpRequest(), test.IsA(six.string_types)))
+            self.assert_mock_multiple_calls_with_same_arguments(
+                self.mock_configuration_parameters_list, 2,
+                mock.call(test.IsHttpRequest(),
+                          test.IsA(six.string_types),
+                          test.IsA(six.string_types)))
             self.assertFormError(res, "form", 'value',
                                  ['Value must be a number.'])
         finally:
             config_param_manager.delete(config.id)
 
-    @test.create_stubs({api.trove: ('configuration_get',
+    @test.create_mocks({api.trove: ('configuration_get',
                                     'configuration_instances',)})
     def test_values_tab_discard_action(self):
         config = self.database_configurations.first()
 
-        api.trove.configuration_get(IsA(http.HttpRequest), config.id) \
-            .MultipleTimes().AndReturn(config)
-        self.mox.ReplayAll()
+        self.mock_configuration_get.return_value = config
 
         details_url = self._get_url_with_arg(DETAIL_URL, config.id)
         url = details_url + '?tab=configuration_details__value'
@@ -361,6 +367,8 @@ class DatabaseConfigurationsTests(test.TestCase):
                       .get_configuration().values)
 
         res = self.client.post(url, {'action': u"values__discard_changes"})
+        self.mock_configuration_get.assert_called_once_with(
+            test.IsHttpRequest(), config.id)
         if django.VERSION >= (1, 9):
             url = settings.TESTSERVER + url
         self.assertRedirectsNoFollow(res, url)
@@ -373,7 +381,7 @@ class DatabaseConfigurationsTests(test.TestCase):
         self.assertTrue(config_param_manager.dict_has_changes(
             changed_configuration_values, restored_configuration_values))
 
-    @test.create_stubs({api.trove: ('configuration_instances',
+    @test.create_mocks({api.trove: ('configuration_instances',
                                     'configuration_update',),
                         config_param_manager: ('get',)})
     def test_values_tab_apply_action(self):
@@ -405,15 +413,9 @@ class DatabaseConfigurationsTests(test.TestCase):
         config_param_mgr.original_configuration_values = \
             dict.copy(config.values)
 
-        config_param_manager.get(IsA(http.HttpRequest), config.id) \
-            .MultipleTimes().AndReturn(config_param_mgr)
+        self.mock_get.return_value = config_param_mgr
 
-        api.trove.configuration_update(
-            IsA(http.HttpRequest),
-            config.id,
-            config_param_mgr.to_json()) \
-            .AndReturn(None)
-        self.mox.ReplayAll()
+        self.mock_configuration_update.return_value = None
 
         details_url = self._get_url_with_arg(DETAIL_URL, config.id)
         url = details_url + '?tab=configuration_details__value'
@@ -422,11 +424,17 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         # apply changes
         res = self.client.post(url, {'action': u"values__apply_changes"})
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_get, 11, mock.call(test.IsHttpRequest(), config.id))
+        self.mock_configuration_update.assert_called_once_with(
+            test.IsHttpRequest(),
+            config.id,
+            config_param_mgr.to_json())
         if django.VERSION >= (1, 9):
             url = settings.TESTSERVER + url
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({api.trove: ('configuration_instances',
+    @test.create_mocks({api.trove: ('configuration_instances',
                                     'configuration_update',),
                         config_param_manager: ('get',)})
     def test_values_tab_apply_action_exception(self):
@@ -448,15 +456,9 @@ class DatabaseConfigurationsTests(test.TestCase):
         config_param_mgr.original_configuration_values = \
             dict.copy(config.values)
 
-        config_param_manager.get(IsA(http.HttpRequest), config.id) \
-            .MultipleTimes().AndReturn(config_param_mgr)
+        self.mock_get.return_value = config_param_mgr
 
-        api.trove.configuration_update(
-            IsA(http.HttpRequest),
-            config.id,
-            config_param_mgr.to_json())\
-            .AndRaise(self.exceptions.trove)
-        self.mox.ReplayAll()
+        self.mock_configuration_update.side_effect = self.exceptions.trove
 
         details_url = self._get_url_with_arg(DETAIL_URL, config.id)
         url = details_url + '?tab=configuration_details__value'
@@ -465,6 +467,12 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         # apply changes
         res = self.client.post(url, {'action': u"values__apply_changes"})
+        self.assert_mock_multiple_calls_with_same_arguments(
+            self.mock_get, 11, mock.call(test.IsHttpRequest(), config.id))
+        self.mock_configuration_update.assert_called_once_with(
+            test.IsHttpRequest(),
+            config.id,
+            config_param_mgr.to_json())
         if django.VERSION >= (1, 9):
             url = settings.TESTSERVER + url
         self.assertRedirectsNoFollow(res, url)
@@ -491,7 +499,7 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         self.assertEqual((number_params - 1), new_number_params)
 
-    @test.create_stubs({api.trove: ('configuration_instances',),
+    @test.create_mocks({api.trove: ('configuration_instances',),
                         config_param_manager: ('get',)})
     def test_instances_tab(self):
         try:
@@ -504,18 +512,19 @@ class DatabaseConfigurationsTests(test.TestCase):
             config_param_mgr.original_configuration_values = \
                 dict.copy(config.values)
 
-            config_param_manager.get(IsA(http.HttpRequest), config.id) \
-                .MultipleTimes().AndReturn(config_param_mgr)
+            self.mock_get.return_value = config_param_mgr
 
-            api.trove.configuration_instances(IsA(http.HttpRequest),
-                                              config.id)\
-                .AndReturn(self.configuration_instances.list())
-            self.mox.ReplayAll()
+            self.mock_configuration_instances.return_value = (
+                self.configuration_instances.list())
 
             details_url = self._get_url_with_arg(DETAIL_URL, config.id)
             url = details_url + '?tab=configuration_details__instance'
 
             res = self.client.get(url)
+            self.assert_mock_multiple_calls_with_same_arguments(
+                self.mock_get, 2, mock.call(test.IsHttpRequest(), config.id))
+            self.mock_configuration_instances.assert_called_once_with(
+                test.IsHttpRequest(), config.id)
             table_data = res.context['instances_table'].data
             self.assertItemsEqual(
                 self.configuration_instances.list(), table_data)
@@ -524,7 +533,7 @@ class DatabaseConfigurationsTests(test.TestCase):
         finally:
             config_param_manager.delete(config.id)
 
-    @test.create_stubs({api.trove: ('configuration_instances',),
+    @test.create_mocks({api.trove: ('configuration_instances',),
                         config_param_manager: ('get',)})
     def test_instances_tab_exception(self):
         try:
@@ -537,18 +546,19 @@ class DatabaseConfigurationsTests(test.TestCase):
             config_param_mgr.original_configuration_values = \
                 dict.copy(config.values)
 
-            config_param_manager.get(IsA(http.HttpRequest), config.id) \
-                .MultipleTimes().AndReturn(config_param_mgr)
+            self.mock_get.return_value = config_param_mgr
 
-            api.trove.configuration_instances(IsA(http.HttpRequest),
-                                              config.id) \
-                .AndRaise(self.exceptions.trove)
-            self.mox.ReplayAll()
+            self.mock_configuration_instances.side_effect = (
+                self.exceptions.trove)
 
             details_url = self._get_url_with_arg(DETAIL_URL, config.id)
             url = details_url + '?tab=configuration_details__instance'
 
             res = self.client.get(url)
+            self.assert_mock_multiple_calls_with_same_arguments(
+                self.mock_get, 2, mock.call(test.IsHttpRequest(), config.id))
+            self.mock_configuration_instances.assert_called_once_with(
+                test.IsHttpRequest(), config.id)
             table_data = res.context['instances_table'].data
             self.assertNotEqual(len(self.configuration_instances.list()),
                                 len(table_data))
