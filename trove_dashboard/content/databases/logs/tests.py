@@ -17,8 +17,7 @@ import logging
 from django import http
 from django.urls import reverse
 
-from mox3 import mox
-from mox3.mox import IsA  # noqa
+import mock
 import six
 
 from trove_dashboard import api
@@ -30,65 +29,44 @@ LINES = 50
 
 
 class LogsTests(test.TestCase):
-    def stub_swiftclient(self, expected_calls=1):
-        if not hasattr(self, "swiftclient"):
-            self.mox.StubOutWithMock(swift_client, 'Connection')
-            self.swiftclient = self.mox.CreateMock(swift_client.Connection)
-            while expected_calls:
-                (swift_client.Connection(None,
-                                         mox.IgnoreArg(),
-                                         None,
-                                         preauthtoken=mox.IgnoreArg(),
-                                         preauthurl=mox.IgnoreArg(),
-                                         cacert=None,
-                                         insecure=False,
-                                         auth_version="2.0")
-                 .AndReturn(self.swiftclient))
-                expected_calls -= 1
-        return self.swiftclient
-
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'root_show')})
     def test_log_tab(self):
         database = self.databases.first()
         database_id = database.id
 
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.root_show(IsA(http.HttpRequest), database.id)
-            .AndReturn(self.database_user_roots.first()))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_root_show.return_value = self.database_user_roots.first()
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
         res = self.client.get(url)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_root_show.assert_called_once_with(
+            test.IsHttpRequest(), database.id)
         table_data = res.context['logs_table'].data
         self.assertItemsEqual(self.logs.list(), table_data)
         self.assertTemplateUsed(
             res, 'horizon/common/_detail_table.html')
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'root_show')})
     def test_log_tab_exception(self):
         database = self.databases.first()
         database_id = database.id
 
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndRaise(self.exceptions.trove))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.root_show(IsA(http.HttpRequest), database.id)
-            .AndReturn(self.database_user_roots.first()))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.side_effect = self.exceptions.trove
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_root_show.return_value = self.database_user_roots.first()
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -104,6 +82,14 @@ class LogsTests(test.TestCase):
 
         try:
             res = self.client.get(url)
+            self.mock_instance_get.assert_called_once_with(
+                test.IsHttpRequest(), test.IsA(six.text_type))
+            self.mock_log_list.assert_called_once_with(
+                test.IsHttpRequest(), database_id)
+            self.mock_flavor_get.assert_called_once_with(
+                test.IsHttpRequest(), database.flavor["id"])
+            self.mock_root_show.assert_called_once_with(
+                test.IsHttpRequest(), database.id)
             table_data = res.context['logs_table'].data
             self.assertNotEqual(len(self.logs.list()), len(table_data))
             self.assertTemplateUsed(
@@ -113,23 +99,17 @@ class LogsTests(test.TestCase):
             for (log, level) in loggers:
                 log.setLevel(level)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_publish',)
     })
     def test_log_publish(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.first()
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_publish(IsA(http.HttpRequest), database_id, log.name)
-            .AndReturn(None))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_publish.return_value = None
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -137,25 +117,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('publish', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_publish.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_publish',)
     })
     def test_log_publish_exception(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.first()
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_publish(IsA(http.HttpRequest), database_id, log.name)
-            .AndRaise(self.exceptions.trove))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_publish.side_effect = self.exceptions.trove
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -163,25 +145,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('publish', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_publish.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_enable',)
     })
     def test_log_enable(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.first()
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_enable(IsA(http.HttpRequest), database_id, log.name)
-            .AndReturn(None))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_enable.return_value = None
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -189,25 +173,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('enable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_enable.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_enable',)
     })
     def test_log_enable_exception(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.first()
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_enable(IsA(http.HttpRequest), database_id, log.name)
-            .AndRaise(self.exceptions.trove))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_enable.side_effect = self.exceptions.trove
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -215,25 +201,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('enable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_enable.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_discard',)
     })
     def test_log_discard(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.first()
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_discard(IsA(http.HttpRequest), database_id, log.name)
-            .AndReturn(None))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_discard.return_value = None
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -241,25 +229,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('discard', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_discard.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_discard',)
     })
     def test_log_discard_exception(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.first()
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_discard(IsA(http.HttpRequest), database_id, log.name)
-            .AndRaise(self.exceptions.trove))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_discard.side_effect = self.exceptions.trove
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -267,25 +257,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('discard', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_discard.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_disable',)
     })
     def test_log_disable(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.list()[3]
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_disable(IsA(http.HttpRequest), database_id, log.name)
-            .AndReturn(None))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_disable.return_value = None
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -293,25 +285,27 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('disable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_disable.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({
+    @test.create_mocks({
         api.trove: ('flavor_get', 'instance_get', 'log_list', 'log_disable',)
     })
     def test_log_disable_exception(self):
         database = self.databases.first()
         database_id = database.id
         log = self.logs.list()[3]
-        (api.trove.instance_get(IsA(http.HttpRequest), IsA(six.text_type))
-            .AndReturn(database))
-        (api.trove.log_list(IsA(http.HttpRequest), database_id)
-            .AndReturn(self.logs.list()))
-        (api.trove.flavor_get(IsA(http.HttpRequest), database.flavor["id"])
-            .AndReturn(self.flavors.first()))
-        (api.trove.log_disable(IsA(http.HttpRequest), database_id, log.name)
-            .AndRaise(self.exceptions.trove))
-
-        self.mox.ReplayAll()
+        self.mock_instance_get.return_value = database
+        self.mock_log_list.return_value = self.logs.list()
+        self.mock_flavor_get.return_value = self.flavors.first()
+        self.mock_log_disable.side_effect = self.exceptions.trove
 
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
@@ -319,43 +313,73 @@ class LogsTests(test.TestCase):
         action_string = u"logs__%s_log__%s" % ('disable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
+        self.mock_instance_get.assert_called_once_with(
+            test.IsHttpRequest(), test.IsA(six.text_type))
+        self.mock_log_list.assert_called_once_with(
+            test.IsHttpRequest(), database_id)
+        self.mock_flavor_get.assert_called_once_with(
+            test.IsHttpRequest(), database.flavor["id"])
+        self.mock_log_disable.assert_called_once_with(
+            test.IsHttpRequest(), database_id, log.name)
         self.assertRedirectsNoFollow(res, url)
 
-    @test.create_stubs({api.trove: ('log_tail',)})
+    @test.create_mocks({
+        api.trove: ('log_tail',),
+        swift_client: ('Connection',),
+    })
     def test_view_log(self):
         CONSOLE_OUTPUT = 'superspecialuniquetext'
-        (api.trove.log_tail(IsA(http.HttpRequest),
-                            IsA(six.string_types),
-                            'guest.log',
-                            False,
-                            LINES,
-                            self.stub_swiftclient())
-         .AndReturn(lambda: [CONSOLE_OUTPUT]))
-
-        self.mox.ReplayAll()
+        self.mock_log_tail.return_value = lambda: [CONSOLE_OUTPUT]
 
         url = reverse('horizon:project:databases:logs:log_contents',
                       args=('id', 'guest.log'))
         res = self.client.get(url)
 
+        self.mock_Connection.assert_called_once_with(
+            None,
+            mock.ANY,
+            None,
+            preauthtoken=mock.ANY,
+            preauthurl=mock.ANY,
+            cacert=None,
+            insecure=False,
+            auth_version="2.0")
+        self.mock_log_tail.assert_called_once_with(
+            test.IsHttpRequest(),
+            test.IsA(six.string_types),
+            'guest.log',
+            False,
+            LINES,
+            self.mock_Connection())
         self.assertNoMessages()
         self.assertIsInstance(res, http.HttpResponse)
         self.assertContains(res, CONSOLE_OUTPUT)
 
-    @test.create_stubs({api.trove: ('log_tail',)})
+    @test.create_mocks({
+        api.trove: ('log_tail',),
+        swift_client: ('Connection',),
+    })
     def test_view_log_exception(self):
-        (api.trove.log_tail(IsA(http.HttpRequest),
-                            IsA(six.string_types),
-                            'guest.log',
-                            False,
-                            LINES,
-                            self.stub_swiftclient())
-         .AndRaise(self.exceptions.trove))
-
-        self.mox.ReplayAll()
+        self.mock_log_tail.side_effect = self.exceptions.trove
 
         url = reverse('horizon:project:databases:logs:log_contents',
                       args=('id', 'guest.log'))
         res = self.client.get(url)
 
+        self.mock_Connection.assert_called_once_with(
+            None,
+            mock.ANY,
+            None,
+            preauthtoken=mock.ANY,
+            preauthurl=mock.ANY,
+            cacert=None,
+            insecure=False,
+            auth_version="2.0")
+        self.mock_log_tail.assert_called_once_with(
+            test.IsHttpRequest(),
+            test.IsA(six.string_types),
+            'guest.log',
+            False,
+            LINES,
+            self.mock_Connection())
         self.assertContains(res, "Unable to load")
