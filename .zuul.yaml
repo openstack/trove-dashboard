@@ -1,0 +1,16 @@
+- project:
+    templates:
+      - check-requirements
+      - release-notes-jobs
+      - openstack-python-jobs-horizon
+    check:
+      jobs:
+        - openstack-tox-py35:
+            required-projects:
+              - openstack/horizon
+    gate:
+      jobs:
+        - openstack-tox-py35:
+            required-projects:
+              - openstack/horizon
+
