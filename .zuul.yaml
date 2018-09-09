@@ -1,0 +1,5 @@
+- project:
+    templates:
+      - check-requirements
+      - release-notes-jobs
+      - openstack-python-jobs-horizon
