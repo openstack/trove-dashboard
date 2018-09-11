@@ -1,30 +1,7 @@
 - project:
     templates:
       - check-requirements
-      - release-notes-jobs-python3
       - openstack-python-jobs-horizon
-    check:
-      jobs:
-        - openstack-tox-py35:
-            required-projects:
-              - openstack/horizon
-        - openstack-tox-py36:
-            required-projects:
-              - openstack/horizon
-        - openstack-tox-py36:
-            required-projects:
-              - openstack/horizon
-    gate:
-      jobs:
-        - openstack-tox-py35:
-            required-projects:
-              - openstack/horizon
-
-        - openstack-tox-py36:
-            required-projects:
-              - openstack/horizon
-
-        - openstack-tox-py36:
-            required-projects:
-              - openstack/horizon
-
+      - openstack-python35-jobs-horizon
+      - openstack-python36-jobs-horizon
+      - release-notes-jobs-python3
