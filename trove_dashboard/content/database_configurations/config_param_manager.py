@@ -19,6 +19,7 @@ from django.utils.translation import ugettext_lazy as _
 from trove_dashboard import api
 
 from oslo_serialization import jsonutils
+from six.moves import builtins
 
 
 def get(request, configuration_group_id):
@@ -185,7 +186,7 @@ def adjust_type(data_type, value):
     if data_type == "float":
         new_value = float(value)
     elif data_type == "long":
-        new_value = long(value)
+        new_value = builtins.int(value)
     elif data_type == "integer":
         new_value = int(value)
     else:
