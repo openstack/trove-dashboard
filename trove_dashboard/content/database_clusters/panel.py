@@ -23,8 +23,7 @@ from openstack_dashboard.dashboards.project import dashboard
 class Clusters(horizon.Panel):
     name = _("Clusters")
     slug = 'database_clusters'
-    permissions = ('openstack.services.database',
-                   'openstack.services.object-store',)
+    permissions = ('openstack.services.database',)
 
 
 dashboard.Project.register(Clusters)
