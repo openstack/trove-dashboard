@@ -1,20 +1,27 @@
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
 # Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
+# Soonyeul Park <ardentpark@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Trove Dashboard Release Notes\n"
+"Project-Id-Version: trove-dashboard\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-19 06:55+0000\n"
+"POT-Creation-Date: 2018-10-19 14:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-14 11:28+0000\n"
-"Last-Translator: Sungjin Kang <gang.sungjin@gmail.com>\n"
+"PO-Revision-Date: 2018-09-23 09:42+0000\n"
+"Last-Translator: Soonyeul Park <ardentpark@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko_KR\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "10.0.0"
+msgstr "10.0.0"
+
+msgid "11.0.0"
+msgstr "11.0.0"
 
 msgid "7.0.0"
 msgstr "7.0.0"
@@ -33,6 +40,16 @@ msgstr ""
 "대시보드 내 로깅 기능에 대한 지원을 추가하였습니다. 가져올 수 있는 로그 목록 "
 "나열 및 로그 내용 집합을 퍼블리싱 및 중지를 포함합니다."
 
+msgid ""
+"Adds support for restricting the launch instance datastore field to the "
+"datastore and datastore version that the backup is relevant to.  It also "
+"populates the restored backup as the only option in the advanced step backup "
+"field."
+msgstr ""
+"실행 인스턴스 데이터 저장소 필드를 백업과 관련된 데이터 저장소와 데이터 저장"
+"소 버전으로 제한하기 위한 지원을 추가합니다. 또한 고급 단계의 백업 필드의 유"
+"일한 옵션으로 복원된 백업을 넣어줍니다."
+
 msgid "Bug Fixes"
 msgstr "버그 수정"
 
@@ -45,6 +62,16 @@ msgstr "현재 시리즈에 대한 릴리즈 노트"
 msgid "Display all endpoints in the dashboard's cluster details endpoint list."
 msgstr ""
 "대시보드의 클러스터 세부 엔드 포인트 목록 내에 모든 엔드 포인트를 보여줍니다."
+
+msgid ""
+"Django 2.0 is now supported and Django versions older than 1.11 are no "
+"longer supported aligning with Django versions supported by horizon. Note "
+"that Django 1.11 is still supported and this is the only version when you "
+"use python 2.7."
+msgstr ""
+"Django 2.0은 이제 지원되며 1.11 이전의 Django 버전은 더 이상 horizon에 의해 "
+"지원되는 Django 버전들에 맞춰 지원되지 않습니다. Django 1.11은 여전히 지원되"
+"며 이는 Python 2.7을 사용할 때 유일한 버전임을 참고하십시오."
 
 msgid "Enable cluster grow and shrink panels for pxc."
 msgstr "pxc를 위한 패널에 대해 클러스터 확장 및 축소를 활성화합니다."
@@ -63,6 +90,12 @@ msgstr "Ocata 시리즈에 대한 릴리즈 노트"
 
 msgid "Pike Series Release Notes"
 msgstr "Pike 시리즈 릴리즈 노트"
+
+msgid "Queens Series Release Notes"
+msgstr "Queens 시리즈 릴리즈 노트"
+
+msgid "Rocky Series Release Notes"
+msgstr "Rocky 시리즈 릴리즈 노트"
 
 msgid "Search"
 msgstr "검색"
@@ -88,3 +121,6 @@ msgstr ""
 
 msgid "Trove Dashboard Release Notes"
 msgstr "Trove 대시보드 릴리즈 노트"
+
+msgid "Upgrade Notes"
+msgstr "업그레이드 노트"
