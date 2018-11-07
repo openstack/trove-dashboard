@@ -209,6 +209,12 @@ def get_host(instance):
     return _("Not Assigned")
 
 
+def get_instance_volume_size(instance):
+    if hasattr(instance, "volume"):
+        return sizeformat.diskgbformat(instance.volume.get("size"))
+    return _("Not available")
+
+
 class InstancesTable(tables.DataTable):
     name = tables.Column("name",
                          verbose_name=_("Name"))
@@ -219,6 +225,9 @@ class InstancesTable(tables.DataTable):
     size = tables.Column(get_instance_size,
                          verbose_name=_("Size"),
                          attrs={'data-type': 'size'})
+    volume_size = tables.Column(get_instance_volume_size,
+                                verbose_name=_("Volume Size"),
+                                attrs={'data-type': 'size'})
     status = tables.Column("status",
                            filters=(title, filters.replace_underscores),
                            verbose_name=_("Status"))
