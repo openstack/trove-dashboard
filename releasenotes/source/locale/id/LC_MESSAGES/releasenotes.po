@@ -1,19 +1,26 @@
 # suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Trove Dashboard Release Notes\n"
+"Project-Id-Version: trove-dashboard\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-19 06:55+0000\n"
+"POT-Creation-Date: 2018-12-14 14:47+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-03 03:58+0000\n"
+"PO-Revision-Date: 2019-01-21 05:01+0000\n"
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "10.0.0"
+msgstr "10.0.0"
+
+msgid "11.0.0"
+msgstr "11.0.0"
 
 msgid "7.0.0"
 msgstr "7.0.0"
@@ -57,6 +64,17 @@ msgid "Display all endpoints in the dashboard's cluster details endpoint list."
 msgstr ""
 "Menampilkan semua endpoint dalam daftar rincian endpoint klaster dashboard."
 
+msgid ""
+"Django 2.0 is now supported and Django versions older than 1.11 are no "
+"longer supported aligning with Django versions supported by horizon. Note "
+"that Django 1.11 is still supported and this is the only version when you "
+"use python 2.7."
+msgstr ""
+"Django 2.0 sekarang didukung dan versi Django yang lebih tua dari 1.11 tidak "
+"lagi didukung menyelaraskan dengan versi Django yang didukung oleh horizon. "
+"Perhatikan bahwa Django 1.11 masih didukung dan ini adalah satu-satunya "
+"versi ketika Anda menggunakan python 2.7."
+
 msgid "Enable cluster grow and shrink panels for pxc."
 msgstr "Aktifkan klaster tumbuh dan ciutkan panel untuk PXC."
 
@@ -74,6 +92,12 @@ msgstr "Ocata Series Release Notes"
 
 msgid "Pike Series Release Notes"
 msgstr "Catatan Rilis Seri Pike"
+
+msgid "Queens Series Release Notes"
+msgstr "Catatan Rilis Seri Queens"
+
+msgid "Rocky Series Release Notes"
+msgstr "Rocky Series Release Notes"
 
 msgid "Search"
 msgstr "Search (mencari)"
@@ -100,3 +124,6 @@ msgstr ""
 
 msgid "Trove Dashboard Release Notes"
 msgstr "Trove Dashboard Release Notes (catatan rilis Trove Dashboard)"
+
+msgid "Upgrade Notes"
+msgstr "Catatan Upgrade"
