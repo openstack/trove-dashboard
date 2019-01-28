@@ -84,9 +84,9 @@ class RestartInstance(tables.BatchAction):
     classes = ('btn-danger', 'btn-reboot')
 
     def allowed(self, request, instance=None):
-        return ((instance.status in ACTIVE_STATES
-                 or instance.status == 'SHUTDOWN'
-                 or instance.status == 'RESTART_REQUIRED'))
+        return ((instance.status in ACTIVE_STATES or
+                 instance.status == 'SHUTDOWN' or
+                 instance.status == 'RESTART_REQUIRED'))
 
     def action(self, request, obj_id):
         api.trove.instance_restart(request, obj_id)
@@ -113,8 +113,8 @@ class DetachReplica(tables.BatchAction):
     classes = ('btn-danger', 'btn-detach-replica')
 
     def allowed(self, request, instance=None):
-        return (instance.status in ACTIVE_STATES
-                and hasattr(instance, 'replica_of'))
+        return (instance.status in ACTIVE_STATES and
+                hasattr(instance, 'replica_of'))
 
     def action(self, request, obj_id):
         api.trove.instance_detach_replica(request, obj_id)
@@ -127,8 +127,8 @@ class PromoteToReplicaSource(tables.LinkAction):
     classes = ("ajax-modal", "btn-promote-to-replica-source")
 
     def allowed(self, request, instance=None):
-        return (instance.status in ACTIVE_STATES
-                and hasattr(instance, 'replica_of'))
+        return (instance.status in ACTIVE_STATES and
+                hasattr(instance, 'replica_of'))
 
     def get_link_url(self, datum):
         instance_id = self.table.get_object_id(datum)
@@ -156,8 +156,8 @@ class EjectReplicaSource(tables.BatchAction):
     classes = ('btn-danger', 'btn-eject-replica-source')
 
     def _allowed(self, request, instance=None):
-        return (instance.status != 'PROMOTE'
-                and hasattr(instance, 'replicas'))
+        return (instance.status != 'PROMOTE' and
+                hasattr(instance, 'replicas'))
 
     def action(self, request, obj_id):
         api.trove.eject_replica_source(request, obj_id)
@@ -436,8 +436,8 @@ class ResizeInstance(tables.LinkAction):
     classes = ("ajax-modal", "btn-resize")
 
     def allowed(self, request, instance=None):
-        return ((instance.status in ACTIVE_STATES
-                 or instance.status == 'SHUTOFF'))
+        return ((instance.status in ACTIVE_STATES or
+                 instance.status == 'SHUTOFF'))
 
     def get_link_url(self, datum):
         instance_id = self.table.get_object_id(datum)
@@ -451,8 +451,8 @@ class AttachConfiguration(tables.LinkAction):
     classes = ("btn-attach-config", "ajax-modal")
 
     def allowed(self, request, instance=None):
-        return (instance.status in ACTIVE_STATES
-                and not hasattr(instance, 'configuration'))
+        return (instance.status in ACTIVE_STATES and
+                not hasattr(instance, 'configuration'))
 
 
 class DetachConfiguration(tables.BatchAction):
