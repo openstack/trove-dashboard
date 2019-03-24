@@ -18,7 +18,7 @@ How to use with devstack:
 
 Add the following to your devstack ``local.conf`` file::
 
-    enable_plugin trove-dashboard git://git.openstack.org/openstack/trove-dashboard
+    enable_plugin trove-dashboard https://git.openstack.org/openstack/trove-dashboard
 
 
 To run unit tests:
