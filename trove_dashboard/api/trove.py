@@ -101,7 +101,7 @@ def cluster_shrink(request, cluster_id, instances):
 
 def create_cluster_root(request, cluster_id, password):
     # It appears the code below depends on this trove change
-    # https://review.openstack.org/#/c/166954/.  Comment out when that
+    # https://review.opendev.org/#/c/166954/.  Comment out when that
     # change merges.
     # return troveclient(request).cluster.reset_root_password(cluster_id)
     troveclient(request).root.create_cluster_root(cluster_id, password)

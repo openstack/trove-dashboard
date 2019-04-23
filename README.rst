@@ -18,7 +18,7 @@ How to use with devstack:
 
 Add the following to your devstack ``local.conf`` file::
 
-    enable_plugin trove-dashboard https://git.openstack.org/openstack/trove-dashboard
+    enable_plugin trove-dashboard https://opendev.org/openstack/trove-dashboard
 
 
 To run unit tests:
@@ -92,7 +92,7 @@ the Horizon codebase, in this repository.
 Links:
 ------
 
-Trove project: https://git.openstack.org/cgit/openstack/trove/
+Trove project: https://opendev.org/openstack/trove/
 
 Trove at wiki.openstack.org: https://wiki.openstack.org/wiki/Trove
 
