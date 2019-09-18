@@ -343,7 +343,7 @@ class LogsTests(test.TestCase):
             preauthurl=mock.ANY,
             cacert=None,
             insecure=False,
-            auth_version="2.0")
+            auth_version="3")
         self.mock_log_tail.assert_called_once_with(
             test.IsHttpRequest(),
             test.IsA(six.string_types),
@@ -374,7 +374,7 @@ class LogsTests(test.TestCase):
             preauthurl=mock.ANY,
             cacert=None,
             insecure=False,
-            auth_version="2.0")
+            auth_version="3")
         self.mock_log_tail.assert_called_once_with(
             test.IsHttpRequest(),
             test.IsA(six.string_types),
