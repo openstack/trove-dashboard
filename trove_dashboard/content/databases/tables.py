@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from urllib import parse as urlparse
+
 from django.conf import settings
 from django.template import defaultfilters as d_filters
 from django import urls
@@ -19,9 +21,6 @@ from django import urls
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
-
-import six
-import six.moves.urllib.parse as urlparse
 
 from horizon import exceptions
 from horizon import messages
@@ -511,8 +510,7 @@ class DisableRootAction(tables.Action):
             messages.success(request, _("Successfully disabled root access."))
         except Exception as e:
             messages.warning(request,
-                             _("Cannot disable root access: %s") %
-                             six.text_type(e))
+                             _("Cannot disable root access: %s") % e)
 
 
 class ManageRoot(tables.LinkAction):

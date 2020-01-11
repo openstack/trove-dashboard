@@ -18,7 +18,6 @@ from django import http
 from django.urls import reverse
 
 import mock
-import six
 
 from trove_dashboard import api
 from trove_dashboard.test import helpers as test
@@ -45,7 +44,7 @@ class LogsTests(test.TestCase):
         url = detail_url + '?tab=instance_details__logs_tab'
         res = self.client.get(url)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -83,7 +82,7 @@ class LogsTests(test.TestCase):
         try:
             res = self.client.get(url)
             self.mock_instance_get.assert_called_once_with(
-                test.IsHttpRequest(), test.IsA(six.text_type))
+                test.IsHttpRequest(), test.IsA(str))
             self.mock_log_list.assert_called_once_with(
                 test.IsHttpRequest(), database_id)
             self.mock_flavor_get.assert_called_once_with(
@@ -118,7 +117,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -146,7 +145,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -174,7 +173,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -202,7 +201,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -230,7 +229,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -258,7 +257,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -286,7 +285,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -314,7 +313,7 @@ class LogsTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_log_list.assert_called_once_with(
             test.IsHttpRequest(), database_id)
         self.mock_flavor_get.assert_called_once_with(
@@ -346,7 +345,7 @@ class LogsTests(test.TestCase):
             auth_version="3")
         self.mock_log_tail.assert_called_once_with(
             test.IsHttpRequest(),
-            test.IsA(six.string_types),
+            test.IsA(str),
             'guest.log',
             False,
             LINES,
@@ -377,7 +376,7 @@ class LogsTests(test.TestCase):
             auth_version="3")
         self.mock_log_tail.assert_called_once_with(
             test.IsHttpRequest(),
-            test.IsA(six.string_types),
+            test.IsA(str),
             'guest.log',
             False,
             LINES,

@@ -15,8 +15,6 @@
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
-import six
-
 from horizon import exceptions
 from horizon import forms
 from horizon import messages
@@ -108,8 +106,7 @@ class CreateConfigurationForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:database_configurations:index")
             exceptions.handle(request, _('Unable to create configuration '
-                                         'group. %s')
-                              % six.text_type(e), redirect=redirect)
+                                         'group. %s') % e, redirect=redirect)
         return True
 
 
@@ -186,6 +183,7 @@ class AddParameterForm(forms.SelfHandlingForm):
             messages.success(request, _('Successfully added parameter'))
         except Exception as e:
             redirect = reverse("horizon:project:database_configurations:index")
-            exceptions.handle(request, _('Unable to add new parameter: %s')
-                              % six.text_type(e), redirect=redirect)
+            exceptions.handle(request,
+                              _('Unable to add new parameter: %s') % e,
+                              redirect=redirect)
         return True
