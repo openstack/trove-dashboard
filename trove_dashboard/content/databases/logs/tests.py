@@ -53,7 +53,7 @@ class LogsTests(test.TestCase):
         self.mock_root_show.assert_called_once_with(
             test.IsHttpRequest(), database.id)
         table_data = res.context['logs_table'].data
-        self.assertItemsEqual(self.logs.list(), table_data)
+        self.assertCountEqual(self.logs.list(), table_data)
         self.assertTemplateUsed(
             res, 'horizon/common/_detail_table.html')
 

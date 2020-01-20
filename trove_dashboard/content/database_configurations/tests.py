@@ -526,7 +526,7 @@ class DatabaseConfigurationsTests(test.TestCase):
             self.mock_configuration_instances.assert_called_once_with(
                 test.IsHttpRequest(), config.id)
             table_data = res.context['instances_table'].data
-            self.assertItemsEqual(
+            self.assertCountEqual(
                 self.configuration_instances.list(), table_data)
             self.assertTemplateUsed(
                 res, 'project/database_configurations/details.html')
