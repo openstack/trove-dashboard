@@ -14,7 +14,6 @@
 
 import logging
 import mock
-import six
 
 import django
 from django.conf import settings
@@ -338,12 +337,10 @@ class DatabaseConfigurationsTests(test.TestCase):
                                    post)
             self.assert_mock_multiple_calls_with_same_arguments(
                 self.mock_get, 2,
-                mock.call(test.IsHttpRequest(), test.IsA(six.string_types)))
+                mock.call(test.IsHttpRequest(), test.IsA(str)))
             self.assert_mock_multiple_calls_with_same_arguments(
                 self.mock_configuration_parameters_list, 2,
-                mock.call(test.IsHttpRequest(),
-                          test.IsA(six.string_types),
-                          test.IsA(six.string_types)))
+                mock.call(test.IsHttpRequest(), test.IsA(str), test.IsA(str)))
             self.assertFormError(res, "form", 'value',
                                  ['Value must be a number.'])
         finally:

@@ -15,7 +15,6 @@
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 import mock
-import six
 
 from openstack_auth import policy
 from openstack_dashboard import api as dash_api
@@ -150,7 +149,7 @@ class DatabasesBackupsTests(test.TestCase):
         res = self.client.get(DETAILS_URL)
 
         self.mock_backup_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_instance_get.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str))
         self.assertTemplateUsed(res,
@@ -162,7 +161,7 @@ class DatabasesBackupsTests(test.TestCase):
         res = self.client.get(DETAILS_URL)
 
         self.mock_backup_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_mocks({api.trove: ('backup_get', 'instance_get')})
@@ -177,7 +176,7 @@ class DatabasesBackupsTests(test.TestCase):
                       args=[incr_backup.id])
         res = self.client.get(url)
         self.assertEqual(
-            [mock.call(test.IsHttpRequest(), test.IsA(six.text_type)),
+            [mock.call(test.IsHttpRequest(), test.IsA(str)),
              mock.call(test.IsHttpRequest(), incr_backup.parent_id)],
             self.mock_backup_get.call_args_list)
         self.mock_instance_get.assert_called_once_with(
@@ -216,13 +215,12 @@ class DatabasesBackupsTests(test.TestCase):
         self.assert_mock_multiple_calls_with_same_arguments(
             self.mock_check, 4, mock.call((), test.IsHttpRequest()))
         self.mock_backup_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_configuration_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_datastore_flavors.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.string_types),
-            test.IsA(six.string_types))
+            test.IsHttpRequest(), test.IsA(str), test.IsA(str))
         self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_datastore_version_list.assert_called_once_with(
             test.IsHttpRequest(), backup.datastore['type'])

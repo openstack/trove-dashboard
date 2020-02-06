@@ -23,8 +23,6 @@ from django.urls import reverse
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
-import six
-
 from horizon import exceptions
 from horizon import forms as horizon_forms
 from horizon import tables as horizon_tables
@@ -58,7 +56,7 @@ class IndexView(horizon_tables.DataTableView):
             flavors = []
             msg = _('Unable to retrieve database size information.')
             exceptions.handle(self.request, msg)
-        return OrderedDict((six.text_type(flavor.id), flavor)
+        return OrderedDict((str(flavor.id), flavor)
                            for flavor in flavors)
 
     def _extra_data(self, cluster):

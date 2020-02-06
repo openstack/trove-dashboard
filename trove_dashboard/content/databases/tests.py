@@ -21,7 +21,6 @@ from django.urls import reverse
 import unittest
 
 import mock
-import six
 
 from horizon import exceptions
 from openstack_auth import policy
@@ -158,8 +157,8 @@ class DatabaseTests(test.TestCase):
         self.assert_mock_multiple_calls_with_same_arguments(
             self.mock_datastore_flavors, 20,
             mock.call(test.IsHttpRequest(),
-                      test.IsA(six.string_types),
-                      test.IsA(six.string_types)))
+                      test.IsA(str),
+                      test.IsA(str)))
         self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_configuration_list.assert_called_once_with(
             test.IsHttpRequest())
@@ -264,8 +263,8 @@ class DatabaseTests(test.TestCase):
         self.assert_mock_multiple_calls_with_same_arguments(
             self.mock_datastore_flavors, 20,
             mock.call(test.IsHttpRequest(),
-                      test.IsA(six.string_types),
-                      test.IsA(six.string_types)))
+                      test.IsA(str),
+                      test.IsA(str)))
         self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_instance_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
@@ -283,9 +282,9 @@ class DatabaseTests(test.TestCase):
             test.IsHttpRequest())
         self.mock_instance_create.assert_called_once_with(
             test.IsHttpRequest(),
-            test.IsA(six.text_type),
+            test.IsA(str),
             test.IsA(int),
-            test.IsA(six.text_type),
+            test.IsA(str),
             databases=None,
             datastore=datastore,
             datastore_version=datastore_version,
@@ -297,7 +296,7 @@ class DatabaseTests(test.TestCase):
             replica_count=None,
             volume_type=None,
             locality=None,
-            availability_zone=test.IsA(six.text_type))
+            availability_zone=test.IsA(str))
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_mocks({
@@ -354,8 +353,8 @@ class DatabaseTests(test.TestCase):
         self.assert_mock_multiple_calls_with_same_arguments(
             self.mock_datastore_flavors, 20,
             mock.call(test.IsHttpRequest(),
-                      test.IsA(six.string_types),
-                      test.IsA(six.string_types)))
+                      test.IsA(str),
+                      test.IsA(str)))
         self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_instance_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_datastore_list.assert_called_once_with(test.IsHttpRequest())
@@ -373,9 +372,9 @@ class DatabaseTests(test.TestCase):
             test.IsHttpRequest())
         self.mock_instance_create.assert_called_once_with(
             test.IsHttpRequest(),
-            test.IsA(six.text_type),
+            test.IsA(str),
             test.IsA(int),
-            test.IsA(six.text_type),
+            test.IsA(str),
             databases=None,
             datastore=datastore,
             datastore_version=datastore_version,
@@ -387,7 +386,7 @@ class DatabaseTests(test.TestCase):
             replica_count=None,
             volume_type=None,
             locality=None,
-            availability_zone=test.IsA(six.text_type))
+            availability_zone=test.IsA(str))
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_mocks({
@@ -409,7 +408,7 @@ class DatabaseTests(test.TestCase):
         try:
             res = self.client.get(DETAILS_URL)
             self.mock_instance_get.assert_called_once_with(
-                test.IsHttpRequest(), test.IsA(six.text_type))
+                test.IsHttpRequest(), test.IsA(str))
             self.mock_flavor_get.assert_called_once_with(
                 test.IsHttpRequest(), test.IsA(str))
             self.mock_root_show.assert_called_once_with(
@@ -521,7 +520,7 @@ class DatabaseTests(test.TestCase):
                       args=['id'])
         res = self.client.get(url)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.assert_mock_multiple_calls_with_same_arguments(
             self.mock_root_show, 2,
             mock.call(test.IsHttpRequest(), database.id))
@@ -539,7 +538,7 @@ class DatabaseTests(test.TestCase):
                       args=['id'])
         res = self.client.get(url)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_root_show.assert_called_once_with(
             test.IsHttpRequest(), u'id')
         self.assertRedirectsNoFollow(res, DETAILS_URL)
@@ -667,7 +666,7 @@ class DatabaseTests(test.TestCase):
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_flavor_get.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str))
         self.mock_users_list.assert_called_once_with(
@@ -752,11 +751,11 @@ class DatabaseTests(test.TestCase):
 
         res = self.client.post(url, post)
         self.mock_user_update_attributes.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type),
-            test.IsA(six.text_type), host=test.IsA(six.text_type),
-            new_name=test.IsA(six.text_type),
-            new_password=test.IsA(six.text_type),
-            new_host=test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str),
+            test.IsA(str), host=test.IsA(str),
+            new_name=test.IsA(str),
+            new_password=test.IsA(str),
+            new_host=test.IsA(str))
         self.assertNoFormErrors(res)
         self.assertMessageCount(success=1)
 
@@ -778,11 +777,11 @@ class DatabaseTests(test.TestCase):
 
         res = self.client.post(url, post)
         self.mock_user_update_attributes.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type),
-            test.IsA(six.text_type), host=test.IsA(six.text_type),
-            new_name=test.IsA(six.text_type),
-            new_password=test.IsA(six.text_type),
-            new_host=test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str),
+            test.IsA(str), host=test.IsA(str),
+            new_name=test.IsA(str),
+            new_password=test.IsA(str),
+            new_host=test.IsA(str))
         self.assertEqual(res.status_code, 302)
 
     def test_edit_user_no_values(self):
@@ -810,10 +809,10 @@ class DatabaseTests(test.TestCase):
                       args=['id', 'name', 'host'])
         res = self.client.get(url)
         self.mock_database_list.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_user_show_access.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type),
-            test.IsA(six.text_type), host=test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str),
+            test.IsA(str), host=test.IsA(str))
         self.assertTemplateUsed(
             res, 'project/databases/access_detail.html')
 
@@ -826,10 +825,10 @@ class DatabaseTests(test.TestCase):
                       args=['id', 'name', 'host'])
         res = self.client.get(url)
         self.mock_database_list.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_user_show_access.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type),
-            test.IsA(six.text_type), host=test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str),
+            test.IsA(str), host=test.IsA(str))
         self.assertRedirectsNoFollow(res, DETAILS_URL)
 
     @test.create_mocks({api.trove: ('user_grant_access',)})
@@ -850,7 +849,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_user_grant_access.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str), test.IsA(str),
-            [test.IsA(six.text_type)], host=test.IsA(str))
+            [test.IsA(str)], host=test.IsA(str))
         handled_url = handled['location']
         self.assertEqual(handled_url, url)
 
@@ -874,7 +873,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_user_grant_access.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str), test.IsA(str),
-            [test.IsA(six.text_type)], host=test.IsA(str))
+            [test.IsA(str)], host=test.IsA(str))
         handled_url = handled['location']
         self.assertEqual(handled_url, url)
 
@@ -896,7 +895,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_user_revoke_access.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str), test.IsA(str),
-            test.IsA(six.text_type), host=test.IsA(str))
+            test.IsA(str), host=test.IsA(str))
         handled_url = handled['location']
         self.assertEqual(handled_url, url)
 
@@ -920,7 +919,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_user_revoke_access.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str), test.IsA(str),
-            test.IsA(six.text_type), host=test.IsA(str))
+            test.IsA(str), host=test.IsA(str))
         handled_url = handled['location']
         self.assertEqual(handled_url, url)
 
@@ -946,7 +945,7 @@ class DatabaseTests(test.TestCase):
         }
         res = self.client.post(url, post)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_instance_resize_volume.assert_called_once_with(
             test.IsHttpRequest(), database_id, test.IsA(int))
         self.assertNoFormErrors(res)
@@ -970,7 +969,7 @@ class DatabaseTests(test.TestCase):
         }
         res = self.client.post(url, post)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.assertContains(
             res, "New size for volume must be greater than current size.")
 
@@ -1088,8 +1087,8 @@ class DatabaseTests(test.TestCase):
         self.assert_mock_multiple_calls_with_same_arguments(
             self.mock_datastore_flavors, 20,
             mock.call(test.IsHttpRequest(),
-                      test.IsA(six.string_types),
-                      test.IsA(six.string_types)))
+                      test.IsA(str),
+                      test.IsA(str)))
         self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
         self.mock_instance_list_all.assert_called_once_with(
             test.IsHttpRequest())
@@ -1107,12 +1106,12 @@ class DatabaseTests(test.TestCase):
         self.mock_availability_zone_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_instance_create.assert_called_once_with(
             test.IsHttpRequest(),
-            test.IsA(six.text_type),
+            test.IsA(str),
             test.IsA(int),
-            test.IsA(six.text_type),
+            test.IsA(str),
             databases=None,
             datastore=datastore,
             datastore_version=datastore_version,
@@ -1124,7 +1123,7 @@ class DatabaseTests(test.TestCase):
             replica_count=2,
             volume_type=None,
             locality=None,
-            availability_zone=test.IsA(six.text_type))
+            availability_zone=test.IsA(str))
         self.assertRedirectsNoFollow(res, INDEX_URL)
 
     @test.create_mocks({
@@ -1278,7 +1277,7 @@ class DatabaseTests(test.TestCase):
         }
         res = self.client.post(url, form)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_configuration_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_instance_attach_configuration.assert_called_once_with(
@@ -1309,7 +1308,7 @@ class DatabaseTests(test.TestCase):
         }
         res = self.client.post(url, form)
         self.mock_instance_get.assert_called_once_with(
-            test.IsHttpRequest(), test.IsA(six.text_type))
+            test.IsHttpRequest(), test.IsA(str))
         self.mock_configuration_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_instance_attach_configuration.assert_called_once_with(

@@ -12,27 +12,14 @@
 #    under the License.
 
 import binascii
-import six
 
 
 def hexlify(text):
     """Hexlify raw text, return hexlified text."""
-    if six.PY3:
-        text = text.encode('utf-8')
-
-    hexlified = binascii.hexlify(text)
-
-    if six.PY3:
-        hexlified = hexlified.decode('utf-8')
-
-    return hexlified
+    text = text.encode('utf-8')
+    return binascii.hexlify(text).decode('utf-8')
 
 
 def unhexlify(text):
     """Unhexlify raw text, return unhexlified text."""
-    unhexlified = binascii.unhexlify(text)
-
-    if six.PY3:
-        unhexlified = unhexlified.decode('utf-8')
-
-    return unhexlified
+    return binascii.unhexlify(text).decode('utf-8')

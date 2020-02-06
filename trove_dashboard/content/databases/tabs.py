@@ -15,8 +15,6 @@
 from django import template
 from django.utils.translation import ugettext_lazy as _
 
-import six
-
 from horizon import exceptions
 from horizon import tabs
 from oslo_log import log as logging
@@ -180,7 +178,7 @@ class LogsTab(tabs.TableTab):
             return logs
         except Exception as e:
             LOG.exception(
-                _('Unable to retrieve list of logs.\n%s') % six.text_type(e))
+                _('Unable to retrieve list of logs.\n%s') % e)
             logs = []
         return logs
 

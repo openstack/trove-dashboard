@@ -12,6 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import builtins
 
 from django.core import cache
 from django.utils.translation import ugettext_lazy as _
@@ -19,7 +20,6 @@ from django.utils.translation import ugettext_lazy as _
 from trove_dashboard import api
 
 from oslo_serialization import jsonutils
-from six.moves import builtins
 
 
 def get(request, configuration_group_id):

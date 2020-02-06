@@ -20,8 +20,6 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.debug import sensitive_variables  # noqa
 
-import six
-
 from horizon import exceptions
 from horizon import forms
 from horizon import messages
@@ -376,8 +374,7 @@ class LaunchForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
-                              _('Unable to launch cluster. %s') %
-                              six.text_type(e),
+                              _('Unable to launch cluster. %s') % e,
                               redirect=redirect)
 
 
@@ -479,8 +476,7 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
-                              _('Unable to grow cluster. %s') %
-                              six.text_type(e),
+                              _('Unable to grow cluster. %s') % e,
                               redirect=redirect)
         return True
 
@@ -503,6 +499,6 @@ class ResetPasswordForm(forms.SelfHandlingForm):
                                         'cluster "%s"') % cluster_id)
         except Exception as e:
             redirect = reverse("horizon:project:database_clusters:index")
-            exceptions.handle(request, _('Unable to reset password. %s') %
-                              six.text_type(e), redirect=redirect)
+            exceptions.handle(request, _('Unable to reset password. %s') % e,
+                              redirect=redirect)
         return True
