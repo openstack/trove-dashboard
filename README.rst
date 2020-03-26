@@ -20,6 +20,74 @@ Add the following to your devstack ``local.conf`` file::
 
     enable_plugin trove-dashboard https://opendev.org/openstack/trove-dashboard
 
+Here is a full example of devstack ``local.conf`` file that includes the trove plugin::
+
+    [[local|localrc]]
+    RECLONE=False
+    HOST_IP=<your-host-ip-here>
+
+    enable_plugin trove https://opendev.org/openstack/trove
+    enable_plugin trove-dashboard https://opendev.org/openstack/trove-dashboard
+
+    LIBS_FROM_GIT+=,python-troveclient
+    DATABASE_PASSWORD=password
+    ADMIN_PASSWORD=password
+    SERVICE_PASSWORD=password
+    SERVICE_TOKEN=password
+    RABBIT_PASSWORD=password
+    LOGFILE=$DEST/logs/stack.sh.log
+    VERBOSE=True
+    LOG_COLOR=False
+    LOGDAYS=1
+
+    IPV4_ADDRS_SAFE_TO_USE=10.111.0.0/26
+    FIXED_RANGE=10.111.0.0/26
+    NETWORK_GATEWAY=10.111.0.1
+    FLOATING_RANGE=172.30.5.0/24
+    PUBLIC_NETWORK_GATEWAY=172.30.5.1
+
+    # Pre-requisites
+    ENABLED_SERVICES=rabbit,mysql,key
+
+    # Horizon
+    enable_service horizon
+
+    # Nova
+    enable_service n-api
+    enable_service n-cpu
+    enable_service n-cond
+    enable_service n-sch
+    enable_service n-api-meta
+    enable_service placement-api
+    enable_service placement-client
+
+    # Glance
+    enable_service g-api
+    enable_service g-reg
+
+    # Cinder
+    enable_service cinder
+    enable_service c-api
+    enable_service c-vol
+    enable_service c-sch
+
+    # Neutron
+    enable_service q-svc
+    enable_service q-agt
+    enable_service q-dhcp
+    enable_service q-l3
+    enable_service q-meta
+
+    # enable DVR
+    Q_PLUGIN=ml2
+    Q_ML2_TENANT_NETWORK_TYPE=vxlan
+    Q_DVR_MODE=legacy
+
+    # Swift
+    ENABLED_SERVICES+=,swift
+    SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
+    SWIFT_REPLICAS=1
+
 
 To run unit tests:
 ------------------
