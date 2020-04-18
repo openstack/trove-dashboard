@@ -13,16 +13,14 @@
 #    under the License.
 
 import logging
+from unittest import mock
 
 from django import http
 from django.urls import reverse
-
-import mock
+from swiftclient import client as swift_client
 
 from trove_dashboard import api
 from trove_dashboard.test import helpers as test
-
-from swiftclient import client as swift_client
 
 LINES = 50
 

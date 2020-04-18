@@ -14,14 +14,12 @@
 #    under the License.
 
 import logging
+import unittest
+from unittest import mock
 
 import django
 from django import http
 from django.urls import reverse
-import unittest
-
-import mock
-
 from horizon import exceptions
 from openstack_auth import policy
 from openstack_dashboard import api as dash_api

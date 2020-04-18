@@ -13,7 +13,7 @@
 #    under the License.
 
 import logging
-import mock
+from unittest import mock
 
 import django
 from django.conf import settings

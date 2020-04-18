@@ -12,13 +12,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from unittest import mock
+
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-import mock
-
 from openstack_auth import policy
 from openstack_dashboard import api as dash_api
-
 from troveclient import common
 
 from trove_dashboard import api
