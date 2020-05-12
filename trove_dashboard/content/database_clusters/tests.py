@@ -15,11 +15,9 @@
 #    under the License.
 
 import logging
+from unittest import mock
 
 from django.urls import reverse
-
-import mock
-
 from openstack_dashboard import api
 from troveclient import common
 
