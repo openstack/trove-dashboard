@@ -233,7 +233,7 @@ class DatabaseTests(test.TestCase):
         self.mock_network_list.side_effect = [self.networks.list()[:1],
                                               self.networks.list()[1:]]
 
-        nics = [{"net-id": self.networks.first().id, "v4-fixed-ip": ''}]
+        nics = [{"net-id": self.networks.first().id}]
 
         datastore = 'mysql'
         datastore_version = '5.5'
@@ -323,7 +323,7 @@ class DatabaseTests(test.TestCase):
         self.mock_network_list.side_effect = [self.networks.list()[:1],
                                               self.networks.list()[1:]]
 
-        nics = [{"net-id": self.networks.first().id, "v4-fixed-ip": ''}]
+        nics = [{"net-id": self.networks.first().id}]
 
         datastore = 'mysql'
         datastore_version = '5.5'
@@ -1052,7 +1052,7 @@ class DatabaseTests(test.TestCase):
         self.mock_network_list.side_effect = [self.networks.list()[:1],
                                               self.networks.list()[1:]]
 
-        nics = [{"net-id": self.networks.first().id, "v4-fixed-ip": ''}]
+        nics = [{"net-id": self.networks.first().id}]
 
         self.mock_availability_zone_list.return_value = (
             self.availability_zones.list())
