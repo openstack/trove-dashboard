@@ -13,12 +13,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from novaclient.v2 import flavors
 from troveclient.v1 import backups
 from troveclient.v1 import clusters
 from troveclient.v1 import configurations
 from troveclient.v1 import databases
 from troveclient.v1 import datastores
-from troveclient.v1 import flavors
 from troveclient.v1 import instances
 from troveclient.v1 import users
 
@@ -527,9 +527,9 @@ def data(TEST):
         DatastoreVersion(datastores.DatastoreVersions(None),
                          VERSION_TWO)
 
-    flavor1 = flavors.Flavor(flavors.Flavors(None), FLAVOR_ONE)
-    flavor2 = flavors.Flavor(flavors.Flavors(None), FLAVOR_TWO)
-    flavor3 = flavors.Flavor(flavors.Flavors(None), FLAVOR_THREE)
+    flavor1 = flavors.Flavor(flavors.FlavorManager(None), FLAVOR_ONE)
+    flavor2 = flavors.Flavor(flavors.FlavorManager(None), FLAVOR_TWO)
+    flavor3 = flavors.Flavor(flavors.FlavorManager(None), FLAVOR_THREE)
     datastore_mongodb = datastores.Datastore(datastores.Datastores(None),
                                              DATASTORE_MONGODB)
     version_mongodb_2_6 = datastores.\
