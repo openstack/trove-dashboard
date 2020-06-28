@@ -21,6 +21,17 @@ from oslo_log import log as logging
 from horizon.utils import functions as utils
 from horizon.utils.memoized import memoized  # noqa
 
+from keystoneauth1 import loading
+from keystoneauth1 import session
+from novaclient import client as nova_client
+
+# Supported compute versions
+NOVA_VERSIONS = base.APIVersionManager("compute", preferred_version=2)
+NOVA_VERSIONS.load_supported_version(1.1,
+                                     {"client": nova_client, "version": 1.1})
+NOVA_VERSIONS.load_supported_version(2, {"client": nova_client, "version": 2})
+NOVA_VERSION = NOVA_VERSIONS.get_active_version()['version']
+
 LOG = logging.getLogger(__name__)
 
 
@@ -240,25 +251,34 @@ def backup_create(request, name, instance_id, description=None,
                                                description, parent_id)
 
 
+def nova_client_client(request):
+    insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
+    cacert = getattr(settings, 'OPENSTACK_SSL_CACERT', None)
+    identity_url = base.url_for(request, 'identity')
+    loader = loading.get_plugin_loader('token')
+    auth = loader.load_from_options(auth_url=identity_url,
+                                    token=request.user.token.id,
+                                    tenant_id=request.user.project_id)
+    sess = session.Session(auth=auth)
+    nova = nova_client.Client(NOVA_VERSION,
+                              session=sess,
+                              insecure=insecure,
+                              cacert=cacert,
+                              http_log_debug=settings.DEBUG)
+    return nova
+
+
 def flavor_list(request):
-    return troveclient(request).flavors.list()
+    return nova_client_client(request).flavors.list()
 
 
 def datastore_flavors(request, datastore_name=None,
                       datastore_version=None):
-    # if datastore info is available then get datastore specific flavors
-    if datastore_name and datastore_version:
-        try:
-            return troveclient(request).flavors.\
-                list_datastore_version_associated_flavors(datastore_name,
-                                                          datastore_version)
-        except Exception:
-            LOG.warning("Failed to retrieve datastore specific flavors")
     return flavor_list(request)
 
 
 def flavor_get(request, flavor_id):
-    return troveclient(request).flavors.get(flavor_id)
+    return nova_client_client(request).flavors.get(flavor_id)
 
 
 def root_enable(request, instance_ids):
