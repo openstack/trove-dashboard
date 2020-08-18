@@ -51,7 +51,7 @@ def dict_has_changes(original, other):
         return True
 
     diffs = (set(original.keys()) - set(other.keys()))
-    if len(diffs).__nonzero__():
+    if len(diffs) > 0:
         return True
 
     for key in original:
