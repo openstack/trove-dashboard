@@ -5,8 +5,6 @@
     <form id="tail_length" action="{% url 'horizon:project:databases:logs:console' instance_id filename %}" class="form-inline pull-right">
       <label for="tail_length_select">{% trans "Log Length" %}</label>
       <input class="span1" type="text" name="length" value="{{ log_length }}" />
-      <label for="publish_check">{% trans "Publish" %}</label>
-      <input type="checkbox" name="publish" value="publish" {{ publish }}>
       <button class="btn btn-default btn-sm btn-primary always-enabled" type="submit">{% trans "Go" %}</button>
       <a href="{% url 'horizon:project:databases:detail' instance_id %}" class="btn btn-default btn-sm pull-right secondary">{% trans "Return to Log List" %}</a>
       <a href="{% url 'horizon:project:databases:logs:download_log' instance_id filename %}" class="btn btn-default btn-sm pull-right">{% trans "Download" %}</a>
