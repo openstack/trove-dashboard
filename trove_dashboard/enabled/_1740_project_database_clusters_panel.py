@@ -22,6 +22,8 @@ PANEL_DASHBOARD = 'project'
 # The slug of the panel group the PANEL is associated with.
 PANEL_GROUP = 'database'
 
+DISABLED = True
+
 # Python panel class of the PANEL to be added.
 ADD_PANEL = ('trove_dashboard.content.database_clusters.panel.Clusters')
 
