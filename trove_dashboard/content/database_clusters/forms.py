@@ -371,10 +371,10 @@ class LaunchForm(forms.SelfHandlingForm):
             messages.success(request,
                              _('Launched cluster "%s"') % data['name'])
             return True
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
-                              _('Unable to launch cluster. %s') % e,
+                              _('Unable to launch cluster.'),
                               redirect=redirect)
 
 
@@ -473,10 +473,10 @@ class ClusterAddInstanceForm(forms.SelfHandlingForm):
                                  data.get('type', None),
                                  data.get('related_to', None),
                                  data.get('network', None))
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:database_clusters:index")
             exceptions.handle(request,
-                              _('Unable to grow cluster. %s') % e,
+                              _('Unable to grow cluster.'),
                               redirect=redirect)
         return True
 
@@ -497,8 +497,8 @@ class ResetPasswordForm(forms.SelfHandlingForm):
                                                 password)
             messages.success(request, _('Root password updated for '
                                         'cluster "%s"') % cluster_id)
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:database_clusters:index")
-            exceptions.handle(request, _('Unable to reset password. %s') % e,
+            exceptions.handle(request, _('Unable to reset password.'),
                               redirect=redirect)
         return True

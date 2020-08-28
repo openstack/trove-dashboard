@@ -103,10 +103,10 @@ class CreateConfigurationForm(forms.SelfHandlingForm):
                                            datastore_version=datastore_version)
 
             messages.success(request, _('Created configuration group'))
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:database_configurations:index")
             exceptions.handle(request, _('Unable to create configuration '
-                                         'group. %s') % e, redirect=redirect)
+                                         'group.'), redirect=redirect)
         return True
 
 
@@ -181,9 +181,9 @@ class AddParameterForm(forms.SelfHandlingForm):
                                    data["name"], self.parameters).type,
                                data["value"])))
             messages.success(request, _('Successfully added parameter'))
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:database_configurations:index")
             exceptions.handle(request,
-                              _('Unable to add new parameter: %s') % e,
+                              _('Unable to add new parameter.'),
                               redirect=redirect)
         return True

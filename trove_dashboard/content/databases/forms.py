@@ -43,10 +43,10 @@ class CreateDatabaseForm(forms.SelfHandlingForm):
 
             messages.success(request,
                              _('Created database "%s".') % data['name'])
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:detail",
                                args=(instance,))
-            exceptions.handle(request, _('Unable to create database. %s') % e,
+            exceptions.handle(request, _('Unable to create database.'),
                               redirect=redirect)
         return True
 
@@ -85,9 +85,9 @@ class ResizeVolumeForm(forms.SelfHandlingForm):
                                              data['new_size'])
 
             messages.success(request, _('Resizing volume "%s"') % instance)
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:index")
-            exceptions.handle(request, _('Unable to resize volume. %s') % e,
+            exceptions.handle(request, _('Unable to resize volume.'),
                               redirect=redirect)
         return True
 
@@ -123,9 +123,9 @@ class ResizeInstanceForm(forms.SelfHandlingForm):
             api.trove.instance_resize(request, instance, flavor)
 
             messages.success(request, _('Resizing instance "%s"') % instance)
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:index")
-            exceptions.handle(request, _('Unable to resize instance. %s') % e,
+            exceptions.handle(request, _('Unable to resize instance.'),
                               redirect=redirect)
         return True
 
@@ -141,12 +141,12 @@ class PromoteToReplicaSourceForm(forms.SelfHandlingForm):
             messages.success(
                 request,
                 _('Promoted replica "%s" as the new replica source.') % name)
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:index")
             exceptions.handle(
                 request,
-                _('Unable to promote replica as the new replica source.  "%s"')
-                % e, redirect=redirect)
+                _('Unable to promote replica as the new replica source.'),
+                redirect=redirect)
         return True
 
 
@@ -178,10 +178,10 @@ class CreateUserForm(forms.SelfHandlingForm):
 
             messages.success(request,
                              _('Created user "%s".') % data['name'])
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:detail",
                                args=(instance,))
-            exceptions.handle(request, _('Unable to create user. %s') % e,
+            exceptions.handle(request, _('Unable to create user.'),
                               redirect=redirect)
         return True
 
@@ -227,10 +227,10 @@ class EditUserForm(forms.SelfHandlingForm):
 
             messages.success(request,
                              _('Updated user "%s".') % data['user_name'])
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:detail",
                                args=(instance,))
-            exceptions.handle(request, _('Unable to update user. %s') % e,
+            exceptions.handle(request, _('Unable to update user.'),
                               redirect=redirect)
         return True
 
@@ -275,9 +275,9 @@ class AttachConfigurationForm(forms.SelfHandlingForm):
 
             messages.success(request, _('Attaching Configuration group "%s"')
                              % instance_id)
-        except Exception as e:
+        except Exception:
             redirect = reverse("horizon:project:databases:index")
             exceptions.handle(request, _('Unable to attach configuration '
-                                         'group. %s') % e,
+                                         'group.'),
                               redirect=redirect)
         return True
