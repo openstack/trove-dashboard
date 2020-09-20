@@ -246,9 +246,11 @@ def backup_delete(request, backup_id):
 
 
 def backup_create(request, name, instance_id, description=None,
-                  parent_id=None):
+                  parent_id=None, swift_container=None):
     return troveclient(request).backups.create(name, instance_id,
-                                               description, parent_id)
+                                               description=description,
+                                               parent_id=parent_id,
+                                               swift_container=swift_container)
 
 
 def nova_client_client(request):

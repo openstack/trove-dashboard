@@ -86,6 +86,7 @@ class DatabasesBackupsTests(test.TestCase):
             backupName,
             database.id,
             backupDesc,
+            "",
             "")
         self.assertNoFormErrors(res)
         self.assertRedirectsNoFollow(res, INDEX_URL)
@@ -137,7 +138,8 @@ class DatabasesBackupsTests(test.TestCase):
             backupName,
             database.id,
             backupDesc,
-            backupParent.id)
+            backupParent.id,
+            "")
         self.assertNoFormErrors(res)
         self.assertRedirectsNoFollow(res, INDEX_URL)
 

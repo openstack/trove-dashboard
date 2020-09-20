@@ -37,6 +37,13 @@ class BackupDetailsAction(workflows.Action):
     parent = forms.ChoiceField(label=_("Parent Backup"),
                                required=False,
                                help_text=_("Optional parent backup"))
+    swift_container = forms.CharField(max_length=256,
+                                      widget=forms.TextInput(),
+                                      label=_("Swift Container Name"),
+                                      required=False,
+                                      help_text=_(
+                                          "User defined swift container name.")
+                                      )
 
     class Meta(object):
         name = _("Details")
@@ -73,7 +80,8 @@ class BackupDetailsAction(workflows.Action):
 
 class SetBackupDetails(workflows.Step):
     action_class = BackupDetailsAction
-    contributes = ["name", "description", "instance", "parent"]
+    contributes = ["name", "description", "instance", "parent",
+                   "swift_container"]
 
 
 class CreateBackup(workflows.Workflow):
@@ -100,7 +108,8 @@ class CreateBackup(workflows.Workflow):
                                     context['name'],
                                     context['instance'],
                                     context['description'],
-                                    context['parent'])
+                                    context['parent'],
+                                    context['swift_container'])
             return True
         except Exception:
             LOG.exception("Exception while creating backup")
