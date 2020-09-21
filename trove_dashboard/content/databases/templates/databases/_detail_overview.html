@@ -36,7 +36,9 @@
       <dd>{{ instance.fault.message }}</dd>
       {% if instance.fault.details %}
         <dt>{% trans "Details" %}</dt>
-        <dd>{{ instance.fault.details }}</dd>
+        <dd>
+          <pre>{{ instance.fault.details }}</pre>
+        </dd>
       {% endif %}
       <dt>{% trans "Created" %}</dt>
       <dd>{{ instance.fault.created|parse_isotime }}</dd>
