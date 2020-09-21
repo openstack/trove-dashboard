@@ -33,7 +33,7 @@ from trove_dashboard.content.database_backups \
     import tables as backup_tables
 
 
-ACTIVE_STATES = ("ACTIVE",)
+ACTIVE_STATES = ("ACTIVE", "HEALTHY",)
 
 
 class DeleteInstance(tables.DeleteAction):
