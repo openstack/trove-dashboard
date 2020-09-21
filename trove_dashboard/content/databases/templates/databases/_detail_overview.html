@@ -60,6 +60,8 @@
     <dd>{{ instance.created|parse_isotime }}</dd>
     <dt>{% trans "Updated" %}</dt>
     <dd>{{ instance.updated|parse_isotime }}</dd>
+    <dt>{% trans "Service Status Updated" %}</dt>
+    <dd>{{ instance.service_status_updated|parse_isotime }}</dd>
   </dl>
 
 {% block connection_info %}
