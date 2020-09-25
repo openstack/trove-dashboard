@@ -64,6 +64,33 @@
     <dd>{{ instance.service_status_updated|parse_isotime }}</dd>
   </dl>
 
+  {% if instance.addresses|length > 0 %}
+    <h4>{% trans "Networking Information" %}</h4>
+    <hr class="header_rule">
+    <dl class="dl-horizontal">
+      <dt>{% trans "Is Public" %}</dt>
+      <dd>{{ instance.access.is_public|yesno|capfirst }}</dd>
+      <dt>{% trans "Allowed CIDRs" %}</dt>
+        {% if instance.access.allowed_cidrs|length > 0 %}
+          <dd>
+           {% for cidr in instance.access.allowed_cidrs %}
+              {% if not forloop.last %}
+                {{ cidr }},&nbsp;
+              {% else %}
+                {{ cidr }}
+              {% endif %}
+            {% endfor %}
+          </dd>
+        {% else %}
+        <dd>0.0.0.0/0</dd>
+        {% endif %}
+        {% for addr in instance.addresses %}
+          <dt>{{ addr.type }}</dt>
+          <dd>{{ addr.address }}</dd>
+        {% endfor %}
+    </dl>
+  {% endif %}
+
 {% block connection_info %}
 {% endblock %}
 
