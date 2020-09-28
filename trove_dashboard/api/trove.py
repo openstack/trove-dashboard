@@ -422,3 +422,7 @@ def configuration_update(request, group_id, values):
 
 def configuration_default(request, instance_id):
     return troveclient(request).instances.configuration(instance_id)
+
+
+def stop_database(request, instance_id):
+    return troveclient(request).mgmt_instances.stop(instance_id)

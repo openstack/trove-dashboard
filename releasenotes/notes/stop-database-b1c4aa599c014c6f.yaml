@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Admin users can stop database service inside an instance now. To get this
+    feature work as expected operator should set the same values both in Horizon
+    ``OPENSTACK_KEYSTONE_ADMIN_ROLES`` and Trove ``admin_roles`` config files.

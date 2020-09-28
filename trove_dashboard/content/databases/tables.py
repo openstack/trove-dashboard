@@ -601,6 +601,34 @@ def get_databases(user):
     return _("-")
 
 
+class StopDatabase(tables.BatchAction):
+    name = "stop_database"
+    help_text = _("Stop database service inside an instance.")
+    action_type = "danger"
+
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Stop Database Service",
+            u"Stop Database Services",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Database Service stopped",
+            u"Database Services stopped",
+            count
+        )
+
+    def action(self, request, obj_id):
+        api.trove.stop_database(request, obj_id)
+
+    def allowed(self, request, instance):
+        return request.user.is_superuser and instance.status in ACTIVE_STATES
+
+
 class InstancesTable(tables.DataTable):
     STATUS_CHOICES = (
         ("ACTIVE", True),
@@ -676,6 +704,7 @@ class InstancesTable(tables.DataTable):
                        EjectReplicaSource,
                        DetachReplica,
                        RestartInstance,
+                       StopDatabase,
                        DeleteInstance)
 
 
