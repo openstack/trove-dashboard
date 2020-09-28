@@ -192,6 +192,10 @@ def instance_restart(request, instance_id):
     return troveclient(request).instances.restart(instance_id)
 
 
+def instance_rename(request, instance_id, name):
+    return troveclient(request).instances.update(instance_id, name=name)
+
+
 def instance_detach_replica(request, instance_id):
     return troveclient(request).instances.edit(instance_id,
                                                detach_replica_source=True)

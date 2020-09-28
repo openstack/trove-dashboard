@@ -95,6 +95,41 @@ class LaunchInstanceView(horizon_workflows.WorkflowView):
         return initial
 
 
+class RenameInstanceView(horizon_forms.ModalFormView):
+    form_class = forms.RenameInstanceForm
+    form_id = "attach_config_form"
+    modal_header = _("Rename Instance")
+    modal_id = "edit_instance_modal"
+    template_name = "project/databases/rename_instance.html"
+    submit_label = "Update"
+    submit_url = 'horizon:project:databases:edit_instance'
+    success_url = reverse_lazy('horizon:project:databases:index')
+
+    @memoized.memoized_method
+    def get_object(self, *args, **kwargs):
+        instance_id = self.kwargs['instance_id']
+        try:
+            return api.trove.instance_get(self.request, instance_id)
+        except Exception:
+            msg = _('Unable to retrieve instance details.')
+            redirect = reverse('horizon:project:databases:index')
+            exceptions.handle(self.request, msg, redirect=redirect)
+
+    def get_context_data(self, **kwargs):
+        context = (super(RenameInstanceView, self)
+                   .get_context_data(**kwargs))
+        context['instance_id'] = self.kwargs['instance_id']
+        args = (self.kwargs['instance_id'],)
+        context['submit_url'] = reverse(self.submit_url, args=args)
+        return context
+
+    def get_initial(self):
+        instance = self.get_object()
+        return {'instance_id': self.kwargs['instance_id'],
+                'instance_name': instance.name,
+                'datastore_version': instance.datastore.get('version', '')}
+
+
 class DBAccess(object):
     def __init__(self, name, access):
         self.name = name
