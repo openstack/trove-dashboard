@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-15 11:49+0000\n"
+"POT-Creation-Date: 2020-10-16 08:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Last-Translator: Maxim Bozhenko <mbozhenko@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
@@ -834,9 +834,6 @@ msgstr "Реплика \"%s\" теперь источник реплик."
 msgid "Property"
 msgstr "Свойство"
 
-msgid "Publish"
-msgstr "Опубликовать"
-
 msgid "Publish Log"
 msgid_plural "Publish Logs"
 msgstr[0] "Опубликовать лог"
@@ -1185,28 +1182,8 @@ msgstr "USERNAME"
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Невозможно выполнить %(action)s: %(objs)s"
 
-#, python-format
-msgid "Unable to add new parameter: %s"
-msgstr "Невозможно добавить новый параметр: %s"
-
-#, python-format
-msgid "Unable to attach configuration group. %s"
-msgstr "Невозможно подключить группу конфигурации. %s"
-
-#, python-format
-msgid "Unable to create configuration group. %s"
-msgstr "Невозможно создать группу конфигурации. %s"
-
-#, python-format
-msgid "Unable to create database. %s"
-msgstr "Невозможно создать базу данных. %s"
-
 msgid "Unable to create list of parameters."
 msgstr "Невозможно создать список параметров."
-
-#, python-format
-msgid "Unable to create user. %s"
-msgstr "Невозможно создать пользователя. %s"
 
 msgid "Unable to determine if instance root is enabled."
 msgstr "Не удалось определить разрешен ли root для инстанса."
@@ -1239,20 +1216,12 @@ msgid "Unable to get user data."
 msgstr "Не удалось получить данные пользователя"
 
 #, python-format
-msgid "Unable to grow cluster. %s"
-msgstr "Не удалось увеличить кластер. %s"
-
-#, python-format
 msgid "Unable to grow cluster: %s"
 msgstr "Не удалось увеличить кластер: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Не удалось запустить %(count)s названных \"%(name)s\"."
-
-#, python-format
-msgid "Unable to launch cluster. %s"
-msgstr "Не удалось запустить кластер. %s"
 
 msgid "Unable to list database backups for parent."
 msgstr "Не удалось перечислить резервные копии базы для родителя."
@@ -1287,24 +1256,8 @@ msgid "Unable to obtain list of parameters."
 msgstr "Невозможно получить список параметров."
 
 #, python-format
-msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "Невозможно сделать реплику новым источником реплик. \"%s\""
-
-#, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Невозможно удалить инстансы их кластера: %s"
-
-#, python-format
-msgid "Unable to reset password. %s"
-msgstr "Не удаётся сбросить пароль. %s"
-
-#, python-format
-msgid "Unable to resize instance. %s"
-msgstr "Не удалось изменить размер инстанса. %s"
-
-#, python-format
-msgid "Unable to resize volume. %s"
-msgstr "Не удалось изменить размер диска. %s"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Не удалось получить доступные базы данных."
@@ -1363,10 +1316,6 @@ msgstr ""
 
 msgid "Unable to retrieve networks."
 msgstr "Не удалось получить сети."
-
-#, python-format
-msgid "Unable to update user. %s"
-msgstr "Невозможно обновить пользователя. %s"
 
 msgid "Unknown"
 msgstr "Неизвестно"

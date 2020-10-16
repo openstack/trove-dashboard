@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-28 09:39+0000\n"
+"POT-Creation-Date: 2020-10-16 08:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -820,9 +820,6 @@ msgstr "设置副本\"%s\" 为新副本源。"
 msgid "Property"
 msgstr "属性"
 
-msgid "Publish"
-msgstr "发布"
-
 msgid "Publish Log"
 msgid_plural "Publish Logs"
 msgstr[0] "发行日志"
@@ -1139,28 +1136,8 @@ msgstr "用户名"
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "无法执行 %(action)s: %(objs)s"
 
-#, python-format
-msgid "Unable to add new parameter: %s"
-msgstr "无法增加新参数:%s"
-
-#, python-format
-msgid "Unable to attach configuration group. %s"
-msgstr "无法连接配置组%s"
-
-#, python-format
-msgid "Unable to create configuration group. %s"
-msgstr "无法创建配置组%s"
-
-#, python-format
-msgid "Unable to create database. %s"
-msgstr "无法创建的数据库. %s"
-
 msgid "Unable to create list of parameters."
 msgstr "无法创建参数列表"
-
-#, python-format
-msgid "Unable to create user. %s"
-msgstr "无法创建用户。%s"
 
 msgid "Unable to determine if instance root is enabled."
 msgstr "无法确定实例root账号是否启用。"
@@ -1193,20 +1170,12 @@ msgid "Unable to get user data."
 msgstr "无法获取用户数据。"
 
 #, python-format
-msgid "Unable to grow cluster. %s"
-msgstr "无法扩充集群 %s"
-
-#, python-format
 msgid "Unable to grow cluster: %s"
 msgstr "无法扩大集群：%s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "无法启动%(count)s 名字 \"%(name)s\"."
-
-#, python-format
-msgid "Unable to launch cluster. %s"
-msgstr "无法启动集群\"%s\""
 
 msgid "Unable to list database backups for parent."
 msgstr "无法获取用来做母版的数据库备份列表"
@@ -1240,24 +1209,8 @@ msgid "Unable to obtain list of parameters."
 msgstr "无法获得参数列表"
 
 #, python-format
-msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "无法设置副本为新副本源。\"%s\""
-
-#, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "无法从集群中移除实例 %s"
-
-#, python-format
-msgid "Unable to reset password. %s"
-msgstr "无法重置密码。%s"
-
-#, python-format
-msgid "Unable to resize instance. %s"
-msgstr "无法调整实例 %s 的大小"
-
-#, python-format
-msgid "Unable to resize volume. %s"
-msgstr "无法调整卷  %s 的大小"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "不能获取数据库访问权限"
@@ -1316,10 +1269,6 @@ msgstr ""
 
 msgid "Unable to retrieve networks."
 msgstr "无法获取网络。"
-
-#, python-format
-msgid "Unable to update user. %s"
-msgstr "无法更新用户%s"
 
 msgid "Unknown"
 msgstr "未知"

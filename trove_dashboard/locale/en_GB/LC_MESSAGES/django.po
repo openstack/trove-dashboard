@@ -1,14 +1,15 @@
 # Andi Chandler <andi@gowling.com>, 2016. #zanata
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
+# Andi Chandler <andi@gowling.com>, 2020. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-28 09:39+0000\n"
+"POT-Creation-Date: 2020-10-16 08:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-18 08:17+0000\n"
+"PO-Revision-Date: 2020-10-03 10:34+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -90,6 +91,9 @@ msgid ""
 msgstr ""
 "Allow the user to connect from this host only. If not provided this user "
 "will be allowed to connect from anywhere."
+
+msgid "Allowed CIDRs"
+msgstr "Allowed CIDRs"
 
 msgid "Allowed Host"
 msgstr "Allowed Host"
@@ -322,6 +326,11 @@ msgstr "Database Name"
 msgid "Database Port"
 msgstr "Database Port"
 
+msgid "Database Service stopped"
+msgid_plural "Database Services stopped"
+msgstr[0] "Database Service stopped"
+msgstr[1] "Database Services stopped"
+
 msgid "Databases"
 msgstr "Databases"
 
@@ -549,6 +558,10 @@ msgstr "Grow Cluster: {{cluster_name}}"
 msgid "Has Root Ever Been Enabled"
 msgstr "Has Root Ever Been Enabled"
 
+msgctxt "Current status of a Database Instance"
+msgid "Healthy"
+msgstr "Healthy"
+
 msgid "Host"
 msgstr "Host"
 
@@ -593,6 +606,9 @@ msgstr "Instance Type"
 
 msgid "Instances"
 msgstr "Instances"
+
+msgid "Is Public"
+msgstr "Is Public"
 
 msgid "Is a Replica Of"
 msgstr "Is a Replica Of"
@@ -673,6 +689,9 @@ msgstr "Network"
 
 msgid "Network attached to instance."
 msgstr "Network attached to instance."
+
+msgid "Networking Information"
+msgstr "Networking Information"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -859,9 +878,6 @@ msgstr "Promoted replica \"%s\" as the new replica source."
 
 msgid "Property"
 msgstr "Property"
-
-msgid "Publish"
-msgstr "Publish"
 
 msgid "Publish Log"
 msgid_plural "Publish Logs"
@@ -1060,6 +1076,9 @@ msgstr "Select the instance(s) that will be removed from the cluster."
 msgid "Selected networks"
 msgstr "Selected networks"
 
+msgid "Service Status Updated"
+msgstr "Service Status Updated"
+
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
 msgstr[0] "Shrink Cluster"
@@ -1149,11 +1168,22 @@ msgstr "Status"
 msgid "Status if root was ever enabled for an instance."
 msgstr "Status if root was ever enabled for an instance."
 
+msgid "Stop Database Service"
+msgid_plural "Stop Database Services"
+msgstr[0] "Stop Database Service"
+msgstr[1] "Stop Database Services"
+
+msgid "Stop database service inside an instance."
+msgstr "Stop database service inside an instance."
+
 msgid "Successfully added parameter"
 msgstr "Successfully added parameter"
 
 msgid "Successfully disabled root access."
 msgstr "Successfully disabled root access."
+
+msgid "Swift Container Name"
+msgstr "Swift Container Name"
 
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
@@ -1199,28 +1229,23 @@ msgstr "USERNAME"
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Unable to %(action)s: %(objs)s"
 
-#, python-format
-msgid "Unable to add new parameter: %s"
-msgstr "Unable to add new parameter: %s"
+msgid "Unable to add new parameter."
+msgstr "Unable to add new parameter."
 
-#, python-format
-msgid "Unable to attach configuration group. %s"
-msgstr "Unable to attach configuration group. %s"
+msgid "Unable to attach configuration group."
+msgstr "Unable to attach configuration group."
 
-#, python-format
-msgid "Unable to create configuration group. %s"
-msgstr "Unable to create configuration group. %s"
+msgid "Unable to create configuration group."
+msgstr "Unable to create configuration group."
 
-#, python-format
-msgid "Unable to create database. %s"
-msgstr "Unable to create database. %s"
+msgid "Unable to create database."
+msgstr "Unable to create database."
 
 msgid "Unable to create list of parameters."
 msgstr "Unable to create list of parameters."
 
-#, python-format
-msgid "Unable to create user. %s"
-msgstr "Unable to create user. %s"
+msgid "Unable to create user."
+msgstr "Unable to create user."
 
 msgid "Unable to determine if instance root is enabled."
 msgstr "Unable to determine if instance root is enabled."
@@ -1252,9 +1277,8 @@ msgstr "Unable to get user access data."
 msgid "Unable to get user data."
 msgstr "Unable to get user data."
 
-#, python-format
-msgid "Unable to grow cluster. %s"
-msgstr "Unable to grow cluster. %s"
+msgid "Unable to grow cluster."
+msgstr "Unable to grow cluster."
 
 #, python-format
 msgid "Unable to grow cluster: %s"
@@ -1264,9 +1288,8 @@ msgstr "Unable to grow cluster: %s"
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Unable to launch %(count)s named \"%(name)s\"."
 
-#, python-format
-msgid "Unable to launch cluster. %s"
-msgstr "Unable to launch cluster. %s"
+msgid "Unable to launch cluster."
+msgstr "Unable to launch cluster."
 
 msgid "Unable to list database backups for parent."
 msgstr "Unable to list database backups for parent."
@@ -1299,25 +1322,21 @@ msgstr "Unable to obtain information on root user"
 msgid "Unable to obtain list of parameters."
 msgstr "Unable to obtain list of parameters."
 
-#, python-format
-msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "Unable to promote replica as the new replica source.  \"%s\""
+msgid "Unable to promote replica as the new replica source."
+msgstr "Unable to promote replica as the new replica source."
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Unable to remove instances from cluster: %s"
 
-#, python-format
-msgid "Unable to reset password. %s"
-msgstr "Unable to reset password. %s"
+msgid "Unable to reset password."
+msgstr "Unable to reset password."
 
-#, python-format
-msgid "Unable to resize instance. %s"
-msgstr "Unable to resize instance. %s"
+msgid "Unable to resize instance."
+msgstr "Unable to resize instance."
 
-#, python-format
-msgid "Unable to resize volume. %s"
-msgstr "Unable to resize volume. %s"
+msgid "Unable to resize volume."
+msgstr "Unable to resize volume."
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Unable to retrieve accessible databases."
@@ -1377,9 +1396,8 @@ msgstr ""
 msgid "Unable to retrieve networks."
 msgstr "Unable to retrieve networks."
 
-#, python-format
-msgid "Unable to update user. %s"
-msgstr "Unable to update user. %s"
+msgid "Unable to update user."
+msgstr "Unable to update user."
 
 msgid "Unknown"
 msgstr "Unknown"
@@ -1393,6 +1411,9 @@ msgstr "Updated user \"%s\"."
 
 msgid "User Name"
 msgstr "User Name"
+
+msgid "User defined swift container name."
+msgstr "User defined Swift Container name."
 
 msgid "Username (required)"
 msgstr "Username (required)"
