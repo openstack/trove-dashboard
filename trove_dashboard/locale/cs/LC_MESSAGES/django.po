@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-15 11:49+0000\n"
+"POT-Creation-Date: 2020-10-16 08:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: Stanislav Ulrych <stanislav.ulrych@ultimum.io>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #, python-format
@@ -712,9 +712,6 @@ msgstr "Povýšení zdroje repliky"
 msgid "Promoted replica \"%s\" as the new replica source."
 msgstr "Povýšení repliky \"%s\" na nový zdroj repliky."
 
-msgid "Publish"
-msgstr "Zveřejnit"
-
 msgid "Publish Log"
 msgid_plural "Publish Logs"
 msgstr[0] "Zveřejnit log"
@@ -1027,14 +1024,6 @@ msgstr "UŽIVATELSKÉ JMÉNO"
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Nelze %(action)s: %(objs)s"
 
-#, python-format
-msgid "Unable to create database. %s"
-msgstr "Nelze vytvořit databázi. %s"
-
-#, python-format
-msgid "Unable to create user. %s"
-msgstr "Nelze vytvořit uživatele. %s"
-
 msgid "Unable to determine if instance root is enabled."
 msgstr "Nelze zjistit, zda je root přístup do instance povolen."
 
@@ -1060,20 +1049,12 @@ msgid "Unable to get user data."
 msgstr "Nelze získat data uživatele."
 
 #, python-format
-msgid "Unable to grow cluster. %s"
-msgstr "Nelze zvětšit cluster. %s"
-
-#, python-format
 msgid "Unable to grow cluster: %s"
 msgstr "Nelze zvětšit cluster: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Nelze spustit %(count)s pojmenovaných \"%(name)s\"."
-
-#, python-format
-msgid "Unable to launch cluster. %s"
-msgstr "Nelze spustit cluster. %s"
 
 msgid "Unable to list database backups for parent."
 msgstr "Nelze vypsat zálohy databáze pro nadřazenou zálohu."
@@ -1104,24 +1085,8 @@ msgid "Unable to obtain information on root user"
 msgstr "Nelze získat informace o root uživateli"
 
 #, python-format
-msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "Repliku nelze povýšit na novou zdroj repliky. \"%s\""
-
-#, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Nelze odebrat instance z clusteru: %s."
-
-#, python-format
-msgid "Unable to reset password. %s"
-msgstr "Nelze resetovat heslo. %s"
-
-#, python-format
-msgid "Unable to resize instance. %s"
-msgstr "Nelze změnit velikost instance. %s"
-
-#, python-format
-msgid "Unable to resize volume. %s"
-msgstr "Nelze změnit velikost svazku. %s"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Nelze získat dostupné databáze."
@@ -1173,10 +1138,6 @@ msgstr ""
 
 msgid "Unable to retrieve networks."
 msgstr "Nelze získat sítě."
-
-#, python-format
-msgid "Unable to update user. %s"
-msgstr "Nelze aktualizovat uživatele. %s"
 
 msgid "Unknown"
 msgstr "Neznámý"

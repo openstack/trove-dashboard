@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-28 09:39+0000\n"
+"POT-Creation-Date: 2020-10-16 08:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -870,9 +870,6 @@ msgstr "Promovido réplica \"%s\" como nova origem de réplica."
 msgid "Property"
 msgstr "Propriedade"
 
-msgid "Publish"
-msgstr "Publicar"
-
 msgid "Publish Log"
 msgid_plural "Publish Logs"
 msgstr[0] "Publicar Log"
@@ -1214,28 +1211,8 @@ msgstr "USUÁRIO"
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Não foi possível %(action)s: %(objs)s"
 
-#, python-format
-msgid "Unable to add new parameter: %s"
-msgstr "Não é possível adicionar novo parâmetro: %s"
-
-#, python-format
-msgid "Unable to attach configuration group. %s"
-msgstr "Não é possível anexar grupo de configuração. %s"
-
-#, python-format
-msgid "Unable to create configuration group. %s"
-msgstr "Não é possível criar grupo de configuração. %s"
-
-#, python-format
-msgid "Unable to create database. %s"
-msgstr "Não foi possível criar base de dados: %s"
-
 msgid "Unable to create list of parameters."
 msgstr "Não é possível criar lista de parâmetros."
-
-#, python-format
-msgid "Unable to create user. %s"
-msgstr "Não é possível criar usuário. %s"
 
 msgid "Unable to determine if instance root is enabled."
 msgstr "Não foi possível determinar se o root está habilitado na instância"
@@ -1268,20 +1245,12 @@ msgid "Unable to get user data."
 msgstr "Não foi possível obter os dados do usuário."
 
 #, python-format
-msgid "Unable to grow cluster. %s"
-msgstr "Não é possível aumentar cluster. %s"
-
-#, python-format
 msgid "Unable to grow cluster: %s"
 msgstr "Não é possível aumentar cluster: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Não foi possível disparar %(count)s chamadas \"%(name)s\"."
-
-#, python-format
-msgid "Unable to launch cluster. %s"
-msgstr "Não é possível iniciar cluster. %s"
 
 msgid "Unable to list database backups for parent."
 msgstr "Não foi possível listar os backups de banco de dados para o pai."
@@ -1315,24 +1284,8 @@ msgid "Unable to obtain list of parameters."
 msgstr "Não é possível obter lista de parâmetros."
 
 #, python-format
-msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "Não é possível promover a réplica como nova origem de réplica. \"%s\""
-
-#, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Não é possível remover instâncias do cluster: %s"
-
-#, python-format
-msgid "Unable to reset password. %s"
-msgstr "Não é possível redefinir a senha. %s"
-
-#, python-format
-msgid "Unable to resize instance. %s"
-msgstr "Não é possível redimensionar instância. %s"
-
-#, python-format
-msgid "Unable to resize volume. %s"
-msgstr "Não é possível redimensionar volume. %s"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Não foi possível obter as bases de dados acessíveis."
@@ -1391,10 +1344,6 @@ msgstr ""
 
 msgid "Unable to retrieve networks."
 msgstr "Não é possível recuperar redes."
-
-#, python-format
-msgid "Unable to update user. %s"
-msgstr "Não é possível atualizar usuário. %s"
 
 msgid "Unknown"
 msgstr "Desconhecido"

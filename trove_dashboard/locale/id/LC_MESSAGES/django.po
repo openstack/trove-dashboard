@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-15 11:49+0000\n"
+"POT-Creation-Date: 2020-10-16 08:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #, python-format
@@ -838,9 +838,6 @@ msgstr "Replika dipromosikan \"%s\" sebagai sumber replika baru."
 msgid "Property"
 msgstr "Property (properti)"
 
-msgid "Publish"
-msgstr "Publish (penerbitan)"
-
 msgid "Publish Log"
 msgid_plural "Publish Logs"
 msgstr[0] "Publish Log"
@@ -1166,28 +1163,8 @@ msgstr "USERNAME (username)"
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Tidak bisa %(action)s: %(objs)s"
 
-#, python-format
-msgid "Unable to add new parameter: %s"
-msgstr "Tidak dapat menambahkan parameter baru: %s"
-
-#, python-format
-msgid "Unable to attach configuration group. %s"
-msgstr "Tidak dapat melekatkan grup konfigurasi. %s"
-
-#, python-format
-msgid "Unable to create configuration group. %s"
-msgstr "Tidak dapat membuat grup konfigurasi %s"
-
-#, python-format
-msgid "Unable to create database. %s"
-msgstr "Tidak dapat membuat database. %s"
-
 msgid "Unable to create list of parameters."
 msgstr "Tidak dapat membuat daftar parameter."
-
-#, python-format
-msgid "Unable to create user. %s"
-msgstr "Tidak dapat membuat pengguna. %s"
 
 msgid "Unable to determine if instance root is enabled."
 msgstr "Tidak dapat menentukan apakah instance akar diaktifkan."
@@ -1220,20 +1197,12 @@ msgid "Unable to get user data."
 msgstr "Tidak dapat mendapatkan data pengguna."
 
 #, python-format
-msgid "Unable to grow cluster. %s"
-msgstr "Tidak dapat mengembangkan cluster. %s"
-
-#, python-format
 msgid "Unable to grow cluster: %s"
 msgstr "Tidak dapat tumbuh klaster: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Tidak dapat meluncurkan %(count)s named \"%(name)s\"."
-
-#, python-format
-msgid "Unable to launch cluster. %s"
-msgstr "Tidak dapat meluncurkan klaster. %s"
 
 msgid "Unable to list database backups for parent."
 msgstr "Tidak dapat mendaftar backup database untuk induknya."
@@ -1267,24 +1236,8 @@ msgid "Unable to obtain list of parameters."
 msgstr "Tidak dapat memperoleh daftar parameter."
 
 #, python-format
-msgid "Unable to promote replica as the new replica source.  \"%s\""
-msgstr "Tidak dapat mempromosikan replika sebagai sumber replika baru.  \"%s\""
-
-#, python-format
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Tidak dapat menghapus instance dari gugus: %s"
-
-#, python-format
-msgid "Unable to reset password. %s"
-msgstr "Tidak dapat me-reset password. %s"
-
-#, python-format
-msgid "Unable to resize instance. %s"
-msgstr "Tidak dapat mengubah ukuran instance. %s"
-
-#, python-format
-msgid "Unable to resize volume. %s"
-msgstr "Tidak dapat mengubah ukuran volume. %s"
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Tidak dapat mengambil database yang dapat diakses."
@@ -1343,10 +1296,6 @@ msgstr ""
 
 msgid "Unable to retrieve networks."
 msgstr "Tidak dapat mengambil jaringan."
-
-#, python-format
-msgid "Unable to update user. %s"
-msgstr "Tidak dapat memperbarui pengguna. %s"
 
 msgid "Unknown"
 msgstr "Unknown (tidak diketahui)"
