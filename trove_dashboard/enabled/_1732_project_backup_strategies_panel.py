@@ -13,19 +13,17 @@
 from trove_dashboard import exceptions
 
 # The slug of the panel to be added to HORIZON_CONFIG. Required.
-PANEL = 'databases'
+PANEL = 'backup_strategies'
 # The slug of the dashboard the PANEL associated with. Required.
 PANEL_DASHBOARD = 'project'
 # The slug of the panel group the PANEL is associated with.
 PANEL_GROUP = 'database'
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = 'trove_dashboard.content.databases.panel.Databases'
-
-ADD_INSTALLED_APPS = ["trove_dashboard", ]
+ADD_PANEL = 'trove_dashboard.content.backup_strategies.panel.BackupStrategies'
 
 ADD_EXCEPTIONS = {
     'not_found': exceptions.NOT_FOUND,
     'recoverable': exceptions.RECOVERABLE,
-    'unauthorized': exceptions.UNAUTHORIZED
+    'unauthorized': exceptions.UNAUTHORIZED,
 }

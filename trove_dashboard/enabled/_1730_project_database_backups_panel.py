@@ -20,7 +20,7 @@ PANEL_DASHBOARD = 'project'
 PANEL_GROUP = 'database'
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = ('trove_dashboard.content.database_backups.panel.Backups')
+ADD_PANEL = 'trove_dashboard.content.database_backups.panel.Backups'
 
 ADD_EXCEPTIONS = {
     'not_found': exceptions.NOT_FOUND,

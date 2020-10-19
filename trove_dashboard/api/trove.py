@@ -257,6 +257,16 @@ def backup_create(request, name, instance_id, description=None,
                                                swift_container=swift_container)
 
 
+def backup_strategy_list(request, instance_id=None, project_id=None):
+    return troveclient(request).backup_strategies.list(instance_id=instance_id,
+                                                       project_id=project_id)
+
+
+def backup_strategy_delete(request, instance_id=None, project_id=None):
+    return troveclient(request).backup_strategies.delete(
+        instance_id=instance_id, project_id=project_id)
+
+
 def nova_client_client(request):
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     cacert = getattr(settings, 'OPENSTACK_SSL_CACERT', None)

@@ -25,7 +25,7 @@ PANEL_GROUP = 'database'
 DISABLED = True
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = ('trove_dashboard.content.database_clusters.panel.Clusters')
+ADD_PANEL = 'trove_dashboard.content.database_clusters.panel.Clusters'
 
 ADD_EXCEPTIONS = {
     'not_found': exceptions.NOT_FOUND,
