@@ -40,7 +40,7 @@ DETAILS_URL = reverse('horizon:project:databases:detail', args=['id'])
 
 class DatabaseTests(test.TestCase):
     @test.create_mocks(
-        {api.trove: ('instance_list', 'flavor_list')})
+        {api.trove: ('instance_get', 'instance_list', 'flavor_list')})
     def test_index(self):
         # Mock database instances
         databases = common.Paginated(self.databases.list())
@@ -51,6 +51,9 @@ class DatabaseTests(test.TestCase):
         res = self.client.get(INDEX_URL)
         self.mock_instance_list.assert_called_once_with(
             test.IsHttpRequest(), marker=None)
+        replica_id = databases[-1].replicas[0]['id']
+        self.mock_instance_get.assert_called_once_with(test.IsHttpRequest(),
+                                                       replica_id)
         self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/databases/index.html')
         # Check the Host column displaying ip or hostname
@@ -58,7 +61,7 @@ class DatabaseTests(test.TestCase):
         self.assertContains(res, 'trove.instance-2.com')
 
     @test.create_mocks(
-        {api.trove: ('instance_list', 'flavor_list')})
+        {api.trove: ('instance_get', 'instance_list', 'flavor_list')})
     def test_index_flavor_exception(self):
         # Mock database instances
         databases = common.Paginated(self.databases.list())
@@ -69,12 +72,15 @@ class DatabaseTests(test.TestCase):
         res = self.client.get(INDEX_URL)
         self.mock_instance_list.assert_called_once_with(
             test.IsHttpRequest(), marker=None)
+        replica_id = databases[-1].replicas[0]['id']
+        self.mock_instance_get.assert_called_once_with(test.IsHttpRequest(),
+                                                       replica_id)
         self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/databases/index.html')
         self.assertMessageCount(res, error=1)
 
     @test.create_mocks(
-        {api.trove: ('instance_list',)})
+        {api.trove: ('instance_get', 'instance_list',)})
     def test_index_list_exception(self):
         # Mock database instances
         self.mock_instance_list.side_effect = self.exceptions.trove
@@ -86,7 +92,7 @@ class DatabaseTests(test.TestCase):
         self.assertMessageCount(res, error=1)
 
     @test.create_mocks(
-        {api.trove: ('instance_list', 'flavor_list')})
+        {api.trove: ('instance_get', 'instance_list', 'flavor_list')})
     def test_index_pagination(self):
         # Mock database instances
         databases = self.databases.list()
@@ -99,13 +105,16 @@ class DatabaseTests(test.TestCase):
         res = self.client.get(INDEX_URL)
         self.mock_instance_list.assert_called_once_with(
             test.IsHttpRequest(), marker=None)
+        replica_id = databases[-1].replicas[0]['id']
+        self.mock_instance_get.assert_called_once_with(test.IsHttpRequest(),
+                                                       replica_id)
         self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/databases/index.html')
         self.assertContains(
             res, 'marker=' + last_record.id)
 
     @test.create_mocks(
-        {api.trove: ('instance_list', 'flavor_list')})
+        {api.trove: ('instance_get', 'instance_list', 'flavor_list')})
     def test_index_flavor_list_exception(self):
         # Mocking instances.
         databases = common.Paginated(self.databases.list())
@@ -116,6 +125,9 @@ class DatabaseTests(test.TestCase):
         res = self.client.get(INDEX_URL)
         self.mock_instance_list.assert_called_once_with(
             test.IsHttpRequest(), marker=None)
+        replica_id = databases[-1].replicas[0]['id']
+        self.mock_instance_get.assert_called_once_with(test.IsHttpRequest(),
+                                                       replica_id)
         self.mock_flavor_list.assert_called_once_with(test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/databases/index.html')
         self.assertMessageCount(res, error=1)

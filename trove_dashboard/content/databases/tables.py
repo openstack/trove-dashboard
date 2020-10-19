@@ -17,6 +17,9 @@ from urllib import parse as urlparse
 from django.conf import settings
 from django.template import defaultfilters as d_filters
 from django import urls
+from django.urls import reverse
+from django.utils import html
+from django.utils import safestring
 
 from django.utils.translation import pgettext_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -601,6 +604,39 @@ def get_databases(user):
     return _("-")
 
 
+class ReplicaColumn(tables.WrappingColumn):
+    """Customized column class.
+
+        So it that does complex processing on the replication
+        for a database instance.
+        """
+
+    instance_detail_url = "horizon:project:databases:detail"
+
+    def get_instance_link(self, instance_id):
+        request = self.table.request
+        url = reverse(self.instance_detail_url, args=(instance_id,))
+        instance = api.trove.instance_get(request, instance_id)
+        link = '<a href="%s">%s</a>' % (url, html.escape(instance.name))
+        return link
+
+    def get_raw_data(self, instance):
+        if hasattr(instance, "replicas"):
+            links = []
+            for replica in instance.replicas:
+                instance_id = replica["id"]
+                links.append(self.get_instance_link(instance_id))
+            replicas = ', '.join(links)
+            cell_text = ("Primary, has replicas: %s") % replicas
+            return safestring.mark_safe(cell_text)
+        if hasattr(instance, "replica_of"):
+            instance_id = instance.replica_of["id"]
+            link = self.get_instance_link(instance_id)
+            replica_of = _("Replica of %s")
+            return safestring.mark_safe(replica_of % link)
+        return _("-")
+
+
 class StopDatabase(tables.BatchAction):
     name = "stop_database"
     help_text = _("Stop database service inside an instance.")
@@ -690,6 +726,8 @@ class InstancesTable(tables.DataTable):
     size = tables.Column(get_size,
                          verbose_name=_("Size"),
                          attrs={'data-type': 'size'})
+    replication = ReplicaColumn("replicas",
+                                verbose_name=_("Replication Status"))
     volume = tables.Column(get_volume_size,
                            verbose_name=_("Volume Size"),
                            attrs={'data-type': 'size'})
