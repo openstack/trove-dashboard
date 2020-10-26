@@ -1256,7 +1256,7 @@ class DatabaseTests(test.TestCase):
             mock.call(request)]
         self.assertEqual(expected_calls,
                          self.mock_instance_list.call_args_list)
-        self.assertTrue(len(choices) == len(self.databases.list()) + 1)
+        self.assertEqual(len(choices), len(self.databases.list()) + 1)
 
     def _build_datastore_display_text(self, datastore, datastore_version):
         return datastore + ' - ' + datastore_version

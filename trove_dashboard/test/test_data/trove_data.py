@@ -140,7 +140,7 @@ CLUSTER_DATA_TWO = {
 }
 
 DATABASE_DATA_ONE = {
-    "status": "ACTIVE",
+    "status": "HEALTHY",
     "updated": "2013-08-12T22:00:09",
     "name": "Test Database",
     "links": [],
@@ -165,7 +165,7 @@ DATABASE_DATA_ONE = {
 }
 
 DATABASE_DATA_TWO = {
-    "status": "ACTIVE",
+    "status": "HEALTHY",
     "updated": "2013-08-12T22:00:09",
     "name": "Test Database With DNS",
     "links": [],
@@ -187,7 +187,7 @@ DATABASE_DATA_TWO = {
 }
 
 DATABASE_DATA_THREE = {
-    "status": "ACTIVE",
+    "status": "HEALTHY",
     "updated": "2015-01-12T22:00:09",
     "name": "Test Database with Config",
     "links": [],
