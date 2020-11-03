@@ -368,12 +368,7 @@ class AdvancedAction(workflows.Action):
         required=False,
         min_value=1,
         initial=1,
-        help_text=_('Specify the number of replicas to be created'),
-        widget=forms.TextInput(attrs={
-            'class': 'switched',
-            'data-switch-on': 'initial_state',
-            'data-initial_state-master': _('Replica Count')
-        }))
+        help_text=_('Specify the number of replicas to be created'))
 
     def __init__(self, request, *args, **kwargs):
         if args[0]:
