@@ -24,7 +24,7 @@ PANEL_GROUP = 'database'
 DISABLED = True
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = ('trove_dashboard.content.ng_database_backups.panel.NGBackups')
+ADD_PANEL = 'trove_dashboard.content.ng_database_backups.panel.NGBackups'
 ADD_ANGULAR_MODULES = ['horizon.dashboard.project.backups']
 
 ADD_JS_FILES = [
