@@ -435,7 +435,7 @@ class AdvancedAction(workflows.Action):
         try:
             instances = self._get_instances()
             choices = sorted([(i.id, i.name) for i in
-                             instances if i.status == 'ACTIVE'],
+                             instances if i.status == 'HEALTHY'],
                              key=lambda i: i[1])
         except Exception:
             choices = []
@@ -489,6 +489,7 @@ class AdvancedAction(workflows.Action):
                 raise forms.ValidationError(
                     _("A master instance must be selected!"))
 
+            cleaned_data['flavor'] = None
             cleaned_data['backup'] = None
         else:
             cleaned_data['master'] = None
