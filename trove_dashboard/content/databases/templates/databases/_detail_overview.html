@@ -12,6 +12,8 @@
     <dd>{{ instance.datastore.version }}</dd>
     <dt>{% trans "Status" %}</dt>
     <dd>{{ instance.status|title }}</dd>
+    <dt>{% trans "Operating Status" %}</dt>
+    <dd>{{ instance.operating_status|title }}</dd>
     {% if instance.configuration %}
     <dt>{% trans "Configuration Group" %}</dt>
     <dd>
