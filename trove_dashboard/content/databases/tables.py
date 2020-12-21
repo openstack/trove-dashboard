@@ -15,6 +15,7 @@
 from urllib import parse as urlparse
 
 from django.conf import settings
+from django import template
 from django.template import defaultfilters as d_filters
 from django import urls
 from django.urls import reverse
@@ -573,11 +574,28 @@ def get_datastore_version(instance):
     return _("Not available")
 
 
+# NOTE(e0ne): the logic is based on
+# openstack_dashboard.dashboards.project.instances.tables.get_ips
+# Trove has a different instance addresses structure so we can't re-use
+# nova-related code as is.
+def get_ips(instance):
+    template_name = 'project/instances/_instance_ips.html'
+    ip_groups = {}
+
+    for address in getattr(instance, 'addresses', []):
+        ip_groups[address["type"]] = [address["address"]]
+
+    context = {
+        "ip_groups": ip_groups,
+    }
+    return template.loader.render_to_string(template_name, context)
+
+
 def get_host(instance):
     if hasattr(instance, "hostname"):
         return instance.hostname
     elif hasattr(instance, "ip") and instance.ip:
-        return instance.ip[0]
+        return get_ips(instance)
     return _("Not Assigned")
 
 
