@@ -54,6 +54,7 @@ class BackupStrategiesTable(tables.DataTable):
         name = "backup_strategies"
         verbose_name = _("Backup Strategies")
         table_actions = (DeleteBackupStrategy,)
+        row_actions = (DeleteBackupStrategy,)
 
     def get_object_id(self, datum):
         return datum.project_id
