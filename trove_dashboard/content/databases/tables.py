@@ -733,9 +733,13 @@ class InstancesTable(tables.DataTable):
                            attrs={'data-type': 'size'})
     status = tables.Column("status",
                            verbose_name=_("Status"),
-                           status=True,
                            status_choices=STATUS_CHOICES,
                            display_choices=STATUS_DISPLAY_CHOICES)
+    operating_status = tables.Column("operating_status",
+                                     verbose_name=_("Operating Status"),
+                                     status=True,
+                                     status_choices=STATUS_CHOICES,
+                                     display_choices=STATUS_DISPLAY_CHOICES)
 
     class Meta(object):
         name = "databases"
