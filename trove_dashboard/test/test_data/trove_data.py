@@ -148,6 +148,8 @@ DATABASE_DATA_ONE = {
     "ip": [
         "10.0.0.3",
     ],
+    "addresses": [{"type": "private",
+                   "address": "10.0.0.3"}],
     "volume": {
         "used": 0.13,
         "size": 1,
@@ -171,6 +173,7 @@ DATABASE_DATA_TWO = {
     "links": [],
     "created": "2013-08-12T22:00:03",
     "hostname": "trove.instance-2.com",
+    "addresses": [],
     "volume": {
         "used": 0.13,
         "size": 1,
@@ -195,6 +198,8 @@ DATABASE_DATA_THREE = {
     "ip": [
         "10.0.0.3",
     ],
+    "addresses": [{"type": "private",
+                   "address": "10.0.0.3"}],
     "volume": {
         "used": 0.13,
         "size": 1,
