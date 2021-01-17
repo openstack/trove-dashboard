@@ -56,5 +56,13 @@ class BackupStrategiesTable(tables.DataTable):
         table_actions = (DeleteBackupStrategy,)
         row_actions = (DeleteBackupStrategy,)
 
+    def get_object_display(self, backup_strategy):
+        name = '(Project ID=%s' % backup_strategy.project_id
+        if backup_strategy.instance_id:
+            name += ', Instance ID= %s)' % backup_strategy.instance_id
+        else:
+            name += ')'
+        return name
+
     def get_object_id(self, datum):
         return datum.project_id
