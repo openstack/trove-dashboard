@@ -20,6 +20,14 @@ from horizon import tables
 from trove_dashboard import api
 
 
+class CreateBackupStrategy(tables.LinkAction):
+    name = "create"
+    verbose_name = _("Create Backup Strategy")
+    url = "horizon:project:backup_strategies:create"
+    classes = ("ajax-modal", "btn-create")
+    icon = "camera"
+
+
 class DeleteBackupStrategy(tables.DeleteAction):
     @staticmethod
     def action_present(count):
@@ -53,7 +61,7 @@ class BackupStrategiesTable(tables.DataTable):
     class Meta(object):
         name = "backup_strategies"
         verbose_name = _("Backup Strategies")
-        table_actions = (DeleteBackupStrategy,)
+        table_actions = (CreateBackupStrategy, DeleteBackupStrategy,)
         row_actions = (DeleteBackupStrategy,)
 
     def get_object_display(self, backup_strategy):
@@ -65,4 +73,4 @@ class BackupStrategiesTable(tables.DataTable):
         return name
 
     def get_object_id(self, datum):
-        return datum.project_id
+        return datum.project_id + datum.instance_id

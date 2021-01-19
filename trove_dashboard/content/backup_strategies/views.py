@@ -19,9 +19,12 @@ from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
 from horizon import tables as horizon_tables
+from horizon import workflows as horizon_workflows
 
 from trove_dashboard import api
 from trove_dashboard.content.backup_strategies import tables
+from trove_dashboard.content.backup_strategies \
+    import workflows
 
 
 class IndexView(horizon_tables.DataTableView):
@@ -31,9 +34,15 @@ class IndexView(horizon_tables.DataTableView):
 
     def get_data(self):
         try:
-            backups = api.trove.backup_strategy_list(self.request)
+            backup_strategies = api.trove.backup_strategy_list(self.request)
         except Exception:
-            backups = []
+            backup_strategies = []
             msg = _('Error getting backup strategies list.')
             exceptions.handle(self.request, msg)
-        return backups
+        return backup_strategies
+
+
+class BackupStrategyView(horizon_workflows.WorkflowView):
+    workflow_class = workflows.CreateBackupStrategy
+    template_name = "project/database_backups/backup.html"
+    page_title = _("Backup Strategy")
