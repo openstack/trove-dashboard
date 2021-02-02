@@ -15,6 +15,7 @@
 from django.conf import settings
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
+import netaddr
 
 from horizon import exceptions
 from horizon import forms
@@ -283,6 +284,44 @@ class SetInstanceDetails(workflows.Step):
                    "locality", "availability_zone")
 
 
+class AddAccessAction(workflows.Action):
+    """Initialize the database access. This tab will honor
+        the settings which should be a list of permissions required:
+
+        * TROVE_ADD_USER_PERMS = []
+        * TROVE_ADD_DATABASE_PERMS = []
+        """
+    is_public = forms.BooleanField(label=_("Is Public"),
+                                   required=False)
+    allowed_cidrs = forms.CharField(label=_("Allowed CIDRs"),
+                                    required=False,
+                                    help_text=_("Comma-separated CIDRs "
+                                                "to connect through."))
+
+    class Meta(object):
+        name = _("Database Access")
+        permissions = TROVE_ADD_PERMS
+        help_text_template = "project/databases/_launch_access_help.html"
+
+    def clean(self):
+        cleaned_data = super(AddAccessAction, self).clean()
+        if cleaned_data.get('allowed_cidrs'):
+            cidrs = cleaned_data.get('allowed_cidrs').split(',')
+            for cidr in cidrs:
+                try:
+                    netaddr.IPNetwork(cidr)
+                except netaddr.AddrFormatError:
+                    msg = _('Invalid Allowed CIDR provided.')
+                    self._errors["allowed_cidrs"] = self.error_class([msg])
+
+        return cleaned_data
+
+
+class DatabaseAccess(workflows.Step):
+    action_class = AddAccessAction
+    contributes = ["is_public", "allowed_cidrs"]
+
+
 class AddDatabasesAction(workflows.Action):
     """Initialize the database with users/databases. This tab will honor
     the settings which should be a list of permissions required:
@@ -513,6 +552,7 @@ class LaunchInstance(workflows.Workflow):
     success_url = "horizon:project:databases:index"
     default_steps = (SetInstanceDetails,
                      dash_create_instance.SetNetwork,
+                     DatabaseAccess,
                      InitializeDatabase,
                      Advanced)
 
@@ -577,6 +617,16 @@ class LaunchInstance(workflows.Workflow):
             locality = context['locality']
         return locality
 
+    def _get_access(self, context):
+        if not context['allowed_cidrs'] and not context['is_public']:
+            return None
+        access = {}
+        if context['allowed_cidrs'] != '':
+            access['allowed_cidrs'].split(',')
+        if context['is_public']:
+            access['is_public'] = True
+        return access
+
     def handle(self, request, context):
         try:
             datastore, datastore_version = parse_datastore_and_version_text(
@@ -597,6 +647,7 @@ class LaunchInstance(workflows.Workflow):
                      context.get('master'), context['replica_count'],
                      context.get('config'), self._get_locality(context),
                      avail_zone)
+
             api.trove.instance_create(request,
                                       context['name'],
                                       context['volume'],
@@ -613,7 +664,8 @@ class LaunchInstance(workflows.Workflow):
                                           context),
                                       configuration=context.get('config'),
                                       locality=self._get_locality(context),
-                                      availability_zone=avail_zone)
+                                      availability_zone=avail_zone,
+                                      access=self._get_access(context))
             return True
         except Exception:
             exceptions.handle(request)

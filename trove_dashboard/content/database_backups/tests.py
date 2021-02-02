@@ -214,7 +214,7 @@ class DatabasesBackupsTests(test.TestCase):
         url = RESTORE_URL + '?backup=%s' % self.database_backups.first().id
         res = self.client.get(url)
         self.assert_mock_multiple_calls_with_same_arguments(
-            self.mock_check, 4, mock.call((), test.IsHttpRequest()))
+            self.mock_check, 5, mock.call((), test.IsHttpRequest()))
         self.mock_backup_get.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str))
         self.mock_backup_list.assert_called_once_with(test.IsHttpRequest())
