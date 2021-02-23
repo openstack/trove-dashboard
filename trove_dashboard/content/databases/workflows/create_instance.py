@@ -15,7 +15,6 @@
 from django.conf import settings
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-import netaddr
 
 from horizon import exceptions
 from horizon import forms
@@ -293,28 +292,18 @@ class AddAccessAction(workflows.Action):
         """
     is_public = forms.BooleanField(label=_("Is Public"),
                                    required=False)
-    allowed_cidrs = forms.CharField(label=_("Allowed CIDRs"),
-                                    required=False,
-                                    help_text=_("Comma-separated CIDRs "
-                                                "to connect through."))
+    allowed_cidrs = forms.MultiIPField(label=_("Allowed CIDRs"),
+                                       required=False,
+                                       version=forms.IPv4 | forms.IPv6,
+                                       mask=True,
+                                       widget=forms.TextInput(),
+                                       help_text=_("Comma-separated CIDRs "
+                                                   "to connect through."))
 
     class Meta(object):
         name = _("Database Access")
         permissions = TROVE_ADD_PERMS
         help_text_template = "project/databases/_launch_access_help.html"
-
-    def clean(self):
-        cleaned_data = super(AddAccessAction, self).clean()
-        if cleaned_data.get('allowed_cidrs'):
-            cidrs = cleaned_data.get('allowed_cidrs').split(',')
-            for cidr in cidrs:
-                try:
-                    netaddr.IPNetwork(cidr)
-                except netaddr.AddrFormatError:
-                    msg = _('Invalid Allowed CIDR provided.')
-                    self._errors["allowed_cidrs"] = self.error_class([msg])
-
-        return cleaned_data
 
 
 class DatabaseAccess(workflows.Step):
