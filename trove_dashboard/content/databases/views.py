@@ -95,12 +95,12 @@ class LaunchInstanceView(horizon_workflows.WorkflowView):
         return initial
 
 
-class RenameInstanceView(horizon_forms.ModalFormView):
-    form_class = forms.RenameInstanceForm
+class UpdateInstanceView(horizon_forms.ModalFormView):
+    form_class = forms.UpdateInstanceForm
     form_id = "attach_config_form"
-    modal_header = _("Rename Instance")
+    modal_header = _("Update Instance")
     modal_id = "edit_instance_modal"
-    template_name = "project/databases/rename_instance.html"
+    template_name = "project/databases/update_instance.html"
     submit_label = "Update"
     submit_url = 'horizon:project:databases:edit_instance'
     success_url = reverse_lazy('horizon:project:databases:index')
@@ -116,7 +116,7 @@ class RenameInstanceView(horizon_forms.ModalFormView):
             exceptions.handle(self.request, msg, redirect=redirect)
 
     def get_context_data(self, **kwargs):
-        context = (super(RenameInstanceView, self)
+        context = (super(UpdateInstanceView, self)
                    .get_context_data(**kwargs))
         context['instance_id'] = self.kwargs['instance_id']
         args = (self.kwargs['instance_id'],)

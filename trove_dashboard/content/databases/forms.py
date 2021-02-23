@@ -283,12 +283,12 @@ class AttachConfigurationForm(forms.SelfHandlingForm):
         return True
 
 
-class RenameInstanceForm(forms.SelfHandlingForm):
+class UpdateInstanceForm(forms.SelfHandlingForm):
     instance_id = forms.CharField(widget=forms.HiddenInput())
     instance_name = forms.CharField(label=_("Name"))
 
     def __init__(self, request, *args, **kwargs):
-        super(RenameInstanceForm, self).__init__(request, *args, **kwargs)
+        super(UpdateInstanceForm, self).__init__(request, *args, **kwargs)
         instance_id = kwargs.get('initial', {}).get('instance_id')
         self.fields['instance_id'].initial = instance_id
 
@@ -296,13 +296,13 @@ class RenameInstanceForm(forms.SelfHandlingForm):
         instance_id = data.get('instance_id')
         instance_name = data.get('instance_name')
         try:
-            api.trove.instance_rename(request, instance_id, instance_name)
+            api.trove.instance_update(request, instance_id, instance_name)
 
-            messages.success(request, _('Instance "%s" successfully renamed.')
+            messages.success(request, _('Instance "%s" successfully updated.')
                              % instance_name)
         except Exception:
             redirect = reverse("horizon:project:databases:index")
-            exceptions.handle(request, _('Unable to rename instance "%s".'
+            exceptions.handle(request, _('Unable to update instance "%s".'
                                          % instance_id),
                               redirect=redirect)
         return True

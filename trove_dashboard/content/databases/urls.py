@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^launch$', views.LaunchInstanceView.as_view(), name='launch'),
     url(INSTANCES % '', views.DetailView.as_view(), name='detail'),
-    url(INSTANCES % 'edit_instance', views.RenameInstanceView.as_view(),
+    url(INSTANCES % 'edit_instance', views.UpdateInstanceView.as_view(),
         name='edit_instance'),
     url(INSTANCES % 'resize_volume', views.ResizeVolumeView.as_view(),
         name='resize_volume'),

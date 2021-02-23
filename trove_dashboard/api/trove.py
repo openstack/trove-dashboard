@@ -200,7 +200,7 @@ def instance_restart(request, instance_id):
     return troveclient(request).instances.restart(instance_id)
 
 
-def instance_rename(request, instance_id, name):
+def instance_update(request, instance_id, name=None):
     return troveclient(request).instances.update(instance_id, name=name)
 
 
