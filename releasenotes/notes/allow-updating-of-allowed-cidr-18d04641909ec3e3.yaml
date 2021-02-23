@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Added ability to update allowed_cidr for an existing instance.

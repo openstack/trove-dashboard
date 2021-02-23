@@ -200,8 +200,8 @@ def instance_restart(request, instance_id):
     return troveclient(request).instances.restart(instance_id)
 
 
-def instance_update(request, instance_id, name=None):
-    return troveclient(request).instances.update(instance_id, name=name)
+def instance_update(request, instance_id, **kwargs):
+    return troveclient(request).instances.update(instance_id, **kwargs)
 
 
 def instance_detach_replica(request, instance_id):

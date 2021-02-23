@@ -286,6 +286,16 @@ class AttachConfigurationForm(forms.SelfHandlingForm):
 class UpdateInstanceForm(forms.SelfHandlingForm):
     instance_id = forms.CharField(widget=forms.HiddenInput())
     instance_name = forms.CharField(label=_("Name"))
+    allowed_cidrs = forms.MultiIPField(
+        label=_("Allowed CIDRs"),
+        required=False,
+        help_text=_("Classless Inter-Domain Routing "
+                    "(e.g. 192.168.0.0/24, or "
+                    "2001:db8::/128). Can enter multiple values separating"
+                    "by a comma"),
+        version=forms.IPv4 | forms.IPv6,
+        mask=True,
+        widget=forms.TextInput())
 
     def __init__(self, request, *args, **kwargs):
         super(UpdateInstanceForm, self).__init__(request, *args, **kwargs)
@@ -294,9 +304,13 @@ class UpdateInstanceForm(forms.SelfHandlingForm):
 
     def handle(self, request, data):
         instance_id = data.get('instance_id')
+        allowed_cidrs = data.get('allowed_cidrs')
         instance_name = data.get('instance_name')
+        update_kwargs = {'name': instance_name}
+        if allowed_cidrs:
+            update_kwargs['allowed_cidrs'] = allowed_cidrs.split(',')
         try:
-            api.trove.instance_update(request, instance_id, instance_name)
+            api.trove.instance_update(request, instance_id, **update_kwargs)
 
             messages.success(request, _('Instance "%s" successfully updated.')
                              % instance_name)

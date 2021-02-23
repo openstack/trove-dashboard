@@ -125,8 +125,10 @@ class UpdateInstanceView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         instance = self.get_object()
+        allowed_cidrs = instance.access.get('allowed_cidrs', ['0.0.0.0/0'])
         return {'instance_id': self.kwargs['instance_id'],
                 'instance_name': instance.name,
+                'allowed_cidrs': ','.join(allowed_cidrs),
                 'datastore_version': instance.datastore.get('version', '')}
 
 
