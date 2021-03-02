@@ -622,7 +622,7 @@ class LaunchInstance(workflows.Workflow):
             return None
         access = {}
         if context['allowed_cidrs'] != '':
-            access['allowed_cidrs'].split(',')
+            access['allowed_cidrs'] = context['allowed_cidrs'].split(',')
         if context['is_public']:
             access['is_public'] = True
         return access
