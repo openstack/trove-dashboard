@@ -18,4 +18,5 @@ from trove_dashboard.content.backup_strategies import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^create$', views.BackupStrategyView.as_view(), name='create'),
 ]
