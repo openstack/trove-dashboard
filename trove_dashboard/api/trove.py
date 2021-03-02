@@ -205,8 +205,8 @@ def instance_update(request, instance_id, name=None):
 
 
 def instance_detach_replica(request, instance_id):
-    return troveclient(request).instances.edit(instance_id,
-                                               detach_replica_source=True)
+    return troveclient(request).instances.update(instance_id,
+                                                 detach_replica_source=True)
 
 
 def promote_to_replica_source(request, instance_id):
