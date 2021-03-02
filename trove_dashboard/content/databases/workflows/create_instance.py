@@ -450,7 +450,7 @@ class AdvancedAction(workflows.Action):
             for b in backups:
                 if self.backup_id and b.id != self.backup_id:
                     continue
-                if b.status == 'COMPLETED':
+                if b.status in ['COMPLETED', 'RESTORED']:
                     choices.append((b.id, b.name))
         except Exception:
             choices = []

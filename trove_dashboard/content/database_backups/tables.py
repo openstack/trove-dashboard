@@ -31,6 +31,7 @@ STATUS_CHOICES = (
     ("DELETE_FAILED", False),
     ("FAILED", False),
     ("NEW", None),
+    ("RESTORED", True),
     ("SAVING", None),
 )
 STATUS_DISPLAY_CHOICES = (
@@ -44,6 +45,8 @@ STATUS_DISPLAY_CHOICES = (
                              u"Failed")),
     ("NEW", pgettext_lazy("Current status of a Database Backup",
                           u"New")),
+    ("RESTORED", pgettext_lazy("Current status of a Database Backup",
+                               u"Restored")),
     ("SAVING", pgettext_lazy("Current status of a Database Backup",
                              u"Saving")),
 )
@@ -65,7 +68,7 @@ class RestoreLink(tables.LinkAction):
     icon = "cloud-upload"
 
     def allowed(self, request, backup=None):
-        return backup.status == 'COMPLETED'
+        return backup.status in ['COMPLETED', 'RESTORED']
 
     def get_link_url(self, datum):
         url = reverse(self.url)

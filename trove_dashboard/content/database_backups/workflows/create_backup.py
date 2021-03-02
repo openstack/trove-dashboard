@@ -87,7 +87,7 @@ class SetBackupDetails(workflows.Step):
 class CreateBackup(workflows.Workflow):
     slug = "create_backup"
     name = _("Backup Database")
-    finalize_button_name = _("Backup")
+    finalize_button_name = _("Create Backup")
     success_message = _('Scheduled backup "%(name)s".')
     failure_message = _('Unable to launch %(count)s named "%(name)s".')
     success_url = "horizon:project:database_backups:index"
