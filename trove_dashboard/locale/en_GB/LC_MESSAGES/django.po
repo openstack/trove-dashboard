@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2020-12-02 22:40+0000\n"
+"POT-Creation-Date: 2021-03-03 00:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,9 +131,6 @@ msgstr "Available networks"
 
 msgid "Backend"
 msgstr "Backend"
-
-msgid "Backup"
-msgstr "Backup"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -617,10 +614,6 @@ msgstr "Initial admin user to add"
 msgid "Initialize Databases"
 msgstr "Initialise Databases"
 
-#, python-format
-msgid "Instance \"%s\" successfully renamed."
-msgstr "Instance \"%s\" successfully renamed."
-
 msgid "Instance Name"
 msgstr "Instance Name"
 
@@ -943,9 +936,6 @@ msgstr[1] "Removed Instances"
 
 msgid "Removed instances from cluster."
 msgstr "Removed instances from cluster."
-
-msgid "Rename Instance"
-msgstr "Rename Instance"
 
 msgid "Replica Count"
 msgstr "Replica Count"
@@ -1368,10 +1358,6 @@ msgstr "Unable to promote replica as the new replica source."
 msgid "Unable to remove instances from cluster: %s"
 msgstr "Unable to remove instances from cluster: %s"
 
-#, python-format
-msgid "Unable to rename instance \"%s\"."
-msgstr "Unable to rename instance \"%s\"."
-
 msgid "Unable to reset password."
 msgstr "Unable to reset password."
 
@@ -1444,9 +1430,6 @@ msgstr "Unable to update user."
 
 msgid "Unknown"
 msgstr "Unknown"
-
-msgid "Update instance name."
-msgstr "Update instance name."
 
 msgid "Updated"
 msgstr "Updated"
