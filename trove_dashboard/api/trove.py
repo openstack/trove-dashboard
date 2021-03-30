@@ -39,6 +39,7 @@ LOG = logging.getLogger(__name__)
 def troveclient(request):
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     cacert = getattr(settings, 'OPENSTACK_SSL_CACERT', None)
+    endpoint_type = getattr(settings, 'OPENSTACK_ENDPOINT_TYPE', 'publicURL')
     trove_url = base.url_for(request, 'database')
     c = client.Client(request.user.username,
                       request.user.token.id,
@@ -46,6 +47,7 @@ def troveclient(request):
                       auth_url=trove_url,
                       insecure=insecure,
                       cacert=cacert,
+                      endpoint_type=endpoint_type,
                       http_log_debug=settings.DEBUG)
     c.client.auth_token = request.user.token.id
     c.client.management_url = trove_url
@@ -283,6 +285,7 @@ def backup_strategy_delete(request, instance_id=None, project_id=None):
 def nova_client_client(request):
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     cacert = getattr(settings, 'OPENSTACK_SSL_CACERT', None)
+    endpoint_type = getattr(settings, 'OPENSTACK_ENDPOINT_TYPE', 'publicURL')
     identity_url = base.url_for(request, 'identity')
     loader = loading.get_plugin_loader('token')
     auth = loader.load_from_options(auth_url=identity_url,
@@ -293,6 +296,7 @@ def nova_client_client(request):
                               session=sess,
                               insecure=insecure,
                               cacert=cacert,
+                              endpoint_type=endpoint_type,
                               http_log_debug=settings.DEBUG)
     return nova
 
