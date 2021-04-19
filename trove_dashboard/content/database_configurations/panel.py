@@ -19,7 +19,7 @@ from openstack_dashboard.dashboards.project import dashboard
 
 
 class Configurations(horizon.Panel):
-    name = _("Configuration Groups")
+    name = _("Configurations")
     slug = 'database_configurations'
     permissions = ('openstack.services.database',)
 
