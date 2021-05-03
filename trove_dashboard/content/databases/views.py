@@ -79,7 +79,15 @@ class IndexView(horizon_tables.DataTableView):
             msg = _('Unable to retrieve database instances.')
             exceptions.handle(self.request, msg)
         for instance in instances:
-            self._extra_data(instance)
+            # The instance might have gotten deleted since we last collected
+            #  our instance list. Try to be a bit graceful if it's gone.
+            try:
+                self._extra_data(instance)
+            except Exception:
+                msg = _('Unable to retrieve details for instance %s' %
+                        instance.id)
+                redirect = reverse('horizon:project:databases:index')
+                exceptions.handle(self.request, msg, redirect=redirect)
         return instances
 
 
