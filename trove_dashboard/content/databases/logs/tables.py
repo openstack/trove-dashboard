@@ -39,6 +39,7 @@ class PublishLog(tables.BatchAction):
         )
 
     name = "publish_log"
+    policy_rules = (("database", "instance:guest_log_list"),)
 
     def action(self, request, obj_id):
         instance_id = self.table.kwargs['instance_id']
@@ -63,6 +64,7 @@ class DiscardLog(tables.BatchAction):
         )
 
     name = "discard_log"
+    policy_rules = (("database", "instance:guest_log_list"),)
 
     def action(self, request, obj_id):
         instance_id = self.table.kwargs['instance_id']
@@ -87,6 +89,7 @@ class EnableLog(tables.BatchAction):
         )
 
     name = "enable_log"
+    policy_rules = (("database", "instance:guest_log_list"),)
 
     def action(self, request, obj_id):
         instance_id = self.table.kwargs['instance_id']
@@ -111,6 +114,7 @@ class DisableLog(tables.BatchAction):
         )
 
     name = "disable_log"
+    policy_rules = (("database", "instance:guest_log_list"),)
 
     def action(self, request, obj_id):
         instance_id = self.table.kwargs['instance_id']
@@ -126,6 +130,7 @@ class ViewLog(tables.LinkAction):
     name = "view_log"
     verbose_name = _("View Log")
     url = "horizon:project:databases:logs:log_contents"
+    policy_rules = (("database", "instance:guest_log_list"),)
 
     def get_link_url(self, datum):
         instance_id = self.table.kwargs['instance_id']

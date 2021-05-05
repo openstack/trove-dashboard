@@ -58,6 +58,7 @@ class LaunchLink(tables.LinkAction):
     url = "horizon:project:database_backups:create"
     classes = ("ajax-modal", "btn-create")
     icon = "camera"
+    policy_rules = (("database", "backup:create"), )
 
 
 class RestoreLink(tables.LinkAction):
@@ -66,6 +67,7 @@ class RestoreLink(tables.LinkAction):
     url = "horizon:project:databases:launch"
     classes = ("ajax-modal",)
     icon = "cloud-upload"
+    policy_rules = (("database", "backup:show"), )
 
     def allowed(self, request, backup=None):
         return backup.status in ['COMPLETED', 'RESTORED']
@@ -80,6 +82,7 @@ class DownloadBackup(tables.LinkAction):
     verbose_name = _("Download Backup")
     url = 'horizon:project:containers:object_download'
     classes = ("btn-download",)
+    policy_rules = (("database", "backup:show"), )
 
     def get_link_url(self, datum):
         ref = datum.locationRef.split('/')
@@ -99,6 +102,8 @@ class DownloadBackup(tables.LinkAction):
 
 
 class DeleteBackup(tables.DeleteAction):
+    policy_rules = (("database", "backup:delete"), )
+
     @staticmethod
     def action_present(count):
         return ngettext_lazy(

@@ -33,11 +33,13 @@ class CreateConfiguration(tables.LinkAction):
     url = "horizon:project:database_configurations:create"
     classes = ('ajax-modal', )
     icon = "plus"
+    policy_rules = (("database", "configuration:create"),)
 
 
 class DeleteConfiguration(tables.DeleteAction):
     data_type_singular = _("Configuration Group")
     data_type_plural = _("Configuration Groups")
+    policy_rules = (("database", "configuration:delete"),)
 
     @staticmethod
     def action_present(count):
@@ -87,6 +89,7 @@ class AddParameter(tables.LinkAction):
     url = "horizon:project:database_configurations:add"
     classes = ('ajax-modal', )
     icon = "plus"
+    policy_rules = (("database", "configuration:edit"),)
 
     def get_link_url(self, datum=None):
         configuration_id = self.table.kwargs['configuration_id']
@@ -98,6 +101,7 @@ class ApplyChanges(tables.Action):
     verbose_name = _("Apply Changes")
     verbose_name_plural = _("Apply Changes")
     icon = "pencil"
+    policy_rules = (("database", "configuration:edit"),)
 
     def __init__(self, **kwargs):
         super(ApplyChanges, self).__init__(**kwargs)

@@ -26,9 +26,12 @@ class CreateBackupStrategy(tables.LinkAction):
     url = "horizon:project:backup_strategies:create"
     classes = ("ajax-modal", "btn-create")
     icon = "camera"
+    policy_rules = (("database", "backup_strategy:create"), )
 
 
 class DeleteBackupStrategy(tables.DeleteAction):
+    policy_rules = (("database", "backup_strategy:delete"), )
+
     @staticmethod
     def action_present(count):
         return ngettext_lazy(

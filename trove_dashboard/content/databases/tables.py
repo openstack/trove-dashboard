@@ -42,6 +42,7 @@ ACTIVE_STATES = ("ACTIVE", "HEALTHY",)
 
 class DeleteInstance(tables.DeleteAction):
     help_text = _("Deleted instances are not recoverable.")
+    policy_rules = (("database", "instance:delete"),)
 
     @staticmethod
     def action_present(count):
@@ -66,6 +67,7 @@ class DeleteInstance(tables.DeleteAction):
 class RestartInstance(tables.BatchAction):
     help_text = _("Restarted instances will lose any data not"
                   " saved in persistent storage.")
+    policy_rules = (("database", "instance:restart"),)
 
     @staticmethod
     def action_present(count):
@@ -103,6 +105,7 @@ class DetachReplica(tables.BatchAction):
             u"Detach Replicas",
             count
         )
+    policy_rules = (("database", "instance:eject_replica_source"),)
 
     @staticmethod
     def action_past(count):
@@ -128,6 +131,7 @@ class PromoteToReplicaSource(tables.LinkAction):
     verbose_name = _("Promote to Replica Source")
     url = "horizon:project:databases:promote_to_replica_source"
     classes = ("ajax-modal", "btn-promote-to-replica-source")
+    policy_rules = (("database", "instance:promote_to_replica_source"),)
 
     def allowed(self, request, instance=None):
         return (instance.status in ACTIVE_STATES and
@@ -157,6 +161,7 @@ class EjectReplicaSource(tables.BatchAction):
 
     name = "eject_replica_source"
     classes = ('btn-danger', 'btn-eject-replica-source')
+    policy_rules = (("database", "instance:eject_replica_source"),)
 
     def _allowed(self, request, instance=None):
         return (instance.status != 'PROMOTE' and
@@ -185,6 +190,7 @@ class GrantAccess(tables.BatchAction):
 
     name = "grant_access"
     classes = ('btn-grant-access')
+    policy_rules = (("database", "instance:extension:user_access:update"),)
 
     def allowed(self, request, instance=None):
         if instance:
@@ -219,6 +225,7 @@ class RevokeAccess(tables.BatchAction):
 
     name = "revoke_access"
     classes = ('btn-revoke-access')
+    policy_rules = (("database", "instance:extension:user_access:delete"),)
 
     def allowed(self, request, instance=None):
         if instance:
@@ -246,6 +253,7 @@ def parse_host_param(request):
 
 class AccessTable(tables.DataTable):
     dbname = tables.Column("name", verbose_name=_("Name"))
+
     access = tables.Column(
         "access",
         verbose_name=_("Accessible"),
@@ -265,6 +273,7 @@ class ManageAccess(tables.LinkAction):
     verbose_name = _("Manage Access")
     url = "horizon:project:databases:access_detail"
     icon = "pencil"
+    policy_rules = (("database", "instance:extension:user_access:update"),)
 
     def allowed(self, request, instance=None):
         instance = self.table.kwargs['instance']
@@ -284,6 +293,7 @@ class CreateUser(tables.LinkAction):
     url = "horizon:project:databases:create_user"
     classes = ("ajax-modal",)
     icon = "plus"
+    policy_rules = (("database", "instance:extension:user:create"),)
 
     def allowed(self, request, instance=None):
         instance = self.table.kwargs['instance']
@@ -301,6 +311,7 @@ class EditUser(tables.LinkAction):
     url = "horizon:project:databases:edit_user"
     classes = ("ajax-modal",)
     icon = "pencil"
+    policy_rules = (("database", "instance:extension:user:update"),)
 
     def allowed(self, request, instance=None):
         instance = self.table.kwargs['instance']
@@ -322,6 +333,8 @@ def has_user_add_perm(request):
 
 
 class DeleteUser(tables.DeleteAction):
+    policy_rules = (("database", "instance:extension:user:delete"),)
+
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
@@ -350,6 +363,7 @@ class CreateDatabase(tables.LinkAction):
     url = "horizon:project:databases:create_database"
     classes = ("ajax-modal",)
     icon = "plus"
+    policy_rules = (("database", "instance:extension:database:create"),)
 
     def allowed(self, request, database=None):
         instance = self.table.kwargs['instance']
@@ -369,6 +383,8 @@ def has_database_add_perm(request):
 
 
 class DeleteDatabase(tables.DeleteAction):
+    policy_rules = (("database", "instance:extension:database:delete"),)
+
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
@@ -400,6 +416,7 @@ class LaunchLink(tables.LinkAction):
     url = "horizon:project:databases:launch"
     classes = ("ajax-modal", "btn-launch")
     icon = "cloud-upload"
+    policy_rules = (("database", "instance:create"),)
 
 
 class CreateBackup(tables.LinkAction):
@@ -408,6 +425,7 @@ class CreateBackup(tables.LinkAction):
     url = "horizon:project:database_backups:create"
     classes = ("ajax-modal",)
     icon = "camera"
+    policy_rules = (("database", "backup:create"),)
 
     def allowed(self, request, instance=None):
         return (instance.status in ACTIVE_STATES and
@@ -423,6 +441,7 @@ class ResizeVolume(tables.LinkAction):
     verbose_name = _("Resize Volume")
     url = "horizon:project:databases:resize_volume"
     classes = ("ajax-modal", "btn-resize")
+    policy_rules = (("database", "instance:resize_volume"),)
 
     def allowed(self, request, instance=None):
         return instance.status in ACTIVE_STATES
@@ -437,6 +456,7 @@ class ResizeInstance(tables.LinkAction):
     verbose_name = _("Resize Instance")
     url = "horizon:project:databases:resize_instance"
     classes = ("ajax-modal", "btn-resize")
+    policy_rules = (("database", "instance:resize_flavor"),)
 
     def allowed(self, request, instance=None):
         return ((instance.status in ACTIVE_STATES or
@@ -452,6 +472,7 @@ class AttachConfiguration(tables.LinkAction):
     verbose_name = _("Attach Configuration Group")
     url = "horizon:project:databases:attach_config"
     classes = ("btn-attach-config", "ajax-modal")
+    policy_rules = (("database", "instance:update"),)
 
     def allowed(self, request, instance=None):
         return (instance.status in ACTIVE_STATES and
@@ -477,6 +498,7 @@ class DetachConfiguration(tables.BatchAction):
 
     name = "detach_configuration"
     classes = ('btn-danger', 'btn-detach-config')
+    policy_rules = (("database", "instance:update"),)
 
     def allowed(self, request, instance=None):
         return (instance.status in ACTIVE_STATES and
@@ -489,6 +511,7 @@ class DetachConfiguration(tables.BatchAction):
 class EnableRootAction(tables.Action):
     name = "enable_root_action"
     verbose_name = _("Enable Root")
+    policy_rules = (("database", "instance:extension:root:create"),)
 
     def handle(self, table, request, obj_ids):
         try:
@@ -502,6 +525,7 @@ class EnableRootAction(tables.Action):
 class DisableRootAction(tables.Action):
     name = "disable_root_action"
     verbose_name = _("Disable Root")
+    policy_rules = (("database", "instance:extension:root:delete"),)
 
     def allowed(self, request, instance):
         enabled = api.trove.root_show(request, instance.id)
@@ -521,6 +545,9 @@ class ManageRoot(tables.LinkAction):
     name = "manage_root_action"
     verbose_name = _("Manage Root Access")
     url = "horizon:project:databases:manage_root"
+    policy_rules = (("database", "instance:extension:root:index"),
+                    ("database", "instance:extension:root:create"),
+                    ("database", "instance:extension:root:delete"))
 
     def allowed(self, request, instance):
         return instance.status in ACTIVE_STATES
@@ -532,6 +559,7 @@ class ManageRoot(tables.LinkAction):
 
 class ManageRootTable(tables.DataTable):
     name = tables.Column('name', verbose_name=_('Instance Name'))
+    policy_rules = (("database", "instance:extension:root:index"), )
     enabled = tables.Column('enabled',
                             verbose_name=_('Has Root Ever Been Enabled'),
                             filters=(d_filters.yesno, d_filters.capfirst),
@@ -659,6 +687,7 @@ class StopDatabase(tables.BatchAction):
     name = "stop_database"
     help_text = _("Stop database service inside an instance.")
     action_type = "danger"
+    policy_rules = (("database", "instance:extension:database:delete"), )
 
     @staticmethod
     def action_present(count):
@@ -688,6 +717,7 @@ class UpdateInstance(tables.LinkAction):
     verbose_name = _("Update Instance")
     url = "horizon:project:databases:edit_instance"
     classes = ("btn-attach-config", "ajax-modal")
+    policy_rules = (("database", "instance:update"), )
 
     def allowed(self, request, instance=None):
         return (instance.status in ACTIVE_STATES)
