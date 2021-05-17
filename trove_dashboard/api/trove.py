@@ -13,17 +13,15 @@
 #    under the License.
 
 from django.conf import settings
-from troveclient.v1 import client
-
-from openstack_dashboard.api import base
-from oslo_log import log as logging
-
 from horizon.utils import functions as utils
 from horizon.utils.memoized import memoized  # noqa
-
-from keystoneauth1 import loading
 from keystoneauth1 import session
+from keystoneclient.auth import token_endpoint
 from novaclient import client as nova_client
+from openstack_auth import utils as auth_utils
+from openstack_dashboard.api import base
+from oslo_log import log as logging
+from troveclient.v1 import client
 
 # Supported compute versions
 NOVA_VERSIONS = base.APIVersionManager("compute", preferred_version=2)
@@ -40,18 +38,20 @@ def troveclient(request):
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     cacert = getattr(settings, 'OPENSTACK_SSL_CACERT', None)
     endpoint_type = getattr(settings, 'OPENSTACK_ENDPOINT_TYPE', 'publicURL')
-    trove_url = base.url_for(request, 'database')
-    c = client.Client(request.user.username,
-                      request.user.token.id,
-                      project_id=request.user.project_id,
-                      auth_url=trove_url,
-                      insecure=insecure,
-                      cacert=cacert,
-                      endpoint_type=endpoint_type,
-                      http_log_debug=settings.DEBUG)
-    c.client.auth_token = request.user.token.id
-    c.client.management_url = trove_url
-    return c
+    region = request.user.services_region
+
+    endpoint = base.url_for(request, 'database')
+    auth_url, _ = auth_utils.fix_auth_url_version_prefix(
+        settings.OPENSTACK_KEYSTONE_URL)
+    auth = token_endpoint.Token(auth_url, request.user.token.id)
+    verify = not insecure and (cacert or True)
+
+    t_client = client.Client(session=session.Session(auth=auth, verify=verify),
+                             service_type='database',
+                             endpoint_type=endpoint_type,
+                             region_name=region,
+                             endpoint_override=endpoint)
+    return t_client
 
 
 def cluster_list(request, marker=None):
@@ -286,18 +286,22 @@ def nova_client_client(request):
     insecure = getattr(settings, 'OPENSTACK_SSL_NO_VERIFY', False)
     cacert = getattr(settings, 'OPENSTACK_SSL_CACERT', None)
     endpoint_type = getattr(settings, 'OPENSTACK_ENDPOINT_TYPE', 'publicURL')
-    identity_url = base.url_for(request, 'identity')
-    loader = loading.get_plugin_loader('token')
-    auth = loader.load_from_options(auth_url=identity_url,
-                                    token=request.user.token.id,
-                                    tenant_id=request.user.project_id)
-    sess = session.Session(auth=auth)
-    nova = nova_client.Client(NOVA_VERSION,
-                              session=sess,
-                              insecure=insecure,
-                              cacert=cacert,
-                              endpoint_type=endpoint_type,
-                              http_log_debug=settings.DEBUG)
+    region = request.user.services_region
+
+    endpoint = base.url_for(request, 'compute')
+    auth_url, _ = auth_utils.fix_auth_url_version_prefix(
+        settings.OPENSTACK_KEYSTONE_URL)
+    auth = token_endpoint.Token(auth_url, request.user.token.id)
+    verify = not insecure and (cacert or True)
+
+    nova = nova_client.Client(
+        NOVA_VERSION,
+        session=session.Session(auth=auth, verify=verify),
+        endpoint_type=endpoint_type,
+        service_type='compute',
+        region_name=region,
+        endpoint_override=endpoint)
+
     return nova
 
 
