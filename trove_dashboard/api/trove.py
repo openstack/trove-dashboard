@@ -365,19 +365,23 @@ def log_list(request, instance_id):
 
 
 def log_enable(request, instance_id, log_name):
-    return troveclient(request).instances.log_enable(instance_id, log_name)
+    return troveclient(request).instances.log_action(instance_id, log_name,
+                                                     enable=True)
 
 
 def log_disable(request, instance_id, log_name):
-    return troveclient(request).instances.log_disable(instance_id, log_name)
+    return troveclient(request).instances.log_action(instance_id, log_name,
+                                                     disable=True)
 
 
 def log_publish(request, instance_id, log_name):
-    return troveclient(request).instances.log_publish(instance_id, log_name)
+    return troveclient(request).instances.log_action(instance_id, log_name,
+                                                     publish=True)
 
 
 def log_discard(request, instance_id, log_name):
-    return troveclient(request).instances.log_discard(instance_id, log_name)
+    return troveclient(request).instances.log_action(instance_id, log_name,
+                                                     discard=True)
 
 
 def log_tail(request, instance_id, log_name, publish, lines, swift=None):
