@@ -20,6 +20,7 @@ from django.utils.translation import ungettext_lazy
 from horizon import forms
 from horizon import messages
 from horizon import tables
+from oslo_serialization import jsonutils
 
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations \
@@ -162,11 +163,20 @@ class DeleteParameter(tables.DeleteAction):
             count
         )
 
-    def delete(self, request, obj_ids):
+    def delete(self, request, names):
+        if type(names) is not list:
+            names = [names]
+
         configuration_id = self.table.kwargs['configuration_id']
-        (config_param_manager
-            .get(request, configuration_id)
-            .delete_param(obj_ids))
+        configuration = api.trove.configuration_get(request, configuration_id)
+        cur_values = dict.copy(configuration.values)
+
+        for name in names:
+            if name in cur_values:
+                cur_values.pop(name)
+
+        api.trove.configuration_update(
+            request, configuration_id, jsonutils.dumps(cur_values))
 
 
 class UpdateRow(tables.Row):
@@ -183,8 +193,7 @@ class ValuesTable(tables.DataTable):
     class Meta(object):
         name = "values"
         verbose_name = _("Configuration Group Values")
-        table_actions = [ApplyChanges, DiscardChanges,
-                         AddParameter, DeleteParameter]
+        table_actions = [AddParameter, DeleteParameter]
         row_class = UpdateRow
         row_actions = [DeleteParameter]
 
