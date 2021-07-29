@@ -174,12 +174,19 @@ class AddParameterForm(forms.SelfHandlingForm):
     def handle(self, request, data):
         try:
             (config_param_manager
-                .get(request, self.initial["configuration_id"])
-                .add_param(data["name"],
-                           config_param_manager.adjust_type(
-                               config_param_manager.find_parameter(
-                                   data["name"], self.parameters).type,
-                               data["value"])))
+             .get(request, self.initial["configuration_id"])
+             .add_param(data["name"],
+                        config_param_manager.adjust_type(
+                            config_param_manager.find_parameter(
+                                data["name"], self.parameters).type,
+                            data["value"])))
+
+            new_values = config_param_manager.get(
+                request, self.initial["configuration_id"], use_cache=True
+            ).to_json()
+            api.trove.configuration_update(
+                request, self.initial["configuration_id"], new_values)
+
             messages.success(request, _('Successfully added parameter'))
         except Exception:
             redirect = reverse("horizon:project:database_configurations:index")

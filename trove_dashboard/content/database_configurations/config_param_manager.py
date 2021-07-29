@@ -22,8 +22,8 @@ from trove_dashboard import api
 from oslo_serialization import jsonutils
 
 
-def get(request, configuration_group_id):
-    if not has_config(configuration_group_id):
+def get(request, configuration_group_id, use_cache=False):
+    if not use_cache or not has_config(configuration_group_id):
         manager = ConfigParamManager(configuration_group_id)
         manager.configuration_get(request)
         cache.cache.set(configuration_group_id, manager)

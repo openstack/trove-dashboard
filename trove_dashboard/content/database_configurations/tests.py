@@ -15,15 +15,13 @@
 import logging
 from unittest import mock
 
-import django
-from django.conf import settings
 from django.urls import reverse
+from oslo_serialization import jsonutils
 
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations \
     import config_param_manager
 from trove_dashboard.test import helpers as test
-
 
 INDEX_URL = reverse('horizon:project:database_configurations:index')
 CREATE_URL = reverse('horizon:project:database_configurations:create')
@@ -94,8 +92,7 @@ class DatabaseConfigurationsTests(test.TestCase):
     @test.create_mocks({
         api.trove: ('datastore_list', 'datastore_version_list',
                     'configuration_create')})
-    def _test_create_test_configuration(
-            self, config_description=u''):
+    def _test_create_test_configuration(self, config_description=u''):
         self.mock_datastore_list.return_value = self.datastores.list()
         self.mock_datastore_version_list.return_value = (
             self.datastore_versions.list())
@@ -182,8 +179,7 @@ class DatabaseConfigurationsTests(test.TestCase):
         details_url = self._get_url_with_arg(DETAIL_URL, config.id)
         url = details_url + '?tab=configuration_details__details'
         res = self.client.get(url)
-        self.mock_configuration_get.assert_called_once_with(
-            test.IsHttpRequest(), config.id)
+        self.assertEqual(2, self.mock_configuration_get.call_count)
         self.assertTemplateUsed(res,
                                 'project/database_configurations/details.html')
 
@@ -253,11 +249,12 @@ class DatabaseConfigurationsTests(test.TestCase):
                 self.mock_get_configuration.assert_called_once()
                 self.mock_configuration_get.assert_called_once_with(
                     test.IsHttpRequest())
-                (self.mock_configuration_parameters_list
-                     .assert_called_once_with(
-                         test.IsHttpRequest(),
-                         ds.name,
-                         dsv.name))
+                self.mock_configuration_parameters_list. \
+                    assert_called_once_with(
+                        test.IsHttpRequest(),
+                        ds.name,
+                        dsv.name
+                    )
                 self.assertEqual(res.status_code, 302)
 
             finally:
@@ -267,13 +264,17 @@ class DatabaseConfigurationsTests(test.TestCase):
         finally:
             config_param_manager.delete(config.id)
 
-    @test.create_mocks({
-        api.trove: ('configuration_parameters_list',),
-        config_param_manager.ConfigParamManager:
-            ('get_configuration', 'add_param', 'configuration_get',)})
+    @test.create_mocks(
+        {
+            api.trove:
+                ('configuration_parameters_list', 'configuration_update',
+                 'configuration_get'),
+            config_param_manager.ConfigParamManager: ('add_param',)
+        }
+    )
     def test_add_new_parameter(self):
         config = self.database_configurations.first()
-        self.mock_get_configuration.return_value = config
+
         try:
             self.mock_configuration_get.return_value = config
 
@@ -284,6 +285,7 @@ class DatabaseConfigurationsTests(test.TestCase):
 
             name = self.configuration_parameters.first().name
             value = 1
+            config.values.update({name: value})
 
             self.mock_add_param.return_value = value
 
@@ -294,14 +296,17 @@ class DatabaseConfigurationsTests(test.TestCase):
 
             res = self.client.post(self._get_url_with_arg(ADD_URL, config.id),
                                    post)
-            self.mock_get_configuration.assert_called_once()
-            self.mock_configuration_get.assert_called_once_with(
-                test.IsHttpRequest())
+
+            self.assertEqual(2, self.mock_configuration_get.call_count)
             self.mock_configuration_parameters_list.assert_called_once_with(
                 test.IsHttpRequest(),
                 ds.name,
                 dsv.name)
             self.mock_add_param.assert_called_once_with(name, value)
+            self.mock_configuration_update.assert_called_once_with(
+                test.IsHttpRequest(), config.id,
+                jsonutils.dumps(config.values)
+            )
             self.assertNoFormErrors(res)
             self.assertMessageCount(success=1)
         finally:
@@ -345,156 +350,6 @@ class DatabaseConfigurationsTests(test.TestCase):
                                  ['Value must be a number.'])
         finally:
             config_param_manager.delete(config.id)
-
-    @test.create_mocks({api.trove: ('configuration_get',
-                                    'configuration_instances',)})
-    def test_values_tab_discard_action(self):
-        config = self.database_configurations.first()
-
-        self.mock_configuration_get.return_value = config
-
-        details_url = self._get_url_with_arg(DETAIL_URL, config.id)
-        url = details_url + '?tab=configuration_details__value'
-
-        self._test_create_altered_config_params(config, url)
-
-        # get the state of the configuration before discard action
-        changed_configuration_values = \
-            dict.copy(config_param_manager.get(self.request, config.id)
-                      .get_configuration().values)
-
-        res = self.client.post(url, {'action': u"values__discard_changes"})
-        self.mock_configuration_get.assert_called_once_with(
-            test.IsHttpRequest(), config.id)
-        if django.VERSION >= (1, 9):
-            url = settings.TESTSERVER + url
-        self.assertRedirectsNoFollow(res, url)
-
-        # get the state of the configuration after discard action
-        restored_configuration_values = \
-            dict.copy(config_param_manager.get(self.request, config.id)
-                      .get_configuration().values)
-
-        self.assertTrue(config_param_manager.dict_has_changes(
-            changed_configuration_values, restored_configuration_values))
-
-    @test.create_mocks({api.trove: ('configuration_instances',
-                                    'configuration_update',),
-                        config_param_manager: ('get',)})
-    def test_values_tab_apply_action(self):
-        # NOTE(zhaochao): we cannot use copy.deepcopy() under Python 3,
-        # because of the lazy-loading feature of the troveclient Resource
-        # objects. copy.deepcopy will use hasattr to search for the
-        # '__setstate__' attribute of the resource object. As the resource
-        # object is lazy loading, searching attributes relys on the 'is_load'
-        # property, unfortunately this property is also not loaded at the
-        # moment, then we're getting in an infinite loop there. Python will
-        # raise RuntimeError saying "maximum recursion depth exceeded", this is
-        # ignored under Python 2.x, but reraised under Python 3 by hasattr().
-        #
-        # Temporarily importing troveclient and reconstructing a configuration
-        # object from the original config object's dict info will make this
-        # case (and the next) working under Python 3.
-        original_config = self.database_configurations.first()
-        from troveclient.v1 import configurations
-        config = configurations.Configuration(
-            configurations.Configurations(None), original_config.to_dict())
-        # Making sure the newly constructed config object is the same as
-        # the original one.
-        self.assertEqual(config, original_config)
-
-        # setup the configuration parameter manager
-        config_param_mgr = config_param_manager.ConfigParamManager(
-            config.id)
-        config_param_mgr.configuration = config
-        config_param_mgr.original_configuration_values = \
-            dict.copy(config.values)
-
-        self.mock_get.return_value = config_param_mgr
-
-        self.mock_configuration_update.return_value = None
-
-        details_url = self._get_url_with_arg(DETAIL_URL, config.id)
-        url = details_url + '?tab=configuration_details__value'
-
-        self._test_create_altered_config_params(config, url)
-
-        # apply changes
-        res = self.client.post(url, {'action': u"values__apply_changes"})
-        self.assert_mock_multiple_calls_with_same_arguments(
-            self.mock_get, 11, mock.call(test.IsHttpRequest(), config.id))
-        self.mock_configuration_update.assert_called_once_with(
-            test.IsHttpRequest(),
-            config.id,
-            config_param_mgr.to_json())
-        if django.VERSION >= (1, 9):
-            url = settings.TESTSERVER + url
-        self.assertRedirectsNoFollow(res, url)
-
-    @test.create_mocks({api.trove: ('configuration_instances',
-                                    'configuration_update',),
-                        config_param_manager: ('get',)})
-    def test_values_tab_apply_action_exception(self):
-        # NOTE(zhaochao) Please refer to the comment at the beginning of the
-        # 'test_values_tab_apply_action' about not using copy.deepcopy() for
-        # details.
-        original_config = self.database_configurations.first()
-        from troveclient.v1 import configurations
-        config = configurations.Configuration(
-            configurations.Configurations(None), original_config.to_dict())
-        # Making sure the newly constructed config object is the same as
-        # the original one.
-        self.assertEqual(config, original_config)
-
-        # setup the configuration parameter manager
-        config_param_mgr = config_param_manager.ConfigParamManager(
-            config.id)
-        config_param_mgr.configuration = config
-        config_param_mgr.original_configuration_values = \
-            dict.copy(config.values)
-
-        self.mock_get.return_value = config_param_mgr
-
-        self.mock_configuration_update.side_effect = self.exceptions.trove
-
-        details_url = self._get_url_with_arg(DETAIL_URL, config.id)
-        url = details_url + '?tab=configuration_details__value'
-
-        self._test_create_altered_config_params(config, url)
-
-        # apply changes
-        res = self.client.post(url, {'action': u"values__apply_changes"})
-        self.assert_mock_multiple_calls_with_same_arguments(
-            self.mock_get, 11, mock.call(test.IsHttpRequest(), config.id))
-        self.mock_configuration_update.assert_called_once_with(
-            test.IsHttpRequest(),
-            config.id,
-            config_param_mgr.to_json())
-        if django.VERSION >= (1, 9):
-            url = settings.TESTSERVER + url
-        self.assertRedirectsNoFollow(res, url)
-        self.assertEqual(res.status_code, 302)
-
-    def _test_create_altered_config_params(self, config, url):
-        # determine the number of configuration group parameters in the list
-        res = self.client.get(url)
-
-        table_data = res.context['table'].data
-        number_params = len(table_data)
-        config_param = table_data[0]
-
-        # delete the first parameter
-        action_string = u"values__delete__%s" % config_param.name
-        form_data = {'action': action_string}
-        res = self.client.post(url, form_data)
-        self.assertRedirectsNoFollow(res, url)
-
-        # verify the test number of parameters is reduced by 1
-        res = self.client.get(url)
-        table_data = res.context['table'].data
-        new_number_params = len(table_data)
-
-        self.assertEqual((number_params - 1), new_number_params)
 
     @test.create_mocks({api.trove: ('configuration_instances',),
                         config_param_manager: ('get',)})
