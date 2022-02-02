@@ -221,12 +221,13 @@ def eject_replica_source(request, instance_id):
 
 
 def instance_attach_configuration(request, instance_id, configuration):
-    return troveclient(request).instances.modify(instance_id,
+    return troveclient(request).instances.update(instance_id,
                                                  configuration=configuration)
 
 
 def instance_detach_configuration(request, instance_id):
-    return troveclient(request).instances.modify(instance_id)
+    return troveclient(request).instances.update(instance_id,
+                                                 remove_configuration=True)
 
 
 def database_list(request, instance_id):
