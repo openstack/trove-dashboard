@@ -137,7 +137,7 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list', 'flavor_list',
                     'instance_list'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',),
+        dash_api.neutron: ('network_list_for_tenant',),
         dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
@@ -155,8 +155,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_volume_type_list.return_value = []
 
-        self.mock_network_list.side_effect = [self.networks.list()[:1],
-                                              self.networks.list()[1:]]
+        self.mock_network_list_for_tenant.return_value = self.networks.list()
 
         self.mock_availability_zone_list.return_value = (
             self.availability_zones.list())
@@ -179,11 +178,9 @@ class DatabaseTests(test.TestCase):
             mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.mock_volume_type_list.assert_called_once_with(
             test.IsHttpRequest())
-        self.mock_network_list.assert_has_calls([
-            mock.call(test.IsHttpRequest(),
-                      tenant_id=self.tenant.id,
-                      shared=False),
-            mock.call(test.IsHttpRequest(), shared=True)])
+        self.mock_network_list_for_tenant.assert_called_once_with(
+            test.IsHttpRequest(), self.tenant.id,
+            include_pre_auto_allocate=True)
         self.mock_availability_zone_list.assert_called_once_with(
             test.IsHttpRequest())
         self.assertTemplateUsed(res, 'project/databases/launch.html')
@@ -225,7 +222,7 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list', 'flavor_list',
                     'instance_create', 'instance_list'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',),
+        dash_api.neutron: ('network_list_for_tenant',),
         dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
@@ -242,8 +239,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_volume_type_list.return_value = []
 
-        self.mock_network_list.side_effect = [self.networks.list()[:1],
-                                              self.networks.list()[1:]]
+        self.mock_network_list_for_tenant.return_value = self.networks.list()
 
         nics = [{"net-id": self.networks.first().id}]
 
@@ -283,11 +279,9 @@ class DatabaseTests(test.TestCase):
             mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.mock_volume_type_list.assert_called_once_with(
             test.IsHttpRequest())
-        self.mock_network_list.assert_has_calls([
-            mock.call(test.IsHttpRequest(),
-                      tenant_id=self.tenant.id,
-                      shared=False),
-            mock.call(test.IsHttpRequest(), shared=True)])
+        self.mock_network_list_for_tenant.assert_called_once_with(
+            test.IsHttpRequest(), self.tenant.id,
+            include_pre_auto_allocate=True)
         self.mock_availability_zone_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_instance_create.assert_called_once_with(
@@ -315,7 +309,7 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list', 'flavor_list',
                     'instance_create', 'instance_list'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',),
+        dash_api.neutron: ('network_list_for_tenant',),
         dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
@@ -333,8 +327,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_volume_type_list.return_value = []
 
-        self.mock_network_list.side_effect = [self.networks.list()[:1],
-                                              self.networks.list()[1:]]
+        self.mock_network_list_for_tenant.return_value = self.networks.list()
 
         nics = [{"net-id": self.networks.first().id}]
 
@@ -374,11 +367,9 @@ class DatabaseTests(test.TestCase):
             mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.mock_volume_type_list.assert_called_once_with(
             test.IsHttpRequest())
-        self.mock_network_list.assert_has_calls([
-            mock.call(test.IsHttpRequest(),
-                      tenant_id=self.tenant.id,
-                      shared=False),
-            mock.call(test.IsHttpRequest(), shared=True)])
+        self.mock_network_list_for_tenant.assert_called_once_with(
+            test.IsHttpRequest(), self.tenant.id,
+            include_pre_auto_allocate=True)
         self.mock_availability_zone_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_instance_create.assert_called_once_with(
@@ -1048,7 +1039,7 @@ class DatabaseTests(test.TestCase):
                     'datastore_list', 'datastore_version_list', 'flavor_list',
                     'instance_create', 'instance_get', 'instance_list_all'),
         dash_api.cinder: ('volume_type_list',),
-        dash_api.neutron: ('network_list',),
+        dash_api.neutron: ('network_list_for_tenant',),
         dash_api.nova: ('availability_zone_list',),
         policy: ('check',),
     })
@@ -1063,8 +1054,7 @@ class DatabaseTests(test.TestCase):
 
         self.mock_volume_type_list.return_value = []
 
-        self.mock_network_list.side_effect = [self.networks.list()[:1],
-                                              self.networks.list()[1:]]
+        self.mock_network_list_for_tenant.return_value = self.networks.list()
 
         nics = [{"net-id": self.networks.first().id}]
 
@@ -1110,11 +1100,9 @@ class DatabaseTests(test.TestCase):
             mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.mock_volume_type_list.assert_called_once_with(
             test.IsHttpRequest())
-        self.mock_network_list.assert_has_calls([
-            mock.call(test.IsHttpRequest(),
-                      tenant_id=self.tenant.id,
-                      shared=False),
-            mock.call(test.IsHttpRequest(), shared=True)])
+        self.mock_network_list_for_tenant.assert_called_once_with(
+            test.IsHttpRequest(), self.tenant.id,
+            include_pre_auto_allocate=True)
         self.mock_availability_zone_list.assert_called_once_with(
             test.IsHttpRequest())
         self.mock_instance_get.assert_called_once_with(
