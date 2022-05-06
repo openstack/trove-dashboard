@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Enables dashboard to select a configuration-id.
+    We should select a configuration-id in cluster creation forms because we
+    can select a configuration id when creating a database instance.
