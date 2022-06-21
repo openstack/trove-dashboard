@@ -1,3 +1,4 @@
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2016. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2017. #zanata
 # Robert Simai <robert.simai@suse.com>, 2018. #zanata
@@ -5,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,13 +79,6 @@ msgstr "Füge Instanz hinzu"
 msgid "Add Parameter"
 msgstr "Parameter hinzufügen"
 
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"Füge Parameter zur Gruppenkonfiguration hinzu. Wenn alle Parameter "
-"hinzugefügt sind, klicke \"Änderungen übernehmen\" für dauerhafte Änderungen."
-
 msgid "Advanced"
 msgstr "Erweitert"
 
@@ -112,6 +106,9 @@ msgstr "Angewandte Änderungen zum Server"
 
 msgid "Apply Changes"
 msgstr "Änderungen anwenden"
+
+msgid "At least one network must be specified."
+msgstr "Es muss mindestens ein Netzwerk angegeben werden."
 
 msgid "At least one of the new fields must be changed."
 msgstr "Mindestens eines der neuen Felder muss geändert werden."
@@ -610,6 +607,9 @@ msgstr "Datenbank starten"
 msgid "Launch Instance"
 msgstr "Instanz starten"
 
+msgid "Launch instance with these networks"
+msgstr "Instanz mit diesen Netzwerken starten"
+
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "%(count)s mal \"%(name)s\" gestartet."
@@ -674,6 +674,12 @@ msgstr "Netzwerk"
 
 msgid "Network attached to instance."
 msgstr "Der Instanz zugewiesenes Netzwerk."
+
+msgid "Networking"
+msgstr "Netzwerk"
+
+msgid "Networks"
+msgstr "Netzwerke"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -1057,6 +1063,9 @@ msgstr "Typ und Version des Datenspeichers wählen"
 
 msgid "Select instance"
 msgstr "Instanz auswählen"
+
+msgid "Select networks for your instance."
+msgstr "Wählen Sie die Netzwerke für Ihre Instanz."
 
 msgid "Select parent backup"
 msgstr "Eltern-Sicherungskopie auswählen"

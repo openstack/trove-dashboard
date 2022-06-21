@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,13 +81,6 @@ msgstr "Ajouter une instance"
 msgid "Add Parameter"
 msgstr "Ajouter un paramètre"
 
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"Ajout de paramètres au groupe de configuration. Une fois tous les paramètres "
-"ajoutés, cliquer sur 'Appliquer les changements' pour les rendre persistents."
-
 msgid "Advanced"
 msgstr "Avancées"
 
@@ -115,6 +108,9 @@ msgstr "Changements appliqués sur le serveur"
 
 msgid "Apply Changes"
 msgstr "Appliquer les changements"
+
+msgid "At least one network must be specified."
+msgstr "Au moins un réseau doit être spécifié."
 
 msgid "At least one of the new fields must be changed."
 msgstr "Au moins l'un des nouveaux champs doit être modifié."
@@ -616,6 +612,9 @@ msgstr "Lancer la base de données"
 msgid "Launch Instance"
 msgstr "Lancer Instance"
 
+msgid "Launch instance with these networks"
+msgstr "Démarrer l'instance avec ces réseaux"
+
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "%(count)s instance(s) nommée(s) \"%(name)s\" ont été lancée(s)."
@@ -681,6 +680,12 @@ msgstr "Réseau"
 
 msgid "Network attached to instance."
 msgstr "Réseau attaché à l'instance."
+
+msgid "Networking"
+msgstr "Réseaux"
+
+msgid "Networks"
+msgstr "Réseaux"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -1066,6 +1071,9 @@ msgstr "Sélectionner le type et la version de datastore"
 
 msgid "Select instance"
 msgstr "Sélectionner une instance"
+
+msgid "Select networks for your instance."
+msgstr "Sélectionner les réseaux pour votre instance."
 
 msgid "Select parent backup"
 msgstr "Sélectionner une sauvegarde totale"

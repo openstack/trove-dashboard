@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,13 +75,6 @@ msgstr "인스턴스 추가"
 msgid "Add Parameter"
 msgstr "매개 변수 추가"
 
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"매개 변수를 구성 그룹에 추가하였습니다. 모든 매개 변수를 추가한 뒤에 변경 사"
-"항을 유지하기 위해 '변경 사항 적용' 을 클릭합니다."
-
 msgid "Advanced"
 msgstr "진보된"
 
@@ -109,6 +102,9 @@ msgstr "서버에 적용된 변경 사항"
 
 msgid "Apply Changes"
 msgstr "변경 사항 적용"
+
+msgid "At least one network must be specified."
+msgstr "최소 네트워크 하나를 지정해야 합니다."
 
 msgid "At least one of the new fields must be changed."
 msgstr "적어도 새로운 필드 중 하나는 반드시 바뀌어야만한다."
@@ -581,6 +577,9 @@ msgstr "데이터베이스 시작"
 msgid "Launch Instance"
 msgstr "인스턴스 시작"
 
+msgid "Launch instance with these networks"
+msgstr "선택한 네트워크로 인스턴스 구동"
+
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "%(count)s개의 \"%(name)s\"이(가) 시작되었습니다."
@@ -644,6 +643,12 @@ msgstr "네트워크"
 
 msgid "Network attached to instance."
 msgstr "인스턴스에 네트워크 연결하였습니다."
+
+msgid "Networking"
+msgstr "네트워킹"
+
+msgid "Networks"
+msgstr "네트워크"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -1004,6 +1009,9 @@ msgstr "Datastore 타입과 버전 선택"
 
 msgid "Select instance"
 msgstr "인스턴스 선택"
+
+msgid "Select networks for your instance."
+msgstr "인스턴스 네트워크 선택"
 
 msgid "Select parent backup"
 msgstr "부모 백업 선택"

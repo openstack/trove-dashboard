@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -70,13 +70,6 @@ msgstr "インスタンスの追加"
 msgid "Add Parameter"
 msgstr "パラメーターの追加"
 
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"設定グループのパラメーターを追加してください。全てのパラメーターが追加した"
-"ら、変更を保存するために「変更の適用」をクリックしてください。"
-
 msgid "Advanced"
 msgstr "高度な設定"
 
@@ -97,6 +90,9 @@ msgstr "変更をサーバーに適用しました"
 
 msgid "Apply Changes"
 msgstr "変更の適用"
+
+msgid "At least one network must be specified."
+msgstr "少なくとも 1 つのネットワークを指定する必要があります。"
 
 msgid "At least one of the new fields must be changed."
 msgstr ""
@@ -545,6 +541,9 @@ msgstr "データベースの起動"
 msgid "Launch Instance"
 msgstr "インスタンスの起動"
 
+msgid "Launch instance with these networks"
+msgstr "これらのネットワークでインスタンスを起動します。"
+
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "名前が \"%(name)s\" の %(count)s を起動しました。"
@@ -600,6 +599,12 @@ msgstr "ネットワーク"
 
 msgid "Network attached to instance."
 msgstr "インスタンスに接続するネットワーク。"
+
+msgid "Networking"
+msgstr "ネットワーク"
+
+msgid "Networks"
+msgstr "ネットワーク"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -966,6 +971,9 @@ msgstr "データストアの種別とバージョンを選択してください
 
 msgid "Select instance"
 msgstr "インスタンスを選択してください"
+
+msgid "Select networks for your instance."
+msgstr "インスタンスのネットワークを選択します。"
 
 msgid "Select parent backup"
 msgstr "親バックアップを選択してください"
