@@ -17,8 +17,8 @@
 from django import shortcuts
 from django.template.defaultfilters import title  # noqa
 from django import urls
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext_lazy
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext_lazy
 
 from horizon import messages
 from horizon import tables
@@ -45,7 +45,7 @@ class DeleteCluster(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Cluster",
             u"Delete Clusters",
             count
@@ -53,7 +53,7 @@ class DeleteCluster(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Scheduled deletion of Cluster",
             u"Scheduled deletion of Clusters",
             count
@@ -244,7 +244,7 @@ class ClusterShrinkAction(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Shrink Cluster",
             u"Shrink Cluster",
             count
@@ -252,7 +252,7 @@ class ClusterShrinkAction(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Scheduled Shrinking of Cluster",
             u"Scheduled Shrinking of Cluster",
             count
@@ -316,7 +316,7 @@ class ClusterGrowRemoveInstance(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Remove Instance",
             u"Remove Instances",
             count
@@ -324,7 +324,7 @@ class ClusterGrowRemoveInstance(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Removed Instance",
             u"Removed Instances",
             count

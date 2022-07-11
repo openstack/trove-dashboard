@@ -14,8 +14,8 @@
 
 from django import shortcuts
 from django import urls
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext_lazy
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext_lazy
 
 from horizon import forms
 from horizon import messages
@@ -41,7 +41,7 @@ class DeleteConfiguration(tables.DeleteAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Configuration Group",
             u"Delete Configuration Groups",
             count
@@ -49,7 +49,7 @@ class DeleteConfiguration(tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Deleted Configuration Group",
             u"Deleted Configuration Groups",
             count
@@ -149,7 +149,7 @@ class DeleteParameter(tables.DeleteAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Parameter",
             u"Delete Parameters",
             count
@@ -157,7 +157,7 @@ class DeleteParameter(tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Deleted Parameter",
             u"Deleted Parameters",
             count
@@ -204,7 +204,7 @@ class ValuesTable(tables.DataTable):
 class DetachConfiguration(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Detach Configuration Group",
             u"Detach Configuration Groups",
             count
@@ -212,7 +212,7 @@ class DetachConfiguration(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Detached Configuration Group",
             u"Detached Configuration Groups",
             count
