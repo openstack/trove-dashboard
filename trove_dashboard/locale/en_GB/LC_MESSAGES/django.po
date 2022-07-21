@@ -1,15 +1,16 @@
 # Andi Chandler <andi@gowling.com>, 2016. #zanata
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
 # Andi Chandler <andi@gowling.com>, 2020. #zanata
+# Andi Chandler <andi@gowling.com>, 2022. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-12-10 01:35+0000\n"
+"PO-Revision-Date: 2022-05-25 09:23+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -59,6 +60,9 @@ msgid_plural "Access Revoked to"
 msgstr[0] "Access Revoked to"
 msgstr[1] "Access Revoked to"
 
+msgid "Access defines how the database service is exposed."
+msgstr "Access defines how the database service is exposed."
+
 msgid "Accessible"
 msgstr "Accessible"
 
@@ -74,13 +78,6 @@ msgstr "Add Instance"
 
 msgid "Add Parameter"
 msgstr "Add Parameter"
-
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
 
 msgid "Advanced"
 msgstr "Advanced"
@@ -112,6 +109,9 @@ msgstr "Applied changes to server"
 
 msgid "Apply Changes"
 msgstr "Apply Changes"
+
+msgid "At least one network must be specified."
+msgstr "At least one network must be specified."
 
 msgid "At least one of the new fields must be changed."
 msgstr "At least one of the new fields must be changed."
@@ -163,10 +163,16 @@ msgstr "Backup Overview"
 msgid "Backup Strategies"
 msgstr "Backup Strategies"
 
+msgid "Backup Strategy"
+msgstr "Backup Strategy"
+
 msgid "Backup Strategy Deleted"
 msgid_plural "Backup Strategies Deleted"
 msgstr[0] "Backup Strategy Deleted"
 msgstr[1] "Backup Strategies Deleted"
+
+msgid "Backup strategy created"
+msgstr "Backup strategy created"
 
 msgid "Backups"
 msgstr "Backups"
@@ -182,6 +188,15 @@ msgstr "Building"
 msgctxt "Current status of a Database Instance"
 msgid "Building"
 msgstr "Building"
+
+msgid ""
+"CIDRs is a comma-separated list of IPv4, IPv6 or mix of both CIDRs that "
+"restrict access to the database service. 0.0.0.0/0 is used by default if "
+"this parameter is not provided. E.g.: 0.0.0.0/0,202.78.240.0/24"
+msgstr ""
+"CIDRs are a comma-separated list of IPv4, IPv6 or a mix of both CIDRs that "
+"restrict access to the database service. 0.0.0.0/0 is used by default if "
+"this parameter is not provided. E.g.: 0.0.0.0/0,202.78.240.0/24"
 
 msgid "Cancel"
 msgstr "Cancel"
@@ -202,6 +217,20 @@ msgstr "Choose a new instance flavour."
 msgid "Choose initial state."
 msgstr "Choose initial state."
 
+msgid ""
+"Choose network from Available networks to Selected networks by push button "
+"or drag and drop, you may change NIC order by drag and drop as well. "
+msgstr ""
+"Choose network from Available networks to Selected networks by push button "
+"or drag and drop, you may change NIC order by drag and drop as well. "
+
+msgid ""
+"Classless Inter-Domain Routing (e.g. 192.168.0.0/24, or 2001:db8::/128). Can "
+"enter multiple values separatingby a comma"
+msgstr ""
+"Classless Inter-Domain Routing (e.g. 192.168.0.0/24, or 2001:db8::/128). Can "
+"enter multiple values separating by a comma"
+
 msgid "Close"
 msgstr "Close"
 
@@ -219,6 +248,9 @@ msgstr "Collation"
 
 msgid "Comma separated list of databases to create"
 msgstr "Comma separated list of databases to create"
+
+msgid "Comma-separated CIDRs to connect through."
+msgstr "Comma-separated CIDRs to connect through."
 
 msgctxt "Current status of a Database Backup"
 msgid "Completed"
@@ -248,6 +280,9 @@ msgstr "Configuration Group Values"
 msgid "Configuration Groups"
 msgstr "Configuration Groups"
 
+msgid "Configurations"
+msgstr "Configurations"
+
 msgid ""
 "Confirm the current replica is to be promoted as the new replica source."
 msgstr ""
@@ -264,6 +299,9 @@ msgstr "Container"
 
 msgid "Create Backup"
 msgstr "Create Backup"
+
+msgid "Create Backup Strategy"
+msgstr "Create Backup Strategy"
 
 msgid "Create Configuration Group"
 msgstr "Create Configuration Group"
@@ -512,6 +550,9 @@ msgstr "Error"
 msgid "Error applying changes"
 msgstr "Error applying changes"
 
+msgid "Error creating backup strategy."
+msgstr "Error creating backup strategy."
+
 msgid "Error creating database backup."
 msgstr "Error creating database backup."
 
@@ -614,6 +655,10 @@ msgstr "Initial admin user to add"
 msgid "Initialize Databases"
 msgstr "Initialise Databases"
 
+#, python-format
+msgid "Instance \"%s\" successfully updated."
+msgstr "Instance \"%s\" successfully updated."
+
 msgid "Instance Name"
 msgstr "Instance Name"
 
@@ -640,6 +685,9 @@ msgstr "Launch Database"
 
 msgid "Launch Instance"
 msgstr "Launch Instance"
+
+msgid "Launch instance with these networks"
+msgstr "Launch instance with these networks"
 
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
@@ -679,6 +727,15 @@ msgstr "Manage Root"
 msgid "Manage Root Access"
 msgstr "Manage Root Access"
 
+msgid ""
+"Manage parameters of the configuration group. If the configuration group is "
+"attached with database instance, the change is applied to the instance "
+"synchronously."
+msgstr ""
+"Manage parameters of the configuration group. If the configuration group is "
+"attached with the database instance, the change is applied to the instance "
+"synchronously."
+
 msgid "Management Console"
 msgstr "Management Console"
 
@@ -706,8 +763,14 @@ msgstr "Network"
 msgid "Network attached to instance."
 msgstr "Network attached to instance."
 
+msgid "Networking"
+msgstr "Networking"
+
 msgid "Networking Information"
 msgstr "Networking Information"
+
+msgid "Networks"
+msgstr "Networks"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -791,6 +854,9 @@ msgstr "Number of shards. (Read only)"
 
 msgid "Old Flavor"
 msgstr "Old Flavour"
+
+msgid "Operating Status"
+msgstr "Operating Status"
 
 msgid "Optional Backup Description"
 msgstr "Optional Backup Description"
@@ -1015,6 +1081,10 @@ msgstr "Restore Backup"
 msgid "Restore from Backup"
 msgstr "Restore from Backup"
 
+msgctxt "Current status of a Database Backup"
+msgid "Restored"
+msgstr "Restored"
+
 msgid "Return to Log List"
 msgstr "Return to Log List"
 
@@ -1093,6 +1163,9 @@ msgstr "Select datastore type and version"
 msgid "Select instance"
 msgstr "Select instance"
 
+msgid "Select networks for your instance."
+msgstr "Select networks for your instance."
+
 msgid "Select parent backup"
 msgstr "Select parent backup"
 
@@ -1137,6 +1210,9 @@ msgstr "Specify a new flavour for the database instance."
 
 msgid "Specify a new name, new password or new host name for the user."
 msgstr "Specify a new name, new password or new host name for the user."
+
+msgid "Specify the backup strategy details."
+msgstr "Specify the backup strategy details."
 
 msgid "Specify the details for launching an instance."
 msgstr "Specify the details for launching an instance."
@@ -1263,6 +1339,9 @@ msgstr "Unable to add new parameter."
 
 msgid "Unable to attach configuration group."
 msgstr "Unable to attach configuration group."
+
+msgid "Unable to create backup strategy"
+msgstr "Unable to create backup strategy"
 
 msgid "Unable to create configuration group."
 msgstr "Unable to create configuration group."
@@ -1405,6 +1484,10 @@ msgid "Unable to retrieve details for database instance: %s"
 msgstr "Unable to retrieve details for database instance: %s"
 
 #, python-format
+msgid "Unable to retrieve details for instance %s"
+msgstr "Unable to retrieve details for instance %s"
+
+#, python-format
 msgid "Unable to retrieve details for parent backup: %s"
 msgstr "Unable to retrieve details for parent backup: %s"
 
@@ -1425,11 +1508,21 @@ msgstr ""
 msgid "Unable to retrieve networks."
 msgstr "Unable to retrieve networks."
 
+#, python-format
+msgid "Unable to update instance \"%s\"."
+msgstr "Unable to update instance \"%s\"."
+
 msgid "Unable to update user."
 msgstr "Unable to update user."
 
 msgid "Unknown"
 msgstr "Unknown"
+
+msgid "Update Instance"
+msgstr "Update Instance"
+
+msgid "Update instance."
+msgstr "Update instance."
 
 msgid "Updated"
 msgstr "Updated"

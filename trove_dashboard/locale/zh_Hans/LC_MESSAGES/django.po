@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,12 +75,6 @@ msgstr "添加实例"
 msgid "Add Parameter"
 msgstr "增加参数"
 
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"给配置组增加参数。当所有参数都增加之后点击'Apply Changes'来应用这些改变"
-
 msgid "Advanced"
 msgstr "高级"
 
@@ -108,6 +102,9 @@ msgstr "对主机应用这些改变"
 
 msgid "Apply Changes"
 msgstr "应用改变"
+
+msgid "At least one network must be specified."
+msgstr "至少要选择一个网络。"
 
 msgid "At least one of the new fields must be changed."
 msgstr "至少修改一个新的字段。"
@@ -578,6 +575,9 @@ msgstr "启动数据库"
 msgid "Launch Instance"
 msgstr "启动实例"
 
+msgid "Launch instance with these networks"
+msgstr "使用这些网络启动云主机"
+
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "启动了%(count)s 名称\"%(name)s\"。"
@@ -641,6 +641,12 @@ msgstr "网络"
 
 msgid "Network attached to instance."
 msgstr "附加到实例的网络。"
+
+msgid "Networking"
+msgstr "网络"
+
+msgid "Networks"
+msgstr "网络"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -991,6 +997,9 @@ msgstr "选择数据存储类型和版本"
 
 msgid "Select instance"
 msgstr "选择云主机"
+
+msgid "Select networks for your instance."
+msgstr "为你的云主机选择网络。"
 
 msgid "Select parent backup"
 msgstr "选择父备份"

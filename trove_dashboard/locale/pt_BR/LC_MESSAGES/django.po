@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2021-03-03 00:05+0000\n"
+"POT-Creation-Date: 2022-04-29 11:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -76,14 +76,6 @@ msgstr "Adicionar Instância"
 msgid "Add Parameter"
 msgstr "Adicionar Parâmetro"
 
-msgid ""
-"Add parameters to the configuration group.  When all the parameters are "
-"added click 'Apply Changes' to persist changes."
-msgstr ""
-"Adicionar parâmetros ao grupo de configuração. Quando todos os parâmetros "
-"forem adicionados clique em 'Aplicar Mudanças' para que as alterações "
-"persistam."
-
 msgid "Advanced"
 msgstr "Avançado"
 
@@ -111,6 +103,9 @@ msgstr "Alterações aplicadas no servidor"
 
 msgid "Apply Changes"
 msgstr "Aplicar Alterações"
+
+msgid "At least one network must be specified."
+msgstr "Ao menos uma rede deve ser especificada."
 
 msgid "At least one of the new fields must be changed."
 msgstr "Pelo menos um dos novos campos deve ser alterado."
@@ -610,6 +605,9 @@ msgstr "Disparar Base de Dados"
 msgid "Launch Instance"
 msgstr "Disparar Instância"
 
+msgid "Launch instance with these networks"
+msgstr "Disparar instância com estas redes"
+
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
 msgstr "Disparadas %(count)s chamadas \"%(name)s\"."
@@ -673,6 +671,12 @@ msgstr "Rede"
 
 msgid "Network attached to instance."
 msgstr "Rede anexada para a instância."
+
+msgid "Networking"
+msgstr "Rede"
+
+msgid "Networks"
+msgstr "Redes"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
@@ -1056,6 +1060,9 @@ msgstr "Selecione o tipo de armazenamento de dados e versão"
 
 msgid "Select instance"
 msgstr "Selecione uma instância"
+
+msgid "Select networks for your instance."
+msgstr "Selecione as redes para sua instância."
 
 msgid "Select parent backup"
 msgstr "Selecione o backup pai"
