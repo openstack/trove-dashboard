@@ -12,13 +12,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from trove_dashboard.content.database_backups import views
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^create$', views.BackupView.as_view(), name='create'),
-    url(r'^(?P<backup_id>[^/]+)/$', views.DetailView.as_view(),
-        name='detail'),
+    re_path(r'^$', views.IndexView.as_view(), name='index'),
+    re_path(r'^create$', views.BackupView.as_view(), name='create'),
+    re_path(r'^(?P<backup_id>[^/]+)/$', views.DetailView.as_view(),
+            name='detail'),
 ]
