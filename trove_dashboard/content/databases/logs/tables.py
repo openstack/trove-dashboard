@@ -13,8 +13,8 @@
 #    under the License.
 
 from django import urls
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext_lazy
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext_lazy
 
 from horizon import tables
 
@@ -24,7 +24,7 @@ from trove_dashboard import api
 class PublishLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Publish Log",
             u"Publish Logs",
             count
@@ -32,7 +32,7 @@ class PublishLog(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Published Log",
             u"Published Logs",
             count
@@ -48,7 +48,7 @@ class PublishLog(tables.BatchAction):
 class DiscardLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Discard Log",
             u"Discard Logs",
             count
@@ -56,7 +56,7 @@ class DiscardLog(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Discarded Log",
             u"Discarded Logs",
             count
@@ -72,7 +72,7 @@ class DiscardLog(tables.BatchAction):
 class EnableLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Enable Log",
             u"Enable Logs",
             count
@@ -80,7 +80,7 @@ class EnableLog(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Enabled Log",
             u"Enabled Logs",
             count
@@ -96,7 +96,7 @@ class EnableLog(tables.BatchAction):
 class DisableLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Disable Log",
             u"Disable Logs",
             count
@@ -104,7 +104,7 @@ class DisableLog(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Disabled Log",
             u"Disabled Logs",
             count

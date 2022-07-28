@@ -22,9 +22,9 @@ from django.urls import reverse
 from django.utils import html
 from django.utils import safestring
 
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext_lazy
 from django.utils.translation import pgettext_lazy
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext_lazy
 
 from horizon import exceptions
 from horizon import messages
@@ -45,7 +45,7 @@ class DeleteInstance(tables.DeleteAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Instance",
             u"Delete Instances",
             count
@@ -53,7 +53,7 @@ class DeleteInstance(tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Scheduled deletion of Instance",
             u"Scheduled deletion of Instances",
             count
@@ -69,7 +69,7 @@ class RestartInstance(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Restart Instance",
             u"Restart Instances",
             count
@@ -77,7 +77,7 @@ class RestartInstance(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Restarted Instance",
             u"Restarted Instances",
             count
@@ -98,7 +98,7 @@ class RestartInstance(tables.BatchAction):
 class DetachReplica(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Detach Replica",
             u"Detach Replicas",
             count
@@ -106,7 +106,7 @@ class DetachReplica(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Replica Detached",
             u"Replicas Detached",
             count
@@ -141,7 +141,7 @@ class PromoteToReplicaSource(tables.LinkAction):
 class EjectReplicaSource(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Eject Replica Source",
             u"Eject Replica Sources",
             count
@@ -149,7 +149,7 @@ class EjectReplicaSource(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Ejected Replica Source",
             u"Ejected Replica Sources",
             count
@@ -169,7 +169,7 @@ class EjectReplicaSource(tables.BatchAction):
 class GrantAccess(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Grant Access",
             u"Grant Access",
             count
@@ -177,7 +177,7 @@ class GrantAccess(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Granted Access to",
             u"Granted Access to",
             count
@@ -203,7 +203,7 @@ class GrantAccess(tables.BatchAction):
 class RevokeAccess(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Revoke Access",
             u"Revoke Access",
             count
@@ -211,7 +211,7 @@ class RevokeAccess(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Access Revoked to",
             u"Access Revoked to",
             count
@@ -324,7 +324,7 @@ def has_user_add_perm(request):
 class DeleteUser(tables.DeleteAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete User",
             u"Delete Users",
             count
@@ -332,7 +332,7 @@ class DeleteUser(tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Deleted User",
             u"Deleted Users",
             count
@@ -371,7 +371,7 @@ def has_database_add_perm(request):
 class DeleteDatabase(tables.DeleteAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Database",
             u"Delete Databases",
             count
@@ -379,7 +379,7 @@ class DeleteDatabase(tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Deleted Database",
             u"Deleted Databases",
             count
@@ -461,7 +461,7 @@ class AttachConfiguration(tables.LinkAction):
 class DetachConfiguration(tables.BatchAction):
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Detach Configuration Group",
             u"Detach Configuration Groups",
             count
@@ -469,7 +469,7 @@ class DetachConfiguration(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Detached Configuration Group",
             u"Detached Configuration Groups",
             count
@@ -662,7 +662,7 @@ class StopDatabase(tables.BatchAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Stop Database Service",
             u"Stop Database Services",
             count
@@ -670,7 +670,7 @@ class StopDatabase(tables.BatchAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Database Service stopped",
             u"Database Services stopped",
             count

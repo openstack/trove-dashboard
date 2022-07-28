@@ -17,7 +17,7 @@ import collections
 import uuid
 
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.debug import sensitive_variables  # noqa
 
 from horizon import exceptions
