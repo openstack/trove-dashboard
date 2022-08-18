@@ -12,7 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.conf.urls import url  # noqa
+from django.urls import re_path  # noqa
 
 from trove_dashboard.content.database_configurations \
     import views
@@ -22,16 +22,16 @@ CONFIGS = r'^(?P<configuration_id>[^/]+)/%s$'
 
 
 urlpatterns = [
-    url(r'^$',
-        views.IndexView.as_view(),
-        name='index'),
-    url(r'^create$',
-        views.CreateConfigurationView.as_view(),
-        name='create'),
-    url(CONFIGS % '',
-        views.DetailView.as_view(),
-        name='detail'),
-    url(CONFIGS % 'add',
-        views.AddParameterView.as_view(),
-        name='add')
+    re_path(r'^$',
+            views.IndexView.as_view(),
+            name='index'),
+    re_path(r'^create$',
+            views.CreateConfigurationView.as_view(),
+            name='create'),
+    re_path(CONFIGS % '',
+            views.DetailView.as_view(),
+            name='detail'),
+    re_path(CONFIGS % 'add',
+            views.AddParameterView.as_view(),
+            name='add')
 ]

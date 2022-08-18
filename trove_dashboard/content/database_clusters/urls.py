@@ -14,27 +14,27 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from django.conf.urls import url  # noqa
+from django.urls import re_path  # noqa
 
 from trove_dashboard.content.database_clusters import views
 
 CLUSTERS = r'^(?P<cluster_id>[^/]+)/%s$'
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^launch$', views.LaunchClusterView.as_view(), name='launch'),
-    url(r'^(?P<cluster_id>[^/]+)/$', views.DetailView.as_view(),
-        name='detail'),
-    url(CLUSTERS % 'cluster_grow_details',
-        views.ClusterGrowView.as_view(),
-        name='cluster_grow_details'),
-    url(CLUSTERS % 'add_instance',
-        views.ClusterAddInstancesView.as_view(),
-        name='add_instance'),
-    url(CLUSTERS % 'cluster_shrink_details',
-        views.ClusterShrinkView.as_view(),
-        name='cluster_shrink_details'),
-    url(CLUSTERS % 'reset_password',
-        views.ResetPasswordView.as_view(),
-        name='reset_password'),
+    re_path(r'^$', views.IndexView.as_view(), name='index'),
+    re_path(r'^launch$', views.LaunchClusterView.as_view(), name='launch'),
+    re_path(r'^(?P<cluster_id>[^/]+)/$', views.DetailView.as_view(),
+            name='detail'),
+    re_path(CLUSTERS % 'cluster_grow_details',
+            views.ClusterGrowView.as_view(),
+            name='cluster_grow_details'),
+    re_path(CLUSTERS % 'add_instance',
+            views.ClusterAddInstancesView.as_view(),
+            name='add_instance'),
+    re_path(CLUSTERS % 'cluster_shrink_details',
+            views.ClusterShrinkView.as_view(),
+            name='cluster_shrink_details'),
+    re_path(CLUSTERS % 'reset_password',
+            views.ResetPasswordView.as_view(),
+            name='reset_password'),
 ]
