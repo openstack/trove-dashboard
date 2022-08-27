@@ -188,7 +188,7 @@ class CreateUserForm(forms.SelfHandlingForm):
     def _get_databases(self, data):
         databases = []
         db_value = data['databases']
-        if db_value and db_value != u'':
+        if db_value and db_value != '':
             dbs = data['databases']
             databases = [{'name': d.strip()} for d in dbs.split(',')]
         return databases

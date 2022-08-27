@@ -54,9 +54,9 @@ openstackdocs_bug_tag = ''
 master_doc = 'index'
 
 # General information about the project.
-project = u'Trove Dashboard Release Notes'
-copyright = u'2016, Trove developers'
-author = u'Trove developers'
+project = 'Trove Dashboard Release Notes'
+copyright = '2016, Trove developers'
+author = 'Trove developers'
 
 # Release notes are version independent.
 # The short X.Y version.
@@ -126,7 +126,7 @@ html_theme = 'openstackdocs'
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
-#html_title = u'Trove Dashboard Release Notes vblah'
+#html_title = 'Trove Dashboard Release Notes vblah'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -230,8 +230,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'TroveDashboardReleaseNotes.tex', u'Trove Dashboard Release Notes Documentation',
-     u'Trove developers', 'manual'),
+    (master_doc, 'TroveDashboardReleaseNotes.tex', 'Trove Dashboard Release Notes Documentation',
+     'Trove developers', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -260,7 +260,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'trovedashboardreleasenotes', u'Trove Dashboard Release Notes Documentation',
+    (master_doc, 'trovedashboardreleasenotes', 'Trove Dashboard Release Notes Documentation',
      [author], 1)
 ]
 
@@ -274,7 +274,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'TroveDashboardReleaseNotes', u'Trove Dashboard Release Notes Documentation',
+    (master_doc, 'TroveDashboardReleaseNotes', 'Trove Dashboard Release Notes Documentation',
      author, 'TroveDashboardReleaseNotes', 'One line description of project.',
      'Miscellaneous'),
 ]
