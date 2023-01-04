@@ -690,8 +690,7 @@ class UpdateInstance(tables.LinkAction):
     classes = ("btn-attach-config", "ajax-modal")
 
     def allowed(self, request, instance=None):
-        return (instance.status in ACTIVE_STATES and
-                not hasattr(instance, 'configuration'))
+        return (instance.status in ACTIVE_STATES)
 
 
 class InstancesTable(tables.DataTable):
