@@ -93,7 +93,7 @@ class DetailView(horizon_views.APIView):
             exceptions.handle(self.request, msg, redirect=redirect)
 
         try:
-            if(hasattr(backup, 'parent_id') and backup.parent_id is not None):
+            if hasattr(backup, 'parent_id') and backup.parent_id is not None:
                 backup.parent = api.trove.backup_get(request, backup.parent_id)
         except Exception:
             redirect = reverse('horizon:project:database_backups:index')
