@@ -49,6 +49,42 @@ Here is a full example of devstack ``local.conf`` file that includes the trove p
     # Pre-requisites
     ENABLED_SERVICES=rabbit,mysql,key
 
+    # DVR
+    Q_AGENT=ovn
+    Q_ML2_PLUGIN_MECHANISM_DRIVERS=ovn,logger
+    Q_ML2_PLUGIN_TYPE_DRIVERS=local,flat,vlan,geneve
+    Q_ML2_TENANT_NETWORK_TYPE="geneve"
+
+    enable_service ovn-northd
+    enable_service ovn-controller
+    enable_service q-ovn-metadata-agent
+
+    # Use Neutron
+    enable_service q-svc
+
+    # Disable Neutron agents not used with OVN.
+    disable_service q-agt
+    disable_service q-l3
+    disable_service q-dhcp
+    disable_service q-meta
+
+    # Enable services, these services depend on neutron plugin.
+    enable_plugin neutron https://opendev.org/openstack/neutron
+    enable_service q-trunk
+    enable_service q-dns
+    enable_service q-port-forwarding
+    enable_service q-qos
+    enable_service neutron-segments
+    enable_service q-log
+
+    # Enable neutron tempest plugin tests
+    enable_plugin neutron-tempest-plugin https://opendev.org/openstack/neutron-tempest-plugin
+
+    # Compile if your distro kernel does not include ovs+conntrack support.
+    OVN_BUILD_MODULES=True
+    # Set True to configure host gateway routers for external connectivity.
+    ENABLE_CHASSIS_AS_GW=True
+
     # Horizon
     enable_service horizon
 
@@ -70,18 +106,6 @@ Here is a full example of devstack ``local.conf`` file that includes the trove p
     enable_service c-api
     enable_service c-vol
     enable_service c-sch
-
-    # Neutron
-    enable_service q-svc
-    enable_service q-agt
-    enable_service q-dhcp
-    enable_service q-l3
-    enable_service q-meta
-
-    # enable DVR
-    Q_PLUGIN=ml2
-    Q_ML2_TENANT_NETWORK_TYPE=vxlan
-    Q_DVR_MODE=legacy
 
     # Swift
     ENABLED_SERVICES+=,swift
