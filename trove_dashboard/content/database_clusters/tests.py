@@ -442,7 +442,7 @@ class ClustersTests(test.TestCase):
             mock.call(test.IsHttpRequest(), test.IsA(str)))
         self.assertTemplateUsed(res, 'project/database_clusters/'
                                      '_detail_overview.html')
-        self.assertContains(res, "Locality")
+        self.assertContains(res, "Location Policy")
 
     @test.create_mocks(
         {trove_api.trove: ('cluster_get',

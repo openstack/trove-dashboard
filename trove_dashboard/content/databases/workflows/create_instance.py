@@ -113,7 +113,7 @@ class SetInstanceDetailsAction(workflows.Action):
                                                        **kwargs)
         # Add this field to the end after the dynamic fields
         self.fields['locality'] = forms.ChoiceField(
-            label=_("Locality"),
+            label=_("Location Policy"),
             choices=[("", "None"),
                      ("affinity", "affinity"),
                      ("anti-affinity", "anti-affinity")],

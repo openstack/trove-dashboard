@@ -437,11 +437,11 @@ class DatabaseTests(test.TestCase):
 
     def test_details_without_locality(self):
         database = self.databases.list()[1]
-        self._test_details(database, "Locality", assert_contains=False)
+        self._test_details(database, "Location Policy", assert_contains=False)
 
     def test_details_with_locality(self):
         database = self.databases.first()
-        self._test_details(database, "Locality")
+        self._test_details(database, "Location Policy")
 
     def test_create_database(self):
         database = self.databases.first()

@@ -104,7 +104,7 @@ class LaunchForm(BaseClusterForm):
         initial=1,
         help_text=_("Size of the volume in GB."))
     locality = forms.ChoiceField(
-        label=_("Locality"),
+        label=_("Location Policy"),
         choices=[("", "None"),
                  ("affinity", "affinity"),
                  ("anti-affinity", "anti-affinity")],
