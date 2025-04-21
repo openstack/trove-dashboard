@@ -488,8 +488,8 @@ class DatabaseTests(test.TestCase):
 
         res = self.client.post(url, post)
         self.mock_database_create.assert_called_once_with(
-            test.IsHttpRequest(), u'id', u'NewDB', character_set=u'',
-            collation=u'')
+            test.IsHttpRequest(), 'id', 'NewDB', character_set='',
+            collation='')
         self.assertNoFormErrors(res)
         self.assertMessageCount(success=1)
 
@@ -506,14 +506,14 @@ class DatabaseTests(test.TestCase):
 
         res = self.client.post(url, post)
         self.mock_database_create.assert_called_once_with(
-            test.IsHttpRequest(), u'id', u'NewDB', character_set=u'',
-            collation=u'')
+            test.IsHttpRequest(), 'id', 'NewDB', character_set='',
+            collation='')
         self.assertEqual(res.status_code, 302)
 
     @test.create_mocks({api.trove: ('instance_get', 'root_show')})
     def test_show_root(self):
         database = self.databases.first()
-        database.id = u'id'
+        database.id = 'id'
         user = self.database_user_roots.first()
 
         self.mock_instance_get.return_value = database
@@ -543,7 +543,7 @@ class DatabaseTests(test.TestCase):
         self.mock_instance_get.assert_called_once_with(
             test.IsHttpRequest(), test.IsA(str))
         self.mock_root_show.assert_called_once_with(
-            test.IsHttpRequest(), u'id')
+            test.IsHttpRequest(), 'id')
         self.assertRedirectsNoFollow(res, DETAILS_URL)
 
     @test.create_mocks({api.trove: ('root_enable',)})
@@ -565,7 +565,7 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.mock_root_enable.assert_called_once_with(
-            test.IsHttpRequest(), [u'id'])
+            test.IsHttpRequest(), ['id'])
         self.assertEqual(table.data[0].enabled, True)
         self.assertEqual(table.data[0].password, "password")
 
@@ -588,7 +588,7 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.mock_root_enable.assert_called_once_with(
-            test.IsHttpRequest(), [u'id'])
+            test.IsHttpRequest(), ['id'])
         self.assertNotEqual(table.data[0].enabled, True)
         self.assertNotEqual(table.data[0].password, "password")
 
@@ -610,7 +610,7 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.mock_root_disable.assert_called_once_with(
-            test.IsHttpRequest(), u'id')
+            test.IsHttpRequest(), 'id')
         self.assertEqual(table.data[0].enabled, True)
         self.assertIsNone(table.data[0].password)
 
@@ -634,7 +634,7 @@ class DatabaseTests(test.TestCase):
         table.maybe_handle()
 
         self.mock_root_disable.assert_called_once_with(
-            test.IsHttpRequest(), u'id')
+            test.IsHttpRequest(), 'id')
         self.assertEqual(table.data[0].enabled, True)
         self.assertEqual(table.data[0].password, "password")
 
@@ -713,8 +713,8 @@ class DatabaseTests(test.TestCase):
 
         res = self.client.post(url, post)
         self.mock_user_create.assert_called_once_with(
-            test.IsHttpRequest(), database.id, user.name, u'password',
-            host=u'', databases=[])
+            test.IsHttpRequest(), database.id, user.name, 'password',
+            host='', databases=[])
         self.assertNoFormErrors(res)
         self.assertMessageCount(success=1)
 
@@ -732,8 +732,8 @@ class DatabaseTests(test.TestCase):
 
         res = self.client.post(url, post)
         self.mock_user_create.assert_called_once_with(
-            test.IsHttpRequest(), u'id', u'name', u'password',
-            host=u'', databases=[])
+            test.IsHttpRequest(), 'id', 'name', 'password',
+            host='', databases=[])
         self.assertEqual(res.status_code, 302)
 
     @test.create_mocks({api.trove: ('user_update_attributes',)})

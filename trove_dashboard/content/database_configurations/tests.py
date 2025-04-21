@@ -92,7 +92,7 @@ class DatabaseConfigurationsTests(test.TestCase):
     @test.create_mocks({
         api.trove: ('datastore_list', 'datastore_version_list',
                     'configuration_create')})
-    def _test_create_test_configuration(self, config_description=u''):
+    def _test_create_test_configuration(self, config_description=''):
         self.mock_datastore_list.return_value = self.datastores.list()
         self.mock_datastore_version_list.return_value = (
             self.datastore_versions.list())
@@ -100,7 +100,7 @@ class DatabaseConfigurationsTests(test.TestCase):
         self.mock_configuration_create.return_value = (
             self.database_configurations.first())
 
-        name = u'config1'
+        name = 'config1'
         values = "{}"
         ds = self._get_test_datastore('mysql')
         dsv = self._get_test_datastore_version(ds.id, '5.5')
@@ -129,7 +129,7 @@ class DatabaseConfigurationsTests(test.TestCase):
         self.assertMessageCount(success=1)
 
     def test_create_test_configuration(self):
-        self._test_create_test_configuration(u'description of config1')
+        self._test_create_test_configuration('description of config1')
 
     def test_create_test_configuration_with_no_description(self):
         self._test_create_test_configuration()
@@ -144,9 +144,9 @@ class DatabaseConfigurationsTests(test.TestCase):
 
         self.mock_configuration_create.side_effect = self.exceptions.trove
 
-        name = u'config1'
+        name = 'config1'
         values = "{}"
-        config_description = u'description of config1'
+        config_description = 'description of config1'
         ds = self._get_test_datastore('mysql')
         dsv = self._get_test_datastore_version(ds.id, '5.5')
         config_datastore = ds.name

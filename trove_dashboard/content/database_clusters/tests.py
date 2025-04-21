@@ -208,13 +208,13 @@ class ClustersTests(test.TestCase):
 
         self.mock_cluster_create.return_value = self.trove_clusters.first()
 
-        cluster_name = u'MyCluster'
+        cluster_name = 'MyCluster'
         cluster_volume = 1
-        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+        cluster_flavor = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
         cluster_instances = 3
-        cluster_datastore = u'mongodb'
-        cluster_datastore_version = u'2.6'
-        cluster_network = u''
+        cluster_datastore = 'mongodb'
+        cluster_datastore_version = '2.6'
+        cluster_network = ''
 
         field_name = self._build_flavor_widget_name(cluster_datastore,
                                                     cluster_datastore_version)
@@ -268,13 +268,13 @@ class ClustersTests(test.TestCase):
 
         self.mock_cluster_create.return_value = self.trove_clusters.first()
 
-        cluster_name = u'MyCluster'
+        cluster_name = 'MyCluster'
         cluster_volume = 1
-        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+        cluster_flavor = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
         cluster_instances = 3
-        cluster_datastore = u'mongodb'
-        cluster_datastore_version = u'2.6'
-        cluster_network = u'82288d84-e0a5-42ac-95be-e6af08727e42'
+        cluster_datastore = 'mongodb'
+        cluster_datastore_version = '2.6'
+        cluster_network = '82288d84-e0a5-42ac-95be-e6af08727e42'
 
         field_name = self._build_flavor_widget_name(cluster_datastore,
                                                     cluster_datastore_version)
@@ -329,13 +329,13 @@ class ClustersTests(test.TestCase):
 
         self.mock_cluster_create.side_effect = self.exceptions.trove
 
-        cluster_name = u'MyCluster'
+        cluster_name = 'MyCluster'
         cluster_volume = 1
-        cluster_flavor = u'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+        cluster_flavor = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
         cluster_instances = 3
-        cluster_datastore = u'mongodb'
-        cluster_datastore_version = u'2.6'
-        cluster_network = u''
+        cluster_datastore = 'mongodb'
+        cluster_datastore_version = '2.6'
+        cluster_network = ''
 
         field_name = self._build_flavor_widget_name(cluster_datastore,
                                                     cluster_datastore_version)

@@ -170,7 +170,7 @@ to use the same cache like the example below.::
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'LOCATION': [u'10.2.100.133:11211', u'10.2.100.134:11211'']
+            'LOCATION': ['10.2.100.133:11211', '10.2.100.134:11211'']
         },
     }
 
