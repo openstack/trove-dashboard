@@ -399,15 +399,15 @@ class ClusterGrowAction(tables.Action):
 
     def handle(self, table, request, obj_ids):
         if not table.data:
-            msg = _("Cannot grow cluster.  No instances specified.")
+            msg = _("Cannot grow cluster. No instances specified.")
             messages.info(request, msg)
             return shortcuts.redirect(request.build_absolute_uri())
 
         datum_display_objs = []
         for instance in table.data:
-            msg = _("[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, "
-                    "type=%(type)s, related_to=%(related_to)s, "
-                    "nics=%(nics)s]")
+            msg = ("[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, "
+                   "type=%(type)s, related_to=%(related_to)s, "
+                   "nics=%(nics)s]")
             params = {"flavor": instance.flavor_id, "volume": instance.volume,
                       "name": instance.name, "type": instance.type,
                       "related_to": instance.related_to, "nics": instance.nics}
