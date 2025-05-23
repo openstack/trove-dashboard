@@ -36,19 +36,19 @@ STATUS_CHOICES = (
 )
 STATUS_DISPLAY_CHOICES = (
     ("BUILDING", pgettext_lazy("Current status of a Database Backup",
-                               u"Building")),
+                               "Building")),
     ("COMPLETED", pgettext_lazy("Current status of a Database Backup",
-                                u"Completed")),
+                                "Completed")),
     ("DELETE_FAILED", pgettext_lazy("Current status of a Database Backup",
-                                    u"Delete Failed")),
+                                    "Delete Failed")),
     ("FAILED", pgettext_lazy("Current status of a Database Backup",
-                             u"Failed")),
+                             "Failed")),
     ("NEW", pgettext_lazy("Current status of a Database Backup",
-                          u"New")),
+                          "New")),
     ("RESTORED", pgettext_lazy("Current status of a Database Backup",
-                               u"Restored")),
+                               "Restored")),
     ("SAVING", pgettext_lazy("Current status of a Database Backup",
-                             u"Saving")),
+                             "Saving")),
 )
 
 
@@ -102,16 +102,16 @@ class DeleteBackup(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Backup",
-            u"Delete Backups",
+            "Delete Backup",
+            "Delete Backups",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Deleted Backup",
-            u"Deleted Backups",
+            "Deleted Backup",
+            "Deleted Backups",
             count
         )
 

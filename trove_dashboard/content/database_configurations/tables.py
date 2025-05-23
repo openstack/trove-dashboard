@@ -42,16 +42,16 @@ class DeleteConfiguration(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Configuration Group",
-            u"Delete Configuration Groups",
+            "Delete Configuration Group",
+            "Delete Configuration Groups",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Deleted Configuration Group",
-            u"Deleted Configuration Groups",
+            "Deleted Configuration Group",
+            "Deleted Configuration Groups",
             count
         )
 
@@ -150,16 +150,16 @@ class DeleteParameter(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Parameter",
-            u"Delete Parameters",
+            "Delete Parameter",
+            "Delete Parameters",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Deleted Parameter",
-            u"Deleted Parameters",
+            "Deleted Parameter",
+            "Deleted Parameters",
             count
         )
 
@@ -205,16 +205,16 @@ class DetachConfiguration(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Detach Configuration Group",
-            u"Detach Configuration Groups",
+            "Detach Configuration Group",
+            "Detach Configuration Groups",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Detached Configuration Group",
-            u"Detached Configuration Groups",
+            "Detached Configuration Group",
+            "Detached Configuration Groups",
             count
         )
 

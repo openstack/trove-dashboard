@@ -140,8 +140,8 @@ class Configuration(object):
 
 
 def validate_config_param_value(config_param, value):
-    if (config_param.type in (u"boolean", u"float", u"integer", u"long")):
-        if config_param.type == u"boolean":
+    if (config_param.type in ("boolean", "float", "integer", "long")):
+        if config_param.type == "boolean":
             if (value.lower() not in ("true", "false")):
                 return _('Value must be "true" or "false".')
         else:

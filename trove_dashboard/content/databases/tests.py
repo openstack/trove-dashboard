@@ -665,7 +665,7 @@ class DatabaseTests(test.TestCase):
         details_url = reverse('horizon:project:databases:detail',
                               args=[database_id])
         url = details_url + '?tab=instance_details__users_tab'
-        action_string = u"users__delete__%s" % user_id
+        action_string = "users__delete__%s" % user_id
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
