@@ -71,7 +71,7 @@ class BackupDetailsAction(workflows.Action):
                        if b.status == 'COMPLETED']
         except Exception:
             choices = []
-            msg = _("Unable to list database backups for parent.")
+            msg = _("Unable to list parent database backups.")
             exceptions.handle(request, msg)
 
         if choices:
