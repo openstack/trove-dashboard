@@ -42,6 +42,7 @@ class DeleteCluster(tables.BatchAction):
     icon = "remove"
     classes = ('btn-danger',)
     help_text = _("Deleted cluster is not recoverable.")
+    policy_rules = (("database", "cluster:delete"), )
 
     @staticmethod
     def action_present(count):
@@ -69,12 +70,14 @@ class LaunchLink(tables.LinkAction):
     url = "horizon:project:database_clusters:launch"
     classes = ("btn-launch", "ajax-modal")
     icon = "cloud-upload"
+    policy_rules = (("database", "cluster:create"), )
 
 
 class ClusterGrow(tables.LinkAction):
     name = "cluster_grow"
     verbose_name = _("Grow Cluster")
     url = "horizon:project:database_clusters:cluster_grow_details"
+    policy_rules = (("database", "cluster:action"), )
 
     def allowed(self, request, cluster=None):
         if (cluster and cluster.task["name"] == 'NONE' and
@@ -87,6 +90,7 @@ class ClusterShrink(tables.LinkAction):
     name = "cluster_shrink"
     verbose_name = _("Shrink Cluster")
     url = "horizon:project:database_clusters:cluster_shrink_details"
+    policy_rules = (("database", "cluster:action"), )
 
     def allowed(self, request, cluster=None):
         if (cluster and cluster.task["name"] == 'NONE' and
@@ -100,6 +104,7 @@ class ResetPassword(tables.LinkAction):
     verbose_name = _("Reset Root Password")
     url = "horizon:project:database_clusters:reset_password"
     classes = ("ajax-modal",)
+    policy_rules = (("database", "cluster:action"), )
 
     def allowed(self, request, cluster=None):
         if (cluster and cluster.task["name"] == 'NONE' and
@@ -241,6 +246,7 @@ class ClusterShrinkAction(tables.BatchAction):
     classes = ('btn-danger',)
     success_url = 'horizon:project:database_clusters:index'
     help_text = _("Shrinking a cluster is not recoverable.")
+    policy_rules = (("database", "cluster:delete"), )
 
     @staticmethod
     def action_present(count):
@@ -305,6 +311,7 @@ class ClusterGrowAddInstance(tables.LinkAction):
     verbose_name = _("Add Instance")
     url = "horizon:project:database_clusters:add_instance"
     classes = ("ajax-modal",)
+    policy_rules = (("database", "cluster:action"), )
 
     def get_link_url(self):
         return urls.reverse(
@@ -313,6 +320,7 @@ class ClusterGrowAddInstance(tables.LinkAction):
 
 class ClusterGrowRemoveInstance(tables.BatchAction):
     name = "cluster_grow_remove_instance"
+    policy_rules = (("database", "cluster:action"), )
 
     @staticmethod
     def action_present(count):
@@ -387,6 +395,7 @@ class ClusterGrowAction(tables.Action):
     verbose_name_plural = _("Grow Cluster")
     requires_input = False
     icon = "plus"
+    policy_rules = (("database", "cluster:action"), )
 
     def handle(self, table, request, obj_ids):
         if not table.data:

@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Dashboard features now check the 'databases' policy file. If the
+    corresponding API is not available to the current user, this UI element
+    will not display or will appear disabled.
