@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2022-04-29 11:18+0000\n"
+"POT-Creation-Date: 2025-06-19 11:56+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -618,9 +618,6 @@ msgstr "%(count)s mal \"%(name)s\" gestartet."
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" gestartet"
 
-msgid "Locality"
-msgstr "Lokalität"
-
 msgid "Log"
 msgstr "Log"
 
@@ -756,12 +753,6 @@ msgstr "Anzahl der Shards"
 msgid "Number of instances in the cluster."
 msgstr "Anzahl der Instanzen in dem Cluster."
 
-msgid "Number of instances in the cluster. (Read only)"
-msgstr "Anzahl der Instanzen im Cluster (nur lesen)"
-
-msgid "Number of shards. (Read only)"
-msgstr "Anzahl der Shards. (nur lesen)"
-
 msgid "Old Flavor"
 msgstr "Alte Variante"
 
@@ -853,13 +844,6 @@ msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr ""
 "Passwort ist nur sichtbar, nachdem Root aktiviert oder zurückgesetzt ist."
-
-msgid ""
-"Please note:</strong> The new value must be greater than the existing volume "
-"size."
-msgstr ""
-"Bitte beachten:</strong> Der neue Wert muss grösser sein als die "
-"existierende Datenträgergrösse."
 
 msgid "Promote"
 msgstr "Befördern"
@@ -1268,6 +1252,7 @@ msgstr "Eltern-Datenbank-Sicherungskopien können nicht aufgelistet werden."
 msgid "Unable to list database instances to backup."
 msgstr "Die zu sichernden Datenbankinstanzen können nicht aufgelistet werden."
 
+#, python-brace-format
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
@@ -1275,6 +1260,7 @@ msgstr ""
 "Konnte log {0} nicht laden\n"
 "{1}"
 
+#, python-brace-format
 msgid "Unable to load {0} log for instance \"{1}\"."
 msgstr "Konnte log {0} für Instanz \"{1}\" nicht laden."
 

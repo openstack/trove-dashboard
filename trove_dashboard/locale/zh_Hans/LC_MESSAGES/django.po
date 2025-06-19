@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2022-04-29 11:18+0000\n"
+"POT-Creation-Date: 2025-06-19 11:56+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -586,9 +586,6 @@ msgstr "启动了%(count)s 名称\"%(name)s\"。"
 msgid "Launched cluster \"%s\""
 msgstr "启动集群\"%s\""
 
-msgid "Locality"
-msgstr "地域"
-
 msgid "Log"
 msgstr "日志"
 
@@ -720,12 +717,6 @@ msgstr "Shard数"
 msgid "Number of instances in the cluster."
 msgstr "集群中的云主机数量。"
 
-msgid "Number of instances in the cluster. (Read only)"
-msgstr "集群中的实例数。(只读)"
-
-msgid "Number of shards. (Read only)"
-msgstr "Shard数。（只读）"
-
 msgid "Old Flavor"
 msgstr "旧的云主机类型"
 
@@ -804,11 +795,6 @@ msgstr "root用户密码"
 msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "在root启用或重置时，密码只能临时可用。"
-
-msgid ""
-"Please note:</strong> The new value must be greater than the existing volume "
-"size."
-msgstr "请注意：</strong>新卷容量大小必须大于当前卷容量大小"
 
 msgid "Promote"
 msgstr "设置"
@@ -1189,6 +1175,7 @@ msgstr "无法获取用来做母版的数据库备份列表"
 msgid "Unable to list database instances to backup."
 msgstr "无法获取数据库实例进行备份。"
 
+#, python-brace-format
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
@@ -1196,6 +1183,7 @@ msgstr ""
 "无法加载{0} 日志\n"
 "{1}"
 
+#, python-brace-format
 msgid "Unable to load {0} log for instance \"{1}\"."
 msgstr "无法加载实例\"{1}\"的日志{0}"
 

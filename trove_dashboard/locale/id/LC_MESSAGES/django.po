@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2022-04-29 11:18+0000\n"
+"POT-Creation-Date: 2025-06-19 11:56+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -582,9 +582,6 @@ msgstr "Diluncurkan %(count)s named \"%(name)s\"."
 msgid "Launched cluster \"%s\""
 msgstr "Diluncurkan klaster \"%s\""
 
-msgid "Locality"
-msgstr "Locality (lokalitas)"
-
 msgid "Log"
 msgstr "Log (catatan)"
 
@@ -713,12 +710,6 @@ msgstr "Number of Shards (jumlah serpihan)"
 msgid "Number of instances in the cluster."
 msgstr "Jumlah instance dalam cluster."
 
-msgid "Number of instances in the cluster. (Read only)"
-msgstr "Jumlah instance dalam cluster. (read only)"
-
-msgid "Number of shards. (Read only)"
-msgstr "Jumlah serpihan. (Read only)"
-
 msgid "Old Flavor"
 msgstr "Old Flavor (flavor lama)"
 
@@ -807,13 +798,6 @@ msgstr "Password untuk user root."
 msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr "Password hanya terlihat segera setelah akar diaktifkan atau reset."
-
-msgid ""
-"Please note:</strong> The new value must be greater than the existing volume "
-"size."
-msgstr ""
-"Harap dicatat:</strong> Nilai baru harus lebih besar dari ukuran volume yang "
-"ada."
 
 msgid "Promote"
 msgstr "Promote (promosi)"
@@ -1200,6 +1184,7 @@ msgstr "Tidak dapat mendaftar backup database untuk induknya."
 msgid "Unable to list database instances to backup."
 msgstr "Tidak dapat mendaftar instance database untuk backup."
 
+#, python-brace-format
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
@@ -1207,6 +1192,7 @@ msgstr ""
 "Tidak bisa memuat {0} log\n"
 "{1}"
 
+#, python-brace-format
 msgid "Unable to load {0} log for instance \"{1}\"."
 msgstr "Tidak bisa memuat {0} log untuk instance \"{1}\"."
 
