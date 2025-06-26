@@ -345,7 +345,6 @@ class LogsTests(test.TestCase):
             test.IsHttpRequest(),
             test.IsA(str),
             'guest.log',
-            False,
             LINES,
             self.mock_Connection())
         self.assertNoMessages()
@@ -376,7 +375,6 @@ class LogsTests(test.TestCase):
             test.IsHttpRequest(),
             test.IsA(str),
             'guest.log',
-            False,
             LINES,
             self.mock_Connection())
         self.assertContains(res, "Unable to load")

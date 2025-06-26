@@ -46,17 +46,15 @@ class LogContentsView(generic.TemplateView):
         context["log_contents"] = get_contents(self.request,
                                                kwargs['instance_id'],
                                                kwargs['filename'],
-                                               False,
                                                log_length)
         return context
 
 
-def get_contents(request, instance_id, filename, publish, lines):
+def get_contents(request, instance_id, filename, lines):
     try:
         log_generator = api.trove.log_tail(request,
                                            instance_id,
                                            filename,
-                                           publish,
                                            lines,
                                            dash_api.swift.swift_api(request))
         data = ""
@@ -71,16 +69,10 @@ def build_response(request, instance_id, filename, tail):
     data = (_('Unable to load {0} log for instance "{1}".')
             .format(filename, instance_id))
 
-    if request.GET.get('publish'):
-        publish = True
-    else:
-        publish = False
-
     try:
         data = get_contents(request,
                             instance_id,
                             filename,
-                            publish,
                             int(tail))
     except Exception:
         exceptions.handle(request, ignore=True)
@@ -106,16 +98,9 @@ def full_log(request, instance_id, filename):
 
 def download_log(request, instance_id, filename):
     try:
-        publish_value = request.GET.get('publish')
-        if publish_value:
-            publish = True
-        else:
-            publish = False
-
         data = get_contents(request,
                             instance_id,
                             filename,
-                            publish,
                             FULL_LOG_VALUE)
         response = http.HttpResponse()
         response.write(data)
