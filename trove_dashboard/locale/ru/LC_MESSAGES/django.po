@@ -3,21 +3,23 @@
 # Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
 # Vladimir Sokolov <vsokolov@hystax.com>, 2016. #zanata
 # Yulia Ryndenkova <yryndenkova@hystax.com>, 2016. #zanata
+# Dmitriy Chubinidze <dcu995@gmail.com>, 2025. #zanata
+# Ivan Anfimov <lazekteam@gmail.com>, 2025. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2022-04-29 11:18+0000\n"
+"POT-Creation-Date: 2025-06-19 11:56+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-10-12 02:47+0000\n"
-"Last-Translator: Maxim Bozhenko <mbozhenko@gmail.com>\n"
+"PO-Revision-Date: 2025-06-17 11:37+0000\n"
+"Last-Translator: Dmitriy Chubinidze <dcu995@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.3.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -25,10 +27,17 @@ msgstr "%(name)s | %(RAM)s RAM"
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM | %(instances)s instances"
-msgstr "%(name)s | %(RAM)s ОЗУ | Инстансов - %(instances)s "
+msgstr "%(name)s | %(RAM)s RAM | Инстансов - %(instances)s "
 
 msgid "-"
 msgstr "-"
+
+msgid ""
+"<strong>Please note:</strong> It may be necessary to reboot the database "
+"instance for this new configuration group to take effect."
+msgstr ""
+"<strong>Обратите внимание:</strong> может потребоваться перезагрузка "
+"инстанса базы данных, чтобы эта новая группа конфигурации вступила в силу."
 
 msgid ""
 "<strong>Please note:</strong> The value specified in the Volume Size field "
@@ -36,25 +45,28 @@ msgid ""
 "specifying volume size. If specifying the volume size results in an error "
 "stating volume support is not enabled, enter 0."
 msgstr ""
-"<strong>Обратите внимание:</strong> Значение указываемое в поле Размер диска "
-"должно быть больше 0, однако некоторые конфигурации не поддерживают указание "
-"размера диска. Если при указание размера диска возникает ошибка говорящая о "
-"том что поддержка дисков не включена укажите 0."
+"<strong>Обратите внимание:</strong> значение, указываемое в поле \"Размер "
+"диска\" должно быть больше 0, однако, некоторые конфигурации не поддерживают "
+"указание размера диска. Если при указании размера диска возникает ошибка, "
+"говорящая о том, что поддержка дисков не включена, укажите 0."
 
 msgid "A backup must be selected!"
 msgstr "Нужно выбрать резервную копию!"
 
 msgid "A master instance must be selected!"
-msgstr "Должна быть выбран основной инстанс!"
+msgstr "Необходимо выбрать основной инстанс!"
 
 msgid "A new name or new password or new host must be specified."
 msgstr "Новое имя, новый пароль и новый хост должны быть заданы."
 
 msgid "Access Revoked to"
 msgid_plural "Access Revoked to"
-msgstr[0] "Отменен доступ к "
-msgstr[1] "Отменены доступы к "
-msgstr[2] "Отменены доступы к "
+msgstr[0] "Отозван доступ к"
+msgstr[1] "Отозваны доступы к"
+msgstr[2] "Отозваны доступы к"
+
+msgid "Access defines how the database service is exposed."
+msgstr "Доступ определяет, как используется служба базы данных."
 
 msgid "Accessible"
 msgstr "Доступно"
@@ -75,11 +87,21 @@ msgstr "Добавить параметр"
 msgid "Advanced"
 msgstr "Дополнительно"
 
+msgid ""
+"Allow the user to connect from this host only. If not provided this user "
+"will be allowed to connect from anywhere."
+msgstr ""
+"Разрешить пользователю подключаться только с этого хоста. Если не указано, "
+"этому пользователю будет разрешено подключаться с любого адреса."
+
+msgid "Allowed CIDRs"
+msgstr "Разрешенные CIDR"
+
 msgid "Allowed Host"
 msgstr "Разрешенный хост"
 
 msgid "Allowed Host (optional)"
-msgstr "Разрешенный узел (необязательно)"
+msgstr "Разрешенный хост (опционально)"
 
 msgid "Any Availability Zone"
 msgstr "Любая зона доступности"
@@ -88,7 +110,7 @@ msgid "Applicable only if the volume size is specified."
 msgstr "Поддерживается только если указан размер диска."
 
 msgid "Applied changes to server"
-msgstr "Изменения применены"
+msgstr "Изменения внесены на сервер"
 
 msgid "Apply Changes"
 msgstr "Применить изменения"
@@ -112,21 +134,24 @@ msgstr "Зона доступности"
 msgid "Available networks"
 msgstr "Доступные сети"
 
+msgid "Backend"
+msgstr "Бэкенд"
+
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
 msgstr "Резервное копирование"
 
 msgid "Backup Database"
-msgstr "Резервная копия БД"
+msgstr "Создать резервную копию базы данных"
 
 msgid "Backup Details"
-msgstr "Сведения о резервной копии"
+msgstr "Детали резервной копии"
 
 msgid "Backup Details: {{ backup.name }}"
 msgstr "Детали резервной копии: {{ backup.name }}"
 
 msgid "Backup Duration"
-msgstr "Продолжительность резервной копии"
+msgstr "Продолжительность резервного копирования"
 
 msgid "Backup File"
 msgstr "Файл резервной копии"
@@ -138,7 +163,22 @@ msgid "Backup Name"
 msgstr "Имя резервной копии"
 
 msgid "Backup Overview"
-msgstr "Обзор резервной копии"
+msgstr "Детали резервной копии"
+
+msgid "Backup Strategies"
+msgstr "Стратегии резервного копирования"
+
+msgid "Backup Strategy"
+msgstr "Стратегия резервного копирования"
+
+msgid "Backup Strategy Deleted"
+msgid_plural "Backup Strategies Deleted"
+msgstr[0] "Стратегия резервного копирования удалена"
+msgstr[1] "Стратегии резервного копирования удалена"
+msgstr[2] "Стратегия резервного копирования удалена"
+
+msgid "Backup strategy created"
+msgstr "Создана стратегия резервного копирования"
 
 msgid "Backups"
 msgstr "Резервные копии"
@@ -155,24 +195,49 @@ msgctxt "Current status of a Database Instance"
 msgid "Building"
 msgstr "Создание"
 
+msgid ""
+"CIDRs is a comma-separated list of IPv4, IPv6 or mix of both CIDRs that "
+"restrict access to the database service. 0.0.0.0/0 is used by default if "
+"this parameter is not provided. E.g.: 0.0.0.0/0,202.78.240.0/24"
+msgstr ""
+"CIDR — это разделенный запятыми список IPv4, IPv6 или смесь обоих CIDR, "
+"которые ограничивают доступ к службе базы данных. Если этот параметр не "
+"указан, по умолчанию используется 0.0.0.0/0. Например: "
+"0.0.0.0/0,202.78.240.0/24"
+
 msgid "Cancel"
 msgstr "Отмена"
 
 #, python-format
 msgid "Cannot disable root access: %s"
-msgstr "Невозможно отключить доступ к root: %s"
+msgstr "Невозможно отключить полный (root) доступ: %s"
 
 msgid "Cannot grow cluster.  No instances specified."
-msgstr "Не могу увеличить кластер. Инстансы не заданы."
+msgstr "Невозможно увеличить кластер. Не указаны инстансы."
 
 msgid "Character Set"
 msgstr "Кодировка"
 
 msgid "Choose a new instance flavor."
-msgstr "Выберите новый тип для инстанса."
+msgstr "Выберите новый шаблон конфигурации для инстанса."
 
 msgid "Choose initial state."
-msgstr "Выберите первоначальное наполнение"
+msgstr "Выберите начальное состояние."
+
+msgid ""
+"Choose network from Available networks to Selected networks by push button "
+"or drag and drop, you may change NIC order by drag and drop as well. "
+msgstr ""
+"Выберите сеть из списка \"Доступные сети\" или \"Выбранные сети\" с помощью "
+"кнопки или перетаскивания. Вы также можете изменить порядок сетевых карт с "
+"помощью перетаскивания."
+
+msgid ""
+"Classless Inter-Domain Routing (e.g. 192.168.0.0/24, or 2001:db8::/128). Can "
+"enter multiple values separatingby a comma"
+msgstr ""
+"Бесклассовая междоменная маршрутизация (например, 192.168.0.0/24 или 2001:"
+"db8::/128). Можно ввести несколько значений, разделяя их запятыми"
 
 msgid "Close"
 msgstr "Закрыть"
@@ -192,12 +257,15 @@ msgstr "Параметры сортировки"
 msgid "Comma separated list of databases to create"
 msgstr "Список баз данных для создания разделенный запятыми"
 
+msgid "Comma-separated CIDRs to connect through."
+msgstr "Разделенные запятыми CIDR-адреса для подключения."
+
 msgctxt "Current status of a Database Backup"
 msgid "Completed"
 msgstr "Завершено"
 
 msgid "Configuration Defaults"
-msgstr "Установки по умолчанию"
+msgstr "Конфигурация по умолчанию"
 
 msgid "Configuration Group"
 msgstr "Группа конфигурации"
@@ -220,21 +288,27 @@ msgstr "Значения группы конфигурации"
 msgid "Configuration Groups"
 msgstr "Группы конфигураций"
 
+msgid "Configurations"
+msgstr "Конфигурации"
+
 msgid ""
 "Confirm the current replica is to be promoted as the new replica source."
 msgstr "Подтвердите назначение текущей реплики источником реплик."
 
 msgid "Connection Examples"
-msgstr "Примеры соединений"
+msgstr "Примеры подключения"
 
 msgid "Connection Information"
-msgstr "Параметры соединения"
+msgstr "Информация о подключении"
 
 msgid "Container"
 msgstr "Контейнер"
 
 msgid "Create Backup"
 msgstr "Создать резервную копию"
+
+msgid "Create Backup Strategy"
+msgstr "Создать стратегию резервного копирования"
 
 msgid "Create Configuration Group"
 msgstr "Создать группу конфигурации"
@@ -245,6 +319,13 @@ msgstr "Создать базу данных"
 msgid "Create User"
 msgstr "Создать пользователя"
 
+msgid ""
+"Create an optional initial user. This user will have access to all databases "
+"you create."
+msgstr ""
+"Создайте начального пользователя (опционально). Этот пользователь будет "
+"иметь доступ ко всем созданным вами базам данных."
+
 msgid "Created"
 msgstr "Создано"
 
@@ -253,7 +334,7 @@ msgstr "Группа конфигурации создана"
 
 #, python-format
 msgid "Created database \"%s\"."
-msgstr "Создана БД \"%s\"."
+msgstr "Создана база данных \"%s\"."
 
 #, python-format
 msgid "Created user \"%s\"."
@@ -272,28 +353,37 @@ msgid "Current Task"
 msgstr "Текущая задача"
 
 msgid "DATABASE"
-msgstr "DATABASE"
+msgstr "БАЗА ДАННЫХ"
 
 msgid "Database"
 msgstr "База данных"
 
 msgid "Database Access"
-msgstr "Доступ к БД"
+msgstr "Доступ к базе данных"
+
+msgid "Database Access for: {{ user_name }}@{{user_host}}"
+msgstr "Доступ к базе данных для: {{ user_name }}@{{user_host}}"
 
 msgid "Database Backups"
-msgstr "Резервные копии БД"
+msgstr "Резервные копии базы данных"
 
 msgid "Database Info"
-msgstr "Информация БД"
+msgstr "Информация о базе данных"
 
 msgid "Database Instance"
-msgstr "Инстанс БД"
+msgstr "Инстанс базы данных"
 
 msgid "Database Name"
 msgstr "Имя базы данных"
 
 msgid "Database Port"
 msgstr "Порт базы данных"
+
+msgid "Database Service stopped"
+msgid_plural "Database Services stopped"
+msgstr[0] "Служба базы данных остановлена"
+msgstr[1] "Службы базы данных остановлены"
+msgstr[2] "Службы базы данных остановлены"
 
 msgid "Databases"
 msgstr "Базы данных"
@@ -305,7 +395,7 @@ msgid "Datastore Version"
 msgstr "Версия хранилища данных"
 
 msgid "Defaults"
-msgstr "Установки по умолчанию"
+msgstr "Параметры по умолчанию"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -313,11 +403,23 @@ msgstr[0] "Удалить резервную копию"
 msgstr[1] "Удалить резервные копии"
 msgstr[2] "Удалить резервные копии"
 
+msgid "Delete Backup Strategy"
+msgid_plural "Delete Backup Strategies"
+msgstr[0] "Удалить стратегию резервного копирования"
+msgstr[1] "Удалить стратегии резервного копирования"
+msgstr[2] "Удалить стратегию резервного копирования"
+
 msgid "Delete Cluster"
 msgid_plural "Delete Clusters"
 msgstr[0] "Удалить кластер"
 msgstr[1] "Удалить кластеры"
 msgstr[2] "Удалить кластеры"
+
+msgid "Delete Configuration Group"
+msgid_plural "Delete Configuration Groups"
+msgstr[0] "Удалить группу конфигурации"
+msgstr[1] "Удалить группы конфигураций"
+msgstr[2] "Удалить группы конфигураций"
 
 msgid "Delete Database"
 msgid_plural "Delete Databases"
@@ -335,6 +437,12 @@ msgstr[0] "Удалить инстанс"
 msgstr[1] "Удалить инстансы"
 msgstr[2] "Удалить инстансы"
 
+msgid "Delete Parameter"
+msgid_plural "Delete Parameters"
+msgstr[0] "Удалить параметр"
+msgstr[1] "Удалить параметры"
+msgstr[2] "Удалить параметры"
+
 msgid "Delete User"
 msgid_plural "Delete Users"
 msgstr[0] "Удалить пользователя"
@@ -347,11 +455,23 @@ msgstr[0] "Удаленная резервная копия"
 msgstr[1] "Удаленные резервные копии"
 msgstr[2] "Удаленные резервные копии"
 
+msgid "Deleted Configuration Group"
+msgid_plural "Deleted Configuration Groups"
+msgstr[0] "Удаленная группа конфигурации"
+msgstr[1] "Удаленные группы конфигураций"
+msgstr[2] "Удаленные группы конфигураций"
+
 msgid "Deleted Database"
 msgid_plural "Deleted Databases"
 msgstr[0] "База данных удалена"
 msgstr[1] "Базы данных удалены"
 msgstr[2] "Базы данных удалены"
+
+msgid "Deleted Parameter"
+msgid_plural "Deleted Parameters"
+msgstr[0] "Удаленный параметр"
+msgstr[1] "Удаленные параметры"
+msgstr[2] "Удаленные параметры"
 
 msgid "Deleted User"
 msgid_plural "Deleted Users"
@@ -360,7 +480,7 @@ msgstr[1] "Удаленные пользователи"
 msgstr[2] "Удаленные пользователи"
 
 msgid "Deleted cluster is not recoverable."
-msgstr "Удаленный кластер не подлежит восстановлению"
+msgstr "Удаленный кластер не подлежит восстановлению."
 
 msgid "Deleted instances are not recoverable."
 msgstr "Удаленные инстансы нельзя восстановить."
@@ -382,12 +502,12 @@ msgstr[2] "Отключить реплики"
 
 msgid "Detached Configuration Group"
 msgid_plural "Detached Configuration Groups"
-msgstr[0] "Отключенная группа конфигурации"
-msgstr[1] "Отключенные группы конфигураций"
-msgstr[2] "Отключенные группы конфигураций"
+msgstr[0] "Группа конфигурации отключена"
+msgstr[1] "Группы конфигурации отключены"
+msgstr[2] "Группы конфигурации отключены"
 
 msgid "Details"
-msgstr "Подробности"
+msgstr "Детали"
 
 msgid "Disable Log"
 msgid_plural "Disable Logs"
@@ -396,7 +516,7 @@ msgstr[1] "Выключить логи"
 msgstr[2] "Выключить логи"
 
 msgid "Disable Root"
-msgstr "Отключить root"
+msgstr "Отключить полный (root) доступ"
 
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
@@ -447,7 +567,7 @@ msgstr[1] "Включить логи"
 msgstr[2] "Включить логи"
 
 msgid "Enable Root"
-msgstr "Разрешить пользователя root"
+msgstr "Включить полный (root) доступ"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -462,39 +582,45 @@ msgstr "Ошибка"
 msgid "Error applying changes"
 msgstr "Ошибка при применении изменений"
 
+msgid "Error creating backup strategy."
+msgstr "Ошибка создания стратегии резервного копирования."
+
 msgid "Error creating database backup."
-msgstr "Ошибка создания резервной копии БД."
+msgstr "Ошибка создания резервной копии базы данных."
 
 msgid "Error deleting database on instance."
-msgstr "Ошибка удаления БД на  инстансе."
+msgstr "Ошибка удаления базы данных в инстансе."
 
 #, python-format
 msgid "Error downloading log file: %s"
 msgstr "Ошибка загрузки файла лога: %s"
 
+msgid "Error getting backup strategies list."
+msgstr "Ошибка получения списка стратегий резервного копирования."
+
 msgid "Error getting configuration group list."
-msgstr "Ошибка получения списка групп конфигурации."
+msgstr "Ошибка получения списка групп конфигураций."
 
 msgid "Error getting database backup list."
-msgstr "Ошибка получения списка резервных копий БД."
+msgstr "Ошибка получения списка резервных копий базы данных."
 
 #, python-format
 msgid "Error resetting parameters: %s"
-msgstr "Ошибка при очистке параметров: %s"
+msgstr "Ошибка при сбросе параметров: %s"
 
 msgctxt "Current status of a Database Backup"
 msgid "Failed"
-msgstr "Произошла ошибка"
+msgstr "Ошибка"
 
 msgctxt "Current status of a Database Instance"
 msgid "Failed"
-msgstr "Произошла ошибка"
+msgstr "Не удалось"
 
 msgid "Fault"
 msgstr "Ошибка"
 
 msgid "Flavor"
-msgstr "Тип инстанса"
+msgstr "Шаблон конфигурации"
 
 msgid "GB"
 msgstr "ГБ"
@@ -504,15 +630,15 @@ msgstr "Выполнить"
 
 msgid "Grant Access"
 msgid_plural "Grant Access"
-msgstr[0] "Дать доступ"
-msgstr[1] "Дать доступы"
-msgstr[2] "Дать доступы"
+msgstr[0] "Предоставить доступ"
+msgstr[1] "Предоставить доступы"
+msgstr[2] "Предоставить доступы"
 
 msgid "Granted Access to"
 msgid_plural "Granted Access to"
-msgstr[0] "Дан доступ к "
-msgstr[1] "Даны доступы к "
-msgstr[2] "Даны доступы к "
+msgstr[0] "Предоставлен доступ к"
+msgstr[1] "Предоставлены доступы к"
+msgstr[2] "Предоставлены доступы к"
 
 msgid "Grow Cluster"
 msgstr "Увеличить кластер"
@@ -521,22 +647,26 @@ msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Увеличить кластер: {{cluster_name}}"
 
 msgid "Has Root Ever Been Enabled"
-msgstr "Был ли когда-то включен root"
+msgstr "Был ли когда-то включен полный (root) доступ"
+
+msgctxt "Current status of a Database Instance"
+msgid "Healthy"
+msgstr "Здоровый"
 
 msgid "Host"
 msgstr "Хост"
 
 msgid "Host or IP that the user is allowed to connect through."
-msgstr "Хост или IP через который пользователю разрешено подключиться."
+msgstr "Хост или IP, через который пользователю разрешено подключаться."
 
 msgid "ID"
 msgstr "ID"
 
 msgid "Incremental"
-msgstr "Инкрементное"
+msgstr "Инкрементальный"
 
 msgid "Incremental Backup"
-msgstr "Инкрементное резервное копирование"
+msgstr "Инкрементальное резервное копирование"
 
 msgid "Info"
 msgstr "Информация"
@@ -551,13 +681,18 @@ msgid "Initial Databases"
 msgstr "Начальные базы данных"
 
 msgid "Initial Volume Size"
-msgstr "Изначальный размер диска"
+msgstr "Начальный размер диска"
 
 msgid "Initial admin user to add"
-msgstr "Начальный пользователь-администратор для добавления"
+msgstr ""
+"Начальный администратор, который будет добавлен при создании базы данных"
 
 msgid "Initialize Databases"
 msgstr "Инициализировать базы данных"
+
+#, python-format
+msgid "Instance \"%s\" successfully updated."
+msgstr "Инстанс \"%s\" успешно обновлен."
 
 msgid "Instance Name"
 msgstr "Имя инстанса"
@@ -567,6 +702,9 @@ msgstr "Тип инстанса"
 
 msgid "Instances"
 msgstr "Инстансы"
+
+msgid "Is Public"
+msgstr "Публичный"
 
 msgid "Is a Replica Of"
 msgstr "Является репликой"
@@ -578,7 +716,7 @@ msgid "Launch Cluster"
 msgstr "Запустить кластер"
 
 msgid "Launch Database"
-msgstr "Запустить БД"
+msgstr "Запустить базу данных"
 
 msgid "Launch Instance"
 msgstr "Запустить инстанс"
@@ -588,14 +726,11 @@ msgstr "Запустить инстанс с этими сетями"
 
 #, python-format
 msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "Запущено %(count)s названных \"%(name)s\"."
+msgstr "Запущен %(count)s с именем \"%(name)s\"."
 
 #, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Запущен кластер %s"
-
-msgid "Locality"
-msgstr "Окрестность"
 
 msgid "Log"
 msgstr "Лог"
@@ -619,10 +754,19 @@ msgid "Manage Access"
 msgstr "Управление доступом"
 
 msgid "Manage Root"
-msgstr "Управление root"
+msgstr "Управление полным (root) доступом"
 
 msgid "Manage Root Access"
-msgstr "Управление правами root"
+msgstr "Управление полным (root) доступом"
+
+msgid ""
+"Manage parameters of the configuration group. If the configuration group is "
+"attached with database instance, the change is applied to the instance "
+"synchronously."
+msgstr ""
+"Управление параметрами группы конфигурации. Если группа конфигурации "
+"подключена к инстансу базы данных, изменение применяется к инстансу "
+"синхронно."
 
 msgid "Management Console"
 msgstr "Консоль управления"
@@ -633,6 +777,15 @@ msgstr "Имя основного инстанса"
 msgid "Message"
 msgstr "Сообщение"
 
+msgid ""
+"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
+"the button, or dragging and dropping. You can change the NIC order by "
+"dragging and dropping as well."
+msgstr ""
+"Переместите сети из \"Доступные сети\" в \"Выбранные сети\", нажав кнопку "
+"или перетащив их. Вы также можете изменить порядок сетевых карт, перетащив "
+"их."
+
 msgid "Name"
 msgstr "Имя"
 
@@ -640,20 +793,23 @@ msgid "Network"
 msgstr "Сеть"
 
 msgid "Network attached to instance."
-msgstr "Сеть подключенная к инстансу."
+msgstr "Сеть, подключенная к инстансу."
 
 msgid "Networking"
 msgstr "Сеть"
+
+msgid "Networking Information"
+msgstr "Сетевая информация"
 
 msgid "Networks"
 msgstr "Сети"
 
 msgctxt "Current status of a Database Backup"
 msgid "New"
-msgstr "Новая копия"
+msgstr "Новая"
 
 msgid "New Flavor"
-msgstr "Новый тип инстанса"
+msgstr "Новый шаблон конфигурации"
 
 msgid "New Host"
 msgstr "Новый хост"
@@ -665,7 +821,7 @@ msgid "New Password"
 msgstr "Новый пароль"
 
 msgid "New Size (GB)"
-msgstr "Новый размер (Гб)"
+msgstr "Новый размер (ГБ)"
 
 msgid "New password for cluster access."
 msgstr "Новый пароль для доступа к кластеру."
@@ -674,10 +830,10 @@ msgid "New size for volume must be greater than current size."
 msgstr "Новый размер диска должен быть больше текущего размера."
 
 msgid "No availability zones found"
-msgstr "Не найдены зоны доступности."
+msgstr "Не найдены зоны доступности"
 
 msgid "No backups available"
-msgstr "Нет доступных резервных копий"
+msgstr "Резервные копии отсутствуют"
 
 msgid "No configuration groups available"
 msgstr "Нет доступных групп конфигураций"
@@ -686,7 +842,7 @@ msgid "No configurations available"
 msgstr "Нет доступных конфигураций"
 
 msgid "No flavors available"
-msgstr "Нет доступных типов инстанса"
+msgstr "Нет доступных шаблонов конфигураций"
 
 msgid "No instances available"
 msgstr "Нет доступных инстансов"
@@ -710,8 +866,8 @@ msgid ""
 "Note: Enable root access on an instance.  If the root user is already "
 "enabled then a new password is generated."
 msgstr ""
-"Замечание: Разрешите root доступ к инстансу. Если root доступ уже разрешен, "
-"тогда будет сгенерирован новый пароль."
+"Примечание: включите полный (root) доступ к инстансу. Если полный доступ уже "
+"включен, тогда будет сгенерирован новый пароль."
 
 msgid "Number of Instances"
 msgstr "Количество инстансов"
@@ -722,74 +878,73 @@ msgstr "Количество шардов"
 msgid "Number of instances in the cluster."
 msgstr "Количество инстансов в кластере."
 
-msgid "Number of instances in the cluster. (Read only)"
-msgstr "Количество инстансов в кластере. (Только чтение)"
-
-msgid "Number of shards. (Read only)"
-msgstr "Количество шардов. (Только чтение)"
-
 msgid "Old Flavor"
-msgstr "Старый тип инстанса"
+msgstr "Старый шаблон конфигурации"
+
+msgid "Operating Status"
+msgstr "Рабочий статус"
 
 msgid "Optional Backup Description"
 msgstr "Опциональное описание резервной копии"
 
 msgid "Optional character set for the database."
-msgstr "Опциональная кодировка для БД"
+msgstr "Опциональный набор символов для базы данных."
 
 msgid "Optional collation type for the database."
-msgstr "Опциональные параметры сортировки для БД"
+msgstr "Опциональные параметры сортировки для базы данных."
 
 msgid "Optional comma separated list of databases user has access to."
 msgstr ""
-"Опциональный список БД, разделенный запятыми, к которым пользователь имеет "
-"доступ."
+"Опциональный список баз данных, разделенный запятыми, к которым пользователь "
+"имеет доступ."
 
 msgid "Optional datastore specific type of the instance."
-msgstr "Опциональный тип инстанса для хранилища данных."
+msgstr "Опциональный тип хранилища данных для конкретного инстанса."
 
 msgid ""
 "Optional datastore specific value that defines the relationship from one "
 "instance in the cluster to another."
 msgstr ""
-"Опциональное значение для хранилища данных которое определяет отношение "
-"между инстансами в кластере"
+"Опциональное значение для конкретного хранилища данных, определяющее связь "
+"одного инстанса в кластере с другим."
 
 msgid "Optional host of user."
-msgstr "Опциональный хост пользователя"
+msgstr "Опциональный хост пользователя."
 
 msgid "Optional name of the instance."
 msgstr "Опциональное имя инстанса."
 
 msgid "Optional parent backup"
-msgstr "Необязательная материнская резервная копия"
+msgstr "Опциональная родительская резервная копия"
 
 msgid ""
 "Optionally choose to create this database using a previous backup, or as a "
 "replica of another database instance."
 msgstr ""
-"Дополнительно можно выбрать создание этой базы данных из резервной копии или "
-"в качестве реплики другого экземпляра БД."
+"В качестве опции можно выбрать создание этой базы данных с использованием "
+"предыдущей резервной копии или как копии другого инстанса базы данных."
 
 msgid "Optionally provide a character set and collation for the database."
-msgstr "Опционально укажите кодировку и параметры сортировки для БД."
+msgstr ""
+"Опционально укажите набор символов и параметры сортировки для базы данных."
 
 msgid "Optionally provide a comma separated list of databases to create:"
 msgstr ""
-"Опционально введите список баз данных для создания, разделенный запятыми: "
+"Опционально введите список имен баз данных для создания, разделенные "
+"запятыми, например: "
 
 msgid ""
 "Optionally provide the host of the user and a list of databases the user is "
 "granted access to."
 msgstr ""
-"Опционально предоставьте хост для пользователя и список БД к которым "
-"пользователь имеет доступ."
+"Опционально укажите хост пользователя и список баз данных, к которым он "
+"имеет доступ."
 
 msgid "Overview"
 msgstr "Обзор"
 
 msgid "PASSWORD"
-msgstr "PASSWORD"
+msgstr "ПАРОЛЬ"
 
 msgid "Parameter"
 msgstr "Параметр"
@@ -798,7 +953,7 @@ msgid "Parameters"
 msgstr "Параметры"
 
 msgid "Parent Backup"
-msgstr "Материнская резервная копия"
+msgstr "Родительская резервная копия"
 
 msgid "Password"
 msgstr "Пароль"
@@ -810,18 +965,16 @@ msgid "Password for root user must be specified."
 msgstr "Должен быть указан пароль для пользователя root."
 
 msgid "Password for root user."
-msgstr "Пароль пользователя root"
+msgstr "Пароль для пользователя root."
 
 msgid ""
 "Password is only visible immediately after the root is enabled or reset."
-msgstr "Пароль видим сразу только  после разрешения или сброса root."
-
-msgid ""
-"Please note:</strong> The new value must be greater than the existing volume "
-"size."
 msgstr ""
-"Пожалуйста, обратите внимание: </strong> Новое значение должно быть больше "
-"чем текущего размер диска."
+"Пароль сразу становится видимым только после включения или сброса полного "
+"доступа."
+
+msgid "Project"
+msgstr "Проект"
 
 msgid "Promote"
 msgstr "Повысить"
@@ -831,7 +984,7 @@ msgstr "Сделать источником реплик"
 
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
-msgstr "Реплика \"%s\" теперь источник реплик."
+msgstr "Реплика \"%s\" задана как источник реплик."
 
 msgid "Property"
 msgstr "Свойство"
@@ -877,7 +1030,7 @@ msgstr[1] "Удаленные инстансы"
 msgstr[2] "Удаленные инстансы"
 
 msgid "Removed instances from cluster."
-msgstr "Удаленные инстансы из кластера"
+msgstr "Инстансы удалены из кластера."
 
 msgid "Replica Count"
 msgstr "Количество реплик"
@@ -888,6 +1041,10 @@ msgstr[0] "Реплика отключена"
 msgstr[1] "Реплики отключены"
 msgstr[2] "Реплики отключены"
 
+#, python-format
+msgid "Replica of %s"
+msgstr "Реплика %s"
+
 msgid "Replicas"
 msgstr "Реплики"
 
@@ -897,14 +1054,17 @@ msgstr "Реплицировать с инстанса"
 msgid "Replication"
 msgstr "Репликация"
 
+msgid "Replication Status"
+msgstr "Статус репликации"
+
 msgid "Reset Parameters"
-msgstr "Очистить параметры"
+msgstr "Сбросить параметры"
 
 msgid "Reset Root Password"
 msgstr "Сбросить пароль для root"
 
 msgid "Resize Database Instance"
-msgstr "Изменить размер инстанса БД"
+msgstr "Изменить размер инстанса базы данных"
 
 msgid "Resize Database Volume"
 msgstr "Изменить размер диска базы данных"
@@ -925,7 +1085,7 @@ msgstr "Изменить размер инстанса \"%s\""
 
 #, python-format
 msgid "Resizing volume \"%s\""
-msgstr "Изменяем размер диска \"%s\" "
+msgstr "Изменение размера диска \"%s\" "
 
 msgid "Restart Instance"
 msgid_plural "Restart Instances"
@@ -949,29 +1109,33 @@ msgstr ""
 "хранилище."
 
 msgid "Restore Backup"
-msgstr "Восстановить из резервной копии"
+msgstr "Восстановить резервную копию"
 
 msgid "Restore from Backup"
 msgstr "Восстановить из резервной копии"
+
+msgctxt "Current status of a Database Backup"
+msgid "Restored"
+msgstr "Восстановлен"
 
 msgid "Return to Log List"
 msgstr "Вернуться к списку логов"
 
 msgid "Revoke Access"
 msgid_plural "Revoke Access"
-msgstr[0] "Отменить доступ"
-msgstr[1] "Отменить доступы"
-msgstr[2] "Отменить доступы"
+msgstr[0] "Отозвать доступ"
+msgstr[1] "Отозвать доступы"
+msgstr[2] "Отозвать доступы"
 
 msgid "Root Enabled"
-msgstr "Root разрешен"
+msgstr "Полный (root) доступ включен"
 
 msgid "Root Password"
 msgstr "Пароль root"
 
 #, python-format
 msgid "Root password updated for cluster \"%s\""
-msgstr "Пароль root обновлён для кластера \"%s\""
+msgstr "Root пароль обновлен для кластера \"%s\""
 
 msgctxt "Current status of a Database Backup"
 msgid "Saving"
@@ -985,7 +1149,7 @@ msgstr[2] "Запланировано уменьшение кластеров"
 
 #, python-format
 msgid "Scheduled backup \"%(name)s\"."
-msgstr "Запланированная резервная копия \"%(name)s\"."
+msgstr "Запланировано резервное копирование \"%(name)s\"."
 
 msgid "Scheduled deletion of Cluster"
 msgid_plural "Scheduled deletion of Clusters"
@@ -1000,10 +1164,10 @@ msgstr[1] "Запланировано удаление инстансов"
 msgstr[2] "Запланировано удаление инстансов"
 
 msgid "Scheduled growing of cluster."
-msgstr "Запланировано увеличение кластера"
+msgstr "Запланировано увеличение кластера."
 
 msgid "Select a backup to restore"
-msgstr "Выбрать резервную копию для восстановления"
+msgstr "Выберите резервную копию для восстановления"
 
 msgid "Select a configuration group"
 msgstr "Выберите группу конфигурации"
@@ -1015,22 +1179,22 @@ msgid "Select a master instance"
 msgstr "Выберите основной инстанс"
 
 msgid "Select a new flavor"
-msgstr "Выберите новый тип инстанса"
+msgstr "Выберите новый шаблон конфигурации"
 
 msgid "Select a parameter and provide a value for the configuration parameter."
 msgstr "Выберите параметр и предоставьте значение для параметра конфигурации."
 
 msgid "Select backup"
-msgstr "Выбрать резервную копию"
+msgstr "Выберите резервную копию"
 
 msgid "Select configuration"
-msgstr "Выбрать конфигурацию"
+msgstr "Выберите конфигурацию"
 
 msgid "Select configuration group"
 msgstr "Выберите группу конфигурации"
 
 msgid "Select datastore type and version"
-msgstr "Выбрать тип и версию хранилища данных."
+msgstr "Выберите тип и версию хранилища данных"
 
 msgid "Select instance"
 msgstr "Выберите инстанс"
@@ -1039,13 +1203,16 @@ msgid "Select networks for your instance."
 msgstr "Выберите сети для вашего инстанса."
 
 msgid "Select parent backup"
-msgstr "Выбрать материнскую резервную копию"
+msgstr "Выберите родительскую резервную копию"
 
 msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "Выберите инстанс(ы) который будет удален из кластера."
+msgstr "Выберите инстансы, которые будут удалены из кластера."
 
 msgid "Selected networks"
 msgstr "Выбранные сети"
+
+msgid "Service Status Updated"
+msgstr "Статус службы обновлен"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
@@ -1054,10 +1221,10 @@ msgstr[1] "Уменьшить кластеры"
 msgstr[2] "Уменьшить кластеры"
 
 msgid "Shrink Cluster: {{cluster_name}}"
-msgstr "Уменьшать кластер: {{cluster_name}}"
+msgstr "Уменьшить кластер: {{cluster_name}}"
 
 msgid "Shrinking a cluster is not recoverable."
-msgstr "Уменьшение кластер не подлежит восстановлению."
+msgstr "Уменьшение кластера необратимо."
 
 msgctxt "Current status of a Database Instance"
 msgid "Shutdown"
@@ -1067,35 +1234,38 @@ msgid "Size"
 msgstr "Размер"
 
 msgid "Size of image to launch."
-msgstr "Размер образа для запуска"
+msgstr "Размер образа для запуска."
 
 msgid "Size of the volume in GB."
-msgstr "Размер диска в ГБ"
+msgstr "Размер диска в ГБ."
 
 msgid "Source for Initial State"
-msgstr "Источник для первоначального наполнения"
+msgstr "Источник начального состояния"
 
 msgid "Specify a new flavor for the database instance."
-msgstr "Укажите новый тип инстанса для инстанса БД."
+msgstr "Укажите новый шаблон конфигурации для инстанса базы данных."
 
 msgid "Specify a new name, new password or new host name for the user."
 msgstr "Укажите новое имя, новой пароль или новый хост для пользователя."
 
+msgid "Specify the backup strategy details."
+msgstr "Укажите детали стратегии резервного копирования."
+
 msgid "Specify the details for launching an instance."
-msgstr "Задайте детали запуска инстанса."
+msgstr "Укажите детали для запуска инстанса."
 
 msgid "Specify the details for the database backup."
 msgstr "Указать данные для резервной копии базы данных."
 
 msgid "Specify the details of the instance to be added to the cluster."
-msgstr "Задайте параметры инстанса для добавления в кластер."
+msgstr "Задайте детали инстанса для добавления в кластер."
 
 msgid ""
 "Specify the instances to be added to the cluster.  When all the instances "
 "are specified click 'Grow Cluster' to perform the grow operation."
 msgstr ""
 "Укажите инстансы для добавления в кластер. Когда все инстансы указаны, "
-"нажмите 'Увеличить кластер' для выполнения операции увеличения."
+"нажмите 'Увеличить кластер' для выполнения увеличения."
 
 msgid "Specify the name of the new database."
 msgstr "Укажите имя новой базы данных."
@@ -1107,7 +1277,7 @@ msgid "Specify the new root password for vertica cluster."
 msgstr "Укажите новый root пароль для кластера vertica."
 
 msgid "Specify the new volume size for the database instance."
-msgstr "Указать новый размер диска для инстанса БД."
+msgstr "Указать новый размер диска для инстанса базы данных."
 
 msgid "Specify the number of replicas to be created"
 msgstr "Укажите количество создаваемых реплик"
@@ -1118,48 +1288,63 @@ msgid ""
 "value is ignored if the instance to be launched is a replica."
 msgstr ""
 "Укажите будут ли реплицированные инстансы создаваться на одном и том же "
-"гипервизоре (аффинированность) или на разных гипервизорах (анти-"
-"аффинитивность). Это значение будет проигнорировано если запускаемый инстанс "
-"является репликой."
+"гипервизоре (affinity) или на разных гипервизорах (anti-affinity). Это "
+"значение будет проигнорировано, если запускаемый инстанс является репликой."
 
 msgid ""
 "Specify whether instances in the cluster will be created on the same "
 "hypervisor (affinity) or on different hypervisors (anti-affinity)."
 msgstr ""
 "Укажите будут ли инстансы кластера создаваться на одном и том же гипервизоре "
-"(аффинированность) или на разных (анти-аффинированность)"
+"(affinity) или на разных (anti-affinity)."
 
 msgid "Specs"
-msgstr "Спеки"
+msgstr "Спецификации"
 
 msgid "Status"
 msgstr "Статус"
 
 msgid "Status if root was ever enabled for an instance."
-msgstr "Статус если root когда либо был разрешен для инстанса."
+msgstr "Статус, если полный (root) доступ когда-либо был включен для инстанса."
+
+msgid "Stop Database Service"
+msgid_plural "Stop Database Services"
+msgstr[0] "Остановить службу базы данных"
+msgstr[1] "Остановить службы базы данных"
+msgstr[2] "Остановить службы базы данных"
+
+msgid "Stop database service inside an instance."
+msgstr "Остановить службу базы данных внутри инстанса."
 
 msgid "Successfully added parameter"
 msgstr "Параметр успешно добавлен"
 
 msgid "Successfully disabled root access."
-msgstr "Доступ к root отключен."
+msgstr "Полный (root) доступ успешно отключен."
+
+msgid "Swift Container"
+msgstr "Контейнер Swift"
+
+msgid "Swift Container Name"
+msgstr "Имя контейнера Swift"
 
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
 "optional.  See the Trove documentation for more information on using these "
 "fields."
 msgstr ""
-"Поля 'Тип инстанса' и 'Относится к' опциональны и зависят от хранилища.  "
-"Смотрите документацию Trove для подробной информации об этих полях."
+"Поля 'Тип инстанса' и 'Относится к' необязательны и зависят от типа "
+"хранилища.  Смотрите документацию Trove для подробной информации об этих "
+"полях."
 
 msgid "The flavor must be specified."
-msgstr "Должен быть указан тип инстанса."
+msgstr "Должен быть указан шаблон конфигурации."
 
 msgid ""
 "The name field is optional.   If the field is left blank a name will be "
 "generated when the cluster is grown."
 msgstr ""
-"Поле имя опциональное.   Если это поле оставить пустым, то имя будет "
+"Поле имени является опциональным.   Если поле оставить пустым, имя будет "
 "сгенерировано при увеличении кластера."
 
 msgid "The number of instances must be greater than 1."
@@ -1169,7 +1354,7 @@ msgid "The number of shards must be greater than 1."
 msgstr "Количество шардов должно быть больше 1."
 
 msgid "There was a problem enabling root."
-msgstr "Возникла проблема с разрешением пользователя root."
+msgstr "Возникла проблема с включением полного доступа."
 
 msgid "This action cannot be undone."
 msgstr "Это действие не может быть отменено."
@@ -1181,44 +1366,65 @@ msgid "Type and version of datastore."
 msgstr "Тип и версия хранилища данных."
 
 msgid "USERNAME"
-msgstr "USERNAME"
+msgstr "ИМЯ ПОЛЬЗОВАТЕЛЯ"
 
 #, python-format
 msgid "Unable to %(action)s: %(objs)s"
-msgstr "Невозможно выполнить %(action)s: %(objs)s"
+msgstr "Не удалось выполнить %(action)s: %(objs)s"
+
+msgid "Unable to add new parameter."
+msgstr "Не удалось добавить новый параметр."
+
+msgid "Unable to attach configuration group."
+msgstr "Не удалось подключить группу конфигурации."
+
+msgid "Unable to create backup strategy"
+msgstr "Не удалось создать стратегию резервного копирования"
+
+msgid "Unable to create configuration group."
+msgstr "Не удалось создать группу конфигурации."
+
+msgid "Unable to create database."
+msgstr "Не удалось создать базу данных."
 
 msgid "Unable to create list of parameters."
-msgstr "Невозможно создать список параметров."
+msgstr "Не удалось создать список параметров."
+
+msgid "Unable to create user."
+msgstr "Не удалось создать пользователя."
 
 msgid "Unable to determine if instance root is enabled."
-msgstr "Не удалось определить разрешен ли root для инстанса."
+msgstr "Не удалось определить включен ли полный (root) доступ к инстансу."
 
 msgid "Unable to find backup!"
 msgstr "Не удалось найти резервную копию!"
 
 msgid "Unable to find configuration group!"
-msgstr "Невозможно найти группу конфигурации!"
+msgstr "Не удалось найти группу конфигурации!"
 
 msgid "Unable to find master instance!"
 msgstr "Не удалось найти основной инстанс!"
 
 msgid "Unable to get configuration data."
-msgstr "Невозможно получить данные конфигурации."
+msgstr "Не удалось получить данные конфигурации."
 
 msgid "Unable to get database backup data."
-msgstr "Не удалось получить данные резервной копии базы данных"
+msgstr "Не удалось получить данные резервной копии базы данных."
 
 msgid "Unable to get databases data."
-msgstr "Не удалось получить информацию о базах данных"
+msgstr "Не удалось получить информацию о базах данных."
 
 msgid "Unable to get instances data."
-msgstr "Невозможно получить данные инстансов."
+msgstr "Не удалось получить данные инстансов."
 
 msgid "Unable to get user access data."
-msgstr "Не удалось получить данные доступа пользователя"
+msgstr "Не удалось получить данные доступа пользователя."
 
 msgid "Unable to get user data."
-msgstr "Не удалось получить данные пользователя"
+msgstr "Не удалось получить данные пользователя."
+
+msgid "Unable to grow cluster."
+msgstr "Не удалось увеличить кластер."
 
 #, python-format
 msgid "Unable to grow cluster: %s"
@@ -1226,61 +1432,78 @@ msgstr "Не удалось увеличить кластер: %s"
 
 #, python-format
 msgid "Unable to launch %(count)s named \"%(name)s\"."
-msgstr "Не удалось запустить %(count)s названных \"%(name)s\"."
+msgstr "Не удалось запустить %(count)s с именем \"%(name)s\"."
+
+msgid "Unable to launch cluster."
+msgstr "Не удалось запустить кластер."
 
 msgid "Unable to list database backups for parent."
-msgstr "Не удалось перечислить резервные копии базы для родителя."
+msgstr "Не удалось получить список резервных копий базы данных для родителя."
 
 msgid "Unable to list database instances to backup."
 msgstr ""
 "Не удалось получить список инстансов баз данных для резервного копирования."
 
+#, python-brace-format
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
 msgstr ""
-"Невозможно загрузить лог {0}\n"
+"Не удалось загрузить лог {0}\n"
 "{1}"
 
+#, python-brace-format
 msgid "Unable to load {0} log for instance \"{1}\"."
-msgstr "Невозможно загрузить лог {0} для инстанса \"{1}\"."
+msgstr "Не удалось загрузить лог {0} для инстанса \"{1}\"."
 
 msgid "Unable to obtain datastore versions."
-msgstr "Невозможно получить версии хранилищ данных."
+msgstr "Не удалось получить версии хранилищ данных."
 
 msgid "Unable to obtain datastores."
-msgstr "Невозможно получить список хранилищ данных."
+msgstr "Не удалось получить список хранилищ данных."
 
 msgid "Unable to obtain flavors."
-msgstr "Не удалось получить типы инстансов."
+msgstr "Не удалось получить шаблоны конфигураций."
 
 msgid "Unable to obtain information on root user"
-msgstr "Невозможно получить информацию о пользователе root"
+msgstr "Не удалось получить информацию о пользователе root"
 
 msgid "Unable to obtain list of parameters."
-msgstr "Невозможно получить список параметров."
+msgstr "Не удалось получить список параметров."
+
+msgid "Unable to promote replica as the new replica source."
+msgstr "Не удалось назначить реплику новым источником реплики."
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"
-msgstr "Невозможно удалить инстансы их кластера: %s"
+msgstr "Не удалось удалить инстансы их кластера: %s"
+
+msgid "Unable to reset password."
+msgstr "Не удалось сбросить пароль."
+
+msgid "Unable to resize instance."
+msgstr "Не удалось изменить размер инстанса."
+
+msgid "Unable to resize volume."
+msgstr "Не удалось изменить размер диска."
 
 msgid "Unable to retrieve accessible databases."
 msgstr "Не удалось получить доступные базы данных."
 
 msgid "Unable to retrieve availability zones."
-msgstr "Не удалось получить список зон доступности."
+msgstr "Не удалось получить зоны доступности."
 
 msgid "Unable to retrieve cluster details."
-msgstr "Невозможно получить сведения для кластера."
+msgstr "Не удалось получить детали кластера."
 
 msgid "Unable to retrieve database clusters."
-msgstr "Невозможно получить кластеры БД."
+msgstr "Не удалось получить кластеры баз данных."
 
 msgid "Unable to retrieve database instances."
-msgstr "Не удалось получить инстансы БД."
+msgstr "Не удалось получить инстансы базы данных."
 
 msgid "Unable to retrieve database size information."
-msgstr "Не удалось получить информацию о размере БД."
+msgstr "Не удалось получить информацию о размере базы данных."
 
 msgid "Unable to retrieve databases."
 msgstr "Не удалось получить базы данных."
@@ -1295,35 +1518,52 @@ msgstr "Не удалось получить подробную информац
 
 #, python-format
 msgid "Unable to retrieve details for database cluster: %s"
-msgstr "Невозможно получить сведения для кластера БД: %s"
+msgstr "Не удалось получить детали для кластера баз данных: %s"
 
 #, python-format
 msgid "Unable to retrieve details for database instance: %s"
-msgstr "Не удалось получить детальную информацию для инстанса БД: %s"
+msgstr "Не удалось получить подробную информацию для инстанса базы данных: %s"
+
+#, python-format
+msgid "Unable to retrieve details for instance %s"
+msgstr "Не удалось получить данные инстанса %s"
 
 #, python-format
 msgid "Unable to retrieve details for parent backup: %s"
-msgstr "Не удалось получить данные о материнской резервной копии: %s"
+msgstr "Не удалось получить сведения о родительской резервной копии: %s"
 
 msgid "Unable to retrieve flavors."
-msgstr "Не удалось получить типы инстанса."
+msgstr "Не удалось получить шаблоны конфигураций."
 
 msgid "Unable to retrieve instance details."
-msgstr "Не удалось получить подробную информацию об инстансе."
+msgstr "Не удалось получить детали об инстансе."
 
 #, python-format
 msgid ""
 "Unable to retrieve list of logs.\n"
 "%s"
 msgstr ""
-"Невозможно получить список логов.\n"
+"Не удалось получить список логов.\n"
 "%s"
 
 msgid "Unable to retrieve networks."
 msgstr "Не удалось получить сети."
 
+#, python-format
+msgid "Unable to update instance \"%s\"."
+msgstr "Не удалось обновить инстанс \"%s\"."
+
+msgid "Unable to update user."
+msgstr "Не удалось обновить пользователя."
+
 msgid "Unknown"
 msgstr "Неизвестно"
+
+msgid "Update Instance"
+msgstr "Обновить инстанс"
+
+msgid "Update instance."
+msgstr "Обновить инстанс."
 
 msgid "Updated"
 msgstr "Обновлено"
@@ -1334,6 +1574,9 @@ msgstr "Обновлен пользователь \"%s\"."
 
 msgid "User Name"
 msgstr "Имя пользователя"
+
+msgid "User defined swift container name."
+msgstr "Имя Swift контейнера, заданное пользователем."
 
 msgid "Username (required)"
 msgstr "Имя пользователя (обязательно)"
@@ -1386,28 +1629,31 @@ msgstr "Тип диска"
 
 #, python-format
 msgid "You are not allowed to %(action)s: %(objs)s"
-msgstr "Вам не разрешено выполнение: %(action)s: %(objs)s"
+msgstr "Вам запрещено выполнение %(action)s: %(objs)s"
 
 msgid ""
 "You can perform an incremental backup by specifying a parent backup. "
 "<strong>However,</strong> not all databases support incremental backups in "
 "which case this operation will result in an error."
 msgstr ""
-"Вы можете выполнить инкрементное резервное копирование, указав материнскую "
-"резервную копию. <strong>Однако, </strong> не все базы данных поддерживают "
-"инкрементное резервное копирование, в этом случае операция приведёт к ошибке."
+"Вы можете выполнить инкрементальное резервное копирование, указав "
+"материнскую резервную копию. <strong>Однако, </strong> не все базы данных "
+"поддерживают инкрементальное резервное копирование, в этом случае операция "
+"приведёт к ошибке."
 
 msgid "You must select a datastore type and version."
 msgstr "Вы должны выбрать тип и версию хранилища данных."
 
 msgid "You must select a flavor."
-msgstr "Необходимо выбрать тип инстанса."
+msgstr "Вам необходимо выбрать шаблон конфигурации."
 
 msgid "You must specify a password if you create a user."
-msgstr "Вы должны задать пароль если хотите создать пользователя."
+msgstr "Вы должны задать пароль, если хотите создать пользователя."
 
 msgid "You must specify at least one database if you create a user."
-msgstr "Вы должны создать по крайней мере одну БД если создаете пользователя."
+msgstr ""
+"Вы должны создать по крайней мере одну базу данных если создаете "
+"пользователя."
 
 #, python-format
 msgid ""
@@ -1419,3 +1665,6 @@ msgstr ""
 
 msgid "instance"
 msgstr "инстанс"
+
+msgid "instance_id"
+msgstr "instance_id"

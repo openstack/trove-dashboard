@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2022-04-29 11:18+0000\n"
+"POT-Creation-Date: 2025-06-19 11:56+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -623,9 +623,6 @@ msgstr "%(count)s instance(s) nommée(s) \"%(name)s\" ont été lancée(s)."
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" démarré"
 
-msgid "Locality"
-msgstr "Localisation"
-
 msgid "Log"
 msgstr "Journal"
 
@@ -761,12 +758,6 @@ msgstr "Nombre de fragments"
 msgid "Number of instances in the cluster."
 msgstr "Nombre d'instances dans le cluster."
 
-msgid "Number of instances in the cluster. (Read only)"
-msgstr "Nombre d'instances dans le cluster. (En lecture seule)"
-
-msgid "Number of shards. (Read only)"
-msgstr "Nombre de fragments. (lecture seule)"
-
 msgid "Old Flavor"
 msgstr "Ancien gabarit"
 
@@ -859,13 +850,6 @@ msgid ""
 msgstr ""
 "Le mot de passe est visible uniquement juste après l'activation de root ou "
 "sa réinitialisation."
-
-msgid ""
-"Please note:</strong> The new value must be greater than the existing volume "
-"size."
-msgstr ""
-"Veuillez noter que :</strong> La nouvelle valeur doit être plus grande que "
-"la taille du volume existant."
 
 msgid "Promote"
 msgstr "Promouvoir"
@@ -1275,6 +1259,7 @@ msgstr "Impossible de lister les sauvegardes totale des base de données."
 msgid "Unable to list database instances to backup."
 msgstr "Impossible de lister les instances de base de données à sauvegarder."
 
+#, python-brace-format
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
@@ -1282,6 +1267,7 @@ msgstr ""
 "Impossible de charger le journal {0}\n"
 "{1}"
 
+#, python-brace-format
 msgid "Unable to load {0} log for instance \"{1}\"."
 msgstr "Impossible de charger le journal {0} pour l\\'instance \"{1}\"."
 
