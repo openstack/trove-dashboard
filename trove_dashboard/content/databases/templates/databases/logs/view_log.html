@@ -3,7 +3,7 @@
 {% block title %}{% trans "Log" %}{% endblock %}
 
 {% block page_header %}
-  {% include "horizon/common/_page_header.html" with title=_("Log: ")|add:filename %}
+  {% include "horizon/common/_page_header.html" with title=_("Log:")|add:" "|add:filename %}
 {% endblock page_header %}
 
 {% block main %}
