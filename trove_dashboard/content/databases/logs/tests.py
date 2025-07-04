@@ -111,7 +111,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('publish', log.name)
+        action_string = "logs__%s_log__%s" % ('publish', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -139,7 +139,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('publish', log.name)
+        action_string = "logs__%s_log__%s" % ('publish', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -167,7 +167,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('enable', log.name)
+        action_string = "logs__%s_log__%s" % ('enable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -195,7 +195,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('enable', log.name)
+        action_string = "logs__%s_log__%s" % ('enable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -223,7 +223,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('discard', log.name)
+        action_string = "logs__%s_log__%s" % ('discard', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -251,7 +251,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('discard', log.name)
+        action_string = "logs__%s_log__%s" % ('discard', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -279,7 +279,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('disable', log.name)
+        action_string = "logs__%s_log__%s" % ('disable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(
@@ -307,7 +307,7 @@ class LogsTests(test.TestCase):
         detail_url = reverse('horizon:project:databases:detail',
                              args=[database_id])
         url = detail_url + '?tab=instance_details__logs_tab'
-        action_string = u"logs__%s_log__%s" % ('disable', log.name)
+        action_string = "logs__%s_log__%s" % ('disable', log.name)
         form_data = {'action': action_string}
         res = self.client.post(url, form_data)
         self.mock_instance_get.assert_called_once_with(

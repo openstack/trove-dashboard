@@ -25,16 +25,16 @@ class PublishLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Publish Log",
-            u"Publish Logs",
+            "Publish Log",
+            "Publish Logs",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Published Log",
-            u"Published Logs",
+            "Published Log",
+            "Published Logs",
             count
         )
 
@@ -50,16 +50,16 @@ class DiscardLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Discard Log",
-            u"Discard Logs",
+            "Discard Log",
+            "Discard Logs",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Discarded Log",
-            u"Discarded Logs",
+            "Discarded Log",
+            "Discarded Logs",
             count
         )
 
@@ -75,16 +75,16 @@ class EnableLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Enable Log",
-            u"Enable Logs",
+            "Enable Log",
+            "Enable Logs",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Enabled Log",
-            u"Enabled Logs",
+            "Enabled Log",
+            "Enabled Logs",
             count
         )
 
@@ -100,16 +100,16 @@ class DisableLog(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Disable Log",
-            u"Disable Logs",
+            "Disable Log",
+            "Disable Logs",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Disabled Log",
-            u"Disabled Logs",
+            "Disabled Log",
+            "Disabled Logs",
             count
         )
 

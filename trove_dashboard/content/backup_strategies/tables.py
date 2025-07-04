@@ -35,16 +35,16 @@ class DeleteBackupStrategy(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Backup Strategy",
-            u"Delete Backup Strategies",
+            "Delete Backup Strategy",
+            "Delete Backup Strategies",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Backup Strategy Deleted",
-            u"Backup Strategies Deleted",
+            "Backup Strategy Deleted",
+            "Backup Strategies Deleted",
             count
         )
 

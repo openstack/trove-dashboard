@@ -47,16 +47,16 @@ class DeleteInstance(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Instance",
-            u"Delete Instances",
+            "Delete Instance",
+            "Delete Instances",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Scheduled deletion of Instance",
-            u"Scheduled deletion of Instances",
+            "Scheduled deletion of Instance",
+            "Scheduled deletion of Instances",
             count
         )
 
@@ -72,16 +72,16 @@ class RestartInstance(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Restart Instance",
-            u"Restart Instances",
+            "Restart Instance",
+            "Restart Instances",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Restarted Instance",
-            u"Restarted Instances",
+            "Restarted Instance",
+            "Restarted Instances",
             count
         )
 
@@ -101,8 +101,8 @@ class DetachReplica(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Detach Replica",
-            u"Detach Replicas",
+            "Detach Replica",
+            "Detach Replicas",
             count
         )
     policy_rules = (("database", "instance:eject_replica_source"),)
@@ -110,8 +110,8 @@ class DetachReplica(tables.BatchAction):
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Replica Detached",
-            u"Replicas Detached",
+            "Replica Detached",
+            "Replicas Detached",
             count
         )
 
@@ -146,16 +146,16 @@ class EjectReplicaSource(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Eject Replica Source",
-            u"Eject Replica Sources",
+            "Eject Replica Source",
+            "Eject Replica Sources",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Ejected Replica Source",
-            u"Ejected Replica Sources",
+            "Ejected Replica Source",
+            "Ejected Replica Sources",
             count
         )
 
@@ -175,16 +175,16 @@ class GrantAccess(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Grant Access",
-            u"Grant Access",
+            "Grant Access",
+            "Grant Access",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Granted Access to",
-            u"Granted Access to",
+            "Granted Access to",
+            "Granted Access to",
             count
         )
 
@@ -210,16 +210,16 @@ class RevokeAccess(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Revoke Access",
-            u"Revoke Access",
+            "Revoke Access",
+            "Revoke Access",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Access Revoked to",
-            u"Access Revoked to",
+            "Access Revoked to",
+            "Access Revoked to",
             count
         )
 
@@ -338,16 +338,16 @@ class DeleteUser(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete User",
-            u"Delete Users",
+            "Delete User",
+            "Delete Users",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Deleted User",
-            u"Deleted Users",
+            "Deleted User",
+            "Deleted Users",
             count
         )
 
@@ -388,16 +388,16 @@ class DeleteDatabase(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Database",
-            u"Delete Databases",
+            "Delete Database",
+            "Delete Databases",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Deleted Database",
-            u"Deleted Databases",
+            "Deleted Database",
+            "Deleted Databases",
             count
         )
 
@@ -483,16 +483,16 @@ class DetachConfiguration(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Detach Configuration Group",
-            u"Detach Configuration Groups",
+            "Detach Configuration Group",
+            "Detach Configuration Groups",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Detached Configuration Group",
-            u"Detached Configuration Groups",
+            "Detached Configuration Group",
+            "Detached Configuration Groups",
             count
         )
 
@@ -692,16 +692,16 @@ class StopDatabase(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Stop Database Service",
-            u"Stop Database Services",
+            "Stop Database Service",
+            "Stop Database Services",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Database Service stopped",
-            u"Database Services stopped",
+            "Database Service stopped",
+            "Database Services stopped",
             count
         )
 
@@ -739,28 +739,28 @@ class InstancesTable(tables.DataTable):
     )
     STATUS_DISPLAY_CHOICES = (
         ("ACTIVE", pgettext_lazy("Current status of a Database Instance",
-                                 u"Active")),
+                                 "Active")),
         ("Healthy", pgettext_lazy("Current status of a Database Instance",
-                                  u"Healthy")),
+                                  "Healthy")),
         ("BLOCKED", pgettext_lazy("Current status of a Database Instance",
-                                  u"Blocked")),
+                                  "Blocked")),
         ("BUILD", pgettext_lazy("Current status of a Database Instance",
-                                u"Building")),
+                                "Building")),
         ("FAILED", pgettext_lazy("Current status of a Database Instance",
-                                 u"Failed")),
+                                 "Failed")),
         ("REBOOT", pgettext_lazy("Current status of a Database Instance",
-                                 u"Rebooting")),
+                                 "Rebooting")),
         ("RESIZE", pgettext_lazy("Current status of a Database Instance",
-                                 u"Resizing")),
+                                 "Resizing")),
         ("BACKUP", pgettext_lazy("Current status of a Database Instance",
-                                 u"Backup")),
+                                 "Backup")),
         ("SHUTDOWN", pgettext_lazy("Current status of a Database Instance",
-                                   u"Shutdown")),
+                                   "Shutdown")),
         ("ERROR", pgettext_lazy("Current status of a Database Instance",
-                                u"Error")),
+                                "Error")),
         ("RESTART_REQUIRED",
          pgettext_lazy("Current status of a Database Instance",
-                       u"Restart Required")),
+                       "Restart Required")),
     )
     name = tables.Column("name",
                          link="horizon:project:databases:detail",

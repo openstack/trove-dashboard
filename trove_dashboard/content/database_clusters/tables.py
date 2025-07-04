@@ -47,16 +47,16 @@ class DeleteCluster(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Delete Cluster",
-            u"Delete Clusters",
+            "Delete Cluster",
+            "Delete Clusters",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Scheduled deletion of Cluster",
-            u"Scheduled deletion of Clusters",
+            "Scheduled deletion of Cluster",
+            "Scheduled deletion of Clusters",
             count
         )
 
@@ -251,16 +251,16 @@ class ClusterShrinkAction(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Shrink Cluster",
-            u"Shrink Cluster",
+            "Shrink Cluster",
+            "Shrink Cluster",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Scheduled Shrinking of Cluster",
-            u"Scheduled Shrinking of Cluster",
+            "Scheduled Shrinking of Cluster",
+            "Scheduled Shrinking of Cluster",
             count
         )
 
@@ -325,16 +325,16 @@ class ClusterGrowRemoveInstance(tables.BatchAction):
     @staticmethod
     def action_present(count):
         return ngettext_lazy(
-            u"Remove Instance",
-            u"Remove Instances",
+            "Remove Instance",
+            "Remove Instances",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ngettext_lazy(
-            u"Removed Instance",
-            u"Removed Instances",
+            "Removed Instance",
+            "Removed Instances",
             count
         )
 
