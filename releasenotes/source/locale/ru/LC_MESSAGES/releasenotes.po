@@ -10,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-06-17 07:59+0000\n"
-"Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
+"PO-Revision-Date: 2025-07-15 01:26+0000\n"
+"Last-Translator: Dmitriy Chubinidze <dcu995@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -34,13 +34,22 @@ msgid "19.0.0"
 msgstr "19.0.0"
 
 msgid "2023.1 Series Release Notes"
-msgstr "Список изменений версии 2023.1"
+msgstr "Примечания к выпуску 2023.1"
 
 msgid "2023.2 Series Release Notes"
-msgstr "Список изменений версии 2023.2"
+msgstr "Примечания к выпуску 2023.2"
 
 msgid "2024.1 Series Release Notes"
-msgstr "Список изменений версии 2024.1"
+msgstr "Примечания к выпуску 2024.1"
+
+msgid "2024.2 Series Release Notes"
+msgstr "Примечания к выпуску 2024.2"
+
+msgid "2025.1 Series Release Notes"
+msgstr "Примечания к выпуску 2025.1"
+
+msgid "24.0.0-12"
+msgstr "24.0.0-12"
 
 msgid "7.0.0"
 msgstr "7.0.0"
@@ -95,13 +104,22 @@ msgstr ""
 "``OPENSTACK_KEYSTONE_ADMIN_ROLES`` и Trove ``admin_roles``."
 
 msgid "Bug Fixes"
-msgstr "Исправление ошибок"
+msgstr "Исправления ошибок"
 
 msgid "Contents:"
 msgstr "Содержание:"
 
 msgid "Current Series Release Notes"
-msgstr "Текущий список изменений"
+msgstr "Примечания к текущему выпуску"
+
+msgid ""
+"Dashboard features now check the 'databases' policy file. If the "
+"corresponding API is not available to the current user, this UI element will "
+"not display or will appear disabled."
+msgstr ""
+"Функции панели управления теперь проверяют файл политики \"базы данных\". "
+"Если соответствующий API недоступен текущему пользователю, этот элемент "
+"интерфейса не будет отображаться или будет отображаться отключенным. "
 
 msgid "Display all endpoints in the dashboard's cluster details endpoint list."
 msgstr ""
@@ -125,17 +143,26 @@ msgstr "Включены панели роста и уменьшения кла�
 msgid "Enable cluster support for MariaDB and Cassandra."
 msgstr "Включена поддержка кластеров для MariaDB и Cassandra."
 
+msgid ""
+"Enables dashboard to select a configuration-id. We should select a "
+"configuration-id in cluster creation forms because we can select a "
+"configuration id when creating a database instance."
+msgstr ""
+"Позволяет панели управления выбирать id конфигурации. Необходимо выбрать id "
+"конфигурации в формах создания кластера, поскольку его можно выбрать при "
+"создании инстанса базы данных."
+
 msgid "New Features"
 msgstr "Новые возможности"
 
 msgid "Newton Series Release Notes"
-msgstr "Список изменений в версии Newton"
+msgstr "Примечания к выпуску Newton"
 
 msgid "Ocata Series Release Notes"
-msgstr "Список изменений в версии Ocata"
+msgstr "Примечания к выпуску Ocata"
 
 msgid "Pike Series Release Notes"
-msgstr "Список изменений в версии Pike"
+msgstr "Примечания к выпуску Pike"
 
 msgid ""
 "Python 2.7 support has been dropped. Last release of trove-dashboard to "
@@ -153,17 +180,24 @@ msgstr ""
 "Поддержка Python 3.6 и 3.7 прекращена. Минимальная версия Python, которая "
 "теперь поддерживается — Python 3.8."
 
+msgid ""
+"Python 3.8 support was dropped. The minimum version of Python now supported "
+"is Python 3.9."
+msgstr ""
+"Поддержка Python 3.8 прекращена. Теперь поддерживается минимальная версия "
+"Python 3.9."
+
 msgid "Queens Series Release Notes"
-msgstr "Список изменений в версии Queens"
+msgstr "Примечания к выпуску Queens"
 
 msgid "Rocky Series Release Notes"
-msgstr "Список изменений в версии Rocky"
+msgstr "Примечания к выпуску Rocky"
 
 msgid "Search"
 msgstr "Поиск"
 
 msgid "Stein Series Release Notes"
-msgstr "Список изменений в версии Sten"
+msgstr "Примечания к выпуску Sten"
 
 msgid ""
 "Support configuration groups in the dashboard. This includes creating and "
@@ -186,10 +220,10 @@ msgstr ""
 "то, чтобы менеджер инициировлся только при создании."
 
 msgid "Train Series Release Notes"
-msgstr "Список изменений в версии Train"
+msgstr "Примечания к выпуску Train"
 
 msgid "Trove Dashboard Release Notes"
-msgstr "Список изменения панели управления Trove"
+msgstr "Примечания к выпуску панели управления Trove"
 
 msgid "Upgrade Notes"
 msgstr "Примечания к обновлению"
@@ -200,19 +234,19 @@ msgstr ""
 "управления."
 
 msgid "Ussuri Series Release Notes"
-msgstr "Список изменений в версии Ussuri"
+msgstr "Примечания к выпуску Ussuri"
 
 msgid "Victoria Series Release Notes"
-msgstr "Список изменений в версии Victoria"
+msgstr "Примечания к выпуску Victoria"
 
 msgid "Wallaby Series Release Notes"
-msgstr "Список изменений в версии Wallaby"
+msgstr "Примечания к выпуску Wallaby"
 
 msgid "Xena Series Release Notes"
-msgstr "Список изменений в версии Xena"
+msgstr "Примечания к выпуску Xena"
 
 msgid "Yoga Series Release Notes"
-msgstr "Список изменений в версии Yoga"
+msgstr "Примечания к выпуску Yoga"
 
 msgid "Zed Series Release Notes"
-msgstr "Список изменений в версии Zed"
+msgstr "Примечания к выпуску Zed"
