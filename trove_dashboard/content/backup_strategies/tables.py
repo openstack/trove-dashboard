@@ -55,7 +55,7 @@ class DeleteBackupStrategy(tables.DeleteAction):
 class BackupStrategiesTable(tables.DataTable):
     backend = tables.Column("backend", verbose_name=_("Backend"))
     instance_id = tables.Column("instance_id",
-                                verbose_name=_("instance_id"))
+                                verbose_name=_("Instance ID"))
     project_id = tables.Column("project_id",
                                verbose_name=_("Project"))
     swift_container = tables.Column("swift_container",
