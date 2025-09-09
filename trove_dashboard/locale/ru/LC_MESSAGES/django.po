@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-08-20 23:24+0000\n"
+"POT-Creation-Date: 2025-09-08 09:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-08-25 01:32+0000\n"
+"PO-Revision-Date: 2025-09-08 11:42+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -148,7 +148,7 @@ msgid "Backup Details"
 msgstr "Подробности резервной копии"
 
 msgid "Backup Details: {{ backup.name }}"
-msgstr "Детали резервной копии: {{ backup.name }}"
+msgstr "Подробности резервной копии: {{ backup.name }}"
 
 msgid "Backup Duration"
 msgstr "Продолжительность резервного копирования"
@@ -700,6 +700,9 @@ msgstr "Инициализировать базы данных"
 msgid "Instance \"%s\" successfully updated."
 msgstr "Инстанс \"%s\" успешно обновлен."
 
+msgid "Instance ID"
+msgstr "ID инстанса"
+
 msgid "Instance Name"
 msgstr "Имя инстанса"
 
@@ -753,8 +756,8 @@ msgstr "Длина журнала"
 msgid "Log length must be a nonnegative integer."
 msgstr "Длина журнала должна быть неотрицательным целым числом. "
 
-msgid "Log: "
-msgstr "Журнал: "
+msgid "Log:"
+msgstr "Журнал:"
 
 msgid "Logs"
 msgstr "Журналы"
@@ -1271,13 +1274,13 @@ msgid "Specify the backup strategy details."
 msgstr "Укажите подробности стратегии резервного копирования."
 
 msgid "Specify the details for launching an instance."
-msgstr "Укажите детали для запуска инстанса."
+msgstr "Укажите подробности для запуска инстанса."
 
 msgid "Specify the details for the database backup."
-msgstr "Указать подробности для резервной копии базы данных."
+msgstr "Укажите подробности для резервной копии базы данных."
 
 msgid "Specify the details of the instance to be added to the cluster."
-msgstr "Задайте детали инстанса для добавления в кластер."
+msgstr "Укажите подробности инстанса для добавления в кластер."
 
 msgid ""
 "Specify the instances to be added to the cluster.  When all the instances "
@@ -1296,7 +1299,7 @@ msgid "Specify the new root password for vertica cluster."
 msgstr "Укажите новый root пароль для кластера vertica."
 
 msgid "Specify the new volume size for the database instance."
-msgstr "Указать новый размер диска для инстанса базы данных."
+msgstr "Укажите новый размер диска для инстанса базы данных."
 
 msgid "Specify the number of replicas to be created"
 msgstr "Укажите количество создаваемых реплик"
@@ -1684,6 +1687,3 @@ msgstr ""
 
 msgid "instance"
 msgstr "инстанс"
-
-msgid "instance_id"
-msgstr "instance_id"
