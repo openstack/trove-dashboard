@@ -69,7 +69,8 @@ def cluster_delete(request, cluster_id):
 
 def cluster_create(request, name, volume, flavor, num_instances,
                    datastore, datastore_version,
-                   nics=None, root_password=None, locality=None):
+                   nics=None, root_password=None, locality=None,
+                   configuration=None):
     instances = []
     for i in range(num_instances):
         instance = {}
@@ -86,7 +87,8 @@ def cluster_create(request, name, volume, flavor, num_instances,
         datastore,
         datastore_version,
         instances=instances,
-        locality=locality)
+        locality=locality,
+        configuration=configuration)
 
 
 def cluster_grow(request, cluster_id, new_instances):
