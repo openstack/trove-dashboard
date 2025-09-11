@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2024-03-18 04:05+0000\n"
+"POT-Creation-Date: 2025-09-11 01:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-03-19 05:37+0000\n"
+"PO-Revision-Date: 2025-09-10 09:46+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -113,6 +113,9 @@ msgstr "Зона доступности"
 msgid "Available networks"
 msgstr "Доступные сети"
 
+msgid "Backend"
+msgstr "Бэкенд"
+
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
 msgstr "Резервное копирование"
@@ -134,6 +137,15 @@ msgstr "Имя резервной копии"
 
 msgid "Backup Overview"
 msgstr "Обзор резервной копии"
+
+msgid "Backup Strategies"
+msgstr "Стратегии резервного копирования"
+
+msgid "Backup Strategy Deleted"
+msgid_plural "Backup Strategies Deleted"
+msgstr[0] "Стратегия резервного копирования удалена"
+msgstr[1] "Стратегии резервного копирования удалены"
+msgstr[2] "Стратегии резервного копирования удалены"
 
 msgid "Backups"
 msgstr "Резервные копии"
@@ -223,6 +235,9 @@ msgstr "Контейнер"
 msgid "Create Backup"
 msgstr "Создать резервную копию"
 
+msgid "Create Backup Strategy"
+msgstr "Создать стратегию резервного копирования"
+
 msgid "Create Configuration Group"
 msgstr "Создать группу конфигурации"
 
@@ -293,6 +308,12 @@ msgid_plural "Delete Backups"
 msgstr[0] "Удалить резервную копию"
 msgstr[1] "Удалить резервные копии"
 msgstr[2] "Удалить резервные копии"
+
+msgid "Delete Backup Strategy"
+msgid_plural "Delete Backup Strategies"
+msgstr[0] "Удалить стратегию резервного копирования"
+msgstr[1] "Удалить стратегии резервного копирования"
+msgstr[2] "Удалить стратегии резервного копирования"
 
 msgid "Delete Cluster"
 msgid_plural "Delete Clusters"
@@ -517,6 +538,9 @@ msgstr "Начальный пользователь-администратор �
 msgid "Initialize Databases"
 msgstr "Инициализировать базы данных"
 
+msgid "Instance ID"
+msgstr "ID инстанса"
+
 msgid "Instance Name"
 msgstr "Имя инстанса"
 
@@ -666,12 +690,6 @@ msgstr "Количество шардов"
 
 msgid "Number of instances in the cluster."
 msgstr "Количество инстансов в кластере."
-
-msgid "Number of instances in the cluster. (Read only)"
-msgstr "Количество инстансов в кластере. (Только чтение)"
-
-msgid "Number of shards. (Read only)"
-msgstr "Количество шардов. (Только чтение)"
 
 msgid "Old Flavor"
 msgstr "Старый тип инстанса"
@@ -1070,6 +1088,9 @@ msgstr "Параметр успешно добавлен"
 msgid "Successfully disabled root access."
 msgstr "Доступ к root отключен."
 
+msgid "Swift Container"
+msgstr "Контейнер Swift"
+
 msgid ""
 "The 'Instance Type' and 'Related To' fields are datastore specific and "
 "optional.  See the Trove documentation for more information on using these "
@@ -1154,6 +1175,7 @@ msgid "Unable to list database instances to backup."
 msgstr ""
 "Не удалось получить список инстансов баз данных для резервного копирования."
 
+#, python-brace-format
 msgid ""
 "Unable to load {0} log\n"
 "{1}"
@@ -1161,6 +1183,7 @@ msgstr ""
 "Невозможно загрузить лог {0}\n"
 "{1}"
 
+#, python-brace-format
 msgid "Unable to load {0} log for instance \"{1}\"."
 msgstr "Невозможно загрузить лог {0} для инстанса \"{1}\"."
 
@@ -1338,6 +1361,3 @@ msgstr ""
 
 msgid "instance"
 msgstr "инстанс"
-
-msgid "instance_id"
-msgstr "instance_id"
