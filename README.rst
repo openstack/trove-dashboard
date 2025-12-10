@@ -192,3 +192,5 @@ Trove Documentation: https://docs.openstack.org/trove/latest
 Trove at wiki.openstack.org: https://wiki.openstack.org/wiki/Trove
 
 Launchpad project: https://launchpad.net/trove-dashboard
+
+Release notes: https://docs.openstack.org/releasenotes/trove-dashboard
