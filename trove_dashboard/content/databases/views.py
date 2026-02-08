@@ -109,7 +109,7 @@ class UpdateInstanceView(horizon_forms.ModalFormView):
     modal_header = _("Update Instance")
     modal_id = "edit_instance_modal"
     template_name = "project/databases/update_instance.html"
-    submit_label = "Update"
+    submit_label = _("Update")
     submit_url = 'horizon:project:databases:edit_instance'
     success_url = reverse_lazy('horizon:project:databases:index')
 
@@ -152,7 +152,7 @@ class CreateUserView(horizon_forms.ModalFormView):
     modal_header = _("Create User")
     modal_id = "create_user_modal"
     template_name = 'project/databases/create_user.html'
-    submit_label = "Create User"
+    submit_label = _("Create User")
     submit_url = 'horizon:project:databases:create_user'
     success_url = 'horizon:project:databases:detail'
 
@@ -178,7 +178,7 @@ class EditUserView(horizon_forms.ModalFormView):
     modal_header = _("Edit User")
     modal_id = "edit_user_modal"
     template_name = 'project/databases/edit_user.html'
-    submit_label = "Apply Changes"
+    submit_label = _("Apply Changes")
     submit_url = 'horizon:project:databases:edit_user'
     success_url = 'horizon:project:databases:detail'
 
@@ -258,7 +258,7 @@ class AttachConfigurationView(horizon_forms.ModalFormView):
     modal_header = _("Attach Configuration Group")
     modal_id = "attach_config_modal"
     template_name = "project/databases/attach_config.html"
-    submit_label = "Attach Configuration"
+    submit_label = _("Attach Configuration")
     submit_url = 'horizon:project:databases:attach_config'
     success_url = reverse_lazy('horizon:project:databases:index')
 
@@ -362,7 +362,7 @@ class ResizeVolumeView(horizon_forms.ModalFormView):
     modal_header = _("Resize Database Volume")
     modal_id = "resize_volume_modal"
     template_name = 'project/databases/resize_volume.html'
-    submit_label = "Resize Database Volume"
+    submit_label = _("Resize Database Volume")
     submit_url = 'horizon:project:databases:resize_volume'
     success_url = reverse_lazy('horizon:project:databases:index')
     page_title = _("Resize Database Volume")
@@ -396,7 +396,7 @@ class ResizeInstanceView(horizon_forms.ModalFormView):
     modal_header = _("Resize Database Instance")
     modal_id = "resize_instance_modal"
     template_name = 'project/databases/resize_instance.html'
-    submit_label = "Resize Database Instance"
+    submit_label = _("Resize Database Instance")
     submit_url = 'horizon:project:databases:resize_instance'
     success_url = reverse_lazy('horizon:project:databases:index')
     page_title = _("Resize Database Instance")
