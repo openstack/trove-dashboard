@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add Parameter to Configurations" %}{% endblock %}
 
 {% block main %}
   {% include "project/database_configurations/_add_parameter.html" %}
