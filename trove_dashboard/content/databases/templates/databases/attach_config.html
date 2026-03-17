@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Attach Configuration" %}{% endblock %}
 
 {% block main %}
   {% include "project/databases/_attach_config.html" %}

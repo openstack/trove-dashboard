@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Create User" %}{% endblock %}
 
 {% block main %}
   {% include "project/databases/_create_user.html" %}
