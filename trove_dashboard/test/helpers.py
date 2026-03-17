@@ -28,10 +28,6 @@ IsA = helpers.IsA
 IsHttpRequest = helpers.IsHttpRequest
 
 
-def create_stubs(stubs_to_create={}):
-    return helpers.create_stubs(stubs_to_create)
-
-
 class TroveTestsMixin(object):
     def _setup_test_data(self):
         super(TroveTestsMixin, self)._setup_test_data()
