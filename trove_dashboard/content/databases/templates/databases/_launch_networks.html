@@ -1,16 +1,18 @@
 {% load i18n %}
+{% trans "Available Networks" as available_label %}
+{% trans "Selected Networks" as selected_label %}
 
 <noscript><h3>{{ step }}</h3></noscript>
 <div id="networkListSortContainer">
-  <div class="col-sm-6">
-    <label id="selected_network_label">{% trans "Selected networks" %}</label>
+  {% blocktrans %}
+    <label id="selected_network_label">{{ selected_label }}</label>
     <ul id="selected_network" class="networklist"></ul>
-    <label>{% trans "Available networks" %}</label>
+    <label>{{ available_label }}</label>
     <ul id="available_network" class="networklist"></ul>
-  </div>
-  <div class="col-sm-6">
-      {% include "project/databases/_launch_network_help.html" %}
-  </div>
+  {% endblocktrans %}
+  {% blocktrans with %}
+    Choose network from <strong>{{ available_label }}</strong> to <strong>{{ selected_label }}</strong> by push button or drag and drop, you may change NIC order by drag and drop as well.
+  {% endblocktrans %}
 </div>
 
 <div id="networkListIdContainer">
