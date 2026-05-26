@@ -88,7 +88,7 @@ class SetInstanceDetailsAction(workflows.Action):
         required=False)
     name = forms.CharField(max_length=80, label=_("Instance Name"),
                            help_text=_("Name of the database instance."))
-    volume = forms.IntegerField(label=_("Volume Size"),
+    volume = forms.IntegerField(label=_("Volume Size (GB)"),
                                 min_value=0,
                                 initial=1,
                                 help_text=_("Size of the volume in GB."))
