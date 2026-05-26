@@ -100,7 +100,7 @@ class LaunchForm(BaseClusterForm):
         help_text=_("Network attached to instance."),
         required=False)
     volume = forms.IntegerField(
-        label=_("Volume Size"),
+        label=_("Volume Size (GB)"),
         min_value=0,
         initial=1,
         help_text=_("Size of the volume in GB."))
@@ -422,7 +422,7 @@ class ClusterAddInstanceForm(BaseClusterForm):
         label=_("Flavor"),
         help_text=_("Size of image to launch."))
     volume = forms.IntegerField(
-        label=_("Volume Size"),
+        label=_("Volume Size (GB)"),
         min_value=0,
         initial=1,
         help_text=_("Size of the volume in GB."))
