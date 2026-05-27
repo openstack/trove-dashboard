@@ -520,6 +520,7 @@ class EnableRootAction(tables.Action):
             username, password = api.trove.root_enable(request, obj_ids)
             table.data[0].enabled = True
             table.data[0].password = password
+            messages.success(request, _("Successfully enabled root access."))
         except Exception:
             messages.error(request, _('There was a problem enabling '
                                       'root access.'))
