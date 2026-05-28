@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-02-06 08:56+0000\n"
+"PO-Revision-Date: 2026-05-27 10:17+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -52,7 +52,7 @@ msgstr ""
 "говорящая о том, что поддержка дисков не включена, укажите 0."
 
 msgid "A backup must be selected!"
-msgstr "Нужно выбрать резервную копию!"
+msgstr "Необходимо выбрать резервную копию!"
 
 msgid "A master instance must be selected!"
 msgstr "Необходимо выбрать основной инстанс!"
@@ -396,10 +396,10 @@ msgid "Databases"
 msgstr "Базы данных"
 
 msgid "Datastore"
-msgstr "Хранилище данных"
+msgstr "База данных"
 
 msgid "Datastore Version"
-msgstr "Версия хранилища данных"
+msgstr "Версия базы данных"
 
 msgid "Defaults"
 msgstr "Параметры по умолчанию"
@@ -695,7 +695,7 @@ msgstr ""
 "Начальный администратор, который будет добавлен при создании базы данных"
 
 msgid "Initialize Databases"
-msgstr "Инициализировать базы данных"
+msgstr "Инициализация БД"
 
 #, python-format
 msgid "Instance \"%s\" successfully updated."
@@ -917,13 +917,13 @@ msgstr ""
 "имеет доступ."
 
 msgid "Optional datastore specific type of the instance."
-msgstr "Опциональный тип конкретного хранилища данных для инстанса."
+msgstr "Опциональный тип определенной базы данных для инстанса."
 
 msgid ""
 "Optional datastore specific value that defines the relationship from one "
 "instance in the cluster to another."
 msgstr ""
-"Опциональное значение для конкретного хранилища данных, определяющее связь "
+"Опциональное значение для определенной базы данных, определяющее связь "
 "одного инстанса в кластере с другим."
 
 msgid "Optional host of user."
@@ -1204,7 +1204,7 @@ msgid "Select a new flavor"
 msgstr "Выберите новый шаблон конфигурации"
 
 msgid "Select a parameter and provide a value for the configuration parameter."
-msgstr "Выберите параметр и предоставьте значение для параметра конфигурации."
+msgstr "Выберите параметр и укажите значение для параметра конфигурации."
 
 msgid "Select backup"
 msgstr "Выберите резервную копию"
@@ -1216,7 +1216,7 @@ msgid "Select configuration group"
 msgstr "Выберите группу конфигурации"
 
 msgid "Select datastore type and version"
-msgstr "Выберите тип и версию хранилища данных"
+msgstr "Выберите тип и версию базы данных"
 
 msgid "Select instance"
 msgstr "Выберите инстанс"
@@ -1355,9 +1355,8 @@ msgid ""
 "optional.  See the Trove documentation for more information on using these "
 "fields."
 msgstr ""
-"Поля 'Тип инстанса' и 'Относится к' необязательны и зависят от типа "
-"хранилища.  Смотрите документацию Trove для подробной информации об этих "
-"полях."
+"Поля 'Тип инстанса' и 'Относится к' необязательны и зависят от базы данных.  "
+"Смотрите документацию Trove для подробной информации об этих полях."
 
 msgid "The flavor must be specified."
 msgstr "Должен быть указан шаблон конфигурации."
@@ -1385,7 +1384,7 @@ msgid "Type"
 msgstr "Тип"
 
 msgid "Type and version of datastore."
-msgstr "Тип и версия хранилища данных."
+msgstr "Тип и версия базы данных."
 
 msgid "USERNAME"
 msgstr "ИМЯ ПОЛЬЗОВАТЕЛЯ"
@@ -1479,10 +1478,10 @@ msgid "Unable to load {0} log for instance \"{1}\"."
 msgstr "Не удалось загрузить журнал {0} для инстанса \"{1}\"."
 
 msgid "Unable to obtain datastore versions."
-msgstr "Не удалось получить версии хранилищ данных."
+msgstr "Не удалось получить версии базы данных."
 
 msgid "Unable to obtain datastores."
-msgstr "Не удалось получить хранилища данных."
+msgstr "Не удалось получить базы данных."
 
 msgid "Unable to obtain flavors."
 msgstr "Не удалось получить шаблоны конфигураций."
@@ -1664,7 +1663,7 @@ msgstr ""
 "приведёт к ошибке."
 
 msgid "You must select a datastore type and version."
-msgstr "Вам необходимо выбрать тип и версию хранилища данных."
+msgstr "Вам необходимо выбрать тип и версию базы данных."
 
 msgid "You must select a flavor."
 msgstr "Вам необходимо выбрать шаблон конфигурации."
