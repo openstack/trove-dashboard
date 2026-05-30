@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-05-29 10:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,12 +43,6 @@ msgstr ""
 "olmalı, ama bazı yapılandırmalar birim boyutu belirtmeyi desteklemezler. "
 "Eğer birim boyutunu belirtmek birim desteğinin etkin olmadığını söyleyen bir "
 "hata verirse, 0 girin."
-
-msgid "A backup must be selected!"
-msgstr "Bir yedek seçilmeli!"
-
-msgid "A master instance must be selected!"
-msgstr "Bir ana sunucu seçilmeli!"
 
 msgid "A new name or new password or new host must be specified."
 msgstr "Yeni isim veya yeni parola veya yeni sunucu belirtilmeli."
@@ -114,9 +108,6 @@ msgstr "Yapılandırma grubu \"%s\" ekleniyor"
 
 msgid "Availability Zone"
 msgstr "Kullanılırlık Bölgesi"
-
-msgid "Available networks"
-msgstr "Kullanılabilir ağlar"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -416,9 +407,6 @@ msgid_plural "Disable Logs"
 msgstr[0] "Günlüğü Kapat"
 msgstr[1] "Günlükleri Kapat"
 
-msgid "Disable Root"
-msgstr "Root'u Kapat"
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "Günlük Kapatıldı"
@@ -460,9 +448,6 @@ msgid "Enable Log"
 msgid_plural "Enable Logs"
 msgstr[0] "Günlüğü Etkinleştir"
 msgstr[1] "Günlükleri Etkinleştir"
-
-msgid "Enable Root"
-msgstr "Root'u Etkinleştir"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -532,9 +517,6 @@ msgstr "Kümeyi Büyüt"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Kümeyi Büyüt: {{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "Root Hiç Etkinleştirilmiş mi"
-
 msgid "Host"
 msgstr "Sunucu"
 
@@ -596,10 +578,6 @@ msgid "Launch Instance"
 msgstr "Sunucu Başlat"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "%(count)s \"%(name)s\" isimli başlatıldı."
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "\"%s\" kümesi başlatıldı"
 
@@ -621,9 +599,6 @@ msgstr "Günlükler"
 msgid "Manage Access"
 msgstr "Erişimi Yönet"
 
-msgid "Manage Root"
-msgstr "Root'u Yönet"
-
 msgid "Manage Root Access"
 msgstr "Kök Erişimini Yönet"
 
@@ -635,15 +610,6 @@ msgstr "Ana Sunucu İsmi"
 
 msgid "Message"
 msgstr "İleti"
-
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Ağlar 'Kullanılabilri Ağlar'dan 'Seçili Ağlar'a düğmeye tıklayarak, ya da "
-"sürükleyip bırakarak taşıyın. NIC sırasını da sürükleyip bırakarak "
-"değiştirebilirsiniz."
 
 msgid "Name"
 msgstr "İsim"
@@ -814,11 +780,6 @@ msgstr "Root kullanıcı için parola belirtilmeli."
 msgid "Password for root user."
 msgstr "Root kullanıcısı için parola."
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr ""
-"Parola yalnızca root etkinleştirildiğinde ya da sıfırlandığında görünür."
-
 msgid "Promote"
 msgstr "Terfi et"
 
@@ -951,9 +912,6 @@ msgid_plural "Revoke Access"
 msgstr[0] "Erişimi Kaldır"
 msgstr[1] "Erişimi Kaldır"
 
-msgid "Root Enabled"
-msgstr "Root Etkin"
-
 msgid "Root Password"
 msgstr "Kök Parolası"
 
@@ -1023,12 +981,6 @@ msgstr "Sunucu seçin"
 
 msgid "Select parent backup"
 msgstr "Üst yedeği seçin"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "Kümeden kaldırılacak sunucu(lar)ı seçin."
-
-msgid "Selected networks"
-msgstr "Seçili ağlar"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
@@ -1116,42 +1068,20 @@ msgstr "Özellikler"
 msgid "Status"
 msgstr "Durum"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "Root daha önce sunucu için etkinleştirilmiş mi durumu."
-
 msgid "Successfully added parameter"
 msgstr "Parametre başarıyla eklendi"
 
 msgid "Successfully disabled root access."
 msgstr "Root erişimi başarıyla kapatıldı."
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"'Sunucu Türü' ve 'İlişkili' alanları verideposuna özeldir ve isteğe "
-"bağlıdır. Bu alanların kullanımıyla ilgili ek bilgi için Trove "
-"belgelendirmesine göz atın."
-
 msgid "The flavor must be specified."
 msgstr "Nitelik belirtilmeli."
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr ""
-"İsim alanı isteğe bağlıdır. Alan boş bırakılırsa küme büyütüldüğünde bir "
-"isim üretilir."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Sunucu sayısı 1'den büyük olmalı."
 
 msgid "The number of shards must be greater than 1."
 msgstr "Parça sayısı 1'den büyük olmalı."
-
-msgid "There was a problem enabling root."
-msgstr "Root etkinleştirilirken bir sorun oldu."
 
 msgid "This action cannot be undone."
 msgstr "Bu eylem geri alınamaz."
@@ -1171,18 +1101,6 @@ msgstr "%(action)s yapılamadı: %(objs)s"
 
 msgid "Unable to create list of parameters."
 msgstr "Parametre listesi oluşturulamadı."
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "Sunucu root'unun etkin olup olmadığı belirlenemiyor."
-
-msgid "Unable to find backup!"
-msgstr "Yedek bulunamadı!"
-
-msgid "Unable to find configuration group!"
-msgstr "Yapılandırma grubu bulunamadı!"
-
-msgid "Unable to find master instance!"
-msgstr "Ana sunucu bulunamadı!"
 
 msgid "Unable to get configuration data."
 msgstr "Yapılandırma verisi alınamıyor."
@@ -1236,9 +1154,6 @@ msgstr "Veridepoları edinilemedi."
 
 msgid "Unable to obtain flavors."
 msgstr "Nitelikler edinilemedi."
-
-msgid "Unable to obtain information on root user"
-msgstr "Kök kullanıcı hakkında bilgi edinilemedi"
 
 msgid "Unable to obtain list of parameters."
 msgstr "Parametre listesi edinilemedi."

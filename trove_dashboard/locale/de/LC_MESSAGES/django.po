@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-05-29 10:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,12 +46,6 @@ msgstr ""
 "Angabe der Datenträgergröße jedoch nicht. Falls bei der Eingabe der "
 "Datenträgergröße ein Fehler ausgegeben wird, wie Datenträgerunterstützung "
 "nicht aktiviert, geben Sie 0 ein."
-
-msgid "A backup must be selected!"
-msgstr "Es muss eine Sicherungskopie ausgewählt werden!"
-
-msgid "A master instance must be selected!"
-msgstr "Es muss eine Master-Instanz ausgewählt werden!"
 
 msgid "A new name or new password or new host must be specified."
 msgstr ""
@@ -122,9 +116,6 @@ msgstr "Angehängte Konfigurationsgruppe \"%s\""
 
 msgid "Availability Zone"
 msgstr "Verfügbarkeitszone"
-
-msgid "Available networks"
-msgstr "Verfügbare Netzwerke"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -428,9 +419,6 @@ msgid_plural "Disable Logs"
 msgstr[0] "Deaktiviere Log"
 msgstr[1] "Deaktiviere Logs"
 
-msgid "Disable Root"
-msgstr "Deaktiviere Root"
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "Deaktiviertes Log"
@@ -472,9 +460,6 @@ msgid "Enable Log"
 msgid_plural "Enable Logs"
 msgstr[0] "Aktiviere Log"
 msgstr[1] "Aktiviere Logs"
-
-msgid "Enable Root"
-msgstr "Aktiviere Root"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -544,9 +529,6 @@ msgstr "Cluster vergrößern"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Cluster vergrößern: {{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "Root war schon aktiviert"
-
 msgid "Host"
 msgstr "Host"
 
@@ -611,10 +593,6 @@ msgid "Launch instance with these networks"
 msgstr "Instanz mit diesen Netzwerken starten"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "%(count)s mal \"%(name)s\" gestartet."
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" gestartet"
 
@@ -636,9 +614,6 @@ msgstr "Logs"
 msgid "Manage Access"
 msgstr "Zugriff verwalten"
 
-msgid "Manage Root"
-msgstr "Verwalte Root"
-
 msgid "Manage Root Access"
 msgstr "Verwalte Root Zugriff"
 
@@ -650,15 +625,6 @@ msgstr "Master-Instanz Name"
 
 msgid "Message"
 msgstr "Nachricht"
-
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Bewegen Sie Netzwerke von 'Verfügbare Netzwerke' nach 'Ausgewählte "
-"Netzwerke' durch klicken des Knopfes oder durch ziehen und fallen lassen. "
-"Sie können die NIC Reihenfolge ebenso durch ziehen und fallen lassen ändern."
 
 msgid "Name"
 msgstr "Name"
@@ -837,11 +803,6 @@ msgstr "Das Passwort für den Root-Benutzer muss angegeben werden."
 msgid "Password for root user."
 msgstr "Passwort des Root-Benutzers."
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr ""
-"Passwort ist nur sichtbar, nachdem Root aktiviert oder zurückgesetzt ist."
-
 msgid "Promote"
 msgstr "Befördern"
 
@@ -974,9 +935,6 @@ msgid_plural "Revoke Access"
 msgstr[0] "Zugriff entziehen"
 msgstr[1] "Zugriff entziehen"
 
-msgid "Root Enabled"
-msgstr "Root aktiviert"
-
 msgid "Root Password"
 msgstr "Root-Passwort"
 
@@ -1050,13 +1008,6 @@ msgstr "Wählen Sie die Netzwerke für Ihre Instanz."
 
 msgid "Select parent backup"
 msgstr "Eltern-Sicherungskopie auswählen"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr ""
-"Wählen Sie die Instanz(en) aus, die vom Cluster entfernt werden sollen."
-
-msgid "Selected networks"
-msgstr "Ausgewählte Netzwerke"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
@@ -1149,42 +1100,20 @@ msgstr "Spezifikationen"
 msgid "Status"
 msgstr "Status"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "Status wenn Root für diese Instanz schon aktiviert war."
-
 msgid "Successfully added parameter"
 msgstr "Parameter erfolgreich hinzugefügt"
 
 msgid "Successfully disabled root access."
 msgstr "Root Zugriff erfolgreich deaktiviert."
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"Das 'Instanztyp' und 'In Beziehung zu' Felder sind datenspeicherspezifisch "
-"und optional. Schauen Sie in die Trove Dokumentation für mehr Informationen "
-"zur Benutzung dieser Felder."
-
 msgid "The flavor must be specified."
 msgstr "Die Variante muss angegeben werden."
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr ""
-"Das Namensfeld ist optional. Wenn das Feld leer ist, wird ein Name beim "
-"Entstehen des Clusters generiert."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Die Anzahl der Instanzen muss größer als 1 sein."
 
 msgid "The number of shards must be greater than 1."
 msgstr "Die Anzahl der Shards muss größer als 1 sein."
-
-msgid "There was a problem enabling root."
-msgstr "Beim Root aktivieren ist ein Problem aufgetreten."
 
 msgid "This action cannot be undone."
 msgstr "Diese Aktion kann nicht rückgängig gemacht werden."
@@ -1204,18 +1133,6 @@ msgstr "Nicht möglich: %(action)s: %(objs)s"
 
 msgid "Unable to create list of parameters."
 msgstr "Die Liste der Parameter kann nicht erzeugt werden."
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "Es kann nicht ermittelt werden, ob auf der Instanz root aktiviert ist."
-
-msgid "Unable to find backup!"
-msgstr "Sicherungskopie kann nicht gefunden werden!"
-
-msgid "Unable to find configuration group!"
-msgstr "Konfigurationsgruppe konnte nicht gefunden werden!"
-
-msgid "Unable to find master instance!"
-msgstr "Master-Instanz kann nicht gefunden werden!"
 
 msgid "Unable to get configuration data."
 msgstr "Konnte Konfigurationsdaten nicht beziehen."
@@ -1269,9 +1186,6 @@ msgstr "Beziehen des Datastore nicht möglich."
 
 msgid "Unable to obtain flavors."
 msgstr "Die Varianten können nicht abgerufen werden."
-
-msgid "Unable to obtain information on root user"
-msgstr "Konnte keine Informationen über den Benutzer Root erhalten"
 
 msgid "Unable to obtain list of parameters."
 msgstr "Die Liste der Parameter können nicht abgerufen werden."

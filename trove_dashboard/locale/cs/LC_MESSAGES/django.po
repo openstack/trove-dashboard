@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-05-29 10:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,12 +36,6 @@ msgstr ""
 "by měla být větší než 0. Některé konfigurace ale neodporují zadání velikosti "
 "svazku. Pokud zadání velikosti má za následek chybu uvádějící, že podpora "
 "velikosti svazku není povolena, pak zadejte 0."
-
-msgid "A backup must be selected!"
-msgstr "Musíte vybrat zálohu."
-
-msgid "A master instance must be selected!"
-msgstr "Musíte vybrat hlavní instanci."
 
 msgid "A new name or new password or new host must be specified."
 msgstr "Musí být zvolen nový název, nové heslo nebo nový hostitel."
@@ -79,9 +73,6 @@ msgstr "Aplikovatelný pouze pokud velikost svazku je zadána."
 
 msgid "At least one of the new fields must be changed."
 msgstr "Alespoň jedno z nových polí musí být změněno."
-
-msgid "Available networks"
-msgstr "Dostupné sítě"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -321,9 +312,6 @@ msgstr[0] "Zakázat log"
 msgstr[1] "Zakázat logy"
 msgstr[2] "Zakázat logy"
 
-msgid "Disable Root"
-msgstr "Zakázat root."
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "Log zakázán"
@@ -368,9 +356,6 @@ msgid_plural "Enable Logs"
 msgstr[0] "Povolit log"
 msgstr[1] "Povolit logy"
 msgstr[2] "Povolit logy"
-
-msgid "Enable Root"
-msgstr "Povolit root"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -430,9 +415,6 @@ msgstr "Zvětšit cluster"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Zvětšit cluster: {{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "Byl někdy povolen root"
-
 msgid "Host"
 msgstr "Hostitel"
 
@@ -491,10 +473,6 @@ msgid "Launch Instance"
 msgstr "Spustit instanci"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "Spuštěno %(count)s pojmenovaných \"%(name)s\"."
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Cluster \"%s\" spuštěn"
 
@@ -515,9 +493,6 @@ msgstr "Logy"
 
 msgid "Manage Access"
 msgstr "Spravovat přístup"
-
-msgid "Manage Root"
-msgstr "Spravovat root"
 
 msgid "Manage Root Access"
 msgstr "Spravovat root přístup"
@@ -678,11 +653,6 @@ msgstr "Heslo pro uživatele root musí být zadáno."
 msgid "Password for root user."
 msgstr "Heslo pro root uživatele."
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr ""
-"Heslo je viditelné pouze bezprostředně po povolení nebo resetování root."
-
 msgid "Promote"
 msgstr "Povýšení"
 
@@ -817,9 +787,6 @@ msgstr[0] "Zrušit přístup"
 msgstr[1] "Zrušit přístupy"
 msgstr[2] "Zrušit přístupy"
 
-msgid "Root Enabled"
-msgstr "Root povolen"
-
 msgid "Root Password"
 msgstr "Heslo pro root uživatele"
 
@@ -876,12 +843,6 @@ msgstr "Vyberte instanci"
 
 msgid "Select parent backup"
 msgstr "Vyberte nadřazenou zálohu"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "Vyberte instance, které budou odebrány z clusteru."
-
-msgid "Selected networks"
-msgstr "Vybrané sítě"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
@@ -955,39 +916,17 @@ msgstr "Specifikace"
 msgid "Status"
 msgstr "Stav"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "Stav, zda byl root povolen pro instanci"
-
 msgid "Successfully disabled root access."
 msgstr "Úspěšně zakázán přístup root."
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"Pole 'Typ instance' a 'Týkající se' jsou specifické vzhledem k úložišti a "
-"jsou volitelné. Viz dokumentace Trove pro více informací o použití těchto "
-"polí."
-
 msgid "The flavor must be specified."
 msgstr "Typ musí být zadaný."
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr ""
-"Pole jméno je volitelné. Pokud je prázdné, bude generováno při vytvoření "
-"clusteru."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Počet instancí musí být větší než 1."
 
 msgid "The number of shards must be greater than 1."
 msgstr "Počet částí musí být větší než 1."
-
-msgid "There was a problem enabling root."
-msgstr "Při povolování uživatele root se vyskytl problém."
 
 msgid "This action cannot be undone."
 msgstr "Toto nelze vrátit."
@@ -1004,15 +943,6 @@ msgstr "UŽIVATELSKÉ JMÉNO"
 #, python-format
 msgid "Unable to %(action)s: %(objs)s"
 msgstr "Nelze %(action)s: %(objs)s"
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "Nelze zjistit, zda je root přístup do instance povolen."
-
-msgid "Unable to find backup!"
-msgstr "Nelze najít zálohu."
-
-msgid "Unable to find master instance!"
-msgstr "Nelze najít hlavní instanci."
 
 msgid "Unable to get database backup data."
 msgstr "Nelze získat data zálohy databáze."
@@ -1063,9 +993,6 @@ msgstr "Nelze získat datová úložiště."
 
 msgid "Unable to obtain flavors."
 msgstr "Nelze získat typy."
-
-msgid "Unable to obtain information on root user"
-msgstr "Nelze získat informace o root uživateli"
 
 #, python-format
 msgid "Unable to remove instances from cluster: %s"

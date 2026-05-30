@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-05-29 10:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,12 +45,6 @@ msgstr ""
 "<strong>请注意：</strong> 云硬盘大小字段中指定的数字必须大于零，但是，有一些"
 "配置不支持指定云硬盘大小。如果指定云硬盘大小会导致不支持云硬盘的错误，则输入"
 "0。"
-
-msgid "A backup must be selected!"
-msgstr "必须选择一个备份！"
-
-msgid "A master instance must be selected!"
-msgstr "必须选择一个主实例！"
 
 msgid "A new name or new password or new host must be specified."
 msgstr "必须指定新名称、新密码或新主机。"
@@ -118,9 +112,6 @@ msgstr "正在连接配置组\"%s\""
 
 msgid "Availability Zone"
 msgstr "可用区"
-
-msgid "Available networks"
-msgstr "可用网络"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -405,9 +396,6 @@ msgid "Disable Log"
 msgid_plural "Disable Logs"
 msgstr[0] "禁用日志"
 
-msgid "Disable Root"
-msgstr "禁用root"
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "已禁用日志"
@@ -443,9 +431,6 @@ msgstr[0] "已删除的副本源"
 msgid "Enable Log"
 msgid_plural "Enable Logs"
 msgstr[0] "启用日志"
-
-msgid "Enable Root"
-msgstr "启动root"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -512,9 +497,6 @@ msgstr "扩大集群"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "扩大集群：{{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "启用Root"
-
 msgid "Host"
 msgstr "主机"
 
@@ -579,10 +561,6 @@ msgid "Launch instance with these networks"
 msgstr "使用这些网络启动云主机"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "启动了%(count)s 名称\"%(name)s\"。"
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "启动集群\"%s\""
 
@@ -604,9 +582,6 @@ msgstr "日志"
 msgid "Manage Access"
 msgstr "管理访问"
 
-msgid "Manage Root"
-msgstr "管理Root"
-
 msgid "Manage Root Access"
 msgstr "管理Root访问"
 
@@ -618,14 +593,6 @@ msgstr "主实例名称"
 
 msgid "Message"
 msgstr "消息"
-
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"通过点击按钮来把网络从“可用网络”移动到“选中网络”，或者通过拖放。当然你也可以"
-"通过拖放来改变网卡顺序。"
 
 msgid "Name"
 msgstr "名称"
@@ -789,10 +756,6 @@ msgstr "必须指定root用户密码。"
 msgid "Password for root user."
 msgstr "root用户密码"
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr "在root启用或重置时，密码只能临时可用。"
-
 msgid "Promote"
 msgstr "设置"
 
@@ -915,9 +878,6 @@ msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "回收权限"
 
-msgid "Root Enabled"
-msgstr "启用Root"
-
 msgid "Root Password"
 msgstr "Root密码"
 
@@ -986,12 +946,6 @@ msgstr "为你的云主机选择网络。"
 
 msgid "Select parent backup"
 msgstr "选择父备份"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "选择将从集群中移除的实例。"
-
-msgid "Selected networks"
-msgstr "已选择的网络"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
@@ -1075,39 +1029,20 @@ msgstr "规格"
 msgid "Status"
 msgstr "状态"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "如果实例的root被启用，状态。"
-
 msgid "Successfully added parameter"
 msgstr "成功增加参数"
 
 msgid "Successfully disabled root access."
 msgstr "成功禁用root用户访问。"
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"‘实例类型’和‘关联’字段是具体的存储和可选。参考Trove手册了解更多使用这些字段的"
-"信息。"
-
 msgid "The flavor must be specified."
 msgstr "必须指定云主机类型。"
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr "名称字段是可选的。如果字段不填，当集群扩大时会自动生成名称。"
 
 msgid "The number of instances must be greater than 1."
 msgstr "实例的数量必须大于1。"
 
 msgid "The number of shards must be greater than 1."
 msgstr "shard数必须大于1。"
-
-msgid "There was a problem enabling root."
-msgstr "启用root时，出现问题。"
 
 msgid "This action cannot be undone."
 msgstr "此操作无法撤销。"
@@ -1127,18 +1062,6 @@ msgstr "无法执行 %(action)s: %(objs)s"
 
 msgid "Unable to create list of parameters."
 msgstr "无法创建参数列表"
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "无法确定实例root账号是否启用。"
-
-msgid "Unable to find backup!"
-msgstr "无法找到备份！"
-
-msgid "Unable to find configuration group!"
-msgstr "无法找到配置组"
-
-msgid "Unable to find master instance!"
-msgstr "无法找到主实例！"
 
 msgid "Unable to get configuration data."
 msgstr "无法获得配置数据"
@@ -1192,9 +1115,6 @@ msgstr "无法获取数据存储。"
 
 msgid "Unable to obtain flavors."
 msgstr "无法获取云主机类型。"
-
-msgid "Unable to obtain information on root user"
-msgstr "不能获取root用户的信息"
 
 msgid "Unable to obtain list of parameters."
 msgstr "无法获得参数列表"
