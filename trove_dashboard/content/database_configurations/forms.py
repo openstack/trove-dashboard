@@ -115,7 +115,7 @@ class CreateConfigurationForm(forms.SelfHandlingForm):
 
 
 class AddParameterForm(forms.SelfHandlingForm):
-    name = forms.ChoiceField(label=_("Name"),
+    name = forms.ChoiceField(label=_("Parameter"),
                              help_text=_("Configuration parameter name."))
     value = forms.CharField(label=_("Value"),
                             help_text=_("Value for the configuration "

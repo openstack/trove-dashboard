@@ -190,7 +190,7 @@ class UpdateRow(tables.Row):
 
 
 class ValuesTable(tables.DataTable):
-    name = tables.Column("name", verbose_name=_("Name"))
+    name = tables.Column("name", verbose_name=_("Parameter"))
     value = tables.Column("value", verbose_name=_("Value"),
                           form_field=forms.CharField(required=False))
 
