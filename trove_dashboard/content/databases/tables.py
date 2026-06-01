@@ -254,11 +254,11 @@ def parse_host_param(request):
 
 
 class AccessTable(tables.DataTable):
-    dbname = tables.Column("name", verbose_name=_("Name"))
+    dbname = tables.Column("name", verbose_name=_("Database Name"))
 
     access = tables.Column(
         "access",
-        verbose_name=_("Accessible"),
+        verbose_name=_("Access granted"),
         filters=(d_filters.yesno, d_filters.capfirst))
 
     class Meta(object):
