@@ -874,7 +874,7 @@ class InstanceBackupsTable(tables.DataTable):
 
 
 class ConfigDefaultsTable(tables.DataTable):
-    name = tables.Column('name', verbose_name=_('Property'))
+    name = tables.Column('name', verbose_name=_('Parameter'))
     value = tables.Column('value', verbose_name=_('Value'))
 
     class Meta(object):
