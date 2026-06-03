@@ -116,9 +116,9 @@ class SetInstanceDetailsAction(workflows.Action):
         # Add this field to the end after the dynamic fields
         self.fields['locality'] = forms.ChoiceField(
             label=_("Location Policy"),
-            choices=[("", "None"),
-                     ("affinity", "affinity"),
-                     ("anti-affinity", "anti-affinity")],
+            choices=[("", _("None")),
+                     ("affinity", _("Affinity")),
+                     ("anti-affinity", _("Anti-affinity"))],
             required=False,
             help_text=_("Specify whether future replicated instances will "
                         "be created on the same hypervisor (affinity) or on "
