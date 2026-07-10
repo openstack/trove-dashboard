@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-07-09 19:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,12 +43,6 @@ msgstr ""
 "Size harus lebih besar dari 0, namun, beberapa konfigurasi tidak mendukung "
 "menentukan ukuran volume. Jika penentuan hasil ukuran volume dalam kesalahan "
 "yang menyatakan dukungan volume tidak diaktifkan, masukkan 0."
-
-msgid "A backup must be selected!"
-msgstr "Sebuah cadangan harus dipilih!"
-
-msgid "A master instance must be selected!"
-msgstr "Sebuah instance utama harus dipilih!"
 
 msgid "A new name or new password or new host must be specified."
 msgstr "Sebuah nama baru atau password baru atau host baru harus ditentukan."
@@ -404,9 +398,6 @@ msgid "Disable Log"
 msgid_plural "Disable Logs"
 msgstr[0] "Disable Log"
 
-msgid "Disable Root"
-msgstr "Disable Root (menonaktifkan root)"
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "Disabled Log"
@@ -442,9 +433,6 @@ msgstr[0] "Ejected Replica Source"
 msgid "Enable Log"
 msgid_plural "Enable Logs"
 msgstr[0] "Enable Log"
-
-msgid "Enable Root"
-msgstr "Enable Root (mengaktifkan root)"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -511,9 +499,6 @@ msgstr "Grow Cluster (pertumbuhan kluster)"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Grow Cluster: {{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "Has Root Ever Been Enabled (apakah root pernah diaktifkan)"
-
 msgid "Host"
 msgstr "Host (host)"
 
@@ -575,10 +560,6 @@ msgid "Launch Instance"
 msgstr " Launch Instance (peluncuran instance)"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "Diluncurkan %(count)s named \"%(name)s\"."
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "Diluncurkan klaster \"%s\""
 
@@ -599,9 +580,6 @@ msgstr "Logs (catatan)"
 
 msgid "Manage Access"
 msgstr "Manage Access (mengelola akses)"
-
-msgid "Manage Root"
-msgstr "Manage Root (mengelola root)"
 
 msgid "Manage Root Access"
 msgstr "Manage Root Access (mengelolaan akses root)"
@@ -792,10 +770,6 @@ msgstr "Password untuk user root harus ditentukan."
 msgid "Password for root user."
 msgstr "Password untuk user root."
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr "Password hanya terlihat segera setelah akar diaktifkan atau reset."
-
 msgid "Promote"
 msgstr "Promote (promosi)"
 
@@ -920,9 +894,6 @@ msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "Revoke Access"
 
-msgid "Root Enabled"
-msgstr "Root Enabled (root diaktifkan)"
-
 msgid "Root Password"
 msgstr "Root Password (password root)"
 
@@ -988,9 +959,6 @@ msgstr "Pilih instance"
 
 msgid "Select parent backup"
 msgstr "Pilih cadangan induknya"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "Pilih instance yang akan dihapus dari cluster."
 
 msgid "Selected networks"
 msgstr "Jaringan yang dipilih"
@@ -1081,42 +1049,20 @@ msgstr "Specs (spesifikasi)"
 msgid "Status"
 msgstr "Status (keadaan)"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "Keadaan jika root pernah diaktifkan untuk sebuah instance."
-
 msgid "Successfully added parameter"
 msgstr "Berhasil ditambahkan parameter"
 
 msgid "Successfully disabled root access."
 msgstr "Berhasil menonaktifkan akses root."
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"Kolom 'Instance Type' dan 'Related To'  adalah datastore spesifik dan "
-"opsional. Lihat dokumentasi Trove untuk informasi lebih lanjut tentang "
-"menggunakan kolom ini."
-
 msgid "The flavor must be specified."
 msgstr "Flavor harus ditentukan."
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr ""
-"Kolom nama adalah opsional. Jika Kolom ini dibiarkan kosong maka nama akan "
-"dihasilkan ketika cluster tumbuh."
 
 msgid "The number of instances must be greater than 1."
 msgstr "Jumlah instance harus lebih besar dari 1."
 
 msgid "The number of shards must be greater than 1."
 msgstr "Jumlah serpihan harus lebih besar dari 1."
-
-msgid "There was a problem enabling root."
-msgstr "Ada masalah mengaktifkan root."
 
 msgid "This action cannot be undone."
 msgstr "Tindakan ini tidak bisa dibatalkan."
@@ -1136,18 +1082,6 @@ msgstr "Tidak bisa %(action)s: %(objs)s"
 
 msgid "Unable to create list of parameters."
 msgstr "Tidak dapat membuat daftar parameter."
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "Tidak dapat menentukan apakah instance akar diaktifkan."
-
-msgid "Unable to find backup!"
-msgstr "Tidak dapat menemukan cadangan (backup) !"
-
-msgid "Unable to find configuration group!"
-msgstr "Tidak dapat menemukan grup konfigurasi!"
-
-msgid "Unable to find master instance!"
-msgstr "Tidak dapat menemukan instance utama!"
 
 msgid "Unable to get configuration data."
 msgstr "Tidak dapat mendapatkan data konfigurasi."
@@ -1201,9 +1135,6 @@ msgstr "Tidak dapat memperoleh datastores."
 
 msgid "Unable to obtain flavors."
 msgstr "Tidak dapat memperoleh flavor."
-
-msgid "Unable to obtain information on root user"
-msgstr "Tidak dapat memperoleh informasi tentang root user"
 
 msgid "Unable to obtain list of parameters."
 msgstr "Tidak dapat memperoleh daftar parameter."

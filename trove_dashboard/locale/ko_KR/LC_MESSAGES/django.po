@@ -1,13 +1,13 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
-# Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
+# Sungjin Kang <ujuc@ujuc.me>, 2017. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-07-09 19:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,12 +45,6 @@ msgstr ""
 "<strong>주:</strong> 볼륨 크기 필드에 0보다 큰 값을 지정해야 하지만, 일부 구"
 "성에서는 볼륨 크기를 지정할 수 없습니다. 볼륨 크기를 지정했을 때 볼륨 지원이 "
 "사용되지 않음을 표시하는 메시지가 표시되면 0을 입력하십시오."
-
-msgid "A backup must be selected!"
-msgstr "백업이 반드시 선택되어야 합니다!"
-
-msgid "A master instance must be selected!"
-msgstr "마스터 인스턴스는 반드시 선택되어야 합니다!"
 
 msgid "A new name or new password or new host must be specified."
 msgstr "새로운 이름이나 새로운 암호, 새로운 호스트를 지정할 수 있습니다."
@@ -407,9 +401,6 @@ msgid "Disable Log"
 msgid_plural "Disable Logs"
 msgstr[0] "로그 비활성화"
 
-msgid "Disable Root"
-msgstr "루트 비활성화"
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "비활성화된 로그"
@@ -445,9 +436,6 @@ msgstr[0] "이젝트된 복제 원본"
 msgid "Enable Log"
 msgid_plural "Enable Logs"
 msgstr[0] "로그 활성화"
-
-msgid "Enable Root"
-msgstr "Root 활성화"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -514,9 +502,6 @@ msgstr "클러스터 확장"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "클러스터 확장: {{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "루트가 활성화되어 있음"
-
 msgid "Host"
 msgstr "호스트"
 
@@ -581,10 +566,6 @@ msgid "Launch instance with these networks"
 msgstr "선택한 네트워크로 인스턴스 구동"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "%(count)s개의 \"%(name)s\"이(가) 시작되었습니다."
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "클러스터 \"%s\" 구동됨"
 
@@ -605,9 +586,6 @@ msgstr "로그"
 
 msgid "Manage Access"
 msgstr "접근 관리"
-
-msgid "Manage Root"
-msgstr "Root 관리"
 
 msgid "Manage Root Access"
 msgstr "Root 접근 관리"
@@ -799,10 +777,6 @@ msgstr "Root 사용자 암호가 지정되어야 합니다."
 msgid "Password for root user."
 msgstr "Root 사용자 암호"
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr "패스워드는 오직 root가 리셋,enabled된 이후에 즉시 보이기 시작한다."
-
 msgid "Promote"
 msgstr "승격"
 
@@ -927,9 +901,6 @@ msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "접근 불가"
 
-msgid "Root Enabled"
-msgstr "Root 활성화됨"
-
 msgid "Root Password"
 msgstr "Root 암호"
 
@@ -998,9 +969,6 @@ msgstr "인스턴스 네트워크 선택"
 
 msgid "Select parent backup"
 msgstr "부모 백업 선택"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "선택한 인스턴스를 클러스터에서 제거합니다."
 
 msgid "Selected networks"
 msgstr "네트워크 선택됨"
@@ -1090,41 +1058,20 @@ msgstr "사양"
 msgid "Status"
 msgstr "상태"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "인스턴스에 대해 root가 사용으로 설정된 경우 상태입니다."
-
 msgid "Successfully added parameter"
 msgstr "매개 변수 추가를 완료하였습니다"
 
 msgid "Successfully disabled root access."
 msgstr "루트 액세스 비활성화 성공"
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"'Instance Type'와 'Related To' 필드는 datastore를 지정하거나 옵션으로 설정할 "
-"수 있습니다. 필드 사용에대한 자세한 내용은 Trove 문서를 참고하십시오."
-
 msgid "The flavor must be specified."
 msgstr "Flabor가 지정되어야 합니다."
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr ""
-"이름 필드는 옵션입니다.   필드를 비워두면 클러스터를 키울때 이름을 생성합니"
-"다."
 
 msgid "The number of instances must be greater than 1."
 msgstr "인스턴스는 1개 이상이어야 합니다."
 
 msgid "The number of shards must be greater than 1."
 msgstr "Shard는 1개 이상이어야 합니다."
-
-msgid "There was a problem enabling root."
-msgstr "Root 계정 활성화에 문제가 발생했습니다."
 
 msgid "This action cannot be undone."
 msgstr "이 작업은 취소할 수 없습니다."
@@ -1144,18 +1091,6 @@ msgstr "%(action)s 할 수 없습니다: %(objs)s"
 
 msgid "Unable to create list of parameters."
 msgstr "매개 변수 목록을 생성할 수 없습니다."
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "만약 인스턴스 루트가 이용 가능하다면 결정이 불가능하다"
-
-msgid "Unable to find backup!"
-msgstr "백업을 찾을 수 없습니다!"
-
-msgid "Unable to find configuration group!"
-msgstr "구성 그룹을 찾을 수 없습니다!"
-
-msgid "Unable to find master instance!"
-msgstr "마스터 인스턴스를 찾기가 불가능합니다!"
 
 msgid "Unable to get configuration data."
 msgstr "구성 데이터를 가져올 수 없습니다."
@@ -1209,9 +1144,6 @@ msgstr "Datastore를 가져올 수 없습니다."
 
 msgid "Unable to obtain flavors."
 msgstr "Flavor을 가져올 수 없습니다."
-
-msgid "Unable to obtain information on root user"
-msgstr "Root 사용자의 정보를 얻을 수 없습니다"
 
 msgid "Unable to obtain list of parameters."
 msgstr "매개 변수 목록을 가져올 수 없습니다."

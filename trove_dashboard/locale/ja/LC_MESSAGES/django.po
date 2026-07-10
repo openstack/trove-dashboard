@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2026-07-09 19:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,12 +38,6 @@ msgstr ""
 "が、設定によってはボリュームサイズの指定に対応していない場合があります。ボ"
 "リュームサイズを指定した際に、ボリューム側でのサポートが有効になっていないと"
 "のエラーになる場合は、0 を入力してください。"
-
-msgid "A backup must be selected!"
-msgstr "バックアップを選択する必要があります。"
-
-msgid "A master instance must be selected!"
-msgstr "マスターインスタンスを選択する必要があります"
 
 msgid "A new name or new password or new host must be specified."
 msgstr ""
@@ -371,9 +365,6 @@ msgid "Disable Log"
 msgid_plural "Disable Logs"
 msgstr[0] "ログの無効化"
 
-msgid "Disable Root"
-msgstr "ルートの無効化"
-
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "ログを無効にしました"
@@ -409,9 +400,6 @@ msgstr[0] "レプリカ元をイジェクトしました"
 msgid "Enable Log"
 msgid_plural "Enable Logs"
 msgstr[0] "ログの有効化"
-
-msgid "Enable Root"
-msgstr "ルートの有効化"
 
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
@@ -478,9 +466,6 @@ msgstr "クラスターの拡張"
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "クラスターの拡張: {{cluster_name}}"
 
-msgid "Has Root Ever Been Enabled"
-msgstr "ルートを有効のままにする"
-
 msgid "Host"
 msgstr "ホスト"
 
@@ -545,10 +530,6 @@ msgid "Launch instance with these networks"
 msgstr "これらのネットワークでインスタンスを起動します。"
 
 #, python-format
-msgid "Launched %(count)s named \"%(name)s\"."
-msgstr "名前が \"%(name)s\" の %(count)s を起動しました。"
-
-#, python-format
 msgid "Launched cluster \"%s\""
 msgstr "クラスター \"%s\" を起動しました。"
 
@@ -569,9 +550,6 @@ msgstr "ログ"
 
 msgid "Manage Access"
 msgstr "アクセス権の管理"
-
-msgid "Manage Root"
-msgstr "ルートの管理"
 
 msgid "Manage Root Access"
 msgstr "ルートアクセスの管理"
@@ -758,11 +736,6 @@ msgstr "ルートユーザーのパスワードを指定する必要がありま
 msgid "Password for root user."
 msgstr "ルートユーザーのパスワード。"
 
-msgid ""
-"Password is only visible immediately after the root is enabled or reset."
-msgstr ""
-"パスワードが表示されるのは、ルートを有効またはリセットした直後のみです。"
-
 msgid "Promote"
 msgstr "昇格"
 
@@ -887,9 +860,6 @@ msgid "Revoke Access"
 msgid_plural "Revoke Access"
 msgstr[0] "アクセスの取り消し"
 
-msgid "Root Enabled"
-msgstr "ルートの有効化"
-
 msgid "Root Password"
 msgstr "ルートパスワード"
 
@@ -958,9 +928,6 @@ msgstr "インスタンスのネットワークを選択します。"
 
 msgid "Select parent backup"
 msgstr "親バックアップを選択してください"
-
-msgid "Select the instance(s) that will be removed from the cluster."
-msgstr "クラスターから削除するインスタンスを選択してください。"
 
 msgid "Selected networks"
 msgstr "選択済みネットワーク"
@@ -1044,42 +1011,20 @@ msgstr "スペック"
 msgid "Status"
 msgstr "ステータス"
 
-msgid "Status if root was ever enabled for an instance."
-msgstr "インスタンスでこれまでにルートが有効にされたことがあるかのスタータス。"
-
 msgid "Successfully added parameter"
 msgstr "パラメーターを正常に追加しました"
 
 msgid "Successfully disabled root access."
 msgstr "ルートアクセスを無効化しました。"
 
-msgid ""
-"The 'Instance Type' and 'Related To' fields are datastore specific and "
-"optional.  See the Trove documentation for more information on using these "
-"fields."
-msgstr ""
-"フィールド「インスタンスタイプ」と「関連付け先」はデータストア固有で、指定は"
-"任意です。これらのフィールドの使い方に関する詳しい情報は Trove のドキュメント"
-"を参照してください。"
-
 msgid "The flavor must be specified."
 msgstr "フレーバーを指定する必要があります。"
-
-msgid ""
-"The name field is optional.   If the field is left blank a name will be "
-"generated when the cluster is grown."
-msgstr ""
-"名前のフィールドはオプションです。このフィールドが空の場合、クラスターの拡張"
-"時に名前が生成されます。"
 
 msgid "The number of instances must be greater than 1."
 msgstr "インスタンス数は 1 より大きくなければいけません。"
 
 msgid "The number of shards must be greater than 1."
 msgstr "シャード数は 1 より大きくなければいけません。"
-
-msgid "There was a problem enabling root."
-msgstr "ルートの有効化中に問題がありました。"
 
 msgid "This action cannot be undone."
 msgstr "この操作は取り消せません。"
@@ -1099,18 +1044,6 @@ msgstr "%(action)s を実行できません: %(objs)s"
 
 msgid "Unable to create list of parameters."
 msgstr "パラメーターの一覧を作成できません。"
-
-msgid "Unable to determine if instance root is enabled."
-msgstr "インスタンスのルートが有効になっているか判定できません。"
-
-msgid "Unable to find backup!"
-msgstr "バックアップが見つかりません！"
-
-msgid "Unable to find configuration group!"
-msgstr "設定が見つかりません！"
-
-msgid "Unable to find master instance!"
-msgstr "マスターインスタンスが見つかりません。"
 
 msgid "Unable to get configuration data."
 msgstr "設定データを取得できません。"
@@ -1164,9 +1097,6 @@ msgstr "データストア一覧を取得できません。"
 
 msgid "Unable to obtain flavors."
 msgstr "フレーバー一覧を取得できません。"
-
-msgid "Unable to obtain information on root user"
-msgstr "ルートユーザーの情報を取得できません。"
 
 msgid "Unable to obtain list of parameters."
 msgstr "パラメーターの一覧を取得できません。"
