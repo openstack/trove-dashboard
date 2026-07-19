@@ -12,9 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-
 CASSANDRA = "cassandra"
-MARIA = "maria"
+MARIADB = "mariadb"
 MONGODB = "mongodb"
 MYSQL = "mysql"
 PERCONA = "percona"
@@ -22,10 +21,10 @@ PERCONA_CLUSTER = "pxc"
 REDIS = "redis"
 VERTICA = "vertica"
 
-_mysql_compatible_datastores = (MYSQL, MARIA, PERCONA, PERCONA_CLUSTER)
-_cluster_capable_datastores = (CASSANDRA, MARIA, MONGODB, PERCONA_CLUSTER,
+_mysql_compatible_datastores = (MYSQL, MARIADB, PERCONA, PERCONA_CLUSTER)
+_cluster_capable_datastores = (CASSANDRA, MARIADB, MONGODB, PERCONA_CLUSTER,
                                REDIS, VERTICA)
-_cluster_grow_shrink_capable_datastores = (CASSANDRA, MARIA, MONGODB,
+_cluster_grow_shrink_capable_datastores = (CASSANDRA, MARIADB, MONGODB,
                                            PERCONA_CLUSTER, REDIS)
 
 
