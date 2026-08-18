@@ -181,9 +181,17 @@ class SetInstanceDetailsAction(workflows.Action):
             exceptions.handle(request,
                               _('Unable to retrieve availability zones.'),
                               redirect=redirect)
-
-        zone_list = [(zone.zoneName, zone.zoneName)
-                     for zone in zones if zone.zoneState['available']]
+        zone_list = []
+        for zone in zones:
+            # NOTE(hiwkby) trove-dashboard internally calls horizon's
+            # openstack_dashboard/api/nova.py, which has "state". However,
+            # trove-dashboard's unittest directly calls novaclient/base.py,
+            # which has "zoneState".
+            state = getattr(zone, 'state', getattr(zone, 'zoneState', {}))
+            if state.get('available', False):
+                zone_name = getattr(zone, 'name',
+                                    getattr(zone, 'zoneName', ''))
+                zone_list.append((zone_name, zone_name))
         zone_list.sort()
         if not zone_list:
             zone_list.insert(0, ("", _("No availability zones found")))
