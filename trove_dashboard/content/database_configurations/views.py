@@ -84,7 +84,7 @@ class CreateConfigurationView(horizon_forms.ModalFormView):
     modal_header = _("Create Configuration Group")
     modal_id = "create_configuration_modal"
     template_name = 'project/database_configurations/create.html'
-    submit_label = "Create Configuration Group"
+    submit_label = _("Create Configuration Group")
     submit_url = reverse_lazy('horizon:project:database_configurations:create')
     success_url = reverse_lazy('horizon:project:database_configurations:index')
 
@@ -95,7 +95,7 @@ class AddParameterView(horizon_forms.ModalFormView):
     modal_header = _("Add Parameter")
     modal_id = "add_parameter_modal"
     template_name = 'project/database_configurations/add_parameter.html'
-    submit_label = "Add Parameter"
+    submit_label = _("Add Parameter")
     submit_url = 'horizon:project:database_configurations:add'
     success_url = 'horizon:project:database_configurations:detail'
 
