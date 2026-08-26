@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-07-09 19:34+0000\n"
+"POT-Creation-Date: 2026-08-25 18:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -169,9 +169,6 @@ msgstr "Abbrechen"
 #, python-format
 msgid "Cannot disable root access: %s"
 msgstr "Konnte Root Zugriff nicht deaktivieren: %s"
-
-msgid "Cannot grow cluster.  No instances specified."
-msgstr "Cluster kann nicht vergrößert werden. Keine Instanzen angegeben."
 
 msgid "Character Set"
 msgstr "Zeichensatz"
@@ -1175,9 +1172,6 @@ msgstr "Cluster %s kann nicht vergrößert werden."
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Außerstande %(count)s mal \"%(name)s\" zu starten."
 
-msgid "Unable to list database backups for parent."
-msgstr "Eltern-Datenbank-Sicherungskopien können nicht aufgelistet werden."
-
 msgid "Unable to list database instances to backup."
 msgstr "Die zu sichernden Datenbankinstanzen können nicht aufgelistet werden."
 
@@ -1357,14 +1351,6 @@ msgid "You must specify at least one database if you create a user."
 msgstr ""
 "Sie müssen mindestens eine Datenbank angeben, wenn Sie einen Benutzer "
 "anlegen."
-
-#, python-format
-msgid ""
-"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s, nics=%(nics)s]"
-msgstr ""
-"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "Instanz"

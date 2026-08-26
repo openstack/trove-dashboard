@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-07-09 19:34+0000\n"
+"POT-Creation-Date: 2026-08-25 18:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -160,9 +160,6 @@ msgstr "Cancel (pembatalan)"
 #, python-format
 msgid "Cannot disable root access: %s"
 msgstr "Tidak dapat menonaktifkan akses root: %s"
-
-msgid "Cannot grow cluster.  No instances specified."
-msgstr "Tidak bisa tumbuh cluster. Tidak ada instance yang ditentukan."
 
 msgid "Character Set"
 msgstr "Character Set (set karakter)"
@@ -1109,9 +1106,6 @@ msgstr "Tidak dapat tumbuh klaster: %s"
 msgid "Unable to launch %(count)s named \"%(name)s\"."
 msgstr "Tidak dapat meluncurkan %(count)s named \"%(name)s\"."
 
-msgid "Unable to list database backups for parent."
-msgstr "Tidak dapat mendaftar backup database untuk induknya."
-
 msgid "Unable to list database instances to backup."
 msgstr "Tidak dapat mendaftar instance database untuk backup."
 
@@ -1287,14 +1281,6 @@ msgstr "Anda harus menentukan password jika Anda membuat user."
 
 msgid "You must specify at least one database if you create a user."
 msgstr "Anda harus menentukan setidaknya satu database jika Anda membuat user."
-
-#, python-format
-msgid ""
-"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s, nics=%(nics)s]"
-msgstr ""
-"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "instance"

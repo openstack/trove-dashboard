@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-07-09 19:34+0000\n"
+"POT-Creation-Date: 2026-08-25 18:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-01-07 03:35+0000\n"
+"PO-Revision-Date: 2026-08-08 09:27+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -46,6 +46,12 @@ msgstr ""
 "should be greater than 0, however, some configurations do not support "
 "specifying volume size. If specifying the volume size results in an error "
 "stating volume support is not enabled, enter 0."
+
+msgid "A backup must be selected."
+msgstr "A backup must be selected."
+
+msgid "A master instance must be selected."
+msgstr "A master instance must be selected."
 
 msgid "A new name or new password or new host must be specified."
 msgstr "A new name or new password or new host must be specified."
@@ -120,6 +126,9 @@ msgstr "Attaching Configuration group \"%s\""
 
 msgid "Availability Zone"
 msgstr "Availability Zone"
+
+msgid "Availability zone where the instance will be created."
+msgstr "Availability zone where the instance will be created."
 
 msgid "Available networks"
 msgstr "Available networks"
@@ -200,9 +209,6 @@ msgstr "Cancel"
 msgid "Cannot disable root access: %s"
 msgstr "Cannot disable root access: %s"
 
-msgid "Cannot grow cluster.  No instances specified."
-msgstr "Cannot grow cluster.  No instances specified."
-
 msgid "Character Set"
 msgstr "Character Set"
 
@@ -280,6 +286,9 @@ msgstr "Configuration Group attached to instances."
 
 msgid "Configuration Groups"
 msgstr "Configuration Groups"
+
+msgid "Configuration parameter name."
+msgstr "Configuration parameter name."
 
 msgid "Configurations"
 msgstr "Configurations"
@@ -491,6 +500,9 @@ msgid_plural "Disable Logs"
 msgstr[0] "Disable Log"
 msgstr[1] "Disable Logs"
 
+msgid "Disable Root Access"
+msgstr "Disable Root Access"
+
 msgid "Disabled Log"
 msgid_plural "Disabled Logs"
 msgstr[0] "Disabled Log"
@@ -533,10 +545,16 @@ msgid_plural "Enable Logs"
 msgstr[0] "Enable Log"
 msgstr[1] "Enable Logs"
 
+msgid "Enable Root Access"
+msgstr "Enable Root Access"
+
 msgid "Enabled Log"
 msgid_plural "Enabled Logs"
 msgstr[0] "Enabled Log"
 msgstr[1] "Enabled Logs"
+
+msgid "Enables external access to the database."
+msgstr "Enables external access to the database."
 
 msgctxt "Current status of a Database Instance"
 msgid "Error"
@@ -606,6 +624,9 @@ msgstr "Grow Cluster"
 
 msgid "Grow Cluster: {{cluster_name}}"
 msgstr "Grow Cluster: {{cluster_name}}"
+
+msgid "Has Root Access Ever Been Enabled"
+msgstr "Has Root Access Ever Been Enabled"
 
 msgctxt "Current status of a Database Instance"
 msgid "Healthy"
@@ -688,6 +709,10 @@ msgstr "Launch instance with these networks"
 msgid "Launched cluster \"%s\""
 msgstr "Launched cluster \"%s\""
 
+#, python-format
+msgid "Launched instance %(count)s with name \"%(name)s\"."
+msgstr "Launched instance %(count)s with name \"%(name)s\"."
+
 msgid "Location Policy"
 msgstr "Location Policy"
 
@@ -745,6 +770,21 @@ msgstr ""
 msgid "Name"
 msgstr "Name"
 
+msgid "Name of the backup."
+msgstr "Name of the backup."
+
+msgid "Name of the configuration group."
+msgstr "Name of the configuration group."
+
+msgid "Name of the database cluster."
+msgstr "Name of the database cluster."
+
+msgid "Name of the database instance."
+msgstr "Name of the database instance."
+
+msgid "Name of the database."
+msgstr "Name of the database."
+
 msgid "Network"
 msgstr "Network"
 
@@ -779,11 +819,23 @@ msgstr "New Password"
 msgid "New Size (GB)"
 msgstr "New Size (GB)"
 
+msgid "New host from which the user can connect."
+msgstr "New host from which the user can connect."
+
 msgid "New password for cluster access."
 msgstr "New password for cluster access."
 
+msgid "New password for the database user."
+msgstr "New password for the database user."
+
 msgid "New size for volume must be greater than current size."
 msgstr "New size for volume must be greater than current size."
+
+msgid "New username for the database user."
+msgstr "New username for the database user."
+
+msgid "New volume size must be larger than the current size."
+msgstr "New volume size must be larger than the current size."
 
 msgid "No availability zones found"
 msgstr "No availability zones found"
@@ -868,6 +920,9 @@ msgstr ""
 "Optional datastore specific value that defines the relationship from one "
 "instance in the cluster to another."
 
+msgid "Optional description of the configuration group."
+msgstr "Optional description of the configuration group."
+
 msgid "Optional host of user."
 msgstr "Optional host of user."
 
@@ -923,6 +978,19 @@ msgstr "Password for root user must be specified."
 
 msgid "Password for root user."
 msgstr "Password for root user."
+
+msgid "Password for the admin user."
+msgstr "Password for the admin user."
+
+msgid "Password for the database user."
+msgstr "Password for the database user."
+
+msgid ""
+"Password is only visible immediately after the root access is enabled or "
+"reset."
+msgstr ""
+"Password is only visible immediately after the root access is enabled or "
+"reset."
 
 msgid ""
 "Please note: The new value must be greater than the existing volume size."
@@ -1074,6 +1142,9 @@ msgid_plural "Revoke Access"
 msgstr[0] "Revoke Access"
 msgstr[1] "Revoke Access"
 
+msgid "Root Access Enabled"
+msgstr "Root Access Enabled"
+
 msgid "Root Password"
 msgstr "Root Password"
 
@@ -1116,6 +1187,9 @@ msgstr "Select a configuration group"
 msgid "Select a configuration group to attach to the database instance."
 msgstr "Select a configuration group to attach to the database instance."
 
+msgid "Select a configuration group to attach."
+msgstr "Select a configuration group to attach."
+
 msgid "Select a master instance"
 msgstr "Select a master instance"
 
@@ -1146,6 +1220,15 @@ msgstr "Select networks for your instance."
 
 msgid "Select parent backup"
 msgstr "Select parent backup"
+
+msgid "Select the database instance for backup strategy."
+msgstr "Select the database instance for backup strategy."
+
+msgid "Select the database instance to backup."
+msgstr "Select the database instance to backup."
+
+msgid "Select the instances that will be removed from the cluster."
+msgstr "Select the instances that will be removed from the cluster."
 
 msgid "Selected networks"
 msgstr "Selected networks"
@@ -1242,6 +1325,9 @@ msgstr "Specs"
 msgid "Status"
 msgstr "Status"
 
+msgid "Status if root access was ever enabled for an instance."
+msgstr "Status if root access was ever enabled for an instance."
+
 msgid "Stop Database Service"
 msgid_plural "Stop Database Services"
 msgstr[0] "Stop Database Service"
@@ -1262,14 +1348,33 @@ msgstr "Swift Container"
 msgid "Swift Container Name"
 msgstr "Swift Container Name"
 
+msgid ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional. See the Trove documentation for more information on using these "
+"fields."
+msgstr ""
+"The 'Instance Type' and 'Related To' fields are datastore specific and "
+"optional. See the Trove documentation for more information on using these "
+"fields."
+
 msgid "The flavor must be specified."
 msgstr "The flavour must be specified."
+
+msgid ""
+"The name field is optional. If the field is left blank a name will be "
+"generated when the cluster is grown."
+msgstr ""
+"The name field is optional. If the field is left blank a name will be "
+"generated when the cluster is grown."
 
 msgid "The number of instances must be greater than 1."
 msgstr "The number of instances must be greater than 1."
 
 msgid "The number of shards must be greater than 1."
 msgstr "The number of shards must be greater than 1."
+
+msgid "There was a problem enabling root access."
+msgstr "There was a problem enabling root access."
 
 msgid "This action cannot be undone."
 msgstr "This action cannot be undone."
@@ -1293,6 +1398,9 @@ msgstr "Unable to add new parameter."
 msgid "Unable to attach configuration group."
 msgstr "Unable to attach configuration group."
 
+msgid "Unable to create backup strategy."
+msgstr "Unable to create backup strategy."
+
 msgid "Unable to create configuration group."
 msgstr "Unable to create configuration group."
 
@@ -1304,6 +1412,18 @@ msgstr "Unable to create list of parameters."
 
 msgid "Unable to create user."
 msgstr "Unable to create user."
+
+msgid "Unable to determine if instance root access is enabled."
+msgstr "Unable to determine if instance root access is enabled."
+
+msgid "Unable to find backup."
+msgstr "Unable to find backup."
+
+msgid "Unable to find configuration group."
+msgstr "Unable to find configuration group."
+
+msgid "Unable to find master instance."
+msgstr "Unable to find master instance."
 
 msgid "Unable to get configuration data."
 msgstr "Unable to get configuration data."
@@ -1337,8 +1457,9 @@ msgstr "Unable to launch %(count)s named \"%(name)s\"."
 msgid "Unable to launch cluster."
 msgstr "Unable to launch cluster."
 
-msgid "Unable to list database backups for parent."
-msgstr "Unable to list database backups for parent."
+#, python-format
+msgid "Unable to launch instance %(count)s with name \"%(name)s\"."
+msgstr "Unable to launch instance %(count)s with name \"%(name)s\"."
 
 msgid "Unable to list database instances to backup."
 msgstr "Unable to list database instances to backup."
@@ -1363,6 +1484,9 @@ msgstr "Unable to obtain datastores."
 
 msgid "Unable to obtain flavors."
 msgstr "Unable to obtain flavours."
+
+msgid "Unable to obtain information on root access."
+msgstr "Unable to obtain information on root access."
 
 msgid "Unable to obtain list of parameters."
 msgstr "Unable to obtain list of parameters."
@@ -1477,11 +1601,17 @@ msgstr "User defined Swift Container name."
 msgid "Username (required)"
 msgstr "Username (required)"
 
+msgid "Username for the database user."
+msgstr "Username for the database user."
+
 msgid "Users"
 msgstr "Users"
 
 msgid "Value"
 msgstr "Value"
+
+msgid "Value for the configuration parameter."
+msgstr "Value for the configuration parameter."
 
 msgid "Value must be \"true\" or \"false\"."
 msgstr "Value must be \"true\" or \"false\"."
@@ -1547,14 +1677,6 @@ msgstr "You must specify a password if you create a user."
 
 msgid "You must specify at least one database if you create a user."
 msgstr "You must specify at least one database if you create a user."
-
-#, python-format
-msgid ""
-"[flavor=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s, nics=%(nics)s]"
-msgstr ""
-"[flavour=%(flavor)s, volume=%(volume)s, name=%(name)s, type=%(type)s, "
-"related_to=%(related_to)s, nics=%(nics)s]"
 
 msgid "instance"
 msgstr "instance"
