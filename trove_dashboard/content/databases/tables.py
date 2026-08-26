@@ -742,7 +742,7 @@ class InstancesTable(tables.DataTable):
     STATUS_DISPLAY_CHOICES = (
         ("ACTIVE", pgettext_lazy("Current status of a Database Instance",
                                  "Active")),
-        ("Healthy", pgettext_lazy("Current status of a Database Instance",
+        ("HEALTHY", pgettext_lazy("Current status of a Database Instance",
                                   "Healthy")),
         ("BLOCKED", pgettext_lazy("Current status of a Database Instance",
                                   "Blocked")),
