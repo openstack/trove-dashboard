@@ -5,18 +5,28 @@
     <h4>{% trans "Connection Information" %}</h4>
     <hr class="header_rule">
     <dl class="dl-horizontal">
-      {% with instance.host as host %}
+      {% if not instance.addresses and not instance.hostname %}
           <dt>{% trans "Host" %}</dt>
-          {% if not host %}
-              <dd>{% trans "Not Assigned" %}</dd>
+          <dd>{% trans "Not Assigned" %}</dd>
+      {% else %}
+          <dt>{% trans "Host" %}</dt>
+          {% if instance.addresses %}
+              {% for addr in instance.addresses %}
+                  <dd>{% if instance.addresses|length > 1 %}<b>{{ addr.type }}:</b> {% endif %}{{ addr.address }}</dd>
+              {% endfor %}
           {% else %}
-              <dd>{{ host }}</dd>
-              <dt>{% trans "Database Port" %}</dt>
-              <dd>3306</dd>
-              <dt>{% trans "Connection Examples" %}</dt>
-              <dd>mysql -h {{ host }} -u {% trans "USERNAME" %} -p</dd>
-              <dd>mysql://{% trans "USERNAME" %}:{% trans "PASSWORD" %}@{{ host }}:3306/{% trans "DATABASE"%}</dd>
-          {% endif %} <!-- ends else block -->
-      {% endwith %}
+              <dd>{{ instance.hostname }}</dd>
+          {% endif %}
+          <dt>{% trans "Database Port" %}</dt>
+          <dd>3306</dd>
+          <dt>{% trans "Connection Examples" %}</dt>
+          {% for addr in instance.addresses %}
+              <dd style="word-break: break-all;">{% if instance.addresses|length > 1 %}<b>{{ addr.type }}:</b> {% endif %}mysql -h {{ addr.address }} -u {% trans "USERNAME" %} -p</dd>
+              <dd style="word-break: break-all;">{% if instance.addresses|length > 1 %}<b>{{ addr.type }}:</b> {% endif %}mysql://{% trans "USERNAME" %}:{% trans "PASSWORD" %}@{{ addr.address }}:3306/{% trans "DATABASE" %}</dd>
+          {% empty %}
+              <dd style="word-break: break-all;">mysql -h {{ instance.hostname }} -u {% trans "USERNAME" %} -p</dd>
+              <dd style="word-break: break-all;">mysql://{% trans "USERNAME" %}:{% trans "PASSWORD" %}@{{ instance.hostname }}:3306/{% trans "DATABASE" %}</dd>
+          {% endfor %}
+      {% endif %}
     </dl>
 {% endblock %}
