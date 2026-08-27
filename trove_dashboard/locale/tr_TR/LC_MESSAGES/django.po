@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-25 18:21+0000\n"
+"POT-Creation-Date: 2026-08-26 11:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -108,9 +108,6 @@ msgstr "Yapılandırma grubu \"%s\" ekleniyor"
 
 msgid "Availability Zone"
 msgstr "Kullanılırlık Bölgesi"
-
-msgid "Available networks"
-msgstr "Kullanılabilir ağlar"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -611,15 +608,6 @@ msgstr "Ana Sunucu İsmi"
 msgid "Message"
 msgstr "İleti"
 
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Ağlar 'Kullanılabilri Ağlar'dan 'Seçili Ağlar'a düğmeye tıklayarak, ya da "
-"sürükleyip bırakarak taşıyın. NIC sırasını da sürükleyip bırakarak "
-"değiştirebilirsiniz."
-
 msgid "Name"
 msgstr "İsim"
 
@@ -990,9 +978,6 @@ msgstr "Sunucu seçin"
 
 msgid "Select parent backup"
 msgstr "Üst yedeği seçin"
-
-msgid "Selected networks"
-msgstr "Seçili ağlar"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"

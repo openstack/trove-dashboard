@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-25 18:21+0000\n"
+"POT-Creation-Date: 2026-08-26 11:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,9 +130,6 @@ msgstr "Availability Zone"
 msgid "Availability zone where the instance will be created."
 msgstr "Availability zone where the instance will be created."
 
-msgid "Available networks"
-msgstr "Available networks"
-
 msgid "Backend"
 msgstr "Backend"
 
@@ -217,13 +214,6 @@ msgstr "Choose a new instance flavour."
 
 msgid "Choose initial state."
 msgstr "Choose initial state."
-
-msgid ""
-"Choose network from Available networks to Selected networks by push button "
-"or drag and drop, you may change NIC order by drag and drop as well. "
-msgstr ""
-"Choose network from Available networks to Selected networks by push button "
-"or drag and drop, you may change NIC order by drag and drop as well. "
 
 msgid ""
 "Classless Inter-Domain Routing (e.g. 192.168.0.0/24, or 2001:db8::/128). Can "
@@ -758,15 +748,6 @@ msgstr "Master Instance Name"
 msgid "Message"
 msgstr "Message"
 
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-
 msgid "Name"
 msgstr "Name"
 
@@ -1229,9 +1210,6 @@ msgstr "Select the database instance to backup."
 
 msgid "Select the instances that will be removed from the cluster."
 msgstr "Select the instances that will be removed from the cluster."
-
-msgid "Selected networks"
-msgstr "Selected networks"
 
 msgid "Service Status Updated"
 msgstr "Service Status Updated"

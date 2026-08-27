@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-25 18:21+0000\n"
+"POT-Creation-Date: 2026-08-26 11:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -113,9 +113,6 @@ msgstr "Anexando Grupo de Configuração \"%s\""
 
 msgid "Availability Zone"
 msgstr "Zona de Disponibilidade"
-
-msgid "Available networks"
-msgstr "Redes disponíveis"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -624,14 +621,6 @@ msgstr "Nome da Instância Mestre"
 msgid "Message"
 msgstr "Mensagem"
 
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Mover redes de 'Redes Disponíveis' para 'Redes Selecionadas' ao clicar no "
-"botão, ou arrastar e soltar."
-
 msgid "Name"
 msgstr "Nome"
 
@@ -1013,9 +1002,6 @@ msgstr "Selecione as redes para sua instância."
 
 msgid "Select parent backup"
 msgstr "Selecione o backup pai"
-
-msgid "Selected networks"
-msgstr "Redes Selecionadas"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"

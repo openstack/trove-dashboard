@@ -10,17 +10,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-25 18:21+0000\n"
+"POT-Creation-Date: 2026-08-26 11:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-08-25 09:06+0000\n"
+"PO-Revision-Date: 2026-08-26 09:21+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#, python-format
+msgid ""
+"\n"
+"    Choose network from <strong>%(available_label)s</strong> to "
+"<strong>%(selected_label)s</strong> by push button or drag and drop, you may "
+"change NIC order by drag and drop as well.\n"
+"  "
+msgstr ""
+"\n"
+"    Выберите сеть из <strong>%(available_label)s</strong> до "
+"<strong>%(selected_label)s</strong> с помощью кнопки или перетаскивания. Вы "
+"также можете изменить порядок сетевых адаптеров с помощью перетаскивания.\n"
+"  "
 
 #, python-format
 msgid "%(name)s | %(RAM)s RAM"
@@ -85,8 +99,14 @@ msgstr "Добавить инстанс"
 msgid "Add Parameter"
 msgstr "Добавить параметр"
 
+msgid "Add Parameter to Configurations"
+msgstr "Добавить параметр в конфигурации"
+
 msgid "Advanced"
 msgstr "Дополнительно"
+
+msgid "Affinity"
+msgstr "Affinity"
 
 msgid ""
 "Allow the user to connect from this host only. If not provided this user "
@@ -103,6 +123,9 @@ msgstr "Разрешенный хост"
 
 msgid "Allowed Host (optional)"
 msgstr "Разрешенный хост (опционально)"
+
+msgid "Anti-affinity"
+msgstr "Anti-affinity"
 
 msgid "Any Availability Zone"
 msgstr "Любая зона доступности"
@@ -122,6 +145,9 @@ msgstr "По крайней мере одна сеть должна быть у�
 msgid "At least one of the new fields must be changed."
 msgstr "Хотя бы одно из новых полей должно быть изменено."
 
+msgid "Attach Configuration"
+msgstr "Подключить конфигурацию"
+
 msgid "Attach Configuration Group"
 msgstr "Подключить группу конфигурации"
 
@@ -135,7 +161,7 @@ msgstr "Зона доступности"
 msgid "Availability zone where the instance will be created."
 msgstr "Зона доступности, в которой будет создан инстанс."
 
-msgid "Available networks"
+msgid "Available Networks"
 msgstr "Доступные сети"
 
 msgid "Backend"
@@ -229,14 +255,6 @@ msgid "Choose initial state."
 msgstr "Выберите начальное состояние."
 
 msgid ""
-"Choose network from Available networks to Selected networks by push button "
-"or drag and drop, you may change NIC order by drag and drop as well. "
-msgstr ""
-"Выберите сеть из списка 'Доступные сети' или 'Выбранные сети' с помощью "
-"кнопки или перетаскивания. Вы также можете изменить порядок сетевых карт с "
-"помощью перетаскивания."
-
-msgid ""
 "Classless Inter-Domain Routing (e.g. 192.168.0.0/24, or 2001:db8::/128). Can "
 "enter multiple values separatingby a comma"
 msgstr ""
@@ -273,6 +291,9 @@ msgstr "Конфигурация по умолчанию"
 
 msgid "Configuration Group"
 msgstr "Группа конфигурации"
+
+msgid "Configuration Group Details"
+msgstr "Подробности группы конфигурации"
 
 msgid "Configuration Group Details: {{configuration.name}}"
 msgstr "Подробности группы конфигурации: {{configuration.name}}"
@@ -322,6 +343,9 @@ msgstr "Создать резервную копию"
 
 msgid "Create Backup Strategy"
 msgstr "Создать стратегию резервного копирования"
+
+msgid "Create Configuration"
+msgstr "Создать конфигурацию"
 
 msgid "Create Configuration Group"
 msgstr "Создать группу конфигурации"
@@ -373,6 +397,9 @@ msgstr "База данных"
 
 msgid "Database Access"
 msgstr "Доступ к базе данных"
+
+msgid "Database Access Details"
+msgstr "Подробности доступа к базе данных"
 
 msgid "Database Access for: {{ user_name }}@{{user_host}}"
 msgstr "Доступ к базе данных для: {{ user_name }}@{{user_host}}"
@@ -778,6 +805,9 @@ msgstr "Управление доступом"
 msgid "Manage Root Access"
 msgstr "Управление полным доступом"
 
+msgid "Manage Root User"
+msgstr "Управление полным доступом"
+
 msgid ""
 "Manage parameters of the configuration group. If the configuration group is "
 "attached with database instance, the change is applied to the instance "
@@ -795,14 +825,6 @@ msgstr "Имя основного инстанса"
 
 msgid "Message"
 msgstr "Сообщение"
-
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Переместите сети из 'Доступные сети' в 'Выбранные сети', нажав кнопку или "
-"перетащив их. Вы также можете изменить порядок сетевых карт, перетащив их."
 
 msgid "Name"
 msgstr "Имя"
@@ -1282,7 +1304,7 @@ msgstr "Выберите инстанс базы данных для резер�
 msgid "Select the instances that will be removed from the cluster."
 msgstr "Выберите инстансы, которые будут удалены из кластера."
 
-msgid "Selected networks"
+msgid "Selected Networks"
 msgstr "Выбранные сети"
 
 msgid "Service Status Updated"
@@ -1637,6 +1659,9 @@ msgstr "Не удалось обновить пользователя."
 
 msgid "Unknown"
 msgstr "Неизвестно"
+
+msgid "Update"
+msgstr "Обновить"
 
 msgid "Update Instance"
 msgstr "Обновить инстанс"

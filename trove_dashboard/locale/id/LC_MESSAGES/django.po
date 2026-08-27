@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-25 18:21+0000\n"
+"POT-Creation-Date: 2026-08-26 11:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,9 +107,6 @@ msgstr "Melekatkan grup Konfigurasi \"%s\""
 
 msgid "Availability Zone"
 msgstr "Availability Zone (ketersediaan zona)"
-
-msgid "Available networks"
-msgstr "Jaringan yang tersedia"
 
 msgctxt "Current status of a Database Instance"
 msgid "Backup"
@@ -590,15 +587,6 @@ msgstr "Master Instance Name (nama instance induk)"
 msgid "Message"
 msgstr "Message (pesan)"
 
-msgid ""
-"Move networks from 'Available Networks' to 'Selected Networks' by clicking "
-"the button, or dragging and dropping. You can change the NIC order by "
-"dragging and dropping as well."
-msgstr ""
-"Pindah jaringan dari 'Available Networks' ke 'Selected Networks' dengan "
-"mengklik tombol, atau menyeret dan menjatuhkan (drag and drop). Anda dapat "
-"mengubah urutan NIC dengan menyeret dan menjatuhkan juga."
-
 msgid "Name"
 msgstr "Name (nama)"
 
@@ -956,9 +944,6 @@ msgstr "Pilih instance"
 
 msgid "Select parent backup"
 msgstr "Pilih cadangan induknya"
-
-msgid "Selected networks"
-msgstr "Jaringan yang dipilih"
 
 msgid "Shrink Cluster"
 msgid_plural "Shrink Cluster"
