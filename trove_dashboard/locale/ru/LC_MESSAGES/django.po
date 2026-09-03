@@ -11,12 +11,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-26 13:59+0000\n"
+"POT-Creation-Date: 2026-09-01 13:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-08-25 08:57+0000\n"
-"Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
+"PO-Revision-Date: 2026-09-02 06:58+0000\n"
+"Last-Translator: Dmitriy Chubinidze <dcu995@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -62,9 +62,10 @@ msgid ""
 "stating volume support is not enabled, enter 0."
 msgstr ""
 "<strong>Обратите внимание:</strong> значение, указываемое в поле \"Размер "
-"диска\" должно быть больше 0, однако, некоторые конфигурации не поддерживают "
-"указание размера диска. Если при указании размера диска возникает ошибка, "
-"говорящая о том, что поддержка дисков не включена, укажите 0."
+"диска\", должно быть больше 0, однако, некоторые конфигурации не "
+"поддерживают указание размера диска. Если при указании размера диска "
+"возникает ошибка, говорящая о том, что поддержка дисков не включена, укажите "
+"0."
 
 msgid "A backup must be selected."
 msgstr "Необходимо выбрать резервную копию."
@@ -135,7 +136,7 @@ msgid "Applicable only if the volume size is specified."
 msgstr "Поддерживается только если указан размер диска."
 
 msgid "Applied changes to server"
-msgstr "Изменения применены на сервер"
+msgstr "Изменения применены к серверу"
 
 msgid "Apply Changes"
 msgstr "Применить изменения"
@@ -278,7 +279,7 @@ msgid "Collation"
 msgstr "Сортировка"
 
 msgid "Comma separated list of databases to create"
-msgstr "Список баз данных для создания разделенный запятыми"
+msgstr "Список баз данных для создания, разделенный запятыми"
 
 msgid "Comma-separated CIDRs to connect through."
 msgstr "CIDR-адреса для подключения, разделенные запятыми."
@@ -389,6 +390,9 @@ msgstr "Текущий размер (ГБ)"
 
 msgid "Current Task"
 msgstr "Текущая задача"
+
+msgid "Current Version"
+msgstr "Текущая версия"
 
 msgid "DATABASE"
 msgstr "БАЗА ДАННЫХ"
@@ -580,6 +584,13 @@ msgstr[0] "Журнал удален"
 msgstr[1] "Журналы удалены"
 msgstr[2] "Журналы удалены"
 
+msgid ""
+"Downgrading to an earlier version is possible using this form, but the "
+"database system may not support downgrades."
+msgstr ""
+"Понижение версии до более ранней возможно с помощью этой формы, однако "
+"система управления базой данных может не поддерживать понижение версии."
+
 msgid "Download"
 msgstr "Скачать"
 
@@ -706,6 +717,9 @@ msgstr "Хост или IP, через который пользователю �
 msgid "ID"
 msgstr "ID"
 
+msgid "Important: upgrading an instance can result in data loss."
+msgstr "Важно: обновление версии инстанса может привести к потере данных."
+
 msgid "Incremental"
 msgstr "Инкрементальный"
 
@@ -800,6 +814,12 @@ msgstr "Журнал:"
 msgid "Logs"
 msgstr "Журналы"
 
+msgid ""
+"Make sure you have a full backup of the database before starting the upgrade."
+msgstr ""
+"Перед началом обновления версии убедитесь, что у вас есть полная резервная "
+"копия базы данных."
+
 msgid "Manage Access"
 msgstr "Управление доступом"
 
@@ -878,6 +898,9 @@ msgstr "Новый пароль"
 
 msgid "New Size (GB)"
 msgstr "Новый размер (ГБ)"
+
+msgid "New Version"
+msgstr "Новая версия"
 
 msgid "New host from which the user can connect."
 msgstr "Новый хост, с которого пользователь сможет подключаться."
@@ -1336,6 +1359,14 @@ msgstr "Размер образа для запуска."
 msgid "Size of the volume in GB."
 msgstr "Размер диска в ГБ."
 
+msgid ""
+"Some upgrades may not complete successfully without a logical backup. Please "
+"refer to the upgrade guidelines for the corresponding database version."
+msgstr ""
+"Некоторые обновления версии могут завершиться неуспешно без логической "
+"резервной копии. Обратитесь к рекомендациям по обновлению для "
+"соответствующей версии базы данных."
+
 msgid "Source for Initial State"
 msgstr "Источник начального состояния"
 
@@ -1343,7 +1374,7 @@ msgid "Specify a new flavor for the database instance."
 msgstr "Выберите новый шаблон конфигурации для инстанса базы данных."
 
 msgid "Specify a new name, new password or new host name for the user."
-msgstr "Укажите новое имя, новой пароль или новый хост для пользователя."
+msgstr "Укажите новое имя, новый пароль или новый хост для пользователя."
 
 msgid "Specify the backup strategy details."
 msgstr "Укажите подробности стратегии резервного копирования."
@@ -1384,7 +1415,7 @@ msgid ""
 "hypervisor (affinity) or on different hypervisors (anti-affinity). This "
 "value is ignored if the instance to be launched is a replica."
 msgstr ""
-"Укажите будут ли реплицированные инстансы создаваться на одном и том же "
+"Укажите, будут ли реплицированные инстансы создаваться на одном и том же "
 "гипервизоре (affinity) или на разных гипервизорах (anti-affinity). Это "
 "значение будет проигнорировано, если запускаемый инстанс является репликой."
 
@@ -1392,8 +1423,8 @@ msgid ""
 "Specify whether instances in the cluster will be created on the same "
 "hypervisor (affinity) or on different hypervisors (anti-affinity)."
 msgstr ""
-"Укажите будут ли инстансы кластера создаваться на одном и том же гипервизоре "
-"(affinity) или на разных (anti-affinity)."
+"Укажите, будут ли инстансы кластера создаваться на одном и том же "
+"гипервизоре (affinity) или на разных (anti-affinity)."
 
 msgid "Specs"
 msgstr "Спецификации"
@@ -1610,6 +1641,9 @@ msgstr "Не удалось получить информацию о разме�
 msgid "Unable to retrieve databases."
 msgstr "Не удалось получить базы данных."
 
+msgid "Unable to retrieve datastore versions."
+msgstr "Не удалось получить версии базы данных."
+
 #, python-format
 msgid "Unable to retrieve details for backup: %s"
 msgstr "Не удалось получить подробности о резервной копии: %s"
@@ -1658,6 +1692,10 @@ msgstr "Не удалось обновить инстанс \"%s\"."
 msgid "Unable to update user."
 msgstr "Не удалось обновить пользователя."
 
+#, python-format
+msgid "Unable to upgrade instance. %s"
+msgstr "Не удалось обновить версию инстанса. %s"
+
 msgid "Unknown"
 msgstr "Неизвестно"
 
@@ -1676,6 +1714,22 @@ msgstr "Обновлено"
 #, python-format
 msgid "Updated user \"%s\"."
 msgstr "Обновлен пользователь \"%s\"."
+
+msgid "Upgrade Instance"
+msgstr "Обновить версию инстанса"
+
+#, python-format
+msgid "Upgrading \"%s\""
+msgstr "Обновление версии \"%s\""
+
+msgid ""
+"Upgrading to the same version may be useful when the version tag points to a "
+"newer database image, for example after a security update. Such upgrades are "
+"usually safe."
+msgstr ""
+"Обновление до той же версии может быть полезно, если тег версии указывает на "
+"более новый образ базы данных, например, после обновления безопасности. "
+"Такие обновления обычно безопасны."
 
 msgid "User Name"
 msgstr "Имя пользователя"
@@ -1738,6 +1792,13 @@ msgstr "Размер диска"
 msgid "Volume Type"
 msgstr "Тип диска"
 
+msgid ""
+"We recommend testing the upgrade process on a test instance before upgrading "
+"a production database."
+msgstr ""
+"Мы рекомендуем протестировать процесс обновления версии на тестовом инстансе "
+"перед обновлением версии базы данных в рабочей среде."
+
 #, python-format
 msgid "You are not allowed to %(action)s: %(objs)s"
 msgstr "Вам запрещено выполнение %(action)s: %(objs)s"
@@ -1763,7 +1824,7 @@ msgstr "Вы должны задать пароль, если хотите со�
 
 msgid "You must specify at least one database if you create a user."
 msgstr ""
-"Вы должны создать по крайней мере одну базу данных если создаете "
+"Вы должны указать по крайней мере одну базу данных, если создаете "
 "пользователя."
 
 #, python-format
