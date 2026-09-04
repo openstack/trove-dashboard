@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-08-24 16:00+0000\n"
+"POT-Creation-Date: 2026-09-03 13:06+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -394,9 +394,6 @@ msgstr "Datastore"
 
 msgid "Datastore Version"
 msgstr "Datastore Version"
-
-msgid "Defaults"
-msgstr "Defaults"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -962,9 +959,6 @@ msgstr "Promote to Replica Source"
 #, python-format
 msgid "Promoted replica \"%s\" as the new replica source."
 msgstr "Promoted replica \"%s\" as the new replica source."
-
-msgid "Property"
-msgstr "Property"
 
 msgid "Publish Log"
 msgid_plural "Publish Logs"
