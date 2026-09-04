@@ -125,7 +125,7 @@ class DatabaseTab(tabs.TableTab):
 
 class ConfigDefaultsTab(tabs.TableTab):
     table_classes = [tables.ConfigDefaultsTable]
-    name = _("Defaults")
+    name = _("Configuration Defaults")
     slug = "config_defaults"
     instance = None
     template_name = "horizon/common/_detail_table.html"
