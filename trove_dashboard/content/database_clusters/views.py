@@ -126,11 +126,11 @@ class DetailView(horizon_tabs.TabbedTableView):
             cluster.full_flavor = api.trove.flavor_get(
                 self.request, cluster.instances[0]["flavor"]["id"])
         except Exception:
-            LOG.error('Unable to retrieve flavor details'
-                      ' for database cluster: %s' % cluster_id)
+            LOG.error('Unable to retrieve flavor details '
+                      'for database cluster: %s' % cluster_id)
         cluster.num_instances = len(cluster.instances)
 
-        # Todo(saurabhs) Set mgmt_url to dispaly Mgmt Console URL on
+        # TODO(saurabhs) Set mgmt_url to display Mgmt Console URL on
         # cluster details page
         # for instance in cluster.instances:
         #   if instance['type'] == "master":
