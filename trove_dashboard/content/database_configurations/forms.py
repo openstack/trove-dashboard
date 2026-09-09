@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import logging
+
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
@@ -19,7 +21,6 @@ from horizon import exceptions
 from horizon import forms
 from horizon import messages
 from horizon.utils import memoized
-from oslo_log import log as logging
 
 from trove_dashboard import api
 from trove_dashboard.content.database_configurations \
