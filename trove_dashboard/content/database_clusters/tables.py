@@ -14,6 +14,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import logging
+
 from django import shortcuts
 from django.template.defaultfilters import title  # noqa
 from django import urls
@@ -26,7 +28,6 @@ from horizon.templatetags import sizeformat
 from horizon.utils import filters
 from horizon.utils import functions
 from horizon.utils import memoized
-from oslo_log import log as logging
 
 from trove_dashboard import api
 from trove_dashboard.content.database_clusters import cluster_manager
