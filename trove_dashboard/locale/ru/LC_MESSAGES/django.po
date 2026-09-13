@@ -10,11 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2026-09-02 14:15+0000\n"
+"POT-Creation-Date: 2026-09-04 11:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-09-03 01:07+0000\n"
+"PO-Revision-Date: 2026-09-12 03:59+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -73,7 +73,7 @@ msgid "A master instance must be selected."
 msgstr "Необходимо выбрать основной инстанс."
 
 msgid "A new name or new password or new host must be specified."
-msgstr "Новое имя, новый пароль и новый хост должны быть заданы."
+msgstr "Новое имя, новый пароль или новый хост должны быть заданы."
 
 msgid "Access Revoked to"
 msgid_plural "Access Revoked to"
@@ -434,9 +434,6 @@ msgstr "База данных"
 
 msgid "Datastore Version"
 msgstr "Версия базы данных"
-
-msgid "Defaults"
-msgstr "Конфигурация по умолчанию"
 
 msgid "Delete Backup"
 msgid_plural "Delete Backups"
@@ -1074,9 +1071,6 @@ msgstr "Назначить источником реплики"
 msgid "Promoted replica \"%s\" as the new replica source."
 msgstr "Реплика \"%s\" назначена как новый источник реплики."
 
-msgid "Property"
-msgstr "Свойство"
-
 msgid "Publish Log"
 msgid_plural "Publish Logs"
 msgstr[0] "Опубликовать журнал"
@@ -1084,7 +1078,7 @@ msgstr[1] "Опубликовать журналы"
 msgstr[2] "Опубликовать журналы"
 
 msgid "Publishable (bytes)"
-msgstr "Может быть опубликовано (байт)"
+msgstr "Доступно для публикации (байт)"
 
 msgid "Published (bytes)"
 msgstr "Опубликовано (байт)"
@@ -1173,7 +1167,7 @@ msgstr "Изменить размер инстанса \"%s\""
 
 #, python-format
 msgid "Resizing volume \"%s\""
-msgstr "Изменение размера диска \"%s\" "
+msgstr "Изменение размера диска \"%s\""
 
 msgid "Restart Instance"
 msgid_plural "Restart Instances"
@@ -1734,6 +1728,9 @@ msgstr "Диск"
 
 msgid "Volume Size"
 msgstr "Размер диска"
+
+msgid "Volume Size (GB)"
+msgstr "Размер диска (ГБ)"
 
 msgid "Volume Type"
 msgstr "Тип диска"
