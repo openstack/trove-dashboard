@@ -306,8 +306,8 @@ class UpdateInstanceForm(forms.SelfHandlingForm):
         required=False,
         help_text=_("Classless Inter-Domain Routing "
                     "(e.g. 192.168.0.0/24, or "
-                    "2001:db8::/128). Can enter multiple values separating"
-                    "by a comma"),
+                    "2001:db8::/128). Can enter multiple values separated "
+                    "by a comma."),
         version=forms.IPv4 | forms.IPv6,
         mask=True,
         widget=forms.TextInput())
