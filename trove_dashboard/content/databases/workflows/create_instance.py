@@ -32,7 +32,7 @@ from trove_dashboard.utils import common as common_utils
 LOG = logging.getLogger(__name__)
 
 
-# NOTE(hiwkby): SetNetworkAction is migrated from horizon for compatibiity
+# NOTE(hiwkby): SetNetworkAction is migrated from horizon for compatibility
 class SetNetworkAction(workflows.Action):
     network = forms.MultipleChoiceField(
         label=_("Networks"),
@@ -58,7 +58,7 @@ class SetNetworkAction(workflows.Action):
         return instance_utils.network_field_data(request, for_launch=True)
 
 
-# NOTE(hiwkby): SetNetwork is migrated from horizon for compatibiity
+# NOTE(hiwkby): SetNetwork is migrated from horizon for compatibility
 class SetNetwork(workflows.Step):
     action_class = SetNetworkAction
     template_name = "project/databases/_update_networks.html"
@@ -170,7 +170,7 @@ class SetInstanceDetailsAction(workflows.Action):
         try:
             return dash_api.nova.availability_zone_list(request)
         except Exception:
-            LOG.exception("Exception while obtaining availablity zones")
+            LOG.exception("Exception while obtaining availability zones")
             self._availability_zones = []
 
     def populate_availability_zone_choices(self, request, context):

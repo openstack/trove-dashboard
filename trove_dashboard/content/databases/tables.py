@@ -608,7 +608,7 @@ def get_datastore_version(instance):
 
 # NOTE(e0ne): the logic is based on
 # openstack_dashboard.dashboards.project.instances.tables.get_ips
-# Trove has a different instance addresses structure so we can't re-use
+# Trove has a different instance addresses structure so we can't reuse
 # nova-related code as is.
 def get_ips(instance):
     template_name = 'project/instances/_instance_ips.html'

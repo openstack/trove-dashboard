@@ -53,11 +53,11 @@ class BackupStrategyDetailsAction(workflows.Action):
             instances = []
             msg = _("Unable to list database instances to backup.")
             exceptions.handle(request, msg)
-        choises = [(None, "")]
+        choices = [(None, "")]
         for i in instances:
             if i.status in project_tables.ACTIVE_STATES:
-                choises.append((i.id, i.name))
-        return choises
+                choices.append((i.id, i.name))
+        return choices
 
 
 class SetBackupStrategyDetails(workflows.Step):
