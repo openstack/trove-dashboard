@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import logging
+
 from django.conf import settings
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -23,7 +25,6 @@ from horizon import workflows
 from openstack_dashboard import api as dash_api
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
-from oslo_log import log as logging
 
 from trove_dashboard import api
 from trove_dashboard.utils import common as common_utils

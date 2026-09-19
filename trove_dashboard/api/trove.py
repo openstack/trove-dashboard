@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import logging
+
 from django.conf import settings
 from horizon.utils import functions as utils
 from horizon.utils.memoized import memoized  # noqa
@@ -20,7 +22,6 @@ from keystoneclient.auth import token_endpoint
 from novaclient import client as nova_client
 from openstack_auth import utils as auth_utils
 from openstack_dashboard.api import base
-from oslo_log import log as logging
 from troveclient.v1 import client
 
 # Supported compute versions
