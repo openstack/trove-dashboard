@@ -31,13 +31,25 @@ from trove_dashboard.content.databases import tables
 LOG = logging.getLogger(__name__)
 
 
+def _get_status_display(status):
+    for value, display in tables.InstancesTable.STATUS_DISPLAY_CHOICES:
+        if value.lower() == (status or '').lower():
+            return display
+    return (status or '').title()
+
+
 class OverviewTab(tabs.Tab):
     name = _("Overview")
     slug = "overview"
 
     def get_context_data(self, request):
         instance = self.tab_group.kwargs['instance']
-        context = {"instance": instance}
+        context = {
+            "instance": instance,
+            "status_display": _get_status_display(instance.status),
+            "operating_status_display": _get_status_display(
+                getattr(instance, 'operating_status', None)),
+        }
         try:
             root_show = api.trove.root_show(request, instance.id)
             context["root_enabled"] = template.defaultfilters.yesno(
