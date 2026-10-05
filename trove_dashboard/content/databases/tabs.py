@@ -147,11 +147,15 @@ class ConfigDefaultsTab(tabs.TableTab):
     def get_config_defaults_data(self):
         instance = self.tab_group.kwargs['instance']
         values_data = []
-        data = api.trove.configuration_default(self.request, instance.id)
-        if data is not None:
-            for k, v in data.configuration.items():
-                values_data.append(
-                    config_param_manager.ConfigParam(None, k, v))
+        try:
+            data = api.trove.configuration_default(self.request, instance.id)
+            if data is not None:
+                for k, v in data.configuration.items():
+                    values_data.append(
+                        config_param_manager.ConfigParam(None, k, v))
+        except Exception:
+            msg = _('Unable to get configuration defaults.')
+            exceptions.handle(self.request, msg)
         return sorted(values_data, key=lambda config: config.name)
 
 
